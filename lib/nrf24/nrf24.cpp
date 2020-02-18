@@ -34,7 +34,9 @@ void NRF24::Init(bool enable_irq) {
 
 void NRF24::IrqReceive() {
     while (radio_->available()) {  //check receive data
-        radio_->read(&packet_, 32);
+        radio_->read((void *)&packet_, 32);
+
+        // sbus_.Parse(packet_, 32);
         Serial.println(packet_ + 1);
     }
 }
@@ -44,8 +46,8 @@ bool NRF24::Write(const char *buf, uint8_t buf_len) {
 
     radio_->stopListening();
     packet_[0] = buf_len;
-    memcpy(packet_ + 1, buf, buf_len);
-    bool flag = radio_->write(&packet_, buf_len + 1);
+    memcpy((void *)(packet_ + 1), buf, buf_len);
+    bool flag = radio_->write((void *)&packet_, buf_len + 1);
     radio_->startListening();
 
     return flag;
@@ -54,7 +56,7 @@ bool NRF24::Write(const char *buf, uint8_t buf_len) {
 bool NRF24::Read(char *&buf, uint8_t &buf_len) {
     if (radio_->available()) {  //check receive data
         // memset(packet_, 0, 32);
-        radio_->read(&packet_, 32);
+        radio_->read((void *)&packet_, 32);
         buf_len = packet_[0];
         buf     = packet_ + 1;
         return true;

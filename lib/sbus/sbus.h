@@ -18,21 +18,24 @@ Byte[24]: SBUS End Byte, 0x00
 A table mapping bytes[1-22] to servo channels is included
 
 Note that lost frame is true if the frame was lost and failsafe is true if the receiver has entered failsafe mode.
-Lost frame is typically used as part of a counter to collect lost frames data for evaluating receiver performance. 
+Lost frame is typically used as part of a counter to collect lost frames data for evaluating receiver performance.
 */
 
 #define SBUS_HEADER 0x0F
 #define SBUS_FOOTER 0x00
+#define SBUS_LOSTFRAME 0x04
+#define SBUS_FAILSAFE 0x08
 
 class SBUS {
    public:
     SBUS();
     ~SBUS();
 
-    bool Parse(const char* buf, uint8_t buf_len);
+    void Parse(const char* buf, uint8_t buf_len);
+    void Read(uint16_t* channels, bool* lost_frame = NULL, bool* fail_safe = NULL);
+    void Write(const uint16_t* channels, char* packet);  //channels[16], packet[25]
 
-    // void SetChannel(unsigned char ch, unsigned int data);
-    // char* GetData();
+    char* GetPayload();
 
    private:
     uint8_t status_;

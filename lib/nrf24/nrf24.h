@@ -5,6 +5,8 @@
 #include "RF24.h"
 #include "nRF24L01.h"
 
+#include "sbus.h"
+
 #define NRF24_CE PB0
 #define NRF24_CSN PB1
 #define NRF24_IRQ PC1
@@ -29,6 +31,8 @@ class NRF24 {
    private:
     RF24* radio_;
     char packet_[32];
+
+    // SBUS sbus_;
 };
 
 #endif  // __NRF24_H__

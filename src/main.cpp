@@ -1,25 +1,57 @@
 #include <Arduino.h>
-#include "nrf24.h"
-#include "sbus.h"
+// #include "nrf24.h"
+// #include "sbus.h"
 
 #define LED_PIN PC13  // 最小系统板板上LED连接的是PB0
 
-NRF24 nrf24;
-// char buf[32];
-char *buf;
-uint8_t buf_len;
+// SBUS sbus;
+// void test_Parse() {
+//     char *payload;
+//     char data[] = {0x0F, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x00, 0x00};
+//     sbus.Parse(data, 25);
+//     payload = sbus.GetPayload();
+//     for(int i = 0; i < 23; i++) {
+//         Serial.print(payload[i], HEX);
+//     }
+//     Serial.println("");
+//     Serial.println("ok");
+// }
+
+// void test_all() {
+//     uint16_t channels[16] = {512, 2047, 0, 10, 20, 30, 40, 500, 600, 700, 800, 900, 1000, 1100, 1200, 0};
+//     char packet[25];
+//     sbus.Write(channels, packet);
+
+//     Serial.println(packet);
+// }
 
 void setup() {
-    pinMode(LED_PIN, OUTPUT);
     Serial.begin(9600);
-
-    nrf24.Init();
-    nrf24.PrintDetails();
+    // test_Parse();
+    // test_all();
 }
 
 void loop() {
 
 }
+
+
+// NRF24 nrf24;
+// // char buf[32];
+// char *buf;
+// uint8_t buf_len;
+
+// void setup() {
+//     pinMode(LED_PIN, OUTPUT);
+//     Serial.begin(9600);
+
+//     nrf24.Init();
+//     nrf24.PrintDetails();
+// }
+
+// void loop() {
+
+// }
 
 // #define NRF24_IRQ PC1
 
