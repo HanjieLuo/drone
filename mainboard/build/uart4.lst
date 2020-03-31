@@ -1,0 +1,329 @@
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIwU0TF.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"uart4.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.Uart4Init,"ax",%progbits
+  18              		.align	1
+  19              		.global	Uart4Init
+  20              		.arch armv7e-m
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  24              		.fpu fpv4-sp-d16
+  26              	Uart4Init:
+  27              	.LFB130:
+  28              		.file 1 "Modules/src/uart4.c"
+   1:Modules/src/uart4.c **** #include "uart4.h"
+   2:Modules/src/uart4.c **** 
+   3:Modules/src/uart4.c **** void Uart4Init(void) {
+  29              		.loc 1 3 22 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 08B5     		push	{r3, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 3, -8
+  37              		.cfi_offset 14, -4
+   4:Modules/src/uart4.c ****     //使能IDLE中断
+   5:Modules/src/uart4.c ****     __HAL_UART_ENABLE_IT(&huart4, UART_IT_IDLE);
+  38              		.loc 1 5 5 view .LVU1
+  39 0002 0548     		ldr	r0, .L3
+  40 0004 0268     		ldr	r2, [r0]
+  41 0006 D368     		ldr	r3, [r2, #12]
+  42 0008 43F01003 		orr	r3, r3, #16
+  43 000c D360     		str	r3, [r2, #12]
+   6:Modules/src/uart4.c ****     //使能接收中断
+   7:Modules/src/uart4.c ****     HAL_UART_Receive_DMA(&huart4, rx_buffer, RX_BUFFER_SIZE);
+  44              		.loc 1 7 5 view .LVU2
+  45 000e 8022     		movs	r2, #128
+  46 0010 0249     		ldr	r1, .L3+4
+  47 0012 FFF7FEFF 		bl	HAL_UART_Receive_DMA
+  48              	.LVL0:
+   8:Modules/src/uart4.c **** }
+  49              		.loc 1 8 1 is_stmt 0 view .LVU3
+  50 0016 08BD     		pop	{r3, pc}
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIwU0TF.s 			page 2
+
+
+  51              	.L4:
+  52              		.align	2
+  53              	.L3:
+  54 0018 00000000 		.word	huart4
+  55 001c 00000000 		.word	.LANCHOR0
+  56              		.cfi_endproc
+  57              	.LFE130:
+  59              		.section	.text.DMA1_Stream2_IRQHandler,"ax",%progbits
+  60              		.align	1
+  61              		.global	DMA1_Stream2_IRQHandler
+  62              		.syntax unified
+  63              		.thumb
+  64              		.thumb_func
+  65              		.fpu fpv4-sp-d16
+  67              	DMA1_Stream2_IRQHandler:
+  68              	.LFB132:
+   9:Modules/src/uart4.c **** 
+  10:Modules/src/uart4.c **** void UART4_IRQHandler(void) {
+  11:Modules/src/uart4.c ****     if (__HAL_UART_GET_FLAG(&huart4, UART_FLAG_IDLE) != RESET) {
+  12:Modules/src/uart4.c ****         __HAL_UART_CLEAR_IDLEFLAG(&huart4);
+  13:Modules/src/uart4.c ****         UartRxCheck();
+  14:Modules/src/uart4.c ****     }
+  15:Modules/src/uart4.c **** }
+  16:Modules/src/uart4.c **** 
+  17:Modules/src/uart4.c **** void DMA1_Stream2_IRQHandler(void) {
+  69              		.loc 1 17 36 is_stmt 1 view -0
+  70              		.cfi_startproc
+  71              		@ args = 0, pretend = 0, frame = 0
+  72              		@ frame_needed = 0, uses_anonymous_args = 0
+  73              		@ link register save eliminated.
+  18:Modules/src/uart4.c **** }
+  74              		.loc 1 18 1 view .LVU5
+  75 0000 7047     		bx	lr
+  76              		.cfi_endproc
+  77              	.LFE132:
+  79              		.section	.text.UartRxCheck,"ax",%progbits
+  80              		.align	1
+  81              		.global	UartRxCheck
+  82              		.syntax unified
+  83              		.thumb
+  84              		.thumb_func
+  85              		.fpu fpv4-sp-d16
+  87              	UartRxCheck:
+  88              	.LFB133:
+  19:Modules/src/uart4.c **** 
+  20:Modules/src/uart4.c **** void UartRxCheck(void) {
+  89              		.loc 1 20 24 view -0
+  90              		.cfi_startproc
+  91              		@ args = 0, pretend = 0, frame = 16
+  92              		@ frame_needed = 0, uses_anonymous_args = 0
+  93 0000 00B5     		push	{lr}
+  94              	.LCFI1:
+  95              		.cfi_def_cfa_offset 4
+  96              		.cfi_offset 14, -4
+  97 0002 85B0     		sub	sp, sp, #20
+  98              	.LCFI2:
+  99              		.cfi_def_cfa_offset 24
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIwU0TF.s 			page 3
+
+
+  21:Modules/src/uart4.c ****     static size_t old_pos;
+ 100              		.loc 1 21 5 view .LVU7
+  22:Modules/src/uart4.c ****     size_t pos;
+ 101              		.loc 1 22 5 view .LVU8
+  23:Modules/src/uart4.c **** 
+  24:Modules/src/uart4.c ****     /* Calculate current position in buffer */
+  25:Modules/src/uart4.c ****     pos = RX_BUFFER_SIZE - __HAL_DMA_GET_COUNTER(huart4.hdmarx);
+ 102              		.loc 1 25 5 view .LVU9
+ 103              		.loc 1 25 28 is_stmt 0 view .LVU10
+ 104 0004 094B     		ldr	r3, .L8
+ 105 0006 5B6B     		ldr	r3, [r3, #52]
+ 106 0008 1B68     		ldr	r3, [r3]
+ 107 000a 5868     		ldr	r0, [r3, #4]
+ 108              	.LVL1:
+  26:Modules/src/uart4.c **** 
+  27:Modules/src/uart4.c ****     char buffer[10];
+ 109              		.loc 1 27 5 is_stmt 1 view .LVU11
+  28:Modules/src/uart4.c ****     itoa(pos, buffer, 10);
+ 110              		.loc 1 28 5 view .LVU12
+ 111 000c 0A22     		movs	r2, #10
+ 112 000e 01A9     		add	r1, sp, #4
+ 113 0010 C0F18000 		rsb	r0, r0, #128
+ 114              	.LVL2:
+ 115              		.loc 1 28 5 is_stmt 0 view .LVU13
+ 116 0014 FFF7FEFF 		bl	itoa
+ 117              	.LVL3:
+  29:Modules/src/uart4.c ****     HAL_UART_Transmit(&huart1, (uint8_t*)buffer, sizeof(buffer), 1000);
+ 118              		.loc 1 29 5 is_stmt 1 view .LVU14
+ 119 0018 4FF47A73 		mov	r3, #1000
+ 120 001c 0A22     		movs	r2, #10
+ 121 001e 01A9     		add	r1, sp, #4
+ 122 0020 0348     		ldr	r0, .L8+4
+ 123 0022 FFF7FEFF 		bl	HAL_UART_Transmit
+ 124              	.LVL4:
+  30:Modules/src/uart4.c **** 
+  31:Modules/src/uart4.c ****     if (pos != old_pos) {    /* Check change in received data */
+ 125              		.loc 1 31 5 view .LVU15
+  32:Modules/src/uart4.c ****         if (pos > old_pos) { /* Current position is over previous one */
+  33:Modules/src/uart4.c ****             /* We are in "linear" mode */
+  34:Modules/src/uart4.c ****             /* Process data directly by subtracting "pointers" */
+  35:Modules/src/uart4.c ****             // usart_process_data(&usart_rx_dma_buffer[old_pos], pos - old_pos);
+  36:Modules/src/uart4.c ****         } else {
+  37:Modules/src/uart4.c ****             /* We are in "overflow" mode */
+  38:Modules/src/uart4.c ****             /* First process data to the end of buffer */
+  39:Modules/src/uart4.c ****             // usart_process_data(&usart_rx_dma_buffer[old_pos], ARRAY_LEN(usart_rx_dma_buffer) - o
+  40:Modules/src/uart4.c ****             /* Check and continue with beginning of buffer */
+  41:Modules/src/uart4.c ****             if (pos > 0) {
+  42:Modules/src/uart4.c ****                 // usart_process_data(&usart_rx_dma_buffer[0], pos);
+  43:Modules/src/uart4.c ****             }
+ 126              		.loc 1 43 13 view .LVU16
+  44:Modules/src/uart4.c ****         }
+  45:Modules/src/uart4.c ****     }
+  46:Modules/src/uart4.c ****     old_pos = pos; /* Save current position as old */
+ 127              		.loc 1 46 5 view .LVU17
+  47:Modules/src/uart4.c **** 
+  48:Modules/src/uart4.c ****     /* Check and manually update if we reached end of buffer */
+  49:Modules/src/uart4.c ****     if (old_pos == RX_BUFFER_SIZE) {
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIwU0TF.s 			page 4
+
+
+ 128              		.loc 1 49 5 view .LVU18
+  50:Modules/src/uart4.c ****         old_pos = 0;
+  51:Modules/src/uart4.c ****     }
+  52:Modules/src/uart4.c **** }
+ 129              		.loc 1 52 1 is_stmt 0 view .LVU19
+ 130 0026 05B0     		add	sp, sp, #20
+ 131              	.LCFI3:
+ 132              		.cfi_def_cfa_offset 4
+ 133              		@ sp needed
+ 134 0028 5DF804FB 		ldr	pc, [sp], #4
+ 135              	.L9:
+ 136              		.align	2
+ 137              	.L8:
+ 138 002c 00000000 		.word	huart4
+ 139 0030 00000000 		.word	huart1
+ 140              		.cfi_endproc
+ 141              	.LFE133:
+ 143              		.section	.text.UART4_IRQHandler,"ax",%progbits
+ 144              		.align	1
+ 145              		.global	UART4_IRQHandler
+ 146              		.syntax unified
+ 147              		.thumb
+ 148              		.thumb_func
+ 149              		.fpu fpv4-sp-d16
+ 151              	UART4_IRQHandler:
+ 152              	.LFB131:
+  10:Modules/src/uart4.c ****     if (__HAL_UART_GET_FLAG(&huart4, UART_FLAG_IDLE) != RESET) {
+ 153              		.loc 1 10 29 is_stmt 1 view -0
+ 154              		.cfi_startproc
+ 155              		@ args = 0, pretend = 0, frame = 8
+ 156              		@ frame_needed = 0, uses_anonymous_args = 0
+  11:Modules/src/uart4.c ****         __HAL_UART_CLEAR_IDLEFLAG(&huart4);
+ 157              		.loc 1 11 5 view .LVU21
+  11:Modules/src/uart4.c ****         __HAL_UART_CLEAR_IDLEFLAG(&huart4);
+ 158              		.loc 1 11 9 is_stmt 0 view .LVU22
+ 159 0000 0A4B     		ldr	r3, .L17
+ 160 0002 1B68     		ldr	r3, [r3]
+ 161 0004 1A68     		ldr	r2, [r3]
+  11:Modules/src/uart4.c ****         __HAL_UART_CLEAR_IDLEFLAG(&huart4);
+ 162              		.loc 1 11 8 view .LVU23
+ 163 0006 12F0100F 		tst	r2, #16
+ 164 000a 00D1     		bne	.L16
+ 165 000c 7047     		bx	lr
+ 166              	.L16:
+  10:Modules/src/uart4.c ****     if (__HAL_UART_GET_FLAG(&huart4, UART_FLAG_IDLE) != RESET) {
+ 167              		.loc 1 10 29 view .LVU24
+ 168 000e 00B5     		push	{lr}
+ 169              	.LCFI4:
+ 170              		.cfi_def_cfa_offset 4
+ 171              		.cfi_offset 14, -4
+ 172 0010 83B0     		sub	sp, sp, #12
+ 173              	.LCFI5:
+ 174              		.cfi_def_cfa_offset 16
+  12:Modules/src/uart4.c ****         UartRxCheck();
+ 175              		.loc 1 12 9 is_stmt 1 view .LVU25
+ 176              	.LBB2:
+  12:Modules/src/uart4.c ****         UartRxCheck();
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIwU0TF.s 			page 5
+
+
+ 177              		.loc 1 12 9 view .LVU26
+ 178 0012 0022     		movs	r2, #0
+ 179 0014 0192     		str	r2, [sp, #4]
+  12:Modules/src/uart4.c ****         UartRxCheck();
+ 180              		.loc 1 12 9 view .LVU27
+ 181 0016 1A68     		ldr	r2, [r3]
+ 182 0018 0192     		str	r2, [sp, #4]
+  12:Modules/src/uart4.c ****         UartRxCheck();
+ 183              		.loc 1 12 9 view .LVU28
+ 184 001a 5B68     		ldr	r3, [r3, #4]
+ 185 001c 0193     		str	r3, [sp, #4]
+  12:Modules/src/uart4.c ****         UartRxCheck();
+ 186              		.loc 1 12 9 view .LVU29
+ 187 001e 019B     		ldr	r3, [sp, #4]
+ 188              	.LBE2:
+  12:Modules/src/uart4.c ****         UartRxCheck();
+ 189              		.loc 1 12 9 view .LVU30
+  13:Modules/src/uart4.c ****     }
+ 190              		.loc 1 13 9 view .LVU31
+ 191 0020 FFF7FEFF 		bl	UartRxCheck
+ 192              	.LVL5:
+  15:Modules/src/uart4.c **** 
+ 193              		.loc 1 15 1 is_stmt 0 view .LVU32
+ 194 0024 03B0     		add	sp, sp, #12
+ 195              	.LCFI6:
+ 196              		.cfi_def_cfa_offset 4
+ 197              		@ sp needed
+ 198 0026 5DF804FB 		ldr	pc, [sp], #4
+ 199              	.L18:
+ 200 002a 00BF     		.align	2
+ 201              	.L17:
+ 202 002c 00000000 		.word	huart4
+ 203              		.cfi_endproc
+ 204              	.LFE131:
+ 206              		.section	.bss.rx_buffer,"aw",%nobits
+ 207              		.align	2
+ 208              		.set	.LANCHOR0,. + 0
+ 211              	rx_buffer:
+ 212 0000 00000000 		.space	128
+ 212      00000000 
+ 212      00000000 
+ 212      00000000 
+ 212      00000000 
+ 213              		.text
+ 214              	.Letext0:
+ 215              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
+ 216              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 217              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 218              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 219              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 220              		.file 7 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\std
+ 221              		.file 8 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
+ 222              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 223              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 224              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 225              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 226              		.file 13 "Inc/usart.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIwU0TF.s 			page 6
+
+
+ 227              		.file 14 "./Modules/include/uart4.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIwU0TF.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 uart4.c
+C:\Users\luoha\AppData\Local\Temp\ccIwU0TF.s:18     .text.Uart4Init:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccIwU0TF.s:26     .text.Uart4Init:00000000 Uart4Init
+C:\Users\luoha\AppData\Local\Temp\ccIwU0TF.s:54     .text.Uart4Init:00000018 $d
+C:\Users\luoha\AppData\Local\Temp\ccIwU0TF.s:60     .text.DMA1_Stream2_IRQHandler:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccIwU0TF.s:67     .text.DMA1_Stream2_IRQHandler:00000000 DMA1_Stream2_IRQHandler
+C:\Users\luoha\AppData\Local\Temp\ccIwU0TF.s:80     .text.UartRxCheck:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccIwU0TF.s:87     .text.UartRxCheck:00000000 UartRxCheck
+C:\Users\luoha\AppData\Local\Temp\ccIwU0TF.s:138    .text.UartRxCheck:0000002c $d
+C:\Users\luoha\AppData\Local\Temp\ccIwU0TF.s:144    .text.UART4_IRQHandler:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccIwU0TF.s:151    .text.UART4_IRQHandler:00000000 UART4_IRQHandler
+C:\Users\luoha\AppData\Local\Temp\ccIwU0TF.s:202    .text.UART4_IRQHandler:0000002c $d
+C:\Users\luoha\AppData\Local\Temp\ccIwU0TF.s:207    .bss.rx_buffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccIwU0TF.s:211    .bss.rx_buffer:00000000 rx_buffer
+
+UNDEFINED SYMBOLS
+HAL_UART_Receive_DMA
+huart4
+itoa
+HAL_UART_Transmit
+huart1

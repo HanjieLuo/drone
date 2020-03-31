@@ -1,0 +1,371 @@
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"freertos.c"
+  14              		.section	.rodata.str1.4,"aMS",%progbits,1
+  15              		.align	2
+  16              	.LC0:
+  17 0000 64656661 		.ascii	"defaultTask\000"
+  17      756C7454 
+  17      61736B00 
+  18              		.text
+  19              	.Ltext0:
+  20              		.cfi_sections	.debug_frame
+  21              		.section	.text.StartDefaultTask,"ax",%progbits
+  22              		.align	1
+  23              		.global	StartDefaultTask
+  24              		.arch armv7e-m
+  25              		.syntax unified
+  26              		.thumb
+  27              		.thumb_func
+  28              		.fpu fpv4-sp-d16
+  30              	StartDefaultTask:
+  31              	.LFB137:
+  32              		.file 1 "Src/freertos.c"
+   1:Src/freertos.c **** /* USER CODE BEGIN Header */
+   2:Src/freertos.c **** /**
+   3:Src/freertos.c ****   ******************************************************************************
+   4:Src/freertos.c ****   * File Name          : freertos.c
+   5:Src/freertos.c ****   * Description        : Code for freertos applications
+   6:Src/freertos.c ****   ******************************************************************************
+   7:Src/freertos.c ****   * @attention
+   8:Src/freertos.c ****   *
+   9:Src/freertos.c ****   * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
+  10:Src/freertos.c ****   * All rights reserved.</center></h2>
+  11:Src/freertos.c ****   *
+  12:Src/freertos.c ****   * This software component is licensed by ST under Ultimate Liberty license
+  13:Src/freertos.c ****   * SLA0044, the "License"; You may not use this file except in compliance with
+  14:Src/freertos.c ****   * the License. You may obtain a copy of the License at:
+  15:Src/freertos.c ****   *                             www.st.com/SLA0044
+  16:Src/freertos.c ****   *
+  17:Src/freertos.c ****   ******************************************************************************
+  18:Src/freertos.c ****   */
+  19:Src/freertos.c **** /* USER CODE END Header */
+  20:Src/freertos.c **** 
+  21:Src/freertos.c **** /* Includes ------------------------------------------------------------------*/
+  22:Src/freertos.c **** #include "FreeRTOS.h"
+  23:Src/freertos.c **** #include "task.h"
+  24:Src/freertos.c **** #include "main.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s 			page 2
+
+
+  25:Src/freertos.c **** #include "cmsis_os.h"
+  26:Src/freertos.c **** 
+  27:Src/freertos.c **** /* Private includes ----------------------------------------------------------*/
+  28:Src/freertos.c **** /* USER CODE BEGIN Includes */     
+  29:Src/freertos.c **** 
+  30:Src/freertos.c **** /* USER CODE END Includes */
+  31:Src/freertos.c **** 
+  32:Src/freertos.c **** /* Private typedef -----------------------------------------------------------*/
+  33:Src/freertos.c **** /* USER CODE BEGIN PTD */
+  34:Src/freertos.c **** 
+  35:Src/freertos.c **** /* USER CODE END PTD */
+  36:Src/freertos.c **** 
+  37:Src/freertos.c **** /* Private define ------------------------------------------------------------*/
+  38:Src/freertos.c **** /* USER CODE BEGIN PD */
+  39:Src/freertos.c **** 
+  40:Src/freertos.c **** /* USER CODE END PD */
+  41:Src/freertos.c **** 
+  42:Src/freertos.c **** /* Private macro -------------------------------------------------------------*/
+  43:Src/freertos.c **** /* USER CODE BEGIN PM */
+  44:Src/freertos.c **** 
+  45:Src/freertos.c **** /* USER CODE END PM */
+  46:Src/freertos.c **** 
+  47:Src/freertos.c **** /* Private variables ---------------------------------------------------------*/
+  48:Src/freertos.c **** /* USER CODE BEGIN Variables */
+  49:Src/freertos.c **** 
+  50:Src/freertos.c **** /* USER CODE END Variables */
+  51:Src/freertos.c **** osThreadId defaultTaskHandle;
+  52:Src/freertos.c **** 
+  53:Src/freertos.c **** /* Private function prototypes -----------------------------------------------*/
+  54:Src/freertos.c **** /* USER CODE BEGIN FunctionPrototypes */
+  55:Src/freertos.c ****    
+  56:Src/freertos.c **** /* USER CODE END FunctionPrototypes */
+  57:Src/freertos.c **** 
+  58:Src/freertos.c **** void StartDefaultTask(void const * argument);
+  59:Src/freertos.c **** 
+  60:Src/freertos.c **** void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
+  61:Src/freertos.c **** 
+  62:Src/freertos.c **** /* GetIdleTaskMemory prototype (linked to static allocation support) */
+  63:Src/freertos.c **** void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskS
+  64:Src/freertos.c **** 
+  65:Src/freertos.c **** /* USER CODE BEGIN GET_IDLE_TASK_MEMORY */
+  66:Src/freertos.c **** static StaticTask_t xIdleTaskTCBBuffer;
+  67:Src/freertos.c **** static StackType_t xIdleStack[configMINIMAL_STACK_SIZE];
+  68:Src/freertos.c ****   
+  69:Src/freertos.c **** void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskS
+  70:Src/freertos.c **** {
+  71:Src/freertos.c ****   *ppxIdleTaskTCBBuffer = &xIdleTaskTCBBuffer;
+  72:Src/freertos.c ****   *ppxIdleTaskStackBuffer = &xIdleStack[0];
+  73:Src/freertos.c ****   *pulIdleTaskStackSize = configMINIMAL_STACK_SIZE;
+  74:Src/freertos.c ****   /* place for user code */
+  75:Src/freertos.c **** }                   
+  76:Src/freertos.c **** /* USER CODE END GET_IDLE_TASK_MEMORY */
+  77:Src/freertos.c **** 
+  78:Src/freertos.c **** /**
+  79:Src/freertos.c ****   * @brief  FreeRTOS initialization
+  80:Src/freertos.c ****   * @param  None
+  81:Src/freertos.c ****   * @retval None
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s 			page 3
+
+
+  82:Src/freertos.c ****   */
+  83:Src/freertos.c **** void MX_FREERTOS_Init(void) {
+  84:Src/freertos.c ****   /* USER CODE BEGIN Init */
+  85:Src/freertos.c ****        
+  86:Src/freertos.c ****   /* USER CODE END Init */
+  87:Src/freertos.c **** 
+  88:Src/freertos.c ****   /* USER CODE BEGIN RTOS_MUTEX */
+  89:Src/freertos.c ****   /* add mutexes, ... */
+  90:Src/freertos.c ****   /* USER CODE END RTOS_MUTEX */
+  91:Src/freertos.c **** 
+  92:Src/freertos.c ****   /* USER CODE BEGIN RTOS_SEMAPHORES */
+  93:Src/freertos.c ****   /* add semaphores, ... */
+  94:Src/freertos.c ****   /* USER CODE END RTOS_SEMAPHORES */
+  95:Src/freertos.c **** 
+  96:Src/freertos.c ****   /* USER CODE BEGIN RTOS_TIMERS */
+  97:Src/freertos.c ****   /* start timers, add new ones, ... */
+  98:Src/freertos.c ****   /* USER CODE END RTOS_TIMERS */
+  99:Src/freertos.c **** 
+ 100:Src/freertos.c ****   /* USER CODE BEGIN RTOS_QUEUES */
+ 101:Src/freertos.c ****   /* add queues, ... */
+ 102:Src/freertos.c ****   /* USER CODE END RTOS_QUEUES */
+ 103:Src/freertos.c **** 
+ 104:Src/freertos.c ****   /* Create the thread(s) */
+ 105:Src/freertos.c ****   /* definition and creation of defaultTask */
+ 106:Src/freertos.c ****   osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
+ 107:Src/freertos.c ****   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
+ 108:Src/freertos.c **** 
+ 109:Src/freertos.c ****   /* USER CODE BEGIN RTOS_THREADS */
+ 110:Src/freertos.c ****   /* add threads, ... */
+ 111:Src/freertos.c ****   /* USER CODE END RTOS_THREADS */
+ 112:Src/freertos.c **** 
+ 113:Src/freertos.c **** }
+ 114:Src/freertos.c **** 
+ 115:Src/freertos.c **** /* USER CODE BEGIN Header_StartDefaultTask */
+ 116:Src/freertos.c **** /**
+ 117:Src/freertos.c ****   * @brief  Function implementing the defaultTask thread.
+ 118:Src/freertos.c ****   * @param  argument: Not used 
+ 119:Src/freertos.c ****   * @retval None
+ 120:Src/freertos.c ****   */
+ 121:Src/freertos.c **** /* USER CODE END Header_StartDefaultTask */
+ 122:Src/freertos.c **** void StartDefaultTask(void const * argument)
+ 123:Src/freertos.c **** {
+  33              		.loc 1 123 1 view -0
+  34              		.cfi_startproc
+  35              		@ Volatile: function does not return.
+  36              		@ args = 0, pretend = 0, frame = 0
+  37              		@ frame_needed = 0, uses_anonymous_args = 0
+  38              	.LVL0:
+  39              		.loc 1 123 1 is_stmt 0 view .LVU1
+  40 0000 08B5     		push	{r3, lr}
+  41              	.LCFI0:
+  42              		.cfi_def_cfa_offset 8
+  43              		.cfi_offset 3, -8
+  44              		.cfi_offset 14, -4
+  45              	.LVL1:
+  46              	.L2:
+ 124:Src/freertos.c ****   /* USER CODE BEGIN StartDefaultTask */
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s 			page 4
+
+
+ 125:Src/freertos.c ****   /* Infinite loop */
+ 126:Src/freertos.c ****   for(;;)
+  47              		.loc 1 126 3 is_stmt 1 discriminator 1 view .LVU2
+ 127:Src/freertos.c ****   {
+ 128:Src/freertos.c ****     osDelay(1);
+  48              		.loc 1 128 5 discriminator 1 view .LVU3
+  49 0002 0120     		movs	r0, #1
+  50 0004 FFF7FEFF 		bl	osDelay
+  51              	.LVL2:
+ 126:Src/freertos.c ****   {
+  52              		.loc 1 126 8 discriminator 1 view .LVU4
+  53 0008 FBE7     		b	.L2
+  54              		.cfi_endproc
+  55              	.LFE137:
+  57              		.section	.text.vApplicationGetIdleTaskMemory,"ax",%progbits
+  58              		.align	1
+  59              		.global	vApplicationGetIdleTaskMemory
+  60              		.syntax unified
+  61              		.thumb
+  62              		.thumb_func
+  63              		.fpu fpv4-sp-d16
+  65              	vApplicationGetIdleTaskMemory:
+  66              	.LVL3:
+  67              	.LFB135:
+  70:Src/freertos.c ****   *ppxIdleTaskTCBBuffer = &xIdleTaskTCBBuffer;
+  68              		.loc 1 70 1 view -0
+  69              		.cfi_startproc
+  70              		@ args = 0, pretend = 0, frame = 0
+  71              		@ frame_needed = 0, uses_anonymous_args = 0
+  72              		@ link register save eliminated.
+  71:Src/freertos.c ****   *ppxIdleTaskStackBuffer = &xIdleStack[0];
+  73              		.loc 1 71 3 view .LVU6
+  71:Src/freertos.c ****   *ppxIdleTaskStackBuffer = &xIdleStack[0];
+  74              		.loc 1 71 25 is_stmt 0 view .LVU7
+  75 0000 034B     		ldr	r3, .L5
+  76 0002 0360     		str	r3, [r0]
+  72:Src/freertos.c ****   *pulIdleTaskStackSize = configMINIMAL_STACK_SIZE;
+  77              		.loc 1 72 3 is_stmt 1 view .LVU8
+  72:Src/freertos.c ****   *pulIdleTaskStackSize = configMINIMAL_STACK_SIZE;
+  78              		.loc 1 72 27 is_stmt 0 view .LVU9
+  79 0004 034B     		ldr	r3, .L5+4
+  80 0006 0B60     		str	r3, [r1]
+  73:Src/freertos.c ****   /* place for user code */
+  81              		.loc 1 73 3 is_stmt 1 view .LVU10
+  73:Src/freertos.c ****   /* place for user code */
+  82              		.loc 1 73 25 is_stmt 0 view .LVU11
+  83 0008 8023     		movs	r3, #128
+  84 000a 1360     		str	r3, [r2]
+  75:Src/freertos.c **** /* USER CODE END GET_IDLE_TASK_MEMORY */
+  85              		.loc 1 75 1 view .LVU12
+  86 000c 7047     		bx	lr
+  87              	.L6:
+  88 000e 00BF     		.align	2
+  89              	.L5:
+  90 0010 00000000 		.word	.LANCHOR0
+  91 0014 00000000 		.word	.LANCHOR1
+  92              		.cfi_endproc
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s 			page 5
+
+
+  93              	.LFE135:
+  95              		.section	.text.MX_FREERTOS_Init,"ax",%progbits
+  96              		.align	1
+  97              		.global	MX_FREERTOS_Init
+  98              		.syntax unified
+  99              		.thumb
+ 100              		.thumb_func
+ 101              		.fpu fpv4-sp-d16
+ 103              	MX_FREERTOS_Init:
+ 104              	.LFB136:
+  83:Src/freertos.c ****   /* USER CODE BEGIN Init */
+ 105              		.loc 1 83 29 is_stmt 1 view -0
+ 106              		.cfi_startproc
+ 107              		@ args = 0, pretend = 0, frame = 32
+ 108              		@ frame_needed = 0, uses_anonymous_args = 0
+ 109 0000 30B5     		push	{r4, r5, lr}
+ 110              	.LCFI1:
+ 111              		.cfi_def_cfa_offset 12
+ 112              		.cfi_offset 4, -12
+ 113              		.cfi_offset 5, -8
+ 114              		.cfi_offset 14, -4
+ 115 0002 89B0     		sub	sp, sp, #36
+ 116              	.LCFI2:
+ 117              		.cfi_def_cfa_offset 48
+ 106:Src/freertos.c ****   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
+ 118              		.loc 1 106 3 view .LVU14
+ 119 0004 01AC     		add	r4, sp, #4
+ 120 0006 074D     		ldr	r5, .L9
+ 121 0008 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
+ 122 000a 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 123 000c 95E80700 		ldm	r5, {r0, r1, r2}
+ 124 0010 84E80700 		stm	r4, {r0, r1, r2}
+ 107:Src/freertos.c **** 
+ 125              		.loc 1 107 3 view .LVU15
+ 107:Src/freertos.c **** 
+ 126              		.loc 1 107 23 is_stmt 0 view .LVU16
+ 127 0014 0021     		movs	r1, #0
+ 128 0016 01A8     		add	r0, sp, #4
+ 129 0018 FFF7FEFF 		bl	osThreadCreate
+ 130              	.LVL4:
+ 107:Src/freertos.c **** 
+ 131              		.loc 1 107 21 view .LVU17
+ 132 001c 024B     		ldr	r3, .L9+4
+ 133 001e 1860     		str	r0, [r3]
+ 113:Src/freertos.c **** 
+ 134              		.loc 1 113 1 view .LVU18
+ 135 0020 09B0     		add	sp, sp, #36
+ 136              	.LCFI3:
+ 137              		.cfi_def_cfa_offset 12
+ 138              		@ sp needed
+ 139 0022 30BD     		pop	{r4, r5, pc}
+ 140              	.L10:
+ 141              		.align	2
+ 142              	.L9:
+ 143 0024 00000000 		.word	.LANCHOR2
+ 144 0028 00000000 		.word	defaultTaskHandle
+ 145              		.cfi_endproc
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s 			page 6
+
+
+ 146              	.LFE136:
+ 148              		.comm	defaultTaskHandle,4,4
+ 149              		.section	.rodata
+ 150              		.align	2
+ 151              		.set	.LANCHOR2,. + 0
+ 152              	.LC2:
+ 153 0000 00000000 		.word	.LC0
+ 154 0004 00000000 		.word	StartDefaultTask
+ 155 0008 0000     		.short	0
+ 156 000a 0000     		.space	2
+ 157 000c 00000000 		.word	0
+ 158 0010 80000000 		.word	128
+ 159 0014 00000000 		.word	0
+ 160 0018 00000000 		.word	0
+ 161              		.section	.bss.xIdleStack,"aw",%nobits
+ 162              		.align	2
+ 163              		.set	.LANCHOR1,. + 0
+ 166              	xIdleStack:
+ 167 0000 00000000 		.space	512
+ 167      00000000 
+ 167      00000000 
+ 167      00000000 
+ 167      00000000 
+ 168              		.section	.bss.xIdleTaskTCBBuffer,"aw",%nobits
+ 169              		.align	2
+ 170              		.set	.LANCHOR0,. + 0
+ 173              	xIdleTaskTCBBuffer:
+ 174 0000 00000000 		.space	84
+ 174      00000000 
+ 174      00000000 
+ 174      00000000 
+ 174      00000000 
+ 175              		.text
+ 176              	.Letext0:
+ 177              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
+ 178              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 179              		.file 4 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
+ 180              		.file 5 "Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"
+ 181              		.file 6 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 182              		.file 7 "Inc/FreeRTOSConfig.h"
+ 183              		.file 8 "Drivers/CMSIS/Include/core_cm4.h"
+ 184              		.file 9 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 185              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 186              		.file 11 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 freertos.c
+C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:15     .rodata.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:22     .text.StartDefaultTask:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:30     .text.StartDefaultTask:00000000 StartDefaultTask
+C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:58     .text.vApplicationGetIdleTaskMemory:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:65     .text.vApplicationGetIdleTaskMemory:00000000 vApplicationGetIdleTaskMemory
+C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:90     .text.vApplicationGetIdleTaskMemory:00000010 $d
+C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:96     .text.MX_FREERTOS_Init:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:103    .text.MX_FREERTOS_Init:00000000 MX_FREERTOS_Init
+C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:143    .text.MX_FREERTOS_Init:00000024 $d
+                            *COM*:00000004 defaultTaskHandle
+C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:150    .rodata:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:162    .bss.xIdleStack:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:166    .bss.xIdleStack:00000000 xIdleStack
+C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:169    .bss.xIdleTaskTCBBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:173    .bss.xIdleTaskTCBBuffer:00000000 xIdleTaskTCBBuffer
+
+UNDEFINED SYMBOLS
+osDelay
+osThreadCreate
