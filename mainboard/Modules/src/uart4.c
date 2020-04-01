@@ -15,6 +15,30 @@ void UART4_IRQHandler(void) {
 }
 
 void DMA1_Stream2_IRQHandler(void) {
+    HAL_DMA_IRQHandler(huart4.hdmarx);
+    // // char buffer[] = "DMA1_Stream2_IRQHandler\n";
+    // // HAL_UART_Transmit(&huart1, (uint8_t*)buffer, sizeof(buffer), 1000);
+
+    // if(__HAL_DMA_GET_FLAG(huart4.hdmarx, __HAL_DMA_GET_HT_FLAG_INDEX(huart4.hdmarx))!= RESET) {
+    //     __HAL_DMA_CLEAR_FLAG(huart4.hdmarx, __HAL_DMA_GET_HT_FLAG_INDEX(huart4.hdmarx));
+
+    //     char buffer[] = "HT\n";
+    //     HAL_UART_Transmit(&huart1, (uint8_t*)buffer, sizeof(buffer), 1000);
+    // } else {
+    //     HAL_DMA_IRQHandler(huart4.hdmarx);
+    // }
+}
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+    if (huart->Instance == UART4) {
+        UartRxCheck();
+    }
+}
+
+void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef *huart) {
+    if (huart->Instance == UART4) {
+        UartRxCheck();
+    }
 }
 
 void UartRxCheck(void) {
@@ -25,8 +49,12 @@ void UartRxCheck(void) {
     pos = RX_BUFFER_SIZE - __HAL_DMA_GET_COUNTER(huart4.hdmarx);
 
     char buffer[10];
+    // itoa(old_pos, buffer, 10);
+    // HAL_UART_Transmit(&huart1, (uint8_t *)buffer, sizeof(buffer), 1000);
+
     itoa(pos, buffer, 10);
-    HAL_UART_Transmit(&huart1, (uint8_t*)buffer, sizeof(buffer), 1000);
+    printf("%s\n", buffer);
+    // HAL_UART_Transmit(&huart1, (uint8_t *)buffer, sizeof(buffer), 1000);
 
     if (pos != old_pos) {    /* Check change in received data */
         if (pos > old_pos) { /* Current position is over previous one */
@@ -48,5 +76,27 @@ void UartRxCheck(void) {
     /* Check and manually update if we reached end of buffer */
     if (old_pos == RX_BUFFER_SIZE) {
         old_pos = 0;
+    }
+}
+
+void MavlinkParse(uint8_t *buffer, size_t len) {
+    for (size_t i = 0; i < len; i++) {
+        if (mavlink_parse_char(mavlink_comm, buffer[i], &msg, &status)) {
+            // switch (msg.msgid) {
+            //     case MAVLINK_MSG_ID_RC_CHANNELS_OVERRIDE: {
+            //         Serial.println("MAVLINK_MSG_ID_RC_CHANNELS_OVERRIDE");
+            //         break;
+            //     }
+            //     default: {
+            //         break;
+            //     }
+            // }
+            // Serial.println("=======");
+            // Serial.println(msg.msgid);
+            // Serial.println(msg.seq);
+            // Serial.println(msg.compid);
+            // Serial.println(msg.sysid);
+            // Serial.println("=======");
+        }
     }
 }

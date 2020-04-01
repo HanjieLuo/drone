@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccduEF8f.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -32,7 +32,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s 			page 1
   27              		.thumb_func
   28              		.fpu fpv4-sp-d16
   30              	StartDefaultTask:
-  31              	.LFB137:
+  31              	.LFB140:
   32              		.file 1 "Src/freertos.c"
    1:Src/freertos.c **** /* USER CODE BEGIN Header */
    2:Src/freertos.c **** /**
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s 			page 1
   22:Src/freertos.c **** #include "FreeRTOS.h"
   23:Src/freertos.c **** #include "task.h"
   24:Src/freertos.c **** #include "main.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccduEF8f.s 			page 2
 
 
   25:Src/freertos.c **** #include "cmsis_os.h"
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s 			page 1
   79:Src/freertos.c ****   * @brief  FreeRTOS initialization
   80:Src/freertos.c ****   * @param  None
   81:Src/freertos.c ****   * @retval None
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccduEF8f.s 			page 3
 
 
   82:Src/freertos.c ****   */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s 			page 1
   45              	.LVL1:
   46              	.L2:
  124:Src/freertos.c ****   /* USER CODE BEGIN StartDefaultTask */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s 			page 4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccduEF8f.s 			page 4
 
 
  125:Src/freertos.c ****   /* Infinite loop */
@@ -194,7 +194,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s 			page 1
   52              		.loc 1 126 8 discriminator 1 view .LVU4
   53 0008 FBE7     		b	.L2
   54              		.cfi_endproc
-  55              	.LFE137:
+  55              	.LFE140:
   57              		.section	.text.vApplicationGetIdleTaskMemory,"ax",%progbits
   58              		.align	1
   59              		.global	vApplicationGetIdleTaskMemory
@@ -204,7 +204,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s 			page 1
   63              		.fpu fpv4-sp-d16
   65              	vApplicationGetIdleTaskMemory:
   66              	.LVL3:
-  67              	.LFB135:
+  67              	.LFB138:
   70:Src/freertos.c ****   *ppxIdleTaskTCBBuffer = &xIdleTaskTCBBuffer;
   68              		.loc 1 70 1 view -0
   69              		.cfi_startproc
@@ -238,10 +238,10 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s 			page 1
   90 0010 00000000 		.word	.LANCHOR0
   91 0014 00000000 		.word	.LANCHOR1
   92              		.cfi_endproc
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s 			page 5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccduEF8f.s 			page 5
 
 
-  93              	.LFE135:
+  93              	.LFE138:
   95              		.section	.text.MX_FREERTOS_Init,"ax",%progbits
   96              		.align	1
   97              		.global	MX_FREERTOS_Init
@@ -250,7 +250,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s 			page 1
  100              		.thumb_func
  101              		.fpu fpv4-sp-d16
  103              	MX_FREERTOS_Init:
- 104              	.LFB136:
+ 104              	.LFB139:
   83:Src/freertos.c ****   /* USER CODE BEGIN Init */
  105              		.loc 1 83 29 is_stmt 1 view -0
  106              		.cfi_startproc
@@ -298,10 +298,10 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s 			page 1
  143 0024 00000000 		.word	.LANCHOR2
  144 0028 00000000 		.word	defaultTaskHandle
  145              		.cfi_endproc
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s 			page 6
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccduEF8f.s 			page 6
 
 
- 146              	.LFE136:
+ 146              	.LFE139:
  148              		.comm	defaultTaskHandle,4,4
  149              		.section	.rodata
  150              		.align	2
@@ -343,28 +343,37 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s 			page 1
  182              		.file 7 "Inc/FreeRTOSConfig.h"
  183              		.file 8 "Drivers/CMSIS/Include/core_cm4.h"
  184              		.file 9 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 185              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 186              		.file 11 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s 			page 7
+ 185              		.file 10 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 186              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 187              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 188              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 189              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 190              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
+ 191              		.file 16 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
+ 192              		.file 17 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
+ 193              		.file 18 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
+ 194              		.file 19 "Modules/include/utils.h"
+ 195              		.file 20 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccduEF8f.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 freertos.c
-C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:15     .rodata.str1.4:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:22     .text.StartDefaultTask:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:30     .text.StartDefaultTask:00000000 StartDefaultTask
-C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:58     .text.vApplicationGetIdleTaskMemory:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:65     .text.vApplicationGetIdleTaskMemory:00000000 vApplicationGetIdleTaskMemory
-C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:90     .text.vApplicationGetIdleTaskMemory:00000010 $d
-C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:96     .text.MX_FREERTOS_Init:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:103    .text.MX_FREERTOS_Init:00000000 MX_FREERTOS_Init
-C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:143    .text.MX_FREERTOS_Init:00000024 $d
+C:\Users\luoha\AppData\Local\Temp\ccduEF8f.s:15     .rodata.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccduEF8f.s:22     .text.StartDefaultTask:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccduEF8f.s:30     .text.StartDefaultTask:00000000 StartDefaultTask
+C:\Users\luoha\AppData\Local\Temp\ccduEF8f.s:58     .text.vApplicationGetIdleTaskMemory:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccduEF8f.s:65     .text.vApplicationGetIdleTaskMemory:00000000 vApplicationGetIdleTaskMemory
+C:\Users\luoha\AppData\Local\Temp\ccduEF8f.s:90     .text.vApplicationGetIdleTaskMemory:00000010 $d
+C:\Users\luoha\AppData\Local\Temp\ccduEF8f.s:96     .text.MX_FREERTOS_Init:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccduEF8f.s:103    .text.MX_FREERTOS_Init:00000000 MX_FREERTOS_Init
+C:\Users\luoha\AppData\Local\Temp\ccduEF8f.s:143    .text.MX_FREERTOS_Init:00000024 $d
                             *COM*:00000004 defaultTaskHandle
-C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:150    .rodata:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:162    .bss.xIdleStack:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:166    .bss.xIdleStack:00000000 xIdleStack
-C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:169    .bss.xIdleTaskTCBBuffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccfEYA89.s:173    .bss.xIdleTaskTCBBuffer:00000000 xIdleTaskTCBBuffer
+C:\Users\luoha\AppData\Local\Temp\ccduEF8f.s:150    .rodata:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccduEF8f.s:162    .bss.xIdleStack:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccduEF8f.s:166    .bss.xIdleStack:00000000 xIdleStack
+C:\Users\luoha\AppData\Local\Temp\ccduEF8f.s:169    .bss.xIdleTaskTCBBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccduEF8f.s:173    .bss.xIdleTaskTCBBuffer:00000000 xIdleTaskTCBBuffer
 
 UNDEFINED SYMBOLS
 osDelay

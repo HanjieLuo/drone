@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 1
   28:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /** @addtogroup STM32F4xx_HAL_Driver
   29:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @{
   30:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s 			page 2
 
 
   31:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 1
   85:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @{
   86:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   */
   87:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s 			page 3
 
 
   88:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /**
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 1
   66              		@ link register save eliminated.
  107:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   *(__IO uint32_t *) CR_DBP_BB = (uint32_t)ENABLE;
   67              		.loc 1 107 3 view .LVU5
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s 			page 4
 
 
   68              		.loc 1 107 32 is_stmt 0 view .LVU6
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 1
  112              		.global	HAL_PWR_ConfigPVD
  113              		.syntax unified
  114              		.thumb
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s 			page 5
 
 
  115              		.thumb_func
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 1
  170:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****           (++) PWR_SLEEPENTRY_WFI: enter SLEEP mode with WFI instruction
  171:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****           (++) PWR_SLEEPENTRY_WFE: enter SLEEP mode with WFE instruction
  172:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****       
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 6
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s 			page 6
 
 
  173:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****       -@@- The Regulator parameter is not used for the STM32F4 family 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 1
  227:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****       (+) RTC auto-wake-up (AWU) from the Stop and Standby modes
  228:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****        
  229:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****         (++) To wake up from the Stop mode with an RTC alarm event, it is necessary to 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 7
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s 			page 7
 
 
  230:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****               configure the RTC to generate the RTC alarm using the HAL_RTC_SetAlarm_IT() function.
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 1
  141 0018 1A68     		ldr	r2, [r3]
  142 001a 22F48032 		bic	r2, r2, #65536
  143 001e 1A60     		str	r2, [r3]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 8
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s 			page 8
 
 
  264:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   __HAL_PWR_PVD_EXTI_DISABLE_RISING_EDGE();
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 1
  181 005a 04D0     		beq	.L13
  281:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   {
  282:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****     __HAL_PWR_PVD_EXTI_ENABLE_RISING_EDGE();
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 9
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s 			page 9
 
 
  182              		.loc 1 282 5 is_stmt 1 view .LVU31
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 1
  224              		@ link register save eliminated.
  297:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   *(__IO uint32_t *) CR_PVDE_BB = (uint32_t)ENABLE;
  225              		.loc 1 297 3 view .LVU38
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 10
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s 			page 10
 
 
  226              		.loc 1 297 33 is_stmt 0 view .LVU39
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 1
  273              		.thumb_func
  274              		.fpu fpv4-sp-d16
  276              	HAL_PWR_EnableWakeUpPin:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 11
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s 			page 11
 
 
  277              	.LVL1:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 1
  331:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   *           @arg PWR_WAKEUP_PIN1
  332:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   *           @arg PWR_WAKEUP_PIN2 available only on STM32F410xx/STM32F446xx/STM32F412xx/STM32F413x
  333:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   *           @arg PWR_WAKEUP_PIN3 available only on STM32F410xx/STM32F412xx/STM32F413xx/STM32F423x
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 12
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s 			page 12
 
 
  334:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @retval None
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 1
  359:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @param SLEEPEntry Specifies if SLEEP mode in entered with WFI or WFE instruction.
  360:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   *          This parameter can be one of the following values:
  361:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   *            @arg PWR_SLEEPENTRY_WFI: enter SLEEP mode with WFI instruction
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 13
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s 			page 13
 
 
  362:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   *            @arg PWR_SLEEPENTRY_WFE: enter SLEEP mode with WFE instruction
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 1
  387:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** }
  370              		.loc 1 387 1 is_stmt 0 view .LVU62
  371              		.thumb
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 14
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s 			page 14
 
 
  372              		.syntax unified
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 1
  405              		@ link register save eliminated.
  410:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   /* Check the parameters */
  411:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   assert_param(IS_PWR_REGULATOR(Regulator));
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 15
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s 			page 15
 
 
  406              		.loc 1 411 3 view .LVU65
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 1
  433:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   /* Reset SLEEPDEEP bit of Cortex System Control Register */
  434:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   CLEAR_BIT(SCB->SCR, ((uint32_t)SCB_SCR_SLEEPDEEP_Msk));  
  439              		.loc 1 434 3 view .LVU74
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 16
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s 			page 16
 
 
  440 0020 044A     		ldr	r2, .L39+4
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 1
  479 0000 054A     		ldr	r2, .L42
  480 0002 1368     		ldr	r3, [r2]
  481 0004 43F00203 		orr	r3, r3, #2
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 17
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s 			page 17
 
 
  482 0008 1360     		str	r3, [r2]
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 1
  474:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****     HAL_PWR_PVDCallback();
  475:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****     
  476:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****     /* Clear PWR Exti pending bit */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 18
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s 			page 18
 
 
  477:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****     __HAL_PWR_PVD_EXTI_CLEAR_FLAG();
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 1
  552              		.loc 1 479 1 view .LVU88
  553 000c 08BD     		pop	{r3, pc}
  554              	.L48:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 19
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s 			page 19
 
 
  474:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****     
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 1
  594              		.align	2
  595              	.L52:
  596 000c 00ED00E0 		.word	-536810240
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 20
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s 			page 20
 
 
  597              		.cfi_endproc
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 1
  521:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   *       WFE to wake up when an interrupt moves from inactive to pended.
  522:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @retval None
  523:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 21
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s 			page 21
 
 
  524:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** void HAL_PWR_EnableSEVOnPend(void)
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 1
  678              		.loc 1 540 1 is_stmt 0 view .LVU103
  679 000a 7047     		bx	lr
  680              	.L62:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 22
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s 			page 22
 
 
  681              		.align	2
@@ -1276,60 +1276,60 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 1
  694              		.file 7 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
  695              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h"
  696              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccagud3g.s 			page 23
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s 			page 23
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f4xx_hal_pwr.c
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:18     .text.HAL_PWR_DeInit:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:26     .text.HAL_PWR_DeInit:00000000 HAL_PWR_DeInit
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:48     .text.HAL_PWR_DeInit:00000014 $d
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:53     .text.HAL_PWR_EnableBkUpAccess:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:60     .text.HAL_PWR_EnableBkUpAccess:00000000 HAL_PWR_EnableBkUpAccess
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:77     .text.HAL_PWR_EnableBkUpAccess:00000008 $d
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:82     .text.HAL_PWR_DisableBkUpAccess:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:89     .text.HAL_PWR_DisableBkUpAccess:00000000 HAL_PWR_DisableBkUpAccess
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:106    .text.HAL_PWR_DisableBkUpAccess:00000008 $d
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:111    .text.HAL_PWR_ConfigPVD:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:118    .text.HAL_PWR_ConfigPVD:00000000 HAL_PWR_ConfigPVD
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:205    .text.HAL_PWR_ConfigPVD:0000007c $d
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:211    .text.HAL_PWR_EnablePVD:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:218    .text.HAL_PWR_EnablePVD:00000000 HAL_PWR_EnablePVD
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:235    .text.HAL_PWR_EnablePVD:00000008 $d
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:240    .text.HAL_PWR_DisablePVD:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:247    .text.HAL_PWR_DisablePVD:00000000 HAL_PWR_DisablePVD
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:264    .text.HAL_PWR_DisablePVD:00000008 $d
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:269    .text.HAL_PWR_EnableWakeUpPin:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:276    .text.HAL_PWR_EnableWakeUpPin:00000000 HAL_PWR_EnableWakeUpPin
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:295    .text.HAL_PWR_EnableWakeUpPin:0000000c $d
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:300    .text.HAL_PWR_DisableWakeUpPin:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:307    .text.HAL_PWR_DisableWakeUpPin:00000000 HAL_PWR_DisableWakeUpPin
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:326    .text.HAL_PWR_DisableWakeUpPin:0000000c $d
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:331    .text.HAL_PWR_EnterSLEEPMode:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:338    .text.HAL_PWR_EnterSLEEPMode:00000000 HAL_PWR_EnterSLEEPMode
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:386    .text.HAL_PWR_EnterSLEEPMode:0000001c $d
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:391    .text.HAL_PWR_EnterSTOPMode:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:398    .text.HAL_PWR_EnterSTOPMode:00000000 HAL_PWR_EnterSTOPMode
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:458    .text.HAL_PWR_EnterSTOPMode:00000030 $d
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:464    .text.HAL_PWR_EnterSTANDBYMode:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:471    .text.HAL_PWR_EnterSTANDBYMode:00000000 HAL_PWR_EnterSTANDBYMode
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:500    .text.HAL_PWR_EnterSTANDBYMode:00000018 $d
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:506    .text.HAL_PWR_PVDCallback:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:513    .text.HAL_PWR_PVDCallback:00000000 HAL_PWR_PVDCallback
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:526    .text.HAL_PWR_PVD_IRQHandler:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:533    .text.HAL_PWR_PVD_IRQHandler:00000000 HAL_PWR_PVD_IRQHandler
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:567    .text.HAL_PWR_PVD_IRQHandler:0000001c $d
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:572    .text.HAL_PWR_EnableSleepOnExit:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:579    .text.HAL_PWR_EnableSleepOnExit:00000000 HAL_PWR_EnableSleepOnExit
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:596    .text.HAL_PWR_EnableSleepOnExit:0000000c $d
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:601    .text.HAL_PWR_DisableSleepOnExit:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:608    .text.HAL_PWR_DisableSleepOnExit:00000000 HAL_PWR_DisableSleepOnExit
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:625    .text.HAL_PWR_DisableSleepOnExit:0000000c $d
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:630    .text.HAL_PWR_EnableSEVOnPend:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:637    .text.HAL_PWR_EnableSEVOnPend:00000000 HAL_PWR_EnableSEVOnPend
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:654    .text.HAL_PWR_EnableSEVOnPend:0000000c $d
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:659    .text.HAL_PWR_DisableSEVOnPend:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:666    .text.HAL_PWR_DisableSEVOnPend:00000000 HAL_PWR_DisableSEVOnPend
-C:\Users\luoha\AppData\Local\Temp\ccagud3g.s:683    .text.HAL_PWR_DisableSEVOnPend:0000000c $d
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:18     .text.HAL_PWR_DeInit:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:26     .text.HAL_PWR_DeInit:00000000 HAL_PWR_DeInit
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:48     .text.HAL_PWR_DeInit:00000014 $d
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:53     .text.HAL_PWR_EnableBkUpAccess:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:60     .text.HAL_PWR_EnableBkUpAccess:00000000 HAL_PWR_EnableBkUpAccess
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:77     .text.HAL_PWR_EnableBkUpAccess:00000008 $d
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:82     .text.HAL_PWR_DisableBkUpAccess:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:89     .text.HAL_PWR_DisableBkUpAccess:00000000 HAL_PWR_DisableBkUpAccess
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:106    .text.HAL_PWR_DisableBkUpAccess:00000008 $d
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:111    .text.HAL_PWR_ConfigPVD:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:118    .text.HAL_PWR_ConfigPVD:00000000 HAL_PWR_ConfigPVD
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:205    .text.HAL_PWR_ConfigPVD:0000007c $d
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:211    .text.HAL_PWR_EnablePVD:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:218    .text.HAL_PWR_EnablePVD:00000000 HAL_PWR_EnablePVD
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:235    .text.HAL_PWR_EnablePVD:00000008 $d
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:240    .text.HAL_PWR_DisablePVD:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:247    .text.HAL_PWR_DisablePVD:00000000 HAL_PWR_DisablePVD
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:264    .text.HAL_PWR_DisablePVD:00000008 $d
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:269    .text.HAL_PWR_EnableWakeUpPin:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:276    .text.HAL_PWR_EnableWakeUpPin:00000000 HAL_PWR_EnableWakeUpPin
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:295    .text.HAL_PWR_EnableWakeUpPin:0000000c $d
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:300    .text.HAL_PWR_DisableWakeUpPin:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:307    .text.HAL_PWR_DisableWakeUpPin:00000000 HAL_PWR_DisableWakeUpPin
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:326    .text.HAL_PWR_DisableWakeUpPin:0000000c $d
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:331    .text.HAL_PWR_EnterSLEEPMode:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:338    .text.HAL_PWR_EnterSLEEPMode:00000000 HAL_PWR_EnterSLEEPMode
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:386    .text.HAL_PWR_EnterSLEEPMode:0000001c $d
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:391    .text.HAL_PWR_EnterSTOPMode:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:398    .text.HAL_PWR_EnterSTOPMode:00000000 HAL_PWR_EnterSTOPMode
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:458    .text.HAL_PWR_EnterSTOPMode:00000030 $d
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:464    .text.HAL_PWR_EnterSTANDBYMode:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:471    .text.HAL_PWR_EnterSTANDBYMode:00000000 HAL_PWR_EnterSTANDBYMode
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:500    .text.HAL_PWR_EnterSTANDBYMode:00000018 $d
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:506    .text.HAL_PWR_PVDCallback:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:513    .text.HAL_PWR_PVDCallback:00000000 HAL_PWR_PVDCallback
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:526    .text.HAL_PWR_PVD_IRQHandler:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:533    .text.HAL_PWR_PVD_IRQHandler:00000000 HAL_PWR_PVD_IRQHandler
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:567    .text.HAL_PWR_PVD_IRQHandler:0000001c $d
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:572    .text.HAL_PWR_EnableSleepOnExit:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:579    .text.HAL_PWR_EnableSleepOnExit:00000000 HAL_PWR_EnableSleepOnExit
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:596    .text.HAL_PWR_EnableSleepOnExit:0000000c $d
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:601    .text.HAL_PWR_DisableSleepOnExit:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:608    .text.HAL_PWR_DisableSleepOnExit:00000000 HAL_PWR_DisableSleepOnExit
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:625    .text.HAL_PWR_DisableSleepOnExit:0000000c $d
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:630    .text.HAL_PWR_EnableSEVOnPend:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:637    .text.HAL_PWR_EnableSEVOnPend:00000000 HAL_PWR_EnableSEVOnPend
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:654    .text.HAL_PWR_EnableSEVOnPend:0000000c $d
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:659    .text.HAL_PWR_DisableSEVOnPend:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:666    .text.HAL_PWR_DisableSEVOnPend:00000000 HAL_PWR_DisableSEVOnPend
+C:\Users\luoha\AppData\Local\Temp\cckg1n4P.s:683    .text.HAL_PWR_DisableSEVOnPend:0000000c $d
 
 NO UNDEFINED SYMBOLS

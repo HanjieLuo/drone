@@ -2,7 +2,11 @@
 #define __utils_H
 
 #include "stm32f4xx_hal.h"
+#include "stdio.h"
+// #include "usart.h"
 
-char* itoa(int value, char* result, int base);
+extern UART_HandleTypeDef huart1;
+
+char *itoa(int value, char *result, int base);
 
 #endif /* __uart4_H */

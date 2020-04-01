@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccNZ3Khb.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccn9Vopd.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -26,7 +26,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccNZ3Khb.s 			page 1
   23              		.thumb_func
   24              		.fpu fpv4-sp-d16
   26              	MX_GPIO_Init:
-  27              	.LFB130:
+  27              	.LFB133:
   28              		.file 1 "Src/gpio.c"
    1:Src/gpio.c    **** /**
    2:Src/gpio.c    ****   ******************************************************************************
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccNZ3Khb.s 			page 1
   28:Src/gpio.c    **** /*----------------------------------------------------------------------------*/
   29:Src/gpio.c    **** /* USER CODE BEGIN 1 */
   30:Src/gpio.c    **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccNZ3Khb.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccn9Vopd.s 			page 2
 
 
   31:Src/gpio.c    **** /* USER CODE END 1 */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccNZ3Khb.s 			page 1
   47:Src/gpio.c    ****   __HAL_RCC_GPIOH_CLK_ENABLE();
   67              		.loc 1 47 3 view .LVU9
   68              	.LBB3:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccNZ3Khb.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccn9Vopd.s 			page 3
 
 
   69              		.loc 1 47 3 view .LVU10
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccNZ3Khb.s 			page 1
  114              		.loc 1 56 3 is_stmt 1 view .LVU26
  115              		.loc 1 56 24 is_stmt 0 view .LVU27
  116 0066 0593     		str	r3, [sp, #20]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccNZ3Khb.s 			page 4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccn9Vopd.s 			page 4
 
 
   57:Src/gpio.c    ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -205,7 +205,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccNZ3Khb.s 			page 1
  134 0078 00380240 		.word	1073887232
  135 007c 00080240 		.word	1073874944
  136              		.cfi_endproc
- 137              	.LFE130:
+ 137              	.LFE133:
  139              		.text
  140              	.Letext0:
  141              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
@@ -213,16 +213,24 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccNZ3Khb.s 			page 1
  143              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
  144              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
  145              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
- 146              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
- 147              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccNZ3Khb.s 			page 5
+ 146              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 147              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 148              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 149              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 150              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 151              		.file 12 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
+ 152              		.file 13 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
+ 153              		.file 14 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
+ 154              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
+ 155              		.file 16 "Modules/include/utils.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccn9Vopd.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gpio.c
-C:\Users\luoha\AppData\Local\Temp\ccNZ3Khb.s:18     .text.MX_GPIO_Init:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccNZ3Khb.s:26     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-C:\Users\luoha\AppData\Local\Temp\ccNZ3Khb.s:134    .text.MX_GPIO_Init:00000078 $d
+C:\Users\luoha\AppData\Local\Temp\ccn9Vopd.s:18     .text.MX_GPIO_Init:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccn9Vopd.s:26     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\luoha\AppData\Local\Temp\ccn9Vopd.s:134    .text.MX_GPIO_Init:00000078 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin

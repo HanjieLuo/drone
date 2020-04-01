@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -26,7 +26,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 1
   23              		.thumb_func
   24              		.fpu fpv4-sp-d16
   26              	MX_UART4_Init:
-  27              	.LFB130:
+  27              	.LFB133:
   28              		.file 1 "Src/usart.c"
    1:Src/usart.c   **** /**
    2:Src/usart.c   ****   ******************************************************************************
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 1
   28:Src/usart.c   **** UART_HandleTypeDef huart1;
   29:Src/usart.c   **** DMA_HandleTypeDef hdma_uart4_rx;
   30:Src/usart.c   **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s 			page 2
 
 
   31:Src/usart.c   **** /* UART4 init function */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 1
   70              	.LVL0:
   71              		.loc 1 43 6 view .LVU19
   72 0022 00B9     		cbnz	r0, .L4
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s 			page 3
 
 
   73              	.L1:
@@ -142,7 +142,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 1
   85 002c 00000000 		.word	huart4
   86 0030 004C0040 		.word	1073761280
   87              		.cfi_endproc
-  88              	.LFE130:
+  88              	.LFE133:
   90              		.section	.text.MX_USART1_UART_Init,"ax",%progbits
   91              		.align	1
   92              		.global	MX_USART1_UART_Init
@@ -151,7 +151,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 1
   95              		.thumb_func
   96              		.fpu fpv4-sp-d16
   98              	MX_USART1_UART_Init:
-  99              	.LFB131:
+  99              	.LFB134:
   49:Src/usart.c   **** /* USART1 init function */
   50:Src/usart.c   **** 
   51:Src/usart.c   **** void MX_USART1_UART_Init(void)
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 1
  116 0008 4FF41653 		mov	r3, #9600
  117 000c 4360     		str	r3, [r0, #4]
   56:Src/usart.c   ****   huart1.Init.WordLength = UART_WORDLENGTH_8B;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s 			page 4
 
 
  118              		.loc 1 56 3 is_stmt 1 view .LVU28
@@ -234,11 +234,11 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 1
  156 002c 00000000 		.word	huart1
  157 0030 00100140 		.word	1073811456
  158              		.cfi_endproc
- 159              	.LFE131:
+ 159              	.LFE134:
  161              		.section	.text.HAL_UART_MspInit,"ax",%progbits
  162              		.align	1
  163              		.global	HAL_UART_MspInit
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s 			page 5
 
 
  164              		.syntax unified
@@ -247,7 +247,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 1
  167              		.fpu fpv4-sp-d16
  169              	HAL_UART_MspInit:
  170              	.LVL4:
- 171              	.LFB132:
+ 171              	.LFB135:
   68:Src/usart.c   **** 
   69:Src/usart.c   **** void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
   70:Src/usart.c   **** {
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 1
   86:Src/usart.c   ****     GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1;
   87:Src/usart.c   ****     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
   88:Src/usart.c   ****     GPIO_InitStruct.Pull = GPIO_PULLUP;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 6
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s 			page 6
 
 
   89:Src/usart.c   ****     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 1
  136:Src/usart.c   ****     GPIO_InitStruct.Alternate = GPIO_AF7_USART1;
  137:Src/usart.c   ****     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
  138:Src/usart.c   **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 7
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s 			page 7
 
 
  139:Src/usart.c   ****   /* USER CODE BEGIN USART1_MspInit 1 */
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 1
  247              		.loc 1 81 5 view .LVU66
  248 0046 1B6B     		ldr	r3, [r3, #48]
  249 0048 03F00103 		and	r3, r3, #1
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 8
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s 			page 8
 
 
  250 004c 0293     		str	r3, [sp, #8]
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 1
   96:Src/usart.c   ****     hdma_uart4_rx.Init.Direction = DMA_PERIPH_TO_MEMORY;
  287              		.loc 1 96 32 is_stmt 0 view .LVU84
  288 0070 4FF00063 		mov	r3, #134217728
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 9
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s 			page 9
 
 
  289 0074 4360     		str	r3, [r0, #4]
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 1
  110:Src/usart.c   **** 
  324              		.loc 1 110 5 is_stmt 1 view .LVU104
  110:Src/usart.c   **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 10
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s 			page 10
 
 
  325              		.loc 1 110 5 view .LVU105
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 1
  367              		.loc 1 127 5 view .LVU117
  368              	.LBB5:
  127:Src/usart.c   ****     /**USART1 GPIO Configuration    
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 11
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s 			page 11
 
 
  369              		.loc 1 127 5 view .LVU118
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 1
  407 00fa FFF7FEFF 		bl	HAL_GPIO_Init
  408              	.LVL15:
  409              		.loc 1 143 1 view .LVU135
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 12
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s 			page 12
 
 
  410 00fe 8EE7     		b	.L13
@@ -672,7 +672,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 1
  418 0110 00000000 		.word	hdma_uart4_rx
  419 0114 40600240 		.word	1073897536
  420              		.cfi_endproc
- 421              	.LFE132:
+ 421              	.LFE135:
  423              		.section	.text.HAL_UART_MspDeInit,"ax",%progbits
  424              		.align	1
  425              		.global	HAL_UART_MspDeInit
@@ -682,7 +682,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 1
  429              		.fpu fpv4-sp-d16
  431              	HAL_UART_MspDeInit:
  432              	.LVL16:
- 433              	.LFB133:
+ 433              	.LFB136:
  144:Src/usart.c   **** 
  145:Src/usart.c   **** void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
  146:Src/usart.c   **** {
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 1
  159:Src/usart.c   ****     */
  160:Src/usart.c   ****     HAL_GPIO_DeInit(GPIOA, GPIO_PIN_0|GPIO_PIN_1);
  161:Src/usart.c   **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 13
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s 			page 13
 
 
  162:Src/usart.c   ****     /* UART4 DMA DeInit */
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 1
  474 0024 FFF7FEFF 		bl	HAL_GPIO_DeInit
  475              	.LVL20:
  163:Src/usart.c   **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 14
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s 			page 14
 
 
  476              		.loc 1 163 5 is_stmt 1 view .LVU148
@@ -817,7 +817,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 1
  505 0054 00100140 		.word	1073811456
  506 0058 00000240 		.word	1073872896
  507              		.cfi_endproc
- 508              	.LFE133:
+ 508              	.LFE136:
  510              		.comm	hdma_uart4_rx,96,4
  511              		.comm	huart1,64,4
  512              		.comm	huart4,64,4
@@ -833,29 +833,37 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 1
  522              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
  523              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
  524              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 525              		.file 12 "Inc/usart.h"
- 526              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
- 527              		.file 14 "Inc/main.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s 			page 15
+ 525              		.file 12 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
+ 526              		.file 13 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
+ 527              		.file 14 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
+ 528              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
+ 529              		.file 16 "Modules/include/utils.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s 			page 15
+
+
+ 530              		.file 17 "Inc/usart.h"
+ 531              		.file 18 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
+ 532              		.file 19 "Inc/main.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s 			page 16
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 usart.c
-C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s:18     .text.MX_UART4_Init:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s:26     .text.MX_UART4_Init:00000000 MX_UART4_Init
-C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s:85     .text.MX_UART4_Init:0000002c $d
+C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s:18     .text.MX_UART4_Init:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s:26     .text.MX_UART4_Init:00000000 MX_UART4_Init
+C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s:85     .text.MX_UART4_Init:0000002c $d
                             *COM*:00000040 huart4
-C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s:91     .text.MX_USART1_UART_Init:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s:98     .text.MX_USART1_UART_Init:00000000 MX_USART1_UART_Init
-C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s:156    .text.MX_USART1_UART_Init:0000002c $d
+C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s:91     .text.MX_USART1_UART_Init:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s:98     .text.MX_USART1_UART_Init:00000000 MX_USART1_UART_Init
+C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s:156    .text.MX_USART1_UART_Init:0000002c $d
                             *COM*:00000040 huart1
-C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s:162    .text.HAL_UART_MspInit:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s:169    .text.HAL_UART_MspInit:00000000 HAL_UART_MspInit
-C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s:414    .text.HAL_UART_MspInit:00000100 $d
+C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s:162    .text.HAL_UART_MspInit:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s:169    .text.HAL_UART_MspInit:00000000 HAL_UART_MspInit
+C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s:414    .text.HAL_UART_MspInit:00000100 $d
                             *COM*:00000060 hdma_uart4_rx
-C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s:424    .text.HAL_UART_MspDeInit:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s:431    .text.HAL_UART_MspDeInit:00000000 HAL_UART_MspDeInit
-C:\Users\luoha\AppData\Local\Temp\ccVdIB2b.s:504    .text.HAL_UART_MspDeInit:00000050 $d
+C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s:424    .text.HAL_UART_MspDeInit:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s:431    .text.HAL_UART_MspDeInit:00000000 HAL_UART_MspDeInit
+C:\Users\luoha\AppData\Local\Temp\ccVuXLCh.s:504    .text.HAL_UART_MspDeInit:00000050 $d
 
 UNDEFINED SYMBOLS
 HAL_UART_Init

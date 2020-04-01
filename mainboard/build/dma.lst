@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccdNmQXa.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccNWtMuf.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -26,7 +26,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccdNmQXa.s 			page 1
   23              		.thumb_func
   24              		.fpu fpv4-sp-d16
   26              	MX_DMA_Init:
-  27              	.LFB130:
+  27              	.LFB133:
   28              		.file 1 "Src/dma.c"
    1:Src/dma.c     **** /**
    2:Src/dma.c     ****   ******************************************************************************
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccdNmQXa.s 			page 1
   28:Src/dma.c     **** /* Configure DMA                                                              */
   29:Src/dma.c     **** /*----------------------------------------------------------------------------*/
   30:Src/dma.c     **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccdNmQXa.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccNWtMuf.s 			page 2
 
 
   31:Src/dma.c     **** /* USER CODE BEGIN 1 */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccdNmQXa.s 			page 1
   66              	.LVL1:
   48:Src/dma.c     **** 
   49:Src/dma.c     **** }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccdNmQXa.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccNWtMuf.s 			page 3
 
 
   67              		.loc 1 49 1 is_stmt 0 view .LVU9
@@ -132,7 +132,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccdNmQXa.s 			page 1
   75              	.L3:
   76 0030 00380240 		.word	1073887232
   77              		.cfi_endproc
-  78              	.LFE130:
+  78              	.LFE133:
   80              		.text
   81              	.Letext0:
   82              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
@@ -140,16 +140,24 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccdNmQXa.s 			page 1
   84              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
   85              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
   86              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
-  87              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
-  88              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccdNmQXa.s 			page 4
+  87              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+  88              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+  89              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+  90              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+  91              		.file 11 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
+  92              		.file 12 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
+  93              		.file 13 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
+  94              		.file 14 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
+  95              		.file 15 "Modules/include/utils.h"
+  96              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccNWtMuf.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 dma.c
-C:\Users\luoha\AppData\Local\Temp\ccdNmQXa.s:18     .text.MX_DMA_Init:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccdNmQXa.s:26     .text.MX_DMA_Init:00000000 MX_DMA_Init
-C:\Users\luoha\AppData\Local\Temp\ccdNmQXa.s:76     .text.MX_DMA_Init:00000030 $d
+C:\Users\luoha\AppData\Local\Temp\ccNWtMuf.s:18     .text.MX_DMA_Init:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccNWtMuf.s:26     .text.MX_DMA_Init:00000000 MX_DMA_Init
+C:\Users\luoha\AppData\Local\Temp\ccNWtMuf.s:76     .text.MX_DMA_Init:00000030 $d
 
 UNDEFINED SYMBOLS
 HAL_NVIC_SetPriority
