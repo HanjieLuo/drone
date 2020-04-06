@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
   27:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** /** @addtogroup STM32F4xx_HAL_Driver
   28:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   * @{
   29:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 2
 
 
   30:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
   84:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   *         order to modify the RTC Clock source, as consequence RTC registers (including
   85:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   *         the backup registers) and RCC_BDCR register are set to their reset values.
   86:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   *
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 3
 
 
   87:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   * @retval HAL status
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  141:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
  142:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* Configure SAI1 Clock source */
  143:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     __HAL_RCC_SAI1_CONFIG(PeriphClkInit->Sai1ClockSelection);
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 4
 
 
  144:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* Enable the PLLI2S when it's used as clock source for SAI */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  198:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         return HAL_TIMEOUT;
  199:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       }
  200:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 5
 
 
  201:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* Reset the Backup domain only if the RTC Clock source selection is modified from reset value 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  255:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* Check the parameters */
  256:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     assert_param(IS_RCC_CECCLKSOURCE(PeriphClkInit->CecClockSelection));
  257:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 6
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 6
 
 
  258:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* Configure the CEC clock source */
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  312:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* Disable the PLLI2S */
  313:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     __HAL_RCC_PLLI2S_DISABLE();
  314:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* Get tick */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 7
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 7
 
 
  315:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     tickstart = HAL_GetTick();
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  369:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     if((((PeriphClkInit->PeriphClockSelection) & RCC_PERIPHCLK_SPDIFRX) == RCC_PERIPHCLK_SPDIFRX) &
  370:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     {
  371:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       /* check for Parameters */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 8
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 8
 
 
  372:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       assert_param(IS_RCC_PLLI2SP_VALUE(PeriphClkInit->PLLI2S.PLLI2SP));
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  426:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       }
  427:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     }
  428:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 9
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 9
 
 
  429:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* Check the PLLSAI division factors */
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  483:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
  484:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** /**
  485:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   * @brief  Get the RCC_PeriphCLKInitTypeDef according to the internal
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 10
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 10
 
 
  486:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   *         RCC configuration registers.
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  540:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /* Get the CLK48 clock configuration ----------------------------------------*/
  541:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   PeriphClkInit->Clk48ClockSelection = __HAL_RCC_GET_CLK48_SOURCE();
  542:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 11
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 11
 
 
  543:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /* Get the SDIO clock configuration ----------------------------------------*/
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  597:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           {
  598:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****             /* In Case the PLL Source is HSI (Internal Clock) */
  599:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****             vcoinput = (HSI_VALUE / (uint32_t)(RCC->PLLSAICFGR & RCC_PLLSAICFGR_PLLSAIM));
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 12
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 12
 
 
  600:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           }
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  654:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****             /* In Case the PLL Source is HSE (External Clock) */
  655:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****             vcoinput = ((HSE_VALUE / (uint32_t)(RCC->PLLCFGR & RCC_PLLCFGR_PLLM)));
  656:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 13
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 13
 
 
  657:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  711:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****             vcoinput = (uint32_t)(HSE_VALUE / (uint32_t)(RCC->PLLI2SCFGR & RCC_PLLI2SCFGR_PLLI2SM))
  712:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           }
  713:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           else
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 14
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 14
 
 
  714:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           {
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  768:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     }
  769:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   case RCC_PERIPHCLK_I2S_APB2:
  770:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     {
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 15
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 15
 
 
  771:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       /* Get the current I2S source */
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  825:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         }
  826:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         /* Check if I2S clock selection is HSI or HSE depending from PLL source Clock */
  827:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       case RCC_I2SAPB2CLKSOURCE_PLLSRC:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 16
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 16
 
 
  828:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         {
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  882:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* Check the parameters */
  883:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     assert_param(IS_RCC_CLK48CLKSOURCE(PeriphClkInit->Clk48ClockSelection));
  884:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 17
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 17
 
 
  885:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* Configure the CLK48 clock source */
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  939:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /*---------------------------- SAI configuration -------------------------*/
  940:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* In Case of SAI Clock Configuration through PLLI2S, PLLI2SQ and PLLI2S_DIVQ must
  941:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****        be added only for SAI configuration */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 18
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 18
 
 
  942:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     if(((PeriphClkInit->PeriphClockSelection) & RCC_PERIPHCLK_SAI_PLLI2S) == (RCC_PERIPHCLK_SAI_PLL
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  996:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     assert_param(IS_RCC_PLLSAIN_VALUE(PeriphClkInit->PLLSAI.PLLSAIN));
  997:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
  998:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* Disable PLLSAI Clock */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 19
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 19
 
 
  999:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     __HAL_RCC_PLLSAI_DISABLE();
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 1053:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****        (PeriphClkInit->Clk48ClockSelection == RCC_CLK48CLKSOURCE_PLLSAIP))
 1054:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     {
 1055:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       assert_param(IS_RCC_PLLSAIP_VALUE(PeriphClkInit->PLLSAI.PLLSAIP));
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 20
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 20
 
 
 1056:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 1110:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       /* Store the content of BDCR register before the reset of Backup Domain */
 1111:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       tmpreg1 = (RCC->BDCR & ~(RCC_BDCR_RTCSEL));
 1112:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       /* RTC Clock selection can be changed only if the Backup Domain is reset */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 21
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 21
 
 
 1113:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       __HAL_RCC_BACKUPRESET_FORCE();
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 1167:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /* Get the PLLSAI Clock configuration --------------------------------------*/
 1168:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   PeriphClkInit->PLLSAI.PLLSAIN = (uint32_t)((RCC->PLLSAICFGR & RCC_PLLSAICFGR_PLLSAIN) >> RCC_PLLS
 1169:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   PeriphClkInit->PLLSAI.PLLSAIR = (uint32_t)((RCC->PLLSAICFGR & RCC_PLLSAICFGR_PLLSAIR) >> RCC_PLLS
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 22
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 22
 
 
 1170:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   PeriphClkInit->PLLSAI.PLLSAIQ = (uint32_t)((RCC->PLLSAICFGR & RCC_PLLSAICFGR_PLLSAIQ) >> RCC_PLLS
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 1224:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           frequency = EXTERNAL_CLOCK_VALUE;
 1225:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           break;
 1226:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 23
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 23
 
 
 1227:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       /* Check if I2S clock selection is PLLI2S VCO output clock divided by PLLI2SR used as I2S clo
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 1281:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   uint32_t tmpreg1 = 0U;
 1282:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** #if defined(STM32F413xx) || defined(STM32F423xx)
 1283:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   uint32_t plli2sq = 0U;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 24
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 24
 
 
 1284:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** #endif /* STM32F413xx || STM32F423xx */
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 1338:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     {
 1339:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       /* Check for PLL/DIVR parameters */
 1340:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       assert_param(IS_RCC_PLL_DIVR_VALUE(PeriphClkInit->PLLDivR));
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 25
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 25
 
 
 1341:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 1395:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     }
 1396:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* Reset the Backup domain only if the RTC Clock source selection is modified from reset value 
 1397:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     tmpreg1 = (RCC->BDCR & RCC_BDCR_RTCSEL);
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 26
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 26
 
 
 1398:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     if((tmpreg1 != 0x00000000U) && ((tmpreg1) != (PeriphClkInit->RTCClockSelection & RCC_BDCR_RTCSE
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 1452:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
 1453:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     /* Configure the SDIO clock source */
 1454:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     __HAL_RCC_CLK48_CONFIG(PeriphClkInit->Clk48ClockSelection);
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 27
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 27
 
 
 1455:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 1509:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       assert_param(IS_RCC_PLLI2SQ_VALUE(PeriphClkInit->PLLI2S.PLLI2SQ));
 1510:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
 1511:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       /* Configure the PLLI2S division factors */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 28
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 28
 
 
 1512:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       /* PLLI2S_VCO = f(VCO clock) = f(PLLI2S clock input) * (PLLI2SN/PLLI2SM)*/
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 1566:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   }
 1567:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /*--------------------------------------------------------------------------*/
 1568:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 29
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 29
 
 
 1569:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /*-------------------- DFSDM1 clock source configuration -------------------*/
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 1623:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /*--------------------------------------------------------------------------*/
 1624:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** #endif /* STM32F413xx || STM32F423xx */
 1625:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 30
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 30
 
 
 1626:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   return HAL_OK;
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 1680:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /* Get the FMPI2C1 clock configuration -------------------------------------*/
 1681:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   PeriphClkInit->Fmpi2c1ClockSelection = __HAL_RCC_GET_FMPI2C1_SOURCE();
 1682:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 31
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 31
 
 
 1683:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /* Get the CLK48 clock configuration ---------------------------------------*/
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 1737:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   uint32_t vcoinput = 0U;
 1738:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   uint32_t srcclk = 0U;
 1739:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /* This variable used to store the VCO Output (value in Hz) */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 32
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 32
 
 
 1740:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   uint32_t vcooutput = 0U;
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 1794:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           }
 1795:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           else
 1796:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           {
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 33
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 33
 
 
 1797:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****             /* Get the I2S source clock value */
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 1851:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           {
 1852:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****             /* Configure the PLLI2S division factor */
 1853:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****             /* PLLI2S_VCO Input  = PLL_SOURCE/PLLI2SM */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 34
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 34
 
 
 1854:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****             if((RCC->PLLCFGR & RCC_PLLCFGR_PLLSRC) == RCC_PLLSOURCE_HSE)
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 1908:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         {
 1909:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           frequency = 0U;
 1910:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           break;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 35
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 35
 
 
 1911:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         }
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 1965:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     if((tmpreg1 != 0x00000000U) && ((tmpreg1) != (PeriphClkInit->RTCClockSelection & RCC_BDCR_RTCSE
 1966:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     {
 1967:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       /* Store the content of BDCR register before the reset of Backup Domain */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 36
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 36
 
 
 1968:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       tmpreg1 = (RCC->BDCR & ~(RCC_BDCR_RTCSEL));
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 2022:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
 2023:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /*---------------------------- I2S Configuration ---------------------------*/
 2024:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   if(((PeriphClkInit->PeriphClockSelection) & RCC_PERIPHCLK_I2S) == RCC_PERIPHCLK_I2S)
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 37
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 37
 
 
 2025:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   {
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 2079:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /* This variable used to store the I2S clock frequency (value in Hz) */
 2080:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   uint32_t frequency = 0U;
 2081:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /* This variable used to store the VCO Input (value in Hz) */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 38
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 38
 
 
 2082:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   uint32_t vcoinput = 0U;
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 2136:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         /* Clock not enabled for I2S*/
 2137:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       default:
 2138:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         {
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 39
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 39
 
 
 2139:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           frequency = 0U;
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 2193:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         /* return in case of Timeout detected */
 2194:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         return HAL_TIMEOUT;
 2195:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 40
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 40
 
 
 2196:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     }
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 2250:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       {
 2251:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         /* return in case of Timeout detected */
 2252:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         return HAL_TIMEOUT;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 41
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 41
 
 
 2253:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       }
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 2307:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       tmpreg1 = ((RCC->PLLSAICFGR & RCC_PLLSAICFGR_PLLSAIQ) >> RCC_PLLSAICFGR_PLLSAIQ_Pos);
 2308:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       /* PLLSAI_VCO Input  = PLL_SOURCE/PLLM */
 2309:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       /* PLLSAI_VCO Output = PLLSAI_VCO Input * PLLSAIN */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 42
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 42
 
 
 2310:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       /* LTDC_CLK(first level) = PLLSAI_VCO Output/PLLSAIR */
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 2364:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
 2365:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       /* Wait for LSE reactivation if LSE was enable prior to Backup Domain reset */
 2366:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       if(HAL_IS_BIT_SET(RCC->BDCR, RCC_BDCR_LSEON))
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 43
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 43
 
 
 2367:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       {
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 2421:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   PeriphClkInit->RTCClockSelection = (uint32_t)((tempreg) | (RCC->BDCR & RCC_BDCR_RTCSEL));
 2422:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
 2423:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   if ((RCC->DCKCFGR & RCC_DCKCFGR_TIMPRE) == RESET)
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 44
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 44
 
 
 2424:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   {
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 2478:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****             vcoinput = (uint32_t)(HSI_VALUE / (uint32_t)(RCC->PLLCFGR & RCC_PLLCFGR_PLLM));
 2479:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           }
 2480:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 45
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 45
 
 
 2481:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           /* PLLI2S_VCO Output = PLLI2S_VCO Input * PLLI2SN */
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 2518:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   uint32_t tmpreg1 = 0U;
   47              		.loc 1 2518 3 view .LVU3
 2519:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 46
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 46
 
 
 2520:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /* Check the parameters */
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 2565:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     {
 2566:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       if((HAL_GetTick() - tickstart ) > PLLI2S_TIMEOUT_VALUE)
 2567:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       {
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 47
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 47
 
 
 2568:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         /* return in case of Timeout detected */
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 2616:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         {
 2617:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           if((HAL_GetTick() - tickstart ) > RCC_LSE_TIMEOUT_VALUE)
 2618:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           {
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 48
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 48
 
 
 2619:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****             return HAL_TIMEOUT;
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
   93              		.loc 1 2538 10 view .LVU20
 2538:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     {
   94              		.loc 1 2538 11 is_stmt 0 view .LVU21
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 49
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 49
 
 
   95 0028 474B     		ldr	r3, .L27+4
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 2564:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     {
  136              		.loc 1 2564 10 view .LVU35
  137 0060 13F0006F 		tst	r3, #134217728
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 50
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 50
 
 
  138 0064 D3D1     		bne	.L2
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 2587:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
  178              		.loc 1 2587 5 is_stmt 1 view .LVU50
 2587:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 51
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 51
 
 
  179              		.loc 1 2587 17 is_stmt 0 view .LVU51
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  218 00be E268     		ldr	r2, [r4, #12]
 2598:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     {
  219              		.loc 1 2598 84 discriminator 1 view .LVU67
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 52
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 52
 
 
  220 00c0 02F44072 		and	r2, r2, #768
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  259 00f2 9368     		ldr	r3, [r2, #8]
  260 00f4 23F4F813 		bic	r3, r3, #2031616
  261 00f8 9360     		str	r3, [r2, #8]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 53
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 53
 
 
  262              	.L14:
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  302 012a 0320     		movs	r0, #3
  303 012c 74E7     		b	.L4
  304              	.L26:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 54
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 54
 
 
 2624:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   }
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 2650:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /* Get the PLLI2S Clock configuration --------------------------------------*/
 2651:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   PeriphClkInit->PLLI2S.PLLI2SN = (uint32_t)((RCC->PLLI2SCFGR & RCC_PLLI2SCFGR_PLLI2SN) >> RCC_PLLI
  345              		.loc 1 2651 3 is_stmt 1 view .LVU102
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 55
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 55
 
 
  346              		.loc 1 2651 50 is_stmt 0 view .LVU103
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  380 002c 00380240 		.word	1073887232
  381              		.cfi_endproc
  382              	.LFE131:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 56
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 56
 
 
  384              		.section	.text.HAL_RCCEx_GetPeriphCLKFreq,"ax",%progbits
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 2695:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       srcclk = __HAL_RCC_GET_I2S_SOURCE();
  414              		.loc 1 2695 7 is_stmt 1 view .LVU127
  415              		.loc 1 2695 16 is_stmt 0 view .LVU128
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 57
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 57
 
 
  416 0008 164B     		ldr	r3, .L40
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 2725:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           {
 2726:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****             /* Get the I2S source clock value */
 2727:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****             vcoinput = (uint32_t)(HSE_VALUE / (uint32_t)(RCC->PLLCFGR & RCC_PLLCFGR_PLLM));
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 58
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 58
 
 
  441              		.loc 1 2727 13 is_stmt 1 view .LVU136
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  480 0052 03F03F03 		and	r3, r3, #63
 2732:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****           }
  481              		.loc 1 2732 22 view .LVU153
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 59
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 59
 
 
  482 0056 0648     		ldr	r0, .L40+12
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 2758:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   * @brief  Select LSE mode
 2759:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   *
 2760:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   * @note   This mode is only available for STM32F410xx/STM32F411xx/STM32F446xx/STM32F469xx/STM32F4
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 60
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 60
 
 
 2761:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   *
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  526              		.cfi_offset 3, -16
  527              		.cfi_offset 4, -12
  528              		.cfi_offset 5, -8
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 61
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 61
 
 
  529              		.cfi_offset 14, -4
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  560              		.loc 1 2829 7 view .LVU175
  561 0020 0228     		cmp	r0, #2
  562 0022 F5D9     		bls	.L43
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 62
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 62
 
 
 2830:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     {
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 2881:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****  return HAL_OK;
 2882:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** }
  566              		.loc 1 2882 1 view .LVU177
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 63
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 63
 
 
  567 0026 38BD     		pop	{r3, r4, r5, pc}
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  608              	.L52:
 2881:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** }
  609              		.loc 1 2881 9 view .LVU191
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 64
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 64
 
 
  610 005c 0020     		movs	r0, #0
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  651              	.L56:
  652              		.loc 1 2897 8 view .LVU198
  653              		.loc 1 2897 9 is_stmt 0 view .LVU199
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 65
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 65
 
 
  654 000e 084B     		ldr	r3, .L62+4
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 2911:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** #if defined(RCC_PLLSAI_SUPPORT)
 2912:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** /**
 2913:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   * @brief  Enable PLLSAI.
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 66
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 66
 
 
 2914:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   * @param  PLLSAIInit  pointer to an RCC_PLLSAIInitTypeDef structure that
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 2968:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   __HAL_RCC_PLLSAI_CONFIG(PLLSAIInit->PLLSAIN, PLLSAIInit->PLLSAIQ, PLLSAIInit->PLLSAIR);
 2969:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** #endif /* STM32F446xx */
 2970:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 67
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 67
 
 
 2971:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /* Enable the PLLSAI */
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 3025:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   *
 3026:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   * @note   The system frequency computed by this function is not the real
 3027:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   *         frequency in the chip. It is calculated based on the predefined
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 68
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 68
 
 
 3028:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   *         constant and the selected clock source:
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 3082:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****         pllvco = (uint32_t) ((((uint64_t) HSE_VALUE * ((uint64_t) ((RCC->PLLCFGR & RCC_PLLCFGR_PLLN
 3083:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       }
 3084:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       else
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 69
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 69
 
 
 3085:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       {
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 3139:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   *            - All interrupts disabled
 3140:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   * @note   This function doesn't modify the configuration of the
 3141:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   *            - Peripheral clocks
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 70
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 70
 
 
 3142:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   *            - LSI, LSE and RTC clocks
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  734              		.loc 1 3158 24 view .LVU220
  735 0020 001B     		subs	r0, r0, r4
  736              		.loc 1 3158 8 view .LVU221
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 71
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 71
 
 
  737 0022 0228     		cmp	r0, #2
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 3208:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****       return HAL_TIMEOUT;
 3209:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     }
 3210:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 72
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 72
 
 
 3211:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 3265:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   RCC->PLLI2SCFGR = RCC_PLLI2SCFGR_PLLI2SM_4 | RCC_PLLI2SCFGR_PLLI2SN_6 | RCC_PLLI2SCFGR_PLLI2SN_7 
 3266:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** #endif /* STM32F412Cx || STM32F412Rx || STM32F412Vx || STM32F412Zx || STM32F413xx || STM32F423xx ||
 3267:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 73
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 73
 
 
 3268:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   /* Reset PLLSAICFGR register */
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  747 002a 3E4D     		ldr	r5, .L87
  748 002c 2B68     		ldr	r3, [r5]
  749 002e 43F08003 		orr	r3, r3, #128
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 74
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 74
 
 
  750 0032 2B60     		str	r3, [r5]
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 3186:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
  790              		.loc 1 3186 3 is_stmt 1 view .LVU239
  791 0060 304A     		ldr	r2, .L87
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 75
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 75
 
 
  792 0062 1368     		ldr	r3, [r2]
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  832              		.loc 1 3204 9 view .LVU253
 3204:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****   {
  833              		.loc 1 3204 10 is_stmt 0 view .LVU254
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 76
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 76
 
 
  834 0092 244B     		ldr	r3, .L87
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
 3222:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c ****     {
  874              		.loc 1 3222 10 is_stmt 0 view .LVU269
  875 00c4 FFF7FEFF 		bl	HAL_GetTick
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 77
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 77
 
 
  876              	.LVL75:
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  917 0108 42F08072 		orr	r2, r2, #16777216
  918 010c 5A67     		str	r2, [r3, #116]
 3304:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 78
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 78
 
 
  919              		.loc 1 3304 3 view .LVU283
@@ -4665,29 +4665,29 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 1
  956              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
  957              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h"
  958              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s 			page 79
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s 			page 79
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f4xx_hal_rcc_ex.c
-C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s:18     .text.HAL_RCCEx_PeriphCLKConfig:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s:26     .text.HAL_RCCEx_PeriphCLKConfig:00000000 HAL_RCCEx_PeriphCLKConfig
-C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s:317    .text.HAL_RCCEx_PeriphCLKConfig:00000144 $d
-C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s:325    .text.HAL_RCCEx_GetPeriphCLKConfig:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s:332    .text.HAL_RCCEx_GetPeriphCLKConfig:00000000 HAL_RCCEx_GetPeriphCLKConfig
-C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s:380    .text.HAL_RCCEx_GetPeriphCLKConfig:0000002c $d
-C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s:385    .text.HAL_RCCEx_GetPeriphCLKFreq:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s:392    .text.HAL_RCCEx_GetPeriphCLKFreq:00000000 HAL_RCCEx_GetPeriphCLKFreq
-C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s:500    .text.HAL_RCCEx_GetPeriphCLKFreq:00000064 $d
-C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s:508    .text.HAL_RCCEx_EnablePLLI2S:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s:515    .text.HAL_RCCEx_EnablePLLI2S:00000000 HAL_RCCEx_EnablePLLI2S
-C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s:615    .text.HAL_RCCEx_EnablePLLI2S:00000060 $d
-C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s:621    .text.HAL_RCCEx_DisablePLLI2S:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s:628    .text.HAL_RCCEx_DisablePLLI2S:00000000 HAL_RCCEx_DisablePLLI2S
-C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s:682    .text.HAL_RCCEx_DisablePLLI2S:0000002c $d
-C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s:688    .text.HAL_RCC_DeInit:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s:695    .text.HAL_RCC_DeInit:00000000 HAL_RCC_DeInit
-C:\Users\luoha\AppData\Local\Temp\ccSz5Kod.s:939    .text.HAL_RCC_DeInit:00000124 $d
+C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s:18     .text.HAL_RCCEx_PeriphCLKConfig:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s:26     .text.HAL_RCCEx_PeriphCLKConfig:00000000 HAL_RCCEx_PeriphCLKConfig
+C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s:317    .text.HAL_RCCEx_PeriphCLKConfig:00000144 $d
+C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s:325    .text.HAL_RCCEx_GetPeriphCLKConfig:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s:332    .text.HAL_RCCEx_GetPeriphCLKConfig:00000000 HAL_RCCEx_GetPeriphCLKConfig
+C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s:380    .text.HAL_RCCEx_GetPeriphCLKConfig:0000002c $d
+C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s:385    .text.HAL_RCCEx_GetPeriphCLKFreq:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s:392    .text.HAL_RCCEx_GetPeriphCLKFreq:00000000 HAL_RCCEx_GetPeriphCLKFreq
+C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s:500    .text.HAL_RCCEx_GetPeriphCLKFreq:00000064 $d
+C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s:508    .text.HAL_RCCEx_EnablePLLI2S:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s:515    .text.HAL_RCCEx_EnablePLLI2S:00000000 HAL_RCCEx_EnablePLLI2S
+C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s:615    .text.HAL_RCCEx_EnablePLLI2S:00000060 $d
+C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s:621    .text.HAL_RCCEx_DisablePLLI2S:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s:628    .text.HAL_RCCEx_DisablePLLI2S:00000000 HAL_RCCEx_DisablePLLI2S
+C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s:682    .text.HAL_RCCEx_DisablePLLI2S:0000002c $d
+C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s:688    .text.HAL_RCC_DeInit:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s:695    .text.HAL_RCC_DeInit:00000000 HAL_RCC_DeInit
+C:\Users\luoha\AppData\Local\Temp\ccvrM7IW.s:939    .text.HAL_RCC_DeInit:00000124 $d
 
 UNDEFINED SYMBOLS
 HAL_GetTick

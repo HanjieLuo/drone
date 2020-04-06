@@ -11,11 +11,19 @@ void UART4_IRQHandler(void) {
     if (__HAL_UART_GET_FLAG(&huart4, UART_FLAG_IDLE) != RESET) {
         __HAL_UART_CLEAR_IDLEFLAG(&huart4);
         UartRxCheck();
+    // }
+    } else {
+        HAL_UART_IRQHandler(&huart4);
+        // printf("UART4_IRQHandler");
+        // __HAL_UART_CLEAR_IDLEFLAG(&huart4);
+        // __HAL_UART_DISABLE_IT(&huart4, UART_IT_TC);
+        //  huart4.gState = HAL_UART_STATE_READY;
     }
 }
 
 void DMA1_Stream2_IRQHandler(void) {
     HAL_DMA_IRQHandler(huart4.hdmarx);
+    // HAL_DMA_IRQHandler(&hdma_uart4_rx);
     // // char buffer[] = "DMA1_Stream2_IRQHandler\n";
     // // HAL_UART_Transmit(&huart1, (uint8_t*)buffer, sizeof(buffer), 1000);
 
@@ -27,6 +35,11 @@ void DMA1_Stream2_IRQHandler(void) {
     // } else {
     //     HAL_DMA_IRQHandler(huart4.hdmarx);
     // }
+}
+
+void DMA1_Stream4_IRQHandler(void) {
+     HAL_DMA_IRQHandler(huart4.hdmatx);
+    // HAL_DMA_IRQHandler(&hdma_uart4_tx);
 }
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
@@ -48,26 +61,22 @@ void UartRxCheck(void) {
     /* Calculate current position in buffer */
     pos = RX_BUFFER_SIZE - __HAL_DMA_GET_COUNTER(huart4.hdmarx);
 
-    char buffer[10];
+    // char buffer[10];
     // itoa(old_pos, buffer, 10);
-    // HAL_UART_Transmit(&huart1, (uint8_t *)buffer, sizeof(buffer), 1000);
-
-    itoa(pos, buffer, 10);
-    printf("%s\n", buffer);
     // HAL_UART_Transmit(&huart1, (uint8_t *)buffer, sizeof(buffer), 1000);
 
     if (pos != old_pos) {    /* Check change in received data */
         if (pos > old_pos) { /* Current position is over previous one */
             /* We are in "linear" mode */
             /* Process data directly by subtracting "pointers" */
-            // usart_process_data(&usart_rx_dma_buffer[old_pos], pos - old_pos);
+            MavlinkParse(&rx_buffer[old_pos], pos - old_pos);
         } else {
             /* We are in "overflow" mode */
             /* First process data to the end of buffer */
-            // usart_process_data(&usart_rx_dma_buffer[old_pos], ARRAY_LEN(usart_rx_dma_buffer) - old_pos);
+            MavlinkParse(&rx_buffer[old_pos], RX_BUFFER_SIZE - old_pos);
             /* Check and continue with beginning of buffer */
             if (pos > 0) {
-                // usart_process_data(&usart_rx_dma_buffer[0], pos);
+                MavlinkParse(&rx_buffer[0], pos);
             }
         }
     }
@@ -91,12 +100,12 @@ void MavlinkParse(uint8_t *buffer, size_t len) {
             //         break;
             //     }
             // }
-            // Serial.println("=======");
-            // Serial.println(msg.msgid);
-            // Serial.println(msg.seq);
-            // Serial.println(msg.compid);
-            // Serial.println(msg.sysid);
-            // Serial.println("=======");
+            printf("===============\r\n");
+            printf("%u\r\n", msg.msgid);
+            printf("%u\r\n", msg.seq);
+            printf("%u\r\n", msg.compid);
+            printf("%u\r\n", msg.sysid);
+            printf("===============\r\n");
         }
     }
 }

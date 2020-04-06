@@ -2,6 +2,9 @@
     "folders": [
         {
             "path": "."
+        },
+        {
+            "path": "C:\\Users\\luoha\\Documents\\workspace\\drone\\code\\Client"
         }
     ],
     "settings": {

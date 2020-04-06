@@ -45,5 +45,5 @@ if __name__ == "__main__":
     
     while(True):
         client.set_rc_channel_pwm(1, 1000)
-        time.sleep(1)
+        time.sleep(0.1)
     

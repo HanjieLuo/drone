@@ -94,9 +94,8 @@ int main(void)
   MX_USART1_UART_Init();
   MX_UART4_Init();
   /* USER CODE BEGIN 2 */
-  // unsigned char text[]="Begin\n";
-  // HAL_UART_Transmit(&huart1, (uint8_t*)text, sizeof(text), 1000);
   Uart4Init();
+  uint8_t buffer[] = "Hello world\r\n";
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */
@@ -112,6 +111,10 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+    HAL_UART_Transmit_DMA(&huart4, buffer, sizeof(buffer));
+    // HAL_UART_Transmit_DMA(&huart1, buffer, sizeof(buffer));
+    // printf("%d ok1\r\n", 10);
+    HAL_Delay(1000);
   }
   /* USER CODE END 3 */
 }
