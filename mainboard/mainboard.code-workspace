@@ -13,7 +13,15 @@
             "stm32f407xx.h": "c",
             "cmsis_os.h": "c",
             "uart4.h": "c",
-            "usart.h": "c"
+            "usart.h": "c",
+            "freertos.h": "c",
+            "istream": "cpp",
+            "ostream": "cpp",
+            "xiosbase": "cpp",
+            "xlocnum": "cpp",
+            "*.rh": "cpp",
+            "*.tcc": "cpp",
+            "fstream": "cpp"
         },
         "cortex-debug.armToolchainPath": "e:/GNU Tools Arm Embedded/9 2019-q4-major/bin",
         "cortex-debug.openocdPath": "E:\\OpenOCD-20200310-0.10.0\\bin\\openocd.EXE"

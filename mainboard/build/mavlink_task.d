@@ -1,5 +1,6 @@
-build/main.o: Src/main.c Inc/main.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+build/mavlink_task.o: Modules/src/mavlink_task.c \
+ Modules/include/mavlink_task.h Modules/include/uart4.h Inc/usart.h \
+ Inc/main.h Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  Inc/stm32f4xx_hal_conf.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
@@ -26,7 +27,6 @@ build/main.o: Src/main.c Inc/main.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  Modules/include/utils.h \
- Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  Inc/FreeRTOSConfig.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
@@ -34,18 +34,10 @@ build/main.o: Src/main.c Inc/main.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
  Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
+ Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/timers.h Inc/dma.h \
- Inc/main.h Inc/usart.h Inc/gpio.h Modules/include/mavlink_task.h \
- Modules/include/uart4.h Modules/include/utils.h \
- Modules/include/MAVLink/common/mavlink.h \
+ Modules/include/utils.h Modules/include/MAVLink/common/mavlink.h \
  Modules/include/MAVLink/common/version.h \
  Modules/include/MAVLink/common/common.h \
  Modules/include/MAVLink/common/../protocol.h \
@@ -254,6 +246,12 @@ build/main.o: Src/main.c Inc/main.h \
  Modules/include/MAVLink/common/./mavlink_msg_open_drone_id_message_pack.h \
  Modules/include/MAVLink/common/../mavlink_get_info.h
 
+Modules/include/mavlink_task.h:
+
+Modules/include/uart4.h:
+
+Inc/usart.h:
+
 Inc/main.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
@@ -314,8 +312,6 @@ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 
 Modules/include/utils.h:
 
-Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:
-
 Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 
 Inc/FreeRTOSConfig.h:
@@ -330,35 +326,11 @@ Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h:
 
 Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
 
+Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
+
 Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 
 Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
-
-Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
-
-Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
-
-Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
-
-Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h:
-
-Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
-
-Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h:
-
-Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
-
-Inc/dma.h:
-
-Inc/main.h:
-
-Inc/usart.h:
-
-Inc/gpio.h:
-
-Modules/include/mavlink_task.h:
-
-Modules/include/uart4.h:
 
 Modules/include/utils.h:
 

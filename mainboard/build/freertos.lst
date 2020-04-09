@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccHPq2Az.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cczwCIe1.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccHPq2Az.s 			page 1
   22:Src/freertos.c **** #include "FreeRTOS.h"
   23:Src/freertos.c **** #include "task.h"
   24:Src/freertos.c **** #include "main.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccHPq2Az.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cczwCIe1.s 			page 2
 
 
   25:Src/freertos.c **** #include "cmsis_os.h"
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccHPq2Az.s 			page 1
   79:Src/freertos.c ****   * @brief  FreeRTOS initialization
   80:Src/freertos.c ****   * @param  None
   81:Src/freertos.c ****   * @retval None
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccHPq2Az.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cczwCIe1.s 			page 3
 
 
   82:Src/freertos.c ****   */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccHPq2Az.s 			page 1
   45              	.LVL1:
   46              	.L2:
  124:Src/freertos.c ****   /* USER CODE BEGIN StartDefaultTask */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccHPq2Az.s 			page 4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cczwCIe1.s 			page 4
 
 
  125:Src/freertos.c ****   /* Infinite loop */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccHPq2Az.s 			page 1
   90 0010 00000000 		.word	.LANCHOR0
   91 0014 00000000 		.word	.LANCHOR1
   92              		.cfi_endproc
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccHPq2Az.s 			page 5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cczwCIe1.s 			page 5
 
 
   93              	.LFE138:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccHPq2Az.s 			page 1
  143 0024 00000000 		.word	.LANCHOR2
  144 0028 00000000 		.word	defaultTaskHandle
  145              		.cfi_endproc
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccHPq2Az.s 			page 6
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cczwCIe1.s 			page 6
 
 
  146              	.LFE139:
@@ -354,26 +354,26 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccHPq2Az.s 			page 1
  193              		.file 18 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
  194              		.file 19 "Modules/include/utils.h"
  195              		.file 20 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccHPq2Az.s 			page 7
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cczwCIe1.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 freertos.c
-C:\Users\luoha\AppData\Local\Temp\ccHPq2Az.s:15     .rodata.str1.4:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccHPq2Az.s:22     .text.StartDefaultTask:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccHPq2Az.s:30     .text.StartDefaultTask:00000000 StartDefaultTask
-C:\Users\luoha\AppData\Local\Temp\ccHPq2Az.s:58     .text.vApplicationGetIdleTaskMemory:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccHPq2Az.s:65     .text.vApplicationGetIdleTaskMemory:00000000 vApplicationGetIdleTaskMemory
-C:\Users\luoha\AppData\Local\Temp\ccHPq2Az.s:90     .text.vApplicationGetIdleTaskMemory:00000010 $d
-C:\Users\luoha\AppData\Local\Temp\ccHPq2Az.s:96     .text.MX_FREERTOS_Init:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccHPq2Az.s:103    .text.MX_FREERTOS_Init:00000000 MX_FREERTOS_Init
-C:\Users\luoha\AppData\Local\Temp\ccHPq2Az.s:143    .text.MX_FREERTOS_Init:00000024 $d
+C:\Users\luoha\AppData\Local\Temp\cczwCIe1.s:15     .rodata.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cczwCIe1.s:22     .text.StartDefaultTask:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cczwCIe1.s:30     .text.StartDefaultTask:00000000 StartDefaultTask
+C:\Users\luoha\AppData\Local\Temp\cczwCIe1.s:58     .text.vApplicationGetIdleTaskMemory:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cczwCIe1.s:65     .text.vApplicationGetIdleTaskMemory:00000000 vApplicationGetIdleTaskMemory
+C:\Users\luoha\AppData\Local\Temp\cczwCIe1.s:90     .text.vApplicationGetIdleTaskMemory:00000010 $d
+C:\Users\luoha\AppData\Local\Temp\cczwCIe1.s:96     .text.MX_FREERTOS_Init:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cczwCIe1.s:103    .text.MX_FREERTOS_Init:00000000 MX_FREERTOS_Init
+C:\Users\luoha\AppData\Local\Temp\cczwCIe1.s:143    .text.MX_FREERTOS_Init:00000024 $d
                             *COM*:00000004 defaultTaskHandle
-C:\Users\luoha\AppData\Local\Temp\ccHPq2Az.s:150    .rodata:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccHPq2Az.s:162    .bss.xIdleStack:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccHPq2Az.s:166    .bss.xIdleStack:00000000 xIdleStack
-C:\Users\luoha\AppData\Local\Temp\ccHPq2Az.s:169    .bss.xIdleTaskTCBBuffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccHPq2Az.s:173    .bss.xIdleTaskTCBBuffer:00000000 xIdleTaskTCBBuffer
+C:\Users\luoha\AppData\Local\Temp\cczwCIe1.s:150    .rodata:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cczwCIe1.s:162    .bss.xIdleStack:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cczwCIe1.s:166    .bss.xIdleStack:00000000 xIdleStack
+C:\Users\luoha\AppData\Local\Temp\cczwCIe1.s:169    .bss.xIdleTaskTCBBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cczwCIe1.s:173    .bss.xIdleTaskTCBBuffer:00000000 xIdleTaskTCBBuffer
 
 UNDEFINED SYMBOLS
 osDelay

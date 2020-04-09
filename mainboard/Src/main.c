@@ -27,7 +27,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "uart4.h"
+#include "mavlink_task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -94,14 +94,14 @@ int main(void)
   MX_USART1_UART_Init();
   MX_UART4_Init();
   /* USER CODE BEGIN 2 */
-  Uart4Init();
-  uint8_t buffer[] = "Hello world\r\n";
+  MavlinkInit();
+  // uint8_t buffer[] = "Hello world\r\n";
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */
-  // MX_FREERTOS_Init(); 
+  MX_FREERTOS_Init(); 
   /* Start scheduler */
-  // osKernelStart();
+  osKernelStart();
  
   /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
@@ -111,10 +111,14 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    HAL_UART_Transmit_DMA(&huart4, buffer, sizeof(buffer));
+    // HAL_UART_Transmit_DMA(&huart4, buffer, sizeof(buffer));
     // HAL_UART_Transmit_DMA(&huart1, buffer, sizeof(buffer));
     // printf("%d ok1\r\n", 10);
-    HAL_Delay(1000);
+    // HAL_Delay(10);
+    // printf("%d ok2\r\n", 10);
+    // HAL_Delay(10);
+    // printf("%d ok3\r\n", 10);
+    // HAL_Delay(2000);
   }
   /* USER CODE END 3 */
 }

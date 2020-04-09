@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 1
   28:Src/usart.c   **** UART_HandleTypeDef huart1;
   29:Src/usart.c   **** DMA_HandleTypeDef hdma_uart4_tx;
   30:Src/usart.c   **** DMA_HandleTypeDef hdma_uart4_rx;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s 			page 2
 
 
   31:Src/usart.c   **** DMA_HandleTypeDef hdma_usart1_rx;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 1
   67              		.loc 1 46 3 is_stmt 1 view .LVU17
   68              		.loc 1 46 7 is_stmt 0 view .LVU18
   69 001e FFF7FEFF 		bl	HAL_UART_Init
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s 			page 3
 
 
   70              	.LVL0:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 1
   58:Src/usart.c   ****   huart1.Init.BaudRate = 9600;
  114              		.loc 1 58 3 is_stmt 1 view .LVU26
  115              		.loc 1 58 24 is_stmt 0 view .LVU27
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s 			page 4
 
 
  116 0008 4FF41653 		mov	r3, #9600
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 1
  157 0030 00100140 		.word	1073811456
  158              		.cfi_endproc
  159              	.LFE134:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s 			page 5
 
 
  161              		.section	.text.HAL_UART_MspInit,"ax",%progbits
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 1
   85:Src/usart.c   ****     /**UART4 GPIO Configuration    
   86:Src/usart.c   ****     PA0-WKUP     ------> UART4_TX
   87:Src/usart.c   ****     PA1     ------> UART4_RX 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 6
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s 			page 6
 
 
   88:Src/usart.c   ****     */
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 1
  203              		.loc 1 140 10 is_stmt 0 view .LVU54
  204 001a 674A     		ldr	r2, .L27+4
  205 001c 9342     		cmp	r3, r2
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 7
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s 			page 7
 
 
  206 001e 67D0     		beq	.L22
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 1
  192:Src/usart.c   ****       Error_Handler();
  193:Src/usart.c   ****     }
  194:Src/usart.c   **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 8
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s 			page 8
 
 
  195:Src/usart.c   ****     __HAL_LINKDMA(uartHandle,hdmatx,hdma_usart1_tx);
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 1
  244 0040 42F00102 		orr	r2, r2, #1
  245 0044 1A63     		str	r2, [r3, #48]
   84:Src/usart.c   ****     /**UART4 GPIO Configuration    
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 9
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s 			page 9
 
 
  246              		.loc 1 84 5 view .LVU65
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 1
  284 006e 0360     		str	r3, [r0]
   99:Src/usart.c   ****     hdma_uart4_tx.Init.Direction = DMA_MEMORY_TO_PERIPH;
  285              		.loc 1 99 5 is_stmt 1 view .LVU82
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 10
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s 			page 10
 
 
   99:Src/usart.c   ****     hdma_uart4_tx.Init.Direction = DMA_MEMORY_TO_PERIPH;
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 1
  320              		.loc 1 108 8 view .LVU102
  321 0094 30BB     		cbnz	r0, .L23
  322              	.L15:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 11
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s 			page 11
 
 
  113:Src/usart.c   **** 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 1
  357              		.loc 1 123 29 is_stmt 0 view .LVU122
  358 00b8 4FF48072 		mov	r2, #256
  359 00bc C261     		str	r2, [r0, #28]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 12
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s 			page 12
 
 
  124:Src/usart.c   ****     hdma_uart4_rx.Init.FIFOMode = DMA_FIFOMODE_DISABLE;
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 1
  399 00ea FFF7FEFF 		bl	Error_Handler
  400              	.LVL14:
  401 00ee EDE7     		b	.L16
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 13
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s 			page 13
 
 
  402              	.LVL15:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 1
  154:Src/usart.c   ****     GPIO_InitStruct.Pull = GPIO_NOPULL;
  442              		.loc 1 154 5 is_stmt 1 view .LVU152
  154:Src/usart.c   ****     GPIO_InitStruct.Pull = GPIO_NOPULL;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 14
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s 			page 14
 
 
  443              		.loc 1 154 26 is_stmt 0 view .LVU153
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 1
  166:Src/usart.c   ****     hdma_usart1_rx.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
  480              		.loc 1 166 32 is_stmt 0 view .LVU171
  481 0148 4FF48063 		mov	r3, #1024
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 15
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s 			page 15
 
 
  482 014c 0361     		str	r3, [r0, #16]
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 1
  181:Src/usart.c   ****     hdma_usart1_tx.Init.Direction = DMA_MEMORY_TO_PERIPH;
  517              		.loc 1 181 5 is_stmt 1 view .LVU191
  181:Src/usart.c   ****     hdma_usart1_tx.Init.Direction = DMA_MEMORY_TO_PERIPH;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 16
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s 			page 16
 
 
  518              		.loc 1 181 33 is_stmt 0 view .LVU192
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 1
  553 018c 70B9     		cbnz	r0, .L26
  554              	.L19:
  195:Src/usart.c   **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 17
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s 			page 17
 
 
  555              		.loc 1 195 5 is_stmt 1 view .LVU212
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 1
  603              		.align	1
  604              		.global	HAL_UART_MspDeInit
  605              		.syntax unified
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 18
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s 			page 18
 
 
  606              		.thumb
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 1
  632              		.loc 1 233 10 is_stmt 0 view .LVU227
  633 000c 174A     		ldr	r2, .L35+4
  634 000e 9342     		cmp	r3, r2
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 19
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s 			page 19
 
 
  635 0010 14D0     		beq	.L34
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 1
  660 0030 FFF7FEFF 		bl	HAL_DMA_DeInit
  661              	.LVL30:
  228:Src/usart.c   ****   /* USER CODE BEGIN UART4_MspDeInit 1 */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 20
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s 			page 20
 
 
  662              		.loc 1 228 5 view .LVU234
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 1
  711              	.Letext0:
  712              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
  713              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 21
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s 			page 21
 
 
  714              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
@@ -1217,29 +1217,29 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 1
  727              		.file 17 "Inc/usart.h"
  728              		.file 18 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
  729              		.file 19 "Inc/main.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s 			page 22
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s 			page 22
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 usart.c
-C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s:18     .text.MX_UART4_Init:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s:26     .text.MX_UART4_Init:00000000 MX_UART4_Init
-C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s:85     .text.MX_UART4_Init:0000002c $d
+C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s:18     .text.MX_UART4_Init:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s:26     .text.MX_UART4_Init:00000000 MX_UART4_Init
+C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s:85     .text.MX_UART4_Init:0000002c $d
                             *COM*:00000040 huart4
-C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s:91     .text.MX_USART1_UART_Init:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s:98     .text.MX_USART1_UART_Init:00000000 MX_USART1_UART_Init
-C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s:156    .text.MX_USART1_UART_Init:0000002c $d
+C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s:91     .text.MX_USART1_UART_Init:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s:98     .text.MX_USART1_UART_Init:00000000 MX_USART1_UART_Init
+C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s:156    .text.MX_USART1_UART_Init:0000002c $d
                             *COM*:00000040 huart1
-C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s:162    .text.HAL_UART_MspInit:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s:169    .text.HAL_UART_MspInit:00000000 HAL_UART_MspInit
-C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s:587    .text.HAL_UART_MspInit:000001b4 $d
+C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s:162    .text.HAL_UART_MspInit:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s:169    .text.HAL_UART_MspInit:00000000 HAL_UART_MspInit
+C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s:587    .text.HAL_UART_MspInit:000001b4 $d
                             *COM*:00000060 hdma_uart4_tx
                             *COM*:00000060 hdma_uart4_rx
                             *COM*:00000060 hdma_usart1_rx
                             *COM*:00000060 hdma_usart1_tx
-C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s:603    .text.HAL_UART_MspDeInit:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s:610    .text.HAL_UART_MspDeInit:00000000 HAL_UART_MspDeInit
-C:\Users\luoha\AppData\Local\Temp\ccThpTvB.s:698    .text.HAL_UART_MspDeInit:00000068 $d
+C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s:603    .text.HAL_UART_MspDeInit:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s:610    .text.HAL_UART_MspDeInit:00000000 HAL_UART_MspDeInit
+C:\Users\luoha\AppData\Local\Temp\cccp9C0i.s:698    .text.HAL_UART_MspDeInit:00000068 $d
 
 UNDEFINED SYMBOLS
 HAL_UART_Init

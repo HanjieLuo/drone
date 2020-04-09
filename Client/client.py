@@ -42,8 +42,8 @@ class Client:
 
 if __name__ == "__main__":
     client = Client("COM3")
-    
+    # client.set_rc_channel_pwm(1, 1000)
     while(True):
         client.set_rc_channel_pwm(1, 1000)
-        time.sleep(0.1)
+        time.sleep(0.01)
     
