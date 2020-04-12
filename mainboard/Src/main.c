@@ -22,12 +22,14 @@
 #include "main.h"
 #include "cmsis_os.h"
 #include "dma.h"
+#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "mavlink_task.h"
+#include "motor.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -37,6 +39,8 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+extern TIM_HandleTypeDef htim4;
+uint16_t compare = 0;
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -93,8 +97,10 @@ int main(void)
   MX_DMA_Init();
   MX_USART1_UART_Init();
   MX_UART4_Init();
+  // MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
   MavlinkInit();
+  // MotorInit();
   // uint8_t buffer[] = "Hello world\r\n";
   /* USER CODE END 2 */
 
@@ -111,6 +117,16 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+    // printf("%u\r\n", compare);
+    // htim4.Instance->CCR1 = compare;
+    // htim4.Instance->CCR2 = compare;
+    // htim4.Instance->CCR3 = compare;
+    // htim4.Instance->CCR4 = compare;
+    // HAL_Delay(1);
+    // compare += 1;
+    // if (compare > 2799) {
+    //   compare = 0;
+    // }
     // HAL_UART_Transmit_DMA(&huart4, buffer, sizeof(buffer));
     // HAL_UART_Transmit_DMA(&huart1, buffer, sizeof(buffer));
     // printf("%d ok1\r\n", 10);

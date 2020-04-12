@@ -1,6 +1,6 @@
 build/mavlink_task.o: Modules/src/mavlink_task.c \
- Modules/include/mavlink_task.h Modules/include/uart4.h Inc/usart.h \
- Inc/main.h Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+ Modules/include/mavlink_task.h Inc/main.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  Inc/stm32f4xx_hal_conf.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
@@ -26,7 +26,7 @@ build/mavlink_task.o: Modules/src/mavlink_task.c \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- Modules/include/utils.h \
+ Modules/include/utils.h Modules/include/uart4.h Inc/usart.h Inc/main.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  Inc/FreeRTOSConfig.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
@@ -37,7 +37,7 @@ build/mavlink_task.o: Modules/src/mavlink_task.c \
  Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
- Modules/include/utils.h Modules/include/MAVLink/common/mavlink.h \
+ Modules/include/MAVLink/common/mavlink.h \
  Modules/include/MAVLink/common/version.h \
  Modules/include/MAVLink/common/common.h \
  Modules/include/MAVLink/common/../protocol.h \
@@ -248,10 +248,6 @@ build/mavlink_task.o: Modules/src/mavlink_task.c \
 
 Modules/include/mavlink_task.h:
 
-Modules/include/uart4.h:
-
-Inc/usart.h:
-
 Inc/main.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
@@ -312,6 +308,12 @@ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 
 Modules/include/utils.h:
 
+Modules/include/uart4.h:
+
+Inc/usart.h:
+
+Inc/main.h:
+
 Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 
 Inc/FreeRTOSConfig.h:
@@ -331,8 +333,6 @@ Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 
 Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
-
-Modules/include/utils.h:
 
 Modules/include/MAVLink/common/mavlink.h:
 

@@ -6,6 +6,7 @@ xQueueHandle uart4_queue;
 STATIC_MEM_QUEUE_ALLOC(uart4_queue, 5, sizeof(uart4_queue_buffer));
 
 void Uart4Init(void) {
+    printf("Uart4Init");
     uart4_queue = STATIC_MEM_QUEUE_CREATE(uart4_queue);
 
     //使能IDLE中断
@@ -52,7 +53,7 @@ void UartRxCheck(void) {
     /* Calculate current position in buffer */
     pos = RX_BUFFER_SIZE - __HAL_DMA_GET_COUNTER(huart4.hdmarx);
 
-    // printf("%u\r\n", pos);
+    printf("%u\r\n", pos);
 
     if (pos != old_pos) {    /* Check change in received data */
         if (pos > old_pos) { /* Current position is over previous one */

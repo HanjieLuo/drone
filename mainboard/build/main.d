@@ -43,8 +43,8 @@ build/main.o: Src/main.c Inc/main.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/timers.h Inc/dma.h \
- Inc/main.h Inc/usart.h Inc/gpio.h Modules/include/mavlink_task.h \
- Modules/include/uart4.h Modules/include/utils.h \
+ Inc/main.h Inc/tim.h Inc/usart.h Inc/gpio.h \
+ Modules/include/mavlink_task.h Modules/include/uart4.h \
  Modules/include/MAVLink/common/mavlink.h \
  Modules/include/MAVLink/common/version.h \
  Modules/include/MAVLink/common/common.h \
@@ -252,7 +252,8 @@ build/main.o: Src/main.c Inc/main.h \
  Modules/include/MAVLink/common/./mavlink_msg_open_drone_id_system.h \
  Modules/include/MAVLink/common/./mavlink_msg_open_drone_id_operator_id.h \
  Modules/include/MAVLink/common/./mavlink_msg_open_drone_id_message_pack.h \
- Modules/include/MAVLink/common/../mavlink_get_info.h
+ Modules/include/MAVLink/common/../mavlink_get_info.h \
+ Modules/include/motor.h
 
 Inc/main.h:
 
@@ -352,6 +353,8 @@ Inc/dma.h:
 
 Inc/main.h:
 
+Inc/tim.h:
+
 Inc/usart.h:
 
 Inc/gpio.h:
@@ -359,8 +362,6 @@ Inc/gpio.h:
 Modules/include/mavlink_task.h:
 
 Modules/include/uart4.h:
-
-Modules/include/utils.h:
 
 Modules/include/MAVLink/common/mavlink.h:
 
@@ -777,3 +778,5 @@ Modules/include/MAVLink/common/./mavlink_msg_open_drone_id_operator_id.h:
 Modules/include/MAVLink/common/./mavlink_msg_open_drone_id_message_pack.h:
 
 Modules/include/MAVLink/common/../mavlink_get_info.h:
+
+Modules/include/motor.h:
