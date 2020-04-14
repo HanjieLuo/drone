@@ -1,0 +1,115 @@
+{
+    "env": {
+        "____________________USER_FIELDS_CAN_BE_MODIFIED____________________": "",
+        "user_cSources": [
+            "Modules/src/uart4.c",
+            "Modules/src/motor.c"
+            "Modules/src/mavlink_task.c",
+            "Modules/src/utils.c"
+        ],
+        "user_asmSources": [],
+        "user_ldSources": [],
+        "user_cIncludes": [
+            "Modules/include"
+        ],
+        "user_asmIncludes": [],
+        "user_ldIncludes": [],
+        "user_cDefines": [],
+        "user_asmDefines": [],
+        "user_cFlags": [],
+        "user_asmFlags": [],
+        "user_ldFlags": [],
+        "____________________DO_NOT_MODIFY_FIELDS_BELOW____________________": "",
+        "cubemx_sourceFiles": [
+            "Src/main.c",
+            "Src/gpio.c",
+            "Src/dma.c",
+            "Src/freertos.c",
+            "Src/tim.c",
+            "Src/usart.c",
+            "Src/stm32f4xx_it.c",
+            "Src/stm32f4xx_hal_msp.c",
+            "Src/stm32f4xx_hal_timebase_tim.c",
+            "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c",
+            "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c",
+            "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c",
+            "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c",
+            "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c",
+            "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c",
+            "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c",
+            "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c",
+            "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c",
+            "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c",
+            "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c",
+            "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c",
+            "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c",
+            "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c",
+            "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c",
+            "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c",
+            "Src/system_stm32f4xx.c",
+            "Middlewares/Third_Party/FreeRTOS/Source/croutine.c",
+            "Middlewares/Third_Party/FreeRTOS/Source/event_groups.c",
+            "Middlewares/Third_Party/FreeRTOS/Source/list.c",
+            "Middlewares/Third_Party/FreeRTOS/Source/queue.c",
+            "Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c",
+            "Middlewares/Third_Party/FreeRTOS/Source/tasks.c",
+            "Middlewares/Third_Party/FreeRTOS/Source/timers.c",
+            "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c",
+            "Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c",
+            "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c",
+            "startup_stm32f407xx.s"
+        ],
+        "cubemx_includes": [
+            "Inc",
+            "Drivers/STM32F4xx_HAL_Driver/Inc",
+            "Drivers/STM32F4xx_HAL_Driver/Inc/Legacy",
+            "Middlewares/Third_Party/FreeRTOS/Source/include",
+            "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS",
+            "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
+            "Drivers/CMSIS/Device/ST/STM32F4xx/Include",
+            "Drivers/CMSIS/Include",
+            "Drivers/CMSIS/Include"
+        ],
+        "cubemx_defines": [
+            "USE_HAL_DRIVER",
+            "STM32F407xx"
+        ],
+        "gccExePath": "e:\\GNU Tools Arm Embedded\\9 2019-q4-major\\bin\\arm-none-eabi-gcc.EXE",
+        "gccIncludePath": "e:/GNU Tools Arm Embedded/9 2019-q4-major/lib/gcc/arm-none-eabi/9.2.1/include"
+    },
+    "configurations": [
+        {
+            "name": "mainboard",
+            "intelliSenseMode": "msvc-x64",
+            "includePath": [
+                "${workspaceFolder}",
+                "${cubemx_includes}",
+                "${gccIncludePath}",
+                "${user_cIncludes}",
+                "${user_asmIncludes}",
+                "${user_ldIncludes}"
+            ],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}",
+                    "${cubemx_includes}",
+                    "${gccIncludePath}",
+                    "${user_cIncludes}",
+                    "${user_asmIncludes}",
+                    "${user_ldIncludes}"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "defines": [
+                "${cubemx_defines}",
+                "${user_cDefines}",
+                "${user_asmDefines}"
+            ],
+            "forcedInclude": [],
+            "compilerPath": "${gccExePath}",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

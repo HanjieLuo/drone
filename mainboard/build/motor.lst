@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cclZqu8l.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccEy4e8I.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cclZqu8l.s 			page 1
   48              		.loc 1 8 5 is_stmt 1 view .LVU6
   49              		.loc 1 8 26 is_stmt 0 view .LVU7
   50 000c D963     		str	r1, [r3, #60]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cclZqu8l.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccEy4e8I.s 			page 2
 
 
    9:Modules/src/motor.c ****     htim4.Instance->CCR4 = 0;
@@ -89,7 +89,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cclZqu8l.s 			page 1
   70 0028 2046     		mov	r0, r4
   71 002a FFF7FEFF 		bl	HAL_TIM_PWM_Start
   72              	.LVL3:
-  15:Modules/src/motor.c **** }...
+  15:Modules/src/motor.c **** }
   73              		.loc 1 15 1 is_stmt 0 view .LVU14
   74 002e 10BD     		pop	{r4, pc}
   75              	.L4:
@@ -98,32 +98,126 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cclZqu8l.s 			page 1
   78 0030 00000000 		.word	htim4
   79              		.cfi_endproc
   80              	.LFE133:
-  82              		.text
-  83              	.Letext0:
-  84              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
-  85              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
-  86              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
-  87              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
-  88              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
-  89              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
-  90              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
-  91              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
-  92              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
-  93              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
-  94              		.file 12 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
-  95              		.file 13 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
-  96              		.file 14 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
-  97              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
-  98              		.file 16 "Modules/include/utils.h"
-  99              		.file 17 "Inc/tim.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cclZqu8l.s 			page 3
+  82              		.section	.text.SetMotor,"ax",%progbits
+  83              		.align	1
+  84              		.global	SetMotor
+  85              		.syntax unified
+  86              		.thumb
+  87              		.thumb_func
+  88              		.fpu fpv4-sp-d16
+  90              	SetMotor:
+  91              	.LVL4:
+  92              	.LFB134:
+  16:Modules/src/motor.c **** 
+  17:Modules/src/motor.c **** void SetMotor(uint16_t m1, uint16_t m2, u_int16_t m3, u_int16_t m4) {
+  93              		.loc 1 17 69 is_stmt 1 view -0
+  94              		.cfi_startproc
+  95              		@ args = 0, pretend = 0, frame = 0
+  96              		@ frame_needed = 0, uses_anonymous_args = 0
+  97              		@ link register save eliminated.
+  98              		.loc 1 17 69 is_stmt 0 view .LVU16
+  99 0000 50B4     		push	{r4, r6}
+ 100              	.LCFI1:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccEy4e8I.s 			page 3
+
+
+ 101              		.cfi_def_cfa_offset 8
+ 102              		.cfi_offset 4, -8
+ 103              		.cfi_offset 6, -4
+  18:Modules/src/motor.c ****     uint16_t period = htim4.Instance->ARR;
+ 104              		.loc 1 18 5 is_stmt 1 view .LVU17
+ 105              		.loc 1 18 28 is_stmt 0 view .LVU18
+ 106 0002 0B4C     		ldr	r4, .L7
+ 107 0004 2668     		ldr	r6, [r4]
+ 108              		.loc 1 18 37 view .LVU19
+ 109 0006 F46A     		ldr	r4, [r6, #44]
+ 110              		.loc 1 18 14 view .LVU20
+ 111 0008 A4B2     		uxth	r4, r4
+ 112              	.LVL5:
+  19:Modules/src/motor.c **** 
+  20:Modules/src/motor.c ****     htim4.Instance->CCR1 = (m1 > period)? period : m1;
+ 113              		.loc 1 20 5 is_stmt 1 view .LVU21
+ 114              		.loc 1 20 50 is_stmt 0 view .LVU22
+ 115 000a A042     		cmp	r0, r4
+ 116 000c 28BF     		it	cs
+ 117 000e 2046     		movcs	r0, r4
+ 118              	.LVL6:
+ 119              		.loc 1 20 26 view .LVU23
+ 120 0010 7063     		str	r0, [r6, #52]
+  21:Modules/src/motor.c ****     htim4.Instance->CCR2 = (m2 > period)? period : m2;
+ 121              		.loc 1 21 5 is_stmt 1 view .LVU24
+ 122              		.loc 1 21 50 is_stmt 0 view .LVU25
+ 123 0012 A142     		cmp	r1, r4
+ 124 0014 28BF     		it	cs
+ 125 0016 2146     		movcs	r1, r4
+ 126              	.LVL7:
+ 127              		.loc 1 21 26 view .LVU26
+ 128 0018 B163     		str	r1, [r6, #56]
+  22:Modules/src/motor.c ****     htim4.Instance->CCR3 = (m3 > period)? period : m3;
+ 129              		.loc 1 22 5 is_stmt 1 view .LVU27
+ 130              		.loc 1 22 50 is_stmt 0 view .LVU28
+ 131 001a A242     		cmp	r2, r4
+ 132 001c 28BF     		it	cs
+ 133 001e 2246     		movcs	r2, r4
+ 134              	.LVL8:
+ 135              		.loc 1 22 26 view .LVU29
+ 136 0020 F263     		str	r2, [r6, #60]
+  23:Modules/src/motor.c ****     htim4.Instance->CCR4 = (m4 > period)? period : m4;
+ 137              		.loc 1 23 5 is_stmt 1 view .LVU30
+ 138              		.loc 1 23 50 is_stmt 0 view .LVU31
+ 139 0022 9C42     		cmp	r4, r3
+ 140 0024 28BF     		it	cs
+ 141 0026 1C46     		movcs	r4, r3
+ 142              	.LVL9:
+ 143              		.loc 1 23 26 view .LVU32
+ 144 0028 3464     		str	r4, [r6, #64]
+  24:Modules/src/motor.c **** }...
+ 145              		.loc 1 24 1 view .LVU33
+ 146 002a 50BC     		pop	{r4, r6}
+ 147              	.LCFI2:
+ 148              		.cfi_restore 6
+ 149              		.cfi_restore 4
+ 150              		.cfi_def_cfa_offset 0
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccEy4e8I.s 			page 4
+
+
+ 151 002c 7047     		bx	lr
+ 152              	.L8:
+ 153 002e 00BF     		.align	2
+ 154              	.L7:
+ 155 0030 00000000 		.word	htim4
+ 156              		.cfi_endproc
+ 157              	.LFE134:
+ 159              		.text
+ 160              	.Letext0:
+ 161              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
+ 162              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 163              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 164              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 165              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 166              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 167              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 168              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 169              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 170              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 171              		.file 12 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
+ 172              		.file 13 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
+ 173              		.file 14 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
+ 174              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
+ 175              		.file 16 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\types.h"
+ 176              		.file 17 "Modules/include/utils.h"
+ 177              		.file 18 "Inc/tim.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccEy4e8I.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 motor.c
-C:\Users\luoha\AppData\Local\Temp\cclZqu8l.s:18     .text.MotorInit:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cclZqu8l.s:26     .text.MotorInit:00000000 MotorInit
-C:\Users\luoha\AppData\Local\Temp\cclZqu8l.s:78     .text.MotorInit:00000030 $d
+C:\Users\luoha\AppData\Local\Temp\ccEy4e8I.s:18     .text.MotorInit:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccEy4e8I.s:26     .text.MotorInit:00000000 MotorInit
+C:\Users\luoha\AppData\Local\Temp\ccEy4e8I.s:78     .text.MotorInit:00000030 $d
+C:\Users\luoha\AppData\Local\Temp\ccEy4e8I.s:83     .text.SetMotor:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccEy4e8I.s:90     .text.SetMotor:00000000 SetMotor
+C:\Users\luoha\AppData\Local\Temp\ccEy4e8I.s:155    .text.SetMotor:00000030 $d
 
 UNDEFINED SYMBOLS
 HAL_TIM_PWM_Start

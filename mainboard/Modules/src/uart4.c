@@ -6,7 +6,6 @@ xQueueHandle uart4_queue;
 STATIC_MEM_QUEUE_ALLOC(uart4_queue, 5, sizeof(uart4_queue_buffer));
 
 void Uart4Init(void) {
-    printf("Uart4Init");
     uart4_queue = STATIC_MEM_QUEUE_CREATE(uart4_queue);
 
     //使能IDLE中断
@@ -16,6 +15,7 @@ void Uart4Init(void) {
 }
 
 void UART4_IRQHandler(void) {
+    // printf("UART4_IRQHandler\r\n");
     if (__HAL_UART_GET_FLAG(&huart4, UART_FLAG_IDLE) != RESET) {
         __HAL_UART_CLEAR_IDLEFLAG(&huart4);
         UartRxCheck();
@@ -25,10 +25,12 @@ void UART4_IRQHandler(void) {
 }
 
 void DMA1_Stream2_IRQHandler(void) {
+    // printf("DMA1_Stream2_IRQHandler\r\n");
     HAL_DMA_IRQHandler(huart4.hdmarx);
 }
 
 void DMA1_Stream4_IRQHandler(void) {
+    // printf("DMA1_Stream4_IRQHandler\r\n");
     HAL_DMA_IRQHandler(huart4.hdmatx);
 }
 
@@ -44,6 +46,13 @@ void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef *huart) {
     }
 }
 
+// void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {
+//     printf("HAL_UART_TxCpltCallback\r\n");
+//     if(huart->Instance == UART4){
+//         huart->gState = HAL_UART_STATE_READY;
+//     }
+// }
+
 void UartRxCheck(void) {
     static size_t old_pos;
     size_t pos;
@@ -53,7 +62,7 @@ void UartRxCheck(void) {
     /* Calculate current position in buffer */
     pos = RX_BUFFER_SIZE - __HAL_DMA_GET_COUNTER(huart4.hdmarx);
 
-    printf("%u\r\n", pos);
+    // printf("%u\r\n", pos);
 
     if (pos != old_pos) {    /* Check change in received data */
         if (pos > old_pos) { /* Current position is over previous one */

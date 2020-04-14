@@ -1,32 +1,5 @@
 build/mavlink_task.o: Modules/src/mavlink_task.c \
- Modules/include/mavlink_task.h Inc/main.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
- Inc/stm32f4xx_hal_conf.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
- Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
- Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h \
- Drivers/CMSIS/Include/core_cm4.h Drivers/CMSIS/Include/cmsis_version.h \
- Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h \
- Drivers/CMSIS/Include/mpu_armv7.h \
- Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- Modules/include/utils.h Modules/include/uart4.h Inc/usart.h Inc/main.h \
+ Modules/include/mavlink_task.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  Inc/FreeRTOSConfig.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
@@ -244,75 +217,38 @@ build/mavlink_task.o: Modules/src/mavlink_task.c \
  Modules/include/MAVLink/common/./mavlink_msg_open_drone_id_system.h \
  Modules/include/MAVLink/common/./mavlink_msg_open_drone_id_operator_id.h \
  Modules/include/MAVLink/common/./mavlink_msg_open_drone_id_message_pack.h \
- Modules/include/MAVLink/common/../mavlink_get_info.h
+ Modules/include/MAVLink/common/../mavlink_get_info.h \
+ Modules/include/uart4.h Inc/usart.h Inc/main.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+ Inc/stm32f4xx_hal_conf.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
+ Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
+ Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h \
+ Drivers/CMSIS/Include/core_cm4.h Drivers/CMSIS/Include/cmsis_version.h \
+ Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h \
+ Drivers/CMSIS/Include/mpu_armv7.h \
+ Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
+ Modules/include/utils.h Modules/include/utils.h Modules/include/motor.h \
+ Inc/tim.h
 
 Modules/include/mavlink_task.h:
-
-Inc/main.h:
-
-Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
-
-Inc/stm32f4xx_hal_conf.h:
-
-Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:
-
-Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h:
-
-Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
-
-Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h:
-
-Drivers/CMSIS/Include/core_cm4.h:
-
-Drivers/CMSIS/Include/cmsis_version.h:
-
-Drivers/CMSIS/Include/cmsis_compiler.h:
-
-Drivers/CMSIS/Include/cmsis_gcc.h:
-
-Drivers/CMSIS/Include/mpu_armv7.h:
-
-Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h:
-
-Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:
-
-Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h:
-
-Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h:
-
-Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:
-
-Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h:
-
-Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h:
-
-Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h:
-
-Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h:
-
-Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h:
-
-Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h:
-
-Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h:
-
-Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h:
-
-Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
-
-Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
-
-Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
-
-Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
-
-Modules/include/utils.h:
-
-Modules/include/uart4.h:
-
-Inc/usart.h:
-
-Inc/main.h:
 
 Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 
@@ -749,3 +685,73 @@ Modules/include/MAVLink/common/./mavlink_msg_open_drone_id_operator_id.h:
 Modules/include/MAVLink/common/./mavlink_msg_open_drone_id_message_pack.h:
 
 Modules/include/MAVLink/common/../mavlink_get_info.h:
+
+Modules/include/uart4.h:
+
+Inc/usart.h:
+
+Inc/main.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
+
+Inc/stm32f4xx_hal_conf.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h:
+
+Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
+
+Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h:
+
+Drivers/CMSIS/Include/core_cm4.h:
+
+Drivers/CMSIS/Include/cmsis_version.h:
+
+Drivers/CMSIS/Include/cmsis_compiler.h:
+
+Drivers/CMSIS/Include/cmsis_gcc.h:
+
+Drivers/CMSIS/Include/mpu_armv7.h:
+
+Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
+
+Modules/include/utils.h:
+
+Modules/include/utils.h:
+
+Modules/include/motor.h:
+
+Inc/tim.h:

@@ -22,7 +22,10 @@
             "*.rh": "cpp",
             "*.tcc": "cpp",
             "fstream": "cpp",
-            "tim.h": "c"
+            "iosfwd": "c",
+            "xstring": "c",
+            "string": "c",
+            "string_view": "c"
         },
         "cortex-debug.armToolchainPath": "e:/GNU Tools Arm Embedded/9 2019-q4-major/bin",
         "cortex-debug.openocdPath": "E:\\OpenOCD-20200310-0.10.0\\bin\\openocd.EXE"

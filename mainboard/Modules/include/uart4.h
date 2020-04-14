@@ -16,6 +16,9 @@ void Uart4Init(void);
 void UART4_IRQHandler(void);
 void DMA1_Stream2_IRQHandler(void);
 void DMA1_Stream4_IRQHandler(void);
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
+void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef *huart);
+// void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart);
 static void UartRxCheck(void);
 
 // extern DMA_HandleTypeDef hdma_uart4_tx;

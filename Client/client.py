@@ -28,7 +28,7 @@ class Client:
         # follows: 1000 microseconds: 0%, 2000 microseconds: 100%. Individual
         # receivers/transmitters might violate this specification.
         if id < 9:
-            rc_channel_values = [65535 for _ in range(8)]
+            rc_channel_values = [0 for _ in range(8)]
             rc_channel_values[id - 1] = pwm
             self.master.mav.rc_channels_override_send(
                 self.master.target_system,                # target_system
@@ -42,8 +42,8 @@ class Client:
 
 if __name__ == "__main__":
     client = Client("COM3")
-    # client.set_rc_channel_pwm(1, 1000)
-    while(True):
-        client.set_rc_channel_pwm(1, 1000)
-        time.sleep(1)
+    client.set_rc_channel_pwm(4, 100)
+    # while(True):
+    #     client.set_rc_channel_pwm(2, 1000)
+    #     time.sleep(1)
     
