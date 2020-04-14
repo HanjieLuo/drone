@@ -252,7 +252,7 @@ build/main.o: Src/main.c Inc/main.h \
  Modules/include/MAVLink/common/./mavlink_msg_open_drone_id_operator_id.h \
  Modules/include/MAVLink/common/./mavlink_msg_open_drone_id_message_pack.h \
  Modules/include/MAVLink/common/../mavlink_get_info.h \
- Modules/include/uart4.h Modules/include/utils.h Modules/include/motor.h
+ Modules/include/usart2.h Modules/include/utils.h Modules/include/motor.h
 
 Inc/main.h:
 
@@ -776,7 +776,7 @@ Modules/include/MAVLink/common/./mavlink_msg_open_drone_id_message_pack.h:
 
 Modules/include/MAVLink/common/../mavlink_get_info.h:
 
-Modules/include/uart4.h:
+Modules/include/usart2.h:
 
 Modules/include/utils.h:
 

@@ -1,4 +1,4 @@
-build/uart4.o: Modules/src/uart4.c Modules/include/uart4.h Inc/usart.h \
+build/usart2.o: Modules/src/usart2.c Modules/include/usart2.h Inc/usart.h \
  Inc/main.h Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  Inc/stm32f4xx_hal_conf.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -37,7 +37,7 @@ build/uart4.o: Modules/src/uart4.c Modules/include/uart4.h Inc/usart.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/list.h
 
-Modules/include/uart4.h:
+Modules/include/usart2.h:
 
 Inc/usart.h:
 

@@ -2,8 +2,8 @@
     "env": {
         "____________________USER_FIELDS_CAN_BE_MODIFIED____________________": "",
         "user_cSources": [
-            "Modules/src/uart4.c",
-            "Modules/src/motor.c"
+            "Modules/src/usart2.c",
+            "Modules/src/motor.c",
             "Modules/src/mavlink_task.c",
             "Modules/src/utils.c"
         ],

@@ -1,6 +1,6 @@
 #include "mavlink_task.h"
 
-extern xQueueHandle uart4_queue;
+extern xQueueHandle usart2_queue;
 static TaskHandle_t mavlink_task_handle;
 STATIC_MEM_TASK_ALLOC(mavlink_task, configMINIMAL_STACK_SIZE * 3);
 
@@ -10,19 +10,19 @@ static int mavlink_comm = MAVLINK_COMM_0;
 static mavlink_rc_channels_override_t rc_channels_override;
 
 void MavlinkInit(void) {
-    Uart4Init();
+    Usart2Init();
     mavlink_task_handle = STATIC_MEM_TASK_CREATE(mavlink_task, MavlinkTask, "MavlinkTask", NULL, 1);
 }
 
 // extern TIM_HandleTypeDef htim4;
 
 void MavlinkTask(void *param) {
-    uart4_queue_buffer buffer;
+    usart2_queue_buffer buffer;
     // uint8_t buffer1[] = "Hello world\r\n";
     // const TickType_t xDelay = 10 / portTICK_PERIOD_MS;
     // uint16_t compare = 0;
     for(;;) {
-        if (xQueueReceive(uart4_queue, &buffer, portMAX_DELAY) == pdTRUE) {
+        if (xQueueReceive(usart2_queue, &buffer, portMAX_DELAY) == pdTRUE) {
             for (size_t i = 0; i < buffer.length; i++) {
                 if (mavlink_parse_char(mavlink_comm, buffer.addr[i], &msg, &status)) {
                     MavlinkProcessMsg(&msg);
@@ -66,10 +66,10 @@ void MavlinkProcessMsg(mavlink_message_t *msg) {
         }
     }
     // printf("===============\r\n");
-    // printf("%u\r\n", msg.msgid);
-    // printf("%u\r\n", msg.seq);
-    // printf("%u\r\n", msg.compid);
-    // printf("%u\r\n", msg.sysid);
+    // printf("%u\r\n", msg->msgid);
+    // printf("%u\r\n", msg->seq);
+    // printf("%u\r\n", msg->compid);
+    // printf("%u\r\n", msg->sysid);
     // printf("===============\r\n");
 }
 
