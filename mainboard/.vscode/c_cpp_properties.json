@@ -5,7 +5,8 @@
             "Modules/src/usart2.c",
             "Modules/src/motor.c",
             "Modules/src/mavlink_task.c",
-            "Modules/src/utils.c"
+            "Modules/src/utils.c",
+            "Modules/src/gy_86.c"
         ],
         "user_asmSources": [],
         "user_ldSources": [],
@@ -18,13 +19,16 @@
         "user_asmDefines": [],
         "user_cFlags": [],
         "user_asmFlags": [],
-        "user_ldFlags": [],
+        "user_ldFlags": [
+            "-u _printf_float"
+        ],
         "____________________DO_NOT_MODIFY_FIELDS_BELOW____________________": "",
         "cubemx_sourceFiles": [
             "Src/main.c",
             "Src/gpio.c",
             "Src/dma.c",
             "Src/freertos.c",
+            "Src/i2c.c",
             "Src/tim.c",
             "Src/usart.c",
             "Src/stm32f4xx_it.c",
@@ -43,6 +47,8 @@
             "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c",
             "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c",
             "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c",
+            "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c",
+            "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c",
             "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c",
             "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c",
             "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c",

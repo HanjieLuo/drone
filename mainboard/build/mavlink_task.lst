@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
   35 007c 52432063 		.ascii	"RC channel 4: %u\015\012\000"
   35      68616E6E 
   35      656C2034 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 2
 
 
   35      3A202575 
@@ -93,10 +93,10 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
   17:Modules/src/mavlink_task.c **** // extern TIM_HandleTypeDef htim4;
   18:Modules/src/mavlink_task.c **** 
   19:Modules/src/mavlink_task.c **** void MavlinkTask(void *param) {
-  20:Modules/src/mavlink_task.c ****     usart2_queue_buffer buffer;
-  21:Modules/src/mavlink_task.c ****     // uint8_t buffer1[] = "Hello world\r\n";
-  22:Modules/src/mavlink_task.c ****     // const TickType_t xDelay = 10 / portTICK_PERIOD_MS;
-  23:Modules/src/mavlink_task.c ****     // uint16_t compare = 0;
+  20:Modules/src/mavlink_task.c ****     // // uint8_t buffer1[] = "Hello world\r\n";
+  21:Modules/src/mavlink_task.c ****     // // const TickType_t xDelay = 10 / portTICK_PERIOD_MS;
+  22:Modules/src/mavlink_task.c ****     // // uint16_t compare = 0;
+  23:Modules/src/mavlink_task.c ****     usart2_queue_buffer buffer;
   24:Modules/src/mavlink_task.c ****     for(;;) {
   25:Modules/src/mavlink_task.c ****         if (xQueueReceive(usart2_queue, &buffer, portMAX_DELAY) == pdTRUE) {
   26:Modules/src/mavlink_task.c ****             for (size_t i = 0; i < buffer.length; i++) {
@@ -104,48 +104,33 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
   28:Modules/src/mavlink_task.c ****                     MavlinkProcessMsg(&msg);
   29:Modules/src/mavlink_task.c ****                 }
   30:Modules/src/mavlink_task.c ****             }
-  31:Modules/src/mavlink_task.c ****             // MavlinkParse(buffer.addr, buffer.length);
-  32:Modules/src/mavlink_task.c ****         }
-  33:Modules/src/mavlink_task.c **** 
-  34:Modules/src/mavlink_task.c ****         // htim4.Instance->CCR1 = compare;
-  35:Modules/src/mavlink_task.c ****         // htim4.Instance->CCR2 = compare;
-  36:Modules/src/mavlink_task.c ****         // htim4.Instance->CCR3 = compare;
-  37:Modules/src/mavlink_task.c ****         // htim4.Instance->CCR4 = compare;
-  38:Modules/src/mavlink_task.c ****         // // HAL_Delay(1);
-  39:Modules/src/mavlink_task.c ****         // vTaskDelay(xDelay);
-  40:Modules/src/mavlink_task.c ****         // compare += 1;
-  41:Modules/src/mavlink_task.c ****         // if (compare > 2799) {
-  42:Modules/src/mavlink_task.c ****         // compare = 0;
-  43:Modules/src/mavlink_task.c ****         // }
-  44:Modules/src/mavlink_task.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 3
-
-
-  45:Modules/src/mavlink_task.c ****         // HAL_UART_Transmit_DMA(&huart4, buffer1, sizeof(buffer1));
-  46:Modules/src/mavlink_task.c ****         // HAL_Delay(1000);
-  47:Modules/src/mavlink_task.c ****     }
-  48:Modules/src/mavlink_task.c **** }
-  49:Modules/src/mavlink_task.c **** 
-  50:Modules/src/mavlink_task.c **** void MavlinkProcessMsg(mavlink_message_t *msg) {
-  48              		.loc 1 50 48 view -0
+  31:Modules/src/mavlink_task.c ****         }
+  32:Modules/src/mavlink_task.c ****     }
+  33:Modules/src/mavlink_task.c **** }
+  34:Modules/src/mavlink_task.c **** 
+  35:Modules/src/mavlink_task.c **** void MavlinkProcessMsg(mavlink_message_t *msg) {
+  48              		.loc 1 35 48 view -0
   49              		.cfi_startproc
   50              		@ args = 0, pretend = 0, frame = 0
   51              		@ frame_needed = 0, uses_anonymous_args = 0
-  51:Modules/src/mavlink_task.c ****     switch (msg->msgid) {
-  52              		.loc 1 51 5 view .LVU1
-  53              		.loc 1 51 16 is_stmt 0 view .LVU2
+  36:Modules/src/mavlink_task.c ****     switch (msg->msgid) {
+  52              		.loc 1 36 5 view .LVU1
+  53              		.loc 1 36 16 is_stmt 0 view .LVU2
   54 0000 437A     		ldrb	r3, [r0, #9]	@ zero_extendqisi2
   55 0002 827A     		ldrb	r2, [r0, #10]	@ zero_extendqisi2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 3
+
+
   56 0004 43EA0223 		orr	r3, r3, r2, lsl #8
   57 0008 C27A     		ldrb	r2, [r0, #11]	@ zero_extendqisi2
   58 000a 43EA0243 		orr	r3, r3, r2, lsl #16
-  59              		.loc 1 51 5 view .LVU3
+  59              		.loc 1 36 5 view .LVU3
   60 000e 462B     		cmp	r3, #70
   61 0010 00D0     		beq	.L7
   62 0012 7047     		bx	lr
   63              	.L7:
-  50:Modules/src/mavlink_task.c ****     switch (msg->msgid) {
-  64              		.loc 1 50 48 view .LVU4
+  35:Modules/src/mavlink_task.c ****     switch (msg->msgid) {
+  64              		.loc 1 35 48 view .LVU4
   65 0014 70B5     		push	{r4, r5, r6, lr}
   66              	.LCFI0:
   67              		.cfi_def_cfa_offset 16
@@ -154,9 +139,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
   70              		.cfi_offset 6, -8
   71              		.cfi_offset 14, -4
   72 0016 0446     		mov	r4, r0
-  52:Modules/src/mavlink_task.c ****         case MAVLINK_MSG_ID_RC_CHANNELS_OVERRIDE: {
-  53:Modules/src/mavlink_task.c **** 			mavlink_msg_rc_channels_override_decode(msg, &rc_channels_override);
-  73              		.loc 1 53 4 is_stmt 1 view .LVU5
+  37:Modules/src/mavlink_task.c ****         case MAVLINK_MSG_ID_RC_CHANNELS_OVERRIDE: {
+  38:Modules/src/mavlink_task.c **** 			mavlink_msg_rc_channels_override_decode(msg, &rc_channels_override);
+  73              		.loc 1 38 4 is_stmt 1 view .LVU5
   74              	.LVL1:
   75              	.LBB87:
   76              	.LBI87:
@@ -178,9 +163,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
   15:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  uint16_t chan8_raw; /*< [us] RC channel 8 value. A value of UINT16_MAX means to ignore this field.
   16:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  uint8_t target_system; /*<  System ID*/
   17:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  uint8_t target_component; /*<  Component ID*/
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 4
-
-
   18:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  uint16_t chan9_raw; /*< [us] RC channel 9 value. A value of 0 or UINT16_MAX means to ignore this f
   19:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  uint16_t chan10_raw; /*< [us] RC channel 10 value. A value of 0 or UINT16_MAX means to ignore this
   20:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  uint16_t chan11_raw; /*< [us] RC channel 11 value. A value of 0 or UINT16_MAX means to ignore this
@@ -196,6 +178,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
   30:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** #define MAVLINK_MSG_ID_RC_CHANNELS_OVERRIDE_LEN 38
   31:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** #define MAVLINK_MSG_ID_RC_CHANNELS_OVERRIDE_MIN_LEN 18
   32:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** #define MAVLINK_MSG_ID_70_LEN 38
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 4
+
+
   33:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** #define MAVLINK_MSG_ID_70_MIN_LEN 18
   34:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** 
   35:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** #define MAVLINK_MSG_ID_RC_CHANNELS_OVERRIDE_CRC 124
@@ -238,9 +223,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
   72:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****          { "target_component", NULL, MAVLINK_TYPE_UINT8_T, 0, 17, offsetof(mavlink_rc_channels_over
   73:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****          { "chan1_raw", NULL, MAVLINK_TYPE_UINT16_T, 0, 0, offsetof(mavlink_rc_channels_override_t,
   74:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****          { "chan2_raw", NULL, MAVLINK_TYPE_UINT16_T, 0, 2, offsetof(mavlink_rc_channels_override_t,
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 5
-
-
   75:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****          { "chan3_raw", NULL, MAVLINK_TYPE_UINT16_T, 0, 4, offsetof(mavlink_rc_channels_override_t,
   76:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****          { "chan4_raw", NULL, MAVLINK_TYPE_UINT16_T, 0, 6, offsetof(mavlink_rc_channels_override_t,
   77:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****          { "chan5_raw", NULL, MAVLINK_TYPE_UINT16_T, 0, 8, offsetof(mavlink_rc_channels_override_t,
@@ -256,6 +238,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
   87:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****          { "chan15_raw", NULL, MAVLINK_TYPE_UINT16_T, 0, 30, offsetof(mavlink_rc_channels_override_
   88:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****          { "chan16_raw", NULL, MAVLINK_TYPE_UINT16_T, 0, 32, offsetof(mavlink_rc_channels_override_
   89:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****          { "chan17_raw", NULL, MAVLINK_TYPE_UINT16_T, 0, 34, offsetof(mavlink_rc_channels_override_
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 5
+
+
   90:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****          { "chan18_raw", NULL, MAVLINK_TYPE_UINT16_T, 0, 36, offsetof(mavlink_rc_channels_override_
   91:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****          } \
   92:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** }
@@ -298,9 +283,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  129:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     _mav_put_uint16_t(buf, 2, chan2_raw);
  130:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     _mav_put_uint16_t(buf, 4, chan3_raw);
  131:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     _mav_put_uint16_t(buf, 6, chan4_raw);
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 6
-
-
  132:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     _mav_put_uint16_t(buf, 8, chan5_raw);
  133:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     _mav_put_uint16_t(buf, 10, chan6_raw);
  134:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     _mav_put_uint16_t(buf, 12, chan7_raw);
@@ -316,6 +298,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  144:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     _mav_put_uint16_t(buf, 30, chan15_raw);
  145:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     _mav_put_uint16_t(buf, 32, chan16_raw);
  146:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     _mav_put_uint16_t(buf, 34, chan17_raw);
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 6
+
+
  147:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     _mav_put_uint16_t(buf, 36, chan18_raw);
  148:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** 
  149:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****         memcpy(_MAV_PAYLOAD_NON_CONST(msg), buf, MAVLINK_MSG_ID_RC_CHANNELS_OVERRIDE_LEN);
@@ -358,9 +343,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  186:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @param target_system  System ID
  187:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @param target_component  Component ID
  188:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @param chan1_raw [us] RC channel 1 value. A value of UINT16_MAX means to ignore this field.
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 7
-
-
  189:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @param chan2_raw [us] RC channel 2 value. A value of UINT16_MAX means to ignore this field.
  190:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @param chan3_raw [us] RC channel 3 value. A value of UINT16_MAX means to ignore this field.
  191:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @param chan4_raw [us] RC channel 4 value. A value of UINT16_MAX means to ignore this field.
@@ -376,6 +358,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  201:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @param chan14_raw [us] RC channel 14 value. A value of 0 or UINT16_MAX means to ignore this fiel
  202:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @param chan15_raw [us] RC channel 15 value. A value of 0 or UINT16_MAX means to ignore this fiel
  203:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @param chan16_raw [us] RC channel 16 value. A value of 0 or UINT16_MAX means to ignore this fiel
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 7
+
+
  204:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @param chan17_raw [us] RC channel 17 value. A value of 0 or UINT16_MAX means to ignore this fiel
  205:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @param chan18_raw [us] RC channel 18 value. A value of 0 or UINT16_MAX means to ignore this fiel
  206:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @return length of the message in bytes (excluding serial stream start sign)
@@ -418,9 +403,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  243:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     packet.chan6_raw = chan6_raw;
  244:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     packet.chan7_raw = chan7_raw;
  245:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     packet.chan8_raw = chan8_raw;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 8
-
-
  246:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     packet.target_system = target_system;
  247:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     packet.target_component = target_component;
  248:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     packet.chan9_raw = chan9_raw;
@@ -436,6 +418,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  258:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** 
  259:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****         memcpy(_MAV_PAYLOAD_NON_CONST(msg), &packet, MAVLINK_MSG_ID_RC_CHANNELS_OVERRIDE_LEN);
  260:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** #endif
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 8
+
+
  261:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** 
  262:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     msg->msgid = MAVLINK_MSG_ID_RC_CHANNELS_OVERRIDE;
  263:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     return mavlink_finalize_message_chan(msg, system_id, component_id, chan, MAVLINK_MSG_ID_RC_CHAN
@@ -478,9 +463,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  300:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @param chan2_raw [us] RC channel 2 value. A value of UINT16_MAX means to ignore this field.
  301:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @param chan3_raw [us] RC channel 3 value. A value of UINT16_MAX means to ignore this field.
  302:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @param chan4_raw [us] RC channel 4 value. A value of UINT16_MAX means to ignore this field.
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 9
-
-
  303:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @param chan5_raw [us] RC channel 5 value. A value of UINT16_MAX means to ignore this field.
  304:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @param chan6_raw [us] RC channel 6 value. A value of UINT16_MAX means to ignore this field.
  305:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @param chan7_raw [us] RC channel 7 value. A value of UINT16_MAX means to ignore this field.
@@ -496,6 +478,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  315:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @param chan17_raw [us] RC channel 17 value. A value of 0 or UINT16_MAX means to ignore this fiel
  316:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @param chan18_raw [us] RC channel 18 value. A value of 0 or UINT16_MAX means to ignore this fiel
  317:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  */
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 9
+
+
  318:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
  319:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** 
  320:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** static inline void mavlink_msg_rc_channels_override_send(mavlink_channel_t chan, uint8_t target_sys
@@ -538,9 +523,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  357:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     packet.target_component = target_component;
  358:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     packet.chan9_raw = chan9_raw;
  359:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     packet.chan10_raw = chan10_raw;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 10
-
-
  360:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     packet.chan11_raw = chan11_raw;
  361:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     packet.chan12_raw = chan12_raw;
  362:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     packet.chan13_raw = chan13_raw;
@@ -556,6 +538,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  372:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** 
  373:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** /**
  374:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @brief Send a rc_channels_override message
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 10
+
+
  375:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @param chan MAVLink channel to send the message
  376:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @param struct The MAVLink struct to serialize
  377:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  */
@@ -598,9 +583,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  414:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     _mav_put_uint16_t(buf, 28, chan14_raw);
  415:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     _mav_put_uint16_t(buf, 30, chan15_raw);
  416:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     _mav_put_uint16_t(buf, 32, chan16_raw);
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 11
-
-
  417:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     _mav_put_uint16_t(buf, 34, chan17_raw);
  418:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     _mav_put_uint16_t(buf, 36, chan18_raw);
  419:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** 
@@ -616,6 +598,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  429:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     packet->chan7_raw = chan7_raw;
  430:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     packet->chan8_raw = chan8_raw;
  431:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     packet->target_system = target_system;
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 11
+
+
  432:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     packet->target_component = target_component;
  433:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     packet->chan9_raw = chan9_raw;
  434:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     packet->chan10_raw = chan10_raw;
@@ -658,9 +643,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  471:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     return _MAV_RETURN_uint8_t(msg,  17);
  472:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** }
  473:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 12
-
-
  474:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** /**
  475:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @brief Get field chan1_raw from rc_channels_override message
  476:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  *
@@ -676,6 +658,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  486:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  *
  487:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @return [us] RC channel 2 value. A value of UINT16_MAX means to ignore this field.
  488:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  */
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 12
+
+
  489:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** static inline uint16_t mavlink_msg_rc_channels_override_get_chan2_raw(const mavlink_message_t* msg)
  490:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** {
  491:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     return _MAV_RETURN_uint16_t(msg,  2);
@@ -718,9 +703,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  528:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  */
  529:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** static inline uint16_t mavlink_msg_rc_channels_override_get_chan6_raw(const mavlink_message_t* msg)
  530:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** {
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 13
-
-
  531:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     return _MAV_RETURN_uint16_t(msg,  10);
  532:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** }
  533:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** 
@@ -736,6 +718,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  543:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** 
  544:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** /**
  545:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @brief Get field chan8_raw from rc_channels_override message
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 13
+
+
  546:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  *
  547:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @return [us] RC channel 8 value. A value of UINT16_MAX means to ignore this field.
  548:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  */
@@ -778,9 +763,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  585:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @brief Get field chan12_raw from rc_channels_override message
  586:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  *
  587:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @return [us] RC channel 12 value. A value of 0 or UINT16_MAX means to ignore this field.
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 14
-
-
  588:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  */
  589:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** static inline uint16_t mavlink_msg_rc_channels_override_get_chan12_raw(const mavlink_message_t* msg
  590:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** {
@@ -796,6 +778,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  600:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** {
  601:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****     return _MAV_RETURN_uint16_t(msg,  26);
  602:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** }
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 14
+
+
  603:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** 
  604:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** /**
  605:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @brief Get field chan14_raw from rc_channels_override message
@@ -838,9 +823,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  642:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** }
  643:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** 
  644:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** /**
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 15
-
-
  645:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @brief Get field chan18_raw from rc_channels_override message
  646:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  *
  647:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @return [us] RC channel 18 value. A value of 0 or UINT16_MAX means to ignore this field.
@@ -856,6 +838,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  657:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @param msg The message to decode
  658:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  * @param rc_channels_override C-struct to decode the message contents into
  659:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h ****  */
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 15
+
+
  660:Modules/include/MAVLink/common/./mavlink_msg_rc_channels_override.h **** static inline void mavlink_msg_rc_channels_override_decode(const mavlink_message_t* msg, mavlink_rc
   78              		.loc 2 660 20 view .LVU6
   79              	.LBB88:
@@ -898,9 +883,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
   91 0024 0021     		movs	r1, #0
   92 0026 2846     		mov	r0, r5
   93              	.LVL3:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 16
-
-
   94              		.loc 2 685 9 is_stmt 0 view .LVU11
   95 0028 FFF7FEFF 		bl	memset
   96              	.LVL4:
@@ -914,77 +896,80 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  103              		.loc 2 686 5 is_stmt 0 view .LVU13
  104              	.LBE88:
  105              	.LBE87:
-  54:Modules/src/mavlink_task.c ****             SetMotor(rc_channels_override.chan1_raw, rc_channels_override.chan2_raw, rc_channels_ov
- 106              		.loc 1 54 13 is_stmt 1 view .LVU14
+  39:Modules/src/mavlink_task.c ****             SetMotor(rc_channels_override.chan1_raw, rc_channels_override.chan2_raw, rc_channels_ov
+ 106              		.loc 1 39 13 is_stmt 1 view .LVU14
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 16
+
+
  107 0038 EB88     		ldrh	r3, [r5, #6]
  108 003a AA88     		ldrh	r2, [r5, #4]
  109 003c 6988     		ldrh	r1, [r5, #2]
  110 003e 2888     		ldrh	r0, [r5]
  111 0040 FFF7FEFF 		bl	SetMotor
  112              	.LVL6:
-  55:Modules/src/mavlink_task.c ****             printf("===============\r\n");
- 113              		.loc 1 55 13 view .LVU15
+  40:Modules/src/mavlink_task.c ****             printf("===============\r\n");
+ 113              		.loc 1 40 13 view .LVU15
  114 0044 0E4E     		ldr	r6, .L8+4
  115 0046 3046     		mov	r0, r6
  116 0048 FFF7FEFF 		bl	puts
  117              	.LVL7:
-  56:Modules/src/mavlink_task.c ****             printf("MAVLINK_MSG_ID_RC_CHANNELS_OVERRIDE:%u\r\n", msg->seq);
- 118              		.loc 1 56 13 view .LVU16
+  41:Modules/src/mavlink_task.c ****             printf("MAVLINK_MSG_ID_RC_CHANNELS_OVERRIDE:%u\r\n", msg->seq);
+ 118              		.loc 1 41 13 view .LVU16
  119 004c A179     		ldrb	r1, [r4, #6]	@ zero_extendqisi2
  120 004e 0D48     		ldr	r0, .L8+8
  121 0050 FFF7FEFF 		bl	printf
  122              	.LVL8:
-  57:Modules/src/mavlink_task.c ****             printf("RC channel 1: %u\r\n", rc_channels_override.chan1_raw);
- 123              		.loc 1 57 13 view .LVU17
+  42:Modules/src/mavlink_task.c ****             printf("RC channel 1: %u\r\n", rc_channels_override.chan1_raw);
+ 123              		.loc 1 42 13 view .LVU17
  124 0054 2988     		ldrh	r1, [r5]
  125 0056 0C48     		ldr	r0, .L8+12
  126 0058 FFF7FEFF 		bl	printf
  127              	.LVL9:
-  58:Modules/src/mavlink_task.c ****             printf("RC channel 2: %u\r\n", rc_channels_override.chan2_raw);
- 128              		.loc 1 58 13 view .LVU18
+  43:Modules/src/mavlink_task.c ****             printf("RC channel 2: %u\r\n", rc_channels_override.chan2_raw);
+ 128              		.loc 1 43 13 view .LVU18
  129 005c 6988     		ldrh	r1, [r5, #2]
  130 005e 0B48     		ldr	r0, .L8+16
  131 0060 FFF7FEFF 		bl	printf
  132              	.LVL10:
-  59:Modules/src/mavlink_task.c ****             printf("RC channel 3: %u\r\n", rc_channels_override.chan3_raw);
- 133              		.loc 1 59 13 view .LVU19
+  44:Modules/src/mavlink_task.c ****             printf("RC channel 3: %u\r\n", rc_channels_override.chan3_raw);
+ 133              		.loc 1 44 13 view .LVU19
  134 0064 A988     		ldrh	r1, [r5, #4]
  135 0066 0A48     		ldr	r0, .L8+20
  136 0068 FFF7FEFF 		bl	printf
  137              	.LVL11:
-  60:Modules/src/mavlink_task.c ****             printf("RC channel 4: %u\r\n", rc_channels_override.chan4_raw);
- 138              		.loc 1 60 13 view .LVU20
+  45:Modules/src/mavlink_task.c ****             printf("RC channel 4: %u\r\n", rc_channels_override.chan4_raw);
+ 138              		.loc 1 45 13 view .LVU20
  139 006c E988     		ldrh	r1, [r5, #6]
  140 006e 0948     		ldr	r0, .L8+24
  141 0070 FFF7FEFF 		bl	printf
  142              	.LVL12:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 17
-
-
-  61:Modules/src/mavlink_task.c ****             printf("===============\r\n");
- 143              		.loc 1 61 13 view .LVU21
+  46:Modules/src/mavlink_task.c ****             printf("===============\r\n");
+ 143              		.loc 1 46 13 view .LVU21
  144 0074 3046     		mov	r0, r6
  145 0076 FFF7FEFF 		bl	puts
  146              	.LVL13:
-  62:Modules/src/mavlink_task.c ****             break;
- 147              		.loc 1 62 13 view .LVU22
-  63:Modules/src/mavlink_task.c ****         }
-  64:Modules/src/mavlink_task.c ****         default: {
-  65:Modules/src/mavlink_task.c ****             break;
-  66:Modules/src/mavlink_task.c ****         }
-  67:Modules/src/mavlink_task.c ****     }
-  68:Modules/src/mavlink_task.c ****     // printf("===============\r\n");
-  69:Modules/src/mavlink_task.c ****     // printf("%u\r\n", msg->msgid);
-  70:Modules/src/mavlink_task.c ****     // printf("%u\r\n", msg->seq);
-  71:Modules/src/mavlink_task.c ****     // printf("%u\r\n", msg->compid);
-  72:Modules/src/mavlink_task.c ****     // printf("%u\r\n", msg->sysid);
-  73:Modules/src/mavlink_task.c ****     // printf("===============\r\n");
-  74:Modules/src/mavlink_task.c **** }
- 148              		.loc 1 74 1 is_stmt 0 view .LVU23
+  47:Modules/src/mavlink_task.c ****             break;
+ 147              		.loc 1 47 13 view .LVU22
+  48:Modules/src/mavlink_task.c ****         }
+  49:Modules/src/mavlink_task.c ****         default: {
+  50:Modules/src/mavlink_task.c ****             break;
+  51:Modules/src/mavlink_task.c ****         }
+  52:Modules/src/mavlink_task.c ****     }
+  53:Modules/src/mavlink_task.c ****     // printf("===============\r\n");
+  54:Modules/src/mavlink_task.c ****     // printf("%u\r\n", msg->msgid);
+  55:Modules/src/mavlink_task.c ****     // printf("%u\r\n", msg->seq);
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 17
+
+
+  56:Modules/src/mavlink_task.c ****     // printf("%u\r\n", msg->compid);
+  57:Modules/src/mavlink_task.c ****     // printf("%u\r\n", msg->sysid);
+  58:Modules/src/mavlink_task.c ****     // printf("===============\r\n");
+  59:Modules/src/mavlink_task.c **** }
+ 148              		.loc 1 59 1 is_stmt 0 view .LVU23
  149 007a 70BD     		pop	{r4, r5, r6, pc}
  150              	.LVL14:
  151              	.L9:
- 152              		.loc 1 74 1 view .LVU24
+ 152              		.loc 1 59 1 view .LVU24
  153              		.align	2
  154              	.L8:
  155 007c 00000000 		.word	.LANCHOR0
@@ -1018,9 +1003,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
   10:Modules/include/MAVLink/common/../mavlink_helpers.h **** #define MAVLINK_HELPER
   11:Modules/include/MAVLink/common/../mavlink_helpers.h **** #endif
   12:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 18
-
-
   13:Modules/include/MAVLink/common/../mavlink_helpers.h **** #include "mavlink_sha256.h"
   14:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
   15:Modules/include/MAVLink/common/../mavlink_helpers.h **** #ifdef MAVLINK_USE_CXX_NAMESPACE
@@ -1036,6 +1018,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
   25:Modules/include/MAVLink/common/../mavlink_helpers.h **** #ifdef MAVLINK_EXTERNAL_RX_STATUS
   26:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	// No m_mavlink_status array defined in function,
   27:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	// has to be defined externally
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 18
+
+
   28:Modules/include/MAVLink/common/../mavlink_helpers.h **** #else
   29:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	static mavlink_status_t m_mavlink_status[MAVLINK_COMM_NUM_BUFFERS];
   30:Modules/include/MAVLink/common/../mavlink_helpers.h **** #endif
@@ -1078,9 +1063,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
   67:Modules/include/MAVLink/common/../mavlink_helpers.h **** }
   68:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
   69:Modules/include/MAVLink/common/../mavlink_helpers.h **** /**
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 19
-
-
   70:Modules/include/MAVLink/common/../mavlink_helpers.h ****  * @brief create a signature block for a packet
   71:Modules/include/MAVLink/common/../mavlink_helpers.h ****  */
   72:Modules/include/MAVLink/common/../mavlink_helpers.h **** MAVLINK_HELPER uint8_t mavlink_sign_packet(mavlink_signing_t *signing,
@@ -1096,6 +1078,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
   82:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	} tstamp;
   83:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	if (signing == NULL || !(signing->flags & MAVLINK_SIGNING_FLAG_SIGN_OUTGOING)) {
   84:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	    return 0;
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 19
+
+
   85:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	}
   86:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	signature[0] = signing->link_id;
   87:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	tstamp.t64 = signing->timestamp;
@@ -1138,9 +1123,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  124:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	if (signing == NULL) {
  125:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		return true;
  126:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	}
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 20
-
-
  127:Modules/include/MAVLink/common/../mavlink_helpers.h ****         const uint8_t *p = (const uint8_t *)&msg->magic;
  128:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	const uint8_t *psig = msg->signature;
  129:Modules/include/MAVLink/common/../mavlink_helpers.h ****         const uint8_t *incoming_signature = psig+7;
@@ -1156,6 +1138,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  139:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	mavlink_sha256_final_48(&ctx, signature);
  140:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	if (memcmp(signature, incoming_signature, 6) != 0) {
  141:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		return false;
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 20
+
+
  142:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	}
  143:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
  144:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	// now check timestamp
@@ -1198,9 +1183,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  181:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		last_tstamp.t64 = 0;
  182:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		memcpy(last_tstamp.t8, signing_streams->stream[i].timestamp_bytes, 6);
  183:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		if (tstamp.t64 <= last_tstamp.t64) {
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 21
-
-
  184:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			// repeating old timestamp
  185:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			return false;
  186:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		}
@@ -1216,6 +1198,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  196:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	return true;
  197:Modules/include/MAVLink/common/../mavlink_helpers.h **** }
  198:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 21
+
+
  199:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
  200:Modules/include/MAVLink/common/../mavlink_helpers.h **** /**
  201:Modules/include/MAVLink/common/../mavlink_helpers.h ****  * @brief Finalize a MAVLink message with channel assignment
@@ -1258,9 +1243,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  238:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	buf[0] = msg->magic;
  239:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	buf[1] = msg->len;
  240:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	if (mavlink1) {
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 22
-
-
  241:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		buf[2] = msg->seq;
  242:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		buf[3] = msg->sysid;
  243:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		buf[4] = msg->compid;
@@ -1276,6 +1258,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  253:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		buf[9] = (msg->msgid >> 16) & 0xFF;
  254:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	}
  255:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 22
+
+
  256:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	uint16_t checksum = crc_calculate(&buf[1], header_len-1);
  257:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	crc_accumulate_buffer(&checksum, _MAV_PAYLOAD(msg), msg->len);
  258:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	crc_accumulate(crc_extra, &checksum);
@@ -1318,9 +1303,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  295:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
  296:Modules/include/MAVLink/common/../mavlink_helpers.h **** #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
  297:Modules/include/MAVLink/common/../mavlink_helpers.h **** MAVLINK_HELPER void _mavlink_send_uart(mavlink_channel_t chan, const char *buf, uint16_t len);
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 23
-
-
  298:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
  299:Modules/include/MAVLink/common/../mavlink_helpers.h **** /**
  300:Modules/include/MAVLink/common/../mavlink_helpers.h ****  * @brief Finalize a MAVLink message with channel assignment and send
@@ -1336,6 +1318,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  310:Modules/include/MAVLink/common/../mavlink_helpers.h ****         uint8_t header_len = MAVLINK_CORE_HEADER_LEN;
  311:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	uint8_t signature_len = 0;
  312:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	uint8_t signature[MAVLINK_SIGNATURE_BLOCK_LEN];
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 23
+
+
  313:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	bool mavlink1 = (status->flags & MAVLINK_STATUS_FLAG_OUT_MAVLINK1) != 0;
  314:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	bool signing = 	(!mavlink1) && status->signing && (status->signing->flags & MAVLINK_SIGNING_FLAG_S
  315:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
@@ -1378,9 +1363,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  352:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	ck[1] = (uint8_t)(checksum >> 8);
  353:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
  354:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	if (signing) {
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 24
-
-
  355:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		// possibly add a signature
  356:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		signature_len = mavlink_sign_packet(status->signing, signature, buf, header_len+1,
  357:Modules/include/MAVLink/common/../mavlink_helpers.h **** 						    (const uint8_t *)packet, length, ck);
@@ -1396,6 +1378,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  367:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	MAVLINK_END_UART_SEND(chan, header_len + 3 + (uint16_t)length + (uint16_t)signature_len);
  368:Modules/include/MAVLink/common/../mavlink_helpers.h **** }
  369:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 24
+
+
  370:Modules/include/MAVLink/common/../mavlink_helpers.h **** /**
  371:Modules/include/MAVLink/common/../mavlink_helpers.h ****  * @brief re-send a message over a uart channel
  372:Modules/include/MAVLink/common/../mavlink_helpers.h ****  * this is more stack efficient than re-marshalling the message
@@ -1438,9 +1423,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  409:Modules/include/MAVLink/common/../mavlink_helpers.h ****             buf[5] = msg->sysid;
  410:Modules/include/MAVLink/common/../mavlink_helpers.h ****             buf[6] = msg->compid;
  411:Modules/include/MAVLink/common/../mavlink_helpers.h ****             buf[7] = msg->msgid & 0xFF;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 25
-
-
  412:Modules/include/MAVLink/common/../mavlink_helpers.h ****             buf[8] = (msg->msgid >> 8) & 0xFF;
  413:Modules/include/MAVLink/common/../mavlink_helpers.h ****             buf[9] = (msg->msgid >> 16) & 0xFF;
  414:Modules/include/MAVLink/common/../mavlink_helpers.h ****             _mavlink_send_uart(chan, (const char *)buf, header_len);
@@ -1456,6 +1438,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  424:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
  425:Modules/include/MAVLink/common/../mavlink_helpers.h **** /**
  426:Modules/include/MAVLink/common/../mavlink_helpers.h ****  * @brief Pack a message to send it over a serial byte stream
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 25
+
+
  427:Modules/include/MAVLink/common/../mavlink_helpers.h ****  */
  428:Modules/include/MAVLink/common/../mavlink_helpers.h **** MAVLINK_HELPER uint16_t mavlink_msg_to_send_buffer(uint8_t *buf, const mavlink_message_t *msg)
  429:Modules/include/MAVLink/common/../mavlink_helpers.h **** {
@@ -1498,9 +1483,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  466:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	}
  467:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
  468:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	return header_len + 1 + 2 + (uint16_t)length + (uint16_t)signature_len;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 26
-
-
  469:Modules/include/MAVLink/common/../mavlink_helpers.h **** }
  470:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
  471:Modules/include/MAVLink/common/../mavlink_helpers.h **** union __mavlink_bitfield {
@@ -1516,6 +1498,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  481:Modules/include/MAVLink/common/../mavlink_helpers.h **** MAVLINK_HELPER void mavlink_start_checksum(mavlink_message_t* msg)
  482:Modules/include/MAVLink/common/../mavlink_helpers.h **** {
  483:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	uint16_t crcTmp = 0;
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 26
+
+
  484:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	crc_init(&crcTmp);
  485:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	msg->checksum = crcTmp;
  486:Modules/include/MAVLink/common/../mavlink_helpers.h **** }
@@ -1558,9 +1543,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  523:Modules/include/MAVLink/common/../mavlink_helpers.h ****         }
  524:Modules/include/MAVLink/common/../mavlink_helpers.h ****         return &mavlink_message_crcs[low];
  525:Modules/include/MAVLink/common/../mavlink_helpers.h **** }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 27
-
-
  526:Modules/include/MAVLink/common/../mavlink_helpers.h **** #endif // MAVLINK_GET_MSG_ENTRY
  527:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
  528:Modules/include/MAVLink/common/../mavlink_helpers.h **** /*
@@ -1576,6 +1558,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  538:Modules/include/MAVLink/common/../mavlink_helpers.h ****   return the min message length
  539:Modules/include/MAVLink/common/../mavlink_helpers.h **** */
  540:Modules/include/MAVLink/common/../mavlink_helpers.h **** #define MAVLINK_HAVE_MIN_MESSAGE_LENGTH
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 27
+
+
  541:Modules/include/MAVLink/common/../mavlink_helpers.h **** MAVLINK_HELPER uint8_t mavlink_min_message_length(const mavlink_message_t *msg)
  542:Modules/include/MAVLink/common/../mavlink_helpers.h **** {
  543:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	const mavlink_msg_entry_t *e = mavlink_get_msg_entry(msg->msgid);
@@ -1618,9 +1603,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  179              		@ frame_needed = 0, uses_anonymous_args = 0
  180              		.loc 3 576 1 is_stmt 0 view .LVU26
  181 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 28
-
-
  182              	.LCFI1:
  183              		.cfi_def_cfa_offset 36
  184              		.cfi_offset 4, -36
@@ -1636,6 +1618,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  194              	.LCFI2:
  195              		.cfi_def_cfa_offset 616
  196 0008 8346     		mov	fp, r0
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 28
+
+
  197 000a 8A46     		mov	r10, r1
  198 000c 0193     		str	r3, [sp, #4]
  577:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	int bufferIndex = 0;
@@ -1678,9 +1663,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  231              		.p2align 1
  232              	.L26:
  582:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	{
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 29
-
-
  583:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	case MAVLINK_PARSE_STATE_UNINIT:
  584:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	case MAVLINK_PARSE_STATE_IDLE:
  585:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		if (c == MAVLINK_STX)
@@ -1696,6 +1678,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  591:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			mavlink_start_checksum(rxmsg);
  592:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		} else if (c == MAVLINK_STX_MAVLINK1)
  237              		.loc 3 592 10 is_stmt 1 view .LVU35
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 29
+
+
  238              		.loc 3 592 13 is_stmt 0 view .LVU36
  239 0042 FE2A     		cmp	r2, #254
  240 0044 7AD1     		bne	.L11
@@ -1738,9 +1723,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  267              	.LBE191:
  268              		.file 4 "Modules/include/MAVLink/common/../checksum.h"
    1:Modules/include/MAVLink/common/../checksum.h **** #pragma once
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 30
-
-
    2:Modules/include/MAVLink/common/../checksum.h **** 
    3:Modules/include/MAVLink/common/../checksum.h **** #if defined(MAVLINK_USE_CXX_NAMESPACE)
    4:Modules/include/MAVLink/common/../checksum.h **** namespace mavlink {
@@ -1756,6 +1738,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
   14:Modules/include/MAVLink/common/../checksum.h **** #include <stdint.h>
   15:Modules/include/MAVLink/common/../checksum.h **** 
   16:Modules/include/MAVLink/common/../checksum.h **** /**
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 30
+
+
   17:Modules/include/MAVLink/common/../checksum.h ****  *
   18:Modules/include/MAVLink/common/../checksum.h ****  *  CALCULATE THE CHECKSUM
   19:Modules/include/MAVLink/common/../checksum.h ****  *
@@ -1798,9 +1783,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  270              	.LBB194:
  271              	.LBB193:
  485:Modules/include/MAVLink/common/../mavlink_helpers.h **** }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 31
-
-
  272              		.loc 3 485 2 view .LVU51
  485:Modules/include/MAVLink/common/../mavlink_helpers.h **** }
  273              		.loc 3 485 16 is_stmt 0 view .LVU52
@@ -1816,6 +1798,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  486:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
  282              		.loc 3 486 1 view .LVU54
  283              	.LBE193:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 31
+
+
  284              	.LBE194:
  587:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			rxmsg->len = 0;
  285              		.loc 3 587 4 is_stmt 1 view .LVU55
@@ -1858,9 +1843,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  310              	.LBE196:
  311              	.LBE195:
  312              		.loc 4 54 9 is_stmt 1 view .LVU68
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 32
-
-
  313              	.LBB198:
  314              	.LBB197:
  485:Modules/include/MAVLink/common/../mavlink_helpers.h **** }
@@ -1876,6 +1858,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  322 0088 58E0     		b	.L11
  323              	.LVL24:
  324              	.L25:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 32
+
+
  486:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
  325              		.loc 3 486 1 view .LVU72
  326              	.LBE197:
@@ -1918,9 +1903,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  488:Modules/include/MAVLink/common/../mavlink_helpers.h **** {
  340              		.loc 3 488 21 view .LVU79
  341              	.LBB200:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 33
-
-
  490:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	crc_accumulate(c, &checksum);
  342              		.loc 3 490 2 view .LVU80
  490:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	crc_accumulate(c, &checksum);
@@ -1936,6 +1918,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  350              	.LBB202:
   38:Modules/include/MAVLink/common/../checksum.h **** 
  351              		.loc 4 38 9 view .LVU84
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 33
+
+
   40:Modules/include/MAVLink/common/../checksum.h ****         tmp ^= (tmp<<4);
  352              		.loc 4 40 9 view .LVU85
   40:Modules/include/MAVLink/common/../checksum.h ****         tmp ^= (tmp<<4);
@@ -1978,9 +1963,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  379              	.LVL31:
  492:Modules/include/MAVLink/common/../mavlink_helpers.h **** }
  380              		.loc 3 492 16 view .LVU97
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 34
-
-
  381 00ae 0380     		strh	r3, [r0]	@ unaligned
  382              	.LVL32:
  492:Modules/include/MAVLink/common/../mavlink_helpers.h **** }
@@ -1996,6 +1978,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  391 00b8 06D0     		beq	.L28
  623:Modules/include/MAVLink/common/../mavlink_helpers.h ****                             rxmsg->incompat_flags = 0;
  392              		.loc 3 623 29 is_stmt 1 view .LVU102
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 34
+
+
  393              		.loc 3 623 51 is_stmt 0 view .LVU103
  394 00ba 0023     		movs	r3, #0
  395 00bc 0371     		strb	r3, [r0, #4]
@@ -2038,9 +2023,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  419              		.loc 3 636 4 is_stmt 1 view .LVU114
  420              	.LVL34:
  421              	.LBB203:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 35
-
-
  422              	.LBI203:
  291:Modules/include/MAVLink/common/../mavlink_helpers.h **** {
  423              		.loc 3 291 20 view .LVU115
@@ -2056,6 +2038,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  430 00de 8AF80230 		strb	r3, [r10, #2]
  431              	.LVL35:
  293:Modules/include/MAVLink/common/../mavlink_helpers.h **** }
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 35
+
+
  432              		.loc 3 293 24 view .LVU119
  433              	.LBE204:
  434              	.LBE203:
@@ -2098,9 +2083,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
   38:Modules/include/MAVLink/common/../checksum.h **** 
  461              		.loc 4 38 9 view .LVU131
   40:Modules/include/MAVLink/common/../checksum.h ****         tmp ^= (tmp<<4);
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 36
-
-
  462              		.loc 4 40 9 view .LVU132
   40:Modules/include/MAVLink/common/../checksum.h ****         tmp ^= (tmp<<4);
  463              		.loc 4 40 22 is_stmt 0 view .LVU133
@@ -2116,6 +2098,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  470 00f6 82EA0212 		eor	r2, r2, r2, lsl #4
  471              	.LVL39:
   41:Modules/include/MAVLink/common/../checksum.h ****         *crcAccum = (*crcAccum>>8) ^ (tmp<<8) ^ (tmp <<3) ^ (tmp>>4);
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 36
+
+
  472              		.loc 4 41 13 view .LVU137
  473 00fa D2B2     		uxtb	r2, r2
  474              	.LVL40:
@@ -2158,9 +2143,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  501              		.loc 3 643 3 is_stmt 1 view .LVU148
  502 0114 12E0     		b	.L11
  503              	.LVL45:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 37
-
-
  504              	.L23:
  644:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
  645:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	case MAVLINK_PARSE_STATE_GOT_INCOMPAT_FLAGS:
@@ -2176,6 +2158,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  488:Modules/include/MAVLink/common/../mavlink_helpers.h **** {
  512              		.loc 3 488 21 view .LVU152
  513              	.LBB210:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 37
+
+
  490:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	crc_accumulate(c, &checksum);
  514              		.loc 3 490 2 view .LVU153
  490:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	crc_accumulate(c, &checksum);
@@ -2218,9 +2203,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  540 0126 43EA0223 		orr	r3, r3, r2, lsl #8
  541 012a 1BB2     		sxth	r3, r3
   42:Modules/include/MAVLink/common/../checksum.h **** }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 38
-
-
  542              		.loc 4 42 47 view .LVU166
  543 012c 83EAC203 		eor	r3, r3, r2, lsl #3
  544              	.LVL51:
@@ -2236,6 +2218,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  551              	.LVL52:
  492:Modules/include/MAVLink/common/../mavlink_helpers.h **** }
  552              		.loc 3 492 16 view .LVU170
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 38
+
+
  553 0134 0380     		strh	r3, [r0]	@ unaligned
  554              	.LVL53:
  492:Modules/include/MAVLink/common/../mavlink_helpers.h **** }
@@ -2278,9 +2263,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  674:Modules/include/MAVLink/common/../mavlink_helpers.h **** 				status->parse_state = MAVLINK_PARSE_STATE_GOT_MSGID3;
  675:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			} else {
  676:Modules/include/MAVLink/common/../mavlink_helpers.h **** 				status->parse_state = MAVLINK_PARSE_STATE_GOT_PAYLOAD;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 39
-
-
  677:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			}
  678:Modules/include/MAVLink/common/../mavlink_helpers.h **** #ifdef MAVLINK_CHECK_MESSAGE_LENGTH
  679:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			if (rxmsg->len < mavlink_min_message_length(rxmsg) ||
@@ -2296,6 +2278,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  689:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		break;
  690:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
  691:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	case MAVLINK_PARSE_STATE_GOT_MSGID1:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 39
+
+
  692:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		rxmsg->msgid |= c<<8;
  693:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		mavlink_update_checksum(rxmsg, c);
  694:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		status->parse_state = MAVLINK_PARSE_STATE_GOT_MSGID2;
@@ -2338,9 +2323,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  731:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		} else {
  732:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			status->parse_state = MAVLINK_PARSE_STATE_GOT_CRC1;
  733:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		}
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 40
-
-
  734:Modules/include/MAVLink/common/../mavlink_helpers.h ****                 rxmsg->ck[0] = c;
  735:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
  736:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		// zero-fill the packet to cope with short incoming packets
@@ -2356,6 +2338,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  746:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			// got a bad CRC message
  747:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			status->msg_received = MAVLINK_FRAMING_BAD_CRC;
  748:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		} else {
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 40
+
+
  749:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			// Successfully got message
  750:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			status->msg_received = MAVLINK_FRAMING_OK;
  751:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		}
@@ -2398,9 +2383,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  788:Modules/include/MAVLink/common/../mavlink_helpers.h **** 				// accepted via application level override
  789:Modules/include/MAVLink/common/../mavlink_helpers.h **** 				sig_ok = true;
  790:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			}
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 41
-
-
  791:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			if (sig_ok) {
  792:Modules/include/MAVLink/common/../mavlink_helpers.h **** 				status->msg_received = MAVLINK_FRAMING_OK;
  793:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			} else {
@@ -2416,6 +2398,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  803:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
  804:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	bufferIndex++;
  565              		.loc 3 804 2 view .LVU175
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 41
+
+
  805:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	// If a message has been sucessfully decoded, check index
  806:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	if (status->msg_received == MAVLINK_FRAMING_OK)
  566              		.loc 3 806 2 view .LVU176
@@ -2458,9 +2443,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  586 0152 9BB1     		cbz	r3, .L127
  824:Modules/include/MAVLink/common/../mavlink_helpers.h ****            r_mavlink_status->parse_state = status->parse_state;
  587              		.loc 3 824 12 is_stmt 1 view .LVU186
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 42
-
-
  588              		.loc 3 824 50 is_stmt 0 view .LVU187
  589 0154 9AF80330 		ldrb	r3, [r10, #3]	@ zero_extendqisi2
  590              		.loc 3 824 42 view .LVU188
@@ -2476,6 +2458,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  598              		.loc 3 826 12 is_stmt 1 view .LVU192
  599              		.loc 3 826 53 is_stmt 0 view .LVU193
  600 0162 9AF80530 		ldrb	r3, [r10, #5]	@ zero_extendqisi2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 42
+
+
  601              		.loc 3 826 69 view .LVU194
  602 0166 0133     		adds	r3, r3, #1
  603              		.loc 3 826 45 view .LVU195
@@ -2518,9 +2503,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  835:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		  the CRC came out wrong. We now need to overwrite the
  836:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		  msg CRC with the one on the wire so that if the
  837:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		  caller decides to forward the message anyway that
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 43
-
-
  838:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		  mavlink_msg_to_send_buffer() won't overwrite the
  839:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		  checksum
  840:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		 */
@@ -2536,6 +2518,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  634 018c 9AF80000 		ldrb	r0, [r10]	@ zero_extendqisi2
  635 0190 0DF5117D 		add	sp, sp, #580
  636              	.LCFI3:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 43
+
+
  637              		.cfi_remember_state
  638              		.cfi_def_cfa_offset 36
  639              		@ sp needed
@@ -2578,9 +2563,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  665              		.loc 4 40 22 is_stmt 0 view .LVU222
  666 019c D9B2     		uxtb	r1, r3
   40:Modules/include/MAVLink/common/../checksum.h ****         tmp ^= (tmp<<4);
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 44
-
-
  667              		.loc 4 40 13 view .LVU223
  668 019e 4A40     		eors	r2, r2, r1
  669              	.LVL58:
@@ -2596,6 +2578,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  676              	.LVL60:
   42:Modules/include/MAVLink/common/../checksum.h **** }
  677              		.loc 4 42 9 is_stmt 1 view .LVU227
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 44
+
+
   42:Modules/include/MAVLink/common/../checksum.h **** }
  678              		.loc 4 42 36 is_stmt 0 view .LVU228
  679 01a6 1B0A     		lsrs	r3, r3, #8
@@ -2638,9 +2623,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  658:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		mavlink_update_checksum(rxmsg, c);
  707              		.loc 3 658 3 view .LVU238
  658:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		mavlink_update_checksum(rxmsg, c);
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 45
-
-
  708              		.loc 3 658 16 is_stmt 0 view .LVU239
  709 01c0 C271     		strb	r2, [r0, #7]
  659:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		status->parse_state = MAVLINK_PARSE_STATE_GOT_SYSID;
@@ -2656,6 +2638,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  490:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	crc_accumulate(c, &checksum);
  717              		.loc 3 490 25 is_stmt 0 view .LVU243
  718 01c2 0388     		ldrh	r3, [r0]	@ unaligned
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 45
+
+
  719              	.LVL67:
  491:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	msg->checksum = checksum;
  720              		.loc 3 491 2 is_stmt 1 view .LVU244
@@ -2698,9 +2683,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  746              	.LVL71:
   42:Modules/include/MAVLink/common/../checksum.h **** }
  747              		.loc 4 42 47 view .LVU256
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 46
-
-
  748              	.LBE220:
  749              	.LBE219:
  492:Modules/include/MAVLink/common/../mavlink_helpers.h **** }
@@ -2716,6 +2698,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  492:Modules/include/MAVLink/common/../mavlink_helpers.h **** }
  757              		.loc 3 492 16 view .LVU260
  758              	.LBE218:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 46
+
+
  759              	.LBE217:
  660:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		break;
  760              		.loc 3 660 3 is_stmt 1 view .LVU261
@@ -2758,9 +2743,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
   38:Modules/include/MAVLink/common/../checksum.h **** 
  787              		.loc 4 38 9 view .LVU272
   40:Modules/include/MAVLink/common/../checksum.h ****         tmp ^= (tmp<<4);
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 47
-
-
  788              		.loc 4 40 9 view .LVU273
   40:Modules/include/MAVLink/common/../checksum.h ****         tmp ^= (tmp<<4);
  789              		.loc 4 40 22 is_stmt 0 view .LVU274
@@ -2776,6 +2758,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  796 01f0 82EA0212 		eor	r2, r2, r2, lsl #4
  797              	.LVL79:
   41:Modules/include/MAVLink/common/../checksum.h ****         *crcAccum = (*crcAccum>>8) ^ (tmp<<8) ^ (tmp <<3) ^ (tmp>>4);
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 47
+
+
  798              		.loc 4 41 13 view .LVU278
  799 01f4 D2B2     		uxtb	r2, r2
  800              	.LVL80:
@@ -2818,9 +2803,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  667:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
  827              		.loc 3 667 3 is_stmt 1 view .LVU289
  828 020e 95E7     		b	.L11
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 48
-
-
  829              	.LVL85:
  830              	.L19:
  670:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		mavlink_update_checksum(rxmsg, c);
@@ -2836,6 +2818,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  838              	.LVL86:
  839              	.LBB225:
  840              	.LBI225:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 48
+
+
  488:Modules/include/MAVLink/common/../mavlink_helpers.h **** {
  841              		.loc 3 488 21 view .LVU293
  842              	.LBB226:
@@ -2878,9 +2863,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
   42:Modules/include/MAVLink/common/../checksum.h **** }
  867              		.loc 4 42 36 is_stmt 0 view .LVU306
  868 0224 1B0A     		lsrs	r3, r3, #8
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 49
-
-
  869 0226 43EA0223 		orr	r3, r3, r2, lsl #8
  870 022a 1BB2     		sxth	r3, r3
   42:Modules/include/MAVLink/common/../checksum.h **** }
@@ -2896,6 +2878,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  492:Modules/include/MAVLink/common/../mavlink_helpers.h **** }
  878              		.loc 3 492 16 is_stmt 0 view .LVU310
  879 0230 83EA1213 		eor	r3, r3, r2, lsr #4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 49
+
+
  880              	.LVL92:
  492:Modules/include/MAVLink/common/../mavlink_helpers.h **** }
  881              		.loc 3 492 16 view .LVU311
@@ -2938,9 +2923,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  907              		.loc 3 676 5 is_stmt 1 view .LVU322
  676:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			}
  908              		.loc 3 676 25 is_stmt 0 view .LVU323
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 50
-
-
  909 024c 0C23     		movs	r3, #12
  910 024e 8AF80330 		strb	r3, [r10, #3]
  911              	.LVL96:
@@ -2956,6 +2938,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  918 0254 0923     		movs	r3, #9
  919 0256 8AF80330 		strb	r3, [r10, #3]
  920              	.LVL98:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 50
+
+
  687:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		}
  921              		.loc 3 687 24 view .LVU327
  922 025a 6FE7     		b	.L11
@@ -2998,9 +2983,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  951              		.loc 4 35 20 view .LVU335
  952              	.LBB232:
   38:Modules/include/MAVLink/common/../checksum.h **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 51
-
-
  953              		.loc 4 38 9 view .LVU336
   40:Modules/include/MAVLink/common/../checksum.h ****         tmp ^= (tmp<<4);
  954              		.loc 4 40 9 view .LVU337
@@ -3016,6 +2998,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
   41:Modules/include/MAVLink/common/../checksum.h ****         *crcAccum = (*crcAccum>>8) ^ (tmp<<8) ^ (tmp <<3) ^ (tmp>>4);
  961              		.loc 4 41 13 is_stmt 0 view .LVU341
  962 0280 82EA0212 		eor	r2, r2, r2, lsl #4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 51
+
+
  963              	.LVL103:
   41:Modules/include/MAVLink/common/../checksum.h ****         *crcAccum = (*crcAccum>>8) ^ (tmp<<8) ^ (tmp <<3) ^ (tmp>>4);
  964              		.loc 4 41 13 view .LVU342
@@ -3058,9 +3043,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  991 029a 8AF80330 		strb	r3, [r10, #3]
  695:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
  992              		.loc 3 695 3 is_stmt 1 view .LVU353
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 52
-
-
  993 029e 4DE7     		b	.L11
  994              	.LVL108:
  995              	.L17:
@@ -3076,6 +3058,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1003 02ae 43EA0241 		orr	r1, r3, r2, lsl #16
  1004 02b2 4372     		strb	r3, [r0, #9]
  1005 02b4 C3F30723 		ubfx	r3, r3, #8, #8
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 52
+
+
  1006 02b8 8372     		strb	r3, [r0, #10]
  1007 02ba 0B0C     		lsrs	r3, r1, #16
  1008 02bc C372     		strb	r3, [r0, #11]
@@ -3118,9 +3103,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1033 02c4 82EA0212 		eor	r2, r2, r2, lsl #4
  1034              	.LVL112:
   41:Modules/include/MAVLink/common/../checksum.h ****         *crcAccum = (*crcAccum>>8) ^ (tmp<<8) ^ (tmp <<3) ^ (tmp>>4);
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 53
-
-
  1035              		.loc 4 41 13 view .LVU368
  1036 02c8 D2B2     		uxtb	r2, r2
  1037              	.LVL113:
@@ -3136,6 +3118,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1044 02d2 83EAC203 		eor	r3, r3, r2, lsl #3
  1045              	.LVL114:
   42:Modules/include/MAVLink/common/../checksum.h **** }
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 53
+
+
  1046              		.loc 4 42 47 view .LVU372
  1047              	.LBE236:
  1048              	.LBE235:
@@ -3178,9 +3163,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1074 02ee 25E7     		b	.L11
  1075              	.LVL117:
  1076              	.L16:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 54
-
-
  717:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		mavlink_update_checksum(rxmsg, c);
  1077              		.loc 3 717 3 is_stmt 1 view .LVU384
  1078 02f0 00F10C03 		add	r3, r0, #12
@@ -3196,6 +3178,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1085 02fa 8AF80400 		strb	r0, [r10, #4]
  717:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		mavlink_update_checksum(rxmsg, c);
  1086              		.loc 3 717 55 view .LVU388
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 54
+
+
  1087 02fe 5A54     		strb	r2, [r3, r1]
  718:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		if (status->packet_idx == rxmsg->len)
  1088              		.loc 3 718 3 is_stmt 1 view .LVU389
@@ -3238,9 +3223,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1114              	.LVL123:
   41:Modules/include/MAVLink/common/../checksum.h ****         *crcAccum = (*crcAccum>>8) ^ (tmp<<8) ^ (tmp <<3) ^ (tmp>>4);
  1115              		.loc 4 41 13 view .LVU401
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 55
-
-
  1116 030c D2B2     		uxtb	r2, r2
  1117              	.LVL124:
   42:Modules/include/MAVLink/common/../checksum.h **** }
@@ -3256,6 +3238,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1125              	.LVL125:
   42:Modules/include/MAVLink/common/../checksum.h **** }
  1126              		.loc 4 42 47 view .LVU405
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 55
+
+
  1127              	.LBE240:
  1128              	.LBE239:
  492:Modules/include/MAVLink/common/../mavlink_helpers.h **** }
@@ -3298,9 +3283,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1155              		.loc 3 726 3 is_stmt 1 view .LVU416
  726:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		uint8_t crc_extra = e?e->crc_extra:0;
  1156              		.loc 3 726 61 is_stmt 0 view .LVU417
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 56
-
-
  1157 0338 447A     		ldrb	r4, [r0, #9]	@ zero_extendqisi2
  1158 033a 837A     		ldrb	r3, [r0, #10]	@ zero_extendqisi2
  1159 033c 44EA0324 		orr	r4, r4, r3, lsl #8
@@ -3316,6 +3298,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1167              		.loc 3 499 43 is_stmt 1 view .LVU419
  1168              	.LBB243:
  501:Modules/include/MAVLink/common/../mavlink_helpers.h ****         /*
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 56
+
+
  1169              		.loc 3 501 2 view .LVU420
  506:Modules/include/MAVLink/common/../mavlink_helpers.h ****         while (low < high) {
  1170              		.loc 3 506 9 view .LVU421
@@ -3358,9 +3343,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1197 0366 38D3     		bcc	.L153
  513:Modules/include/MAVLink/common/../mavlink_helpers.h ****                 low = mid;
  1198              		.loc 3 513 13 is_stmt 1 view .LVU432
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 57
-
-
  513:Modules/include/MAVLink/common/../mavlink_helpers.h ****                 low = mid;
  1199              		.loc 3 513 16 is_stmt 0 view .LVU433
  1200 0368 9F42     		cmp	r7, r3
@@ -3376,6 +3358,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1207              		.loc 3 520 38 is_stmt 0 view .LVU436
  1208 036c 01EB4103 		add	r3, r1, r1, lsl #1
  1209 0370 A648     		ldr	r0, .L177
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 57
+
+
  1210 0372 50F82330 		ldr	r3, [r0, r3, lsl #2]
  520:Modules/include/MAVLink/common/../mavlink_helpers.h ****             // msgid is not in the table
  1211              		.loc 3 520 12 view .LVU437
@@ -3418,9 +3403,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1237              		.loc 3 490 25 is_stmt 0 discriminator 4 view .LVU448
  1238 0386 BBF80010 		ldrh	r1, [fp]	@ unaligned
  1239              	.LVL136:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 58
-
-
  491:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	msg->checksum = checksum;
  1240              		.loc 3 491 2 is_stmt 1 discriminator 4 view .LVU449
  1241              	.LBB249:
@@ -3436,6 +3418,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1247              		.loc 4 40 22 is_stmt 0 discriminator 4 view .LVU453
  1248 038a C8B2     		uxtb	r0, r1
   40:Modules/include/MAVLink/common/../checksum.h ****         tmp ^= (tmp<<4);
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 58
+
+
  1249              		.loc 4 40 13 discriminator 4 view .LVU454
  1250 038c 4340     		eors	r3, r3, r0
  1251              	.LVL137:
@@ -3478,9 +3463,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1277              	.LBE248:
  1278              	.LBE247:
  729:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			status->parse_state = MAVLINK_PARSE_STATE_GOT_BAD_CRC1;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 59
-
-
  1279              		.loc 3 729 3 is_stmt 1 discriminator 4 view .LVU466
  729:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			status->parse_state = MAVLINK_PARSE_STATE_GOT_BAD_CRC1;
  1280              		.loc 3 729 29 is_stmt 0 discriminator 4 view .LVU467
@@ -3496,6 +3478,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1287 03ae 0E23     		movs	r3, #14
  1288 03b0 8AF80330 		strb	r3, [r10, #3]
  1289              	.L40:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 59
+
+
  734:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
  1290              		.loc 3 734 17 is_stmt 1 view .LVU471
  734:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
@@ -3538,9 +3523,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1318              	.LBB251:
  1319              	.LBB246:
  1320              	.LBB245:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 60
-
-
  510:Modules/include/MAVLink/common/../mavlink_helpers.h ****                 continue;
  1321              		.loc 3 510 17 is_stmt 1 view .LVU482
  510:Modules/include/MAVLink/common/../mavlink_helpers.h ****                 continue;
@@ -3556,6 +3538,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1329 03de 0E46     		mov	r6, r1
  1330              	.LVL146:
  514:Modules/include/MAVLink/common/../mavlink_helpers.h ****                 continue;
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 60
+
+
  1331              		.loc 3 514 21 view .LVU486
  1332 03e0 B4E7     		b	.L33
  1333              	.LVL147:
@@ -3598,9 +3583,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1363              	.L14:
  732:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		}
  1364              		.loc 3 732 24 view .LVU494
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 61
-
-
  1365              	.LBE241:
  745:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			// got a bad CRC message
  1366              		.loc 3 745 3 is_stmt 1 view .LVU495
@@ -3616,6 +3598,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1373 03fe 0188     		ldrh	r1, [r0]	@ unaligned
  745:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			// got a bad CRC message
  1374              		.loc 3 745 63 discriminator 1 view .LVU499
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 61
+
+
  1375 0400 B3EB112F 		cmp	r3, r1, lsr #8
  1376 0404 18D0     		beq	.L42
  1377              	.L41:
@@ -3658,9 +3643,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1401              		.loc 3 760 14 is_stmt 0 view .LVU512
  1402 0426 9AF80030 		ldrb	r3, [r10]	@ zero_extendqisi2
  760:Modules/include/MAVLink/common/../mavlink_helpers.h **** 				status->msg_received = MAVLINK_FRAMING_INCOMPLETE;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 62
-
-
  1403              		.loc 3 760 7 view .LVU513
  1404 042a 022B     		cmp	r3, #2
  1405 042c 3FF486AE 		beq	.L11
@@ -3676,6 +3658,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1412              		.loc 3 750 4 is_stmt 1 view .LVU516
  750:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		}
  1413              		.loc 3 750 25 is_stmt 0 view .LVU517
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 62
+
+
  1414 0438 0123     		movs	r3, #1
  1415 043a 8AF80030 		strb	r3, [r10]
  1416 043e E5E7     		b	.L43
@@ -3718,9 +3703,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1443              		.loc 3 769 5 is_stmt 1 view .LVU527
  769:Modules/include/MAVLink/common/../mavlink_helpers.h **** 					status->msg_received = MAVLINK_FRAMING_BAD_SIGNATURE;
  1444              		.loc 3 769 15 is_stmt 0 view .LVU528
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 63
-
-
  1445 0464 9AF80030 		ldrb	r3, [r10]	@ zero_extendqisi2
  769:Modules/include/MAVLink/common/../mavlink_helpers.h **** 					status->msg_received = MAVLINK_FRAMING_BAD_SIGNATURE;
  1446              		.loc 3 769 8 view .LVU529
@@ -3736,6 +3718,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  773:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			if (r_message != NULL) {
  1454              		.loc 3 773 4 is_stmt 1 view .LVU532
  773:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			if (r_message != NULL) {
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 63
+
+
  1455              		.loc 3 773 24 is_stmt 0 view .LVU533
  1456 0472 0123     		movs	r3, #1
  1457 0474 8AF80330 		strb	r3, [r10, #3]
@@ -3778,9 +3763,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1484 04a0 DBB2     		uxtb	r3, r3
  1485 04a2 8AF80D30 		strb	r3, [r10, #13]
  782:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			// we have the whole signature, check it is OK
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 64
-
-
  1486              		.loc 3 782 3 is_stmt 1 view .LVU544
  782:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			// we have the whole signature, check it is OK
  1487              		.loc 3 782 6 is_stmt 0 view .LVU545
@@ -3796,6 +3778,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  784:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			if (!sig_ok &&
  1495              		.loc 3 784 48 view .LVU548
  1496 04b0 1192     		str	r2, [sp, #68]
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 64
+
+
  784:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			if (!sig_ok &&
  1497              		.loc 3 784 65 view .LVU549
  1498 04b2 DAF81430 		ldr	r3, [r10, #20]
@@ -3838,9 +3823,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1524              		.loc 3 129 24 is_stmt 0 view .LVU560
  1525 04c8 00F21D13 		addw	r3, r0, #285
  1526              	.LVL164:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 65
-
-
  129:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	mavlink_sha256_ctx ctx;
  1527              		.loc 3 129 24 view .LVU561
  1528 04cc 0C93     		str	r3, [sp, #48]
@@ -3856,6 +3838,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1534              	.LBB255:
  1535              	.LBI255:
  1536              		.file 5 "Modules/include/MAVLink/common/../mavlink_sha256.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 65
+
+
    1:Modules/include/MAVLink/common/../mavlink_sha256.h **** #pragma once
    2:Modules/include/MAVLink/common/../mavlink_sha256.h **** 
    3:Modules/include/MAVLink/common/../mavlink_sha256.h **** /*
@@ -3898,9 +3883,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
   40:Modules/include/MAVLink/common/../mavlink_sha256.h **** /*
   41:Modules/include/MAVLink/common/../mavlink_sha256.h ****   allow implementation to provide their own sha256 with the same API
   42:Modules/include/MAVLink/common/../mavlink_sha256.h **** */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 66
-
-
   43:Modules/include/MAVLink/common/../mavlink_sha256.h **** #ifndef HAVE_MAVLINK_SHA256
   44:Modules/include/MAVLink/common/../mavlink_sha256.h **** 
   45:Modules/include/MAVLink/common/../mavlink_sha256.h **** #ifdef MAVLINK_USE_CXX_NAMESPACE
@@ -3916,6 +3898,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
   55:Modules/include/MAVLink/common/../mavlink_sha256.h ****   uint32_t counter[8];
   56:Modules/include/MAVLink/common/../mavlink_sha256.h ****   union {
   57:Modules/include/MAVLink/common/../mavlink_sha256.h ****       unsigned char save_bytes[64];
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 66
+
+
   58:Modules/include/MAVLink/common/../mavlink_sha256.h ****       uint32_t save_u32[16];
   59:Modules/include/MAVLink/common/../mavlink_sha256.h ****   } u;
   60:Modules/include/MAVLink/common/../mavlink_sha256.h **** } mavlink_sha256_ctx;
@@ -3958,9 +3943,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
   97:Modules/include/MAVLink/common/../mavlink_sha256.h ****     0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2
   98:Modules/include/MAVLink/common/../mavlink_sha256.h **** };
   99:Modules/include/MAVLink/common/../mavlink_sha256.h **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 67
-
-
  100:Modules/include/MAVLink/common/../mavlink_sha256.h **** MAVLINK_HELPER void mavlink_sha256_init(mavlink_sha256_ctx *m)
  1537              		.loc 5 100 21 view .LVU566
  1538              	.LBB256:
@@ -3976,6 +3958,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1545 04d0 3793     		str	r3, [sp, #220]
  104:Modules/include/MAVLink/common/../mavlink_sha256.h ****     A = 0x6a09e667;
  1546              		.loc 5 104 5 is_stmt 1 view .LVU571
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 67
+
+
  1547              		.loc 5 104 7 is_stmt 0 view .LVU572
  1548 04d2 4F4B     		ldr	r3, .L177+4
  1549 04d4 3893     		str	r3, [sp, #224]
@@ -4018,9 +4003,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1579 04f6 A3F69243 		subw	r3, r3, #3218
  1580 04fa 3F93     		str	r3, [sp, #252]
  1581              	.LVL168:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 68
-
-
  1582              		.loc 5 111 7 view .LVU587
  1583              	.LBE256:
  1584              	.LBE255:
@@ -4036,6 +4018,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  113:Modules/include/MAVLink/common/../mavlink_sha256.h **** 
  114:Modules/include/MAVLink/common/../mavlink_sha256.h **** static inline void mavlink_sha256_calc(mavlink_sha256_ctx *m, uint32_t *in)
  115:Modules/include/MAVLink/common/../mavlink_sha256.h **** {
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 68
+
+
  116:Modules/include/MAVLink/common/../mavlink_sha256.h ****     uint32_t AA, BB, CC, DD, EE, FF, GG, HH;
  117:Modules/include/MAVLink/common/../mavlink_sha256.h ****     uint32_t data[64];
  118:Modules/include/MAVLink/common/../mavlink_sha256.h ****     int i;
@@ -4078,9 +4063,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  155:Modules/include/MAVLink/common/../mavlink_sha256.h ****     E += EE;
  156:Modules/include/MAVLink/common/../mavlink_sha256.h ****     F += FF;
  157:Modules/include/MAVLink/common/../mavlink_sha256.h ****     G += GG;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 69
-
-
  158:Modules/include/MAVLink/common/../mavlink_sha256.h ****     H += HH;
  159:Modules/include/MAVLink/common/../mavlink_sha256.h **** }
  160:Modules/include/MAVLink/common/../mavlink_sha256.h **** 
@@ -4096,6 +4078,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1595              		.loc 5 165 5 view .LVU593
  166:Modules/include/MAVLink/common/../mavlink_sha256.h **** 
  167:Modules/include/MAVLink/common/../mavlink_sha256.h ****     m->sz[0] += len * 8;
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 69
+
+
  1596              		.loc 5 167 5 view .LVU594
  1597              		.loc 5 167 14 is_stmt 0 view .LVU595
  1598 04fe 4FF48073 		mov	r3, #256
@@ -4138,9 +4123,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1625              		.loc 5 177 2 view .LVU603
  1626              		.loc 5 177 9 is_stmt 0 view .LVU604
  1627 0520 2544     		add	r5, r5, r4
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 70
-
-
  1628              	.LVL174:
  178:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	p += l;
  1629              		.loc 5 178 2 is_stmt 1 view .LVU605
@@ -4156,6 +4138,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1637              		.loc 5 180 2 is_stmt 1 view .LVU609
  1638              		.loc 5 180 4 is_stmt 0 view .LVU610
  1639 0528 402D     		cmp	r5, #64
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 70
+
+
  1640 052a 09D0     		beq	.L155
  1641              	.LVL177:
  1642              	.L49:
@@ -4198,9 +4183,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1668              	.L51:
  1669              		.loc 5 184 18 is_stmt 1 view .LVU620
  1670              		.loc 5 184 6 is_stmt 0 view .LVU621
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 71
-
-
  1671 0542 0F2B     		cmp	r3, #15
  1672 0544 11DC     		bgt	.L157
  1673              	.LBB261:
@@ -4216,6 +4198,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1681 054c 24AC     		add	r4, sp, #144
  1682 054e 04EB8302 		add	r2, r4, r3, lsl #2
  1683              	.LVL183:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 71
+
+
  187:Modules/include/MAVLink/common/../mavlink_sha256.h ****                 p2[0] = p1[3];
  1684              		.loc 5 187 17 is_stmt 1 view .LVU626
  1685              		.loc 5 187 23 is_stmt 0 view .LVU627
@@ -4258,9 +4243,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1714              	.LBI262:
  114:Modules/include/MAVLink/common/../mavlink_sha256.h **** {
  1715              		.loc 5 114 20 view .LVU640
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 72
-
-
  1716              	.LBB263:
  116:Modules/include/MAVLink/common/../mavlink_sha256.h ****     uint32_t data[64];
  1717              		.loc 5 116 5 view .LVU641
@@ -4276,6 +4258,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1723              	.LVL187:
  120:Modules/include/MAVLink/common/../mavlink_sha256.h ****     BB = B;
  1724              		.loc 5 120 8 view .LVU646
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 72
+
+
  1725 056c 0293     		str	r3, [sp, #8]
  1726              	.LVL188:
  121:Modules/include/MAVLink/common/../mavlink_sha256.h ****     CC = C;
@@ -4318,9 +4303,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1752              		.loc 5 124 8 view .LVU658
  1753 057c 0693     		str	r3, [sp, #24]
  1754              	.LVL196:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 73
-
-
  125:Modules/include/MAVLink/common/../mavlink_sha256.h ****     GG = G;
  1755              		.loc 5 125 5 is_stmt 1 view .LVU659
  125:Modules/include/MAVLink/common/../mavlink_sha256.h ****     GG = G;
@@ -4336,6 +4318,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  126:Modules/include/MAVLink/common/../mavlink_sha256.h ****     HH = H;
  1763              		.loc 5 126 8 is_stmt 0 view .LVU663
  1764 0582 3E9B     		ldr	r3, [sp, #248]
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 73
+
+
  1765              	.LVL199:
  126:Modules/include/MAVLink/common/../mavlink_sha256.h ****     HH = H;
  1766              		.loc 5 126 8 view .LVU664
@@ -4378,9 +4363,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1793 059e 42F82310 		str	r1, [r2, r3, lsl #2]
  129:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	data[i] = in[i];
  1794              		.loc 5 129 25 is_stmt 1 view .LVU675
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 74
-
-
  1795 05a2 0133     		adds	r3, r3, #1
  1796              	.LVL204:
  129:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	data[i] = in[i];
@@ -4396,6 +4378,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  132:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	    sigma0(data[i-15]) + data[i - 16];
  1805              		.loc 5 132 2 is_stmt 1 view .LVU678
  132:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	    sigma0(data[i-15]) + data[i - 16];
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 74
+
+
  1806              		.loc 5 132 12 is_stmt 0 view .LVU679
  1807 05aa 931E     		subs	r3, r2, #2
  1808 05ac 50A9     		add	r1, sp, #320
@@ -4438,9 +4423,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1835              		.loc 5 131 26 is_stmt 1 view .LVU689
  1836 05ea 0132     		adds	r2, r2, #1
  1837              	.LVL206:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 75
-
-
  1838              	.L56:
  131:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	data[i] = sigma1(data[i-2]) + data[i-7] + 
  1839              		.loc 5 131 18 view .LVU690
@@ -4456,6 +4438,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1846 05f4 DDF820C0 		ldr	ip, [sp, #32]
  125:Modules/include/MAVLink/common/../mavlink_sha256.h ****     GG = G;
  1847              		.loc 5 125 8 view .LVU694
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 75
+
+
  1848 05f8 DDF81CE0 		ldr	lr, [sp, #28]
  124:Modules/include/MAVLink/common/../mavlink_sha256.h ****     FF = F;
  1849              		.loc 5 124 8 view .LVU695
@@ -4498,9 +4483,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1878              		.loc 5 138 12 is_stmt 0 view .LVU703
  1879 062c 4FEAF123 		ror	r3, r1, #11
  1880 0630 83EAB113 		eor	r3, r3, r1, ror #6
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 76
-
-
  1881 0634 83EA7163 		eor	r3, r3, r1, ror #25
  138:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	T2 = Sigma0(AA) + Maj(AA,BB,CC);
  1882              		.loc 5 138 10 view .LVU704
@@ -4516,6 +4498,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  138:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	T2 = Sigma0(AA) + Maj(AA,BB,CC);
  1890              		.loc 5 138 69 view .LVU707
  1891 0646 A84A     		ldr	r2, .L179
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 76
+
+
  1892 0648 52F82520 		ldr	r2, [r2, r5, lsl #2]
  138:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	T2 = Sigma0(AA) + Maj(AA,BB,CC);
  1893              		.loc 5 138 40 view .LVU708
@@ -4558,9 +4543,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1919              		.loc 5 144 2 view .LVU719
  145:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	CC = BB;
  1920              		.loc 5 145 2 view .LVU720
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 77
-
-
  146:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	BB = AA;
  1921              		.loc 5 146 2 view .LVU721
  147:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	AA = T1 + T2;
@@ -4576,6 +4558,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1927              		.loc 5 135 26 is_stmt 0 view .LVU726
  1928 0672 0135     		adds	r5, r5, #1
  1929              	.LVL211:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 77
+
+
  1930              	.LBB265:
  141:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	GG = FF;
  1931              		.loc 5 141 5 view .LVU727
@@ -4618,9 +4603,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1958 0686 3F2D     		cmp	r5, #63
  1959 0688 D0DD     		ble	.L59
  151:Modules/include/MAVLink/common/../mavlink_sha256.h ****     B += BB;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 78
-
-
  1960              		.loc 5 151 5 is_stmt 1 view .LVU738
  151:Modules/include/MAVLink/common/../mavlink_sha256.h ****     B += BB;
  1961              		.loc 5 151 7 is_stmt 0 view .LVU739
@@ -4636,6 +4618,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1969 0694 3993     		str	r3, [sp, #228]
  153:Modules/include/MAVLink/common/../mavlink_sha256.h ****     D += DD;
  1970              		.loc 5 153 5 is_stmt 1 view .LVU742
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 78
+
+
  153:Modules/include/MAVLink/common/../mavlink_sha256.h ****     D += DD;
  1971              		.loc 5 153 7 is_stmt 0 view .LVU743
  1972 0696 049B     		ldr	r3, [sp, #16]
@@ -4678,9 +4663,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  1999 06b8 3F93     		str	r3, [sp, #252]
  2000              	.LVL218:
  158:Modules/include/MAVLink/common/../mavlink_sha256.h **** }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 79
-
-
  2001              		.loc 5 158 7 view .LVU754
  2002              	.LBE263:
  2003              	.LBE262:
@@ -4696,6 +4678,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2012 06c2 DDF83CB0 		ldr	fp, [sp, #60]
  2013              	.LVL220:
  2014              		.loc 5 193 13 view .LVU758
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 79
+
+
  2015 06c6 DDF840A0 		ldr	r10, [sp, #64]
  2016              	.LVL221:
  2017              		.loc 5 193 13 view .LVU759
@@ -4738,9 +4723,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2043              		.loc 5 167 14 view .LVU770
  2044 06d8 3693     		str	r3, [sp, #216]
  168:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	++m->sz[1];
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 80
-
-
  2045              		.loc 5 168 5 is_stmt 1 view .LVU771
  168:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	++m->sz[1];
  2046              		.loc 5 168 8 is_stmt 0 view .LVU772
@@ -4756,6 +4738,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2053 06e0 0133     		adds	r3, r3, #1
  2054 06e2 3793     		str	r3, [sp, #220]
  2055              	.L61:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 80
+
+
  170:Modules/include/MAVLink/common/../mavlink_sha256.h ****     while(len > 0){
  2056              		.loc 5 170 5 is_stmt 1 view .LVU776
  170:Modules/include/MAVLink/common/../mavlink_sha256.h ****     while(len > 0){
@@ -4798,9 +4783,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2085              		.loc 5 178 2 is_stmt 1 view .LVU785
  178:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	len -= l;
  2086              		.loc 5 178 4 is_stmt 0 view .LVU786
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 81
-
-
  2087 0708 A344     		add	fp, fp, r4
  2088              	.LVL231:
  179:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	if(offset == 64){
@@ -4816,6 +4798,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2095 070e 402D     		cmp	r5, #64
  2096 0710 09D0     		beq	.L159
  2097              	.LVL233:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 81
+
+
  2098              	.L62:
  180:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	    int i;
  2099              		.loc 5 180 4 view .LVU791
@@ -4858,9 +4843,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2126              		.loc 5 184 6 is_stmt 0 view .LVU801
  2127 0728 0F2B     		cmp	r3, #15
  2128 072a 11DC     		bgt	.L161
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 82
-
-
  2129              	.LBB271:
  185:Modules/include/MAVLink/common/../mavlink_sha256.h ****                 uint8_t *p2 = (uint8_t *)&current[i];
  2130              		.loc 5 185 17 is_stmt 1 view .LVU802
@@ -4876,6 +4858,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2137 0732 24AC     		add	r4, sp, #144
  2138 0734 04EB8302 		add	r2, r4, r3, lsl #2
  2139              	.LVL239:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 82
+
+
  187:Modules/include/MAVLink/common/../mavlink_sha256.h ****                 p2[1] = p1[2];
  2140              		.loc 5 187 17 is_stmt 1 view .LVU806
  187:Modules/include/MAVLink/common/../mavlink_sha256.h ****                 p2[1] = p1[2];
@@ -4918,9 +4903,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2166              	.LVL242:
  2167              	.L161:
  192:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	    offset = 0;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 83
-
-
  2168              		.loc 5 192 6 is_stmt 1 view .LVU819
  2169              	.LBB272:
  2170              	.LBI272:
@@ -4936,6 +4918,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  120:Modules/include/MAVLink/common/../mavlink_sha256.h ****     BB = B;
  2176              		.loc 5 120 5 view .LVU824
  120:Modules/include/MAVLink/common/../mavlink_sha256.h ****     BB = B;
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 83
+
+
  2177              		.loc 5 120 8 is_stmt 0 view .LVU825
  2178 0750 389B     		ldr	r3, [sp, #224]
  2179              	.LVL243:
@@ -4978,9 +4963,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  124:Modules/include/MAVLink/common/../mavlink_sha256.h ****     FF = F;
  2205              		.loc 5 124 8 is_stmt 0 view .LVU837
  2206 0760 3C9B     		ldr	r3, [sp, #240]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 84
-
-
  2207              	.LVL251:
  124:Modules/include/MAVLink/common/../mavlink_sha256.h ****     FF = F;
  2208              		.loc 5 124 8 view .LVU838
@@ -4996,6 +4978,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2215              		.loc 5 125 8 view .LVU841
  2216 0766 0793     		str	r3, [sp, #28]
  2217              	.LVL254:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 84
+
+
  126:Modules/include/MAVLink/common/../mavlink_sha256.h ****     HH = H;
  2218              		.loc 5 126 5 is_stmt 1 view .LVU842
  126:Modules/include/MAVLink/common/../mavlink_sha256.h ****     HH = H;
@@ -5038,9 +5023,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2245 077c A2F5D872 		sub	r2, r2, #432
  2246 0780 1168     		ldr	r1, [r2]
  130:Modules/include/MAVLink/common/../mavlink_sha256.h ****     for (i = 16; i < 64; ++i)
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 85
-
-
  2247              		.loc 5 130 10 view .LVU854
  2248 0782 50AA     		add	r2, sp, #320
  2249 0784 42F82310 		str	r1, [r2, r3, lsl #2]
@@ -5056,6 +5038,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2256              		.loc 5 131 12 view .LVU857
  2257 078c 1022     		movs	r2, #16
  2258 078e 20E0     		b	.L69
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 85
+
+
  2259              	.LVL261:
  2260              	.L70:
  132:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	    sigma0(data[i-15]) + data[i - 16];
@@ -5098,9 +5083,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2288 07ca 0344     		add	r3, r3, r0
  132:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	    sigma0(data[i-15]) + data[i - 16];
  2289              		.loc 5 132 10 view .LVU868
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 86
-
-
  2290 07cc 41F82230 		str	r3, [r1, r2, lsl #2]
  131:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	data[i] = sigma1(data[i-2]) + data[i-7] + 
  2291              		.loc 5 131 26 is_stmt 1 view .LVU869
@@ -5116,6 +5098,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  127:Modules/include/MAVLink/common/../mavlink_sha256.h **** 
  2299              		.loc 5 127 8 view .LVU872
  2300 07d6 DDF82490 		ldr	r9, [sp, #36]
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 86
+
+
  126:Modules/include/MAVLink/common/../mavlink_sha256.h ****     HH = H;
  2301              		.loc 5 126 8 view .LVU873
  2302 07da DDF820C0 		ldr	ip, [sp, #32]
@@ -5158,9 +5143,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2328 07fe 4B44     		add	r3, r3, r9
  138:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	T2 = Sigma0(AA) + Maj(AA,BB,CC);
  2329              		.loc 5 138 25 view .LVU885
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 87
-
-
  2330 0800 01EA0E02 		and	r2, r1, lr
  2331 0804 2CEA0104 		bic	r4, ip, r1
  2332 0808 6240     		eors	r2, r2, r4
@@ -5176,6 +5158,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2339 0812 1344     		add	r3, r3, r2
  138:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	T2 = Sigma0(AA) + Maj(AA,BB,CC);
  2340              		.loc 5 138 79 view .LVU889
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 87
+
+
  2341 0814 50AA     		add	r2, sp, #320
  2342 0816 52F82520 		ldr	r2, [r2, r5, lsl #2]
  138:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	T2 = Sigma0(AA) + Maj(AA,BB,CC);
@@ -5218,9 +5203,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2367              		.loc 5 147 2 view .LVU902
  148:Modules/include/MAVLink/common/../mavlink_sha256.h ****     }
  2368              		.loc 5 148 2 view .LVU903
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 88
-
-
  148:Modules/include/MAVLink/common/../mavlink_sha256.h ****     }
  2369              		.loc 5 148 2 is_stmt 0 view .LVU904
  2370              	.LBE274:
@@ -5236,6 +5218,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2377 083a E146     		mov	r9, ip
  142:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	FF = EE;
  2378              		.loc 5 142 5 view .LVU908
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 88
+
+
  2379 083c F446     		mov	ip, lr
  2380              	.LVL268:
  143:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	EE = DD + T1;
@@ -5278,9 +5263,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2407 0850 029B     		ldr	r3, [sp, #8]
  2408 0852 0344     		add	r3, r3, r0
  2409 0854 3893     		str	r3, [sp, #224]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 89
-
-
  152:Modules/include/MAVLink/common/../mavlink_sha256.h ****     C += CC;
  2410              		.loc 5 152 5 is_stmt 1 view .LVU920
  152:Modules/include/MAVLink/common/../mavlink_sha256.h ****     C += CC;
@@ -5296,6 +5278,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2418 085e 3344     		add	r3, r3, r6
  2419 0860 3A93     		str	r3, [sp, #232]
  154:Modules/include/MAVLink/common/../mavlink_sha256.h ****     E += EE;
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 89
+
+
  2420              		.loc 5 154 5 is_stmt 1 view .LVU924
  154:Modules/include/MAVLink/common/../mavlink_sha256.h ****     E += EE;
  2421              		.loc 5 154 7 is_stmt 0 view .LVU925
@@ -5338,9 +5323,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2449              		.loc 5 193 6 is_stmt 1 view .LVU935
  2450              		.loc 5 193 13 is_stmt 0 view .LVU936
  2451 0880 0A9D     		ldr	r5, [sp, #40]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 90
-
-
  2452 0882 46E7     		b	.L62
  2453              	.LVL275:
  2454              	.L160:
@@ -5356,6 +5338,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2464              	.LBE276:
  2465              	.LBE268:
  2466              	.LBE267:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 90
+
+
  137:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	mavlink_sha256_update(&ctx, psig, 1+6);
  2467              		.loc 3 137 2 is_stmt 1 view .LVU940
  137:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	mavlink_sha256_update(&ctx, psig, 1+6);
@@ -5398,9 +5383,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  169:Modules/include/MAVLink/common/../mavlink_sha256.h ****     offset = (old_sz / 8) % 64;
  2493              		.loc 5 169 2 view .LVU953
  2494 08a4 0133     		adds	r3, r3, #1
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 91
-
-
  2495 08a6 3793     		str	r3, [sp, #220]
  2496              	.L74:
  170:Modules/include/MAVLink/common/../mavlink_sha256.h ****     while(len > 0){
@@ -5416,6 +5398,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2503 08ac 0223     		movs	r3, #2
  2504 08ae CDF838B0 		str	fp, [sp, #56]
  2505 08b2 9346     		mov	fp, r2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 91
+
+
  2506 08b4 CDF83CA0 		str	r10, [sp, #60]
  2507 08b8 9A46     		mov	r10, r3
  2508 08ba 0BE0     		b	.L75
@@ -5458,9 +5443,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2536              	.L75:
  180:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	    int i;
  2537              		.loc 5 180 4 view .LVU967
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 92
-
-
  2538              	.LBE279:
  171:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	uint32_t l = 64 - offset;
  2539              		.loc 5 171 10 is_stmt 1 view .LVU968
@@ -5476,6 +5458,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  173:Modules/include/MAVLink/common/../mavlink_sha256.h ****             l = len;
  2547              		.loc 5 173 9 is_stmt 1 view .LVU971
  173:Modules/include/MAVLink/common/../mavlink_sha256.h ****             l = len;
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 92
+
+
  2548              		.loc 5 173 12 is_stmt 0 view .LVU972
  2549 08e0 5445     		cmp	r4, r10
  2550 08e2 EBD9     		bls	.L76
@@ -5518,9 +5503,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2578              		.loc 5 188 17 is_stmt 1 view .LVU981
  188:Modules/include/MAVLink/common/../mavlink_sha256.h ****                 p2[2] = p1[1];
  2579              		.loc 5 188 23 is_stmt 0 view .LVU982
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 93
-
-
  2580 08fe 8C78     		ldrb	r4, [r1, #2]	@ zero_extendqisi2
  2581 0900 5470     		strb	r4, [r2, #1]
  189:Modules/include/MAVLink/common/../mavlink_sha256.h ****                 p2[3] = p1[0];
@@ -5536,6 +5518,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2588              		.loc 5 190 17 is_stmt 1 view .LVU986
  190:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	    }
  2589              		.loc 5 190 27 is_stmt 0 view .LVU987
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 93
+
+
  2590 0906 10F82310 		ldrb	r1, [r0, r3, lsl #2]	@ zero_extendqisi2
  190:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	    }
  2591              		.loc 5 190 23 view .LVU988
@@ -5578,9 +5563,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2616              		.loc 5 120 8 view .LVU1000
  2617 0914 0393     		str	r3, [sp, #12]
  2618              	.LVL296:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 94
-
-
  121:Modules/include/MAVLink/common/../mavlink_sha256.h ****     CC = C;
  2619              		.loc 5 121 5 is_stmt 1 view .LVU1001
  121:Modules/include/MAVLink/common/../mavlink_sha256.h ****     CC = C;
@@ -5596,6 +5578,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  122:Modules/include/MAVLink/common/../mavlink_sha256.h ****     DD = D;
  2627              		.loc 5 122 8 is_stmt 0 view .LVU1005
  2628 091a 3A9B     		ldr	r3, [sp, #232]
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 94
+
+
  2629              	.LVL299:
  122:Modules/include/MAVLink/common/../mavlink_sha256.h ****     DD = D;
  2630              		.loc 5 122 8 view .LVU1006
@@ -5638,9 +5623,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2656 092a 3E9B     		ldr	r3, [sp, #248]
  2657              	.LVL307:
  126:Modules/include/MAVLink/common/../mavlink_sha256.h ****     HH = H;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 95
-
-
  2658              		.loc 5 126 8 view .LVU1018
  2659 092c 0993     		str	r3, [sp, #36]
  2660              	.LVL308:
@@ -5656,6 +5638,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2667              	.LVL310:
  129:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	data[i] = in[i];
  2668              		.loc 5 129 5 is_stmt 1 view .LVU1022
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 95
+
+
  129:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	data[i] = in[i];
  2669              		.loc 5 129 12 is_stmt 0 view .LVU1023
  2670 0932 0023     		movs	r3, #0
@@ -5698,9 +5683,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2698 0950 DDE7     		b	.L77
  2699              	.LVL314:
  2700              	.L165:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 96
-
-
  2701              	.LBB287:
  2702              	.LBB286:
  131:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	data[i] = sigma1(data[i-2]) + data[i-7] + 
@@ -5716,6 +5698,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2710 0956 931E     		subs	r3, r2, #2
  2711 0958 50A9     		add	r1, sp, #320
  2712 095a 51F82300 		ldr	r0, [r1, r3, lsl #2]
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 96
+
+
  2713 095e 4FEAF043 		ror	r3, r0, #19
  2714 0962 83EA7043 		eor	r3, r3, r0, ror #17
  2715 0966 83EA9023 		eor	r3, r3, r0, lsr #10
@@ -5758,9 +5743,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  131:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	data[i] = sigma1(data[i-2]) + data[i-7] + 
  2742              		.loc 5 131 18 view .LVU1046
  131:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	data[i] = sigma1(data[i-2]) + data[i-7] + 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 97
-
-
  2743              		.loc 5 131 5 is_stmt 0 view .LVU1047
  2744 0998 3F2A     		cmp	r2, #63
  2745 099a DCDD     		ble	.L83
@@ -5776,6 +5758,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  124:Modules/include/MAVLink/common/../mavlink_sha256.h ****     FF = F;
  2752              		.loc 5 124 8 view .LVU1051
  2753 09a8 0799     		ldr	r1, [sp, #28]
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 97
+
+
  123:Modules/include/MAVLink/common/../mavlink_sha256.h ****     EE = E;
  2754              		.loc 5 123 8 view .LVU1052
  2755 09aa DDF81880 		ldr	r8, [sp, #24]
@@ -5818,9 +5803,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  138:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	T2 = Sigma0(AA) + Maj(AA,BB,CC);
  2782              		.loc 5 138 69 view .LVU1063
  2783 09d2 C54A     		ldr	r2, .L181
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 98
-
-
  2784 09d4 52F82520 		ldr	r2, [r2, r5, lsl #2]
  138:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	T2 = Sigma0(AA) + Maj(AA,BB,CC);
  2785              		.loc 5 138 40 view .LVU1064
@@ -5836,6 +5818,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  139:Modules/include/MAVLink/common/../mavlink_sha256.h **** 			     
  2793              		.loc 5 139 2 is_stmt 1 view .LVU1067
  139:Modules/include/MAVLink/common/../mavlink_sha256.h **** 			     
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 98
+
+
  2794              		.loc 5 139 7 is_stmt 0 view .LVU1068
  2795 09e2 4FEA7032 		ror	r2, r0, #13
  2796 09e6 82EAB002 		eor	r2, r2, r0, ror #2
@@ -5878,9 +5863,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2819              		.loc 5 135 26 is_stmt 0 view .LVU1082
  2820 09fe 0135     		adds	r5, r5, #1
  2821              	.LVL321:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 99
-
-
  2822              	.LBB285:
  141:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	GG = FF;
  2823              		.loc 5 141 5 view .LVU1083
@@ -5896,6 +5878,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  144:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	DD = CC;
  2831              		.loc 5 144 5 view .LVU1086
  2832 0a06 03EB0801 		add	r1, r3, r8
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 99
+
+
  2833              	.LVL324:
  145:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	CC = BB;
  2834              		.loc 5 145 5 view .LVU1087
@@ -5938,9 +5923,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2861 0a20 3993     		str	r3, [sp, #228]
  153:Modules/include/MAVLink/common/../mavlink_sha256.h ****     D += DD;
  2862              		.loc 5 153 5 is_stmt 1 view .LVU1098
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 100
-
-
  153:Modules/include/MAVLink/common/../mavlink_sha256.h ****     D += DD;
  2863              		.loc 5 153 7 is_stmt 0 view .LVU1099
  2864 0a22 059B     		ldr	r3, [sp, #20]
@@ -5956,6 +5938,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  155:Modules/include/MAVLink/common/../mavlink_sha256.h ****     F += FF;
  2872              		.loc 5 155 5 is_stmt 1 view .LVU1102
  155:Modules/include/MAVLink/common/../mavlink_sha256.h ****     F += FF;
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 100
+
+
  2873              		.loc 5 155 7 is_stmt 0 view .LVU1103
  2874 0a2e 079B     		ldr	r3, [sp, #28]
  2875 0a30 0B44     		add	r3, r3, r1
@@ -5998,9 +5983,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2905              	.LVL330:
  2906              		.loc 5 193 13 view .LVU1114
  2907 0a52 DDF83CA0 		ldr	r10, [sp, #60]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 101
-
-
  2908              	.LVL331:
  2909              		.loc 5 193 13 view .LVU1115
  2910              	.LBE280:
@@ -6016,6 +5998,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2918              	.LBB290:
  163:Modules/include/MAVLink/common/../mavlink_sha256.h ****     uint32_t old_sz = m->sz[0];
  2919              		.loc 5 163 5 view .LVU1118
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 101
+
+
  164:Modules/include/MAVLink/common/../mavlink_sha256.h ****     uint32_t offset;
  2920              		.loc 5 164 5 view .LVU1119
  164:Modules/include/MAVLink/common/../mavlink_sha256.h ****     uint32_t offset;
@@ -6058,9 +6043,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2945              		.loc 5 171 10 is_stmt 0 view .LVU1132
  2946 0a6c 0723     		movs	r3, #7
  2947 0a6e CDF838B0 		str	fp, [sp, #56]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 102
-
-
  2948 0a72 DDF834B0 		ldr	fp, [sp, #52]
  2949 0a76 CDF834A0 		str	r10, [sp, #52]
  2950              	.LVL334:
@@ -6076,6 +6058,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2958 0a7e 2246     		mov	r2, r4
  2959 0a80 5946     		mov	r1, fp
  2960 0a82 40AB     		add	r3, sp, #256
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 102
+
+
  2961 0a84 5819     		adds	r0, r3, r5
  2962 0a86 FFF7FEFF 		bl	memcpy
  2963              	.LVL336:
@@ -6118,9 +6103,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  172:Modules/include/MAVLink/common/../mavlink_sha256.h ****         if (len < l) {
  2989              		.loc 5 172 11 is_stmt 0 view .LVU1146
  2990 0a9e C5F14004 		rsb	r4, r5, #64
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 103
-
-
  2991              	.LVL341:
  173:Modules/include/MAVLink/common/../mavlink_sha256.h ****             l = len;
  2992              		.loc 5 173 9 is_stmt 1 view .LVU1147
@@ -6136,6 +6118,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  2999              		.loc 5 174 15 view .LVU1150
  3000 0aa8 E9E7     		b	.L89
  3001              	.LVL343:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 103
+
+
  3002              	.L166:
  3003              	.LBB292:
  184:Modules/include/MAVLink/common/../mavlink_sha256.h ****                 const uint8_t *p1 = (const uint8_t *)&u[i];
@@ -6178,9 +6163,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3030 0ac4 5470     		strb	r4, [r2, #1]
  189:Modules/include/MAVLink/common/../mavlink_sha256.h ****                 p2[3] = p1[0];
  3031              		.loc 5 189 17 is_stmt 1 view .LVU1162
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 104
-
-
  189:Modules/include/MAVLink/common/../mavlink_sha256.h ****                 p2[3] = p1[0];
  3032              		.loc 5 189 23 is_stmt 0 view .LVU1163
  3033 0ac6 4978     		ldrb	r1, [r1, #1]	@ zero_extendqisi2
@@ -6196,6 +6178,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  190:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	    }
  3040              		.loc 5 190 23 view .LVU1167
  3041 0ace D170     		strb	r1, [r2, #3]
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 104
+
+
  3042              	.LBE293:
  184:Modules/include/MAVLink/common/../mavlink_sha256.h ****                 const uint8_t *p1 = (const uint8_t *)&u[i];
  3043              		.loc 5 184 26 is_stmt 1 view .LVU1168
@@ -6238,9 +6223,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3068 0ad8 399B     		ldr	r3, [sp, #228]
  3069              	.LVL352:
  121:Modules/include/MAVLink/common/../mavlink_sha256.h ****     CC = C;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 105
-
-
  3070              		.loc 5 121 8 view .LVU1181
  3071 0ada 0393     		str	r3, [sp, #12]
  3072              	.LVL353:
@@ -6256,6 +6238,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3079              	.LVL355:
  123:Modules/include/MAVLink/common/../mavlink_sha256.h ****     EE = E;
  3080              		.loc 5 123 5 is_stmt 1 view .LVU1185
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 105
+
+
  123:Modules/include/MAVLink/common/../mavlink_sha256.h ****     EE = E;
  3081              		.loc 5 123 8 is_stmt 0 view .LVU1186
  3082 0ae0 3B9B     		ldr	r3, [sp, #236]
@@ -6298,9 +6283,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3108              		.loc 5 127 5 is_stmt 1 view .LVU1197
  127:Modules/include/MAVLink/common/../mavlink_sha256.h **** 
  3109              		.loc 5 127 8 is_stmt 0 view .LVU1198
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 106
-
-
  3110 0af0 3F9B     		ldr	r3, [sp, #252]
  3111              	.LVL364:
  127:Modules/include/MAVLink/common/../mavlink_sha256.h **** 
@@ -6316,6 +6298,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3119              	.L93:
  129:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	data[i] = in[i];
  3120              		.loc 5 129 17 is_stmt 1 view .LVU1202
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 106
+
+
  129:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	data[i] = in[i];
  3121              		.loc 5 129 5 is_stmt 0 view .LVU1203
  3122 0af6 0F2B     		cmp	r3, #15
@@ -6358,9 +6343,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3151 0b24 83EA9023 		eor	r3, r3, r0, lsr #10
  132:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	    sigma0(data[i-15]) + data[i - 16];
  3152              		.loc 5 132 38 view .LVU1212
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 107
-
-
  3153 0b28 D01F     		subs	r0, r2, #7
  132:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	    sigma0(data[i-15]) + data[i - 16];
  3154              		.loc 5 132 36 view .LVU1213
@@ -6376,6 +6358,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3162 0b3c 80EAF410 		eor	r0, r0, r4, ror #7
  3163 0b40 80EAD400 		eor	r0, r0, r4, lsr #3
  132:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	    sigma0(data[i-15]) + data[i - 16];
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 107
+
+
  3164              		.loc 5 132 42 view .LVU1216
  3165 0b44 0344     		add	r3, r3, r0
  133:Modules/include/MAVLink/common/../mavlink_sha256.h **** 
@@ -6418,9 +6403,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3191 0b68 DDF81480 		ldr	r8, [sp, #20]
  122:Modules/include/MAVLink/common/../mavlink_sha256.h ****     DD = D;
  3192              		.loc 5 122 8 view .LVU1229
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 108
-
-
  3193 0b6c 049E     		ldr	r6, [sp, #16]
  121:Modules/include/MAVLink/common/../mavlink_sha256.h ****     CC = C;
  3194              		.loc 5 121 8 view .LVU1230
@@ -6436,6 +6418,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  135:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	uint32_t T1, T2;
  3202              		.loc 5 135 17 is_stmt 1 view .LVU1233
  135:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	uint32_t T1, T2;
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 108
+
+
  3203              		.loc 5 135 5 is_stmt 0 view .LVU1234
  3204 0b74 3F2D     		cmp	r5, #63
  3205 0b76 2DDC     		bgt	.L170
@@ -6478,9 +6463,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  139:Modules/include/MAVLink/common/../mavlink_sha256.h **** 			     
  3232              		.loc 5 139 2 is_stmt 1 view .LVU1245
  139:Modules/include/MAVLink/common/../mavlink_sha256.h **** 			     
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 109
-
-
  3233              		.loc 5 139 7 is_stmt 0 view .LVU1246
  3234 0ba2 4FEA7032 		ror	r2, r0, #13
  3235 0ba6 82EAB002 		eor	r2, r2, r0, ror #2
@@ -6496,6 +6478,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3243 0bb8 84EA0904 		eor	r4, r4, r9
  139:Modules/include/MAVLink/common/../mavlink_sha256.h **** 			     
  3244              		.loc 5 139 5 view .LVU1249
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 109
+
+
  3245 0bbc 2244     		add	r2, r2, r4
  3246              	.LVL373:
  141:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	GG = FF;
@@ -6538,9 +6523,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  144:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	DD = CC;
  3270              		.loc 5 144 5 view .LVU1264
  3271 0bc6 03EB0801 		add	r1, r3, r8
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 110
-
-
  3272              	.LVL377:
  145:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	CC = BB;
  3273              		.loc 5 145 5 view .LVU1265
@@ -6556,6 +6538,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  148:Modules/include/MAVLink/common/../mavlink_sha256.h ****     }
  3281              		.loc 5 148 5 view .LVU1268
  3282 0bd0 9818     		adds	r0, r3, r2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 110
+
+
  3283              	.LVL380:
  148:Modules/include/MAVLink/common/../mavlink_sha256.h ****     }
  3284              		.loc 5 148 5 view .LVU1269
@@ -6598,9 +6583,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  155:Modules/include/MAVLink/common/../mavlink_sha256.h ****     F += FF;
  3311              		.loc 5 155 7 is_stmt 0 view .LVU1280
  3312 0bec 069B     		ldr	r3, [sp, #24]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 111
-
-
  3313 0bee 0B44     		add	r3, r3, r1
  3314 0bf0 3C93     		str	r3, [sp, #240]
  156:Modules/include/MAVLink/common/../mavlink_sha256.h ****     G += GG;
@@ -6616,6 +6598,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3321              		.loc 5 157 7 is_stmt 0 view .LVU1284
  3322 0bf8 089B     		ldr	r3, [sp, #32]
  3323 0bfa 6344     		add	r3, r3, ip
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 111
+
+
  3324 0bfc 3E93     		str	r3, [sp, #248]
  158:Modules/include/MAVLink/common/../mavlink_sha256.h **** }
  3325              		.loc 5 158 5 is_stmt 1 view .LVU1285
@@ -6658,9 +6643,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  198:Modules/include/MAVLink/common/../mavlink_sha256.h **** /*
  199:Modules/include/MAVLink/common/../mavlink_sha256.h ****   get first 48 bits of final sha256 hash
  200:Modules/include/MAVLink/common/../mavlink_sha256.h ****  */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 112
-
-
  201:Modules/include/MAVLink/common/../mavlink_sha256.h **** MAVLINK_HELPER void mavlink_sha256_final_48(mavlink_sha256_ctx *m, uint8_t result[6])
  3355              		.loc 5 201 21 view .LVU1294
  3356              	.LBB300:
@@ -6676,6 +6658,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3363              	.LVL386:
  205:Modules/include/MAVLink/common/../mavlink_sha256.h ****     unsigned int dstart = (120 - offset - 1) % 64 + 1;
  3364              		.loc 5 205 5 is_stmt 1 view .LVU1299
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 112
+
+
  3365 0c18 C4F17704 		rsb	r4, r4, #119
  3366              	.LVL387:
  3367              		.loc 5 205 5 is_stmt 0 view .LVU1300
@@ -6718,9 +6703,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3398              		.loc 5 211 21 view .LVU1314
  3399 0c42 F254     		strb	r2, [r6, r3]
  212:Modules/include/MAVLink/common/../mavlink_sha256.h ****     zeros[dstart+5] = (m->sz[0] >> 16) & 0xff;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 113
-
-
  3400              		.loc 5 212 5 is_stmt 1 view .LVU1315
  3401              		.loc 5 212 33 is_stmt 0 view .LVU1316
  3402 0c44 2A0C     		lsrs	r2, r5, #16
@@ -6736,6 +6718,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3411 0c4c 631D     		adds	r3, r4, #5
  3412              		.loc 5 213 21 view .LVU1322
  3413 0c4e F254     		strb	r2, [r6, r3]
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 113
+
+
  214:Modules/include/MAVLink/common/../mavlink_sha256.h ****     zeros[dstart+3] = (m->sz[1] >> 0) & 0xff;
  3414              		.loc 5 214 5 is_stmt 1 view .LVU1323
  3415              		.loc 5 214 33 is_stmt 0 view .LVU1324
@@ -6778,9 +6763,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  161:Modules/include/MAVLink/common/../mavlink_sha256.h **** {
  3447              		.loc 5 161 21 is_stmt 1 view .LVU1340
  3448              	.LBB302:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 114
-
-
  163:Modules/include/MAVLink/common/../mavlink_sha256.h ****     uint32_t old_sz = m->sz[0];
  3449              		.loc 5 163 5 view .LVU1341
  164:Modules/include/MAVLink/common/../mavlink_sha256.h ****     uint32_t offset;
@@ -6796,6 +6778,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  168:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	++m->sz[1];
  3456              		.loc 5 168 5 is_stmt 1 view .LVU1346
  168:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	++m->sz[1];
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 114
+
+
  3457              		.loc 5 168 8 is_stmt 0 view .LVU1347
  3458 0c72 9D42     		cmp	r5, r3
  3459 0c74 02D9     		bls	.L100
@@ -6838,9 +6823,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3487 0c96 5819     		adds	r0, r3, r5
  3488 0c98 FFF7FEFF 		bl	memcpy
  3489              	.LVL394:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 115
-
-
  177:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	p += l;
  3490              		.loc 5 177 2 view .LVU1357
  177:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	p += l;
@@ -6856,6 +6838,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  179:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	if(offset == 64){
  3498              		.loc 5 179 2 is_stmt 1 view .LVU1361
  179:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	if(offset == 64){
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 115
+
+
  3499              		.loc 5 179 6 is_stmt 0 view .LVU1362
  3500 0ca0 AAEB040A 		sub	r10, r10, r4
  3501              	.LVL397:
@@ -6898,9 +6883,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3528              	.L171:
  3529              	.LBB304:
  184:Modules/include/MAVLink/common/../mavlink_sha256.h ****                 const uint8_t *p1 = (const uint8_t *)&u[i];
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 116
-
-
  3530              		.loc 5 184 13 view .LVU1373
  3531 0cbc 0023     		movs	r3, #0
  3532              	.LVL402:
@@ -6916,6 +6898,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3539              		.loc 5 185 17 is_stmt 1 view .LVU1376
  185:Modules/include/MAVLink/common/../mavlink_sha256.h ****                 uint8_t *p2 = (uint8_t *)&current[i];
  3540              		.loc 5 185 32 is_stmt 0 view .LVU1377
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 116
+
+
  3541 0cc2 40A8     		add	r0, sp, #256
  3542 0cc4 00EB8301 		add	r1, r0, r3, lsl #2
  3543              	.LVL403:
@@ -6958,9 +6943,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3568              		.loc 5 190 17 is_stmt 1 view .LVU1389
  190:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	    }
  3569              		.loc 5 190 27 is_stmt 0 view .LVU1390
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 117
-
-
  3570 0cde 10F82310 		ldrb	r1, [r0, r3, lsl #2]	@ zero_extendqisi2
  190:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	    }
  3571              		.loc 5 190 23 view .LVU1391
@@ -6976,6 +6958,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3578              		.loc 5 184 27 view .LVU1394
  3579 0ce6 EAE7     		b	.L103
  3580              	.L182:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 117
+
+
  3581              		.align	2
  3582              	.L181:
  3583 0ce8 00000000 		.word	.LANCHOR2
@@ -7018,9 +7003,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3608              		.loc 5 122 5 is_stmt 1 view .LVU1406
  122:Modules/include/MAVLink/common/../mavlink_sha256.h ****     DD = D;
  3609              		.loc 5 122 8 is_stmt 0 view .LVU1407
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 118
-
-
  3610 0cf4 3A9B     		ldr	r3, [sp, #232]
  3611              	.LVL414:
  122:Modules/include/MAVLink/common/../mavlink_sha256.h ****     DD = D;
@@ -7036,6 +7018,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  123:Modules/include/MAVLink/common/../mavlink_sha256.h ****     EE = E;
  3619              		.loc 5 123 8 view .LVU1411
  3620 0cfa 0593     		str	r3, [sp, #20]
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 118
+
+
  3621              	.LVL417:
  124:Modules/include/MAVLink/common/../mavlink_sha256.h ****     FF = F;
  3622              		.loc 5 124 5 is_stmt 1 view .LVU1412
@@ -7078,9 +7063,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3648 0d0a 0993     		str	r3, [sp, #36]
  3649              	.LVL425:
  129:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	data[i] = in[i];
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 119
-
-
  3650              		.loc 5 129 5 is_stmt 1 view .LVU1424
  129:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	data[i] = in[i];
  3651              		.loc 5 129 12 is_stmt 0 view .LVU1425
@@ -7096,6 +7078,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  130:Modules/include/MAVLink/common/../mavlink_sha256.h ****     for (i = 16; i < 64; ++i)
  3659              		.loc 5 130 2 is_stmt 1 view .LVU1428
  130:Modules/include/MAVLink/common/../mavlink_sha256.h ****     for (i = 16; i < 64; ++i)
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 119
+
+
  3660              		.loc 5 130 14 is_stmt 0 view .LVU1429
  3661 0d12 90AA     		add	r2, sp, #576
  3662 0d14 02EB8302 		add	r2, r2, r3, lsl #2
@@ -7138,9 +7123,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  132:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	    sigma0(data[i-15]) + data[i - 16];
  3691              		.loc 5 132 30 view .LVU1438
  3692 0d46 0344     		add	r3, r3, r0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 120
-
-
  133:Modules/include/MAVLink/common/../mavlink_sha256.h **** 
  3693              		.loc 5 133 6 view .LVU1439
  3694 0d48 A2F10F00 		sub	r0, r2, #15
@@ -7156,6 +7138,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3702 0d5e A2F11000 		sub	r0, r2, #16
  133:Modules/include/MAVLink/common/../mavlink_sha256.h **** 
  3703              		.loc 5 133 31 view .LVU1442
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 120
+
+
  3704 0d62 51F82000 		ldr	r0, [r1, r0, lsl #2]
  133:Modules/include/MAVLink/common/../mavlink_sha256.h **** 
  3705              		.loc 5 133 25 view .LVU1443
@@ -7198,9 +7183,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  120:Modules/include/MAVLink/common/../mavlink_sha256.h ****     BB = B;
  3731              		.loc 5 120 8 view .LVU1455
  3732 0d88 0298     		ldr	r0, [sp, #8]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 121
-
-
  135:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	uint32_t T1, T2;
  3733              		.loc 5 135 12 view .LVU1456
  3734 0d8a 0025     		movs	r5, #0
@@ -7216,6 +7198,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3741              		.loc 5 138 12 is_stmt 0 view .LVU1459
  3742 0d8e 4FEAF123 		ror	r3, r1, #11
  3743 0d92 83EAB113 		eor	r3, r3, r1, ror #6
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 121
+
+
  3744 0d96 83EA7163 		eor	r3, r3, r1, ror #25
  138:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	T2 = Sigma0(AA) + Maj(AA,BB,CC);
  3745              		.loc 5 138 10 view .LVU1460
@@ -7258,9 +7243,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3773              	.LVL432:
  139:Modules/include/MAVLink/common/../mavlink_sha256.h **** 			     
  3774              		.loc 5 139 20 view .LVU1470
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 122
-
-
  3775 0dce 84EA0904 		eor	r4, r4, r9
  139:Modules/include/MAVLink/common/../mavlink_sha256.h **** 			     
  3776              		.loc 5 139 5 view .LVU1471
@@ -7276,6 +7258,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3782              		.loc 5 144 2 view .LVU1475
  145:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	CC = BB;
  3783              		.loc 5 145 2 view .LVU1476
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 122
+
+
  146:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	BB = AA;
  3784              		.loc 5 146 2 view .LVU1477
  147:Modules/include/MAVLink/common/../mavlink_sha256.h **** 	AA = T1 + T2;
@@ -7318,9 +7303,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3810              		.loc 5 147 5 view .LVU1489
  3811 0de4 0746     		mov	r7, r0
  3812              	.LVL439:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 123
-
-
  148:Modules/include/MAVLink/common/../mavlink_sha256.h ****     }
  3813              		.loc 5 148 5 view .LVU1490
  3814 0de6 9818     		adds	r0, r3, r2
@@ -7336,6 +7318,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3821 0de8 3F2D     		cmp	r5, #63
  3822 0dea D0DD     		ble	.L111
  151:Modules/include/MAVLink/common/../mavlink_sha256.h ****     B += BB;
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 123
+
+
  3823              		.loc 5 151 5 is_stmt 1 view .LVU1494
  151:Modules/include/MAVLink/common/../mavlink_sha256.h ****     B += BB;
  3824              		.loc 5 151 7 is_stmt 0 view .LVU1495
@@ -7378,9 +7363,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3851 0e0c 7344     		add	r3, r3, lr
  3852 0e0e 3D93     		str	r3, [sp, #244]
  157:Modules/include/MAVLink/common/../mavlink_sha256.h ****     H += HH;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 124
-
-
  3853              		.loc 5 157 5 is_stmt 1 view .LVU1506
  157:Modules/include/MAVLink/common/../mavlink_sha256.h ****     H += HH;
  3854              		.loc 5 157 7 is_stmt 0 view .LVU1507
@@ -7396,6 +7378,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3862 0e1a 3F93     		str	r3, [sp, #252]
  3863              	.LVL441:
  158:Modules/include/MAVLink/common/../mavlink_sha256.h **** }
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 124
+
+
  3864              		.loc 5 158 7 view .LVU1510
  3865              	.LBE307:
  3866              	.LBE306:
@@ -7438,9 +7423,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  226:Modules/include/MAVLink/common/../mavlink_sha256.h ****     result[2] = p[1];
  3892              		.loc 5 226 5 is_stmt 1 view .LVU1520
  3893              		.loc 5 226 15 is_stmt 0 view .LVU1521
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 125
-
-
  3894 0e38 9DF8E130 		ldrb	r3, [sp, #225]	@ zero_extendqisi2
  3895 0e3c 8DF85230 		strb	r3, [sp, #82]
  227:Modules/include/MAVLink/common/../mavlink_sha256.h ****     result[3] = p[0];
@@ -7456,6 +7438,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3904 0e4c 8DF85430 		strb	r3, [sp, #84]
  229:Modules/include/MAVLink/common/../mavlink_sha256.h ****     result[5] = p[6];
  3905              		.loc 5 229 5 is_stmt 1 view .LVU1527
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 125
+
+
  3906              		.loc 5 229 15 is_stmt 0 view .LVU1528
  3907 0e50 9DF8E630 		ldrb	r3, [sp, #230]	@ zero_extendqisi2
  3908 0e54 8DF85530 		strb	r3, [sp, #85]
@@ -7498,9 +7483,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  785:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			   	(status->signing->accept_unsigned_callback &&
  3936              		.loc 3 785 16 discriminator 1 view .LVU1539
  3937 0e6e 63B1     		cbz	r3, .L120
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 126
-
-
  787:Modules/include/MAVLink/common/../mavlink_helpers.h **** 				// accepted via application level override
  3938              		.loc 3 787 64 view .LVU1540
  3939 0e70 9BF80920 		ldrb	r2, [fp, #9]	@ zero_extendqisi2
@@ -7516,6 +7498,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  786:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			   	 status->signing->accept_unsigned_callback(status, rxmsg->msgid))) {
  3948              		.loc 3 786 51 view .LVU1542
  3949 0e88 10B9     		cbnz	r0, .L121
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 126
+
+
  3950              	.L120:
  791:Modules/include/MAVLink/common/../mavlink_helpers.h **** 				status->msg_received = MAVLINK_FRAMING_OK;
  3951              		.loc 3 791 4 is_stmt 1 view .LVU1543
@@ -7558,9 +7543,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3980              	.LBB313:
  145:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	    uint64_t t64;
  3981              		.loc 3 145 2 view .LVU1552
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 127
-
-
  149:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	tstamp.t64 = 0;
  3982              		.loc 3 149 2 view .LVU1553
  149:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	tstamp.t64 = 0;
@@ -7576,6 +7558,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  3990 0eba CDE92423 		strd	r2, [sp, #144]
  151:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
  3991              		.loc 3 151 2 is_stmt 1 view .LVU1557
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 127
+
+
  151:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
  3992              		.loc 3 151 24 is_stmt 0 view .LVU1558
  3993 0ebe 0BF21715 		addw	r5, fp, #279
@@ -7618,9 +7603,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4020              		.loc 3 158 2 view .LVU1568
  4021 0ee0 8442     		cmp	r4, r0
  4022 0ee2 15D2     		bcs	.L115
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 128
-
-
  159:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		    msg->compid == signing_streams->stream[i].compid &&
  4023              		.loc 3 159 3 is_stmt 1 view .LVU1569
  159:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		    msg->compid == signing_streams->stream[i].compid &&
@@ -7636,6 +7618,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4031 0ef0 9A42     		cmp	r2, r3
  4032 0ef2 F2D1     		bne	.L114
  160:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		    link_id == signing_streams->stream[i].link_id) {
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 128
+
+
  4033              		.loc 3 160 10 view .LVU1573
  4034 0ef4 9BF80820 		ldrb	r2, [fp, #8]	@ zero_extendqisi2
  160:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		    link_id == signing_streams->stream[i].link_id) {
@@ -7678,9 +7663,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  171:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			return false;
  4062              		.loc 3 171 18 view .LVU1584
  4063 0f1c 3D4A     		ldr	r2, .L183+4
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 129
-
-
  4064 0f1e 9B18     		adds	r3, r3, r2
  4065 0f20 1293     		str	r3, [sp, #72]
  4066 0f22 4FF00003 		mov	r3, #0
@@ -7696,6 +7678,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4074 0f36 9F42     		cmp	r7, r3
  4075 0f38 08BF     		it	eq
  4076 0f3a 9642     		cmpeq	r6, r2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 129
+
+
  4077 0f3c 43D3     		bcc	.L145
  175:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		signing_streams->stream[i].compid = msg->compid;
  4078              		.loc 3 175 3 is_stmt 1 view .LVU1587
@@ -7738,9 +7723,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4103              		.loc 3 181 19 is_stmt 0 view .LVU1599
  4104 0f5a 0022     		movs	r2, #0
  4105 0f5c 0023     		movs	r3, #0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 130
-
-
  4106 0f5e CDE95023 		strd	r2, [sp, #320]
  182:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		if (tstamp.t64 <= last_tstamp.t64) {
  4107              		.loc 3 182 3 is_stmt 1 view .LVU1600
@@ -7756,6 +7738,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4115 0f70 9B88     		ldrh	r3, [r3, #4]	@ unaligned
  4116 0f72 ADF84431 		strh	r3, [sp, #324]	@ unaligned
  183:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			// repeating old timestamp
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 130
+
+
  4117              		.loc 3 183 3 is_stmt 1 view .LVU1603
  183:Modules/include/MAVLink/common/../mavlink_helpers.h **** 			// repeating old timestamp
  4118              		.loc 3 183 6 is_stmt 0 view .LVU1604
@@ -7798,9 +7783,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4147 0fa6 8B42     		cmp	r3, r1
  4148 0fa8 08BF     		it	eq
  4149 0faa 8242     		cmpeq	r2, r0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 131
-
-
  4150 0fac 0DD2     		bcs	.L146
  194:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	}
  4151              		.loc 3 194 3 is_stmt 1 view .LVU1613
@@ -7816,6 +7798,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4159              	.LBB312:
  185:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		}
  4160              		.loc 3 185 4 is_stmt 1 view .LVU1616
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 131
+
+
  185:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		}
  4161              		.loc 3 185 11 is_stmt 0 view .LVU1617
  4162 0fb6 0024     		movs	r4, #0
@@ -7858,9 +7843,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4191 0fc8 4DE7     		b	.L47
  4192              	.L146:
  196:Modules/include/MAVLink/common/../mavlink_helpers.h **** }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 132
-
-
  4193              		.loc 3 196 9 view .LVU1626
  4194 0fca 0124     		movs	r4, #1
  4195 0fcc 4BE7     		b	.L47
@@ -7876,6 +7858,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4202              		.loc 3 794 26 is_stmt 0 view .LVU1629
  4203 0fce 0323     		movs	r3, #3
  4204 0fd0 8AF80030 		strb	r3, [r10]
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 132
+
+
  4205 0fd4 5FE7     		b	.L123
  4206              	.LVL466:
  4207              	.L150:
@@ -7918,9 +7903,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  841:Modules/include/MAVLink/common/../mavlink_helpers.h ****                 r_message->checksum = rxmsg->ck[0] | (rxmsg->ck[1]<<8);
  4232              		.loc 3 841 16 is_stmt 0 view .LVU1642
  4233 0ff4 0199     		ldr	r1, [sp, #4]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 133
-
-
  4234 0ff6 0029     		cmp	r1, #0
  4235 0ff8 3FF4C8A8 		beq	.L128
  842:Modules/include/MAVLink/common/../mavlink_helpers.h ****             }
@@ -7936,6 +7918,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4242 1004 43EA0223 		orr	r3, r3, r2, lsl #8
  4243 1008 0B80     		strh	r3, [r1]	@ unaligned
  4244 100a FFF7BFB8 		b	.L128
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 133
+
+
  4245              	.L184:
  4246 100e 00BF     		.align	2
  4247              	.L183:
@@ -7951,13 +7936,13 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4258              		.fpu fpv4-sp-d16
  4260              	MavlinkTask:
  4261              	.LFB2736:
-  19:Modules/src/mavlink_task.c ****     usart2_queue_buffer buffer;
+  19:Modules/src/mavlink_task.c ****     // // uint8_t buffer1[] = "Hello world\r\n";
  4262              		.loc 1 19 31 is_stmt 1 view -0
  4263              		.cfi_startproc
  4264              		@ args = 0, pretend = 0, frame = 8
  4265              		@ frame_needed = 0, uses_anonymous_args = 0
  4266              	.LVL467:
-  19:Modules/src/mavlink_task.c ****     usart2_queue_buffer buffer;
+  19:Modules/src/mavlink_task.c ****     // // uint8_t buffer1[] = "Hello world\r\n";
  4267              		.loc 1 19 31 is_stmt 0 view .LVU1648
  4268 0000 30B5     		push	{r4, r5, lr}
  4269              	.LCFI5:
@@ -7978,9 +7963,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4282              		.loc 1 27 60 is_stmt 0 view .LVU1650
  4283 0006 039B     		ldr	r3, [sp, #12]
   27:Modules/src/mavlink_task.c ****                     MavlinkProcessMsg(&msg);
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 134
-
-
  4284              		.loc 1 27 21 view .LVU1651
  4285 0008 1D5D     		ldrb	r5, [r3, r4]	@ zero_extendqisi2
  4286              	.LVL469:
@@ -7996,6 +7978,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  855:Modules/include/MAVLink/common/../mavlink_helpers.h ****  * Messages are parsed into an internal buffer (one for each channel). When a complete
  856:Modules/include/MAVLink/common/../mavlink_helpers.h ****  * message is received it is copies into *r_message and the channel's status is
  857:Modules/include/MAVLink/common/../mavlink_helpers.h ****  * copied into *r_mavlink_status.
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 134
+
+
  858:Modules/include/MAVLink/common/../mavlink_helpers.h ****  *
  859:Modules/include/MAVLink/common/../mavlink_helpers.h ****  * @param chan     ID of the channel to be parsed.
  860:Modules/include/MAVLink/common/../mavlink_helpers.h ****  *                 A channel is not a physical message channel like a serial port, but a logical pa
@@ -8038,9 +8023,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  897:Modules/include/MAVLink/common/../mavlink_helpers.h **** 					 r_mavlink_status);
  898:Modules/include/MAVLink/common/../mavlink_helpers.h **** }
  899:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 135
-
-
  900:Modules/include/MAVLink/common/../mavlink_helpers.h **** /**
  901:Modules/include/MAVLink/common/../mavlink_helpers.h ****  * Set the protocol version
  902:Modules/include/MAVLink/common/../mavlink_helpers.h ****  */
@@ -8056,6 +8038,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  912:Modules/include/MAVLink/common/../mavlink_helpers.h **** 
  913:Modules/include/MAVLink/common/../mavlink_helpers.h **** /**
  914:Modules/include/MAVLink/common/../mavlink_helpers.h ****  * Get the protocol version
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 135
+
+
  915:Modules/include/MAVLink/common/../mavlink_helpers.h ****  *
  916:Modules/include/MAVLink/common/../mavlink_helpers.h ****  * @return 1 for v1, 2 for v2
  917:Modules/include/MAVLink/common/../mavlink_helpers.h ****  */
@@ -8098,9 +8083,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  954:Modules/include/MAVLink/common/../mavlink_helpers.h ****  * int chan = 0;
  955:Modules/include/MAVLink/common/../mavlink_helpers.h ****  *
  956:Modules/include/MAVLink/common/../mavlink_helpers.h ****  *
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 136
-
-
  957:Modules/include/MAVLink/common/../mavlink_helpers.h ****  * while(serial.bytesAvailable > 0)
  958:Modules/include/MAVLink/common/../mavlink_helpers.h ****  * {
  959:Modules/include/MAVLink/common/../mavlink_helpers.h ****  *   uint8_t byte = serial.getNextByte();
@@ -8116,6 +8098,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  969:Modules/include/MAVLink/common/../mavlink_helpers.h **** MAVLINK_HELPER uint8_t mavlink_parse_char(uint8_t chan, uint8_t c, mavlink_message_t* r_message, ma
  4289              		.loc 3 969 24 is_stmt 1 view .LVU1652
  4290              	.LBB333:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 136
+
+
  970:Modules/include/MAVLink/common/../mavlink_helpers.h **** {
  971:Modules/include/MAVLink/common/../mavlink_helpers.h ****     uint8_t msg_received = mavlink_frame_char(chan, c, r_message, r_mavlink_status);
  4291              		.loc 3 971 5 view .LVU1653
@@ -8158,9 +8143,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4320              	.LVL470:
  893:Modules/include/MAVLink/common/../mavlink_helpers.h **** 					 mavlink_get_channel_status(chan),
  4321              		.loc 3 893 9 view .LVU1662
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 137
-
-
  4322              	.LBE336:
  4323              	.LBE337:
  972:Modules/include/MAVLink/common/../mavlink_helpers.h ****     if (msg_received == MAVLINK_FRAMING_BAD_CRC ||
@@ -8176,6 +8158,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4333              		.loc 3 972 8 view .LVU1666
  4334              	.LBE350:
  4335              	.LBE355:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 137
+
+
   27:Modules/src/mavlink_task.c ****                     MavlinkProcessMsg(&msg);
  4336              		.loc 1 27 20 view .LVU1667
  4337 0022 18BB     		cbnz	r0, .L196
@@ -8201,8 +8186,8 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
   26:Modules/src/mavlink_task.c ****                 if (mavlink_parse_char(mavlink_comm, buffer.addr[i], &msg, &status)) {
  4352              		.loc 1 26 13 discriminator 1 view .LVU1673
  4353              	.LBE360:
-  20:Modules/src/mavlink_task.c ****     // uint8_t buffer1[] = "Hello world\r\n";
- 4354              		.loc 1 20 5 is_stmt 1 view .LVU1674
+  23:Modules/src/mavlink_task.c ****     for(;;) {
+ 4354              		.loc 1 23 5 is_stmt 1 view .LVU1674
   24:Modules/src/mavlink_task.c ****         if (xQueueReceive(usart2_queue, &buffer, portMAX_DELAY) == pdTRUE) {
  4355              		.loc 1 24 5 view .LVU1675
   25:Modules/src/mavlink_task.c ****             for (size_t i = 0; i < buffer.length; i++) {
@@ -8218,9 +8203,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
   25:Modules/src/mavlink_task.c ****             for (size_t i = 0; i < buffer.length; i++) {
  4364              		.loc 1 25 12 view .LVU1678
  4365 003a 0128     		cmp	r0, #1
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 138
-
-
  4366 003c F6D1     		bne	.L187
  4367              	.LBB361:
   26:Modules/src/mavlink_task.c ****                 if (mavlink_parse_char(mavlink_comm, buffer.addr[i], &msg, &status)) {
@@ -8236,6 +8218,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  974:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	    // we got a bad CRC. Treat as a parse failure
  975:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	    mavlink_message_t* rxmsg = mavlink_get_channel_buffer(chan);
  4376              		.loc 3 975 6 is_stmt 1 view .LVU1680
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 138
+
+
  4377              	.LBB339:
  4378              	.LBI339:
   39:Modules/include/MAVLink/common/../mavlink_helpers.h **** {
@@ -8278,9 +8263,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4408              	.LBI341:
  291:Modules/include/MAVLink/common/../mavlink_helpers.h **** {
  4409              		.loc 3 291 20 view .LVU1689
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 139
-
-
  4410              	.LBB342:
  293:Modules/include/MAVLink/common/../mavlink_helpers.h **** }
  4411              		.loc 3 293 5 view .LVU1690
@@ -8296,6 +8278,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  293:Modules/include/MAVLink/common/../mavlink_helpers.h **** }
  4419              		.loc 3 293 24 view .LVU1693
  4420              	.LBE342:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 139
+
+
  4421              	.LBE341:
  978:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	    status->msg_received = MAVLINK_FRAMING_INCOMPLETE;
  4422              		.loc 3 978 6 is_stmt 1 view .LVU1694
@@ -8338,9 +8323,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  983:Modules/include/MAVLink/common/../mavlink_helpers.h **** 		    mavlink_start_checksum(rxmsg);
  4448              		.loc 3 983 18 is_stmt 0 view .LVU1706
  4449 005e 084B     		ldr	r3, .L199+12
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 140
-
-
  4450 0060 0022     		movs	r2, #0
  4451 0062 DA70     		strb	r2, [r3, #3]
  984:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	    }
@@ -8356,6 +8338,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  484:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	msg->checksum = crcTmp;
  4459              		.loc 3 484 2 view .LVU1710
  484:Modules/include/MAVLink/common/../mavlink_helpers.h **** 	msg->checksum = crcTmp;
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 140
+
+
  4460              		.loc 3 484 2 is_stmt 0 view .LVU1711
  4461              	.LBE344:
  4462              	.LBE343:
@@ -8398,9 +8383,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4494              	.L200:
  4495              		.align	2
  4496              	.L199:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 141
-
-
  4497 0074 00000000 		.word	.LANCHOR6
  4498 0078 00000000 		.word	.LANCHOR3
  4499 007c 00000000 		.word	.LANCHOR4
@@ -8416,6 +8398,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4509      696E6B54 
  4509      61736B00 
  4510              		.section	.text.MavlinkInit,"ax",%progbits
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 141
+
+
  4511              		.align	1
  4512              		.global	MavlinkInit
  4513              		.syntax unified
@@ -8458,9 +8443,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4547              	.LVL484:
   15:Modules/src/mavlink_task.c **** 
  4548              		.loc 1 15 1 view .LVU1722
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 142
-
-
  4549 0022 05B0     		add	sp, sp, #20
  4550              	.LCFI9:
  4551              		.cfi_def_cfa_offset 4
@@ -8476,6 +8458,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4561              		.cfi_endproc
  4562              	.LFE2735:
  4564              		.section	.bss.m_mavlink_buffer.8083,"aw",%nobits
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 142
+
+
  4565              		.align	2
  4566              		.set	.LANCHOR5,. + 0
  4569              	m_mavlink_buffer.8083:
@@ -8518,9 +8503,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4598 0000 00000000 		.space	84
  4598      00000000 
  4598      00000000 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 143
-
-
  4598      00000000 
  4598      00000000 
  4599              		.section	.bss.rc_channels_override,"aw",%nobits
@@ -8536,6 +8518,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4607              		.align	2
  4608              		.set	.LANCHOR6,. + 0
  4611              	status:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 143
+
+
  4612 0000 00000000 		.space	24
  4612      00000000 
  4612      00000000 
@@ -8578,9 +8563,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4649 002d 0D       		.byte	13
  4650 002e 0000     		.space	2
  4651 0030 05000000 		.word	5
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 144
-
-
  4652 0034 D9       		.byte	-39
  4653 0035 1C       		.byte	28
  4654 0036 1C       		.byte	28
@@ -8596,6 +8578,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4664 0044 00       		.byte	0
  4665 0045 00       		.byte	0
  4666 0046 0000     		.space	2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 144
+
+
  4667 0048 07000000 		.word	7
  4668 004c 77       		.byte	119
  4669 004d 20       		.byte	32
@@ -8638,9 +8623,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4706 0082 0000     		.space	2
  4707 0084 16000000 		.word	22
  4708 0088 DC       		.byte	-36
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 145
-
-
  4709 0089 19       		.byte	25
  4710 008a 19       		.byte	25
  4711 008b 00       		.byte	0
@@ -8656,6 +8638,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4721 0099 05       		.byte	5
  4722 009a 0000     		.space	2
  4723 009c 18000000 		.word	24
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 145
+
+
  4724 00a0 18       		.byte	24
  4725 00a1 1E       		.byte	30
  4726 00a2 34       		.byte	52
@@ -8698,9 +8683,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4763 00d8 1D000000 		.word	29
  4764 00dc 73       		.byte	115
  4765 00dd 0E       		.byte	14
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 146
-
-
  4766 00de 0E       		.byte	14
  4767 00df 00       		.byte	0
  4768 00e0 00       		.byte	0
@@ -8716,6 +8698,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4778 00ee 0000     		.space	2
  4779 00f0 1F000000 		.word	31
  4780 00f4 F6       		.byte	-10
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 146
+
+
  4781 00f5 20       		.byte	32
  4782 00f6 30       		.byte	48
  4783 00f7 00       		.byte	0
@@ -8758,9 +8743,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4820 0130 DE       		.byte	-34
  4821 0131 15       		.byte	21
  4822 0132 25       		.byte	37
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 147
-
-
  4823 0133 00       		.byte	0
  4824 0134 00       		.byte	0
  4825 0135 00       		.byte	0
@@ -8776,6 +8758,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4835 0144 26000000 		.word	38
  4836 0148 09       		.byte	9
  4837 0149 06       		.byte	6
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 147
+
+
  4838 014a 07       		.byte	7
  4839 014b 03       		.byte	3
  4840 014c 04       		.byte	4
@@ -8818,9 +8803,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4877 0185 02       		.byte	2
  4878 0186 03       		.byte	3
  4879 0187 03       		.byte	3
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 148
-
-
  4880 0188 00       		.byte	0
  4881 0189 01       		.byte	1
  4882 018a 0000     		.space	2
@@ -8836,6 +8818,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4892 019c E8       		.byte	-24
  4893 019d 02       		.byte	2
  4894 019e 03       		.byte	3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 148
+
+
  4895 019f 03       		.byte	3
  4896 01a0 00       		.byte	0
  4897 01a1 01       		.byte	1
@@ -8878,9 +8863,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4934 01da 25       		.byte	37
  4935 01db 03       		.byte	3
  4936 01dc 12       		.byte	18
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 149
-
-
  4937 01dd 13       		.byte	19
  4938 01de 0000     		.space	2
  4939 01e0 33000000 		.word	51
@@ -8896,6 +8878,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4949 01f1 07       		.byte	7
  4950 01f2 07       		.byte	7
  4951 01f3 00       		.byte	0
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 149
+
+
  4952 01f4 00       		.byte	0
  4953 01f5 00       		.byte	0
  4954 01f6 0000     		.space	2
@@ -8938,9 +8923,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  4991 022f 00       		.byte	0
  4992 0230 00       		.byte	0
  4993 0231 00       		.byte	0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 150
-
-
  4994 0232 0000     		.space	2
  4995 0234 40000000 		.word	64
  4996 0238 BF       		.byte	-65
@@ -8956,6 +8938,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5006 0246 2A       		.byte	42
  5007 0247 00       		.byte	0
  5008 0248 00       		.byte	0
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 150
+
+
  5009 0249 00       		.byte	0
  5010 024a 0000     		.space	2
  5011 024c 42000000 		.word	66
@@ -8998,9 +8983,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5048 0284 20       		.byte	32
  5049 0285 21       		.byte	33
  5050 0286 0000     		.space	2
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 151
-
-
  5051 0288 4A000000 		.word	74
  5052 028c 14       		.byte	20
  5053 028d 14       		.byte	20
@@ -9016,6 +8998,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5063 029b 03       		.byte	3
  5064 029c 1E       		.byte	30
  5065 029d 1F       		.byte	31
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 151
+
+
  5066 029e 0000     		.space	2
  5067 02a0 4C000000 		.word	76
  5068 02a4 98       		.byte	-104
@@ -9058,9 +9043,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5105 02d9 00       		.byte	0
  5106 02da 0000     		.space	2
  5107 02dc 54000000 		.word	84
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 152
-
-
  5108 02e0 8F       		.byte	-113
  5109 02e1 35       		.byte	53
  5110 02e2 35       		.byte	53
@@ -9076,6 +9058,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5120 02f0 00       		.byte	0
  5121 02f1 00       		.byte	0
  5122 02f2 0000     		.space	2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 152
+
+
  5123 02f4 56000000 		.word	86
  5124 02f8 05       		.byte	5
  5125 02f9 35       		.byte	53
@@ -9118,9 +9103,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5162 032e 0000     		.space	2
  5163 0330 5C000000 		.word	92
  5164 0334 36       		.byte	54
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 153
-
-
  5165 0335 21       		.byte	33
  5166 0336 21       		.byte	33
  5167 0337 00       		.byte	0
@@ -9136,6 +9118,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5177 0345 00       		.byte	0
  5178 0346 0000     		.space	2
  5179 0348 64000000 		.word	100
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 153
+
+
  5180 034c AF       		.byte	-81
  5181 034d 1A       		.byte	26
  5182 034e 22       		.byte	34
@@ -9178,9 +9163,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5219 0384 69000000 		.word	105
  5220 0388 5D       		.byte	93
  5221 0389 3E       		.byte	62
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 154
-
-
  5222 038a 3F       		.byte	63
  5223 038b 00       		.byte	0
  5224 038c 00       		.byte	0
@@ -9196,6 +9178,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5234 039a 0000     		.space	2
  5235 039c 6B000000 		.word	107
  5236 03a0 6C       		.byte	108
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 154
+
+
  5237 03a1 40       		.byte	64
  5238 03a2 40       		.byte	64
  5239 03a3 00       		.byte	0
@@ -9238,9 +9223,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5276 03dc AE       		.byte	-82
  5277 03dd 0C       		.byte	12
  5278 03de 0C       		.byte	12
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 155
-
-
  5279 03df 00       		.byte	0
  5280 03e0 00       		.byte	0
  5281 03e1 00       		.byte	0
@@ -9256,6 +9238,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5291 03f0 72000000 		.word	114
  5292 03f4 ED       		.byte	-19
  5293 03f5 2C       		.byte	44
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 155
+
+
  5294 03f6 2C       		.byte	44
  5295 03f7 00       		.byte	0
  5296 03f8 00       		.byte	0
@@ -9298,9 +9283,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5333 0431 0C       		.byte	12
  5334 0432 0C       		.byte	12
  5335 0433 03       		.byte	3
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 156
-
-
  5336 0434 0A       		.byte	10
  5337 0435 0B       		.byte	11
  5338 0436 0000     		.space	2
@@ -9316,6 +9298,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5348 0448 ED       		.byte	-19
  5349 0449 02       		.byte	2
  5350 044a 02       		.byte	2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 156
+
+
  5351 044b 03       		.byte	3
  5352 044c 00       		.byte	0
  5353 044d 01       		.byte	1
@@ -9358,9 +9343,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5390 0486 4F       		.byte	79
  5391 0487 00       		.byte	0
  5392 0488 00       		.byte	0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 157
-
-
  5393 0489 00       		.byte	0
  5394 048a 0000     		.space	2
  5395 048c 7F000000 		.word	127
@@ -9376,6 +9358,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5405 049d 23       		.byte	35
  5406 049e 23       		.byte	35
  5407 049f 00       		.byte	0
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 157
+
+
  5408 04a0 00       		.byte	0
  5409 04a1 00       		.byte	0
  5410 04a2 0000     		.space	2
@@ -9418,9 +9403,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5447 04db 00       		.byte	0
  5448 04dc 00       		.byte	0
  5449 04dd 00       		.byte	0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 158
-
-
  5450 04de 0000     		.space	2
  5451 04e0 86000000 		.word	134
  5452 04e4 E5       		.byte	-27
@@ -9436,6 +9418,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5462 04f2 08       		.byte	8
  5463 04f3 00       		.byte	0
  5464 04f4 00       		.byte	0
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 158
+
+
  5465 04f5 00       		.byte	0
  5466 04f6 0000     		.space	2
  5467 04f8 88000000 		.word	136
@@ -9478,9 +9463,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5504 0530 00       		.byte	0
  5505 0531 00       		.byte	0
  5506 0532 0000     		.space	2
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 159
-
-
  5507 0534 8D000000 		.word	141
  5508 0538 2F       		.byte	47
  5509 0539 20       		.byte	32
@@ -9496,6 +9478,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5519 0547 00       		.byte	0
  5520 0548 00       		.byte	0
  5521 0549 00       		.byte	0
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 159
+
+
  5522 054a 0000     		.space	2
  5523 054c 8F000000 		.word	143
  5524 0550 83       		.byte	-125
@@ -9538,9 +9523,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5561 0585 00       		.byte	0
  5562 0586 0000     		.space	2
  5563 0588 95000000 		.word	149
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 160
-
-
  5564 058c C8       		.byte	-56
  5565 058d 1E       		.byte	30
  5566 058e 3C       		.byte	60
@@ -9556,6 +9538,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5576 059c 00       		.byte	0
  5577 059d 00       		.byte	0
  5578 059e 0000     		.space	2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 160
+
+
  5579 05a0 E6000000 		.word	230
  5580 05a4 A3       		.byte	-93
  5581 05a5 2A       		.byte	42
@@ -9598,9 +9583,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5618 05da 0000     		.space	2
  5619 05dc EB000000 		.word	235
  5620 05e0 B3       		.byte	-77
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 161
-
-
  5621 05e1 2A       		.byte	42
  5622 05e2 2A       		.byte	42
  5623 05e3 00       		.byte	0
@@ -9616,6 +9598,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5633 05f1 00       		.byte	0
  5634 05f2 0000     		.space	2
  5635 05f4 F2000000 		.word	242
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 161
+
+
  5636 05f8 68       		.byte	104
  5637 05f9 34       		.byte	52
  5638 05fa 3C       		.byte	60
@@ -9658,9 +9643,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5675 0630 F7000000 		.word	247
  5676 0634 51       		.byte	81
  5677 0635 13       		.byte	19
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 162
-
-
  5678 0636 13       		.byte	19
  5679 0637 00       		.byte	0
  5680 0638 00       		.byte	0
@@ -9676,6 +9658,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5690 0646 0000     		.space	2
  5691 0648 F9000000 		.word	249
  5692 064c CC       		.byte	-52
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 162
+
+
  5693 064d 24       		.byte	36
  5694 064e 24       		.byte	36
  5695 064f 00       		.byte	0
@@ -9718,9 +9703,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5732 0688 2E       		.byte	46
  5733 0689 09       		.byte	9
  5734 068a 09       		.byte	9
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 163
-
-
  5735 068b 00       		.byte	0
  5736 068c 00       		.byte	0
  5737 068d 00       		.byte	0
@@ -9736,6 +9718,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5747 069c 01010000 		.word	257
  5748 06a0 83       		.byte	-125
  5749 06a1 09       		.byte	9
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 163
+
+
  5750 06a2 09       		.byte	9
  5751 06a3 00       		.byte	0
  5752 06a4 00       		.byte	0
@@ -9778,9 +9763,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5789 06dd 12       		.byte	18
  5790 06de 12       		.byte	18
  5791 06df 00       		.byte	0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 164
-
-
  5792 06e0 00       		.byte	0
  5793 06e1 00       		.byte	0
  5794 06e2 0000     		.space	2
@@ -9796,6 +9778,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5804 06f4 31       		.byte	49
  5805 06f5 1C       		.byte	28
  5806 06f6 1C       		.byte	28
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 164
+
+
  5807 06f7 00       		.byte	0
  5808 06f8 00       		.byte	0
  5809 06f9 00       		.byte	0
@@ -9838,9 +9823,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5846 0732 D5       		.byte	-43
  5847 0733 00       		.byte	0
  5848 0734 00       		.byte	0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 165
-
-
  5849 0735 00       		.byte	0
  5850 0736 0000     		.space	2
  5851 0738 0E010000 		.word	270
@@ -9856,6 +9838,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5861 0749 21       		.byte	33
  5862 074a 21       		.byte	33
  5863 074b 00       		.byte	0
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 165
+
+
  5864 074c 00       		.byte	0
  5865 074d 00       		.byte	0
  5866 074e 0000     		.space	2
@@ -9898,9 +9883,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5903 0787 00       		.byte	0
  5904 0788 00       		.byte	0
  5905 0789 00       		.byte	0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 166
-
-
  5906 078a 0000     		.space	2
  5907 078c 1E010000 		.word	286
  5908 0790 3E       		.byte	62
@@ -9916,6 +9898,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5918 079e 60       		.byte	96
  5919 079f 00       		.byte	0
  5920 07a0 00       		.byte	0
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 166
+
+
  5921 07a1 00       		.byte	0
  5922 07a2 0000     		.space	2
  5923 07a4 2C010000 		.word	300
@@ -9958,9 +9943,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5960 07dc 02       		.byte	2
  5961 07dd 03       		.byte	3
  5962 07de 0000     		.space	2
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 167
-
-
  5963 07e0 41010000 		.word	321
  5964 07e4 58       		.byte	88
  5965 07e5 02       		.byte	2
@@ -9976,6 +9958,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  5975 07f3 00       		.byte	0
  5976 07f4 00       		.byte	0
  5977 07f5 00       		.byte	0
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 167
+
+
  5978 07f6 0000     		.space	2
  5979 07f8 43010000 		.word	323
  5980 07fc 4E       		.byte	78
@@ -10018,9 +10003,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  6017 0831 00       		.byte	0
  6018 0832 0000     		.space	2
  6019 0834 4D010000 		.word	333
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 168
-
-
  6020 0838 E7       		.byte	-25
  6021 0839 6D       		.byte	109
  6022 083a 6D       		.byte	109
@@ -10036,6 +10018,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  6032 0848 00       		.byte	0
  6033 0849 00       		.byte	0
  6034 084a 0000     		.space	2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 168
+
+
  6035 084c 4F010000 		.word	335
  6036 0850 E1       		.byte	-31
  6037 0851 18       		.byte	24
@@ -10078,9 +10063,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  6074 0886 0000     		.space	2
  6075 0888 73010000 		.word	371
  6076 088c A1       		.byte	-95
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 169
-
-
  6077 088d 32       		.byte	50
  6078 088e 32       		.byte	50
  6079 088f 00       		.byte	0
@@ -10096,6 +10078,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  6089 089d 00       		.byte	0
  6090 089e 0000     		.space	2
  6091 08a0 7C010000 		.word	380
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 169
+
+
  6092 08a4 E8       		.byte	-24
  6093 08a5 14       		.byte	20
  6094 08a6 14       		.byte	20
@@ -10138,9 +10123,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  6131 08dc 91010000 		.word	401
  6132 08e0 B7       		.byte	-73
  6133 08e1 06       		.byte	6
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 170
-
-
  6134 08e2 06       		.byte	6
  6135 08e3 03       		.byte	3
  6136 08e4 04       		.byte	4
@@ -10156,6 +10138,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  6146 08f2 0000     		.space	2
  6147 08f4 64320000 		.word	12900
  6148 08f8 C5       		.byte	-59
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 170
+
+
  6149 08f9 16       		.byte	22
  6150 08fa 16       		.byte	22
  6151 08fb 00       		.byte	0
@@ -10198,9 +10183,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  6188 0934 38       		.byte	56
  6189 0935 15       		.byte	21
  6190 0936 15       		.byte	21
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 171
-
-
  6191 0937 00       		.byte	0
  6192 0938 00       		.byte	0
  6193 0939 00       		.byte	0
@@ -10216,6 +10198,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  6203              		.section	.rodata.mavlink_sha256_constant_256,"a"
  6204              		.align	2
  6205              		.set	.LANCHOR2,. + 0
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 171
+
+
  6208              	mavlink_sha256_constant_256:
  6209 0000 982F8A42 		.word	1116352408
  6210 0004 91443771 		.word	1899447441
@@ -10258,9 +10243,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  6247 0098 2EC9C281 		.word	-2117940946
  6248 009c 852C7292 		.word	-1838011259
  6249 00a0 A1E8BFA2 		.word	-1564481375
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 172
-
-
  6250 00a4 4B661AA8 		.word	-1474664885
  6251 00a8 708B4BC2 		.word	-1035236496
  6252 00ac A3516CC7 		.word	-949202525
@@ -10276,6 +10258,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  6262 00d4 4AAAD84E 		.word	1322822218
  6263 00d8 4FCA9C5B 		.word	1537002063
  6264 00dc F36F2E68 		.word	1747873779
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 172
+
+
  6265 00e0 EE828F74 		.word	1955562222
  6266 00e4 6F63A578 		.word	2024104815
  6267 00e8 1478C884 		.word	-2067236844
@@ -10315,51 +10300,51 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 1
  6301              		.file 32 "Modules/include/motor.h"
  6302              		.file 33 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\stdio.h"
  6303              		.file 34 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\string.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s 			page 173
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s 			page 173
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 mavlink_task.c
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:18     .rodata.MavlinkProcessMsg.str1.4:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:37     .text.MavlinkProcessMsg:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:44     .text.MavlinkProcessMsg:00000000 MavlinkProcessMsg
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:155    .text.MavlinkProcessMsg:0000007c $d
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:166    .text.mavlink_frame_char_buffer:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:172    .text.mavlink_frame_char_buffer:00000000 mavlink_frame_char_buffer
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:215    .text.mavlink_frame_char_buffer:0000001e $d
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:231    .text.mavlink_frame_char_buffer:0000003e $t
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:1865   .text.mavlink_frame_char_buffer:0000060c $d
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:1879   .text.mavlink_frame_char_buffer:0000062c $t
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:2559   .text.mavlink_frame_char_buffer:000008e8 $d
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:2566   .text.mavlink_frame_char_buffer:000008ec $t
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:3583   .text.mavlink_frame_char_buffer:00000ce8 $d
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:3596   .text.mavlink_frame_char_buffer:00000cec $t
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:4248   .text.mavlink_frame_char_buffer:00001010 $d
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:4254   .text.MavlinkTask:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:4260   .text.MavlinkTask:00000000 MavlinkTask
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:4497   .text.MavlinkTask:00000074 $d
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:4507   .rodata.MavlinkInit.str1.4:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:4511   .text.MavlinkInit:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:4518   .text.MavlinkInit:00000000 MavlinkInit
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:4557   .text.MavlinkInit:00000028 $d
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:4565   .bss.m_mavlink_buffer.8083:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:4569   .bss.m_mavlink_buffer.8083:00000000 m_mavlink_buffer.8083
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:4572   .bss.m_mavlink_status.8079:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:4576   .bss.m_mavlink_status.8079:00000000 m_mavlink_status.8079
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:4579   .bss.msg:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:4583   .bss.msg:00000000 msg
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:4586   .bss.osSys_mavlink_taskStackBuffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:4590   .bss.osSys_mavlink_taskStackBuffer:00000000 osSys_mavlink_taskStackBuffer
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:4593   .bss.osSys_mavlink_taskTaskBuffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:4597   .bss.osSys_mavlink_taskTaskBuffer:00000000 osSys_mavlink_taskTaskBuffer
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:4600   .bss.rc_channels_override:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:4604   .bss.rc_channels_override:00000000 rc_channels_override
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:4607   .bss.status:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:4611   .bss.status:00000000 status
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:4614   .rodata.mavlink_message_crcs.8192:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:4618   .rodata.mavlink_message_crcs.8192:00000000 mavlink_message_crcs.8192
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:6204   .rodata.mavlink_sha256_constant_256:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccN7sk2M.s:6208   .rodata.mavlink_sha256_constant_256:00000000 mavlink_sha256_constant_256
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:18     .rodata.MavlinkProcessMsg.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:37     .text.MavlinkProcessMsg:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:44     .text.MavlinkProcessMsg:00000000 MavlinkProcessMsg
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:155    .text.MavlinkProcessMsg:0000007c $d
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:166    .text.mavlink_frame_char_buffer:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:172    .text.mavlink_frame_char_buffer:00000000 mavlink_frame_char_buffer
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:215    .text.mavlink_frame_char_buffer:0000001e $d
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:231    .text.mavlink_frame_char_buffer:0000003e $t
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:1865   .text.mavlink_frame_char_buffer:0000060c $d
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:1879   .text.mavlink_frame_char_buffer:0000062c $t
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:2559   .text.mavlink_frame_char_buffer:000008e8 $d
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:2566   .text.mavlink_frame_char_buffer:000008ec $t
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:3583   .text.mavlink_frame_char_buffer:00000ce8 $d
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:3596   .text.mavlink_frame_char_buffer:00000cec $t
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:4248   .text.mavlink_frame_char_buffer:00001010 $d
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:4254   .text.MavlinkTask:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:4260   .text.MavlinkTask:00000000 MavlinkTask
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:4497   .text.MavlinkTask:00000074 $d
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:4507   .rodata.MavlinkInit.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:4511   .text.MavlinkInit:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:4518   .text.MavlinkInit:00000000 MavlinkInit
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:4557   .text.MavlinkInit:00000028 $d
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:4565   .bss.m_mavlink_buffer.8083:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:4569   .bss.m_mavlink_buffer.8083:00000000 m_mavlink_buffer.8083
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:4572   .bss.m_mavlink_status.8079:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:4576   .bss.m_mavlink_status.8079:00000000 m_mavlink_status.8079
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:4579   .bss.msg:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:4583   .bss.msg:00000000 msg
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:4586   .bss.osSys_mavlink_taskStackBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:4590   .bss.osSys_mavlink_taskStackBuffer:00000000 osSys_mavlink_taskStackBuffer
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:4593   .bss.osSys_mavlink_taskTaskBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:4597   .bss.osSys_mavlink_taskTaskBuffer:00000000 osSys_mavlink_taskTaskBuffer
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:4600   .bss.rc_channels_override:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:4604   .bss.rc_channels_override:00000000 rc_channels_override
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:4607   .bss.status:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:4611   .bss.status:00000000 status
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:4614   .rodata.mavlink_message_crcs.8192:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:4618   .rodata.mavlink_message_crcs.8192:00000000 mavlink_message_crcs.8192
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:6204   .rodata.mavlink_sha256_constant_256:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccc8HCuh.s:6208   .rodata.mavlink_sha256_constant_256:00000000 mavlink_sha256_constant_256
 
 UNDEFINED SYMBOLS
 memset

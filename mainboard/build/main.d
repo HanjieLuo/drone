@@ -20,6 +20,8 @@ build/main.o: Src/main.c Inc/main.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
@@ -43,7 +45,7 @@ build/main.o: Src/main.c Inc/main.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/timers.h Inc/dma.h \
- Inc/main.h Inc/tim.h Inc/usart.h Inc/gpio.h \
+ Inc/main.h Inc/i2c.h Inc/tim.h Inc/usart.h Inc/gpio.h \
  Modules/include/mavlink_task.h Modules/include/MAVLink/common/mavlink.h \
  Modules/include/MAVLink/common/version.h \
  Modules/include/MAVLink/common/common.h \
@@ -252,7 +254,8 @@ build/main.o: Src/main.c Inc/main.h \
  Modules/include/MAVLink/common/./mavlink_msg_open_drone_id_operator_id.h \
  Modules/include/MAVLink/common/./mavlink_msg_open_drone_id_message_pack.h \
  Modules/include/MAVLink/common/../mavlink_get_info.h \
- Modules/include/usart2.h Modules/include/utils.h Modules/include/motor.h
+ Modules/include/usart2.h Modules/include/utils.h Modules/include/motor.h \
+ Modules/include/gy_86.h
 
 Inc/main.h:
 
@@ -301,6 +304,10 @@ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h:
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h:
 
@@ -351,6 +358,8 @@ Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
 Inc/dma.h:
 
 Inc/main.h:
+
+Inc/i2c.h:
 
 Inc/tim.h:
 
@@ -781,3 +790,5 @@ Modules/include/usart2.h:
 Modules/include/utils.h:
 
 Modules/include/motor.h:
+
+Modules/include/gy_86.h:

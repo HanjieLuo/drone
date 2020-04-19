@@ -17,10 +17,10 @@ void MavlinkInit(void) {
 // extern TIM_HandleTypeDef htim4;
 
 void MavlinkTask(void *param) {
+    // // uint8_t buffer1[] = "Hello world\r\n";
+    // // const TickType_t xDelay = 10 / portTICK_PERIOD_MS;
+    // // uint16_t compare = 0;
     usart2_queue_buffer buffer;
-    // uint8_t buffer1[] = "Hello world\r\n";
-    // const TickType_t xDelay = 10 / portTICK_PERIOD_MS;
-    // uint16_t compare = 0;
     for(;;) {
         if (xQueueReceive(usart2_queue, &buffer, portMAX_DELAY) == pdTRUE) {
             for (size_t i = 0; i < buffer.length; i++) {
@@ -28,22 +28,7 @@ void MavlinkTask(void *param) {
                     MavlinkProcessMsg(&msg);
                 }
             }
-            // MavlinkParse(buffer.addr, buffer.length);
         }
-
-        // htim4.Instance->CCR1 = compare;
-        // htim4.Instance->CCR2 = compare;
-        // htim4.Instance->CCR3 = compare;
-        // htim4.Instance->CCR4 = compare;
-        // // HAL_Delay(1);
-        // vTaskDelay(xDelay);
-        // compare += 1;
-        // if (compare > 2799) {
-        // compare = 0;
-        // }
-
-        // HAL_UART_Transmit_DMA(&huart4, buffer1, sizeof(buffer1));
-        // HAL_Delay(1000);
     }
 }
 
