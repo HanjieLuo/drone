@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccPtt24A.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cctzJurv.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -30,10 +30,15 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccPtt24A.s 			page 1
   28              		.file 1 "Modules/src/motor.c"
    1:Modules/src/motor.c **** #include "motor.h"
    2:Modules/src/motor.c **** 
-   3:Modules/src/motor.c **** extern TIM_HandleTypeDef htim4;
-   4:Modules/src/motor.c **** 
-   5:Modules/src/motor.c **** void MotorInit(void) {
-  29              		.loc 1 5 22 view -0
+   3:Modules/src/motor.c **** #define MOTOR1 CCR1
+   4:Modules/src/motor.c **** #define MOTOR2 CCR4
+   5:Modules/src/motor.c **** #define MOTOR3 CCR2
+   6:Modules/src/motor.c **** #define MOTOR4 CCR3
+   7:Modules/src/motor.c **** 
+   8:Modules/src/motor.c **** extern TIM_HandleTypeDef htim4;
+   9:Modules/src/motor.c **** 
+  10:Modules/src/motor.c **** void MotorInit(void) {
+  29              		.loc 1 10 22 view -0
   30              		.cfi_startproc
   31              		@ args = 0, pretend = 0, frame = 0
   32              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -42,55 +47,55 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccPtt24A.s 			page 1
   35              		.cfi_def_cfa_offset 8
   36              		.cfi_offset 4, -8
   37              		.cfi_offset 14, -4
-   6:Modules/src/motor.c ****     htim4.Instance->CCR1 = 0;
-  38              		.loc 1 6 5 view .LVU1
-  39              		.loc 1 6 10 is_stmt 0 view .LVU2
+  11:Modules/src/motor.c ****     htim4.Instance->CCR1 = 0;
+  38              		.loc 1 11 5 view .LVU1
+  39              		.loc 1 11 10 is_stmt 0 view .LVU2
   40 0002 0B4C     		ldr	r4, .L3
   41 0004 2368     		ldr	r3, [r4]
-  42              		.loc 1 6 26 view .LVU3
+  42              		.loc 1 11 26 view .LVU3
   43 0006 0021     		movs	r1, #0
   44 0008 5963     		str	r1, [r3, #52]
-   7:Modules/src/motor.c ****     htim4.Instance->CCR2 = 0;
-  45              		.loc 1 7 5 is_stmt 1 view .LVU4
-  46              		.loc 1 7 26 is_stmt 0 view .LVU5
+  12:Modules/src/motor.c ****     htim4.Instance->CCR2 = 0;
+  45              		.loc 1 12 5 is_stmt 1 view .LVU4
+  46              		.loc 1 12 26 is_stmt 0 view .LVU5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cctzJurv.s 			page 2
+
+
   47 000a 9963     		str	r1, [r3, #56]
-   8:Modules/src/motor.c ****     htim4.Instance->CCR3 = 0;
-  48              		.loc 1 8 5 is_stmt 1 view .LVU6
-  49              		.loc 1 8 26 is_stmt 0 view .LVU7
+  13:Modules/src/motor.c ****     htim4.Instance->CCR3 = 0;
+  48              		.loc 1 13 5 is_stmt 1 view .LVU6
+  49              		.loc 1 13 26 is_stmt 0 view .LVU7
   50 000c D963     		str	r1, [r3, #60]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccPtt24A.s 			page 2
-
-
-   9:Modules/src/motor.c ****     htim4.Instance->CCR4 = 0;
-  51              		.loc 1 9 5 is_stmt 1 view .LVU8
-  52              		.loc 1 9 26 is_stmt 0 view .LVU9
+  14:Modules/src/motor.c ****     htim4.Instance->CCR4 = 0;
+  51              		.loc 1 14 5 is_stmt 1 view .LVU8
+  52              		.loc 1 14 26 is_stmt 0 view .LVU9
   53 000e 1964     		str	r1, [r3, #64]
-  10:Modules/src/motor.c **** 
-  11:Modules/src/motor.c ****     HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
-  54              		.loc 1 11 5 is_stmt 1 view .LVU10
+  15:Modules/src/motor.c **** 
+  16:Modules/src/motor.c ****     HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
+  54              		.loc 1 16 5 is_stmt 1 view .LVU10
   55 0010 2046     		mov	r0, r4
   56 0012 FFF7FEFF 		bl	HAL_TIM_PWM_Start
   57              	.LVL0:
-  12:Modules/src/motor.c ****     HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_2);
-  58              		.loc 1 12 5 view .LVU11
+  17:Modules/src/motor.c ****     HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_2);
+  58              		.loc 1 17 5 view .LVU11
   59 0016 0421     		movs	r1, #4
   60 0018 2046     		mov	r0, r4
   61 001a FFF7FEFF 		bl	HAL_TIM_PWM_Start
   62              	.LVL1:
-  13:Modules/src/motor.c ****     HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
-  63              		.loc 1 13 5 view .LVU12
+  18:Modules/src/motor.c ****     HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
+  63              		.loc 1 18 5 view .LVU12
   64 001e 0821     		movs	r1, #8
   65 0020 2046     		mov	r0, r4
   66 0022 FFF7FEFF 		bl	HAL_TIM_PWM_Start
   67              	.LVL2:
-  14:Modules/src/motor.c ****     HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4);
-  68              		.loc 1 14 5 view .LVU13
+  19:Modules/src/motor.c ****     HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4);
+  68              		.loc 1 19 5 view .LVU13
   69 0026 0C21     		movs	r1, #12
   70 0028 2046     		mov	r0, r4
   71 002a FFF7FEFF 		bl	HAL_TIM_PWM_Start
   72              	.LVL3:
-  15:Modules/src/motor.c **** }
-  73              		.loc 1 15 1 is_stmt 0 view .LVU14
+  20:Modules/src/motor.c **** }
+  73              		.loc 1 20 1 is_stmt 0 view .LVU14
   74 002e 10BD     		pop	{r4, pc}
   75              	.L4:
   76              		.align	2
@@ -108,79 +113,79 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccPtt24A.s 			page 1
   90              	SetMotor:
   91              	.LVL4:
   92              	.LFB134:
-  16:Modules/src/motor.c **** 
-  17:Modules/src/motor.c **** void SetMotor(uint16_t m1, uint16_t m2, u_int16_t m3, u_int16_t m4) {
-  93              		.loc 1 17 69 is_stmt 1 view -0
+  21:Modules/src/motor.c **** 
+  22:Modules/src/motor.c **** void SetMotor(uint16_t m1, uint16_t m2, u_int16_t m3, u_int16_t m4) {
+  93              		.loc 1 22 69 is_stmt 1 view -0
   94              		.cfi_startproc
   95              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cctzJurv.s 			page 3
+
+
   96              		@ frame_needed = 0, uses_anonymous_args = 0
   97              		@ link register save eliminated.
-  98              		.loc 1 17 69 is_stmt 0 view .LVU16
+  98              		.loc 1 22 69 is_stmt 0 view .LVU16
   99 0000 50B4     		push	{r4, r6}
  100              	.LCFI1:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccPtt24A.s 			page 3
-
-
  101              		.cfi_def_cfa_offset 8
  102              		.cfi_offset 4, -8
  103              		.cfi_offset 6, -4
-  18:Modules/src/motor.c ****     uint16_t period = htim4.Instance->ARR;
- 104              		.loc 1 18 5 is_stmt 1 view .LVU17
- 105              		.loc 1 18 28 is_stmt 0 view .LVU18
+  23:Modules/src/motor.c ****     uint16_t period = htim4.Instance->ARR;
+ 104              		.loc 1 23 5 is_stmt 1 view .LVU17
+ 105              		.loc 1 23 28 is_stmt 0 view .LVU18
  106 0002 0B4C     		ldr	r4, .L7
  107 0004 2668     		ldr	r6, [r4]
- 108              		.loc 1 18 37 view .LVU19
+ 108              		.loc 1 23 37 view .LVU19
  109 0006 F46A     		ldr	r4, [r6, #44]
- 110              		.loc 1 18 14 view .LVU20
+ 110              		.loc 1 23 14 view .LVU20
  111 0008 A4B2     		uxth	r4, r4
  112              	.LVL5:
-  19:Modules/src/motor.c **** 
-  20:Modules/src/motor.c ****     htim4.Instance->CCR1 = (m1 > period)? period : m1;
- 113              		.loc 1 20 5 is_stmt 1 view .LVU21
- 114              		.loc 1 20 50 is_stmt 0 view .LVU22
+  24:Modules/src/motor.c **** 
+  25:Modules/src/motor.c ****     htim4.Instance->MOTOR1 = (m1 > period)? period : m1;
+ 113              		.loc 1 25 5 is_stmt 1 view .LVU21
+ 114              		.loc 1 25 52 is_stmt 0 view .LVU22
  115 000a A042     		cmp	r0, r4
  116 000c 28BF     		it	cs
  117 000e 2046     		movcs	r0, r4
  118              	.LVL6:
- 119              		.loc 1 20 26 view .LVU23
+ 119              		.loc 1 25 28 view .LVU23
  120 0010 7063     		str	r0, [r6, #52]
-  21:Modules/src/motor.c ****     htim4.Instance->CCR2 = (m2 > period)? period : m2;
- 121              		.loc 1 21 5 is_stmt 1 view .LVU24
- 122              		.loc 1 21 50 is_stmt 0 view .LVU25
+  26:Modules/src/motor.c ****     htim4.Instance->MOTOR2 = (m2 > period)? period : m2;
+ 121              		.loc 1 26 5 is_stmt 1 view .LVU24
+ 122              		.loc 1 26 52 is_stmt 0 view .LVU25
  123 0012 A142     		cmp	r1, r4
  124 0014 28BF     		it	cs
  125 0016 2146     		movcs	r1, r4
  126              	.LVL7:
- 127              		.loc 1 21 26 view .LVU26
- 128 0018 B163     		str	r1, [r6, #56]
-  22:Modules/src/motor.c ****     htim4.Instance->CCR3 = (m3 > period)? period : m3;
- 129              		.loc 1 22 5 is_stmt 1 view .LVU27
- 130              		.loc 1 22 50 is_stmt 0 view .LVU28
+ 127              		.loc 1 26 28 view .LVU26
+ 128 0018 3164     		str	r1, [r6, #64]
+  27:Modules/src/motor.c ****     htim4.Instance->MOTOR3 = (m3 > period)? period : m3;
+ 129              		.loc 1 27 5 is_stmt 1 view .LVU27
+ 130              		.loc 1 27 52 is_stmt 0 view .LVU28
  131 001a A242     		cmp	r2, r4
  132 001c 28BF     		it	cs
  133 001e 2246     		movcs	r2, r4
  134              	.LVL8:
- 135              		.loc 1 22 26 view .LVU29
- 136 0020 F263     		str	r2, [r6, #60]
-  23:Modules/src/motor.c ****     htim4.Instance->CCR4 = (m4 > period)? period : m4;
- 137              		.loc 1 23 5 is_stmt 1 view .LVU30
- 138              		.loc 1 23 50 is_stmt 0 view .LVU31
+ 135              		.loc 1 27 28 view .LVU29
+ 136 0020 B263     		str	r2, [r6, #56]
+  28:Modules/src/motor.c ****     htim4.Instance->MOTOR4 = (m4 > period)? period : m4;
+ 137              		.loc 1 28 5 is_stmt 1 view .LVU30
+ 138              		.loc 1 28 52 is_stmt 0 view .LVU31
  139 0022 9C42     		cmp	r4, r3
  140 0024 28BF     		it	cs
  141 0026 1C46     		movcs	r4, r3
  142              	.LVL9:
- 143              		.loc 1 23 26 view .LVU32
- 144 0028 3464     		str	r4, [r6, #64]
-  24:Modules/src/motor.c **** }...
- 145              		.loc 1 24 1 view .LVU33
+ 143              		.loc 1 28 28 view .LVU32
+ 144 0028 F463     		str	r4, [r6, #60]
+  29:Modules/src/motor.c **** }...
+ 145              		.loc 1 29 1 view .LVU33
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cctzJurv.s 			page 4
+
+
  146 002a 50BC     		pop	{r4, r6}
  147              	.LCFI2:
  148              		.cfi_restore 6
  149              		.cfi_restore 4
  150              		.cfi_def_cfa_offset 0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccPtt24A.s 			page 4
-
-
  151 002c 7047     		bx	lr
  152              	.L8:
  153 002e 00BF     		.align	2
@@ -207,17 +212,17 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccPtt24A.s 			page 1
  175              		.file 16 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\types.h"
  176              		.file 17 "Modules/include/utils.h"
  177              		.file 18 "Inc/tim.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccPtt24A.s 			page 5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cctzJurv.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 motor.c
-C:\Users\luoha\AppData\Local\Temp\ccPtt24A.s:18     .text.MotorInit:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccPtt24A.s:26     .text.MotorInit:00000000 MotorInit
-C:\Users\luoha\AppData\Local\Temp\ccPtt24A.s:78     .text.MotorInit:00000030 $d
-C:\Users\luoha\AppData\Local\Temp\ccPtt24A.s:83     .text.SetMotor:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccPtt24A.s:90     .text.SetMotor:00000000 SetMotor
-C:\Users\luoha\AppData\Local\Temp\ccPtt24A.s:155    .text.SetMotor:00000030 $d
+C:\Users\luoha\AppData\Local\Temp\cctzJurv.s:18     .text.MotorInit:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cctzJurv.s:26     .text.MotorInit:00000000 MotorInit
+C:\Users\luoha\AppData\Local\Temp\cctzJurv.s:78     .text.MotorInit:00000030 $d
+C:\Users\luoha\AppData\Local\Temp\cctzJurv.s:83     .text.SetMotor:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cctzJurv.s:90     .text.SetMotor:00000000 SetMotor
+C:\Users\luoha\AppData\Local\Temp\cctzJurv.s:155    .text.SetMotor:00000030 $d
 
 UNDEFINED SYMBOLS
 HAL_TIM_PWM_Start

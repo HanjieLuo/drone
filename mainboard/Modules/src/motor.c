@@ -1,5 +1,10 @@
 #include "motor.h"
 
+#define MOTOR1 CCR1
+#define MOTOR2 CCR4
+#define MOTOR3 CCR2
+#define MOTOR4 CCR3
+
 extern TIM_HandleTypeDef htim4;
 
 void MotorInit(void) {
@@ -17,8 +22,8 @@ void MotorInit(void) {
 void SetMotor(uint16_t m1, uint16_t m2, u_int16_t m3, u_int16_t m4) {
     uint16_t period = htim4.Instance->ARR;
 
-    htim4.Instance->CCR1 = (m1 > period)? period : m1;
-    htim4.Instance->CCR2 = (m2 > period)? period : m2;
-    htim4.Instance->CCR3 = (m3 > period)? period : m3;
-    htim4.Instance->CCR4 = (m4 > period)? period : m4;
+    htim4.Instance->MOTOR1 = (m1 > period)? period : m1;
+    htim4.Instance->MOTOR2 = (m2 > period)? period : m2;
+    htim4.Instance->MOTOR3 = (m3 > period)? period : m3;
+    htim4.Instance->MOTOR4 = (m4 > period)? period : m4;
 }

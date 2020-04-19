@@ -42,12 +42,12 @@ class Client:
 
 if __name__ == "__main__":
     client = Client("COM3")
-    value = 1000
-    # client.set_rc_channel_pwm(4, 0)
-    while(True):
-        client.set_rc_channel_pwm(4, value)
-        value = value + 100
-        if value > 42000:
-            value = 1000
-        time.sleep(0.1)
+    value = 0
+    client.set_rc_channel_pwm(2, 100)
+    # while(True):
+    #     client.set_rc_channel_pwm(4, value)
+    #     value = value + 10
+    #     if value > 2800:
+    #         value = 0
+    #     time.sleep(0.1)
     

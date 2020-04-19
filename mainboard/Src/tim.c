@@ -34,9 +34,9 @@ void MX_TIM4_Init(void)
   TIM_OC_InitTypeDef sConfigOC = {0};
 
   htim4.Instance = TIM4;
-  htim4.Init.Prescaler = 3;
+  htim4.Init.Prescaler = 0;
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim4.Init.Period = 41999;
+  htim4.Init.Period = 2799;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim4) != HAL_OK)
