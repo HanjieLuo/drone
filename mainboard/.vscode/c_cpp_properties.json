@@ -6,7 +6,9 @@
             "Modules/src/motor.c",
             "Modules/src/mavlink_task.c",
             "Modules/src/utils.c",
-            "Modules/src/gy_86.c"
+            "Modules/src/mpu6050.c",
+            "Modules/src/sensors.c",
+            "Modules/src/i2c1.c"
         ],
         "user_asmSources": [],
         "user_ldSources": [],

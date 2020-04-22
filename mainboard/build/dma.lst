@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccnpvERd.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cczFiWZS.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccnpvERd.s 			page 1
   28:Src/dma.c     **** /* Configure DMA                                                              */
   29:Src/dma.c     **** /*----------------------------------------------------------------------------*/
   30:Src/dma.c     **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccnpvERd.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cczFiWZS.s 			page 2
 
 
   31:Src/dma.c     **** /* USER CODE BEGIN 1 */
@@ -91,7 +91,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccnpvERd.s 			page 1
   44 0004 0024     		movs	r4, #0
   45 0006 0094     		str	r4, [sp]
   46              		.loc 1 42 3 view .LVU3
-  47 0008 1A4B     		ldr	r3, .L3
+  47 0008 224B     		ldr	r3, .L3
   48 000a 1A6B     		ldr	r2, [r3, #48]
   49 000c 42F48002 		orr	r2, r2, #4194304
   50 0010 1A63     		str	r2, [r3, #48]
@@ -118,107 +118,133 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccnpvERd.s 			page 1
   70 002c 0193     		str	r3, [sp, #4]
   71              		.loc 1 43 3 view .LVU11
   72 002e 019B     		ldr	r3, [sp, #4]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccnpvERd.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cczFiWZS.s 			page 3
 
 
   73              	.LBE3:
   74              		.loc 1 43 3 view .LVU12
   44:Src/dma.c     **** 
   45:Src/dma.c     ****   /* DMA interrupt init */
-  46:Src/dma.c     ****   /* DMA1_Stream5_IRQn interrupt configuration */
-  47:Src/dma.c     ****   HAL_NVIC_SetPriority(DMA1_Stream5_IRQn, 5, 0);
+  46:Src/dma.c     ****   /* DMA1_Stream0_IRQn interrupt configuration */
+  47:Src/dma.c     ****   HAL_NVIC_SetPriority(DMA1_Stream0_IRQn, 5, 0);
   75              		.loc 1 47 3 view .LVU13
   76 0030 2246     		mov	r2, r4
   77 0032 0521     		movs	r1, #5
-  78 0034 1020     		movs	r0, #16
+  78 0034 0B20     		movs	r0, #11
   79 0036 FFF7FEFF 		bl	HAL_NVIC_SetPriority
   80              	.LVL0:
-  48:Src/dma.c     ****   HAL_NVIC_EnableIRQ(DMA1_Stream5_IRQn);
+  48:Src/dma.c     ****   HAL_NVIC_EnableIRQ(DMA1_Stream0_IRQn);
   81              		.loc 1 48 3 view .LVU14
-  82 003a 1020     		movs	r0, #16
+  82 003a 0B20     		movs	r0, #11
   83 003c FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
   84              	.LVL1:
-  49:Src/dma.c     ****   /* DMA1_Stream6_IRQn interrupt configuration */
-  50:Src/dma.c     ****   HAL_NVIC_SetPriority(DMA1_Stream6_IRQn, 5, 0);
+  49:Src/dma.c     ****   /* DMA1_Stream5_IRQn interrupt configuration */
+  50:Src/dma.c     ****   HAL_NVIC_SetPriority(DMA1_Stream5_IRQn, 5, 0);
   85              		.loc 1 50 3 view .LVU15
   86 0040 2246     		mov	r2, r4
   87 0042 0521     		movs	r1, #5
-  88 0044 1120     		movs	r0, #17
+  88 0044 1020     		movs	r0, #16
   89 0046 FFF7FEFF 		bl	HAL_NVIC_SetPriority
   90              	.LVL2:
-  51:Src/dma.c     ****   HAL_NVIC_EnableIRQ(DMA1_Stream6_IRQn);
+  51:Src/dma.c     ****   HAL_NVIC_EnableIRQ(DMA1_Stream5_IRQn);
   91              		.loc 1 51 3 view .LVU16
-  92 004a 1120     		movs	r0, #17
+  92 004a 1020     		movs	r0, #16
   93 004c FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
   94              	.LVL3:
-  52:Src/dma.c     ****   /* DMA2_Stream2_IRQn interrupt configuration */
-  53:Src/dma.c     ****   HAL_NVIC_SetPriority(DMA2_Stream2_IRQn, 0, 0);
+  52:Src/dma.c     ****   /* DMA1_Stream6_IRQn interrupt configuration */
+  53:Src/dma.c     ****   HAL_NVIC_SetPriority(DMA1_Stream6_IRQn, 5, 0);
   95              		.loc 1 53 3 view .LVU17
   96 0050 2246     		mov	r2, r4
-  97 0052 2146     		mov	r1, r4
-  98 0054 3A20     		movs	r0, #58
+  97 0052 0521     		movs	r1, #5
+  98 0054 1120     		movs	r0, #17
   99 0056 FFF7FEFF 		bl	HAL_NVIC_SetPriority
  100              	.LVL4:
-  54:Src/dma.c     ****   HAL_NVIC_EnableIRQ(DMA2_Stream2_IRQn);
+  54:Src/dma.c     ****   HAL_NVIC_EnableIRQ(DMA1_Stream6_IRQn);
  101              		.loc 1 54 3 view .LVU18
- 102 005a 3A20     		movs	r0, #58
+ 102 005a 1120     		movs	r0, #17
  103 005c FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
  104              	.LVL5:
-  55:Src/dma.c     ****   /* DMA2_Stream7_IRQn interrupt configuration */
-  56:Src/dma.c     ****   HAL_NVIC_SetPriority(DMA2_Stream7_IRQn, 0, 0);
+  55:Src/dma.c     ****   /* DMA1_Stream7_IRQn interrupt configuration */
+  56:Src/dma.c     ****   HAL_NVIC_SetPriority(DMA1_Stream7_IRQn, 5, 0);
  105              		.loc 1 56 3 view .LVU19
  106 0060 2246     		mov	r2, r4
- 107 0062 2146     		mov	r1, r4
- 108 0064 4620     		movs	r0, #70
+ 107 0062 0521     		movs	r1, #5
+ 108 0064 2F20     		movs	r0, #47
  109 0066 FFF7FEFF 		bl	HAL_NVIC_SetPriority
  110              	.LVL6:
-  57:Src/dma.c     ****   HAL_NVIC_EnableIRQ(DMA2_Stream7_IRQn);
+  57:Src/dma.c     ****   HAL_NVIC_EnableIRQ(DMA1_Stream7_IRQn);
  111              		.loc 1 57 3 view .LVU20
- 112 006a 4620     		movs	r0, #70
+ 112 006a 2F20     		movs	r0, #47
  113 006c FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
  114              	.LVL7:
-  58:Src/dma.c     **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccnpvERd.s 			page 4
+  58:Src/dma.c     ****   /* DMA2_Stream2_IRQn interrupt configuration */
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cczFiWZS.s 			page 4
 
 
-  59:Src/dma.c     **** }
- 115              		.loc 1 59 1 is_stmt 0 view .LVU21
- 116 0070 02B0     		add	sp, sp, #8
- 117              	.LCFI2:
- 118              		.cfi_def_cfa_offset 8
- 119              		@ sp needed
- 120 0072 10BD     		pop	{r4, pc}
- 121              	.L4:
- 122              		.align	2
- 123              	.L3:
- 124 0074 00380240 		.word	1073887232
- 125              		.cfi_endproc
- 126              	.LFE133:
- 128              		.text
- 129              	.Letext0:
- 130              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
- 131              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
- 132              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
- 133              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 134              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
- 135              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 136              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 137              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 138              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 139              		.file 11 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
- 140              		.file 12 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
- 141              		.file 13 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
- 142              		.file 14 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
- 143              		.file 15 "Modules/include/utils.h"
- 144              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccnpvERd.s 			page 5
+  59:Src/dma.c     ****   HAL_NVIC_SetPriority(DMA2_Stream2_IRQn, 0, 0);
+ 115              		.loc 1 59 3 view .LVU21
+ 116 0070 2246     		mov	r2, r4
+ 117 0072 2146     		mov	r1, r4
+ 118 0074 3A20     		movs	r0, #58
+ 119 0076 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 120              	.LVL8:
+  60:Src/dma.c     ****   HAL_NVIC_EnableIRQ(DMA2_Stream2_IRQn);
+ 121              		.loc 1 60 3 view .LVU22
+ 122 007a 3A20     		movs	r0, #58
+ 123 007c FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 124              	.LVL9:
+  61:Src/dma.c     ****   /* DMA2_Stream7_IRQn interrupt configuration */
+  62:Src/dma.c     ****   HAL_NVIC_SetPriority(DMA2_Stream7_IRQn, 0, 0);
+ 125              		.loc 1 62 3 view .LVU23
+ 126 0080 2246     		mov	r2, r4
+ 127 0082 2146     		mov	r1, r4
+ 128 0084 4620     		movs	r0, #70
+ 129 0086 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 130              	.LVL10:
+  63:Src/dma.c     ****   HAL_NVIC_EnableIRQ(DMA2_Stream7_IRQn);
+ 131              		.loc 1 63 3 view .LVU24
+ 132 008a 4620     		movs	r0, #70
+ 133 008c FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 134              	.LVL11:
+  64:Src/dma.c     **** 
+  65:Src/dma.c     **** }
+ 135              		.loc 1 65 1 is_stmt 0 view .LVU25
+ 136 0090 02B0     		add	sp, sp, #8
+ 137              	.LCFI2:
+ 138              		.cfi_def_cfa_offset 8
+ 139              		@ sp needed
+ 140 0092 10BD     		pop	{r4, pc}
+ 141              	.L4:
+ 142              		.align	2
+ 143              	.L3:
+ 144 0094 00380240 		.word	1073887232
+ 145              		.cfi_endproc
+ 146              	.LFE133:
+ 148              		.text
+ 149              	.Letext0:
+ 150              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
+ 151              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 152              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 153              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 154              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 155              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 156              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 157              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 158              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 159              		.file 11 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
+ 160              		.file 12 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
+ 161              		.file 13 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
+ 162              		.file 14 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
+ 163              		.file 15 "Modules/include/utils.h"
+ 164              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cczFiWZS.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 dma.c
-C:\Users\luoha\AppData\Local\Temp\ccnpvERd.s:18     .text.MX_DMA_Init:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccnpvERd.s:26     .text.MX_DMA_Init:00000000 MX_DMA_Init
-C:\Users\luoha\AppData\Local\Temp\ccnpvERd.s:124    .text.MX_DMA_Init:00000074 $d
+C:\Users\luoha\AppData\Local\Temp\cczFiWZS.s:18     .text.MX_DMA_Init:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cczFiWZS.s:26     .text.MX_DMA_Init:00000000 MX_DMA_Init
+C:\Users\luoha\AppData\Local\Temp\cczFiWZS.s:144    .text.MX_DMA_Init:00000094 $d
 
 UNDEFINED SYMBOLS
 HAL_NVIC_SetPriority

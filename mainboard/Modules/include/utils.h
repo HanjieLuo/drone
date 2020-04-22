@@ -3,6 +3,7 @@
 
 #include "stm32f4xx_hal.h"
 #include "stdio.h"
+#include <stdbool.h>
 
 /**
  * @brief Creation of queues using static memory.

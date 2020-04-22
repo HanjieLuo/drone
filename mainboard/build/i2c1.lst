@@ -1,0 +1,296 @@
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccntTU5w.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"i2c1.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.I2C1Init,"ax",%progbits
+  18              		.align	1
+  19              		.global	I2C1Init
+  20              		.arch armv7e-m
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  24              		.fpu fpv4-sp-d16
+  26              	I2C1Init:
+  27              	.LFB138:
+  28              		.file 1 "Modules/src/i2c1.c"
+   1:Modules/src/i2c1.c **** #include "i2c1.h"
+   2:Modules/src/i2c1.c **** 
+   3:Modules/src/i2c1.c **** #define I2C_MAX_WAIT pdMS_TO_TICKS(1000UL)
+   4:Modules/src/i2c1.c **** 
+   5:Modules/src/i2c1.c **** static volatile TaskHandle_t i2c1_notify = NULL;
+   6:Modules/src/i2c1.c **** u_int32_t notify_value;
+   7:Modules/src/i2c1.c **** 
+   8:Modules/src/i2c1.c **** void I2C1Init(void) {
+  29              		.loc 1 8 21 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+   9:Modules/src/i2c1.c **** 
+  10:Modules/src/i2c1.c **** }
+  34              		.loc 1 10 1 view .LVU1
+  35 0000 7047     		bx	lr
+  36              		.cfi_endproc
+  37              	.LFE138:
+  39              		.section	.text.I2C1Read,"ax",%progbits
+  40              		.align	1
+  41              		.global	I2C1Read
+  42              		.syntax unified
+  43              		.thumb
+  44              		.thumb_func
+  45              		.fpu fpv4-sp-d16
+  47              	I2C1Read:
+  48              	.LVL0:
+  49              	.LFB139:
+  11:Modules/src/i2c1.c **** 
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccntTU5w.s 			page 2
+
+
+  12:Modules/src/i2c1.c **** bool I2C1Read(uint16_t DevAddress, uint16_t MemAddress, uint16_t MemAddSize, uint8_t *pData, uint16
+  50              		.loc 1 12 109 view -0
+  51              		.cfi_startproc
+  52              		@ args = 4, pretend = 0, frame = 0
+  53              		@ frame_needed = 0, uses_anonymous_args = 0
+  54              		.loc 1 12 109 is_stmt 0 view .LVU3
+  55 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+  56              	.LCFI0:
+  57              		.cfi_def_cfa_offset 20
+  58              		.cfi_offset 4, -20
+  59              		.cfi_offset 5, -16
+  60              		.cfi_offset 6, -12
+  61              		.cfi_offset 7, -8
+  62              		.cfi_offset 14, -4
+  63 0002 83B0     		sub	sp, sp, #12
+  64              	.LCFI1:
+  65              		.cfi_def_cfa_offset 32
+  66 0004 0446     		mov	r4, r0
+  67 0006 0D46     		mov	r5, r1
+  68 0008 1646     		mov	r6, r2
+  69 000a 1F46     		mov	r7, r3
+  13:Modules/src/i2c1.c ****     i2c1_notify = xTaskGetCurrentTaskHandle();
+  70              		.loc 1 13 5 is_stmt 1 view .LVU4
+  71              		.loc 1 13 19 is_stmt 0 view .LVU5
+  72 000c FFF7FEFF 		bl	xTaskGetCurrentTaskHandle
+  73              	.LVL1:
+  74              		.loc 1 13 17 view .LVU6
+  75 0010 0E4B     		ldr	r3, .L8
+  76 0012 1860     		str	r0, [r3]
+  14:Modules/src/i2c1.c ****     if(HAL_I2C_Mem_Read_DMA(&hi2c1, DevAddress, MemAddress, MemAddSize, pData, Size) == HAL_OK) {
+  77              		.loc 1 14 5 is_stmt 1 view .LVU7
+  78              		.loc 1 14 8 is_stmt 0 view .LVU8
+  79 0014 BDF82030 		ldrh	r3, [sp, #32]
+  80 0018 0193     		str	r3, [sp, #4]
+  81 001a 0097     		str	r7, [sp]
+  82 001c 3346     		mov	r3, r6
+  83 001e 2A46     		mov	r2, r5
+  84 0020 2146     		mov	r1, r4
+  85 0022 0B48     		ldr	r0, .L8+4
+  86 0024 FFF7FEFF 		bl	HAL_I2C_Mem_Read_DMA
+  87              	.LVL2:
+  88              		.loc 1 14 7 view .LVU9
+  89 0028 10B1     		cbz	r0, .L7
+  15:Modules/src/i2c1.c ****         // printf("ulTaskNotifyTake\r\n");
+  16:Modules/src/i2c1.c ****         notify_value = ulTaskNotifyTake(pdTRUE, I2C_MAX_WAIT);
+  17:Modules/src/i2c1.c ****         if (notify_value == 1) {
+  18:Modules/src/i2c1.c ****             return true;
+  19:Modules/src/i2c1.c ****         }
+  20:Modules/src/i2c1.c ****     } 
+  21:Modules/src/i2c1.c ****     return false;
+  90              		.loc 1 21 12 view .LVU10
+  91 002a 0020     		movs	r0, #0
+  92              	.L3:
+  22:Modules/src/i2c1.c **** }
+  93              		.loc 1 22 1 view .LVU11
+  94 002c 03B0     		add	sp, sp, #12
+  95              	.LCFI2:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccntTU5w.s 			page 3
+
+
+  96              		.cfi_remember_state
+  97              		.cfi_def_cfa_offset 20
+  98              		@ sp needed
+  99 002e F0BD     		pop	{r4, r5, r6, r7, pc}
+ 100              	.LVL3:
+ 101              	.L7:
+ 102              	.LCFI3:
+ 103              		.cfi_restore_state
+  16:Modules/src/i2c1.c ****         if (notify_value == 1) {
+ 104              		.loc 1 16 9 is_stmt 1 view .LVU12
+  16:Modules/src/i2c1.c ****         if (notify_value == 1) {
+ 105              		.loc 1 16 24 is_stmt 0 view .LVU13
+ 106 0030 4FF47A71 		mov	r1, #1000
+ 107 0034 0120     		movs	r0, #1
+ 108 0036 FFF7FEFF 		bl	ulTaskNotifyTake
+ 109              	.LVL4:
+  16:Modules/src/i2c1.c ****         if (notify_value == 1) {
+ 110              		.loc 1 16 22 view .LVU14
+ 111 003a 064B     		ldr	r3, .L8+8
+ 112 003c 1860     		str	r0, [r3]
+  17:Modules/src/i2c1.c ****             return true;
+ 113              		.loc 1 17 9 is_stmt 1 view .LVU15
+  17:Modules/src/i2c1.c ****             return true;
+ 114              		.loc 1 17 12 is_stmt 0 view .LVU16
+ 115 003e 0128     		cmp	r0, #1
+ 116 0040 01D0     		beq	.L5
+  21:Modules/src/i2c1.c **** }
+ 117              		.loc 1 21 12 view .LVU17
+ 118 0042 0020     		movs	r0, #0
+ 119 0044 F2E7     		b	.L3
+ 120              	.L5:
+  18:Modules/src/i2c1.c ****         }
+ 121              		.loc 1 18 20 view .LVU18
+ 122 0046 0120     		movs	r0, #1
+ 123 0048 F0E7     		b	.L3
+ 124              	.L9:
+ 125 004a 00BF     		.align	2
+ 126              	.L8:
+ 127 004c 00000000 		.word	.LANCHOR0
+ 128 0050 00000000 		.word	hi2c1
+ 129 0054 00000000 		.word	notify_value
+ 130              		.cfi_endproc
+ 131              	.LFE139:
+ 133              		.section	.text.HAL_I2C_MemRxCpltCallback,"ax",%progbits
+ 134              		.align	1
+ 135              		.global	HAL_I2C_MemRxCpltCallback
+ 136              		.syntax unified
+ 137              		.thumb
+ 138              		.thumb_func
+ 139              		.fpu fpv4-sp-d16
+ 141              	HAL_I2C_MemRxCpltCallback:
+ 142              	.LVL5:
+ 143              	.LFB140:
+  23:Modules/src/i2c1.c **** 
+  24:Modules/src/i2c1.c **** void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c) {
+ 144              		.loc 1 24 57 is_stmt 1 view -0
+ 145              		.cfi_startproc
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccntTU5w.s 			page 4
+
+
+ 146              		@ args = 0, pretend = 0, frame = 8
+ 147              		@ frame_needed = 0, uses_anonymous_args = 0
+ 148              		.loc 1 24 57 is_stmt 0 view .LVU20
+ 149 0000 00B5     		push	{lr}
+ 150              	.LCFI4:
+ 151              		.cfi_def_cfa_offset 4
+ 152              		.cfi_offset 14, -4
+ 153 0002 83B0     		sub	sp, sp, #12
+ 154              	.LCFI5:
+ 155              		.cfi_def_cfa_offset 16
+  25:Modules/src/i2c1.c ****     // printf("MemRxCpltCallback\r\n");
+  26:Modules/src/i2c1.c ****     portBASE_TYPE xHigherPriorityTaskWoken = pdFALSE;
+ 156              		.loc 1 26 5 is_stmt 1 view .LVU21
+ 157              		.loc 1 26 19 is_stmt 0 view .LVU22
+ 158 0004 0023     		movs	r3, #0
+ 159 0006 0193     		str	r3, [sp, #4]
+  27:Modules/src/i2c1.c ****     vTaskNotifyGiveFromISR(i2c1_notify, &xHigherPriorityTaskWoken);
+ 160              		.loc 1 27 5 is_stmt 1 view .LVU23
+ 161 0008 084B     		ldr	r3, .L13
+ 162 000a 1868     		ldr	r0, [r3]
+ 163              	.LVL6:
+ 164              		.loc 1 27 5 is_stmt 0 view .LVU24
+ 165 000c 01A9     		add	r1, sp, #4
+ 166 000e FFF7FEFF 		bl	vTaskNotifyGiveFromISR
+ 167              	.LVL7:
+  28:Modules/src/i2c1.c ****     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+ 168              		.loc 1 28 5 is_stmt 1 view .LVU25
+ 169 0012 019B     		ldr	r3, [sp, #4]
+ 170 0014 3BB1     		cbz	r3, .L10
+ 171              		.loc 1 28 5 discriminator 1 view .LVU26
+ 172 0016 064B     		ldr	r3, .L13+4
+ 173 0018 4FF08052 		mov	r2, #268435456
+ 174 001c 1A60     		str	r2, [r3]
+ 175              		.loc 1 28 5 discriminator 1 view .LVU27
+ 176              		.syntax unified
+ 177              	@ 28 "Modules/src/i2c1.c" 1
+ 178 001e BFF34F8F 		dsb
+ 179              	@ 0 "" 2
+ 180              		.loc 1 28 5 discriminator 1 view .LVU28
+ 181              	@ 28 "Modules/src/i2c1.c" 1
+ 182 0022 BFF36F8F 		isb
+ 183              	@ 0 "" 2
+ 184              		.loc 1 28 49 discriminator 1 view .LVU29
+ 185              		.thumb
+ 186              		.syntax unified
+ 187              	.L10:
+  29:Modules/src/i2c1.c **** }...
+ 188              		.loc 1 29 1 is_stmt 0 view .LVU30
+ 189 0026 03B0     		add	sp, sp, #12
+ 190              	.LCFI6:
+ 191              		.cfi_def_cfa_offset 4
+ 192              		@ sp needed
+ 193 0028 5DF804FB 		ldr	pc, [sp], #4
+ 194              	.L14:
+ 195              		.align	2
+ 196              	.L13:
+ 197 002c 00000000 		.word	.LANCHOR0
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccntTU5w.s 			page 5
+
+
+ 198 0030 04ED00E0 		.word	-536810236
+ 199              		.cfi_endproc
+ 200              	.LFE140:
+ 202              		.comm	notify_value,4,4
+ 203              		.section	.bss.i2c1_notify,"aw",%nobits
+ 204              		.align	2
+ 205              		.set	.LANCHOR0,. + 0
+ 208              	i2c1_notify:
+ 209 0000 00000000 		.space	4
+ 210              		.text
+ 211              	.Letext0:
+ 212              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
+ 213              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 214              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 215              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 216              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 217              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 218              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 219              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 220              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 221              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 222              		.file 12 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
+ 223              		.file 13 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
+ 224              		.file 14 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
+ 225              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
+ 226              		.file 16 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\types.h"
+ 227              		.file 17 "Modules/include/utils.h"
+ 228              		.file 18 "Inc/i2c.h"
+ 229              		.file 19 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
+ 230              		.file 20 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccntTU5w.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 i2c1.c
+C:\Users\luoha\AppData\Local\Temp\ccntTU5w.s:18     .text.I2C1Init:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccntTU5w.s:26     .text.I2C1Init:00000000 I2C1Init
+C:\Users\luoha\AppData\Local\Temp\ccntTU5w.s:40     .text.I2C1Read:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccntTU5w.s:47     .text.I2C1Read:00000000 I2C1Read
+C:\Users\luoha\AppData\Local\Temp\ccntTU5w.s:127    .text.I2C1Read:0000004c $d
+                            *COM*:00000004 notify_value
+C:\Users\luoha\AppData\Local\Temp\ccntTU5w.s:134    .text.HAL_I2C_MemRxCpltCallback:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccntTU5w.s:141    .text.HAL_I2C_MemRxCpltCallback:00000000 HAL_I2C_MemRxCpltCallback
+C:\Users\luoha\AppData\Local\Temp\ccntTU5w.s:197    .text.HAL_I2C_MemRxCpltCallback:0000002c $d
+C:\Users\luoha\AppData\Local\Temp\ccntTU5w.s:204    .bss.i2c1_notify:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccntTU5w.s:208    .bss.i2c1_notify:00000000 i2c1_notify
+
+UNDEFINED SYMBOLS
+xTaskGetCurrentTaskHandle
+HAL_I2C_Mem_Read_DMA
+ulTaskNotifyTake
+hi2c1
+vTaskNotifyGiveFromISR

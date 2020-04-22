@@ -1,0 +1,325 @@
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccZuNsZw.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"mpu6050.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.rodata.MPU6050Init.str1.4,"aMS",%progbits,1
+  18              		.align	2
+  19              	.LC0:
+  20 0000 4D505536 		.ascii	"MPU6050Init\015\000"
+  20      30353049 
+  20      6E69740D 
+  20      00
+  21 000d 000000   		.align	2
+  22              	.LC1:
+  23 0010 48414C5F 		.ascii	"HAL_I2C_IsDeviceReady!\015\000"
+  23      4932435F 
+  23      49734465 
+  23      76696365 
+  23      52656164 
+  24              		.align	2
+  25              	.LC2:
+  26 0028 666C6167 		.ascii	"flag: %u\015\012\000"
+  26      3A202575 
+  26      0D0A00
+  27 0033 00       		.align	2
+  28              	.LC3:
+  29 0034 6F6B2121 		.ascii	"ok!!\015\000"
+  29      0D00
+  30              		.section	.text.MPU6050Init,"ax",%progbits
+  31              		.align	1
+  32              		.global	MPU6050Init
+  33              		.arch armv7e-m
+  34              		.syntax unified
+  35              		.thumb
+  36              		.thumb_func
+  37              		.fpu fpv4-sp-d16
+  39              	MPU6050Init:
+  40              	.LFB138:
+  41              		.file 1 "Modules/src/mpu6050.c"
+   1:Modules/src/mpu6050.c **** #include "mpu6050.h"
+   2:Modules/src/mpu6050.c **** 
+   3:Modules/src/mpu6050.c **** static uint8_t i2c_data;
+   4:Modules/src/mpu6050.c **** static uint8_t i2c_datas[6];
+   5:Modules/src/mpu6050.c **** static int16_t accel_x_raw, accel_y_raw, accel_z_raw;
+   6:Modules/src/mpu6050.c **** 
+   7:Modules/src/mpu6050.c **** bool MPU6050Init(void) {
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccZuNsZw.s 			page 2
+
+
+  42              		.loc 1 7 24 view -0
+  43              		.cfi_startproc
+  44              		@ args = 0, pretend = 0, frame = 0
+  45              		@ frame_needed = 0, uses_anonymous_args = 0
+  46 0000 10B5     		push	{r4, lr}
+  47              	.LCFI0:
+  48              		.cfi_def_cfa_offset 8
+  49              		.cfi_offset 4, -8
+  50              		.cfi_offset 14, -4
+  51 0002 82B0     		sub	sp, sp, #8
+  52              	.LCFI1:
+  53              		.cfi_def_cfa_offset 16
+   8:Modules/src/mpu6050.c ****     printf("MPU6050Init\r\n");
+  54              		.loc 1 8 5 view .LVU1
+  55 0004 1448     		ldr	r0, .L8
+  56 0006 FFF7FEFF 		bl	puts
+  57              	.LVL0:
+   9:Modules/src/mpu6050.c ****     if(HAL_I2C_IsDeviceReady(&hi2c1, MPU6050_DEV_ADDR, 10, 1000) != HAL_OK) {
+  58              		.loc 1 9 5 view .LVU2
+  59              		.loc 1 9 8 is_stmt 0 view .LVU3
+  60 000a 4FF47A73 		mov	r3, #1000
+  61 000e 0A22     		movs	r2, #10
+  62 0010 D021     		movs	r1, #208
+  63 0012 1248     		ldr	r0, .L8+4
+  64 0014 FFF7FEFF 		bl	HAL_I2C_IsDeviceReady
+  65              	.LVL1:
+  66              		.loc 1 9 7 view .LVU4
+  67 0018 18B1     		cbz	r0, .L6
+  10:Modules/src/mpu6050.c ****         return false;
+  68              		.loc 1 10 16 view .LVU5
+  69 001a 0024     		movs	r4, #0
+  70              	.L2:
+  11:Modules/src/mpu6050.c ****     }
+  12:Modules/src/mpu6050.c **** 
+  13:Modules/src/mpu6050.c ****     printf("HAL_I2C_IsDeviceReady!\r\n");
+  14:Modules/src/mpu6050.c ****     // HAL_Delay(250);
+  15:Modules/src/mpu6050.c ****     // printf("HAL_I2C_IsDeviceReady\r\n");
+  16:Modules/src/mpu6050.c ****     bool flag = I2C1Read(MPU6050_DEV_ADDR, MPU6050_WHO_AM_I, 1, &i2c_data, 1);
+  17:Modules/src/mpu6050.c ****     // HAL_I2C_Mem_Read_DMA(&hi2c1, MPU6050_DEV_ADDR, MPU6050_WHO_AM_I, 1, &i2c_data, 1);
+  18:Modules/src/mpu6050.c ****     // while (hi2c1.State == HAL_I2C_STATE_BUSY);
+  19:Modules/src/mpu6050.c ****     // if(HAL_I2C_Mem_Read_DMA(&hi2c1, MPU6050_DEV_ADDR, MPU6050_WHO_AM_I, 1, &i2c_data, 1) != HAL_
+  20:Modules/src/mpu6050.c ****     //     printf("error\r\n");
+  21:Modules/src/mpu6050.c ****     // }
+  22:Modules/src/mpu6050.c ****     // HAL_I2C_Mem_Read(&hi2c1, MPU6050_DEV_ADDR, MPU6050_WHO_AM_I, 1, &i2c_data, 1, 1000);
+  23:Modules/src/mpu6050.c ****     // HAL_Delay(10);
+  24:Modules/src/mpu6050.c ****     // printf("%u\r\n", i2c_data);
+  25:Modules/src/mpu6050.c ****     printf("flag: %u\r\n", flag);
+  26:Modules/src/mpu6050.c ****     // 0x68 will be returned by the sensor if everything goes well
+  27:Modules/src/mpu6050.c ****     if (!flag || i2c_data != 0x68) return false;
+  28:Modules/src/mpu6050.c **** 
+  29:Modules/src/mpu6050.c ****     printf("ok!!\r\n");
+  30:Modules/src/mpu6050.c **** 
+  31:Modules/src/mpu6050.c ****     // //复位 MPU6050
+  32:Modules/src/mpu6050.c ****     // i2c_data = 0X80;
+  33:Modules/src/mpu6050.c ****     // if(HAL_I2C_Mem_Write_DMA(&hi2c1, MPU6050_DEV_ADDR, MPU6050_PWR_MGMT_1, 1, &i2c_data, 1) != H
+  34:Modules/src/mpu6050.c ****     //     printf("MPU6050_PWR_MGMT_1\r\n");
+  35:Modules/src/mpu6050.c ****     // }
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccZuNsZw.s 			page 3
+
+
+  36:Modules/src/mpu6050.c ****     // // HAL_I2C_Mem_Write_DMA(&hi2c1, MPU6050_DEV_ADDR, MPU6050_PWR_MGMT_1, 1, &i2c_data, 1);
+  37:Modules/src/mpu6050.c ****     // // HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_PWR_MGMT_1, 1, &i2c_data, 1, 1000);
+  38:Modules/src/mpu6050.c ****     // // HAL_Delay(10);
+  39:Modules/src/mpu6050.c **** 
+  40:Modules/src/mpu6050.c ****     // // power management register 0X6B we should write all 0's to wake the sensor up
+  41:Modules/src/mpu6050.c ****     // i2c_data = 0;
+  42:Modules/src/mpu6050.c ****     // if(HAL_I2C_Mem_Write_DMA(&hi2c1, MPU6050_DEV_ADDR, MPU6050_PWR_MGMT_1, 1, &i2c_data, 1) != H
+  43:Modules/src/mpu6050.c ****     //     printf("MPU6050_PWR_MGMT_1\r\n");
+  44:Modules/src/mpu6050.c ****     // }
+  45:Modules/src/mpu6050.c ****     // // HAL_I2C_Mem_Write_DMA(&hi2c1, MPU6050_DEV_ADDR, MPU6050_PWR_MGMT_1, 1, &i2c_data, 1);
+  46:Modules/src/mpu6050.c ****     // // HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_PWR_MGMT_1, 1, &i2c_data, 1, 1000);
+  47:Modules/src/mpu6050.c ****     // // HAL_Delay(10);
+  48:Modules/src/mpu6050.c **** 
+  49:Modules/src/mpu6050.c ****     // //CLKSEL 3 (PLL with Z Gyro reference)
+  50:Modules/src/mpu6050.c ****     // //默认是使用内部 8M RC 晶振的，精度不高，所以我们一般选择 X/Y/Z 轴�
+  51:Modules/src/mpu6050.c ****     // i2c_data = 0x03;
+  52:Modules/src/mpu6050.c ****     // if(HAL_I2C_Mem_Write_DMA(&hi2c1, MPU6050_DEV_ADDR, MPU6050_PWR_MGMT_1, 1, &i2c_data, 1) != H
+  53:Modules/src/mpu6050.c ****     //     printf("MPU6050_PWR_MGMT_1\r\n");
+  54:Modules/src/mpu6050.c ****     // }
+  55:Modules/src/mpu6050.c ****     // // HAL_I2C_Mem_Write_DMA(&hi2c1, MPU6050_DEV_ADDR, MPU6050_PWR_MGMT_1, 1, &i2c_data, 1);
+  56:Modules/src/mpu6050.c ****     // // HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_PWR_MGMT_1, 1, &i2c_data, 1, 1000);
+  57:Modules/src/mpu6050.c ****     // // HAL_Delay(5);
+  58:Modules/src/mpu6050.c **** 
+  59:Modules/src/mpu6050.c ****     // // Set Gyroscope DATA RATE of 1KHz by writing SMPLRT_DIV register
+  60:Modules/src/mpu6050.c ****     // i2c_data = 0x07;
+  61:Modules/src/mpu6050.c ****     // if(HAL_I2C_Mem_Write_DMA(&hi2c1, MPU6050_DEV_ADDR, MPU6050_SMPLRT_DIV, 1, &i2c_data, 1) != H
+  62:Modules/src/mpu6050.c ****     //     printf("MPU6050_SMPLRT_DIV\r\n");
+  63:Modules/src/mpu6050.c ****     // }
+  64:Modules/src/mpu6050.c ****     // // HAL_I2C_Mem_Write_DMA(&hi2c1, MPU6050_DEV_ADDR, MPU6050_SMPLRT_DIV, 1, &i2c_data, 1);
+  65:Modules/src/mpu6050.c ****     // // HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_SMPLRT_DIV, 1, &i2c_data, 1, 1000);
+  66:Modules/src/mpu6050.c ****     // // HAL_Delay(5);
+  67:Modules/src/mpu6050.c **** 
+  68:Modules/src/mpu6050.c ****     // // Set accelerometer configuration in ACCEL_CONFIG Register
+  69:Modules/src/mpu6050.c ****     // // XA_ST=0,YA_ST=0,ZA_ST=0, FS_SEL=0 -> ? 2g
+  70:Modules/src/mpu6050.c ****     // // 该寄存器我们只关心 AFS_SEL[1:0]这两个位，用于设置加速度传感器的�
+  71:Modules/src/mpu6050.c ****     // // ±2g；1，±4g；2，±8g；3，±16g；我们一般设置为 0，即±2g，因为加速
+  72:Modules/src/mpu6050.c ****     // // ADC 也是 16 位，所以得到灵敏度为：65536/4=16384LSB/g。
+  73:Modules/src/mpu6050.c ****     // i2c_data = 0x00;
+  74:Modules/src/mpu6050.c ****     // if(HAL_I2C_Mem_Write_DMA(&hi2c1, MPU6050_DEV_ADDR, MPU6050_ACCEL_CONFIG, 1, &i2c_data, 1) !=
+  75:Modules/src/mpu6050.c ****     //     printf("MPU6050_ACCEL_CONFIG\r\n");
+  76:Modules/src/mpu6050.c ****     // }
+  77:Modules/src/mpu6050.c ****     // // HAL_I2C_Mem_Write_DMA(&hi2c1, MPU6050_DEV_ADDR, MPU6050_ACCEL_CONFIG, 1, &i2c_data, 1);
+  78:Modules/src/mpu6050.c ****     // // HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_ACCEL_CONFIG, 1, &i2c_data, 1, 1000);
+  79:Modules/src/mpu6050.c ****     // // HAL_Delay(5);
+  80:Modules/src/mpu6050.c **** 
+  81:Modules/src/mpu6050.c ****     // // Set Gyroscopic configuration in GYRO_CONFIG Register
+  82:Modules/src/mpu6050.c ****     // // XG_ST=0,YG_ST=0,ZG_ST=0, FS_SEL=0 -> ? 不自检，2000deg/s
+  83:Modules/src/mpu6050.c ****     // //     该寄存器我们只关心 FS_SEL[1:0]这两个位，用于设置陀螺仪的满量�
+  84:Modules/src/mpu6050.c ****     // // /S；1，±500°/S；2，±1000°/S；3，±2000°/S；我们一般设置为 3，即±200
+  85:Modules/src/mpu6050.c ****     // // 为陀螺仪的 ADC 为 16 位分辨率，所以得到灵敏度为：65536/4000=16.4LSB/(
+  86:Modules/src/mpu6050.c ****     // i2c_data = 0x18;
+  87:Modules/src/mpu6050.c ****     // if(HAL_I2C_Mem_Write_DMA(&hi2c1, MPU6050_DEV_ADDR, MPU6050_GYRO_CONFIG, 1, &i2c_data, 1) != 
+  88:Modules/src/mpu6050.c ****     //     printf("MPU6050_GYRO_CONFIG\r\n");
+  89:Modules/src/mpu6050.c ****     // }
+  90:Modules/src/mpu6050.c ****     // // HAL_I2C_Mem_Write_DMA(&hi2c1, MPU6050_DEV_ADDR, MPU6050_GYRO_CONFIG, 1, &i2c_data, 1);
+  91:Modules/src/mpu6050.c ****     // // HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_GYRO_CONFIG, 1, &i2c_data, 1, 1000);
+  92:Modules/src/mpu6050.c ****     // // HAL_Delay(5);
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccZuNsZw.s 			page 4
+
+
+  93:Modules/src/mpu6050.c **** 
+  94:Modules/src/mpu6050.c ****     // //// enable I2C bypass for AUX I2C
+  95:Modules/src/mpu6050.c ****     // i2c_data = 0x02;
+  96:Modules/src/mpu6050.c ****     // if(HAL_I2C_Mem_Write_DMA(&hi2c1, MPU6050_DEV_ADDR, MPU6050_RA_INT_PIN_CFG, 1, &i2c_data, 1) 
+  97:Modules/src/mpu6050.c ****     //     printf("MPU6050_RA_INT_PIN_CFG\r\n");
+  98:Modules/src/mpu6050.c ****     // }
+  99:Modules/src/mpu6050.c ****     // // HAL_I2C_Mem_Write_DMA(&hi2c1, MPU6050_DEV_ADDR, MPU6050_RA_INT_PIN_CFG, 1, &i2c_data, 1);
+ 100:Modules/src/mpu6050.c ****     // // HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_RA_INT_PIN_CFG, 1, &i2c_data, 1, 1000
+ 101:Modules/src/mpu6050.c ****     // // HAL_Delay(50);
+ 102:Modules/src/mpu6050.c **** 
+ 103:Modules/src/mpu6050.c ****     // // PMU6050_WriteReg(MPU6050_RA_INT_PIN_CFG, 0x02);
+ 104:Modules/src/mpu6050.c ****     // // PMU6050_WriteReg(MPU6050_RA_USER_CTRL, 0x00);
+ 105:Modules/src/mpu6050.c **** 
+ 106:Modules/src/mpu6050.c ****     return true;
+ 107:Modules/src/mpu6050.c **** }
+  71              		.loc 1 107 1 view .LVU6
+  72 001c 2046     		mov	r0, r4
+  73 001e 02B0     		add	sp, sp, #8
+  74              	.LCFI2:
+  75              		.cfi_remember_state
+  76              		.cfi_def_cfa_offset 8
+  77              		@ sp needed
+  78 0020 10BD     		pop	{r4, pc}
+  79              	.L6:
+  80              	.LCFI3:
+  81              		.cfi_restore_state
+  13:Modules/src/mpu6050.c ****     // HAL_Delay(250);
+  82              		.loc 1 13 5 is_stmt 1 view .LVU7
+  83 0022 0F48     		ldr	r0, .L8+8
+  84 0024 FFF7FEFF 		bl	puts
+  85              	.LVL2:
+  16:Modules/src/mpu6050.c ****     // HAL_I2C_Mem_Read_DMA(&hi2c1, MPU6050_DEV_ADDR, MPU6050_WHO_AM_I, 1, &i2c_data, 1);
+  86              		.loc 1 16 5 view .LVU8
+  16:Modules/src/mpu6050.c ****     // HAL_I2C_Mem_Read_DMA(&hi2c1, MPU6050_DEV_ADDR, MPU6050_WHO_AM_I, 1, &i2c_data, 1);
+  87              		.loc 1 16 17 is_stmt 0 view .LVU9
+  88 0028 0122     		movs	r2, #1
+  89 002a 0092     		str	r2, [sp]
+  90 002c 0D4B     		ldr	r3, .L8+12
+  91 002e 7521     		movs	r1, #117
+  92 0030 D020     		movs	r0, #208
+  93 0032 FFF7FEFF 		bl	I2C1Read
+  94              	.LVL3:
+  95 0036 0446     		mov	r4, r0
+  96              	.LVL4:
+  25:Modules/src/mpu6050.c ****     // 0x68 will be returned by the sensor if everything goes well
+  97              		.loc 1 25 5 is_stmt 1 view .LVU10
+  98 0038 0146     		mov	r1, r0
+  99 003a 0B48     		ldr	r0, .L8+16
+ 100              	.LVL5:
+  25:Modules/src/mpu6050.c ****     // 0x68 will be returned by the sensor if everything goes well
+ 101              		.loc 1 25 5 is_stmt 0 view .LVU11
+ 102 003c FFF7FEFF 		bl	printf
+ 103              	.LVL6:
+  27:Modules/src/mpu6050.c **** 
+ 104              		.loc 1 27 5 is_stmt 1 view .LVU12
+  27:Modules/src/mpu6050.c **** 
+ 105              		.loc 1 27 8 is_stmt 0 view .LVU13
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccZuNsZw.s 			page 5
+
+
+ 106 0040 002C     		cmp	r4, #0
+ 107 0042 EBD0     		beq	.L2
+  27:Modules/src/mpu6050.c **** 
+ 108              		.loc 1 27 27 discriminator 2 view .LVU14
+ 109 0044 074B     		ldr	r3, .L8+12
+ 110 0046 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  27:Modules/src/mpu6050.c **** 
+ 111              		.loc 1 27 15 discriminator 2 view .LVU15
+ 112 0048 682B     		cmp	r3, #104
+ 113 004a 01D0     		beq	.L7
+  27:Modules/src/mpu6050.c **** 
+ 114              		.loc 1 27 43 view .LVU16
+ 115 004c 0024     		movs	r4, #0
+ 116 004e E5E7     		b	.L2
+ 117              	.L7:
+  29:Modules/src/mpu6050.c **** 
+ 118              		.loc 1 29 5 is_stmt 1 view .LVU17
+ 119 0050 0648     		ldr	r0, .L8+20
+ 120 0052 FFF7FEFF 		bl	puts
+ 121              	.LVL7:
+ 106:Modules/src/mpu6050.c **** }
+ 122              		.loc 1 106 5 view .LVU18
+ 106:Modules/src/mpu6050.c **** }
+ 123              		.loc 1 106 12 is_stmt 0 view .LVU19
+ 124 0056 E1E7     		b	.L2
+ 125              	.L9:
+ 126              		.align	2
+ 127              	.L8:
+ 128 0058 00000000 		.word	.LC0
+ 129 005c 00000000 		.word	hi2c1
+ 130 0060 10000000 		.word	.LC1
+ 131 0064 00000000 		.word	.LANCHOR0
+ 132 0068 28000000 		.word	.LC2
+ 133 006c 34000000 		.word	.LC3
+ 134              		.cfi_endproc
+ 135              	.LFE138:
+ 137              		.section	.bss.i2c_data,"aw",%nobits
+ 138              		.set	.LANCHOR0,. + 0
+ 141              	i2c_data:
+ 142 0000 00       		.space	1
+ 143              		.text
+ 144              	.Letext0:
+ 145              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
+ 146              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 147              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 148              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 149              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 150              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 151              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 152              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 153              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 154              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 155              		.file 12 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
+ 156              		.file 13 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
+ 157              		.file 14 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
+ 158              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
+ 159              		.file 16 "Modules/include/utils.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccZuNsZw.s 			page 6
+
+
+ 160              		.file 17 "Inc/i2c.h"
+ 161              		.file 18 "Modules/include/i2c1.h"
+ 162              		.file 19 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\stdio.h"
+ 163              		.file 20 "<built-in>"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccZuNsZw.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 mpu6050.c
+C:\Users\luoha\AppData\Local\Temp\ccZuNsZw.s:18     .rodata.MPU6050Init.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccZuNsZw.s:31     .text.MPU6050Init:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccZuNsZw.s:39     .text.MPU6050Init:00000000 MPU6050Init
+C:\Users\luoha\AppData\Local\Temp\ccZuNsZw.s:128    .text.MPU6050Init:00000058 $d
+C:\Users\luoha\AppData\Local\Temp\ccZuNsZw.s:141    .bss.i2c_data:00000000 i2c_data
+C:\Users\luoha\AppData\Local\Temp\ccZuNsZw.s:142    .bss.i2c_data:00000000 $d
+
+UNDEFINED SYMBOLS
+puts
+HAL_I2C_IsDeviceReady
+I2C1Read
+printf
+hi2c1

@@ -31,7 +31,10 @@
 /* USER CODE BEGIN Includes */
 // #include "uart4.h"
 #include "mavlink_task.h"
-#include "gy_86.h"
+#include "sensors.h"
+// #include "mpu6050.h"
+// #include "i2c1.h"
+// #include "gy_86.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -89,6 +92,8 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
+  // __HAL_RCC_I2C1_CLK_ENABLE();
+  // __HAL_RCC_DMA1_CLK_ENABLE();
 
   /* USER CODE END SysInit */
 
@@ -100,19 +105,21 @@ int main(void)
   MX_USART2_UART_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-  MotorInit();
-  MavlinkInit();
-  uint8_t flag = MPU6050Init();
-  printf("%u\r\n", flag);
-  float ax, ay, az;
+  // MotorInit();
+  // MavlinkInit();
+  SensorsInit();
+  // I2C1Init();
+  // bool flag = MPU6050Init();
+  // printf("status:%u\r\n", flag);
+  // float ax, ay, az;
   // Uart4Init();
   // uint8_t buffer[] = "Hello world\r\n";
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */
-  // MX_FREERTOS_Init(); 
+  MX_FREERTOS_Init(); 
   /* Start scheduler */
-  // osKernelStart();
+  osKernelStart();
  
   /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
@@ -122,10 +129,11 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    MPU6050ReadAccel(&ax, &ay, &az);
+
+    // MPU6050ReadAccel(&ax, &ay, &az);
     // printf("%f\r\n", 3.1415926);
-    printf("%f, %f, %f \r\n", ax, ay, az);
-    HAL_Delay(1);
+    // printf("%f, %f, %f \r\n", ax, ay, az);
+    // HAL_Delay(1000);
     // HAL_UART_Transmit_DMA(&huart4, buffer, sizeof(buffer));
     // HAL_UART_Transmit_DMA(&huart1, buffer, sizeof(buffer));
     // printf("%d ok1\r\n", 10);

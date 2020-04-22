@@ -1,7 +1,8 @@
-#ifndef __GY_86_H
-#define __GY_86_H
+#ifndef __MPU6050_H
+#define __MPU6050_H
 
-#include "i2c.h"
+#include "i2c1.h"
+#include "utils.h"
 
 #define MPU6050_DEV_ADDR 0xD0  // 6050 器件地址
 //-----------------------------------------
@@ -37,8 +38,7 @@
 #define MPU6050_SlaveAddress 0xD0  //IIC写入时的地址字节数据，+1为读取
 #define MPU6050_RA_INT_PIN_CFG 0x37
 
-void GY86Init(void);
-uint8_t MPU6050Init(void);
-void MPU6050ReadAccel(float *ax, float *ay, float *az);
+bool MPU6050Init(void);
+bool MPU6050ReadAccel(float *ax, float *ay, float *az);
 
-#endif /* __GY_86_H */
+#endif /* __MPU6050_H */

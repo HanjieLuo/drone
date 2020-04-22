@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s 			page 1
   29:Modules/src/usart2.c ****     HAL_DMA_IRQHandler(huart2.hdmarx);
   30:Modules/src/usart2.c **** }
   31:Modules/src/usart2.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s 			page 2
 
 
   32:Modules/src/usart2.c **** void DMA1_Stream6_IRQHandler(void) {
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s 			page 1
   58:Modules/src/usart2.c ****     // printf("%u\r\n", pos);
   59:Modules/src/usart2.c **** 
   60:Modules/src/usart2.c ****     if (pos != old_pos) {    /* Check change in received data */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s 			page 3
 
 
   56              		.loc 1 60 5 is_stmt 1 view .LVU9
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s 			page 1
   89 0038 1C60     		str	r4, [r3]
   82:Modules/src/usart2.c **** 
   83:Modules/src/usart2.c ****     /* Check and manually update if we reached end of buffer */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s 			page 4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s 			page 4
 
 
   84:Modules/src/usart2.c ****     if (old_pos == RX_BUFFER_SIZE) {
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s 			page 1
  133              		.loc 1 71 44 is_stmt 0 view .LVU35
  134 005c C3F18003 		rsb	r3, r3, #128
   71:Modules/src/usart2.c ****             xQueueSendFromISR(usart2_queue, &buffer, &xHigherPriorityTaskWoken);
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s 			page 5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s 			page 5
 
 
  135              		.loc 1 71 27 view .LVU36
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s 			page 1
  179              		.cfi_endproc
  180              	.LFE144:
  182              		.section	.text.Usart2Init,"ax",%progbits
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s 			page 6
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s 			page 6
 
 
  183              		.align	1
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s 			page 1
  231              		@ sp needed
  232 002e 5DF804FB 		ldr	pc, [sp], #4
  233              	.L13:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s 			page 7
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s 			page 7
 
 
  234 0032 00BF     		.align	2
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s 			page 1
  282 0018 5B68     		ldr	r3, [r3, #4]
  283 001a 0193     		str	r3, [sp, #4]
   20:Modules/src/usart2.c ****         UartRxCheck();
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s 			page 8
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s 			page 8
 
 
  284              		.loc 1 20 9 view .LVU62
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s 			page 1
   29:Modules/src/usart2.c **** }
  334              		.loc 1 29 5 view .LVU69
  335 0002 024B     		ldr	r3, .L22
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s 			page 9
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s 			page 9
 
 
  336 0004 586B     		ldr	r0, [r3, #52]
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s 			page 1
  390              	.LVL11:
  391              	.LFB142:
   37:Modules/src/usart2.c ****     if (huart->Instance == USART2) {
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s 			page 10
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s 			page 10
 
 
  392              		.loc 1 37 57 is_stmt 1 view -0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s 			page 1
  440              		@ args = 0, pretend = 0, frame = 0
  441              		@ frame_needed = 0, uses_anonymous_args = 0
   43:Modules/src/usart2.c ****     if (huart->Instance == USART2) {
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s 			page 11
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s 			page 11
 
 
  442              		.loc 1 43 61 is_stmt 0 view .LVU83
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s 			page 1
  493              	osSys_usart2_queueStorage:
  494 0000 00000000 		.space	40
  494      00000000 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s 			page 12
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s 			page 12
 
 
  494      00000000 
@@ -695,41 +695,41 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s 			page 1
  521              		.file 19 "Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"
  522              		.file 20 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
  523              		.file 21 "Modules/include/usart2.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s 			page 13
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s 			page 13
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 usart2.c
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:18     .text.UartRxCheck:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:25     .text.UartRxCheck:00000000 UartRxCheck
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:174    .text.UartRxCheck:00000090 $d
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:18     .text.UartRxCheck:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:25     .text.UartRxCheck:00000000 UartRxCheck
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:174    .text.UartRxCheck:00000090 $d
                             *COM*:00000004 usart2_queue
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:183    .text.Usart2Init:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:190    .text.Usart2Init:00000000 Usart2Init
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:236    .text.Usart2Init:00000034 $d
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:245    .text.USART2_IRQHandler:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:252    .text.USART2_IRQHandler:00000000 USART2_IRQHandler
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:311    .text.USART2_IRQHandler:00000030 $d
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:316    .text.DMA1_Stream5_IRQHandler:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:323    .text.DMA1_Stream5_IRQHandler:00000000 DMA1_Stream5_IRQHandler
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:344    .text.DMA1_Stream5_IRQHandler:0000000c $d
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:349    .text.DMA1_Stream6_IRQHandler:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:356    .text.DMA1_Stream6_IRQHandler:00000000 DMA1_Stream6_IRQHandler
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:377    .text.DMA1_Stream6_IRQHandler:0000000c $d
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:382    .text.HAL_UART_RxCpltCallback:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:389    .text.HAL_UART_RxCpltCallback:00000000 HAL_UART_RxCpltCallback
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:423    .text.HAL_UART_RxCpltCallback:00000014 $d
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:428    .text.HAL_UART_RxHalfCpltCallback:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:435    .text.HAL_UART_RxHalfCpltCallback:00000000 HAL_UART_RxHalfCpltCallback
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:469    .text.HAL_UART_RxHalfCpltCallback:00000014 $d
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:475    .bss.old_pos.9937:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:479    .bss.old_pos.9937:00000000 old_pos.9937
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:482    .bss.osSys_usart2_queueMgm:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:486    .bss.osSys_usart2_queueMgm:00000000 osSys_usart2_queueMgm
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:489    .bss.osSys_usart2_queueStorage:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:493    .bss.osSys_usart2_queueStorage:00000000 osSys_usart2_queueStorage
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:496    .bss.rx_buffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc0PUln9.s:500    .bss.rx_buffer:00000000 rx_buffer
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:183    .text.Usart2Init:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:190    .text.Usart2Init:00000000 Usart2Init
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:236    .text.Usart2Init:00000034 $d
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:245    .text.USART2_IRQHandler:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:252    .text.USART2_IRQHandler:00000000 USART2_IRQHandler
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:311    .text.USART2_IRQHandler:00000030 $d
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:316    .text.DMA1_Stream5_IRQHandler:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:323    .text.DMA1_Stream5_IRQHandler:00000000 DMA1_Stream5_IRQHandler
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:344    .text.DMA1_Stream5_IRQHandler:0000000c $d
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:349    .text.DMA1_Stream6_IRQHandler:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:356    .text.DMA1_Stream6_IRQHandler:00000000 DMA1_Stream6_IRQHandler
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:377    .text.DMA1_Stream6_IRQHandler:0000000c $d
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:382    .text.HAL_UART_RxCpltCallback:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:389    .text.HAL_UART_RxCpltCallback:00000000 HAL_UART_RxCpltCallback
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:423    .text.HAL_UART_RxCpltCallback:00000014 $d
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:428    .text.HAL_UART_RxHalfCpltCallback:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:435    .text.HAL_UART_RxHalfCpltCallback:00000000 HAL_UART_RxHalfCpltCallback
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:469    .text.HAL_UART_RxHalfCpltCallback:00000014 $d
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:475    .bss.old_pos.9937:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:479    .bss.old_pos.9937:00000000 old_pos.9937
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:482    .bss.osSys_usart2_queueMgm:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:486    .bss.osSys_usart2_queueMgm:00000000 osSys_usart2_queueMgm
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:489    .bss.osSys_usart2_queueStorage:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:493    .bss.osSys_usart2_queueStorage:00000000 osSys_usart2_queueStorage
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:496    .bss.rx_buffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cc3mBiBA.s:500    .bss.rx_buffer:00000000 rx_buffer
 
 UNDEFINED SYMBOLS
 xQueueGenericSendFromISR

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccB1Lbsi.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccI7t8yy.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -26,508 +26,48 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccB1Lbsi.s 			page 1
   23              		.thumb_func
   24              		.fpu fpv4-sp-d16
   26              	Gy86Init:
-  27              	.LFB133:
+  27              	.LFB138:
   28              		.file 1 "Modules/src/gy_86.c"
    1:Modules/src/gy_86.c **** #include "gy_86.h"
    2:Modules/src/gy_86.c **** 
-   3:Modules/src/gy_86.c **** static uint8_t i2c_data;
-   4:Modules/src/gy_86.c **** static uint8_t i2c_datas[6];
-   5:Modules/src/gy_86.c **** 
-   6:Modules/src/gy_86.c **** static int16_t accel_x_raw, accel_y_raw, accel_z_raw;
-   7:Modules/src/gy_86.c **** 
-   8:Modules/src/gy_86.c **** void Gy86Init(void) {
-  29              		.loc 1 8 21 view -0
+   3:Modules/src/gy_86.c **** void Gy86Init(void) {
+  29              		.loc 1 3 21 view -0
   30              		.cfi_startproc
   31              		@ args = 0, pretend = 0, frame = 0
   32              		@ frame_needed = 0, uses_anonymous_args = 0
   33              		@ link register save eliminated.
-   9:Modules/src/gy_86.c **** }
-  34              		.loc 1 9 1 view .LVU1
+   4:Modules/src/gy_86.c **** }...
+  34              		.loc 1 4 1 view .LVU1
   35 0000 7047     		bx	lr
   36              		.cfi_endproc
-  37              	.LFE133:
-  39              		.section	.text.MPU6050Init,"ax",%progbits
-  40              		.align	1
-  41              		.global	MPU6050Init
-  42              		.syntax unified
-  43              		.thumb
-  44              		.thumb_func
-  45              		.fpu fpv4-sp-d16
-  47              	MPU6050Init:
-  48              	.LFB134:
-  10:Modules/src/gy_86.c **** 
-  11:Modules/src/gy_86.c **** uint8_t MPU6050Init(void) {
-  49              		.loc 1 11 27 view -0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccB1Lbsi.s 			page 2
+  37              	.LFE138:
+  39              		.text
+  40              	.Letext0:
+  41              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
+  42              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
+  43              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+  44              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+  45              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+  46              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+  47              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+  48              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+  49              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+  50              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+  51              		.file 12 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
+  52              		.file 13 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
+  53              		.file 14 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
+  54              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
+  55              		.file 16 "Modules/include/utils.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccI7t8yy.s 			page 2
 
 
-  50              		.cfi_startproc
-  51              		@ args = 0, pretend = 0, frame = 0
-  52              		@ frame_needed = 0, uses_anonymous_args = 0
-  53 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
-  54              	.LCFI0:
-  55              		.cfi_def_cfa_offset 24
-  56              		.cfi_offset 4, -24
-  57              		.cfi_offset 5, -20
-  58              		.cfi_offset 6, -16
-  59              		.cfi_offset 7, -12
-  60              		.cfi_offset 8, -8
-  61              		.cfi_offset 14, -4
-  62 0004 84B0     		sub	sp, sp, #16
-  63              	.LCFI1:
-  64              		.cfi_def_cfa_offset 40
-  12:Modules/src/gy_86.c ****     HAL_Delay(1000);
-  65              		.loc 1 12 5 view .LVU3
-  66 0006 4FF47A70 		mov	r0, #1000
-  67 000a FFF7FEFF 		bl	HAL_Delay
-  68              	.LVL0:
-  13:Modules/src/gy_86.c **** 
-  14:Modules/src/gy_86.c ****     HAL_I2C_Mem_Read(&hi2c1, MPU6050_DEV_ADDR, MPU6050_WHO_AM_I, 1, &i2c_data, 1, 1000);
-  69              		.loc 1 14 5 view .LVU4
-  70 000e 4FF47A73 		mov	r3, #1000
-  71 0012 0293     		str	r3, [sp, #8]
-  72 0014 0123     		movs	r3, #1
-  73 0016 0193     		str	r3, [sp, #4]
-  74 0018 3A4C     		ldr	r4, .L7
-  75 001a 0094     		str	r4, [sp]
-  76 001c 7522     		movs	r2, #117
-  77 001e D021     		movs	r1, #208
-  78 0020 3948     		ldr	r0, .L7+4
-  79 0022 FFF7FEFF 		bl	HAL_I2C_Mem_Read
-  80              	.LVL1:
-  15:Modules/src/gy_86.c **** 
-  16:Modules/src/gy_86.c ****     // 0x68 will be returned by the sensor if everything goes well
-  17:Modules/src/gy_86.c ****     if (i2c_data != 0x68) return 0;
-  81              		.loc 1 17 5 view .LVU5
-  82              		.loc 1 17 18 is_stmt 0 view .LVU6
-  83 0026 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
-  84              		.loc 1 17 8 view .LVU7
-  85 0028 682B     		cmp	r3, #104
-  86 002a 03D0     		beq	.L6
-  87              		.loc 1 17 34 view .LVU8
-  88 002c 0020     		movs	r0, #0
-  89              	.L3:
-  18:Modules/src/gy_86.c **** 
-  19:Modules/src/gy_86.c ****     //复位 MPU6050
-  20:Modules/src/gy_86.c ****     i2c_data = 0X80;
-  21:Modules/src/gy_86.c ****     HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_PWR_MGMT_1, 1, &i2c_data, 1, 1000);
-  22:Modules/src/gy_86.c ****     HAL_Delay(10);
-  23:Modules/src/gy_86.c **** 
-  24:Modules/src/gy_86.c ****     // power management register 0X6B we should write all 0's to wake the sensor up
-  25:Modules/src/gy_86.c ****     i2c_data = 0;
-  26:Modules/src/gy_86.c ****     HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_PWR_MGMT_1, 1, &i2c_data, 1, 1000);
-  27:Modules/src/gy_86.c ****     HAL_Delay(10);
-  28:Modules/src/gy_86.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccB1Lbsi.s 			page 3
-
-
-  29:Modules/src/gy_86.c ****     //CLKSEL 3 (PLL with Z Gyro reference)
-  30:Modules/src/gy_86.c ****     //默认是使用内部 8M RC 晶振的，精度不高，所以我们一般选择 X/Y/Z 轴陀�
-  31:Modules/src/gy_86.c ****     i2c_data = 0x03;
-  32:Modules/src/gy_86.c ****     HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_PWR_MGMT_1, 1, &i2c_data, 1, 1000);
-  33:Modules/src/gy_86.c ****     HAL_Delay(5);
-  34:Modules/src/gy_86.c **** 
-  35:Modules/src/gy_86.c ****     // Set Gyroscope DATA RATE of 1KHz by writing SMPLRT_DIV register
-  36:Modules/src/gy_86.c ****     i2c_data = 0x07;
-  37:Modules/src/gy_86.c ****     HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_SMPLRT_DIV, 1, &i2c_data, 1, 1000);
-  38:Modules/src/gy_86.c ****     HAL_Delay(5);
-  39:Modules/src/gy_86.c **** 
-  40:Modules/src/gy_86.c ****     // Set accelerometer configuration in ACCEL_CONFIG Register
-  41:Modules/src/gy_86.c ****     // XA_ST=0,YA_ST=0,ZA_ST=0, FS_SEL=0 -> ? 2g
-  42:Modules/src/gy_86.c ****     // 该寄存器我们只关心 AFS_SEL[1:0]这两个位，用于设置加速度传感器的满�
-  43:Modules/src/gy_86.c ****     // ±2g；1，±4g；2，±8g；3，±16g；我们一般设置为 0，即±2g，因为加速度
-  44:Modules/src/gy_86.c ****     // ADC 也是 16 位，所以得到灵敏度为：65536/4=16384LSB/g。
-  45:Modules/src/gy_86.c ****     i2c_data = 0x00;
-  46:Modules/src/gy_86.c ****     HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_ACCEL_CONFIG, 1, &i2c_data, 1, 1000);
-  47:Modules/src/gy_86.c ****     HAL_Delay(5);
-  48:Modules/src/gy_86.c **** 
-  49:Modules/src/gy_86.c ****     // Set Gyroscopic configuration in GYRO_CONFIG Register
-  50:Modules/src/gy_86.c ****     // XG_ST=0,YG_ST=0,ZG_ST=0, FS_SEL=0 -> ? 不自检，2000deg/s
-  51:Modules/src/gy_86.c ****     //     该寄存器我们只关心 FS_SEL[1:0]这两个位，用于设置陀螺仪的满量程�
-  52:Modules/src/gy_86.c ****     // /S；1，±500°/S；2，±1000°/S；3，±2000°/S；我们一般设置为 3，即±2000°
-  53:Modules/src/gy_86.c ****     // 为陀螺仪的 ADC 为 16 位分辨率，所以得到灵敏度为：65536/4000=16.4LSB/(°/
-  54:Modules/src/gy_86.c ****     i2c_data = 0x18;
-  55:Modules/src/gy_86.c ****     HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_GYRO_CONFIG, 1, &i2c_data, 1, 1000);
-  56:Modules/src/gy_86.c ****     HAL_Delay(5);
-  57:Modules/src/gy_86.c **** 
-  58:Modules/src/gy_86.c ****     //// enable I2C bypass for AUX I2C
-  59:Modules/src/gy_86.c ****     i2c_data = 0x02;
-  60:Modules/src/gy_86.c ****     HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_RA_INT_PIN_CFG, 1, &i2c_data, 1, 1000);
-  61:Modules/src/gy_86.c ****     // HAL_Delay(50);
-  62:Modules/src/gy_86.c **** 
-  63:Modules/src/gy_86.c ****     // PMU6050_WriteReg(MPU6050_RA_INT_PIN_CFG, 0x02);
-  64:Modules/src/gy_86.c ****     // PMU6050_WriteReg(MPU6050_RA_USER_CTRL, 0x00);
-  65:Modules/src/gy_86.c **** 
-  66:Modules/src/gy_86.c ****     return 1;
-  67:Modules/src/gy_86.c **** }
-  90              		.loc 1 67 1 view .LVU9
-  91 002e 04B0     		add	sp, sp, #16
-  92              	.LCFI2:
-  93              		.cfi_remember_state
-  94              		.cfi_def_cfa_offset 24
-  95              		@ sp needed
-  96 0030 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
-  97              	.L6:
-  98              	.LCFI3:
-  99              		.cfi_restore_state
-  20:Modules/src/gy_86.c ****     HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_PWR_MGMT_1, 1, &i2c_data, 1, 1000);
- 100              		.loc 1 20 5 is_stmt 1 view .LVU10
-  20:Modules/src/gy_86.c ****     HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_PWR_MGMT_1, 1, &i2c_data, 1, 1000);
- 101              		.loc 1 20 14 is_stmt 0 view .LVU11
- 102 0034 2546     		mov	r5, r4
- 103 0036 8023     		movs	r3, #128
- 104 0038 2370     		strb	r3, [r4]
-  21:Modules/src/gy_86.c ****     HAL_Delay(10);
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccB1Lbsi.s 			page 4
-
-
- 105              		.loc 1 21 5 is_stmt 1 view .LVU12
- 106 003a 334E     		ldr	r6, .L7+4
- 107 003c 4FF47A77 		mov	r7, #1000
- 108 0040 0297     		str	r7, [sp, #8]
- 109 0042 0124     		movs	r4, #1
- 110 0044 0194     		str	r4, [sp, #4]
- 111 0046 0095     		str	r5, [sp]
- 112 0048 2346     		mov	r3, r4
- 113 004a 6B22     		movs	r2, #107
- 114 004c D021     		movs	r1, #208
- 115 004e 3046     		mov	r0, r6
- 116 0050 FFF7FEFF 		bl	HAL_I2C_Mem_Write
- 117              	.LVL2:
-  22:Modules/src/gy_86.c **** 
- 118              		.loc 1 22 5 view .LVU13
- 119 0054 0A20     		movs	r0, #10
- 120 0056 FFF7FEFF 		bl	HAL_Delay
- 121              	.LVL3:
-  25:Modules/src/gy_86.c ****     HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_PWR_MGMT_1, 1, &i2c_data, 1, 1000);
- 122              		.loc 1 25 5 view .LVU14
-  25:Modules/src/gy_86.c ****     HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_PWR_MGMT_1, 1, &i2c_data, 1, 1000);
- 123              		.loc 1 25 14 is_stmt 0 view .LVU15
- 124 005a 4FF00008 		mov	r8, #0
- 125 005e 85F80080 		strb	r8, [r5]
-  26:Modules/src/gy_86.c ****     HAL_Delay(10);
- 126              		.loc 1 26 5 is_stmt 1 view .LVU16
- 127 0062 0297     		str	r7, [sp, #8]
- 128 0064 0194     		str	r4, [sp, #4]
- 129 0066 0095     		str	r5, [sp]
- 130 0068 2346     		mov	r3, r4
- 131 006a 6B22     		movs	r2, #107
- 132 006c D021     		movs	r1, #208
- 133 006e 3046     		mov	r0, r6
- 134 0070 FFF7FEFF 		bl	HAL_I2C_Mem_Write
- 135              	.LVL4:
-  27:Modules/src/gy_86.c **** 
- 136              		.loc 1 27 5 view .LVU17
- 137 0074 0A20     		movs	r0, #10
- 138 0076 FFF7FEFF 		bl	HAL_Delay
- 139              	.LVL5:
-  31:Modules/src/gy_86.c ****     HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_PWR_MGMT_1, 1, &i2c_data, 1, 1000);
- 140              		.loc 1 31 5 view .LVU18
-  31:Modules/src/gy_86.c ****     HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_PWR_MGMT_1, 1, &i2c_data, 1, 1000);
- 141              		.loc 1 31 14 is_stmt 0 view .LVU19
- 142 007a 0323     		movs	r3, #3
- 143 007c 2B70     		strb	r3, [r5]
-  32:Modules/src/gy_86.c ****     HAL_Delay(5);
- 144              		.loc 1 32 5 is_stmt 1 view .LVU20
- 145 007e 0297     		str	r7, [sp, #8]
- 146 0080 0194     		str	r4, [sp, #4]
- 147 0082 0095     		str	r5, [sp]
- 148 0084 2346     		mov	r3, r4
- 149 0086 6B22     		movs	r2, #107
- 150 0088 D021     		movs	r1, #208
- 151 008a 3046     		mov	r0, r6
- 152 008c FFF7FEFF 		bl	HAL_I2C_Mem_Write
- 153              	.LVL6:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccB1Lbsi.s 			page 5
-
-
-  33:Modules/src/gy_86.c **** 
- 154              		.loc 1 33 5 view .LVU21
- 155 0090 0520     		movs	r0, #5
- 156 0092 FFF7FEFF 		bl	HAL_Delay
- 157              	.LVL7:
-  36:Modules/src/gy_86.c ****     HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_SMPLRT_DIV, 1, &i2c_data, 1, 1000);
- 158              		.loc 1 36 5 view .LVU22
-  36:Modules/src/gy_86.c ****     HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_SMPLRT_DIV, 1, &i2c_data, 1, 1000);
- 159              		.loc 1 36 14 is_stmt 0 view .LVU23
- 160 0096 0723     		movs	r3, #7
- 161 0098 2B70     		strb	r3, [r5]
-  37:Modules/src/gy_86.c ****     HAL_Delay(5);
- 162              		.loc 1 37 5 is_stmt 1 view .LVU24
- 163 009a 0297     		str	r7, [sp, #8]
- 164 009c 0194     		str	r4, [sp, #4]
- 165 009e 0095     		str	r5, [sp]
- 166 00a0 2346     		mov	r3, r4
- 167 00a2 1922     		movs	r2, #25
- 168 00a4 D021     		movs	r1, #208
- 169 00a6 3046     		mov	r0, r6
- 170 00a8 FFF7FEFF 		bl	HAL_I2C_Mem_Write
- 171              	.LVL8:
-  38:Modules/src/gy_86.c **** 
- 172              		.loc 1 38 5 view .LVU25
- 173 00ac 0520     		movs	r0, #5
- 174 00ae FFF7FEFF 		bl	HAL_Delay
- 175              	.LVL9:
-  45:Modules/src/gy_86.c ****     HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_ACCEL_CONFIG, 1, &i2c_data, 1, 1000);
- 176              		.loc 1 45 5 view .LVU26
-  45:Modules/src/gy_86.c ****     HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_ACCEL_CONFIG, 1, &i2c_data, 1, 1000);
- 177              		.loc 1 45 14 is_stmt 0 view .LVU27
- 178 00b2 85F80080 		strb	r8, [r5]
-  46:Modules/src/gy_86.c ****     HAL_Delay(5);
- 179              		.loc 1 46 5 is_stmt 1 view .LVU28
- 180 00b6 0297     		str	r7, [sp, #8]
- 181 00b8 0194     		str	r4, [sp, #4]
- 182 00ba 0095     		str	r5, [sp]
- 183 00bc 2346     		mov	r3, r4
- 184 00be 1C22     		movs	r2, #28
- 185 00c0 D021     		movs	r1, #208
- 186 00c2 3046     		mov	r0, r6
- 187 00c4 FFF7FEFF 		bl	HAL_I2C_Mem_Write
- 188              	.LVL10:
-  47:Modules/src/gy_86.c **** 
- 189              		.loc 1 47 5 view .LVU29
- 190 00c8 0520     		movs	r0, #5
- 191 00ca FFF7FEFF 		bl	HAL_Delay
- 192              	.LVL11:
-  54:Modules/src/gy_86.c ****     HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_GYRO_CONFIG, 1, &i2c_data, 1, 1000);
- 193              		.loc 1 54 5 view .LVU30
-  54:Modules/src/gy_86.c ****     HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_GYRO_CONFIG, 1, &i2c_data, 1, 1000);
- 194              		.loc 1 54 14 is_stmt 0 view .LVU31
- 195 00ce 1823     		movs	r3, #24
- 196 00d0 2B70     		strb	r3, [r5]
-  55:Modules/src/gy_86.c ****     HAL_Delay(5);
- 197              		.loc 1 55 5 is_stmt 1 view .LVU32
- 198 00d2 0297     		str	r7, [sp, #8]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccB1Lbsi.s 			page 6
-
-
- 199 00d4 0194     		str	r4, [sp, #4]
- 200 00d6 0095     		str	r5, [sp]
- 201 00d8 2346     		mov	r3, r4
- 202 00da 1B22     		movs	r2, #27
- 203 00dc D021     		movs	r1, #208
- 204 00de 3046     		mov	r0, r6
- 205 00e0 FFF7FEFF 		bl	HAL_I2C_Mem_Write
- 206              	.LVL12:
-  56:Modules/src/gy_86.c **** 
- 207              		.loc 1 56 5 view .LVU33
- 208 00e4 0520     		movs	r0, #5
- 209 00e6 FFF7FEFF 		bl	HAL_Delay
- 210              	.LVL13:
-  59:Modules/src/gy_86.c ****     HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_RA_INT_PIN_CFG, 1, &i2c_data, 1, 1000);
- 211              		.loc 1 59 5 view .LVU34
-  59:Modules/src/gy_86.c ****     HAL_I2C_Mem_Write(&hi2c1, MPU6050_DEV_ADDR, MPU6050_RA_INT_PIN_CFG, 1, &i2c_data, 1, 1000);
- 212              		.loc 1 59 14 is_stmt 0 view .LVU35
- 213 00ea 0223     		movs	r3, #2
- 214 00ec 2B70     		strb	r3, [r5]
-  60:Modules/src/gy_86.c ****     // HAL_Delay(50);
- 215              		.loc 1 60 5 is_stmt 1 view .LVU36
- 216 00ee 0297     		str	r7, [sp, #8]
- 217 00f0 0194     		str	r4, [sp, #4]
- 218 00f2 0095     		str	r5, [sp]
- 219 00f4 2346     		mov	r3, r4
- 220 00f6 3722     		movs	r2, #55
- 221 00f8 D021     		movs	r1, #208
- 222 00fa 3046     		mov	r0, r6
- 223 00fc FFF7FEFF 		bl	HAL_I2C_Mem_Write
- 224              	.LVL14:
-  66:Modules/src/gy_86.c **** }
- 225              		.loc 1 66 5 view .LVU37
-  66:Modules/src/gy_86.c **** }
- 226              		.loc 1 66 12 is_stmt 0 view .LVU38
- 227 0100 2046     		mov	r0, r4
- 228 0102 94E7     		b	.L3
- 229              	.L8:
- 230              		.align	2
- 231              	.L7:
- 232 0104 00000000 		.word	.LANCHOR0
- 233 0108 00000000 		.word	hi2c1
- 234              		.cfi_endproc
- 235              	.LFE134:
- 237              		.section	.text.MPU6050ReadAccel,"ax",%progbits
- 238              		.align	1
- 239              		.global	MPU6050ReadAccel
- 240              		.syntax unified
- 241              		.thumb
- 242              		.thumb_func
- 243              		.fpu fpv4-sp-d16
- 245              	MPU6050ReadAccel:
- 246              	.LVL15:
- 247              	.LFB135:
-  68:Modules/src/gy_86.c **** 
-  69:Modules/src/gy_86.c **** void MPU6050ReadAccel(float *accel_x, float *accel_y, float *accel_z) {
- 248              		.loc 1 69 71 is_stmt 1 view -0
- 249              		.cfi_startproc
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccB1Lbsi.s 			page 7
-
-
- 250              		@ args = 0, pretend = 0, frame = 0
- 251              		@ frame_needed = 0, uses_anonymous_args = 0
- 252              		.loc 1 69 71 is_stmt 0 view .LVU40
- 253 0000 F0B5     		push	{r4, r5, r6, r7, lr}
- 254              	.LCFI4:
- 255              		.cfi_def_cfa_offset 20
- 256              		.cfi_offset 4, -20
- 257              		.cfi_offset 5, -16
- 258              		.cfi_offset 6, -12
- 259              		.cfi_offset 7, -8
- 260              		.cfi_offset 14, -4
- 261 0002 85B0     		sub	sp, sp, #20
- 262              	.LCFI5:
- 263              		.cfi_def_cfa_offset 40
- 264 0004 0646     		mov	r6, r0
- 265 0006 0D46     		mov	r5, r1
- 266 0008 1446     		mov	r4, r2
-  70:Modules/src/gy_86.c **** 	HAL_I2C_Mem_Read(&hi2c1, MPU6050_DEV_ADDR, MPU6050_ACCEL_XOUT_H, 1, i2c_datas, 6, 1000);
- 267              		.loc 1 70 2 is_stmt 1 view .LVU41
- 268 000a 4FF47A73 		mov	r3, #1000
- 269 000e 0293     		str	r3, [sp, #8]
- 270 0010 0623     		movs	r3, #6
- 271 0012 0193     		str	r3, [sp, #4]
- 272 0014 194F     		ldr	r7, .L11
- 273 0016 0097     		str	r7, [sp]
- 274 0018 0123     		movs	r3, #1
- 275 001a 3B22     		movs	r2, #59
- 276              	.LVL16:
- 277              		.loc 1 70 2 is_stmt 0 view .LVU42
- 278 001c D021     		movs	r1, #208
- 279              	.LVL17:
- 280              		.loc 1 70 2 view .LVU43
- 281 001e 1848     		ldr	r0, .L11+4
- 282              	.LVL18:
- 283              		.loc 1 70 2 view .LVU44
- 284 0020 FFF7FEFF 		bl	HAL_I2C_Mem_Read
- 285              	.LVL19:
-  71:Modules/src/gy_86.c **** 
-  72:Modules/src/gy_86.c **** 	accel_x_raw = (int16_t)(i2c_datas[0] << 8 | i2c_datas [1]);
- 286              		.loc 1 72 2 is_stmt 1 view .LVU45
- 287              		.loc 1 72 35 is_stmt 0 view .LVU46
- 288 0024 3A78     		ldrb	r2, [r7]	@ zero_extendqisi2
- 289              		.loc 1 72 56 view .LVU47
- 290 0026 7B78     		ldrb	r3, [r7, #1]	@ zero_extendqisi2
- 291              		.loc 1 72 16 view .LVU48
- 292 0028 43EA0223 		orr	r3, r3, r2, lsl #8
- 293 002c 1BB2     		sxth	r3, r3
- 294 002e 06EE903A 		vmov	s13, r3	@ int
-  73:Modules/src/gy_86.c **** 	accel_y_raw = (int16_t)(i2c_datas[2] << 8 | i2c_datas [3]);
- 295              		.loc 1 73 2 is_stmt 1 view .LVU49
- 296              		.loc 1 73 35 is_stmt 0 view .LVU50
- 297 0032 BA78     		ldrb	r2, [r7, #2]	@ zero_extendqisi2
- 298              		.loc 1 73 56 view .LVU51
- 299 0034 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
- 300              		.loc 1 73 16 view .LVU52
- 301 0036 43EA0223 		orr	r3, r3, r2, lsl #8
- 302 003a 1BB2     		sxth	r3, r3
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccB1Lbsi.s 			page 8
-
-
- 303 003c 07EE103A 		vmov	s14, r3	@ int
-  74:Modules/src/gy_86.c **** 	accel_z_raw = (int16_t)(i2c_datas[4] << 8 | i2c_datas [5]);
- 304              		.loc 1 74 2 is_stmt 1 view .LVU53
- 305              		.loc 1 74 35 is_stmt 0 view .LVU54
- 306 0040 3A79     		ldrb	r2, [r7, #4]	@ zero_extendqisi2
- 307              		.loc 1 74 56 view .LVU55
- 308 0042 7B79     		ldrb	r3, [r7, #5]	@ zero_extendqisi2
- 309              		.loc 1 74 16 view .LVU56
- 310 0044 43EA0223 		orr	r3, r3, r2, lsl #8
- 311 0048 1BB2     		sxth	r3, r3
- 312 004a 07EE903A 		vmov	s15, r3	@ int
-  75:Modules/src/gy_86.c **** 
-  76:Modules/src/gy_86.c **** 	/*** convert the RAW values into acceleration in 'g'
-  77:Modules/src/gy_86.c **** 	     we have to divide according to the Full scale value set in FS_SEL
-  78:Modules/src/gy_86.c **** 	     I have configured FS_SEL = 0. So I am dividing by 16384.0
-  79:Modules/src/gy_86.c **** 	     for more details check ACCEL_CONFIG Register              ****/
-  80:Modules/src/gy_86.c **** 
-  81:Modules/src/gy_86.c **** 	*accel_x = accel_x_raw / 16384.f;
- 313              		.loc 1 81 2 is_stmt 1 view .LVU57
- 314              		.loc 1 81 25 is_stmt 0 view .LVU58
- 315 004e F8EEE66A 		vcvt.f32.s32	s13, s13
- 316 0052 9FED0C6A 		vldr.32	s12, .L11+8
- 317 0056 66EE866A 		vmul.f32	s13, s13, s12
- 318              		.loc 1 81 11 view .LVU59
- 319 005a C6ED006A 		vstr.32	s13, [r6]
-  82:Modules/src/gy_86.c **** 	*accel_y = accel_y_raw / 16384.f;
- 320              		.loc 1 82 2 is_stmt 1 view .LVU60
- 321              		.loc 1 82 25 is_stmt 0 view .LVU61
- 322 005e B8EEC77A 		vcvt.f32.s32	s14, s14
- 323 0062 27EE067A 		vmul.f32	s14, s14, s12
- 324              		.loc 1 82 11 view .LVU62
- 325 0066 85ED007A 		vstr.32	s14, [r5]
-  83:Modules/src/gy_86.c **** 	*accel_z = accel_z_raw / 16384.f;    
- 326              		.loc 1 83 2 is_stmt 1 view .LVU63
- 327              		.loc 1 83 25 is_stmt 0 view .LVU64
- 328 006a F8EEE77A 		vcvt.f32.s32	s15, s15
- 329 006e 67EE867A 		vmul.f32	s15, s15, s12
- 330              		.loc 1 83 11 view .LVU65
- 331 0072 C4ED007A 		vstr.32	s15, [r4]
-  84:Modules/src/gy_86.c **** }...
- 332              		.loc 1 84 1 view .LVU66
- 333 0076 05B0     		add	sp, sp, #20
- 334              	.LCFI6:
- 335              		.cfi_def_cfa_offset 20
- 336              		@ sp needed
- 337 0078 F0BD     		pop	{r4, r5, r6, r7, pc}
- 338              	.LVL20:
- 339              	.L12:
- 340              		.loc 1 84 1 view .LVU67
- 341 007a 00BF     		.align	2
- 342              	.L11:
- 343 007c 00000000 		.word	.LANCHOR1
- 344 0080 00000000 		.word	hi2c1
- 345 0084 00008038 		.word	947912704
- 346              		.cfi_endproc
- 347              	.LFE135:
- 349              		.section	.bss.i2c_data,"aw",%nobits
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccB1Lbsi.s 			page 9
-
-
- 350              		.set	.LANCHOR0,. + 0
- 353              	i2c_data:
- 354 0000 00       		.space	1
- 355              		.section	.bss.i2c_datas,"aw",%nobits
- 356              		.align	2
- 357              		.set	.LANCHOR1,. + 0
- 360              	i2c_datas:
- 361 0000 00000000 		.space	6
- 361      0000
- 362              		.text
- 363              	.Letext0:
- 364              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
- 365              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
- 366              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
- 367              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 368              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
- 369              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 370              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 371              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
- 372              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 373              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 374              		.file 12 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
- 375              		.file 13 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
- 376              		.file 14 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
- 377              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
- 378              		.file 16 "Modules/include/utils.h"
- 379              		.file 17 "Inc/i2c.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccB1Lbsi.s 			page 10
+  56              		.file 17 "Inc/i2c.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccI7t8yy.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gy_86.c
-C:\Users\luoha\AppData\Local\Temp\ccB1Lbsi.s:18     .text.Gy86Init:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccB1Lbsi.s:26     .text.Gy86Init:00000000 Gy86Init
-C:\Users\luoha\AppData\Local\Temp\ccB1Lbsi.s:40     .text.MPU6050Init:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccB1Lbsi.s:47     .text.MPU6050Init:00000000 MPU6050Init
-C:\Users\luoha\AppData\Local\Temp\ccB1Lbsi.s:232    .text.MPU6050Init:00000104 $d
-C:\Users\luoha\AppData\Local\Temp\ccB1Lbsi.s:238    .text.MPU6050ReadAccel:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccB1Lbsi.s:245    .text.MPU6050ReadAccel:00000000 MPU6050ReadAccel
-C:\Users\luoha\AppData\Local\Temp\ccB1Lbsi.s:343    .text.MPU6050ReadAccel:0000007c $d
-C:\Users\luoha\AppData\Local\Temp\ccB1Lbsi.s:353    .bss.i2c_data:00000000 i2c_data
-C:\Users\luoha\AppData\Local\Temp\ccB1Lbsi.s:354    .bss.i2c_data:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccB1Lbsi.s:356    .bss.i2c_datas:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccB1Lbsi.s:360    .bss.i2c_datas:00000000 i2c_datas
+C:\Users\luoha\AppData\Local\Temp\ccI7t8yy.s:18     .text.Gy86Init:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccI7t8yy.s:26     .text.Gy86Init:00000000 Gy86Init
 
-UNDEFINED SYMBOLS
-HAL_Delay
-HAL_I2C_Mem_Read
-HAL_I2C_Mem_Write
-hi2c1
+NO UNDEFINED SYMBOLS
