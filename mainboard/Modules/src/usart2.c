@@ -5,6 +5,8 @@ static uint8_t rx_buffer[RX_BUFFER_SIZE];
 xQueueHandle usart2_queue;
 STATIC_MEM_QUEUE_ALLOC(usart2_queue, 5, sizeof(usart2_queue_buffer));
 
+static void UartRxCheck(void);
+
 void Usart2Init(void) {
     usart2_queue = STATIC_MEM_QUEUE_CREATE(usart2_queue);
 
@@ -46,7 +48,7 @@ void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef *huart) {
     }
 }
 
-void UartRxCheck(void) {
+static void UartRxCheck(void) {
     static size_t old_pos;
     size_t pos;
     usart2_queue_buffer buffer;

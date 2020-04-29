@@ -10,9 +10,6 @@
 #include "motor.h"
 
 void MavlinkInit(void);
-static void MavlinkTask(void *param);
-static void MavlinkProcessMsg(mavlink_message_t *msg);
-// static void MavlinkParse(uint8_t *buffer, size_t len);
 
 
 #endif /* __mavlink_task_H */

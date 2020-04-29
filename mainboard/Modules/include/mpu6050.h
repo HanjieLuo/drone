@@ -40,5 +40,7 @@
 
 bool MPU6050Init(void);
 bool MPU6050ReadAccel(float *ax, float *ay, float *az);
+bool MPU6050ReadGyro(float *gx, float *gy, float *gz);
+bool MPU6050ReadTemp(float *celsius);
 
 #endif /* __MPU6050_H */

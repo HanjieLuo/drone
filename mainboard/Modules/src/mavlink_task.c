@@ -9,6 +9,10 @@ static mavlink_status_t status;
 static int mavlink_comm = MAVLINK_COMM_0;
 static mavlink_rc_channels_override_t rc_channels_override;
 
+static void MavlinkTask(void *param);
+static void MavlinkProcessMsg(mavlink_message_t *msg);
+// static void MavlinkParse(uint8_t *buffer, size_t len);
+
 void MavlinkInit(void) {
     Usart2Init();
     mavlink_task_handle = STATIC_MEM_TASK_CREATE(mavlink_task, MavlinkTask, "MavlinkTask", NULL, 1);

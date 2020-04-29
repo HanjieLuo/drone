@@ -1,0 +1,328 @@
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccD6DZJY.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"ms5611.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.rodata.MS5611Init.str1.4,"aMS",%progbits,1
+  18              		.align	2
+  19              	.LC0:
+  20 0000 4D533536 		.ascii	"MS5611Init\015\000"
+  20      3131496E 
+  20      69740D00 
+  21              		.align	2
+  22              	.LC1:
+  23 000c 25753A20 		.ascii	"%u: %u\015\012\000"
+  23      25750D0A 
+  23      00
+  24              		.section	.text.MS5611Init,"ax",%progbits
+  25              		.align	1
+  26              		.global	MS5611Init
+  27              		.arch armv7e-m
+  28              		.syntax unified
+  29              		.thumb
+  30              		.thumb_func
+  31              		.fpu fpv4-sp-d16
+  33              	MS5611Init:
+  34              	.LFB138:
+  35              		.file 1 "Modules/src/ms5611.c"
+   1:Modules/src/ms5611.c **** #include "ms5611.h"
+   2:Modules/src/ms5611.c **** 
+   3:Modules/src/ms5611.c **** static uint16_t prom[6];
+   4:Modules/src/ms5611.c **** 
+   5:Modules/src/ms5611.c **** bool MS5611Init(void) {
+  36              		.loc 1 5 23 view -0
+  37              		.cfi_startproc
+  38              		@ args = 0, pretend = 0, frame = 8
+  39              		@ frame_needed = 0, uses_anonymous_args = 0
+  40 0000 30B5     		push	{r4, r5, lr}
+  41              	.LCFI0:
+  42              		.cfi_def_cfa_offset 12
+  43              		.cfi_offset 4, -12
+  44              		.cfi_offset 5, -8
+  45              		.cfi_offset 14, -4
+  46 0002 85B0     		sub	sp, sp, #20
+  47              	.LCFI1:
+  48              		.cfi_def_cfa_offset 32
+   6:Modules/src/ms5611.c ****     // 读取 MS5611 传感器，大致分为四步骤:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccD6DZJY.s 			page 2
+
+
+   7:Modules/src/ms5611.c ****     // 1. RESET 芯片(delay 10ms)
+   8:Modules/src/ms5611.c ****     // 2. 读取 PROM 中的校准数据(（0xA0,0xA2,0xA4,0xA6,0xA8,0xAA,0xAC,0xAE）共 8 x 16bit
+   9:Modules/src/ms5611.c ****     // 3. 启动 AD 读取温度和压力的 RAW 数据
+  10:Modules/src/ms5611.c ****     // 4. 根据校准值、温度和压力的 RAW 值计算出真实压力和温度值。
+  11:Modules/src/ms5611.c **** 
+  12:Modules/src/ms5611.c ****     if(HAL_I2C_IsDeviceReady(&hi2c1, MS5611_ADDR, 10, 1000) != HAL_OK) { return false;}
+  49              		.loc 1 12 5 view .LVU1
+  50              		.loc 1 12 8 is_stmt 0 view .LVU2
+  51 0004 4FF47A73 		mov	r3, #1000
+  52 0008 0A22     		movs	r2, #10
+  53 000a EE21     		movs	r1, #238
+  54 000c 1E48     		ldr	r0, .L9
+  55 000e FFF7FEFF 		bl	HAL_I2C_IsDeviceReady
+  56              	.LVL0:
+  57              		.loc 1 12 7 view .LVU3
+  58 0012 18B1     		cbz	r0, .L8
+  59              		.loc 1 12 81 view .LVU4
+  60 0014 0025     		movs	r5, #0
+  61              	.L2:
+  13:Modules/src/ms5611.c ****     // vTaskDelay(pdMS_TO_TICKS(100));
+  14:Modules/src/ms5611.c ****     // HAL_Delay(100);
+  15:Modules/src/ms5611.c **** 
+  16:Modules/src/ms5611.c ****     //RESET 芯片(delay 10ms)
+  17:Modules/src/ms5611.c ****     uint8_t command = 0x1e;
+  18:Modules/src/ms5611.c ****     if (!I2C1Write(MS5611_ADDR, &command, 1)) {return false; }
+  19:Modules/src/ms5611.c **** 	vTaskDelay(pdMS_TO_TICKS(10));
+  20:Modules/src/ms5611.c **** 
+  21:Modules/src/ms5611.c ****     printf("MS5611Init\r\n");
+  22:Modules/src/ms5611.c **** 
+  23:Modules/src/ms5611.c ****     uint8_t prom_raw[2] = {0};
+  24:Modules/src/ms5611.c ****     for(uint8_t i = 0; i < 6; i++) {
+  25:Modules/src/ms5611.c ****         command = MS5611_PROM_C1 + i * 2;
+  26:Modules/src/ms5611.c ****         if (!I2C1MenRead(MS5611_ADDR, command, 1, prom_raw, 2)) {return false;}
+  27:Modules/src/ms5611.c ****         prom[i] = (int16_t)(prom_raw[0] << 8 | prom_raw[1]);
+  28:Modules/src/ms5611.c ****         printf("%u: %u\r\n", i, prom[i]);
+  29:Modules/src/ms5611.c ****     }
+  30:Modules/src/ms5611.c **** 
+  31:Modules/src/ms5611.c **** 
+  32:Modules/src/ms5611.c ****     // command = MS5611_PROM_C1;
+  33:Modules/src/ms5611.c ****     // if (!I2C1MenRead(MS5611_ADDR, command, 1, prom_raw, 2)) { printf("I2C1MenRead error\r\n"); r
+  34:Modules/src/ms5611.c ****     // printf("%u: %u\r\n", prom_raw[0], prom_raw[1]);
+  35:Modules/src/ms5611.c **** 
+  36:Modules/src/ms5611.c ****     // if (!I2C1Write(MS5611_ADDR, MS5611_RESET, 1)) { return false; }
+  37:Modules/src/ms5611.c ****     // prom_raw[0] = MS5611_RESET;
+  38:Modules/src/ms5611.c ****     // vTaskDelay(pdMS_TO_TICKS(100));
+  39:Modules/src/ms5611.c ****     // uint8_t RESET_MS5611 = 0x1E;;
+  40:Modules/src/ms5611.c ****     // while (HAL_I2C_Master_Transmit(&hi2c1, MS5611_ADDR, &RESET_MS5611, 1, 1000)!= HAL_OK);
+  41:Modules/src/ms5611.c ****     // printf("MS5611Init\r\n");
+  42:Modules/src/ms5611.c ****     // vTaskDelay(pdMS_TO_TICKS(10));
+  43:Modules/src/ms5611.c **** 
+  44:Modules/src/ms5611.c ****     // printf("MS5611Init\r\n");
+  45:Modules/src/ms5611.c **** 
+  46:Modules/src/ms5611.c ****     // uint8_t PROM_READ_C1_MS5611 = 0xAA;
+  47:Modules/src/ms5611.c ****     // uint8_t prom_raw[2] = {0};
+  48:Modules/src/ms5611.c ****     // while (HAL_I2C_Master_Transmit(&hi2c1, MS5611_ADDR, &PROM_READ_C1_MS5611, 1, 1000) != HAL_OK
+  49:Modules/src/ms5611.c **** 	// while (HAL_I2C_Master_Receive(&hi2c1, MS5611_ADDR, prom_raw, 2, 1000) != HAL_OK);
+  50:Modules/src/ms5611.c **** 
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccD6DZJY.s 			page 3
+
+
+  51:Modules/src/ms5611.c ****     // HAL_I2C_Mem_Read(&hi2c1, MS5611_ADDR, MS5611_PROM_C1, 1, prom_raw, 2, 1000);
+  52:Modules/src/ms5611.c ****     // if (!I2C1MenRead(MS5611_ADDR, MS5611_PROM_C1, 1, prom_raw, 2)) { printf("I2C1MenRead error\r
+  53:Modules/src/ms5611.c ****     // printf("%u: %u\r\n", prom[0], prom[1]);
+  54:Modules/src/ms5611.c **** 
+  55:Modules/src/ms5611.c ****     // HAL_I2C_Mem_Read(&hi2c1, MS5611_ADDR, MS5611_PROM_C2, 1, prom_raw, 2, 1000);
+  56:Modules/src/ms5611.c ****     // printf("%u: %u\r\n", prom[0], prom[1]);
+  57:Modules/src/ms5611.c **** 
+  58:Modules/src/ms5611.c ****     // HAL_I2C_Mem_Read(&hi2c1, MS5611_ADDR, MS5611_PROM_C3, 1, prom_raw, 2, 1000);
+  59:Modules/src/ms5611.c ****     // printf("%u: %u\r\n", prom[0], prom[1]);
+  60:Modules/src/ms5611.c **** 
+  61:Modules/src/ms5611.c ****     // HAL_I2C_Mem_Read(&hi2c1, MS5611_ADDR, MS5611_PROM_C4, 1, prom_raw, 2, 1000);
+  62:Modules/src/ms5611.c ****     // printf("%u: %u\r\n", prom[0], prom[1]);
+  63:Modules/src/ms5611.c **** 
+  64:Modules/src/ms5611.c ****     // HAL_I2C_Mem_Read(&hi2c1, MS5611_ADDR, MS5611_PROM_C5, 1, prom_raw, 2, 1000);
+  65:Modules/src/ms5611.c ****     // printf("%u: %u\r\n", prom[0], prom[1]);
+  66:Modules/src/ms5611.c **** 
+  67:Modules/src/ms5611.c ****     // HAL_I2C_Mem_Read(&hi2c1, MS5611_ADDR, MS5611_PROM_C6, 1, prom_raw, 2, 1000);
+  68:Modules/src/ms5611.c ****     // printf("%u: %u\r\n", prom[0], prom[1]);
+  69:Modules/src/ms5611.c **** 
+  70:Modules/src/ms5611.c ****     // if (!I2C1MenRead(MS5611_ADDR, MS5611_PROM_C2, 1, prom_raw, 2)) { printf("I2C1MenRead error\r
+  71:Modules/src/ms5611.c ****     // printf("%u: %u\r\n", prom[0], prom[1]);
+  72:Modules/src/ms5611.c **** 
+  73:Modules/src/ms5611.c ****     // if (!I2C1MenRead(MS5611_ADDR, MS5611_PROM_C3, 1, prom_raw, 2)) { printf("I2C1MenRead error\r
+  74:Modules/src/ms5611.c ****     // printf("%u: %u\r\n", prom[0], prom[1]);
+  75:Modules/src/ms5611.c **** 
+  76:Modules/src/ms5611.c **** 
+  77:Modules/src/ms5611.c **** 
+  78:Modules/src/ms5611.c **** 
+  79:Modules/src/ms5611.c ****     return true;
+  80:Modules/src/ms5611.c **** }...
+  62              		.loc 1 80 1 view .LVU5
+  63 0016 2846     		mov	r0, r5
+  64 0018 05B0     		add	sp, sp, #20
+  65              	.LCFI2:
+  66              		.cfi_remember_state
+  67              		.cfi_def_cfa_offset 12
+  68              		@ sp needed
+  69 001a 30BD     		pop	{r4, r5, pc}
+  70              	.L8:
+  71              	.LCFI3:
+  72              		.cfi_restore_state
+  73 001c 0446     		mov	r4, r0
+  17:Modules/src/ms5611.c ****     uint8_t command = 0x1e;
+  74              		.loc 1 17 5 is_stmt 1 view .LVU6
+  17:Modules/src/ms5611.c ****     uint8_t command = 0x1e;
+  75              		.loc 1 17 13 is_stmt 0 view .LVU7
+  76 001e 1E23     		movs	r3, #30
+  77 0020 8DF80F30 		strb	r3, [sp, #15]
+  18:Modules/src/ms5611.c ****     if (!I2C1Write(MS5611_ADDR, &command, 1)) {return false; }
+  78              		.loc 1 18 5 is_stmt 1 view .LVU8
+  18:Modules/src/ms5611.c ****     if (!I2C1Write(MS5611_ADDR, &command, 1)) {return false; }
+  79              		.loc 1 18 10 is_stmt 0 view .LVU9
+  80 0024 0122     		movs	r2, #1
+  81 0026 0DF10F01 		add	r1, sp, #15
+  82 002a EE20     		movs	r0, #238
+  83 002c FFF7FEFF 		bl	I2C1Write
+  84              	.LVL1:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccD6DZJY.s 			page 4
+
+
+  18:Modules/src/ms5611.c ****     if (!I2C1Write(MS5611_ADDR, &command, 1)) {return false; }
+  85              		.loc 1 18 8 view .LVU10
+  86 0030 0546     		mov	r5, r0
+  87 0032 0028     		cmp	r0, #0
+  88 0034 EFD0     		beq	.L2
+  19:Modules/src/ms5611.c **** 	vTaskDelay(pdMS_TO_TICKS(10));
+  89              		.loc 1 19 2 is_stmt 1 view .LVU11
+  90 0036 0A20     		movs	r0, #10
+  91 0038 FFF7FEFF 		bl	vTaskDelay
+  92              	.LVL2:
+  21:Modules/src/ms5611.c ****     printf("MS5611Init\r\n");
+  93              		.loc 1 21 5 view .LVU12
+  94 003c 1348     		ldr	r0, .L9+4
+  95 003e FFF7FEFF 		bl	puts
+  96              	.LVL3:
+  23:Modules/src/ms5611.c ****     uint8_t prom_raw[2] = {0};
+  97              		.loc 1 23 5 view .LVU13
+  23:Modules/src/ms5611.c ****     uint8_t prom_raw[2] = {0};
+  98              		.loc 1 23 13 is_stmt 0 view .LVU14
+  99 0042 0023     		movs	r3, #0
+ 100 0044 ADF80C30 		strh	r3, [sp, #12]	@ movhi
+  24:Modules/src/ms5611.c ****     for(uint8_t i = 0; i < 6; i++) {
+ 101              		.loc 1 24 5 is_stmt 1 view .LVU15
+ 102              	.LBB2:
+  24:Modules/src/ms5611.c ****     for(uint8_t i = 0; i < 6; i++) {
+ 103              		.loc 1 24 9 view .LVU16
+ 104              	.LVL4:
+ 105              	.L3:
+  24:Modules/src/ms5611.c ****     for(uint8_t i = 0; i < 6; i++) {
+ 106              		.loc 1 24 24 discriminator 1 view .LVU17
+  24:Modules/src/ms5611.c ****     for(uint8_t i = 0; i < 6; i++) {
+ 107              		.loc 1 24 5 is_stmt 0 discriminator 1 view .LVU18
+ 108 0048 052C     		cmp	r4, #5
+ 109 004a E4D8     		bhi	.L2
+  25:Modules/src/ms5611.c ****         command = MS5611_PROM_C1 + i * 2;
+ 110              		.loc 1 25 9 is_stmt 1 view .LVU19
+  25:Modules/src/ms5611.c ****         command = MS5611_PROM_C1 + i * 2;
+ 111              		.loc 1 25 17 is_stmt 0 view .LVU20
+ 112 004c 04F15101 		add	r1, r4, #81
+ 113 0050 4900     		lsls	r1, r1, #1
+ 114 0052 C9B2     		uxtb	r1, r1
+ 115 0054 8DF80F10 		strb	r1, [sp, #15]
+  26:Modules/src/ms5611.c ****         if (!I2C1MenRead(MS5611_ADDR, command, 1, prom_raw, 2)) {return false;}
+ 116              		.loc 1 26 9 is_stmt 1 view .LVU21
+  26:Modules/src/ms5611.c ****         if (!I2C1MenRead(MS5611_ADDR, command, 1, prom_raw, 2)) {return false;}
+ 117              		.loc 1 26 14 is_stmt 0 view .LVU22
+ 118 0058 0223     		movs	r3, #2
+ 119 005a 0093     		str	r3, [sp]
+ 120 005c 03AB     		add	r3, sp, #12
+ 121 005e 0122     		movs	r2, #1
+ 122 0060 EE20     		movs	r0, #238
+ 123 0062 FFF7FEFF 		bl	I2C1MenRead
+ 124              	.LVL5:
+  26:Modules/src/ms5611.c ****         if (!I2C1MenRead(MS5611_ADDR, command, 1, prom_raw, 2)) {return false;}
+ 125              		.loc 1 26 12 view .LVU23
+ 126 0066 60B1     		cbz	r0, .L6
+  27:Modules/src/ms5611.c ****         prom[i] = (int16_t)(prom_raw[0] << 8 | prom_raw[1]);
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccD6DZJY.s 			page 5
+
+
+ 127              		.loc 1 27 9 is_stmt 1 discriminator 2 view .LVU24
+  27:Modules/src/ms5611.c ****         prom[i] = (int16_t)(prom_raw[0] << 8 | prom_raw[1]);
+ 128              		.loc 1 27 37 is_stmt 0 discriminator 2 view .LVU25
+ 129 0068 9DF80C20 		ldrb	r2, [sp, #12]	@ zero_extendqisi2
+  27:Modules/src/ms5611.c ****         prom[i] = (int16_t)(prom_raw[0] << 8 | prom_raw[1]);
+ 130              		.loc 1 27 56 discriminator 2 view .LVU26
+ 131 006c 9DF80D30 		ldrb	r3, [sp, #13]	@ zero_extendqisi2
+  28:Modules/src/ms5611.c ****         printf("%u: %u\r\n", i, prom[i]);
+ 132              		.loc 1 28 9 is_stmt 1 discriminator 2 view .LVU27
+ 133 0070 43EA0222 		orr	r2, r3, r2, lsl #8
+ 134 0074 2146     		mov	r1, r4
+ 135 0076 0648     		ldr	r0, .L9+8
+ 136 0078 FFF7FEFF 		bl	printf
+ 137              	.LVL6:
+  24:Modules/src/ms5611.c ****     for(uint8_t i = 0; i < 6; i++) {
+ 138              		.loc 1 24 31 discriminator 2 view .LVU28
+  24:Modules/src/ms5611.c ****     for(uint8_t i = 0; i < 6; i++) {
+ 139              		.loc 1 24 32 is_stmt 0 discriminator 2 view .LVU29
+ 140 007c 0134     		adds	r4, r4, #1
+ 141              	.LVL7:
+  24:Modules/src/ms5611.c ****     for(uint8_t i = 0; i < 6; i++) {
+ 142              		.loc 1 24 32 discriminator 2 view .LVU30
+ 143 007e E4B2     		uxtb	r4, r4
+ 144              	.LVL8:
+  24:Modules/src/ms5611.c ****     for(uint8_t i = 0; i < 6; i++) {
+ 145              		.loc 1 24 32 discriminator 2 view .LVU31
+ 146 0080 E2E7     		b	.L3
+ 147              	.L6:
+  26:Modules/src/ms5611.c ****         if (!I2C1MenRead(MS5611_ADDR, command, 1, prom_raw, 2)) {return false;}
+ 148              		.loc 1 26 73 view .LVU32
+ 149 0082 0546     		mov	r5, r0
+ 150 0084 C7E7     		b	.L2
+ 151              	.L10:
+ 152 0086 00BF     		.align	2
+ 153              	.L9:
+ 154 0088 00000000 		.word	hi2c1
+ 155 008c 00000000 		.word	.LC0
+ 156 0090 0C000000 		.word	.LC1
+ 157              	.LBE2:
+ 158              		.cfi_endproc
+ 159              	.LFE138:
+ 161              		.text
+ 162              	.Letext0:
+ 163              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
+ 164              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 165              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 166              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 167              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 168              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 169              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 170              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 171              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 172              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 173              		.file 12 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
+ 174              		.file 13 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
+ 175              		.file 14 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
+ 176              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccD6DZJY.s 			page 6
+
+
+ 177              		.file 16 "Modules/include/utils.h"
+ 178              		.file 17 "Inc/i2c.h"
+ 179              		.file 18 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
+ 180              		.file 19 "Modules/include/i2c1.h"
+ 181              		.file 20 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\stdio.h"
+ 182              		.file 21 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 183              		.file 22 "<built-in>"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccD6DZJY.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 ms5611.c
+C:\Users\luoha\AppData\Local\Temp\ccD6DZJY.s:18     .rodata.MS5611Init.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccD6DZJY.s:25     .text.MS5611Init:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccD6DZJY.s:33     .text.MS5611Init:00000000 MS5611Init
+C:\Users\luoha\AppData\Local\Temp\ccD6DZJY.s:154    .text.MS5611Init:00000088 $d
+
+UNDEFINED SYMBOLS
+HAL_I2C_IsDeviceReady
+I2C1Write
+vTaskDelay
+puts
+I2C1MenRead
+printf
+hi2c1

@@ -18,7 +18,6 @@ void DMA1_Stream5_IRQHandler(void);
 void DMA1_Stream6_IRQHandler(void);
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
 void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef *huart);
-static void UartRxCheck(void);
 // void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart);
 
 #endif /* __usart2_H */

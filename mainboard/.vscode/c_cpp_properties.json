@@ -7,6 +7,7 @@
             "Modules/src/mavlink_task.c",
             "Modules/src/utils.c",
             "Modules/src/mpu6050.c",
+            "Modules/src/ms5611.c",
             "Modules/src/sensors.c",
             "Modules/src/i2c1.c"
         ],

@@ -31,7 +31,8 @@
 /* USER CODE BEGIN Includes */
 // #include "uart4.h"
 #include "mavlink_task.h"
-#include "sensors.h"
+// #include "sensors.h"
+// #include "ms5611.h"
 // #include "mpu6050.h"
 // #include "i2c1.h"
 // #include "gy_86.h"
@@ -108,6 +109,7 @@ int main(void)
   // MotorInit();
   // MavlinkInit();
   SensorsInit();
+  // MS5611Init();
   // I2C1Init();
   // bool flag = MPU6050Init();
   // printf("status:%u\r\n", flag);

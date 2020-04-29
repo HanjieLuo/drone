@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpqObBw.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc7pSCe4.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -17,176 +17,448 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpqObBw.s 			page 1
   14              		.text
   15              	.Ltext0:
   16              		.cfi_sections	.debug_frame
-  17              		.section	.text.MPU6050Task,"ax",%progbits
+  17              		.section	.text.MS5611Task,"ax",%progbits
   18              		.align	1
-  19              		.global	MPU6050Task
+  19              		.global	MS5611Task
   20              		.arch armv7e-m
   21              		.syntax unified
   22              		.thumb
   23              		.thumb_func
   24              		.fpu fpv4-sp-d16
-  26              	MPU6050Task:
+  26              	MS5611Task:
   27              	.LVL0:
-  28              	.LFB139:
+  28              	.LFB140:
   29              		.file 1 "Modules/src/sensors.c"
    1:Modules/src/sensors.c **** #include "sensors.h"
    2:Modules/src/sensors.c **** 
-   3:Modules/src/sensors.c **** 
-   4:Modules/src/sensors.c **** static TaskHandle_t mpu6050_task_handle;
-   5:Modules/src/sensors.c **** STATIC_MEM_TASK_ALLOC(mpu6050_task, configMINIMAL_STACK_SIZE * 3);
-   6:Modules/src/sensors.c **** 
-   7:Modules/src/sensors.c **** void SensorsInit(void) {
-   8:Modules/src/sensors.c ****     mpu6050_task_handle = STATIC_MEM_TASK_CREATE(mpu6050_task, MPU6050Task, "MPU6050Task", NULL, 1)
-   9:Modules/src/sensors.c **** }
-  10:Modules/src/sensors.c **** 
-  11:Modules/src/sensors.c **** void MPU6050Task(void *param) {
-  30              		.loc 1 11 31 view -0
+   3:Modules/src/sensors.c **** static TaskHandle_t mpu6050_task_handle;
+   4:Modules/src/sensors.c **** STATIC_MEM_TASK_ALLOC(mpu6050_task, configMINIMAL_STACK_SIZE * 5);
+   5:Modules/src/sensors.c **** 
+   6:Modules/src/sensors.c **** static TaskHandle_t ms5611_task_handle;
+   7:Modules/src/sensors.c **** STATIC_MEM_TASK_ALLOC(ms5611_task, configMINIMAL_STACK_SIZE *5);
+   8:Modules/src/sensors.c **** 
+   9:Modules/src/sensors.c **** void SensorsInit(void) {
+  10:Modules/src/sensors.c ****     // mpu6050_task_handle = STATIC_MEM_TASK_CREATE(mpu6050_task, MPU6050Task, "MPU6050Task", NULL,
+  11:Modules/src/sensors.c ****     ms5611_task_handle = STATIC_MEM_TASK_CREATE(ms5611_task, MS5611Task, "MS5611Task", NULL, 1);
+  12:Modules/src/sensors.c **** }
+  13:Modules/src/sensors.c **** 
+  14:Modules/src/sensors.c **** void MPU6050Task(void *param) {
+  15:Modules/src/sensors.c ****     float accel_x, accel_y, accel_z;
+  16:Modules/src/sensors.c ****     float gyro_x, gyro_y, gyro_z;
+  17:Modules/src/sensors.c ****     float celsius;
+  18:Modules/src/sensors.c **** 
+  19:Modules/src/sensors.c ****     if(!MPU6050Init()) return;
+  20:Modules/src/sensors.c **** 
+  21:Modules/src/sensors.c ****     for(;;) {
+  22:Modules/src/sensors.c ****         printf("================\r\n");
+  23:Modules/src/sensors.c ****         if(MPU6050ReadAccel(&accel_x, &accel_y, &accel_z)) {
+  24:Modules/src/sensors.c ****             printf("Accel: %f, %f, %f\r\n", accel_x, accel_y, accel_z);
+  25:Modules/src/sensors.c ****         }
+  26:Modules/src/sensors.c **** 
+  27:Modules/src/sensors.c ****         if(MPU6050ReadGyro(&gyro_x, &gyro_y, &gyro_z)) {
+  28:Modules/src/sensors.c ****             printf("Gyro: %f, %f, %f\r\n", gyro_x, gyro_y, gyro_z);
+  29:Modules/src/sensors.c ****         }
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc7pSCe4.s 			page 2
+
+
+  30:Modules/src/sensors.c **** 
+  31:Modules/src/sensors.c ****         if(MPU6050ReadTemp(&celsius)) {
+  32:Modules/src/sensors.c ****             printf("Temp: %f\r\n", celsius);
+  33:Modules/src/sensors.c ****         }
+  34:Modules/src/sensors.c ****         printf("================\r\n");
+  35:Modules/src/sensors.c ****         vTaskDelay(pdMS_TO_TICKS(100));
+  36:Modules/src/sensors.c ****     }
+  37:Modules/src/sensors.c **** }
+  38:Modules/src/sensors.c **** 
+  39:Modules/src/sensors.c **** void MS5611Task(void *param) {
+  30              		.loc 1 39 30 view -0
   31              		.cfi_startproc
-  32              		@ Volatile: function does not return.
-  33              		@ args = 0, pretend = 0, frame = 0
-  34              		@ frame_needed = 0, uses_anonymous_args = 0
-  35              		.loc 1 11 31 is_stmt 0 view .LVU1
-  36 0000 08B5     		push	{r3, lr}
-  37              	.LCFI0:
-  38              		.cfi_def_cfa_offset 8
-  39              		.cfi_offset 3, -8
-  40              		.cfi_offset 14, -4
-  12:Modules/src/sensors.c ****     MPU6050Init();
-  41              		.loc 1 12 5 is_stmt 1 view .LVU2
-  42 0002 FFF7FEFF 		bl	MPU6050Init
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		.loc 1 39 30 is_stmt 0 view .LVU1
+  35 0000 08B5     		push	{r3, lr}
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 8
+  38              		.cfi_offset 3, -8
+  39              		.cfi_offset 14, -4
+  40:Modules/src/sensors.c ****     // if(!MPU6050Init()) return;
+  41:Modules/src/sensors.c **** 
+  42:Modules/src/sensors.c ****     if(!MS5611Init()) return;
+  40              		.loc 1 42 5 is_stmt 1 view .LVU2
+  41              		.loc 1 42 9 is_stmt 0 view .LVU3
+  42 0002 FFF7FEFF 		bl	MS5611Init
   43              	.LVL1:
-  44              	.L2:
-  13:Modules/src/sensors.c ****     for(;;) {
-  45              		.loc 1 13 5 discriminator 1 view .LVU3
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpqObBw.s 			page 2
+  44              		.loc 1 42 7 view .LVU4
+  45 0006 00B1     		cbz	r0, .L3
+  46              	.L2:
+  43:Modules/src/sensors.c **** 
+  44:Modules/src/sensors.c ****     for(;;) {
+  47              		.loc 1 44 5 is_stmt 1 discriminator 1 view .LVU5
+  45:Modules/src/sensors.c **** 
+  46:Modules/src/sensors.c ****     }
+  48              		.loc 1 46 5 discriminator 1 view .LVU6
+  44:Modules/src/sensors.c **** 
+  49              		.loc 1 44 10 discriminator 1 view .LVU7
+  50 0008 FEE7     		b	.L2
+  51              	.L3:
+  47:Modules/src/sensors.c **** 
+  48:Modules/src/sensors.c **** }...
+  52              		.loc 1 48 1 is_stmt 0 view .LVU8
+  53 000a 08BD     		pop	{r3, pc}
+  54              		.cfi_endproc
+  55              	.LFE140:
+  57              		.section	.rodata.SensorsInit.str1.4,"aMS",%progbits,1
+  58              		.align	2
+  59              	.LC0:
+  60 0000 4D533536 		.ascii	"MS5611Task\000"
+  60      31315461 
+  60      736B00
+  61              		.section	.text.SensorsInit,"ax",%progbits
+  62              		.align	1
+  63              		.global	SensorsInit
+  64              		.syntax unified
+  65              		.thumb
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc7pSCe4.s 			page 3
 
 
-  14:Modules/src/sensors.c **** 
-  15:Modules/src/sensors.c ****     }
-  46              		.loc 1 15 5 discriminator 1 view .LVU4
-  13:Modules/src/sensors.c ****     for(;;) {
-  47              		.loc 1 13 10 discriminator 1 view .LVU5
-  48 0006 FEE7     		b	.L2
-  49              		.cfi_endproc
-  50              	.LFE139:
-  52              		.section	.rodata.SensorsInit.str1.4,"aMS",%progbits,1
-  53              		.align	2
-  54              	.LC0:
-  55 0000 4D505536 		.ascii	"MPU6050Task\000"
-  55      30353054 
-  55      61736B00 
-  56              		.section	.text.SensorsInit,"ax",%progbits
-  57              		.align	1
-  58              		.global	SensorsInit
-  59              		.syntax unified
-  60              		.thumb
-  61              		.thumb_func
-  62              		.fpu fpv4-sp-d16
-  64              	SensorsInit:
-  65              	.LFB138:
-   7:Modules/src/sensors.c ****     mpu6050_task_handle = STATIC_MEM_TASK_CREATE(mpu6050_task, MPU6050Task, "MPU6050Task", NULL, 1)
-  66              		.loc 1 7 24 view -0
-  67              		.cfi_startproc
-  68              		@ args = 0, pretend = 0, frame = 0
-  69              		@ frame_needed = 0, uses_anonymous_args = 0
-  70 0000 00B5     		push	{lr}
-  71              	.LCFI1:
-  72              		.cfi_def_cfa_offset 4
-  73              		.cfi_offset 14, -4
-  74 0002 85B0     		sub	sp, sp, #20
-  75              	.LCFI2:
-  76              		.cfi_def_cfa_offset 24
-   8:Modules/src/sensors.c **** }
-  77              		.loc 1 8 5 view .LVU7
-   8:Modules/src/sensors.c **** }
-  78              		.loc 1 8 27 is_stmt 0 view .LVU8
-  79 0004 074B     		ldr	r3, .L6
-  80 0006 0293     		str	r3, [sp, #8]
-  81 0008 074B     		ldr	r3, .L6+4
-  82 000a 0193     		str	r3, [sp, #4]
-  83 000c 0123     		movs	r3, #1
-  84 000e 0093     		str	r3, [sp]
-  85 0010 0023     		movs	r3, #0
-  86 0012 4FF4C072 		mov	r2, #384
-  87 0016 0549     		ldr	r1, .L6+8
-  88 0018 0548     		ldr	r0, .L6+12
-  89 001a FFF7FEFF 		bl	xTaskCreateStatic
-  90              	.LVL2:
-   9:Modules/src/sensors.c **** 
-  91              		.loc 1 9 1 view .LVU9
-  92 001e 05B0     		add	sp, sp, #20
-  93              	.LCFI3:
-  94              		.cfi_def_cfa_offset 4
-  95              		@ sp needed
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpqObBw.s 			page 3
+  66              		.thumb_func
+  67              		.fpu fpv4-sp-d16
+  69              	SensorsInit:
+  70              	.LFB138:
+   9:Modules/src/sensors.c **** void SensorsInit(void) {
+  71              		.loc 1 9 24 is_stmt 1 view -0
+  72              		.cfi_startproc
+  73              		@ args = 0, pretend = 0, frame = 0
+  74              		@ frame_needed = 0, uses_anonymous_args = 0
+  75 0000 00B5     		push	{lr}
+  76              	.LCFI1:
+  77              		.cfi_def_cfa_offset 4
+  78              		.cfi_offset 14, -4
+  79 0002 85B0     		sub	sp, sp, #20
+  80              	.LCFI2:
+  81              		.cfi_def_cfa_offset 24
+  11:Modules/src/sensors.c ****     ms5611_task_handle = STATIC_MEM_TASK_CREATE(ms5611_task, MS5611Task, "MS5611Task", NULL, 1);
+  82              		.loc 1 11 5 view .LVU10
+  11:Modules/src/sensors.c ****     ms5611_task_handle = STATIC_MEM_TASK_CREATE(ms5611_task, MS5611Task, "MS5611Task", NULL, 1);
+  83              		.loc 1 11 26 is_stmt 0 view .LVU11
+  84 0004 074B     		ldr	r3, .L7
+  85 0006 0293     		str	r3, [sp, #8]
+  86 0008 074B     		ldr	r3, .L7+4
+  87 000a 0193     		str	r3, [sp, #4]
+  88 000c 0123     		movs	r3, #1
+  89 000e 0093     		str	r3, [sp]
+  90 0010 0023     		movs	r3, #0
+  91 0012 4FF42072 		mov	r2, #640
+  92 0016 0549     		ldr	r1, .L7+8
+  93 0018 0548     		ldr	r0, .L7+12
+  94 001a FFF7FEFF 		bl	xTaskCreateStatic
+  95              	.LVL2:
+  12:Modules/src/sensors.c **** }
+  96              		.loc 1 12 1 view .LVU12
+  97 001e 05B0     		add	sp, sp, #20
+  98              	.LCFI3:
+  99              		.cfi_def_cfa_offset 4
+ 100              		@ sp needed
+ 101 0020 5DF804FB 		ldr	pc, [sp], #4
+ 102              	.L8:
+ 103              		.align	2
+ 104              	.L7:
+ 105 0024 00000000 		.word	.LANCHOR0
+ 106 0028 00000000 		.word	.LANCHOR1
+ 107 002c 00000000 		.word	.LC0
+ 108 0030 00000000 		.word	MS5611Task
+ 109              		.cfi_endproc
+ 110              	.LFE138:
+ 112              		.section	.rodata.MPU6050Task.str1.4,"aMS",%progbits,1
+ 113              		.align	2
+ 114              	.LC1:
+ 115 0000 3D3D3D3D 		.ascii	"================\015\000"
+ 115      3D3D3D3D 
+ 115      3D3D3D3D 
+ 115      3D3D3D3D 
+ 115      0D00
+ 116              		.global	__aeabi_f2d
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc7pSCe4.s 			page 4
 
 
-  96 0020 5DF804FB 		ldr	pc, [sp], #4
-  97              	.L7:
-  98              		.align	2
-  99              	.L6:
- 100 0024 00000000 		.word	.LANCHOR0
- 101 0028 00000000 		.word	.LANCHOR1
- 102 002c 00000000 		.word	.LC0
- 103 0030 00000000 		.word	MPU6050Task
- 104              		.cfi_endproc
- 105              	.LFE138:
- 107              		.section	.bss.osSys_mpu6050_taskStackBuffer,"aw",%nobits
- 108              		.align	2
- 109              		.set	.LANCHOR1,. + 0
- 112              	osSys_mpu6050_taskStackBuffer:
- 113 0000 00000000 		.space	1536
- 113      00000000 
- 113      00000000 
- 113      00000000 
- 113      00000000 
- 114              		.section	.bss.osSys_mpu6050_taskTaskBuffer,"aw",%nobits
- 115              		.align	2
- 116              		.set	.LANCHOR0,. + 0
- 119              	osSys_mpu6050_taskTaskBuffer:
- 120 0000 00000000 		.space	84
- 120      00000000 
- 120      00000000 
- 120      00000000 
- 120      00000000 
- 121              		.text
- 122              	.Letext0:
- 123              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
- 124              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
- 125              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
- 126              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 127              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
- 128              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 129              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 130              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
- 131              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 132              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 133              		.file 12 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
- 134              		.file 13 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
- 135              		.file 14 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
- 136              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
- 137              		.file 16 "Modules/include/utils.h"
- 138              		.file 17 "Inc/i2c.h"
- 139              		.file 18 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
- 140              		.file 19 "Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"
- 141              		.file 20 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
- 142              		.file 21 "Modules/include/mpu6050.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpqObBw.s 			page 4
+ 117 0012 0000     		.align	2
+ 118              	.LC2:
+ 119 0014 41636365 		.ascii	"Accel: %f, %f, %f\015\012\000"
+ 119      6C3A2025 
+ 119      662C2025 
+ 119      662C2025 
+ 119      660D0A00 
+ 120              		.align	2
+ 121              	.LC3:
+ 122 0028 4779726F 		.ascii	"Gyro: %f, %f, %f\015\012\000"
+ 122      3A202566 
+ 122      2C202566 
+ 122      2C202566 
+ 122      0D0A00
+ 123 003b 00       		.align	2
+ 124              	.LC4:
+ 125 003c 54656D70 		.ascii	"Temp: %f\015\012\000"
+ 125      3A202566 
+ 125      0D0A00
+ 126              		.section	.text.MPU6050Task,"ax",%progbits
+ 127              		.align	1
+ 128              		.global	MPU6050Task
+ 129              		.syntax unified
+ 130              		.thumb
+ 131              		.thumb_func
+ 132              		.fpu fpv4-sp-d16
+ 134              	MPU6050Task:
+ 135              	.LVL3:
+ 136              	.LFB139:
+  14:Modules/src/sensors.c **** void MPU6050Task(void *param) {
+ 137              		.loc 1 14 31 is_stmt 1 view -0
+ 138              		.cfi_startproc
+ 139              		@ args = 0, pretend = 0, frame = 32
+ 140              		@ frame_needed = 0, uses_anonymous_args = 0
+  14:Modules/src/sensors.c **** void MPU6050Task(void *param) {
+ 141              		.loc 1 14 31 is_stmt 0 view .LVU14
+ 142 0000 30B5     		push	{r4, r5, lr}
+ 143              	.LCFI4:
+ 144              		.cfi_def_cfa_offset 12
+ 145              		.cfi_offset 4, -12
+ 146              		.cfi_offset 5, -8
+ 147              		.cfi_offset 14, -4
+ 148 0002 8DB0     		sub	sp, sp, #52
+ 149              	.LCFI5:
+ 150              		.cfi_def_cfa_offset 64
+  15:Modules/src/sensors.c ****     float accel_x, accel_y, accel_z;
+ 151              		.loc 1 15 5 is_stmt 1 view .LVU15
+  16:Modules/src/sensors.c ****     float gyro_x, gyro_y, gyro_z;
+ 152              		.loc 1 16 5 view .LVU16
+  17:Modules/src/sensors.c ****     float celsius;
+ 153              		.loc 1 17 5 view .LVU17
+  19:Modules/src/sensors.c ****     if(!MPU6050Init()) return;
+ 154              		.loc 1 19 5 view .LVU18
+  19:Modules/src/sensors.c ****     if(!MPU6050Init()) return;
+ 155              		.loc 1 19 9 is_stmt 0 view .LVU19
+ 156 0004 FFF7FEFF 		bl	MPU6050Init
+ 157              	.LVL4:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc7pSCe4.s 			page 5
+
+
+  19:Modules/src/sensors.c ****     if(!MPU6050Init()) return;
+ 158              		.loc 1 19 7 view .LVU20
+ 159 0008 0028     		cmp	r0, #0
+ 160 000a 31D1     		bne	.L10
+  37:Modules/src/sensors.c **** }
+ 161              		.loc 1 37 1 view .LVU21
+ 162 000c 0DB0     		add	sp, sp, #52
+ 163              	.LCFI6:
+ 164              		.cfi_remember_state
+ 165              		.cfi_def_cfa_offset 12
+ 166              		@ sp needed
+ 167 000e 30BD     		pop	{r4, r5, pc}
+ 168              	.L16:
+ 169              	.LCFI7:
+ 170              		.cfi_restore_state
+  24:Modules/src/sensors.c ****             printf("Accel: %f, %f, %f\r\n", accel_x, accel_y, accel_z);
+ 171              		.loc 1 24 13 is_stmt 1 view .LVU22
+ 172 0010 0B98     		ldr	r0, [sp, #44]	@ float
+ 173 0012 FFF7FEFF 		bl	__aeabi_f2d
+ 174              	.LVL5:
+ 175 0016 0446     		mov	r4, r0
+ 176 0018 0D46     		mov	r5, r1
+ 177 001a 0998     		ldr	r0, [sp, #36]	@ float
+ 178 001c FFF7FEFF 		bl	__aeabi_f2d
+ 179              	.LVL6:
+ 180 0020 CDE90201 		strd	r0, [sp, #8]
+ 181 0024 0A98     		ldr	r0, [sp, #40]	@ float
+ 182 0026 FFF7FEFF 		bl	__aeabi_f2d
+ 183              	.LVL7:
+ 184 002a CDE90001 		strd	r0, [sp]
+ 185 002e 2246     		mov	r2, r4
+ 186 0030 2B46     		mov	r3, r5
+ 187 0032 1F48     		ldr	r0, .L18
+ 188 0034 FFF7FEFF 		bl	printf
+ 189              	.LVL8:
+ 190 0038 24E0     		b	.L11
+ 191              	.L17:
+  28:Modules/src/sensors.c ****             printf("Gyro: %f, %f, %f\r\n", gyro_x, gyro_y, gyro_z);
+ 192              		.loc 1 28 13 view .LVU23
+ 193 003a 0898     		ldr	r0, [sp, #32]	@ float
+ 194 003c FFF7FEFF 		bl	__aeabi_f2d
+ 195              	.LVL9:
+ 196 0040 0446     		mov	r4, r0
+ 197 0042 0D46     		mov	r5, r1
+ 198 0044 0698     		ldr	r0, [sp, #24]	@ float
+ 199 0046 FFF7FEFF 		bl	__aeabi_f2d
+ 200              	.LVL10:
+ 201 004a CDE90201 		strd	r0, [sp, #8]
+ 202 004e 0798     		ldr	r0, [sp, #28]	@ float
+ 203 0050 FFF7FEFF 		bl	__aeabi_f2d
+ 204              	.LVL11:
+ 205 0054 CDE90001 		strd	r0, [sp]
+ 206 0058 2246     		mov	r2, r4
+ 207 005a 2B46     		mov	r3, r5
+ 208 005c 1548     		ldr	r0, .L18+4
+ 209 005e FFF7FEFF 		bl	printf
+ 210              	.LVL12:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc7pSCe4.s 			page 6
+
+
+ 211 0062 16E0     		b	.L12
+ 212              	.L13:
+  34:Modules/src/sensors.c ****         printf("================\r\n");
+ 213              		.loc 1 34 9 view .LVU24
+ 214 0064 1448     		ldr	r0, .L18+8
+ 215 0066 FFF7FEFF 		bl	puts
+ 216              	.LVL13:
+  35:Modules/src/sensors.c ****         vTaskDelay(pdMS_TO_TICKS(100));
+ 217              		.loc 1 35 9 view .LVU25
+ 218 006a 6420     		movs	r0, #100
+ 219 006c FFF7FEFF 		bl	vTaskDelay
+ 220              	.LVL14:
+  21:Modules/src/sensors.c ****     for(;;) {
+ 221              		.loc 1 21 10 view .LVU26
+ 222              	.L10:
+  21:Modules/src/sensors.c ****     for(;;) {
+ 223              		.loc 1 21 5 view .LVU27
+  22:Modules/src/sensors.c ****         printf("================\r\n");
+ 224              		.loc 1 22 9 view .LVU28
+ 225 0070 1148     		ldr	r0, .L18+8
+ 226 0072 FFF7FEFF 		bl	puts
+ 227              	.LVL15:
+  23:Modules/src/sensors.c ****         if(MPU6050ReadAccel(&accel_x, &accel_y, &accel_z)) {
+ 228              		.loc 1 23 9 view .LVU29
+  23:Modules/src/sensors.c ****         if(MPU6050ReadAccel(&accel_x, &accel_y, &accel_z)) {
+ 229              		.loc 1 23 12 is_stmt 0 view .LVU30
+ 230 0076 09AA     		add	r2, sp, #36
+ 231 0078 0AA9     		add	r1, sp, #40
+ 232 007a 0BA8     		add	r0, sp, #44
+ 233 007c FFF7FEFF 		bl	MPU6050ReadAccel
+ 234              	.LVL16:
+  23:Modules/src/sensors.c ****         if(MPU6050ReadAccel(&accel_x, &accel_y, &accel_z)) {
+ 235              		.loc 1 23 11 view .LVU31
+ 236 0080 0028     		cmp	r0, #0
+ 237 0082 C5D1     		bne	.L16
+ 238              	.L11:
+  27:Modules/src/sensors.c ****         if(MPU6050ReadGyro(&gyro_x, &gyro_y, &gyro_z)) {
+ 239              		.loc 1 27 9 is_stmt 1 view .LVU32
+  27:Modules/src/sensors.c ****         if(MPU6050ReadGyro(&gyro_x, &gyro_y, &gyro_z)) {
+ 240              		.loc 1 27 12 is_stmt 0 view .LVU33
+ 241 0084 06AA     		add	r2, sp, #24
+ 242 0086 07A9     		add	r1, sp, #28
+ 243 0088 08A8     		add	r0, sp, #32
+ 244 008a FFF7FEFF 		bl	MPU6050ReadGyro
+ 245              	.LVL17:
+  27:Modules/src/sensors.c ****         if(MPU6050ReadGyro(&gyro_x, &gyro_y, &gyro_z)) {
+ 246              		.loc 1 27 11 view .LVU34
+ 247 008e 0028     		cmp	r0, #0
+ 248 0090 D3D1     		bne	.L17
+ 249              	.L12:
+  31:Modules/src/sensors.c ****         if(MPU6050ReadTemp(&celsius)) {
+ 250              		.loc 1 31 9 is_stmt 1 view .LVU35
+  31:Modules/src/sensors.c ****         if(MPU6050ReadTemp(&celsius)) {
+ 251              		.loc 1 31 12 is_stmt 0 view .LVU36
+ 252 0092 05A8     		add	r0, sp, #20
+ 253 0094 FFF7FEFF 		bl	MPU6050ReadTemp
+ 254              	.LVL18:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc7pSCe4.s 			page 7
+
+
+  31:Modules/src/sensors.c ****         if(MPU6050ReadTemp(&celsius)) {
+ 255              		.loc 1 31 11 view .LVU37
+ 256 0098 0028     		cmp	r0, #0
+ 257 009a E3D0     		beq	.L13
+  32:Modules/src/sensors.c ****             printf("Temp: %f\r\n", celsius);
+ 258              		.loc 1 32 13 is_stmt 1 view .LVU38
+ 259 009c 0598     		ldr	r0, [sp, #20]	@ float
+ 260 009e FFF7FEFF 		bl	__aeabi_f2d
+ 261              	.LVL19:
+ 262 00a2 0246     		mov	r2, r0
+ 263 00a4 0B46     		mov	r3, r1
+ 264 00a6 0548     		ldr	r0, .L18+12
+ 265 00a8 FFF7FEFF 		bl	printf
+ 266              	.LVL20:
+ 267 00ac DAE7     		b	.L13
+ 268              	.L19:
+ 269 00ae 00BF     		.align	2
+ 270              	.L18:
+ 271 00b0 14000000 		.word	.LC2
+ 272 00b4 28000000 		.word	.LC3
+ 273 00b8 00000000 		.word	.LC1
+ 274 00bc 3C000000 		.word	.LC4
+ 275              		.cfi_endproc
+ 276              	.LFE139:
+ 278              		.section	.bss.osSys_ms5611_taskStackBuffer,"aw",%nobits
+ 279              		.align	2
+ 280              		.set	.LANCHOR1,. + 0
+ 283              	osSys_ms5611_taskStackBuffer:
+ 284 0000 00000000 		.space	2560
+ 284      00000000 
+ 284      00000000 
+ 284      00000000 
+ 284      00000000 
+ 285              		.section	.bss.osSys_ms5611_taskTaskBuffer,"aw",%nobits
+ 286              		.align	2
+ 287              		.set	.LANCHOR0,. + 0
+ 290              	osSys_ms5611_taskTaskBuffer:
+ 291 0000 00000000 		.space	84
+ 291      00000000 
+ 291      00000000 
+ 291      00000000 
+ 291      00000000 
+ 292              		.text
+ 293              	.Letext0:
+ 294              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
+ 295              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 296              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 297              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 298              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 299              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 300              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 301              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 302              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 303              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 304              		.file 12 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
+ 305              		.file 13 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
+ 306              		.file 14 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc7pSCe4.s 			page 8
+
+
+ 307              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
+ 308              		.file 16 "Modules/include/utils.h"
+ 309              		.file 17 "Inc/i2c.h"
+ 310              		.file 18 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
+ 311              		.file 19 "Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"
+ 312              		.file 20 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 313              		.file 21 "Modules/include/ms5611.h"
+ 314              		.file 22 "Modules/include/mpu6050.h"
+ 315              		.file 23 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\stdio.h"
+ 316              		.file 24 "<built-in>"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc7pSCe4.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 sensors.c
-C:\Users\luoha\AppData\Local\Temp\ccpqObBw.s:18     .text.MPU6050Task:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccpqObBw.s:26     .text.MPU6050Task:00000000 MPU6050Task
-C:\Users\luoha\AppData\Local\Temp\ccpqObBw.s:53     .rodata.SensorsInit.str1.4:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccpqObBw.s:57     .text.SensorsInit:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccpqObBw.s:64     .text.SensorsInit:00000000 SensorsInit
-C:\Users\luoha\AppData\Local\Temp\ccpqObBw.s:100    .text.SensorsInit:00000024 $d
-C:\Users\luoha\AppData\Local\Temp\ccpqObBw.s:108    .bss.osSys_mpu6050_taskStackBuffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccpqObBw.s:112    .bss.osSys_mpu6050_taskStackBuffer:00000000 osSys_mpu6050_taskStackBuffer
-C:\Users\luoha\AppData\Local\Temp\ccpqObBw.s:115    .bss.osSys_mpu6050_taskTaskBuffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccpqObBw.s:119    .bss.osSys_mpu6050_taskTaskBuffer:00000000 osSys_mpu6050_taskTaskBuffer
+C:\Users\luoha\AppData\Local\Temp\cc7pSCe4.s:18     .text.MS5611Task:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cc7pSCe4.s:26     .text.MS5611Task:00000000 MS5611Task
+C:\Users\luoha\AppData\Local\Temp\cc7pSCe4.s:58     .rodata.SensorsInit.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cc7pSCe4.s:62     .text.SensorsInit:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cc7pSCe4.s:69     .text.SensorsInit:00000000 SensorsInit
+C:\Users\luoha\AppData\Local\Temp\cc7pSCe4.s:105    .text.SensorsInit:00000024 $d
+C:\Users\luoha\AppData\Local\Temp\cc7pSCe4.s:113    .rodata.MPU6050Task.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cc7pSCe4.s:127    .text.MPU6050Task:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cc7pSCe4.s:134    .text.MPU6050Task:00000000 MPU6050Task
+C:\Users\luoha\AppData\Local\Temp\cc7pSCe4.s:271    .text.MPU6050Task:000000b0 $d
+C:\Users\luoha\AppData\Local\Temp\cc7pSCe4.s:279    .bss.osSys_ms5611_taskStackBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cc7pSCe4.s:283    .bss.osSys_ms5611_taskStackBuffer:00000000 osSys_ms5611_taskStackBuffer
+C:\Users\luoha\AppData\Local\Temp\cc7pSCe4.s:286    .bss.osSys_ms5611_taskTaskBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cc7pSCe4.s:290    .bss.osSys_ms5611_taskTaskBuffer:00000000 osSys_ms5611_taskTaskBuffer
 
 UNDEFINED SYMBOLS
-MPU6050Init
+MS5611Init
 xTaskCreateStatic
+__aeabi_f2d
+MPU6050Init
+printf
+puts
+vTaskDelay
+MPU6050ReadAccel
+MPU6050ReadGyro
+MPU6050ReadTemp
