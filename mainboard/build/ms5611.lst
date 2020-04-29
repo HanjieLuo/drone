@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccD6DZJY.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -17,312 +17,1046 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccD6DZJY.s 			page 1
   14              		.text
   15              	.Ltext0:
   16              		.cfi_sections	.debug_frame
-  17              		.section	.rodata.MS5611Init.str1.4,"aMS",%progbits,1
-  18              		.align	2
-  19              	.LC0:
-  20 0000 4D533536 		.ascii	"MS5611Init\015\000"
-  20      3131496E 
-  20      69740D00 
-  21              		.align	2
-  22              	.LC1:
-  23 000c 25753A20 		.ascii	"%u: %u\015\012\000"
-  23      25750D0A 
-  23      00
-  24              		.section	.text.MS5611Init,"ax",%progbits
-  25              		.align	1
-  26              		.global	MS5611Init
-  27              		.arch armv7e-m
-  28              		.syntax unified
-  29              		.thumb
-  30              		.thumb_func
-  31              		.fpu fpv4-sp-d16
-  33              	MS5611Init:
-  34              	.LFB138:
-  35              		.file 1 "Modules/src/ms5611.c"
+  17              		.section	.text.MS5611Init,"ax",%progbits
+  18              		.align	1
+  19              		.global	MS5611Init
+  20              		.arch armv7e-m
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  24              		.fpu fpv4-sp-d16
+  26              	MS5611Init:
+  27              	.LFB138:
+  28              		.file 1 "Modules/src/ms5611.c"
    1:Modules/src/ms5611.c **** #include "ms5611.h"
    2:Modules/src/ms5611.c **** 
-   3:Modules/src/ms5611.c **** static uint16_t prom[6];
-   4:Modules/src/ms5611.c **** 
-   5:Modules/src/ms5611.c **** bool MS5611Init(void) {
-  36              		.loc 1 5 23 view -0
-  37              		.cfi_startproc
-  38              		@ args = 0, pretend = 0, frame = 8
-  39              		@ frame_needed = 0, uses_anonymous_args = 0
-  40 0000 30B5     		push	{r4, r5, lr}
-  41              	.LCFI0:
-  42              		.cfi_def_cfa_offset 12
-  43              		.cfi_offset 4, -12
-  44              		.cfi_offset 5, -8
-  45              		.cfi_offset 14, -4
-  46 0002 85B0     		sub	sp, sp, #20
-  47              	.LCFI1:
-  48              		.cfi_def_cfa_offset 32
-   6:Modules/src/ms5611.c ****     // 读取 MS5611 传感器，大致分为四步骤:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccD6DZJY.s 			page 2
-
-
-   7:Modules/src/ms5611.c ****     // 1. RESET 芯片(delay 10ms)
-   8:Modules/src/ms5611.c ****     // 2. 读取 PROM 中的校准数据(（0xA0,0xA2,0xA4,0xA6,0xA8,0xAA,0xAC,0xAE）共 8 x 16bit
-   9:Modules/src/ms5611.c ****     // 3. 启动 AD 读取温度和压力的 RAW 数据
-  10:Modules/src/ms5611.c ****     // 4. 根据校准值、温度和压力的 RAW 值计算出真实压力和温度值。
+   3:Modules/src/ms5611.c **** // 读取 MS5611 传感器，大致分为四步骤:
+   4:Modules/src/ms5611.c **** // 1. RESET 芯片(delay 10ms)
+   5:Modules/src/ms5611.c **** // 2. 读取 PROM 中的校准数据(（0xA0,0xA2,0xA4,0xA6,0xA8,0xAA,0xAC,0xAE）共 8 x 16bit 的
+   6:Modules/src/ms5611.c **** // 3. 启动 AD 读取温度和压力的 RAW 数据
+   7:Modules/src/ms5611.c **** // 4. 根据校准值、温度和压力的 RAW 值计算出真实压力和温度值。
+   8:Modules/src/ms5611.c **** 
+   9:Modules/src/ms5611.c **** static uint8_t command;
+  10:Modules/src/ms5611.c **** static uint8_t buffer[3];
   11:Modules/src/ms5611.c **** 
-  12:Modules/src/ms5611.c ****     if(HAL_I2C_IsDeviceReady(&hi2c1, MS5611_ADDR, 10, 1000) != HAL_OK) { return false;}
-  49              		.loc 1 12 5 view .LVU1
-  50              		.loc 1 12 8 is_stmt 0 view .LVU2
-  51 0004 4FF47A73 		mov	r3, #1000
-  52 0008 0A22     		movs	r2, #10
-  53 000a EE21     		movs	r1, #238
-  54 000c 1E48     		ldr	r0, .L9
-  55 000e FFF7FEFF 		bl	HAL_I2C_IsDeviceReady
-  56              	.LVL0:
-  57              		.loc 1 12 7 view .LVU3
-  58 0012 18B1     		cbz	r0, .L8
-  59              		.loc 1 12 81 view .LVU4
-  60 0014 0025     		movs	r5, #0
-  61              	.L2:
-  13:Modules/src/ms5611.c ****     // vTaskDelay(pdMS_TO_TICKS(100));
-  14:Modules/src/ms5611.c ****     // HAL_Delay(100);
-  15:Modules/src/ms5611.c **** 
-  16:Modules/src/ms5611.c ****     //RESET 芯片(delay 10ms)
-  17:Modules/src/ms5611.c ****     uint8_t command = 0x1e;
-  18:Modules/src/ms5611.c ****     if (!I2C1Write(MS5611_ADDR, &command, 1)) {return false; }
-  19:Modules/src/ms5611.c **** 	vTaskDelay(pdMS_TO_TICKS(10));
+  12:Modules/src/ms5611.c **** // static uint16_t SENS_t1;   // Pressure sensitivity
+  13:Modules/src/ms5611.c **** // static uint16_t OFF_t1;    // Pressure offset
+  14:Modules/src/ms5611.c **** static int64_t SENS_t2;    // Pressure sensitivity
+  15:Modules/src/ms5611.c **** static int64_t OFF_t2;     // Pressure offset
+  16:Modules/src/ms5611.c **** static uint16_t TCS;       // Temperature coefficient of pressure sensitivity
+  17:Modules/src/ms5611.c **** static uint16_t TCO;       // Temperature coefficient of pressure offset
+  18:Modules/src/ms5611.c **** static uint16_t TREF;      // Reference temperature
+  19:Modules/src/ms5611.c **** static uint16_t TEMPSENS;  // Temperature coefficient of the temperature
   20:Modules/src/ms5611.c **** 
-  21:Modules/src/ms5611.c ****     printf("MS5611Init\r\n");
-  22:Modules/src/ms5611.c **** 
-  23:Modules/src/ms5611.c ****     uint8_t prom_raw[2] = {0};
-  24:Modules/src/ms5611.c ****     for(uint8_t i = 0; i < 6; i++) {
-  25:Modules/src/ms5611.c ****         command = MS5611_PROM_C1 + i * 2;
-  26:Modules/src/ms5611.c ****         if (!I2C1MenRead(MS5611_ADDR, command, 1, prom_raw, 2)) {return false;}
-  27:Modules/src/ms5611.c ****         prom[i] = (int16_t)(prom_raw[0] << 8 | prom_raw[1]);
-  28:Modules/src/ms5611.c ****         printf("%u: %u\r\n", i, prom[i]);
-  29:Modules/src/ms5611.c ****     }
-  30:Modules/src/ms5611.c **** 
-  31:Modules/src/ms5611.c **** 
-  32:Modules/src/ms5611.c ****     // command = MS5611_PROM_C1;
-  33:Modules/src/ms5611.c ****     // if (!I2C1MenRead(MS5611_ADDR, command, 1, prom_raw, 2)) { printf("I2C1MenRead error\r\n"); r
-  34:Modules/src/ms5611.c ****     // printf("%u: %u\r\n", prom_raw[0], prom_raw[1]);
-  35:Modules/src/ms5611.c **** 
-  36:Modules/src/ms5611.c ****     // if (!I2C1Write(MS5611_ADDR, MS5611_RESET, 1)) { return false; }
-  37:Modules/src/ms5611.c ****     // prom_raw[0] = MS5611_RESET;
-  38:Modules/src/ms5611.c ****     // vTaskDelay(pdMS_TO_TICKS(100));
-  39:Modules/src/ms5611.c ****     // uint8_t RESET_MS5611 = 0x1E;;
-  40:Modules/src/ms5611.c ****     // while (HAL_I2C_Master_Transmit(&hi2c1, MS5611_ADDR, &RESET_MS5611, 1, 1000)!= HAL_OK);
-  41:Modules/src/ms5611.c ****     // printf("MS5611Init\r\n");
-  42:Modules/src/ms5611.c ****     // vTaskDelay(pdMS_TO_TICKS(10));
-  43:Modules/src/ms5611.c **** 
-  44:Modules/src/ms5611.c ****     // printf("MS5611Init\r\n");
-  45:Modules/src/ms5611.c **** 
-  46:Modules/src/ms5611.c ****     // uint8_t PROM_READ_C1_MS5611 = 0xAA;
-  47:Modules/src/ms5611.c ****     // uint8_t prom_raw[2] = {0};
-  48:Modules/src/ms5611.c ****     // while (HAL_I2C_Master_Transmit(&hi2c1, MS5611_ADDR, &PROM_READ_C1_MS5611, 1, 1000) != HAL_OK
-  49:Modules/src/ms5611.c **** 	// while (HAL_I2C_Master_Receive(&hi2c1, MS5611_ADDR, prom_raw, 2, 1000) != HAL_OK);
-  50:Modules/src/ms5611.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccD6DZJY.s 			page 3
+  21:Modules/src/ms5611.c **** static int32_t temperature;  //° *100
+  22:Modules/src/ms5611.c **** static int32_t pressure;     //pa *100
+  23:Modules/src/ms5611.c **** static float altitude;       //m
+  24:Modules/src/ms5611.c **** 
+  25:Modules/src/ms5611.c **** bool MS5611Init(void) {
+  29              		.loc 1 25 23 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 16
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 30B5     		push	{r4, r5, lr}
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s 			page 2
 
 
-  51:Modules/src/ms5611.c ****     // HAL_I2C_Mem_Read(&hi2c1, MS5611_ADDR, MS5611_PROM_C1, 1, prom_raw, 2, 1000);
-  52:Modules/src/ms5611.c ****     // if (!I2C1MenRead(MS5611_ADDR, MS5611_PROM_C1, 1, prom_raw, 2)) { printf("I2C1MenRead error\r
-  53:Modules/src/ms5611.c ****     // printf("%u: %u\r\n", prom[0], prom[1]);
-  54:Modules/src/ms5611.c **** 
-  55:Modules/src/ms5611.c ****     // HAL_I2C_Mem_Read(&hi2c1, MS5611_ADDR, MS5611_PROM_C2, 1, prom_raw, 2, 1000);
-  56:Modules/src/ms5611.c ****     // printf("%u: %u\r\n", prom[0], prom[1]);
-  57:Modules/src/ms5611.c **** 
-  58:Modules/src/ms5611.c ****     // HAL_I2C_Mem_Read(&hi2c1, MS5611_ADDR, MS5611_PROM_C3, 1, prom_raw, 2, 1000);
-  59:Modules/src/ms5611.c ****     // printf("%u: %u\r\n", prom[0], prom[1]);
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 12
+  36              		.cfi_offset 4, -12
+  37              		.cfi_offset 5, -8
+  38              		.cfi_offset 14, -4
+  39 0002 87B0     		sub	sp, sp, #28
+  40              	.LCFI1:
+  41              		.cfi_def_cfa_offset 40
+  26:Modules/src/ms5611.c ****     if (HAL_I2C_IsDeviceReady(&hi2c1, MS5611_ADDR, 10, 1000) != HAL_OK) {
+  42              		.loc 1 26 5 view .LVU1
+  43              		.loc 1 26 9 is_stmt 0 view .LVU2
+  44 0004 4FF47A73 		mov	r3, #1000
+  45 0008 0A22     		movs	r2, #10
+  46 000a EE21     		movs	r1, #238
+  47 000c 2D48     		ldr	r0, .L10
+  48 000e FFF7FEFF 		bl	HAL_I2C_IsDeviceReady
+  49              	.LVL0:
+  50              		.loc 1 26 8 view .LVU3
+  51 0012 18B1     		cbz	r0, .L8
+  27:Modules/src/ms5611.c ****         return false;
+  52              		.loc 1 27 16 view .LVU4
+  53 0014 0025     		movs	r5, #0
+  54              	.L2:
+  28:Modules/src/ms5611.c ****     }
+  29:Modules/src/ms5611.c **** 
+  30:Modules/src/ms5611.c ****     //RESET 芯片(delay 10ms)
+  31:Modules/src/ms5611.c ****     command = 0x1e;
+  32:Modules/src/ms5611.c ****     // I2C1Write(MS5611_ADDR, &command, 1);
+  33:Modules/src/ms5611.c ****     if (!I2C1Write(MS5611_ADDR, &command, 1)) {
+  34:Modules/src/ms5611.c ****         return false;
+  35:Modules/src/ms5611.c ****     }
+  36:Modules/src/ms5611.c ****     vTaskDelay(pdMS_TO_TICKS(10));
+  37:Modules/src/ms5611.c **** 
+  38:Modules/src/ms5611.c ****     // printf("MS5611Init\r\n");
+  39:Modules/src/ms5611.c **** 
+  40:Modules/src/ms5611.c ****     //读取 PROM 中的校准数据(（0xA0,0xA2,0xA4,0xA6,0xA8,0xAA,0xAC,0xAE）共 8 x 16bit 的
+  41:Modules/src/ms5611.c ****     uint8_t prom_raw[2] = {0};
+  42:Modules/src/ms5611.c ****     uint16_t prom[6];
+  43:Modules/src/ms5611.c ****     for (uint8_t i = 0; i < 6; i++) {
+  44:Modules/src/ms5611.c ****         command = MS5611_PROM_C1 + i * 2;
+  45:Modules/src/ms5611.c ****         // I2C1MenRead(MS5611_ADDR, command, 1, prom_raw, 2);
+  46:Modules/src/ms5611.c ****         if (!I2C1MenRead(MS5611_ADDR, command, 1, prom_raw, 2)) {
+  47:Modules/src/ms5611.c ****             return false;
+  48:Modules/src/ms5611.c ****         }
+  49:Modules/src/ms5611.c ****         prom[i] = (int16_t)(prom_raw[0] << 8 | prom_raw[1]);
+  50:Modules/src/ms5611.c ****         // printf("%u: %u\r\n", i, prom[i]);
+  51:Modules/src/ms5611.c ****     }
+  52:Modules/src/ms5611.c **** 
+  53:Modules/src/ms5611.c ****     SENS_t2  = (int64_t)prom[0] << 15;
+  54:Modules/src/ms5611.c ****     OFF_t2   = (int64_t)prom[1] << 16;
+  55:Modules/src/ms5611.c ****     TCS      = prom[2];
+  56:Modules/src/ms5611.c ****     TCO      = prom[3];
+  57:Modules/src/ms5611.c ****     TREF     = prom[4];
+  58:Modules/src/ms5611.c ****     TEMPSENS = prom[5];
+  59:Modules/src/ms5611.c **** 
+  60:Modules/src/ms5611.c ****     vTaskDelay(pdMS_TO_TICKS(10));
+  61:Modules/src/ms5611.c **** 
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s 			page 3
+
+
+  62:Modules/src/ms5611.c ****     return true;
+  63:Modules/src/ms5611.c **** }
+  55              		.loc 1 63 1 view .LVU5
+  56 0016 2846     		mov	r0, r5
+  57 0018 07B0     		add	sp, sp, #28
+  58              	.LCFI2:
+  59              		.cfi_remember_state
+  60              		.cfi_def_cfa_offset 12
+  61              		@ sp needed
+  62 001a 30BD     		pop	{r4, r5, pc}
+  63              	.L8:
+  64              	.LCFI3:
+  65              		.cfi_restore_state
+  66 001c 0446     		mov	r4, r0
+  31:Modules/src/ms5611.c ****     // I2C1Write(MS5611_ADDR, &command, 1);
+  67              		.loc 1 31 5 is_stmt 1 view .LVU6
+  31:Modules/src/ms5611.c ****     // I2C1Write(MS5611_ADDR, &command, 1);
+  68              		.loc 1 31 13 is_stmt 0 view .LVU7
+  69 001e 2A49     		ldr	r1, .L10+4
+  70 0020 1E23     		movs	r3, #30
+  71 0022 0B70     		strb	r3, [r1]
+  33:Modules/src/ms5611.c ****         return false;
+  72              		.loc 1 33 5 is_stmt 1 view .LVU8
+  33:Modules/src/ms5611.c ****         return false;
+  73              		.loc 1 33 10 is_stmt 0 view .LVU9
+  74 0024 0122     		movs	r2, #1
+  75 0026 EE20     		movs	r0, #238
+  76 0028 FFF7FEFF 		bl	I2C1Write
+  77              	.LVL1:
+  33:Modules/src/ms5611.c ****         return false;
+  78              		.loc 1 33 8 view .LVU10
+  79 002c 0546     		mov	r5, r0
+  80 002e 0028     		cmp	r0, #0
+  81 0030 F1D0     		beq	.L2
+  36:Modules/src/ms5611.c **** 
+  82              		.loc 1 36 5 is_stmt 1 view .LVU11
+  83 0032 0A20     		movs	r0, #10
+  84 0034 FFF7FEFF 		bl	vTaskDelay
+  85              	.LVL2:
+  41:Modules/src/ms5611.c ****     uint16_t prom[6];
+  86              		.loc 1 41 5 view .LVU12
+  41:Modules/src/ms5611.c ****     uint16_t prom[6];
+  87              		.loc 1 41 13 is_stmt 0 view .LVU13
+  88 0038 0023     		movs	r3, #0
+  89 003a ADF81430 		strh	r3, [sp, #20]	@ movhi
+  42:Modules/src/ms5611.c ****     for (uint8_t i = 0; i < 6; i++) {
+  90              		.loc 1 42 5 is_stmt 1 view .LVU14
+  43:Modules/src/ms5611.c ****         command = MS5611_PROM_C1 + i * 2;
+  91              		.loc 1 43 5 view .LVU15
+  92              	.LBB2:
+  43:Modules/src/ms5611.c ****         command = MS5611_PROM_C1 + i * 2;
+  93              		.loc 1 43 10 view .LVU16
+  94              	.LVL3:
+  95              	.L3:
+  43:Modules/src/ms5611.c ****         command = MS5611_PROM_C1 + i * 2;
+  96              		.loc 1 43 25 discriminator 1 view .LVU17
+  43:Modules/src/ms5611.c ****         command = MS5611_PROM_C1 + i * 2;
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s 			page 4
+
+
+  97              		.loc 1 43 5 is_stmt 0 discriminator 1 view .LVU18
+  98 003e 052C     		cmp	r4, #5
+  99 0040 1BD8     		bhi	.L9
+  44:Modules/src/ms5611.c ****         // I2C1MenRead(MS5611_ADDR, command, 1, prom_raw, 2);
+ 100              		.loc 1 44 9 is_stmt 1 view .LVU19
+  44:Modules/src/ms5611.c ****         // I2C1MenRead(MS5611_ADDR, command, 1, prom_raw, 2);
+ 101              		.loc 1 44 17 is_stmt 0 view .LVU20
+ 102 0042 04F15101 		add	r1, r4, #81
+ 103 0046 4900     		lsls	r1, r1, #1
+ 104 0048 C9B2     		uxtb	r1, r1
+ 105 004a 1F4B     		ldr	r3, .L10+4
+ 106 004c 1970     		strb	r1, [r3]
+  46:Modules/src/ms5611.c ****             return false;
+ 107              		.loc 1 46 9 is_stmt 1 view .LVU21
+  46:Modules/src/ms5611.c ****             return false;
+ 108              		.loc 1 46 14 is_stmt 0 view .LVU22
+ 109 004e 0223     		movs	r3, #2
+ 110 0050 0093     		str	r3, [sp]
+ 111 0052 05AB     		add	r3, sp, #20
+ 112 0054 0122     		movs	r2, #1
+ 113 0056 EE20     		movs	r0, #238
+ 114 0058 FFF7FEFF 		bl	I2C1MenRead
+ 115              	.LVL4:
+  46:Modules/src/ms5611.c ****             return false;
+ 116              		.loc 1 46 12 view .LVU23
+ 117 005c 78B3     		cbz	r0, .L6
+  49:Modules/src/ms5611.c ****         // printf("%u: %u\r\n", i, prom[i]);
+ 118              		.loc 1 49 9 is_stmt 1 discriminator 2 view .LVU24
+  49:Modules/src/ms5611.c ****         // printf("%u: %u\r\n", i, prom[i]);
+ 119              		.loc 1 49 37 is_stmt 0 discriminator 2 view .LVU25
+ 120 005e 9DF81420 		ldrb	r2, [sp, #20]	@ zero_extendqisi2
+  49:Modules/src/ms5611.c ****         // printf("%u: %u\r\n", i, prom[i]);
+ 121              		.loc 1 49 56 discriminator 2 view .LVU26
+ 122 0062 9DF81530 		ldrb	r3, [sp, #21]	@ zero_extendqisi2
+  49:Modules/src/ms5611.c ****         // printf("%u: %u\r\n", i, prom[i]);
+ 123              		.loc 1 49 19 discriminator 2 view .LVU27
+ 124 0066 43EA0223 		orr	r3, r3, r2, lsl #8
+  49:Modules/src/ms5611.c ****         // printf("%u: %u\r\n", i, prom[i]);
+ 125              		.loc 1 49 17 discriminator 2 view .LVU28
+ 126 006a 06AA     		add	r2, sp, #24
+ 127 006c 02EB4402 		add	r2, r2, r4, lsl #1
+ 128 0070 22F8103C 		strh	r3, [r2, #-16]	@ movhi
+  43:Modules/src/ms5611.c ****         command = MS5611_PROM_C1 + i * 2;
+ 129              		.loc 1 43 32 is_stmt 1 discriminator 2 view .LVU29
+  43:Modules/src/ms5611.c ****         command = MS5611_PROM_C1 + i * 2;
+ 130              		.loc 1 43 33 is_stmt 0 discriminator 2 view .LVU30
+ 131 0074 0134     		adds	r4, r4, #1
+ 132              	.LVL5:
+  43:Modules/src/ms5611.c ****         command = MS5611_PROM_C1 + i * 2;
+ 133              		.loc 1 43 33 discriminator 2 view .LVU31
+ 134 0076 E4B2     		uxtb	r4, r4
+ 135              	.LVL6:
+  43:Modules/src/ms5611.c ****         command = MS5611_PROM_C1 + i * 2;
+ 136              		.loc 1 43 33 discriminator 2 view .LVU32
+ 137 0078 E1E7     		b	.L3
+ 138              	.L9:
+  43:Modules/src/ms5611.c ****         command = MS5611_PROM_C1 + i * 2;
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s 			page 5
+
+
+ 139              		.loc 1 43 33 discriminator 2 view .LVU33
+ 140              	.LBE2:
+  53:Modules/src/ms5611.c ****     OFF_t2   = (int64_t)prom[1] << 16;
+ 141              		.loc 1 53 5 is_stmt 1 view .LVU34
+  53:Modules/src/ms5611.c ****     OFF_t2   = (int64_t)prom[1] << 16;
+ 142              		.loc 1 53 16 is_stmt 0 view .LVU35
+ 143 007a BDF80820 		ldrh	r2, [sp, #8]
+  53:Modules/src/ms5611.c ****     OFF_t2   = (int64_t)prom[1] << 16;
+ 144              		.loc 1 53 33 view .LVU36
+ 145 007e D203     		lsls	r2, r2, #15
+  53:Modules/src/ms5611.c ****     OFF_t2   = (int64_t)prom[1] << 16;
+ 146              		.loc 1 53 14 view .LVU37
+ 147 0080 124B     		ldr	r3, .L10+8
+ 148 0082 1A60     		str	r2, [r3]
+ 149 0084 0022     		movs	r2, #0
+ 150 0086 5A60     		str	r2, [r3, #4]
+  54:Modules/src/ms5611.c ****     TCS      = prom[2];
+ 151              		.loc 1 54 5 is_stmt 1 view .LVU38
+  54:Modules/src/ms5611.c ****     TCS      = prom[2];
+ 152              		.loc 1 54 16 is_stmt 0 view .LVU39
+ 153 0088 BDF80A20 		ldrh	r2, [sp, #10]
+  54:Modules/src/ms5611.c ****     TCS      = prom[2];
+ 154              		.loc 1 54 33 view .LVU40
+ 155 008c 1204     		lsls	r2, r2, #16
+  54:Modules/src/ms5611.c ****     TCS      = prom[2];
+ 156              		.loc 1 54 14 view .LVU41
+ 157 008e 104B     		ldr	r3, .L10+12
+ 158 0090 1A60     		str	r2, [r3]
+ 159 0092 0022     		movs	r2, #0
+ 160 0094 5A60     		str	r2, [r3, #4]
+  55:Modules/src/ms5611.c ****     TCO      = prom[3];
+ 161              		.loc 1 55 5 is_stmt 1 view .LVU42
+  55:Modules/src/ms5611.c ****     TCO      = prom[3];
+ 162              		.loc 1 55 20 is_stmt 0 view .LVU43
+ 163 0096 BDF80C20 		ldrh	r2, [sp, #12]
+  55:Modules/src/ms5611.c ****     TCO      = prom[3];
+ 164              		.loc 1 55 14 view .LVU44
+ 165 009a 0E4B     		ldr	r3, .L10+16
+ 166 009c 1A80     		strh	r2, [r3]	@ movhi
+  56:Modules/src/ms5611.c ****     TREF     = prom[4];
+ 167              		.loc 1 56 5 is_stmt 1 view .LVU45
+  56:Modules/src/ms5611.c ****     TREF     = prom[4];
+ 168              		.loc 1 56 20 is_stmt 0 view .LVU46
+ 169 009e BDF80E20 		ldrh	r2, [sp, #14]
+  56:Modules/src/ms5611.c ****     TREF     = prom[4];
+ 170              		.loc 1 56 14 view .LVU47
+ 171 00a2 0D4B     		ldr	r3, .L10+20
+ 172 00a4 1A80     		strh	r2, [r3]	@ movhi
+  57:Modules/src/ms5611.c ****     TEMPSENS = prom[5];
+ 173              		.loc 1 57 5 is_stmt 1 view .LVU48
+  57:Modules/src/ms5611.c ****     TEMPSENS = prom[5];
+ 174              		.loc 1 57 20 is_stmt 0 view .LVU49
+ 175 00a6 BDF81020 		ldrh	r2, [sp, #16]
+  57:Modules/src/ms5611.c ****     TEMPSENS = prom[5];
+ 176              		.loc 1 57 14 view .LVU50
+ 177 00aa 0C4B     		ldr	r3, .L10+24
+ 178 00ac 1A80     		strh	r2, [r3]	@ movhi
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s 			page 6
+
+
+  58:Modules/src/ms5611.c **** 
+ 179              		.loc 1 58 5 is_stmt 1 view .LVU51
+  58:Modules/src/ms5611.c **** 
+ 180              		.loc 1 58 20 is_stmt 0 view .LVU52
+ 181 00ae BDF81220 		ldrh	r2, [sp, #18]
+  58:Modules/src/ms5611.c **** 
+ 182              		.loc 1 58 14 view .LVU53
+ 183 00b2 0B4B     		ldr	r3, .L10+28
+ 184 00b4 1A80     		strh	r2, [r3]	@ movhi
   60:Modules/src/ms5611.c **** 
-  61:Modules/src/ms5611.c ****     // HAL_I2C_Mem_Read(&hi2c1, MS5611_ADDR, MS5611_PROM_C4, 1, prom_raw, 2, 1000);
-  62:Modules/src/ms5611.c ****     // printf("%u: %u\r\n", prom[0], prom[1]);
-  63:Modules/src/ms5611.c **** 
-  64:Modules/src/ms5611.c ****     // HAL_I2C_Mem_Read(&hi2c1, MS5611_ADDR, MS5611_PROM_C5, 1, prom_raw, 2, 1000);
-  65:Modules/src/ms5611.c ****     // printf("%u: %u\r\n", prom[0], prom[1]);
-  66:Modules/src/ms5611.c **** 
-  67:Modules/src/ms5611.c ****     // HAL_I2C_Mem_Read(&hi2c1, MS5611_ADDR, MS5611_PROM_C6, 1, prom_raw, 2, 1000);
-  68:Modules/src/ms5611.c ****     // printf("%u: %u\r\n", prom[0], prom[1]);
+ 185              		.loc 1 60 5 is_stmt 1 view .LVU54
+ 186 00b6 0A20     		movs	r0, #10
+ 187 00b8 FFF7FEFF 		bl	vTaskDelay
+ 188              	.LVL7:
+  62:Modules/src/ms5611.c **** }
+ 189              		.loc 1 62 5 view .LVU55
+  62:Modules/src/ms5611.c **** }
+ 190              		.loc 1 62 12 is_stmt 0 view .LVU56
+ 191 00bc ABE7     		b	.L2
+ 192              	.L6:
+ 193              	.LBB3:
+  47:Modules/src/ms5611.c ****         }
+ 194              		.loc 1 47 20 view .LVU57
+ 195 00be 0546     		mov	r5, r0
+ 196 00c0 A9E7     		b	.L2
+ 197              	.L11:
+ 198 00c2 00BF     		.align	2
+ 199              	.L10:
+ 200 00c4 00000000 		.word	hi2c1
+ 201 00c8 00000000 		.word	.LANCHOR0
+ 202 00cc 00000000 		.word	.LANCHOR1
+ 203 00d0 00000000 		.word	.LANCHOR2
+ 204 00d4 00000000 		.word	.LANCHOR3
+ 205 00d8 00000000 		.word	.LANCHOR4
+ 206 00dc 00000000 		.word	.LANCHOR5
+ 207 00e0 00000000 		.word	.LANCHOR6
+ 208              	.LBE3:
+ 209              		.cfi_endproc
+ 210              	.LFE138:
+ 212              		.section	.text.MS5611ReadRawTemp,"ax",%progbits
+ 213              		.align	1
+ 214              		.global	MS5611ReadRawTemp
+ 215              		.syntax unified
+ 216              		.thumb
+ 217              		.thumb_func
+ 218              		.fpu fpv4-sp-d16
+ 220              	MS5611ReadRawTemp:
+ 221              	.LVL8:
+ 222              	.LFB139:
+  64:Modules/src/ms5611.c **** 
+  65:Modules/src/ms5611.c **** void MS5611ReadRawTemp(uint32_t *value) {
+ 223              		.loc 1 65 41 is_stmt 1 view -0
+ 224              		.cfi_startproc
+ 225              		@ args = 0, pretend = 0, frame = 0
+ 226              		@ frame_needed = 0, uses_anonymous_args = 0
+ 227              		.loc 1 65 41 is_stmt 0 view .LVU59
+ 228 0000 38B5     		push	{r3, r4, r5, lr}
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s 			page 7
+
+
+ 229              	.LCFI4:
+ 230              		.cfi_def_cfa_offset 16
+ 231              		.cfi_offset 3, -16
+ 232              		.cfi_offset 4, -12
+ 233              		.cfi_offset 5, -8
+ 234              		.cfi_offset 14, -4
+ 235 0002 0546     		mov	r5, r0
+  66:Modules/src/ms5611.c ****     command = MS5611_D2_OSR_4096;
+ 236              		.loc 1 66 5 is_stmt 1 view .LVU60
+ 237              		.loc 1 66 13 is_stmt 0 view .LVU61
+ 238 0004 104C     		ldr	r4, .L14
+ 239 0006 5823     		movs	r3, #88
+ 240 0008 2370     		strb	r3, [r4]
+  67:Modules/src/ms5611.c ****     I2C1Write(MS5611_ADDR, &command, 1);
+ 241              		.loc 1 67 5 is_stmt 1 view .LVU62
+ 242 000a 0122     		movs	r2, #1
+ 243 000c 2146     		mov	r1, r4
+ 244 000e EE20     		movs	r0, #238
+ 245              	.LVL9:
+ 246              		.loc 1 67 5 is_stmt 0 view .LVU63
+ 247 0010 FFF7FEFF 		bl	I2C1Write
+ 248              	.LVL10:
+  68:Modules/src/ms5611.c ****     // if (!I2C1Write(MS5611_ADDR, &command, 1)) {return false;}
   69:Modules/src/ms5611.c **** 
-  70:Modules/src/ms5611.c ****     // if (!I2C1MenRead(MS5611_ADDR, MS5611_PROM_C2, 1, prom_raw, 2)) { printf("I2C1MenRead error\r
-  71:Modules/src/ms5611.c ****     // printf("%u: %u\r\n", prom[0], prom[1]);
-  72:Modules/src/ms5611.c **** 
-  73:Modules/src/ms5611.c ****     // if (!I2C1MenRead(MS5611_ADDR, MS5611_PROM_C3, 1, prom_raw, 2)) { printf("I2C1MenRead error\r
-  74:Modules/src/ms5611.c ****     // printf("%u: %u\r\n", prom[0], prom[1]);
-  75:Modules/src/ms5611.c **** 
-  76:Modules/src/ms5611.c **** 
+  70:Modules/src/ms5611.c ****     vTaskDelay(pdMS_TO_TICKS(MS5611_CONVERSION_OSR_4096));
+ 249              		.loc 1 70 5 is_stmt 1 view .LVU64
+ 250 0014 0A20     		movs	r0, #10
+ 251 0016 FFF7FEFF 		bl	vTaskDelay
+ 252              	.LVL11:
+  71:Modules/src/ms5611.c **** 
+  72:Modules/src/ms5611.c ****     command = MS5611_OSR_256;
+ 253              		.loc 1 72 5 view .LVU65
+ 254              		.loc 1 72 13 is_stmt 0 view .LVU66
+ 255 001a 0023     		movs	r3, #0
+ 256 001c 2370     		strb	r3, [r4]
+  73:Modules/src/ms5611.c ****     I2C1Write(MS5611_ADDR, &command, 1);
+ 257              		.loc 1 73 5 is_stmt 1 view .LVU67
+ 258 001e 0122     		movs	r2, #1
+ 259 0020 2146     		mov	r1, r4
+ 260 0022 EE20     		movs	r0, #238
+ 261 0024 FFF7FEFF 		bl	I2C1Write
+ 262              	.LVL12:
+  74:Modules/src/ms5611.c ****     I2C1Read(MS5611_ADDR, buffer, 3);
+ 263              		.loc 1 74 5 view .LVU68
+ 264 0028 084C     		ldr	r4, .L14+4
+ 265 002a 0322     		movs	r2, #3
+ 266 002c 2146     		mov	r1, r4
+ 267 002e EE20     		movs	r0, #238
+ 268 0030 FFF7FEFF 		bl	I2C1Read
+ 269              	.LVL13:
+  75:Modules/src/ms5611.c ****     // if (!I2C1Write(MS5611_ADDR, &command, 1)) { return false;}
+  76:Modules/src/ms5611.c ****     // if (!I2C1Read(MS5611_ADDR, buffer, 3)) { return false;}
   77:Modules/src/ms5611.c **** 
-  78:Modules/src/ms5611.c **** 
-  79:Modules/src/ms5611.c ****     return true;
-  80:Modules/src/ms5611.c **** }...
-  62              		.loc 1 80 1 view .LVU5
-  63 0016 2846     		mov	r0, r5
-  64 0018 05B0     		add	sp, sp, #20
-  65              	.LCFI2:
-  66              		.cfi_remember_state
-  67              		.cfi_def_cfa_offset 12
-  68              		@ sp needed
-  69 001a 30BD     		pop	{r4, r5, pc}
-  70              	.L8:
-  71              	.LCFI3:
-  72              		.cfi_restore_state
-  73 001c 0446     		mov	r4, r0
-  17:Modules/src/ms5611.c ****     uint8_t command = 0x1e;
-  74              		.loc 1 17 5 is_stmt 1 view .LVU6
-  17:Modules/src/ms5611.c ****     uint8_t command = 0x1e;
-  75              		.loc 1 17 13 is_stmt 0 view .LVU7
-  76 001e 1E23     		movs	r3, #30
-  77 0020 8DF80F30 		strb	r3, [sp, #15]
-  18:Modules/src/ms5611.c ****     if (!I2C1Write(MS5611_ADDR, &command, 1)) {return false; }
-  78              		.loc 1 18 5 is_stmt 1 view .LVU8
-  18:Modules/src/ms5611.c ****     if (!I2C1Write(MS5611_ADDR, &command, 1)) {return false; }
-  79              		.loc 1 18 10 is_stmt 0 view .LVU9
-  80 0024 0122     		movs	r2, #1
-  81 0026 0DF10F01 		add	r1, sp, #15
-  82 002a EE20     		movs	r0, #238
-  83 002c FFF7FEFF 		bl	I2C1Write
-  84              	.LVL1:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccD6DZJY.s 			page 4
+  78:Modules/src/ms5611.c ****     *value = (buffer[0] << 16) | (buffer[1] << 8) | buffer[2];
+ 270              		.loc 1 78 5 view .LVU69
+ 271              		.loc 1 78 21 is_stmt 0 view .LVU70
+ 272 0034 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s 			page 8
 
 
-  18:Modules/src/ms5611.c ****     if (!I2C1Write(MS5611_ADDR, &command, 1)) {return false; }
-  85              		.loc 1 18 8 view .LVU10
-  86 0030 0546     		mov	r5, r0
-  87 0032 0028     		cmp	r0, #0
-  88 0034 EFD0     		beq	.L2
-  19:Modules/src/ms5611.c **** 	vTaskDelay(pdMS_TO_TICKS(10));
-  89              		.loc 1 19 2 is_stmt 1 view .LVU11
-  90 0036 0A20     		movs	r0, #10
-  91 0038 FFF7FEFF 		bl	vTaskDelay
-  92              	.LVL2:
-  21:Modules/src/ms5611.c ****     printf("MS5611Init\r\n");
-  93              		.loc 1 21 5 view .LVU12
-  94 003c 1348     		ldr	r0, .L9+4
-  95 003e FFF7FEFF 		bl	puts
-  96              	.LVL3:
-  23:Modules/src/ms5611.c ****     uint8_t prom_raw[2] = {0};
-  97              		.loc 1 23 5 view .LVU13
-  23:Modules/src/ms5611.c ****     uint8_t prom_raw[2] = {0};
-  98              		.loc 1 23 13 is_stmt 0 view .LVU14
-  99 0042 0023     		movs	r3, #0
- 100 0044 ADF80C30 		strh	r3, [sp, #12]	@ movhi
-  24:Modules/src/ms5611.c ****     for(uint8_t i = 0; i < 6; i++) {
- 101              		.loc 1 24 5 is_stmt 1 view .LVU15
- 102              	.LBB2:
-  24:Modules/src/ms5611.c ****     for(uint8_t i = 0; i < 6; i++) {
- 103              		.loc 1 24 9 view .LVU16
- 104              	.LVL4:
- 105              	.L3:
-  24:Modules/src/ms5611.c ****     for(uint8_t i = 0; i < 6; i++) {
- 106              		.loc 1 24 24 discriminator 1 view .LVU17
-  24:Modules/src/ms5611.c ****     for(uint8_t i = 0; i < 6; i++) {
- 107              		.loc 1 24 5 is_stmt 0 discriminator 1 view .LVU18
- 108 0048 052C     		cmp	r4, #5
- 109 004a E4D8     		bhi	.L2
-  25:Modules/src/ms5611.c ****         command = MS5611_PROM_C1 + i * 2;
- 110              		.loc 1 25 9 is_stmt 1 view .LVU19
-  25:Modules/src/ms5611.c ****         command = MS5611_PROM_C1 + i * 2;
- 111              		.loc 1 25 17 is_stmt 0 view .LVU20
- 112 004c 04F15101 		add	r1, r4, #81
- 113 0050 4900     		lsls	r1, r1, #1
- 114 0052 C9B2     		uxtb	r1, r1
- 115 0054 8DF80F10 		strb	r1, [sp, #15]
-  26:Modules/src/ms5611.c ****         if (!I2C1MenRead(MS5611_ADDR, command, 1, prom_raw, 2)) {return false;}
- 116              		.loc 1 26 9 is_stmt 1 view .LVU21
-  26:Modules/src/ms5611.c ****         if (!I2C1MenRead(MS5611_ADDR, command, 1, prom_raw, 2)) {return false;}
- 117              		.loc 1 26 14 is_stmt 0 view .LVU22
- 118 0058 0223     		movs	r3, #2
- 119 005a 0093     		str	r3, [sp]
- 120 005c 03AB     		add	r3, sp, #12
- 121 005e 0122     		movs	r2, #1
- 122 0060 EE20     		movs	r0, #238
- 123 0062 FFF7FEFF 		bl	I2C1MenRead
- 124              	.LVL5:
-  26:Modules/src/ms5611.c ****         if (!I2C1MenRead(MS5611_ADDR, command, 1, prom_raw, 2)) {return false;}
- 125              		.loc 1 26 12 view .LVU23
- 126 0066 60B1     		cbz	r0, .L6
-  27:Modules/src/ms5611.c ****         prom[i] = (int16_t)(prom_raw[0] << 8 | prom_raw[1]);
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccD6DZJY.s 			page 5
+ 273              		.loc 1 78 41 view .LVU71
+ 274 0036 6378     		ldrb	r3, [r4, #1]	@ zero_extendqisi2
+ 275              		.loc 1 78 45 view .LVU72
+ 276 0038 1B02     		lsls	r3, r3, #8
+ 277              		.loc 1 78 32 view .LVU73
+ 278 003a 43EA0243 		orr	r3, r3, r2, lsl #16
+ 279              		.loc 1 78 59 view .LVU74
+ 280 003e A278     		ldrb	r2, [r4, #2]	@ zero_extendqisi2
+ 281              		.loc 1 78 51 view .LVU75
+ 282 0040 1343     		orrs	r3, r3, r2
+ 283              		.loc 1 78 12 view .LVU76
+ 284 0042 2B60     		str	r3, [r5]
+  79:Modules/src/ms5611.c **** }
+ 285              		.loc 1 79 1 view .LVU77
+ 286 0044 38BD     		pop	{r3, r4, r5, pc}
+ 287              	.LVL14:
+ 288              	.L15:
+ 289              		.loc 1 79 1 view .LVU78
+ 290 0046 00BF     		.align	2
+ 291              	.L14:
+ 292 0048 00000000 		.word	.LANCHOR0
+ 293 004c 00000000 		.word	.LANCHOR7
+ 294              		.cfi_endproc
+ 295              	.LFE139:
+ 297              		.section	.text.MS5611ReadRawPress,"ax",%progbits
+ 298              		.align	1
+ 299              		.global	MS5611ReadRawPress
+ 300              		.syntax unified
+ 301              		.thumb
+ 302              		.thumb_func
+ 303              		.fpu fpv4-sp-d16
+ 305              	MS5611ReadRawPress:
+ 306              	.LVL15:
+ 307              	.LFB140:
+  80:Modules/src/ms5611.c **** 
+  81:Modules/src/ms5611.c **** void MS5611ReadRawPress(uint32_t *value) {
+ 308              		.loc 1 81 42 is_stmt 1 view -0
+ 309              		.cfi_startproc
+ 310              		@ args = 0, pretend = 0, frame = 0
+ 311              		@ frame_needed = 0, uses_anonymous_args = 0
+ 312              		.loc 1 81 42 is_stmt 0 view .LVU80
+ 313 0000 38B5     		push	{r3, r4, r5, lr}
+ 314              	.LCFI5:
+ 315              		.cfi_def_cfa_offset 16
+ 316              		.cfi_offset 3, -16
+ 317              		.cfi_offset 4, -12
+ 318              		.cfi_offset 5, -8
+ 319              		.cfi_offset 14, -4
+ 320 0002 0546     		mov	r5, r0
+  82:Modules/src/ms5611.c ****     command = MS5611_D1_OSR_4096;
+ 321              		.loc 1 82 5 is_stmt 1 view .LVU81
+ 322              		.loc 1 82 13 is_stmt 0 view .LVU82
+ 323 0004 104C     		ldr	r4, .L18
+ 324 0006 4823     		movs	r3, #72
+ 325 0008 2370     		strb	r3, [r4]
+  83:Modules/src/ms5611.c ****     I2C1Write(MS5611_ADDR, &command, 1);
+ 326              		.loc 1 83 5 is_stmt 1 view .LVU83
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s 			page 9
 
 
- 127              		.loc 1 27 9 is_stmt 1 discriminator 2 view .LVU24
-  27:Modules/src/ms5611.c ****         prom[i] = (int16_t)(prom_raw[0] << 8 | prom_raw[1]);
- 128              		.loc 1 27 37 is_stmt 0 discriminator 2 view .LVU25
- 129 0068 9DF80C20 		ldrb	r2, [sp, #12]	@ zero_extendqisi2
-  27:Modules/src/ms5611.c ****         prom[i] = (int16_t)(prom_raw[0] << 8 | prom_raw[1]);
- 130              		.loc 1 27 56 discriminator 2 view .LVU26
- 131 006c 9DF80D30 		ldrb	r3, [sp, #13]	@ zero_extendqisi2
-  28:Modules/src/ms5611.c ****         printf("%u: %u\r\n", i, prom[i]);
- 132              		.loc 1 28 9 is_stmt 1 discriminator 2 view .LVU27
- 133 0070 43EA0222 		orr	r2, r3, r2, lsl #8
- 134 0074 2146     		mov	r1, r4
- 135 0076 0648     		ldr	r0, .L9+8
- 136 0078 FFF7FEFF 		bl	printf
- 137              	.LVL6:
-  24:Modules/src/ms5611.c ****     for(uint8_t i = 0; i < 6; i++) {
- 138              		.loc 1 24 31 discriminator 2 view .LVU28
-  24:Modules/src/ms5611.c ****     for(uint8_t i = 0; i < 6; i++) {
- 139              		.loc 1 24 32 is_stmt 0 discriminator 2 view .LVU29
- 140 007c 0134     		adds	r4, r4, #1
- 141              	.LVL7:
-  24:Modules/src/ms5611.c ****     for(uint8_t i = 0; i < 6; i++) {
- 142              		.loc 1 24 32 discriminator 2 view .LVU30
- 143 007e E4B2     		uxtb	r4, r4
- 144              	.LVL8:
-  24:Modules/src/ms5611.c ****     for(uint8_t i = 0; i < 6; i++) {
- 145              		.loc 1 24 32 discriminator 2 view .LVU31
- 146 0080 E2E7     		b	.L3
- 147              	.L6:
-  26:Modules/src/ms5611.c ****         if (!I2C1MenRead(MS5611_ADDR, command, 1, prom_raw, 2)) {return false;}
- 148              		.loc 1 26 73 view .LVU32
- 149 0082 0546     		mov	r5, r0
- 150 0084 C7E7     		b	.L2
- 151              	.L10:
- 152 0086 00BF     		.align	2
- 153              	.L9:
- 154 0088 00000000 		.word	hi2c1
- 155 008c 00000000 		.word	.LC0
- 156 0090 0C000000 		.word	.LC1
- 157              	.LBE2:
- 158              		.cfi_endproc
- 159              	.LFE138:
- 161              		.text
- 162              	.Letext0:
- 163              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
- 164              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
- 165              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
- 166              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 167              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
- 168              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 169              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 170              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
- 171              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 172              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 173              		.file 12 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
- 174              		.file 13 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
- 175              		.file 14 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
- 176              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccD6DZJY.s 			page 6
+ 327 000a 0122     		movs	r2, #1
+ 328 000c 2146     		mov	r1, r4
+ 329 000e EE20     		movs	r0, #238
+ 330              	.LVL16:
+ 331              		.loc 1 83 5 is_stmt 0 view .LVU84
+ 332 0010 FFF7FEFF 		bl	I2C1Write
+ 333              	.LVL17:
+  84:Modules/src/ms5611.c **** 
+  85:Modules/src/ms5611.c ****     vTaskDelay(pdMS_TO_TICKS(MS5611_CONVERSION_OSR_4096));
+ 334              		.loc 1 85 5 is_stmt 1 view .LVU85
+ 335 0014 0A20     		movs	r0, #10
+ 336 0016 FFF7FEFF 		bl	vTaskDelay
+ 337              	.LVL18:
+  86:Modules/src/ms5611.c **** 
+  87:Modules/src/ms5611.c ****     command = MS5611_OSR_256;
+ 338              		.loc 1 87 5 view .LVU86
+ 339              		.loc 1 87 13 is_stmt 0 view .LVU87
+ 340 001a 0023     		movs	r3, #0
+ 341 001c 2370     		strb	r3, [r4]
+  88:Modules/src/ms5611.c ****     I2C1Write(MS5611_ADDR, &command, 1);
+ 342              		.loc 1 88 5 is_stmt 1 view .LVU88
+ 343 001e 0122     		movs	r2, #1
+ 344 0020 2146     		mov	r1, r4
+ 345 0022 EE20     		movs	r0, #238
+ 346 0024 FFF7FEFF 		bl	I2C1Write
+ 347              	.LVL19:
+  89:Modules/src/ms5611.c ****     I2C1Read(MS5611_ADDR, buffer, 3);
+ 348              		.loc 1 89 5 view .LVU89
+ 349 0028 084C     		ldr	r4, .L18+4
+ 350 002a 0322     		movs	r2, #3
+ 351 002c 2146     		mov	r1, r4
+ 352 002e EE20     		movs	r0, #238
+ 353 0030 FFF7FEFF 		bl	I2C1Read
+ 354              	.LVL20:
+  90:Modules/src/ms5611.c **** 
+  91:Modules/src/ms5611.c ****     *value = (buffer[0] << 16) | (buffer[1] << 8) | buffer[2];
+ 355              		.loc 1 91 5 view .LVU90
+ 356              		.loc 1 91 21 is_stmt 0 view .LVU91
+ 357 0034 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
+ 358              		.loc 1 91 41 view .LVU92
+ 359 0036 6378     		ldrb	r3, [r4, #1]	@ zero_extendqisi2
+ 360              		.loc 1 91 45 view .LVU93
+ 361 0038 1B02     		lsls	r3, r3, #8
+ 362              		.loc 1 91 32 view .LVU94
+ 363 003a 43EA0243 		orr	r3, r3, r2, lsl #16
+ 364              		.loc 1 91 59 view .LVU95
+ 365 003e A278     		ldrb	r2, [r4, #2]	@ zero_extendqisi2
+ 366              		.loc 1 91 51 view .LVU96
+ 367 0040 1343     		orrs	r3, r3, r2
+ 368              		.loc 1 91 12 view .LVU97
+ 369 0042 2B60     		str	r3, [r5]
+  92:Modules/src/ms5611.c **** }
+ 370              		.loc 1 92 1 view .LVU98
+ 371 0044 38BD     		pop	{r3, r4, r5, pc}
+ 372              	.LVL21:
+ 373              	.L19:
+ 374              		.loc 1 92 1 view .LVU99
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s 			page 10
 
 
- 177              		.file 16 "Modules/include/utils.h"
- 178              		.file 17 "Inc/i2c.h"
- 179              		.file 18 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
- 180              		.file 19 "Modules/include/i2c1.h"
- 181              		.file 20 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\stdio.h"
- 182              		.file 21 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
- 183              		.file 22 "<built-in>"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccD6DZJY.s 			page 7
+ 375 0046 00BF     		.align	2
+ 376              	.L18:
+ 377 0048 00000000 		.word	.LANCHOR0
+ 378 004c 00000000 		.word	.LANCHOR7
+ 379              		.cfi_endproc
+ 380              	.LFE140:
+ 382              		.global	__aeabi_f2d
+ 383              		.global	__aeabi_dsub
+ 384              		.global	__aeabi_dmul
+ 385              		.global	__aeabi_d2f
+ 386              		.section	.text.MS5611Calculate,"ax",%progbits
+ 387              		.align	1
+ 388              		.global	MS5611Calculate
+ 389              		.syntax unified
+ 390              		.thumb
+ 391              		.thumb_func
+ 392              		.fpu fpv4-sp-d16
+ 394              	MS5611Calculate:
+ 395              	.LFB141:
+  93:Modules/src/ms5611.c **** 
+  94:Modules/src/ms5611.c **** void MS5611Calculate(void) {
+ 396              		.loc 1 94 28 is_stmt 1 view -0
+ 397              		.cfi_startproc
+ 398              		@ args = 0, pretend = 0, frame = 16
+ 399              		@ frame_needed = 0, uses_anonymous_args = 0
+ 400 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 401              	.LCFI6:
+ 402              		.cfi_def_cfa_offset 36
+ 403              		.cfi_offset 4, -36
+ 404              		.cfi_offset 5, -32
+ 405              		.cfi_offset 6, -28
+ 406              		.cfi_offset 7, -24
+ 407              		.cfi_offset 8, -20
+ 408              		.cfi_offset 9, -16
+ 409              		.cfi_offset 10, -12
+ 410              		.cfi_offset 11, -8
+ 411              		.cfi_offset 14, -4
+ 412 0004 85B0     		sub	sp, sp, #20
+ 413              	.LCFI7:
+ 414              		.cfi_def_cfa_offset 56
+  95:Modules/src/ms5611.c ****     int32_t dT;
+ 415              		.loc 1 95 5 view .LVU101
+  96:Modules/src/ms5611.c ****     int64_t TEMP, OFF, SENS;
+ 416              		.loc 1 96 5 view .LVU102
+  97:Modules/src/ms5611.c ****     uint32_t D1, D2;
+ 417              		.loc 1 97 5 view .LVU103
+  98:Modules/src/ms5611.c **** 
+  99:Modules/src/ms5611.c ****     MS5611ReadRawPress(&D1);
+ 418              		.loc 1 99 5 view .LVU104
+ 419 0006 03A8     		add	r0, sp, #12
+ 420 0008 FFF7FEFF 		bl	MS5611ReadRawPress
+ 421              	.LVL22:
+ 100:Modules/src/ms5611.c ****     MS5611ReadRawTemp(&D2);
+ 422              		.loc 1 100 5 view .LVU105
+ 423 000c 02A8     		add	r0, sp, #8
+ 424 000e FFF7FEFF 		bl	MS5611ReadRawTemp
+ 425              	.LVL23:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s 			page 11
+
+
+ 101:Modules/src/ms5611.c **** 
+ 102:Modules/src/ms5611.c ****     dT   = D2 - ((int32_t)TREF << 8);                         //实际和参考温度之间的差
+ 426              		.loc 1 102 5 view .LVU106
+ 427              		.loc 1 102 18 is_stmt 0 view .LVU107
+ 428 0012 6D4B     		ldr	r3, .L24+16
+ 429 0014 1B88     		ldrh	r3, [r3]
+ 430              		.loc 1 102 15 view .LVU108
+ 431 0016 0298     		ldr	r0, [sp, #8]
+ 432 0018 A0EB0320 		sub	r0, r0, r3, lsl #8
+ 433              	.LVL24:
+ 103:Modules/src/ms5611.c ****     TEMP = 2000 + (((int64_t)dT * (int64_t)TEMPSENS) >> 23);  //实际温度
+ 434              		.loc 1 103 5 is_stmt 1 view .LVU109
+ 435              		.loc 1 103 21 is_stmt 0 view .LVU110
+ 436 001c 4FEAE079 		asr	r9, r0, #31
+ 437              		.loc 1 103 35 view .LVU111
+ 438 0020 6A4B     		ldr	r3, .L24+20
+ 439 0022 1A88     		ldrh	r2, [r3]
+ 440              		.loc 1 103 33 view .LVU112
+ 441 0024 A0FB0267 		umull	r6, r7, r0, r2
+ 442 0028 02FB0977 		mla	r7, r2, r9, r7
+ 443              		.loc 1 103 54 view .LVU113
+ 444 002c F30D     		lsrs	r3, r6, #23
+ 445 002e 43EA4723 		orr	r3, r3, r7, lsl #9
+ 446 0032 4FEAE75C 		asr	ip, r7, #23
+ 447              		.loc 1 103 10 view .LVU114
+ 448 0036 13F5FA64 		adds	r4, r3, #2000
+ 449 003a 4CF10005 		adc	r5, ip, #0
+ 450              	.LVL25:
+ 104:Modules/src/ms5611.c ****     OFF  = OFF_t2 + (((int64_t)TCO * (int64_t)dT) >> 7);      //实际温度的零偏
+ 451              		.loc 1 104 5 is_stmt 1 view .LVU115
+ 452              		.loc 1 104 23 is_stmt 0 view .LVU116
+ 453 003e 644A     		ldr	r2, .L24+24
+ 454 0040 B2F800A0 		ldrh	r10, [r2]
+ 455              		.loc 1 104 36 view .LVU117
+ 456 0044 A0FB0A67 		umull	r6, r7, r0, r10
+ 457 0048 0AFB0977 		mla	r7, r10, r9, r7
+ 458              		.loc 1 104 51 view .LVU118
+ 459 004c F209     		lsrs	r2, r6, #7
+ 460 004e 42EA4762 		orr	r2, r2, r7, lsl #25
+ 461 0052 4FEAE71E 		asr	lr, r7, #7
+ 462              		.loc 1 104 19 view .LVU119
+ 463 0056 5F4E     		ldr	r6, .L24+28
+ 464 0058 3168     		ldr	r1, [r6]
+ 465 005a 7668     		ldr	r6, [r6, #4]
+ 466              		.loc 1 104 10 view .LVU120
+ 467 005c 5218     		adds	r2, r2, r1
+ 468 005e 4EEB060E 		adc	lr, lr, r6
+ 469              	.LVL26:
+ 105:Modules/src/ms5611.c ****     SENS = SENS_t2 + (((int64_t)TCS * (int64_t)dT) >> 8);     //实际温度的灵敏度
+ 470              		.loc 1 105 5 is_stmt 1 view .LVU121
+ 471              		.loc 1 105 24 is_stmt 0 view .LVU122
+ 472 0062 5D49     		ldr	r1, .L24+32
+ 473 0064 0E88     		ldrh	r6, [r1]
+ 474              		.loc 1 105 37 view .LVU123
+ 475 0066 A0FB0601 		umull	r0, r1, r0, r6
+ 476              	.LVL27:
+ 477              		.loc 1 105 37 view .LVU124
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s 			page 12
+
+
+ 478 006a 06FB0911 		mla	r1, r6, r9, r1
+ 479              		.loc 1 105 52 view .LVU125
+ 480 006e 060A     		lsrs	r6, r0, #8
+ 481 0070 46EA0166 		orr	r6, r6, r1, lsl #24
+ 482 0074 0F12     		asrs	r7, r1, #8
+ 483              		.loc 1 105 20 view .LVU126
+ 484 0076 5948     		ldr	r0, .L24+36
+ 485 0078 0168     		ldr	r1, [r0]
+ 486 007a 4068     		ldr	r0, [r0, #4]
+ 487              		.loc 1 105 10 view .LVU127
+ 488 007c 7618     		adds	r6, r6, r1
+ 489 007e 40EB0707 		adc	r7, r0, r7
+ 490              	.LVL28:
+ 106:Modules/src/ms5611.c **** 
+ 107:Modules/src/ms5611.c ****     //二阶温度补偿参考MS5611数据手册的第9页
+ 108:Modules/src/ms5611.c ****     if (TEMP < 2000) {  //当温度小于20°时二阶温度补偿
+ 491              		.loc 1 108 5 is_stmt 1 view .LVU128
+ 492              		.loc 1 108 8 is_stmt 0 view .LVU129
+ 493 0082 B4F5FA6F 		cmp	r4, #2000
+ 494 0086 75F10001 		sbcs	r1, r5, #0
+ 495 008a 5FDA     		bge	.L21
+ 496              	.LBB4:
+ 109:Modules/src/ms5611.c ****         int64_t T2    = ((int64_t)dT * (int64_t)dT) >> 31;
+ 497              		.loc 1 109 9 is_stmt 1 view .LVU130
+ 498              	.LVL29:
+ 110:Modules/src/ms5611.c ****         int64_t OFF2  = (5 * (TEMP - 2000) * (TEMP - 2000)) >> 1;
+ 499              		.loc 1 110 9 view .LVU131
+ 500              		.loc 1 110 44 is_stmt 0 view .LVU132
+ 501 008c 03FB0CF8 		mul	r8, r3, ip
+ 502 0090 A3FB0301 		umull	r0, r1, r3, r3
+ 503 0094 CDE90001 		strd	r0, [sp]
+ 504 0098 01EB4801 		add	r1, r1, r8, lsl #1
+ 505 009c 0191     		str	r1, [sp, #4]
+ 506 009e 4FEA810A 		lsl	r10, r1, #2
+ 507 00a2 0099     		ldr	r1, [sp]
+ 508 00a4 4FEA8109 		lsl	r9, r1, #2
+ 509 00a8 4AEA9178 		orr	r8, r10, r1, lsr #30
+ 510 00ac DDE900AB 		ldrd	r10, [sp]
+ 511 00b0 19EB0A00 		adds	r0, r9, r10
+ 512 00b4 48EB0B01 		adc	r1, r8, fp
+ 513              		.loc 1 110 17 view .LVU133
+ 514 00b8 4FEA5009 		lsr	r9, r0, #1
+ 515 00bc 49EAC179 		orr	r9, r9, r1, lsl #31
+ 516 00c0 4FEA610A 		asr	r10, r1, #1
+ 517              	.LVL30:
+ 111:Modules/src/ms5611.c ****         int64_t SENS2 = OFF2 >> 1;
+ 518              		.loc 1 111 9 is_stmt 1 view .LVU134
+ 519              		.loc 1 111 17 is_stmt 0 view .LVU135
+ 520 00c4 4FEA9008 		lsr	r8, r0, #2
+ 521 00c8 48EA8178 		orr	r8, r8, r1, lsl #30
+ 522 00cc 4FEAA10B 		asr	fp, r1, #2
+ 523              	.LVL31:
+ 112:Modules/src/ms5611.c ****         if (TEMP < -1500)  //当温度小于-15°时
+ 524              		.loc 1 112 9 is_stmt 1 view .LVU136
+ 525              		.loc 1 112 12 is_stmt 0 view .LVU137
+ 526 00d0 4348     		ldr	r0, .L24+40
+ 527 00d2 4FF0FF31 		mov	r1, #-1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s 			page 13
+
+
+ 528 00d6 8442     		cmp	r4, r0
+ 529 00d8 75EB0101 		sbcs	r1, r5, r1
+ 530 00dc 2EDA     		bge	.L22
+ 113:Modules/src/ms5611.c ****         {
+ 114:Modules/src/ms5611.c ****             OFF2 += 7 * (TEMP + 1500) * (TEMP + 1500);
+ 531              		.loc 1 114 13 is_stmt 1 view .LVU138
+ 532              		.loc 1 114 31 is_stmt 0 view .LVU139
+ 533 00de 40F6AC50 		movw	r0, #3500
+ 534 00e2 1818     		adds	r0, r3, r0
+ 535 00e4 4FF00003 		mov	r3, #0
+ 536              	.LVL32:
+ 537              		.loc 1 114 31 view .LVU140
+ 538 00e8 4CEB030C 		adc	ip, ip, r3
+ 539              	.LVL33:
+ 540              		.loc 1 114 39 view .LVU141
+ 541 00ec 00FB0CFC 		mul	ip, r0, ip
+ 542 00f0 A0FB0001 		umull	r0, r1, r0, r0
+ 543              		.loc 1 114 39 view .LVU142
+ 544 00f4 01EB4C01 		add	r1, r1, ip, lsl #1
+ 545 00f8 CD00     		lsls	r5, r1, #3
+ 546 00fa C300     		lsls	r3, r0, #3
+ 547 00fc 45EA5074 		orr	r4, r5, r0, lsr #29
+ 548              		.loc 1 114 39 view .LVU143
+ 549 0100 1B1A     		subs	r3, r3, r0
+ 550 0102 64EB0104 		sbc	r4, r4, r1
+ 551              		.loc 1 114 18 view .LVU144
+ 552 0106 19EB0309 		adds	r9, r9, r3
+ 553              	.LVL34:
+ 554              		.loc 1 114 18 view .LVU145
+ 555 010a 4AEB040A 		adc	r10, r10, r4
+ 556              	.LVL35:
+ 115:Modules/src/ms5611.c ****             SENS2 += (11 * (TEMP + 1500) * (TEMP + 1500)) >> 1;
+ 557              		.loc 1 115 13 is_stmt 1 view .LVU146
+ 558              		.loc 1 115 42 is_stmt 0 view .LVU147
+ 559 010e 0318     		adds	r3, r0, r0
+ 560 0110 41EB0105 		adc	r5, r1, r1
+ 561 0114 1B18     		adds	r3, r3, r0
+ 562 0116 41EB0505 		adc	r5, r1, r5
+ 563 011a AC00     		lsls	r4, r5, #2
+ 564 011c 44EA9374 		orr	r4, r4, r3, lsr #30
+ 565 0120 4FEA830C 		lsl	ip, r3, #2
+ 566 0124 BCEB0003 		subs	r3, ip, r0
+ 567 0128 64EB0101 		sbc	r1, r4, r1
+ 568              		.loc 1 115 59 view .LVU148
+ 569 012c 5808     		lsrs	r0, r3, #1
+ 570 012e 40EAC170 		orr	r0, r0, r1, lsl #31
+ 571 0132 4C10     		asrs	r4, r1, #1
+ 572              		.loc 1 115 19 view .LVU149
+ 573 0134 18EB0008 		adds	r8, r8, r0
+ 574              	.LVL36:
+ 575              		.loc 1 115 19 view .LVU150
+ 576 0138 4BEB040B 		adc	fp, fp, r4
+ 577              	.LVL37:
+ 578              	.L22:
+ 116:Modules/src/ms5611.c ****         }
+ 117:Modules/src/ms5611.c ****         TEMP -= T2;
+ 579              		.loc 1 117 9 is_stmt 1 view .LVU151
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s 			page 14
+
+
+ 118:Modules/src/ms5611.c ****         OFF -= OFF2;
+ 580              		.loc 1 118 9 view .LVU152
+ 581              		.loc 1 118 13 is_stmt 0 view .LVU153
+ 582 013c B2EB0902 		subs	r2, r2, r9
+ 583              	.LVL38:
+ 584              		.loc 1 118 13 view .LVU154
+ 585 0140 6EEB0A0E 		sbc	lr, lr, r10
+ 586              	.LVL39:
+ 119:Modules/src/ms5611.c ****         SENS -= SENS2;
+ 587              		.loc 1 119 9 is_stmt 1 view .LVU155
+ 588              		.loc 1 119 14 is_stmt 0 view .LVU156
+ 589 0144 B6EB0806 		subs	r6, r6, r8
+ 590              	.LVL40:
+ 591              		.loc 1 119 14 view .LVU157
+ 592 0148 67EB0B07 		sbc	r7, r7, fp
+ 593              	.LVL41:
+ 594              	.L21:
+ 595              		.loc 1 119 14 view .LVU158
+ 596              	.LBE4:
+ 120:Modules/src/ms5611.c ****     }
+ 121:Modules/src/ms5611.c **** 
+ 122:Modules/src/ms5611.c ****     temperature = TEMP;
+ 597              		.loc 1 122 5 is_stmt 1 view .LVU159
+ 123:Modules/src/ms5611.c ****     pressure    = (((D1 * SENS) >> 21) - OFF) >> 15;  //单位为Pa
+ 598              		.loc 1 123 5 view .LVU160
+ 599              		.loc 1 123 25 is_stmt 0 view .LVU161
+ 600 014c 039B     		ldr	r3, [sp, #12]
+ 601 014e A3FB0601 		umull	r0, r1, r3, r6
+ 602 0152 03FB0711 		mla	r1, r3, r7, r1
+ 603              		.loc 1 123 33 view .LVU162
+ 604 0156 430D     		lsrs	r3, r0, #21
+ 605 0158 43EAC123 		orr	r3, r3, r1, lsl #11
+ 606 015c 4C15     		asrs	r4, r1, #21
+ 607              		.loc 1 123 40 view .LVU163
+ 608 015e 9A1A     		subs	r2, r3, r2
+ 609              	.LVL42:
+ 610              		.loc 1 123 40 view .LVU164
+ 611 0160 64EB0E0E 		sbc	lr, r4, lr
+ 612              		.loc 1 123 47 view .LVU165
+ 613 0164 D20B     		lsrs	r2, r2, #15
+ 614 0166 42EA4E42 		orr	r2, r2, lr, lsl #17
+ 124:Modules/src/ms5611.c **** 
+ 125:Modules/src/ms5611.c ****     // alt_3 = (101000 - pressure)/1000.0f;
+ 126:Modules/src/ms5611.c **** 
+ 127:Modules/src/ms5611.c ****     // press    = (float)pressure;
+ 128:Modules/src/ms5611.c ****     // r        = press / 101325.0;
+ 129:Modules/src/ms5611.c ****     // c        = 1.0 / 5.255;
+ 130:Modules/src/ms5611.c ****     // altitude = (1 - pow(r, c)) * 44330.77;
+ 131:Modules/src/ms5611.c **** 
+ 132:Modules/src/ms5611.c ****     // alt = 44330.0f * (1.0f - pow((P/1011.6), 0.190295f));
+ 133:Modules/src/ms5611.c **** 
+ 134:Modules/src/ms5611.c ****     // float temperature_K,presure_Pa,altitude_m;
+ 135:Modules/src/ms5611.c **** 	// uint32_t ms5611_ground_pressure = 102365U;
+ 136:Modules/src/ms5611.c **** 	// temperature_K = get_temperature() + 273.15f;
+ 137:Modules/src/ms5611.c **** 	// presure_Pa = get_Pressure(); 
+ 138:Modules/src/ms5611.c **** 	// altitude_m = 153.8462f * temperature_K * (1.0f - expf(0.190259f * logf(presure_Pa/ms5611_ground
+ 139:Modules/src/ms5611.c **** 
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s 			page 15
+
+
+ 140:Modules/src/ms5611.c **** 	altitude = 44330.77f * (1.0f - pow((pressure/101325.0f), 0.1902632f));
+ 615              		.loc 1 140 2 is_stmt 1 view .LVU166
+ 616              		.loc 1 140 46 is_stmt 0 view .LVU167
+ 617 016a 07EE902A 		vmov	s15, r2	@ int
+ 618 016e F8EEE77A 		vcvt.f32.s32	s15, s15
+ 619              		.loc 1 140 33 view .LVU168
+ 620 0172 9FED1C7A 		vldr.32	s14, .L24+44
+ 621 0176 C7EE877A 		vdiv.f32	s15, s15, s14
+ 622 017a 17EE900A 		vmov	r0, s15
+ 623 017e FFF7FEFF 		bl	__aeabi_f2d
+ 624              	.LVL43:
+ 625              		.loc 1 140 33 view .LVU169
+ 626 0182 9FED0D1B 		vldr.64	d1, .L24
+ 627 0186 41EC100B 		vmov	d0, r0, r1
+ 628 018a FFF7FEFF 		bl	pow
+ 629              	.LVL44:
+ 630 018e 53EC102B 		vmov	r2, r3, d0
+ 631              		.loc 1 140 31 view .LVU170
+ 632 0192 0020     		movs	r0, #0
+ 633 0194 1449     		ldr	r1, .L24+48
+ 634 0196 FFF7FEFF 		bl	__aeabi_dsub
+ 635              	.LVL45:
+ 636              		.loc 1 140 23 view .LVU171
+ 637 019a 09A3     		adr	r3, .L24+8
+ 638 019c D3E90023 		ldrd	r2, [r3]
+ 639 01a0 FFF7FEFF 		bl	__aeabi_dmul
+ 640              	.LVL46:
+ 641 01a4 FFF7FEFF 		bl	__aeabi_d2f
+ 642              	.LVL47:
+ 643              		.loc 1 140 11 view .LVU172
+ 644 01a8 104B     		ldr	r3, .L24+52
+ 645 01aa 1860     		str	r0, [r3]	@ float
+ 141:Modules/src/ms5611.c **** 
+ 142:Modules/src/ms5611.c **** }
+ 646              		.loc 1 142 1 view .LVU173
+ 647 01ac 05B0     		add	sp, sp, #20
+ 648              	.LCFI8:
+ 649              		.cfi_def_cfa_offset 36
+ 650              		@ sp needed
+ 651 01ae BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 652              	.LVL48:
+ 653              	.L25:
+ 654              		.loc 1 142 1 view .LVU174
+ 655 01b2 00BFAFF3 		.align	3
+ 655      0080
+ 656              	.L24:
+ 657 01b8 00000060 		.word	1610612736
+ 658 01bc 8B5AC83F 		.word	1070094987
+ 659 01c0 000000A0 		.word	-1610612736
+ 660 01c4 58A5E540 		.word	1088791896
+ 661 01c8 00000000 		.word	.LANCHOR5
+ 662 01cc 00000000 		.word	.LANCHOR6
+ 663 01d0 00000000 		.word	.LANCHOR4
+ 664 01d4 00000000 		.word	.LANCHOR2
+ 665 01d8 00000000 		.word	.LANCHOR3
+ 666 01dc 00000000 		.word	.LANCHOR1
+ 667 01e0 24FAFFFF 		.word	-1500
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s 			page 16
+
+
+ 668 01e4 80E6C547 		.word	1204151936
+ 669 01e8 0000F03F 		.word	1072693248
+ 670 01ec 00000000 		.word	.LANCHOR8
+ 671              		.cfi_endproc
+ 672              	.LFE141:
+ 674              		.section	.text.MS5611ReadAlt,"ax",%progbits
+ 675              		.align	1
+ 676              		.global	MS5611ReadAlt
+ 677              		.syntax unified
+ 678              		.thumb
+ 679              		.thumb_func
+ 680              		.fpu fpv4-sp-d16
+ 682              	MS5611ReadAlt:
+ 683              	.LVL49:
+ 684              	.LFB142:
+ 143:Modules/src/ms5611.c **** 
+ 144:Modules/src/ms5611.c **** void MS5611ReadAlt(float *alt) {
+ 685              		.loc 1 144 32 is_stmt 1 view -0
+ 686              		.cfi_startproc
+ 687              		@ args = 0, pretend = 0, frame = 0
+ 688              		@ frame_needed = 0, uses_anonymous_args = 0
+ 689              		@ link register save eliminated.
+ 145:Modules/src/ms5611.c ****     *alt = altitude;
+ 690              		.loc 1 145 5 view .LVU176
+ 691              		.loc 1 145 10 is_stmt 0 view .LVU177
+ 692 0000 014B     		ldr	r3, .L27
+ 693 0002 1B68     		ldr	r3, [r3]	@ float
+ 694 0004 0360     		str	r3, [r0]	@ float
+ 146:Modules/src/ms5611.c **** }...
+ 695              		.loc 1 146 1 view .LVU178
+ 696 0006 7047     		bx	lr
+ 697              	.L28:
+ 698              		.align	2
+ 699              	.L27:
+ 700 0008 00000000 		.word	.LANCHOR8
+ 701              		.cfi_endproc
+ 702              	.LFE142:
+ 704              		.section	.bss.OFF_t2,"aw",%nobits
+ 705              		.align	3
+ 706              		.set	.LANCHOR2,. + 0
+ 709              	OFF_t2:
+ 710 0000 00000000 		.space	8
+ 710      00000000 
+ 711              		.section	.bss.SENS_t2,"aw",%nobits
+ 712              		.align	3
+ 713              		.set	.LANCHOR1,. + 0
+ 716              	SENS_t2:
+ 717 0000 00000000 		.space	8
+ 717      00000000 
+ 718              		.section	.bss.TCO,"aw",%nobits
+ 719              		.align	1
+ 720              		.set	.LANCHOR4,. + 0
+ 723              	TCO:
+ 724 0000 0000     		.space	2
+ 725              		.section	.bss.TCS,"aw",%nobits
+ 726              		.align	1
+ 727              		.set	.LANCHOR3,. + 0
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s 			page 17
+
+
+ 730              	TCS:
+ 731 0000 0000     		.space	2
+ 732              		.section	.bss.TEMPSENS,"aw",%nobits
+ 733              		.align	1
+ 734              		.set	.LANCHOR6,. + 0
+ 737              	TEMPSENS:
+ 738 0000 0000     		.space	2
+ 739              		.section	.bss.TREF,"aw",%nobits
+ 740              		.align	1
+ 741              		.set	.LANCHOR5,. + 0
+ 744              	TREF:
+ 745 0000 0000     		.space	2
+ 746              		.section	.bss.altitude,"aw",%nobits
+ 747              		.align	2
+ 748              		.set	.LANCHOR8,. + 0
+ 751              	altitude:
+ 752 0000 00000000 		.space	4
+ 753              		.section	.bss.buffer,"aw",%nobits
+ 754              		.align	2
+ 755              		.set	.LANCHOR7,. + 0
+ 758              	buffer:
+ 759 0000 000000   		.space	3
+ 760              		.section	.bss.command,"aw",%nobits
+ 761              		.set	.LANCHOR0,. + 0
+ 764              	command:
+ 765 0000 00       		.space	1
+ 766              		.text
+ 767              	.Letext0:
+ 768              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
+ 769              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 770              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 771              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 772              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 773              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 774              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 775              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 776              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 777              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 778              		.file 12 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
+ 779              		.file 13 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
+ 780              		.file 14 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
+ 781              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
+ 782              		.file 16 "Modules/include/utils.h"
+ 783              		.file 17 "Inc/i2c.h"
+ 784              		.file 18 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
+ 785              		.file 19 "Modules/include/i2c1.h"
+ 786              		.file 20 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 787              		.file 21 "<built-in>"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s 			page 18
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 ms5611.c
-C:\Users\luoha\AppData\Local\Temp\ccD6DZJY.s:18     .rodata.MS5611Init.str1.4:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccD6DZJY.s:25     .text.MS5611Init:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccD6DZJY.s:33     .text.MS5611Init:00000000 MS5611Init
-C:\Users\luoha\AppData\Local\Temp\ccD6DZJY.s:154    .text.MS5611Init:00000088 $d
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:18     .text.MS5611Init:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:26     .text.MS5611Init:00000000 MS5611Init
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:200    .text.MS5611Init:000000c4 $d
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:213    .text.MS5611ReadRawTemp:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:220    .text.MS5611ReadRawTemp:00000000 MS5611ReadRawTemp
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:292    .text.MS5611ReadRawTemp:00000048 $d
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:298    .text.MS5611ReadRawPress:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:305    .text.MS5611ReadRawPress:00000000 MS5611ReadRawPress
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:377    .text.MS5611ReadRawPress:00000048 $d
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:387    .text.MS5611Calculate:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:394    .text.MS5611Calculate:00000000 MS5611Calculate
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:657    .text.MS5611Calculate:000001b8 $d
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:675    .text.MS5611ReadAlt:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:682    .text.MS5611ReadAlt:00000000 MS5611ReadAlt
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:700    .text.MS5611ReadAlt:00000008 $d
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:705    .bss.OFF_t2:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:709    .bss.OFF_t2:00000000 OFF_t2
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:712    .bss.SENS_t2:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:716    .bss.SENS_t2:00000000 SENS_t2
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:719    .bss.TCO:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:723    .bss.TCO:00000000 TCO
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:726    .bss.TCS:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:730    .bss.TCS:00000000 TCS
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:733    .bss.TEMPSENS:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:737    .bss.TEMPSENS:00000000 TEMPSENS
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:740    .bss.TREF:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:744    .bss.TREF:00000000 TREF
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:747    .bss.altitude:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:751    .bss.altitude:00000000 altitude
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:754    .bss.buffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:758    .bss.buffer:00000000 buffer
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:764    .bss.command:00000000 command
+C:\Users\luoha\AppData\Local\Temp\ccBVaKFd.s:765    .bss.command:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_I2C_IsDeviceReady
 I2C1Write
 vTaskDelay
-puts
 I2C1MenRead
-printf
 hi2c1
+I2C1Read
+__aeabi_f2d
+__aeabi_dsub
+__aeabi_dmul
+__aeabi_d2f
+pow

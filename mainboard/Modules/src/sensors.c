@@ -20,17 +20,14 @@ void MPU6050Task(void *param) {
 
     for(;;) {
         printf("================\r\n");
-        if(MPU6050ReadAccel(&accel_x, &accel_y, &accel_z)) {
-            printf("Accel: %f, %f, %f\r\n", accel_x, accel_y, accel_z);
-        }
+        MPU6050ReadAccel(&accel_x, &accel_y, &accel_z);
+        printf("Accel: %f, %f, %f\r\n", accel_x, accel_y, accel_z);
 
-        if(MPU6050ReadGyro(&gyro_x, &gyro_y, &gyro_z)) {
-            printf("Gyro: %f, %f, %f\r\n", gyro_x, gyro_y, gyro_z);
-        }
-
-        if(MPU6050ReadTemp(&celsius)) {
-            printf("Temp: %f\r\n", celsius);
-        }
+        MPU6050ReadGyro(&gyro_x, &gyro_y, &gyro_z);
+        printf("Gyro: %f, %f, %f\r\n", gyro_x, gyro_y, gyro_z);
+       
+        MPU6050ReadTemp(&celsius);
+        printf("Temp: %f\r\n", celsius);
         printf("================\r\n");
         vTaskDelay(pdMS_TO_TICKS(100));
     }
@@ -38,11 +35,24 @@ void MPU6050Task(void *param) {
 
 void MS5611Task(void *param) {
     // if(!MPU6050Init()) return;
+    // uint32_t temp_raw, press_raw;
+    float alt;
 
     if(!MS5611Init()) return;
 
     for(;;) {
+        printf("================\r\n");
+        MS5611Calculate();
+        MS5611ReadAlt(&alt);
+        printf("Alt: %f\r\n", alt);
 
+        // MS5611ReadRawTemp(&temp_raw);
+        // printf("Temp: %lu\r\n", temp_raw);
+
+        // MS5611ReadRawPress(&press_raw);
+        // printf("Press: %lu\r\n", press_raw);
+        printf("================\r\n");
+        // vTaskDelay(pdMS_TO_TICKS(1));      
     }
 
 }
