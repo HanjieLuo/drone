@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
   28:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** /* Standard includes. */
   29:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** #include <stdlib.h>
   30:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** #include <string.h>
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 2
 
 
   31:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
   85:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** set then don't fill the stack so there is no unnecessary dependency on memset. */
   86:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** #if( ( configCHECK_FOR_STACK_OVERFLOW > 1 ) || ( configUSE_TRACE_FACILITY == 1 ) || ( INCLUDE_uxTas
   87:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	#define tskSET_NEW_STACKS_TO_KNOWN_VALUE	1
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 3
 
 
   88:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** #else
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  142:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		}																								\
  143:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 																										\
  144:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		/* listGET_OWNER_OF_NEXT_ENTRY indexes through the list, so the tasks of						\
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 4
 
 
  145:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		the	same priority get an equal share of the processor time. */									\
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  199:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** {																									\
  200:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	List_t *pxTemp;																					\
  201:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 																									\
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 5
 
 
  202:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	/* The delayed tasks list should be empty when the lists are switched. */						\
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  256:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	#if ( portUSING_MPU_WRAPPERS == 1 )
  257:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		xMPU_SETTINGS	xMPUSettings;		/*< The MPU settings are defined as part of the port layer.  THIS MU
  258:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	#endif
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 6
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 6
 
 
  259:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  313:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	tskSTATIC_AND_DYNAMIC_ALLOCATION_POSSIBLE. */
  314:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	#if( tskSTATIC_AND_DYNAMIC_ALLOCATION_POSSIBLE != 0 ) /*lint !e731 !e9029 Macro has been consolida
  315:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		uint8_t	ucStaticallyAllocated; 		/*< Set to pdTRUE if the task is a statically allocated to ensur
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 7
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 7
 
 
  316:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	#endif
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  370:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** PRIVILEGED_DATA static volatile BaseType_t xSchedulerRunning 		= pdFALSE;
  371:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** PRIVILEGED_DATA static volatile UBaseType_t uxPendedTicks 			= ( UBaseType_t ) 0U;
  372:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** PRIVILEGED_DATA static volatile BaseType_t xYieldPending 			= pdFALSE;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 8
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 8
 
 
  373:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** PRIVILEGED_DATA static volatile BaseType_t xNumOfOverflows 			= ( BaseType_t ) 0;
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  427:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** #if ( INCLUDE_vTaskSuspend == 1 )
  428:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
  429:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	static BaseType_t prvTaskIsTaskSuspended( const TaskHandle_t xTask ) PRIVILEGED_FUNCTION;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 9
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 9
 
 
  430:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  484:Middlewares/Third_Party/FreeRTOS/Source/tasks.c ****  * NORMAL APPLICATION CODE.
  485:Middlewares/Third_Party/FreeRTOS/Source/tasks.c ****  */
  486:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** #if ( configUSE_TRACE_FACILITY == 1 )
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 10
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 10
 
 
  487:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  541:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
  542:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** #endif
  543:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 11
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 11
 
 
  544:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** /*
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  598:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			configASSERT( xSize == sizeof( TCB_t ) );
  599:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			( void ) xSize; /* Prevent lint warning when configASSERT() is not used. */
  600:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		}
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 12
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 12
 
 
  601:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		#endif /* configASSERT_DEFINED */
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  655:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				/* Tasks can be created statically or dynamically, so note this
  656:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				task was created statically in case the task is later deleted. */
  657:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				pxNewTCB->ucStaticallyAllocated = tskSTATICALLY_ALLOCATED_STACK_AND_TCB;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 13
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 13
 
 
  658:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			}
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  712:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 										pxTaskDefinition->pvParameters,
  713:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 										pxTaskDefinition->uxPriority,
  714:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 										pxCreatedTask, pxNewTCB,
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 14
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 14
 
 
  715:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 										pxTaskDefinition->xRegions );
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  769:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			/* Allocate space for the stack used by the task being created. */
  770:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			pxStack = pvPortMalloc( ( ( ( size_t ) usStackDepth ) * sizeof( StackType_t ) ) ); /*lint !e9079
  771:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 15
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 15
 
 
  772:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			if( pxStack != NULL )
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  826:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 									TaskHandle_t * const pxCreatedTask,
  827:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 									TCB_t *pxNewTCB,
  828:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 									const MemoryRegion_t * const xRegions )
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 16
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 16
 
 
  829:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** {
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  883:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		performed. */
  884:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		pxNewTCB->pxEndOfStack = pxNewTCB->pxStack + ( ulStackDepth - ( uint32_t ) 1 );
  885:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	}
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 17
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 17
 
 
  886:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	#endif /* portSTACK_GROWTH */
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  940:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
  941:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	/* Set the pxNewTCB as a link back from the ListItem_t.  This is so we can get
  942:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	back to	the containing TCB from a generic item in a list. */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 18
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 18
 
 
  943:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	listSET_LIST_ITEM_OWNER( &( pxNewTCB->xStateListItem ), pxNewTCB );
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  997:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		_REENT_INIT_PTR( ( &( pxNewTCB->xNewLib_reent ) ) );
  998:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	}
  999:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	#endif
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 19
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 19
 
 
 1000:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 1054:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		}
 1055:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		#endif /* portHAS_STACK_OVERFLOW_CHECKING */
 1056:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	}
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 20
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 20
 
 
 1057:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	#endif /* portUSING_MPU_WRAPPERS */
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 1111:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				}
 1112:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			}
 1113:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			else
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 21
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 21
 
 
 1114:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			{
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 1168:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			if( uxListRemove( &( pxTCB->xStateListItem ) ) == ( UBaseType_t ) 0 )
 1169:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			{
 1170:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				taskRESET_READY_PRIORITY( pxTCB->uxPriority );
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 22
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 22
 
 
 1171:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			}
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 1225:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		}
 1226:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		taskEXIT_CRITICAL();
 1227:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 23
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 23
 
 
 1228:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		/* Force a reschedule if it is the currently running task that has just
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 1282:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			}
 1283:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			else
 1284:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			{
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 24
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 24
 
 
 1285:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				/* The tick time has not overflowed.  In this case we will
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 1339:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		{
 1340:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			configASSERT( uxSchedulerSuspended == 0 );
 1341:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			vTaskSuspendAll();
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 25
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 25
 
 
 1342:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			{
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 1396:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				pxDelayedList = pxDelayedTaskList;
 1397:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				pxOverflowedDelayedList = pxOverflowDelayedTaskList;
 1398:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			}
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 26
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 26
 
 
 1399:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			taskEXIT_CRITICAL();
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 1453:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
 1454:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			else /*lint !e525 Negative indentation is intended to make use of pre-processor clearer. */
 1455:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			{
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 27
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 27
 
 
 1456:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				/* If the task is not in any other state, it must be in the
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 1510:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		simple as possible.  More information (albeit Cortex-M specific) is
 1511:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		provided on the following link:
 1512:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		https://www.freertos.org/RTOS-Cortex-M3-M4.html */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 28
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 28
 
 
 1513:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		portASSERT_IF_INTERRUPT_PRIORITY_INVALID();
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 1567:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
 1568:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			if( uxCurrentBasePriority != uxNewPriority )
 1569:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			{
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 29
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 29
 
 
 1570:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				/* The priority change may have readied a task of higher
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 1624:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 						mtCOVERAGE_TEST_MARKER();
 1625:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					}
 1626:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 30
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 30
 
 
 1627:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					/* The base priority gets set whatever. */
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 1681:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				}
 1682:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
 1683:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				/* Remove compiler warning about unused variables when the port
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 31
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 31
 
 
 1684:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				optimised task selection is not being used. */
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 1738:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				}
 1739:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			}
 1740:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			#endif
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 32
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 32
 
 
 1741:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		}
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 1795:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** #if ( INCLUDE_vTaskSuspend == 1 )
 1796:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
 1797:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	static BaseType_t prvTaskIsTaskSuspended( const TaskHandle_t xTask )
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 33
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 33
 
 
 1798:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	{
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
   12:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h ****  * The above copyright notice and this permission notice shall be included in all
   13:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h ****  * copies or substantial portions of the Software.
   14:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h ****  *
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 34
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 34
 
 
   15:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h ****  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
   69:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** #endif
   70:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** /*-----------------------------------------------------------*/
   71:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 35
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 35
 
 
   72:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** /* Architecture specifics. */
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  126:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 
  127:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** #if configUSE_PORT_OPTIMISED_TASK_SELECTION == 1
  128:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 36
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 36
 
 
  129:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 	/* Generic helper function. */
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  183:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 		xReturn = pdTRUE;
  184:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 	}
  185:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 37
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 37
 
 
  186:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 	return xReturn;
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 1799:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	const TCB_t * const pxTCB = xTask;
   91              		.loc 1 1799 13 view .LVU23
   92 002a 0020     		movs	r0, #0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 38
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 38
 
 
   93              	.LVL4:
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  125              		.fpu fpv4-sp-d16
  127              	prvResetNextTaskUnblockTime:
  128              	.LFB40:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 39
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 39
 
 
 1837:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 1891:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** #endif /* INCLUDE_vTaskSuspend */
 1892:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
 1893:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** /*-----------------------------------------------------------*/
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 40
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 40
 
 
 1894:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 1948:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					/* The delayed or ready lists cannot be accessed so the task
 1949:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					is held in the pending ready list until the scheduler is
 1950:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					unsuspended. */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 41
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 41
 
 
 1951:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					vListInsertEnd( &( xPendingReadyList ), &( pxTCB->xEventListItem ) );
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 2005:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 								portPRIVILEGE_BIT, /* In effect ( tskIDLE_PRIORITY | portPRIVILEGE_BIT ), but tskIDLE_PRIOR
 2006:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 								&xIdleTaskHandle ); /*lint !e961 MISRA exception, justified as it is not a redundant explic
 2007:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	}
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 42
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 42
 
 
 2008:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	#endif /* configSUPPORT_STATIC_ALLOCATION */
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 2062:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
 2063:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		/* Setting up the timer tick is hardware specific and thus in the
 2064:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		portable interface. */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 43
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 43
 
 
 2065:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		if( xPortStartScheduler() != pdFALSE )
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 2119:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		configUSE_PREEMPTION is 0, so there may be tasks above the idle priority
 2120:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		task that are in the Ready state, even though the idle task is
 2121:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		running. */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 44
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 44
 
 
 2122:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		#if( configUSE_PORT_OPTIMISED_TASK_SELECTION == 0 )
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 2176:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** TCB_t *pxTCB = NULL;
 2177:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** BaseType_t xAlreadyYielded = pdFALSE;
 2178:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 45
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 45
 
 
 2179:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	/* If uxSchedulerSuspended is zero then this function does not match a
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 2233:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					UBaseType_t uxPendedCounts = uxPendedTicks; /* Non-volatile copy. */
 2234:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
 2235:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					if( uxPendedCounts > ( UBaseType_t ) 0U )
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 46
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 46
 
 
 2236:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					{
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 2290:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	{
 2291:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		xTicks = xTickCount;
 2292:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	}
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 47
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 47
 
 
 2293:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	portTICK_TYPE_EXIT_CRITICAL();
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 2347:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** }
 2348:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** /*-----------------------------------------------------------*/
 2349:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 48
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 48
 
 
 2350:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** #if ( INCLUDE_xTaskGetHandle == 1 )
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 2404:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
 2405:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			} while( pxNextTCB != pxFirstTCB );
 2406:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		}
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 49
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 49
 
 
 2407:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		else
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 2461:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				}
 2462:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			}
 2463:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			#endif
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 50
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 50
 
 
 2464:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 2518:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					/* Fill in an TaskStatus_t structure with information on
 2519:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					each task in the Suspended state. */
 2520:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					uxTask += prvListTasksWithinSingleList( &( pxTaskStatusArray[ uxTask ] ), &xSuspendedTaskList,
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 51
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 51
 
 
 2521:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				}
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 2575:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
 2576:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	void vTaskStepTick( const TickType_t xTicksToJump )
 2577:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	{
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 52
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 52
 
 
 2578:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		/* Correct the tick count value after a period during which the tick
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 2632:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				/* A task being unblocked cannot cause an immediate context
 2633:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				switch if preemption is turned off. */
 2634:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				#if (  configUSE_PREEMPTION == 1 )
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 53
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 53
 
 
 2635:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				{
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 2689:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		else
 2690:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		{
 2691:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			mtCOVERAGE_TEST_MARKER();
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 54
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 54
 
 
 2692:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		}
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 2746:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					{
 2747:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 						mtCOVERAGE_TEST_MARKER();
 2748:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					}
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 55
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 55
 
 
 2749:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 2803:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			}
 2804:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		}
 2805:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		#endif /* configUSE_TICK_HOOK */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 56
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 56
 
 
 2806:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	}
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 2860:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		taskEXIT_CRITICAL();
 2861:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	}
 2862:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 57
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 57
 
 
 2863:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** #endif /* configUSE_APPLICATION_TASK_TAG */
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 2917:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	BaseType_t xTaskCallApplicationTaskHook( TaskHandle_t xTask, void *pvParameter )
 2918:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	{
 2919:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	TCB_t *xTCB;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 58
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 58
 
 
 2920:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	BaseType_t xReturn;
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 2974:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			are provided by the application, not the kernel. */
 2975:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			if( ulTotalRunTime > ulTaskSwitchedInTime )
 2976:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			{
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 59
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 59
 
 
 2977:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				pxCurrentTCB->ulRunTimeCounter += ( ulTotalRunTime - ulTaskSwitchedInTime );
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 3031:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	vListInsert( pxEventList, &( pxCurrentTCB->xEventListItem ) );
 3032:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
 3033:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	prvAddCurrentTaskToDelayedList( xTicksToWait, pdTRUE );
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 60
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 60
 
 
 3034:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** }
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 3088:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		prvAddCurrentTaskToDelayedList( xTicksToWait, xWaitIndefinitely );
 3089:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	}
 3090:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 61
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 61
 
 
 3091:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** #endif /* configUSE_TIMERS */
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 3145:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		priority than the calling task.  This allows the calling task to know if
 3146:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		it should force a context switch now. */
 3147:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		xReturn = pdTRUE;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 62
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 62
 
 
 3148:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 3202:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		pxTimeOut->xTimeOnEntering = xTickCount;
 3203:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	}
 3204:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	taskEXIT_CRITICAL();
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 63
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 63
 
 
 3205:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** }
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 3259:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		}
 3260:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		else if( xElapsedTime < *pxTicksToWait ) /*lint !e961 Explicit casting is only redundant with som
 3261:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		{
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 64
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 64
 
 
 3262:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			/* Not a genuine timeout. Adjust parameters for time remaining. */
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 3316:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			pxTCB = xTask;
 3317:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			pxTCB->uxTaskNumber = uxHandle;
 3318:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		}
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 65
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 65
 
 
 3319:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	}
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 3373:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			then a task other than the idle task is ready to execute. */
 3374:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			if( listCURRENT_LIST_LENGTH( &( pxReadyTasksLists[ tskIDLE_PRIORITY ] ) ) > ( UBaseType_t ) 1 )
 3375:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			{
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 66
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 66
 
 
 3376:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				taskYIELD();
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 3430:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 						traceLOW_POWER_IDLE_BEGIN();
 3431:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 						portSUPPRESS_TICKS_AND_SLEEP( xExpectedIdleTime );
 3432:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 						traceLOW_POWER_IDLE_END();
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 67
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 67
 
 
 3433:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					}
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 3487:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
 3488:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** #endif /* configUSE_TICKLESS_IDLE */
 3489:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** /*-----------------------------------------------------------*/
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 68
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 68
 
 
 3490:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 3544:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** /*-----------------------------------------------------------*/
 3545:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
 3546:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** static void prvInitialiseTaskLists( void )
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 69
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 69
 
 
 3547:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** {
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 3601:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		}
 3602:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	}
 3603:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	#endif /* INCLUDE_vTaskDelete */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 70
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 70
 
 
 3604:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** }
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 3658:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					chance it is actually just blocked indefinitely - so really
 3659:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					it should be reported as being in the Blocked state. */
 3660:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					if( eState == eSuspended )
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 71
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 71
 
 
 3661:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					{
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 3715:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			pxTaskStatusArray array for each task that is referenced from
 3716:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			pxList.  See the definition of TaskStatus_t in task.h for the
 3717:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			meaning of each TaskStatus_t structure member. */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 72
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 72
 
 
 3718:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			do
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 3772:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		problem of the value overflowing on 8-bit types without breaking
 3773:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		backward compatibility for applications that expect an 8-bit return
 3774:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		type. */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 73
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 73
 
 
 3775:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 3829:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		above the vPortFree() calls.  The call is also used by ports/demos that
 3830:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		want to allocate and clean RAM statically. */
 3831:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		portCLEAN_UP_TCB( pxTCB );
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 74
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 74
 
 
 3832:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  133              		@ link register save eliminated.
 3882:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** TCB_t *pxTCB;
  134              		.loc 1 3882 1 view .LVU32
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 75
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 75
 
 
 3883:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  170 0024 00000000 		.word	.LANCHOR2
  171 0028 00000000 		.word	.LANCHOR3
  172              		.cfi_endproc
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 76
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 76
 
 
  173              	.LFE40:
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  862:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
  220              		.loc 1 862 3 is_stmt 1 view .LVU55
  862:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 77
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 77
 
 
  221              		.loc 1 862 81 is_stmt 0 view .LVU56
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  257              		.loc 1 910 3 is_stmt 1 view .LVU74
  910:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	}
  258              		.loc 1 910 55 is_stmt 0 view .LVU75
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 78
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 78
 
 
  259 003a 0023     		movs	r3, #0
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  297              		.loc 1 946 2 is_stmt 0 view .LVU91
  298 0062 A661     		str	r6, [r4, #24]
  947:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 79
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 79
 
 
  299              		.loc 1 947 2 is_stmt 1 view .LVU92
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  336 008c D8E7     		b	.L22
  337              		.cfi_endproc
  338              	.LFE7:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 80
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 80
 
 
  340              		.section	.text.prvInitialiseTaskLists,"ax",%progbits
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 3555:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	vListInitialise( &xDelayedTaskList2 );
  385              		.loc 1 3555 2 is_stmt 1 view .LVU120
  386 001a 0C4D     		ldr	r5, .L34+4
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 81
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 81
 
 
  387 001c 2846     		mov	r0, r5
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  431              	.LFE37:
  433              		.section	.text.prvAddNewTaskToReadyList,"ax",%progbits
  434              		.align	1
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 82
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 82
 
 
  435              		.syntax unified
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  477 001c 1C4B     		ldr	r3, .L43+4
  478 001e 1B68     		ldr	r3, [r3]
  479 0020 DA6A     		ldr	r2, [r3, #44]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 83
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 83
 
 
 1104:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				{
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 1129:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
  519              		.loc 1 1129 3 view .LVU159
  520 004e 00EB8000 		add	r0, r0, r0, lsl #2
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 84
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 84
 
 
  521 0052 211D     		adds	r1, r4, #4
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 1150:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	}
  561              		.loc 1 1150 27 view .LVU174
  562              		.thumb
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 85
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 85
 
 
  563              		.syntax unified
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  611              		.loc 1 3853 6 view .LVU182
  612 0008 63B1     		cbz	r3, .L51
 3860:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			{
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 86
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 86
 
 
  613              		.loc 1 3860 9 is_stmt 1 view .LVU183
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  656              	.LVL47:
  657              	.L45:
 3875:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 87
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 87
 
 
  658              		.loc 1 3875 2 is_stmt 0 view .LVU197
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 3593:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				( void ) uxListRemove( &( pxTCB->xStateListItem ) );
  704              		.loc 1 3593 5 view .LVU208
 3593:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				( void ) uxListRemove( &( pxTCB->xStateListItem ) );
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 88
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 88
 
 
  705              		.loc 1 3593 13 is_stmt 0 view .LVU209
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  748              		.cfi_restore 14
 3604:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** /*-----------------------------------------------------------*/
  749              		.loc 1 3604 1 view .LVU221
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 89
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 89
 
 
  750 003c 7047     		bx	lr
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  796              		.loc 1 3376 5 is_stmt 1 view .LVU231
  797 000e 054B     		ldr	r3, .L66+4
  798 0010 4FF08052 		mov	r2, #268435456
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 90
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 90
 
 
  799 0014 1A60     		str	r2, [r3]
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 3923:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	BaseType_t xTaskGetSchedulerState( void )
 3924:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	{
 3925:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	BaseType_t xReturn;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 91
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 91
 
 
 3926:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 3980:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				if( listIS_CONTAINED_WITHIN( &( pxReadyTasksLists[ pxMutexHolderTCB->uxPriority ] ), &( pxMutex
 3981:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				{
 3982:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					if( uxListRemove( &( pxMutexHolderTCB->xStateListItem ) ) == ( UBaseType_t ) 0 )
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 92
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 92
 
 
 3983:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					{
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 4037:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
 4038:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	BaseType_t xTaskPriorityDisinherit( TaskHandle_t const pxMutexHolder )
 4039:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	{
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 93
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 93
 
 
 4040:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	TCB_t * const pxTCB = pxMutexHolder;
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 4094:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				}
 4095:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				else
 4096:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				{
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 94
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 94
 
 
 4097:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					mtCOVERAGE_TEST_MARKER();
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 4151:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				{
 4152:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					/* If a task has timed out because it already holds the
 4153:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					mutex it was trying to obtain then it cannot of inherited
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 95
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 95
 
 
 4154:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					its own priority. */
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 4208:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		}
 4209:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		else
 4210:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		{
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 96
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 96
 
 
 4211:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			mtCOVERAGE_TEST_MARKER();
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 4265:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				}
 4266:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			}
 4267:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			else
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 97
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 97
 
 
 4268:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			{
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 4322:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		 * vTaskList() calls uxTaskGetSystemState(), then formats part of the
 4323:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		 * uxTaskGetSystemState() output into a human readable table that
 4324:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		 * displays task names, states and stack usage.
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 98
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 98
 
 
 4325:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		 *
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 4379:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 										to prevent static checking errors. */
 4380:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 										cStatus = ( char ) 0x00;
 4381:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 										break;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 99
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 99
 
 
 4382:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				}
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 4436:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		 * sprintf() is provided in many of the FreeRTOS/Demo sub-directories in
 4437:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		 * a file called printf-stdarg.c (note printf-stdarg.c does not provide
 4438:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		 * a full snprintf() implementation!).
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 100
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 100
 
 
 4439:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		 *
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 4493:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 						#endif
 4494:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					}
 4495:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					else
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 101
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 101
 
 
 4496:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					{
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 4550:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	{
 4551:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		/* If xSemaphoreCreateMutex() is called before any tasks have been created
 4552:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		then pxCurrentTCB will be NULL. */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 102
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 102
 
 
 4553:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		if( pxCurrentTCB != NULL )
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 4607:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			{
 4608:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				if( xClearCountOnExit != pdFALSE )
 4609:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				{
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 103
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 103
 
 
 4610:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					pxCurrentTCB->ulNotifiedValue = 0UL;
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 4664:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					mtCOVERAGE_TEST_MARKER();
 4665:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				}
 4666:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			}
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 104
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 104
 
 
 4667:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			else
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 4721:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		pxTCB = xTaskToNotify;
 4722:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
 4723:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		taskENTER_CRITICAL();
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 105
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 105
 
 
 4724:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		{
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 4778:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			if( ucOriginalNotifyState == taskWAITING_NOTIFICATION )
 4779:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			{
 4780:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				( void ) uxListRemove( &( pxTCB->xStateListItem ) );
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 106
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 106
 
 
 4781:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				prvAddTaskToReadyList( pxTCB );
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 4835:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		configASSERT( xTaskToNotify );
 4836:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
 4837:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		/* RTOS ports that support interrupt nesting have the concept of a
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 107
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 107
 
 
 4838:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		maximum	system call (or maximum API call) interrupt priority.
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 4892:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
 4893:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				case eNoAction :
 4894:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					/* The task is being notified without its notify value being
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 108
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 108
 
 
 4895:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					updated. */
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 4949:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		return xReturn;
 4950:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	}
 4951:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 109
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 109
 
 
 4952:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** #endif /* configUSE_TASK_NOTIFICATIONS */
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 5006:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					prvAddTaskToReadyList( pxTCB );
 5007:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				}
 5008:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				else
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 110
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 110
 
 
 5009:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				{
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 5063:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			}
 5064:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		}
 5065:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		taskEXIT_CRITICAL();
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 111
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 111
 
 
 5066:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  853 000a 1D4B     		ldr	r3, .L75+4
  854 000c 1868     		ldr	r0, [r3]
  855              	.LVL61:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 112
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 112
 
 
  856              		.loc 1 5097 6 view .LVU242
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 5125:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			listSET_LIST_ITEM_VALUE( &( pxCurrentTCB->xStateListItem ), xTimeToWake );
  883              		.loc 1 5125 4 is_stmt 1 view .LVU250
  884 0034 124B     		ldr	r3, .L75+4
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 113
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 113
 
 
  885 0036 1B68     		ldr	r3, [r3]
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 5163:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		if( xTimeToWake < xConstTickCount )
 5164:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		{
 5165:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			/* Wake time has overflowed.  Place this item in the overflow list. */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 114
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 114
 
 
 5166:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			vListInsert( pxOverflowDelayedTaskList, &( pxCurrentTCB->xStateListItem ) );
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  925 0064 064B     		ldr	r3, .L75+4
  926 0066 1968     		ldr	r1, [r3]
 5137:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 115
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 115
 
 
  927              		.loc 1 5137 5 view .LVU263
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  975              	.LCFI8:
  976              		.cfi_def_cfa_offset 16
  977              		.cfi_offset 4, -16
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 116
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 116
 
 
  978              		.cfi_offset 5, -12
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  1020              		.syntax unified
  1021              	.L83:
  1022              		.loc 2 195 2 is_stmt 0 view .LVU286
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 117
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 117
 
 
  1023              	.LBE116:
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  1065              	.LBB120:
  193:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 
  1066              		.loc 2 193 1 view .LVU301
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 118
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 118
 
 
  1067              		.loc 2 195 2 view .LVU302
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  1109 005e 0195     		str	r5, [sp, #4]
  1110 0060 0A9D     		ldr	r5, [sp, #40]
  1111 0062 0095     		str	r5, [sp]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 119
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 119
 
 
  1112 0064 FFF7FEFF 		bl	prvInitialiseNewTask
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  1162 000c 1E46     		mov	r6, r3
  737:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	BaseType_t xReturn;
  1163              		.loc 1 737 2 is_stmt 1 view .LVU322
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 120
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 120
 
 
  738:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  802:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			}
  1200              		.loc 1 802 37 is_stmt 0 view .LVU341
  1201 0028 0023     		movs	r3, #0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 121
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 121
 
 
  1202 002a 85F85130 		strb	r3, [r5, #81]
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  1247              		@ sp needed
  1248 005e BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
  1249              	.LVL92:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 122
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 122
 
 
  1250              	.L92:
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  1296              		.loc 1 1168 4 is_stmt 1 discriminator 4 view .LVU360
 1168:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			{
  1297              		.loc 1 1168 8 is_stmt 0 discriminator 4 view .LVU361
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 123
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 123
 
 
  1298 000c 251D     		adds	r5, r4, #4
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 1193:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			{
  1339              		.loc 1 1193 14 is_stmt 0 view .LVU375
  1340 0048 1E4B     		ldr	r3, .L107+12
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 124
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 124
 
 
  1341 004a 1B68     		ldr	r3, [r3]
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  1381 0076 134B     		ldr	r3, .L107+12
  1382 0078 1C68     		ldr	r4, [r3]
  1383              	.LVL103:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 125
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 125
 
 
 1165:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  1428              		.loc 1 1234 5 discriminator 1 view .LVU401
 1234:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				portYIELD_WITHIN_API();
  1429              		.loc 1 1234 5 discriminator 1 view .LVU402
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 126
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 126
 
 
  1430 00a4 FEE7     		b	.L102
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 1471:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	TCB_t const *pxTCB;
  1479              		.loc 1 1471 2 is_stmt 1 view -0
  1480              		.cfi_startproc
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 127
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 127
 
 
  1481              		@ args = 0, pretend = 0, frame = 0
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  1522 001c 00000000 		.word	.LANCHOR10
  1523              		.cfi_endproc
  1524              	.LFE11:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 128
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 128
 
 
  1526              		.section	.text.uxTaskPriorityGetFromISR,"ax",%progbits
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  1559              		.loc 2 211 2 view .LVU432
  1560              		.syntax unified
  1561              	@ 211 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h" 1
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 129
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 129
 
 
  1562 0008 EFF31183 			mrs r3, basepri											
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  1593 0020 83F31188 			msr basepri, r3	
  1594              	@ 0 "" 2
  1595              	.LVL119:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 130
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 130
 
 
  1596              		.loc 2 229 2 is_stmt 0 discriminator 4 view .LVU442
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 1535:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	BaseType_t xYieldRequired = pdFALSE;
  1645              		.loc 1 1535 2 view .LVU450
 1536:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 131
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 131
 
 
  1646              		.loc 1 1536 2 view .LVU451
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 1554:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
  1687              		.loc 1 1554 4 view .LVU465
 1554:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 132
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 132
 
 
  1688              		.loc 1 1554 12 is_stmt 0 view .LVU466
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  1727              	.LVL130:
 1554:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
  1728              		.loc 1 1554 12 discriminator 1 view .LVU482
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 133
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 133
 
 
  1729 0044 EDE7     		b	.L124
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 1640:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				}
  1767              		.loc 1 1640 6 is_stmt 0 view .LVU499
  1768 0062 A561     		str	r5, [r4, #24]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 134
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 134
 
 
  1769              	.L129:
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 1689:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
  1809              		.loc 1 1689 2 is_stmt 0 view .LVU514
  1810 008a F8BD     		pop	{r3, r4, r5, r6, r7, pc}
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 135
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 135
 
 
  1811              	.LVL139:
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  1852              		.loc 1 1667 6 view .LVU527
  1853 00b6 E06A     		ldr	r0, [r4, #44]
  1854 00b8 0123     		movs	r3, #1
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 136
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 136
 
 
  1855 00ba 8340     		lsls	r3, r3, r0
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  1905 0002 68B1     		cbz	r0, .L147
  1906 0004 0446     		mov	r4, r0
 1848:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 137
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 137
 
 
  1907              		.loc 1 1848 32 discriminator 2 view .LVU534
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  1946 0024 83F31188 		msr basepri, r3											
  1947 0028 BFF36F8F 		isb														
  1948 002c BFF34F8F 		dsb														
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 138
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 138
 
 
  1949              	
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  1990 0058 E26A     		ldr	r2, [r4, #44]
 1866:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					{
  1991              		.loc 1 1866 43 view .LVU563
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 139
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 139
 
 
  1992 005a 074B     		ldr	r3, .L149
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  2041 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
  2042              	.LCFI20:
  2043              		.cfi_def_cfa_offset 24
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 140
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 140
 
 
  2044              		.cfi_offset 3, -24
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 1925:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			{
  2085              		.loc 1 1925 8 is_stmt 0 discriminator 2 view .LVU584
  2086 001e 2046     		mov	r0, r4
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 141
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 141
 
 
  2087 0020 FFF7FEFF 		bl	prvTaskIsTaskSuspended
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  2126 004c 1168     		ldr	r1, [r2]
  2127 004e 0B43     		orrs	r3, r3, r1
  2128 0050 1360     		str	r3, [r2]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 142
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 142
 
 
 1944:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				}
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  2172 0072 BFF36F8F 		isb														
  2173 0076 BFF34F8F 		dsb														
  2174              	
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 143
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 143
 
 
  2175              	@ 0 "" 2
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  2222              		.fpu fpv4-sp-d16
  2224              	vTaskStartScheduler:
  2225              	.LFB18:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 144
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 144
 
 
 1968:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** BaseType_t xReturn;
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  2268              		.loc 1 1989 5 is_stmt 0 view .LVU631
  2269 002a 90B1     		cbz	r0, .L162
  2270              	.LVL170:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 145
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 145
 
 
 1989:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		{
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 2065:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		{
  2310              		.loc 1 2065 7 is_stmt 0 view .LVU647
  2311 004e FFF7FEFF 		bl	xPortStartScheduler
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 146
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 146
 
 
  2312              	.LVL171:
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  2362 000e BFF34F8F 		dsb														
  2363              	
  2364              	@ 0 "" 2
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 147
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 147
 
 
  2365              		.thumb
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  2413              		.cfi_endproc
  2414              	.LFE20:
  2416              		.section	.text.xTaskGetTickCount,"ax",%progbits
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 148
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 148
 
 
  2417              		.align	1
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  2465              		.cfi_def_cfa_offset 8
  2466              		.cfi_offset 3, -8
  2467              		.cfi_offset 14, -4
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 149
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 149
 
 
 2301:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** UBaseType_t uxSavedInterruptStatus;
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  2511              	.L184:
  2512 0006 00BF     		.align	2
  2513              	.L183:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 150
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 150
 
 
  2514 0008 00000000 		.word	.LANCHOR9
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  2559              	.LBB145:
  2560              	.LBI145:
  191:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** {
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 151
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 151
 
 
  2561              		.loc 2 191 30 view .LVU695
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  2610              		.cfi_offset 5, -16
  2611              		.cfi_offset 6, -12
  2612              		.cfi_offset 7, -8
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 152
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 152
 
 
  2613              		.cfi_offset 14, -4
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  191:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** {
  2650              		.loc 2 191 30 view .LVU720
  2651              	.LBB150:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 153
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 153
 
 
  193:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  2693              		.loc 1 2687 4 is_stmt 0 discriminator 2 view .LVU733
  2694              	.LBE148:
 2687:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		}
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 154
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 154
 
 
  2695              		.loc 1 2687 30 is_stmt 1 discriminator 2 view .LVU734
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 2702:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				{
  2736              		.loc 1 2702 9 is_stmt 0 view .LVU748
  2737 006a 224B     		ldr	r3, .L214+8
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 155
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 155
 
 
  2738 006c 1B68     		ldr	r3, [r3]
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 2747:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					}
  2776              		.loc 1 2747 31 is_stmt 1 view .LVU765
 2752:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 156
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 156
 
 
  2777              		.loc 1 2752 6 view .LVU766
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  2820 00ca 1A60     		str	r2, [r3]
 2710:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				}
  2821              		.loc 1 2710 6 is_stmt 1 view .LVU778
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 157
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 157
 
 
  2822 00cc C0E7     		b	.L199
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  2863 00f0 00000000 		.word	.LANCHOR15
  2864 00f4 00000000 		.word	.LANCHOR2
  2865 00f8 00000000 		.word	.LANCHOR8
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 158
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 158
 
 
  2866 00fc 00000000 		.word	.LANCHOR17
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  2914 000c 83F31188 		msr basepri, r3											
  2915 0010 BFF36F8F 		isb														
  2916 0014 BFF34F8F 		dsb														
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 159
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 159
 
 
  2917              	
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  2956              		.loc 1 2176 8 view .LVU814
  2957 0036 0024     		movs	r4, #0
  2958              	.LVL205:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 160
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 160
 
 
  2959              	.L220:
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  2999 006e FFF7FEFF 		bl	vListInsertEnd
  3000              	.LVL209:
 2203:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 161
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 161
 
 
  3001              		.loc 1 2203 36 view .LVU829
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  3039              		.loc 1 2258 23 is_stmt 0 view .LVU845
  3040 0092 164B     		ldr	r3, .L232+24
  3041 0094 1C68     		ldr	r4, [r3]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 162
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 162
 
 
  3042              	.LVL212:
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  3081 00b0 FFF7FEFF 		bl	xTaskIncrementTick
  3082              	.LVL216:
 2239:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 							{
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 163
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 163
 
 
  3083              		.loc 1 2239 10 view .LVU861
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  3126 00ec 00000000 		.word	.LANCHOR19
  3127 00f0 00000000 		.word	.LANCHOR18
  3128 00f4 04ED00E0 		.word	-536810236
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 164
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 164
 
 
  3129              		.cfi_endproc
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  3175 0018 BFF34F8F 		dsb														
  3176              	
  3177              	@ 0 "" 2
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 165
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 165
 
 
  3178              	.LVL223:
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  3217 0038 BFF34F8F 		dsb
  3218              	@ 0 "" 2
 1365:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		}
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 166
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 166
 
 
  3219              		.loc 1 1365 4 view .LVU898
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 2957:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		traceTASK_SWITCHED_OUT();
  3266              		.loc 1 2957 3 is_stmt 1 view .LVU908
 2957:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		traceTASK_SWITCHED_OUT();
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 167
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 167
 
 
  3267              		.loc 1 2957 17 is_stmt 0 view .LVU909
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  3308              		.loc 1 2999 3 view .LVU922
  3309              	.LBB162:
  3310              	.LBI162:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 168
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 168
 
 
  191:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** {
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  3353 004c 5068     		ldr	r0, [r2, #4]
  3354 004e 4068     		ldr	r0, [r0, #4]
  3355 0050 5060     		str	r0, [r2, #4]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 169
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 169
 
 
 2999:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		traceTASK_SWITCHED_IN();
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  3402              	.L252:
  3403 0084 00000000 		.word	.LANCHOR16
  3404 0088 00000000 		.word	.LANCHOR19
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 170
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 170
 
 
  3405 008c 00000000 		.word	.LANCHOR13
@@ -10198,7 +10198,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  3452              	.LVL240:
 1710:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			{
  3453              		.loc 1 1710 6 discriminator 4 view .LVU952
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 171
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 171
 
 
  3454 0012 70B9     		cbnz	r0, .L256
@@ -10258,7 +10258,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  3495              	.L258:
 1742:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
  3496              		.loc 1 1742 3 is_stmt 1 view .LVU966
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 172
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 172
 
 
  3497 0050 FFF7FEFF 		bl	vPortExitCritical
@@ -10318,7 +10318,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  3537 0076 FFF7FEFF 		bl	prvResetNextTaskUnblockTime
  3538              	.LVL248:
 1752:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		}
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 173
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 173
 
 
  3539              		.loc 1 1752 4 view .LVU981
@@ -10378,7 +10378,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 1764:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				portYIELD_WITHIN_API();
  3581              		.loc 1 1764 46 discriminator 2 view .LVU994
 1765:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			}
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 174
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 174
 
 
  3582              		.loc 1 1765 5 discriminator 2 view .LVU995
@@ -10438,7 +10438,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  3624 00ca 00BF     		.align	2
  3625              	.L270:
  3626 00cc 00000000 		.word	.LANCHOR4
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 175
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 175
 
 
  3627 00d0 00000000 		.word	.LANCHOR13
@@ -10498,7 +10498,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  3675              	.LVL255:
 3034:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** /*-----------------------------------------------------------*/
  3676              		.loc 1 3034 1 is_stmt 0 discriminator 2 view .LVU1016
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 176
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 176
 
 
  3677 0018 10BD     		pop	{r4, pc}
@@ -10558,7 +10558,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  3725              	vTaskPlaceOnUnorderedEventList:
  3726              	.LVL258:
  3727              	.LFB29:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 177
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 177
 
 
 3038:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	configASSERT( pxEventList );
@@ -10618,7 +10618,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  3771              	.LBE173:
  3772              	.LBE172:
 3043:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 178
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 178
 
 
  3773              		.loc 1 3043 2 is_stmt 1 discriminator 2 view .LVU1036
@@ -10678,7 +10678,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  3814              	.LVL265:
 3048:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
  3815              		.loc 1 3048 2 discriminator 2 view .LVU1050
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 179
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 179
 
 
  3816 003a 8B61     		str	r3, [r1, #24]
@@ -10738,7 +10738,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 3096:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** BaseType_t xReturn;
  3864              		.loc 1 3096 1 is_stmt 1 view .LVU1059
 3097:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 180
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 180
 
 
  3865              		.loc 1 3097 1 view .LVU1060
@@ -10798,7 +10798,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 3119:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
  3904              		.loc 1 3119 3 view .LVU1076
  3905 002e 00EB8000 		add	r0, r0, r0, lsl #2
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 181
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 181
 
 
  3906 0032 2946     		mov	r1, r5
@@ -10858,7 +10858,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  3948              	.LVL277:
  3949              		.thumb
  3950              		.syntax unified
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 182
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 182
 
 
  3951              	.L291:
@@ -10918,7 +10918,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  3998              	.LVL282:
  3999              	.LFB31:
 3163:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** TCB_t *pxUnblockedTCB;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 183
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 183
 
 
  4000              		.loc 1 3163 1 is_stmt 1 view -0
@@ -10978,7 +10978,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  4043              	.L301:
 3168:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
  4044              		.loc 1 3168 49 discriminator 2 view .LVU1110
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 184
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 184
 
 
 3171:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
@@ -11038,7 +11038,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  4084 004e E26A     		ldr	r2, [r4, #44]
 3185:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	{
  4085              		.loc 1 3185 47 discriminator 2 view .LVU1126
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 185
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 185
 
 
  4086 0050 0B4B     		ldr	r3, .L308+12
@@ -11098,7 +11098,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  4128              	.L309:
  4129              		.align	2
  4130              	.L308:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 186
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 186
 
 
  4131 0074 00000000 		.word	.LANCHOR16
@@ -11158,7 +11158,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  4177              		.loc 1 3204 2 is_stmt 1 discriminator 2 view .LVU1148
  4178 0016 FFF7FEFF 		bl	vPortExitCritical
  4179              	.LVL292:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 187
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 187
 
 
 3205:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** /*-----------------------------------------------------------*/
@@ -11218,7 +11218,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  4226              		.thumb
  4227              		.thumb_func
  4228              		.fpu fpv4-sp-d16
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 188
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 188
 
 
  4230              	vTaskInternalSetTimeOutState:
@@ -11278,7 +11278,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  4278              		.cfi_offset 4, -20
  4279              		.cfi_offset 5, -16
  4280              		.cfi_offset 6, -12
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 189
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 189
 
 
  4281              		.cfi_offset 7, -8
@@ -11338,7 +11338,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  4318 0022 3668     		ldr	r6, [r6]
 3251:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		{
  4319              		.loc 1 3251 5 view .LVU1183
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 190
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 190
 
 
  4320 0024 B742     		cmp	r7, r6
@@ -11398,7 +11398,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  4361              		.thumb
  4362              		.syntax unified
  4363              	.L323:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 191
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 191
 
 
  195:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 	(
@@ -11458,7 +11458,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  4404 005e 1344     		add	r3, r3, r2
  4405 0060 2360     		str	r3, [r4]
 3264:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			xReturn = pdFALSE;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 192
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 192
 
 
  4406              		.loc 1 3264 4 is_stmt 1 view .LVU1211
@@ -11518,7 +11518,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  4450              		.section	.text.vTaskMissedYield,"ax",%progbits
  4451              		.align	1
  4452              		.global	vTaskMissedYield
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 193
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 193
 
 
  4453              		.syntax unified
@@ -11578,7 +11578,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 3916:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
  4501              		.loc 1 3916 2 is_stmt 0 view .LVU1232
  4502 0004 7047     		bx	lr
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 194
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 194
 
 
  4503              	.L342:
@@ -11638,7 +11638,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  4547 0010 0220     		movs	r0, #2
  4548 0012 7047     		bx	lr
  4549              	.L345:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 195
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 195
 
 
 3929:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		}
@@ -11698,7 +11698,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  4596 000c 1268     		ldr	r2, [r2]
  4597 000e D26A     		ldr	r2, [r2, #44]
 3964:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			{
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 196
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 196
 
 
  4598              		.loc 1 3964 6 view .LVU1255
@@ -11758,7 +11758,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 3982:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					{
  4639              		.loc 1 3982 6 is_stmt 1 view .LVU1269
 3982:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					{
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 197
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 197
 
 
  4640              		.loc 1 3982 10 is_stmt 0 view .LVU1270
@@ -11818,7 +11818,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  4682              		.loc 1 3993 6 is_stmt 1 view .LVU1282
  4683 0080 00EB8000 		add	r0, r0, r0, lsl #2
  4684 0084 2946     		mov	r1, r5
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 198
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 198
 
 
  4685 0086 0A4B     		ldr	r3, .L363+4
@@ -11878,7 +11878,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  4729              		.cfi_offset 5, -8
  4730              		.cfi_offset 14, -4
 4017:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				}
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 199
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 199
 
 
  4731              		.loc 1 4017 14 view .LVU1293
@@ -11938,7 +11938,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  4777              		.loc 1 4049 4 is_stmt 1 view .LVU1303
  4778 0008 274B     		ldr	r3, .L380
  4779 000a 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 200
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 200
 
 
  4780 000c 8342     		cmp	r3, r0
@@ -11998,7 +11998,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  4820              		.syntax unified
  4821              	@ 195 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h" 1
  4822 0026 4FF05003 			mov r3, #80												
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 201
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 201
 
 
  4823 002a 83F31188 		msr basepri, r3											
@@ -12058,7 +12058,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  4861              	.L365:
 4111:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
  4862              		.loc 1 4111 2 is_stmt 0 view .LVU1334
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 202
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 202
 
 
  4863 0048 38BD     		pop	{r3, r4, r5, pc}
@@ -12118,7 +12118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  4903 007c 0124     		movs	r4, #1
  4904              	.LVL337:
 4083:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 203
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 203
 
 
  4905              		.loc 1 4083 6 is_stmt 0 view .LVU1349
@@ -12178,7 +12178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  4951              	.L380:
  4952 00a8 00000000 		.word	.LANCHOR10
  4953 00ac 00000000 		.word	.LANCHOR4
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 204
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 204
 
 
  4954 00b0 00000000 		.word	.LANCHOR13
@@ -12238,7 +12238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  4999              	.LBB196:
  193:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 
  5000              		.loc 2 193 1 view .LVU1369
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 205
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 205
 
 
  195:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 	(
@@ -12298,7 +12298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 4150:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				{
  5041              		.loc 1 4150 7 is_stmt 0 view .LVU1384
  5042 002e 0129     		cmp	r1, #1
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 206
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 206
 
 
  5043 0030 00D0     		beq	.L395
@@ -12358,7 +12358,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  5081 0050 1A4B     		ldr	r3, .L397+4
  5082 0052 03EB8202 		add	r2, r3, r2, lsl #2
 4181:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					{
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 207
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 207
 
 
  5083              		.loc 1 4181 8 view .LVU1401
@@ -12418,7 +12418,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  5127              	.LVL355:
 4192:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					}
  5128              		.loc 1 4192 37 view .LVU1412
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 208
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 208
 
 
 4211:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		}
@@ -12478,7 +12478,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  5172              	.L397:
  5173 00b8 00000000 		.word	.LANCHOR10
  5174 00bc 00000000 		.word	.LANCHOR4
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 209
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 209
 
 
  5175 00c0 00000000 		.word	.LANCHOR13
@@ -12538,7 +12538,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  5224              		.fpu fpv4-sp-d16
  5226              	pvTaskIncrementMutexHeldCount:
  5227              	.LFB47:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 210
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 210
 
 
 4550:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		/* If xSemaphoreCreateMutex() is called before any tasks have been created
@@ -12598,7 +12598,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  5273              		.cfi_startproc
  5274              		@ args = 0, pretend = 0, frame = 0
  5275              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 211
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 211
 
 
 4567:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	uint32_t ulReturn;
@@ -12658,7 +12658,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  5315              		.loc 1 4603 27 view .LVU1457
 4604:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
  5316              		.loc 1 4604 4 view .LVU1458
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 212
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 212
 
 
 4604:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
@@ -12718,7 +12718,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  5354              		.loc 1 4580 6 is_stmt 1 view .LVU1475
  5355 004a 1146     		mov	r1, r2
  5356 004c 2046     		mov	r0, r4
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 213
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 213
 
 
  5357 004e FFF7FEFF 		bl	prvAddCurrentTaskToDelayedList
@@ -12778,7 +12778,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  5404              	xTaskNotifyWait:
  5405              	.LVL369:
  5406              	.LFB49:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 214
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 214
 
 
 4635:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	BaseType_t xReturn;
@@ -12838,7 +12838,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  5449 0028 1B68     		ldr	r3, [r3]
 4649:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
  5450              		.loc 1 4649 33 view .LVU1497
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 215
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 215
 
 
  5451 002a 0122     		movs	r2, #1
@@ -12898,7 +12898,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  5489              		.loc 1 4702 4 is_stmt 1 view .LVU1513
 4702:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 		}
  5490              		.loc 1 4702 16 is_stmt 0 view .LVU1514
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 216
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 216
 
 
  5491 0054 0E4B     		ldr	r3, .L422
@@ -12958,7 +12958,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  5533 0084 D96C     		ldr	r1, [r3, #76]
  5534 0086 21EA0707 		bic	r7, r1, r7
  5535              	.LVL378:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 217
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 217
 
 
 4698:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				xReturn = pdTRUE;
@@ -13018,7 +13018,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  5582              		.loc 1 4720 3 view .LVU1536
  5583 0002 A8B1     		cbz	r0, .L443
  5584 0004 0D46     		mov	r5, r1
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 218
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 218
 
 
  5585 0006 1646     		mov	r6, r2
@@ -13078,7 +13078,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  5625              		.loc 1 4720 3 view .LVU1550
  5626              	.LBB199:
  5627              	.LBI199:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 219
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 219
 
 
  191:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** {
@@ -13138,7 +13138,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 4741:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					break;
  5668              		.loc 1 4741 13 is_stmt 0 view .LVU1565
  5669 004c E26C     		ldr	r2, [r4, #76]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 220
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 220
 
 
 4741:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					break;
@@ -13198,7 +13198,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  5708 0068 B2F1FF3F 		cmp	r2, #-1
  5709 006c 11D0     		beq	.L441
 4769:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 221
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 221
 
 
  5710              		.loc 1 4769 6 view .LVU1582
@@ -13258,7 +13258,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  5751 0086 FFF7FEFF 		bl	vPortExitCritical
  5752              	.LVL401:
 4820:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	}
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 222
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 222
 
 
  5753              		.loc 1 4820 3 view .LVU1596
@@ -13318,7 +13318,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 4784:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
  5796              		.loc 1 4784 5 view .LVU1608
  5797 00bc A36A     		ldr	r3, [r4, #40]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 223
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 223
 
 
  5798 00be 43B1     		cbz	r3, .L437
@@ -13378,7 +13378,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  5838 00de 074B     		ldr	r3, .L445+12
  5839 00e0 4FF08052 		mov	r2, #268435456
  5840 00e4 1A60     		str	r2, [r3]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 224
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 224
 
 
 4806:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				}
@@ -13438,7 +13438,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 4830:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	uint8_t ucOriginalNotifyState;
  5892              		.loc 1 4830 2 is_stmt 1 view .LVU1628
 4831:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 	BaseType_t xReturn = pdPASS;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 225
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 225
 
 
  5893              		.loc 1 4831 2 view .LVU1629
@@ -13498,7 +13498,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  5933 0028 B9F1000F 		cmp	r9, #0
  5934 002c 02D0     		beq	.L450
 4861:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 			}
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 226
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 226
 
 
  5935              		.loc 1 4861 5 is_stmt 1 view .LVU1644
@@ -13558,7 +13558,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  5978              	.LVL416:
  5979              		.thumb
  5980              		.syntax unified
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 227
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 227
 
 
  5981              	.L449:
@@ -13618,7 +13618,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 4878:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					break;
  6019              		.loc 1 4878 6 is_stmt 1 view .LVU1672
 4878:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 					break;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 228
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 228
 
 
  6020              		.loc 1 4878 29 is_stmt 0 view .LVU1673
@@ -13678,7 +13678,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  6060 0098 BFF34F8F 		dsb														
  6061              	
  6062              	@ 0 "" 2
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 229
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 229
 
 
  6063              	.LVL426:
@@ -13738,7 +13738,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 4950:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
  6105              		.loc 1 4950 2 is_stmt 0 view .LVU1702
  6106 00a8 2846     		mov	r0, r5
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 230
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 230
 
 
  6107 00aa BDE8F883 		pop	{r3, r4, r5, r6, r7, r8, r9, pc}
@@ -13798,7 +13798,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  6150              	.LBE213:
 4913:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
  6151              		.loc 1 4913 5 is_stmt 1 discriminator 3 view .LVU1714
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 231
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 231
 
 
 4913:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
@@ -13858,7 +13858,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  6191 00fa 0C4B     		ldr	r3, .L471+12
  6192 00fc 1B68     		ldr	r3, [r3]
  6193 00fe DB6A     		ldr	r3, [r3, #44]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 232
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 232
 
 
 4927:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				{
@@ -13918,7 +13918,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  6241              		.loc 1 4958 2 view -0
  6242              		.cfi_startproc
  6243              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 233
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 233
 
 
  6244              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -13978,7 +13978,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  223:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** }
  6285              		.loc 2 223 2 is_stmt 0 discriminator 2 view .LVU1752
  6286              		.thumb
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 234
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 234
 
 
  6287              		.syntax unified
@@ -14038,7 +14038,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  6328              	.LBE217:
 5036:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
  6329              		.loc 1 5036 2 view .LVU1768
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 235
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 235
 
 
  6330 003a F8BD     		pop	{r3, r4, r5, r6, r7, pc}
@@ -14098,7 +14098,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  6371              		.loc 2 193 1 view .LVU1781
  195:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 	(
  6372              		.loc 2 195 2 view .LVU1782
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 236
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 236
 
 
  6373              		.syntax unified
@@ -14158,7 +14158,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
 5006:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 				}
  6415              		.loc 1 5006 6 view .LVU1795
  6416 0080 00EB8000 		add	r0, r0, r0, lsl #2
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 237
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 237
 
 
  6417 0084 3146     		mov	r1, r6
@@ -14218,7 +14218,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  6459 00bc 00000000 		.word	.LANCHOR13
  6460 00c0 00000000 		.word	.LANCHOR4
  6461 00c4 00000000 		.word	.LANCHOR10
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 238
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 238
 
 
  6462 00c8 00000000 		.word	.LANCHOR19
@@ -14278,7 +14278,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  6507 0014 0024     		movs	r4, #0
  6508              	.LVL458:
  6509              	.L489:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 239
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 239
 
 
 5065:Middlewares/Third_Party/FreeRTOS/Source/tasks.c **** 
@@ -14338,7 +14338,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  6559 0000 00000000 		.space	4
  6560              		.section	.bss.pxOverflowDelayedTaskList,"aw",%nobits
  6561              		.align	2
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 240
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 240
 
 
  6562              		.set	.LANCHOR8,. + 0
@@ -14398,7 +14398,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  6628              	xDelayedTaskList2:
  6629 0000 00000000 		.space	20
  6629      00000000 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 241
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 241
 
 
  6629      00000000 
@@ -14458,7 +14458,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  6685 0000 00000000 		.space	4
  6686              		.text
  6687              	.Letext0:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 242
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 242
 
 
  6688              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\std
@@ -14474,213 +14474,213 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 1
  6698              		.file 13 "Middlewares/Third_Party/FreeRTOS/Source/include/list.h"
  6699              		.file 14 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
  6700              		.file 15 "Middlewares/Third_Party/FreeRTOS/Source/include/portable.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 243
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 243
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 tasks.c
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:18     .text.prvTaskIsTaskSuspended:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:25     .text.prvTaskIsTaskSuspended:00000000 prvTaskIsTaskSuspended
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:115    .text.prvTaskIsTaskSuspended:00000038 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:121    .text.prvResetNextTaskUnblockTime:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:127    .text.prvResetNextTaskUnblockTime:00000000 prvResetNextTaskUnblockTime
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:170    .text.prvResetNextTaskUnblockTime:00000024 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:176    .text.prvInitialiseNewTask:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:182    .text.prvInitialiseNewTask:00000000 prvInitialiseNewTask
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:341    .text.prvInitialiseTaskLists:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:347    .text.prvInitialiseTaskLists:00000000 prvInitialiseTaskLists
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:422    .text.prvInitialiseTaskLists:00000048 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:434    .text.prvAddNewTaskToReadyList:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:440    .text.prvAddNewTaskToReadyList:00000000 prvAddNewTaskToReadyList
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:576    .text.prvAddNewTaskToReadyList:0000008c $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:587    .text.prvDeleteTCB:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:593    .text.prvDeleteTCB:00000000 prvDeleteTCB
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:671    .text.prvCheckTasksWaitingTermination:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:677    .text.prvCheckTasksWaitingTermination:00000000 prvCheckTasksWaitingTermination
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:754    .text.prvCheckTasksWaitingTermination:00000040 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:761    .text.prvIdleTask:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:767    .text.prvIdleTask:00000000 prvIdleTask
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:816    .text.prvIdleTask:00000020 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:822    .text.prvAddCurrentTaskToDelayedList:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:828    .text.prvAddCurrentTaskToDelayedList:00000000 prvAddCurrentTaskToDelayedList
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:948    .text.prvAddCurrentTaskToDelayedList:0000007c $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:959    .text.xTaskCreateStatic:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:966    .text.xTaskCreateStatic:00000000 xTaskCreateStatic
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:1131   .text.xTaskCreate:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:1138   .text.xTaskCreate:00000000 xTaskCreate
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:1263   .text.vTaskDelete:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:1270   .text.vTaskDelete:00000000 vTaskDelete
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:1455   .text.vTaskDelete:000000b8 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:1469   .text.uxTaskPriorityGet:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:1476   .text.uxTaskPriorityGet:00000000 uxTaskPriorityGet
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:1522   .text.uxTaskPriorityGet:0000001c $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:1527   .text.uxTaskPriorityGetFromISR:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:1534   .text.uxTaskPriorityGetFromISR:00000000 uxTaskPriorityGetFromISR
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:1615   .text.uxTaskPriorityGetFromISR:0000002c $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:1620   .text.vTaskPrioritySet:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:1627   .text.vTaskPrioritySet:00000000 vTaskPrioritySet
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:1872   .text.vTaskPrioritySet:000000d8 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:1880   .text.vTaskResume:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:1887   .text.vTaskResume:00000000 vTaskResume
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2018   .text.vTaskResume:00000078 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2026   .text.xTaskResumeFromISR:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2033   .text.xTaskResumeFromISR:00000000 xTaskResumeFromISR
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2204   .text.xTaskResumeFromISR:00000090 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2213   .rodata.vTaskStartScheduler.str1.4:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2217   .text.vTaskStartScheduler:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2224   .text.vTaskStartScheduler:00000000 vTaskStartScheduler
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2323   .text.vTaskStartScheduler:00000058 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2332   .text.vTaskEndScheduler:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2339   .text.vTaskEndScheduler:00000000 vTaskEndScheduler
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2382   .text.vTaskEndScheduler:00000020 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2387   .text.vTaskSuspendAll:00000000 $t
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 244
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:18     .text.prvTaskIsTaskSuspended:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:25     .text.prvTaskIsTaskSuspended:00000000 prvTaskIsTaskSuspended
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:115    .text.prvTaskIsTaskSuspended:00000038 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:121    .text.prvResetNextTaskUnblockTime:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:127    .text.prvResetNextTaskUnblockTime:00000000 prvResetNextTaskUnblockTime
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:170    .text.prvResetNextTaskUnblockTime:00000024 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:176    .text.prvInitialiseNewTask:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:182    .text.prvInitialiseNewTask:00000000 prvInitialiseNewTask
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:341    .text.prvInitialiseTaskLists:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:347    .text.prvInitialiseTaskLists:00000000 prvInitialiseTaskLists
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:422    .text.prvInitialiseTaskLists:00000048 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:434    .text.prvAddNewTaskToReadyList:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:440    .text.prvAddNewTaskToReadyList:00000000 prvAddNewTaskToReadyList
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:576    .text.prvAddNewTaskToReadyList:0000008c $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:587    .text.prvDeleteTCB:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:593    .text.prvDeleteTCB:00000000 prvDeleteTCB
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:671    .text.prvCheckTasksWaitingTermination:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:677    .text.prvCheckTasksWaitingTermination:00000000 prvCheckTasksWaitingTermination
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:754    .text.prvCheckTasksWaitingTermination:00000040 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:761    .text.prvIdleTask:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:767    .text.prvIdleTask:00000000 prvIdleTask
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:816    .text.prvIdleTask:00000020 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:822    .text.prvAddCurrentTaskToDelayedList:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:828    .text.prvAddCurrentTaskToDelayedList:00000000 prvAddCurrentTaskToDelayedList
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:948    .text.prvAddCurrentTaskToDelayedList:0000007c $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:959    .text.xTaskCreateStatic:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:966    .text.xTaskCreateStatic:00000000 xTaskCreateStatic
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:1131   .text.xTaskCreate:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:1138   .text.xTaskCreate:00000000 xTaskCreate
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:1263   .text.vTaskDelete:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:1270   .text.vTaskDelete:00000000 vTaskDelete
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:1455   .text.vTaskDelete:000000b8 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:1469   .text.uxTaskPriorityGet:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:1476   .text.uxTaskPriorityGet:00000000 uxTaskPriorityGet
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:1522   .text.uxTaskPriorityGet:0000001c $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:1527   .text.uxTaskPriorityGetFromISR:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:1534   .text.uxTaskPriorityGetFromISR:00000000 uxTaskPriorityGetFromISR
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:1615   .text.uxTaskPriorityGetFromISR:0000002c $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:1620   .text.vTaskPrioritySet:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:1627   .text.vTaskPrioritySet:00000000 vTaskPrioritySet
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:1872   .text.vTaskPrioritySet:000000d8 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:1880   .text.vTaskResume:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:1887   .text.vTaskResume:00000000 vTaskResume
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2018   .text.vTaskResume:00000078 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2026   .text.xTaskResumeFromISR:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2033   .text.xTaskResumeFromISR:00000000 xTaskResumeFromISR
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2204   .text.xTaskResumeFromISR:00000090 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2213   .rodata.vTaskStartScheduler.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2217   .text.vTaskStartScheduler:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2224   .text.vTaskStartScheduler:00000000 vTaskStartScheduler
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2323   .text.vTaskStartScheduler:00000058 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2332   .text.vTaskEndScheduler:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2339   .text.vTaskEndScheduler:00000000 vTaskEndScheduler
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2382   .text.vTaskEndScheduler:00000020 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2387   .text.vTaskSuspendAll:00000000 $t
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 244
 
 
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2394   .text.vTaskSuspendAll:00000000 vTaskSuspendAll
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2412   .text.vTaskSuspendAll:0000000c $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2417   .text.xTaskGetTickCount:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2424   .text.xTaskGetTickCount:00000000 xTaskGetTickCount
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2445   .text.xTaskGetTickCount:00000008 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2450   .text.xTaskGetTickCountFromISR:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2457   .text.xTaskGetTickCountFromISR:00000000 xTaskGetTickCountFromISR
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2486   .text.xTaskGetTickCountFromISR:0000000c $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2491   .text.uxTaskGetNumberOfTasks:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2498   .text.uxTaskGetNumberOfTasks:00000000 uxTaskGetNumberOfTasks
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2514   .text.uxTaskGetNumberOfTasks:00000008 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2519   .text.pcTaskGetName:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2526   .text.pcTaskGetName:00000000 pcTaskGetName
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2587   .text.pcTaskGetName:00000024 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2592   .text.xTaskIncrementTick:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2599   .text.xTaskIncrementTick:00000000 xTaskIncrementTick
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2862   .text.xTaskIncrementTick:000000ec $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2877   .text.xTaskResumeAll:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:2884   .text.xTaskResumeAll:00000000 xTaskResumeAll
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:3120   .text.xTaskResumeAll:000000d4 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:3133   .text.vTaskDelay:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:3140   .text.vTaskDelay:00000000 vTaskDelay
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:3233   .text.vTaskDelay:00000044 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:3239   .text.vTaskSwitchContext:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:3246   .text.vTaskSwitchContext:00000000 vTaskSwitchContext
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:3403   .text.vTaskSwitchContext:00000084 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:3414   .text.vTaskSuspend:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:3421   .text.vTaskSuspend:00000000 vTaskSuspend
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:3626   .text.vTaskSuspend:000000cc $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:3638   .text.vTaskPlaceOnEventList:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:3645   .text.vTaskPlaceOnEventList:00000000 vTaskPlaceOnEventList
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:3713   .text.vTaskPlaceOnEventList:0000002c $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:3718   .text.vTaskPlaceOnUnorderedEventList:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:3725   .text.vTaskPlaceOnUnorderedEventList:00000000 vTaskPlaceOnUnorderedEventList
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:3836   .text.vTaskPlaceOnUnorderedEventList:00000050 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:3842   .text.xTaskRemoveFromEventList:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:3849   .text.xTaskRemoveFromEventList:00000000 xTaskRemoveFromEventList
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:3980   .text.xTaskRemoveFromEventList:00000074 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:3990   .text.vTaskRemoveFromUnorderedEventList:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:3997   .text.vTaskRemoveFromUnorderedEventList:00000000 vTaskRemoveFromUnorderedEventList
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:4131   .text.vTaskRemoveFromUnorderedEventList:00000074 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:4140   .text.vTaskSetTimeOutState:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:4147   .text.vTaskSetTimeOutState:00000000 vTaskSetTimeOutState
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:4217   .text.vTaskSetTimeOutState:00000030 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:4223   .text.vTaskInternalSetTimeOutState:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:4230   .text.vTaskInternalSetTimeOutState:00000000 vTaskInternalSetTimeOutState
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:4253   .text.vTaskInternalSetTimeOutState:00000010 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:4259   .text.xTaskCheckForTimeOut:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:4266   .text.xTaskCheckForTimeOut:00000000 xTaskCheckForTimeOut
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:4444   .text.xTaskCheckForTimeOut:0000007c $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:4451   .text.vTaskMissedYield:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:4458   .text.vTaskMissedYield:00000000 vTaskMissedYield
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:4475   .text.vTaskMissedYield:00000008 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:4480   .text.xTaskGetCurrentTaskHandle:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:4487   .text.xTaskGetCurrentTaskHandle:00000000 xTaskGetCurrentTaskHandle
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:4506   .text.xTaskGetCurrentTaskHandle:00000008 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:4511   .text.xTaskGetSchedulerState:00000000 $t
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 245
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2394   .text.vTaskSuspendAll:00000000 vTaskSuspendAll
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2412   .text.vTaskSuspendAll:0000000c $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2417   .text.xTaskGetTickCount:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2424   .text.xTaskGetTickCount:00000000 xTaskGetTickCount
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2445   .text.xTaskGetTickCount:00000008 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2450   .text.xTaskGetTickCountFromISR:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2457   .text.xTaskGetTickCountFromISR:00000000 xTaskGetTickCountFromISR
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2486   .text.xTaskGetTickCountFromISR:0000000c $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2491   .text.uxTaskGetNumberOfTasks:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2498   .text.uxTaskGetNumberOfTasks:00000000 uxTaskGetNumberOfTasks
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2514   .text.uxTaskGetNumberOfTasks:00000008 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2519   .text.pcTaskGetName:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2526   .text.pcTaskGetName:00000000 pcTaskGetName
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2587   .text.pcTaskGetName:00000024 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2592   .text.xTaskIncrementTick:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2599   .text.xTaskIncrementTick:00000000 xTaskIncrementTick
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2862   .text.xTaskIncrementTick:000000ec $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2877   .text.xTaskResumeAll:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:2884   .text.xTaskResumeAll:00000000 xTaskResumeAll
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:3120   .text.xTaskResumeAll:000000d4 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:3133   .text.vTaskDelay:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:3140   .text.vTaskDelay:00000000 vTaskDelay
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:3233   .text.vTaskDelay:00000044 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:3239   .text.vTaskSwitchContext:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:3246   .text.vTaskSwitchContext:00000000 vTaskSwitchContext
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:3403   .text.vTaskSwitchContext:00000084 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:3414   .text.vTaskSuspend:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:3421   .text.vTaskSuspend:00000000 vTaskSuspend
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:3626   .text.vTaskSuspend:000000cc $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:3638   .text.vTaskPlaceOnEventList:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:3645   .text.vTaskPlaceOnEventList:00000000 vTaskPlaceOnEventList
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:3713   .text.vTaskPlaceOnEventList:0000002c $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:3718   .text.vTaskPlaceOnUnorderedEventList:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:3725   .text.vTaskPlaceOnUnorderedEventList:00000000 vTaskPlaceOnUnorderedEventList
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:3836   .text.vTaskPlaceOnUnorderedEventList:00000050 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:3842   .text.xTaskRemoveFromEventList:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:3849   .text.xTaskRemoveFromEventList:00000000 xTaskRemoveFromEventList
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:3980   .text.xTaskRemoveFromEventList:00000074 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:3990   .text.vTaskRemoveFromUnorderedEventList:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:3997   .text.vTaskRemoveFromUnorderedEventList:00000000 vTaskRemoveFromUnorderedEventList
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:4131   .text.vTaskRemoveFromUnorderedEventList:00000074 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:4140   .text.vTaskSetTimeOutState:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:4147   .text.vTaskSetTimeOutState:00000000 vTaskSetTimeOutState
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:4217   .text.vTaskSetTimeOutState:00000030 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:4223   .text.vTaskInternalSetTimeOutState:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:4230   .text.vTaskInternalSetTimeOutState:00000000 vTaskInternalSetTimeOutState
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:4253   .text.vTaskInternalSetTimeOutState:00000010 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:4259   .text.xTaskCheckForTimeOut:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:4266   .text.xTaskCheckForTimeOut:00000000 xTaskCheckForTimeOut
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:4444   .text.xTaskCheckForTimeOut:0000007c $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:4451   .text.vTaskMissedYield:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:4458   .text.vTaskMissedYield:00000000 vTaskMissedYield
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:4475   .text.vTaskMissedYield:00000008 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:4480   .text.xTaskGetCurrentTaskHandle:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:4487   .text.xTaskGetCurrentTaskHandle:00000000 xTaskGetCurrentTaskHandle
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:4506   .text.xTaskGetCurrentTaskHandle:00000008 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:4511   .text.xTaskGetSchedulerState:00000000 $t
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 245
 
 
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:4518   .text.xTaskGetSchedulerState:00000000 xTaskGetSchedulerState
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:4556   .text.xTaskGetSchedulerState:00000018 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:4562   .text.xTaskPriorityInherit:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:4569   .text.xTaskPriorityInherit:00000000 xTaskPriorityInherit
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:4741   .text.xTaskPriorityInherit:000000ac $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:4748   .text.xTaskPriorityDisinherit:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:4755   .text.xTaskPriorityDisinherit:00000000 xTaskPriorityDisinherit
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:4952   .text.xTaskPriorityDisinherit:000000a8 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:4959   .text.vTaskPriorityDisinheritAfterTimeout:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:4966   .text.vTaskPriorityDisinheritAfterTimeout:00000000 vTaskPriorityDisinheritAfterTimeout
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:5173   .text.vTaskPriorityDisinheritAfterTimeout:000000b8 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:5180   .text.uxTaskResetEventItemValue:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:5187   .text.uxTaskResetEventItemValue:00000000 uxTaskResetEventItemValue
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:5214   .text.uxTaskResetEventItemValue:00000014 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:5219   .text.pvTaskIncrementMutexHeldCount:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:5226   .text.pvTaskIncrementMutexHeldCount:00000000 pvTaskIncrementMutexHeldCount
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:5257   .text.pvTaskIncrementMutexHeldCount:00000018 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:5262   .text.ulTaskNotifyTake:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:5269   .text.ulTaskNotifyTake:00000000 ulTaskNotifyTake
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:5391   .text.ulTaskNotifyTake:00000070 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:5397   .text.xTaskNotifyWait:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:5404   .text.xTaskNotifyWait:00000000 xTaskNotifyWait
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:5548   .text.xTaskNotifyWait:00000090 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:5554   .text.xTaskGenericNotify:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:5561   .text.xTaskGenericNotify:00000000 xTaskGenericNotify
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:5617   .text.xTaskGenericNotify:0000002a $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:5857   .text.xTaskGenericNotify:000000f0 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:5865   .text.xTaskGenericNotifyFromISR:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:5872   .text.xTaskGenericNotifyFromISR:00000000 xTaskGenericNotifyFromISR
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:5955   .text.xTaskGenericNotifyFromISR:00000048 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6221   .text.xTaskGenericNotifyFromISR:00000120 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6231   .text.vTaskNotifyGiveFromISR:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6238   .text.vTaskNotifyGiveFromISR:00000000 vTaskNotifyGiveFromISR
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6458   .text.vTaskNotifyGiveFromISR:000000b8 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6468   .text.xTaskNotifyStateClear:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6475   .text.xTaskNotifyStateClear:00000000 xTaskNotifyStateClear
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6541   .text.xTaskNotifyStateClear:00000030 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6551   .bss.pxCurrentTCB:00000000 pxCurrentTCB
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6547   .bss.pxCurrentTCB:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6554   .bss.pxDelayedTaskList:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6558   .bss.pxDelayedTaskList:00000000 pxDelayedTaskList
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6561   .bss.pxOverflowDelayedTaskList:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6565   .bss.pxOverflowDelayedTaskList:00000000 pxOverflowDelayedTaskList
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6568   .bss.pxReadyTasksLists:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6572   .bss.pxReadyTasksLists:00000000 pxReadyTasksLists
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6575   .bss.uxCurrentNumberOfTasks:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6579   .bss.uxCurrentNumberOfTasks:00000000 uxCurrentNumberOfTasks
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6582   .bss.uxDeletedTasksWaitingCleanUp:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6586   .bss.uxDeletedTasksWaitingCleanUp:00000000 uxDeletedTasksWaitingCleanUp
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6589   .bss.uxPendedTicks:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6593   .bss.uxPendedTicks:00000000 uxPendedTicks
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6596   .bss.uxSchedulerSuspended:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6600   .bss.uxSchedulerSuspended:00000000 uxSchedulerSuspended
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6603   .bss.uxTaskNumber:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6607   .bss.uxTaskNumber:00000000 uxTaskNumber
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6610   .bss.uxTopReadyPriority:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6614   .bss.uxTopReadyPriority:00000000 uxTopReadyPriority
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s 			page 246
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:4518   .text.xTaskGetSchedulerState:00000000 xTaskGetSchedulerState
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:4556   .text.xTaskGetSchedulerState:00000018 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:4562   .text.xTaskPriorityInherit:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:4569   .text.xTaskPriorityInherit:00000000 xTaskPriorityInherit
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:4741   .text.xTaskPriorityInherit:000000ac $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:4748   .text.xTaskPriorityDisinherit:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:4755   .text.xTaskPriorityDisinherit:00000000 xTaskPriorityDisinherit
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:4952   .text.xTaskPriorityDisinherit:000000a8 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:4959   .text.vTaskPriorityDisinheritAfterTimeout:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:4966   .text.vTaskPriorityDisinheritAfterTimeout:00000000 vTaskPriorityDisinheritAfterTimeout
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:5173   .text.vTaskPriorityDisinheritAfterTimeout:000000b8 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:5180   .text.uxTaskResetEventItemValue:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:5187   .text.uxTaskResetEventItemValue:00000000 uxTaskResetEventItemValue
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:5214   .text.uxTaskResetEventItemValue:00000014 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:5219   .text.pvTaskIncrementMutexHeldCount:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:5226   .text.pvTaskIncrementMutexHeldCount:00000000 pvTaskIncrementMutexHeldCount
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:5257   .text.pvTaskIncrementMutexHeldCount:00000018 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:5262   .text.ulTaskNotifyTake:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:5269   .text.ulTaskNotifyTake:00000000 ulTaskNotifyTake
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:5391   .text.ulTaskNotifyTake:00000070 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:5397   .text.xTaskNotifyWait:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:5404   .text.xTaskNotifyWait:00000000 xTaskNotifyWait
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:5548   .text.xTaskNotifyWait:00000090 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:5554   .text.xTaskGenericNotify:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:5561   .text.xTaskGenericNotify:00000000 xTaskGenericNotify
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:5617   .text.xTaskGenericNotify:0000002a $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:5857   .text.xTaskGenericNotify:000000f0 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:5865   .text.xTaskGenericNotifyFromISR:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:5872   .text.xTaskGenericNotifyFromISR:00000000 xTaskGenericNotifyFromISR
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:5955   .text.xTaskGenericNotifyFromISR:00000048 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6221   .text.xTaskGenericNotifyFromISR:00000120 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6231   .text.vTaskNotifyGiveFromISR:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6238   .text.vTaskNotifyGiveFromISR:00000000 vTaskNotifyGiveFromISR
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6458   .text.vTaskNotifyGiveFromISR:000000b8 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6468   .text.xTaskNotifyStateClear:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6475   .text.xTaskNotifyStateClear:00000000 xTaskNotifyStateClear
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6541   .text.xTaskNotifyStateClear:00000030 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6551   .bss.pxCurrentTCB:00000000 pxCurrentTCB
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6547   .bss.pxCurrentTCB:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6554   .bss.pxDelayedTaskList:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6558   .bss.pxDelayedTaskList:00000000 pxDelayedTaskList
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6561   .bss.pxOverflowDelayedTaskList:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6565   .bss.pxOverflowDelayedTaskList:00000000 pxOverflowDelayedTaskList
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6568   .bss.pxReadyTasksLists:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6572   .bss.pxReadyTasksLists:00000000 pxReadyTasksLists
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6575   .bss.uxCurrentNumberOfTasks:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6579   .bss.uxCurrentNumberOfTasks:00000000 uxCurrentNumberOfTasks
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6582   .bss.uxDeletedTasksWaitingCleanUp:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6586   .bss.uxDeletedTasksWaitingCleanUp:00000000 uxDeletedTasksWaitingCleanUp
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6589   .bss.uxPendedTicks:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6593   .bss.uxPendedTicks:00000000 uxPendedTicks
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6596   .bss.uxSchedulerSuspended:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6600   .bss.uxSchedulerSuspended:00000000 uxSchedulerSuspended
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6603   .bss.uxTaskNumber:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6607   .bss.uxTaskNumber:00000000 uxTaskNumber
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6610   .bss.uxTopReadyPriority:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6614   .bss.uxTopReadyPriority:00000000 uxTopReadyPriority
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s 			page 246
 
 
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6617   .bss.xDelayedTaskList1:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6621   .bss.xDelayedTaskList1:00000000 xDelayedTaskList1
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6624   .bss.xDelayedTaskList2:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6628   .bss.xDelayedTaskList2:00000000 xDelayedTaskList2
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6631   .bss.xNextTaskUnblockTime:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6635   .bss.xNextTaskUnblockTime:00000000 xNextTaskUnblockTime
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6638   .bss.xNumOfOverflows:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6642   .bss.xNumOfOverflows:00000000 xNumOfOverflows
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6645   .bss.xPendingReadyList:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6649   .bss.xPendingReadyList:00000000 xPendingReadyList
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6652   .bss.xSchedulerRunning:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6656   .bss.xSchedulerRunning:00000000 xSchedulerRunning
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6659   .bss.xSuspendedTaskList:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6663   .bss.xSuspendedTaskList:00000000 xSuspendedTaskList
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6666   .bss.xTasksWaitingTermination:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6670   .bss.xTasksWaitingTermination:00000000 xTasksWaitingTermination
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6673   .bss.xTickCount:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6677   .bss.xTickCount:00000000 xTickCount
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6680   .bss.xYieldPending:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:6684   .bss.xYieldPending:00000000 xYieldPending
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:5623   .text.xTaskGenericNotify:0000002f $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:5623   .text.xTaskGenericNotify:00000030 $t
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:5961   .text.xTaskGenericNotifyFromISR:0000004d $d
-C:\Users\luoha\AppData\Local\Temp\cc8gsuZZ.s:5961   .text.xTaskGenericNotifyFromISR:0000004e $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6617   .bss.xDelayedTaskList1:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6621   .bss.xDelayedTaskList1:00000000 xDelayedTaskList1
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6624   .bss.xDelayedTaskList2:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6628   .bss.xDelayedTaskList2:00000000 xDelayedTaskList2
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6631   .bss.xNextTaskUnblockTime:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6635   .bss.xNextTaskUnblockTime:00000000 xNextTaskUnblockTime
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6638   .bss.xNumOfOverflows:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6642   .bss.xNumOfOverflows:00000000 xNumOfOverflows
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6645   .bss.xPendingReadyList:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6649   .bss.xPendingReadyList:00000000 xPendingReadyList
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6652   .bss.xSchedulerRunning:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6656   .bss.xSchedulerRunning:00000000 xSchedulerRunning
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6659   .bss.xSuspendedTaskList:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6663   .bss.xSuspendedTaskList:00000000 xSuspendedTaskList
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6666   .bss.xTasksWaitingTermination:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6670   .bss.xTasksWaitingTermination:00000000 xTasksWaitingTermination
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6673   .bss.xTickCount:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6677   .bss.xTickCount:00000000 xTickCount
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6680   .bss.xYieldPending:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:6684   .bss.xYieldPending:00000000 xYieldPending
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:5623   .text.xTaskGenericNotify:0000002f $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:5623   .text.xTaskGenericNotify:00000030 $t
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:5961   .text.xTaskGenericNotifyFromISR:0000004d $d
+C:\Users\luoha\AppData\Local\Temp\cci1pNuH.s:5961   .text.xTaskGenericNotifyFromISR:0000004e $t
 
 UNDEFINED SYMBOLS
 vListInitialiseItem

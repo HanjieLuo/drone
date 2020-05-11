@@ -39,6 +39,13 @@
 #define MPU6050_RA_INT_PIN_CFG 0x37
 
 bool MPU6050Init(void);
+
+bool MPU6050ReadAccelRaw(int16_t *values);
+bool MPU6050ReadGyroRaw(int16_t *values);
+
+// bool MPU6050ReadAccelRaw(int16_t *ax, int16_t *ay, int16_t *az);
+// bool MPU6050ReadGyroRaw(int16_t *gx, int16_t *gy, int16_t *gz);
+
 bool MPU6050ReadAccel(float *ax, float *ay, float *az);
 bool MPU6050ReadGyro(float *gx, float *gy, float *gz);
 bool MPU6050ReadTemp(float *celsius);

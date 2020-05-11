@@ -101,6 +101,30 @@ bool MPU6050Init(void) {
     return true;
 }
 
+bool MPU6050ReadAccelRaw(int16_t *values) {
+    if (!I2C1MenRead(MPU6050_DEV_ADDR, MPU6050_ACCEL_XOUT_H, 1, i2c_datas, 6)) {
+        return false;
+    }
+
+	values[0] = (int16_t)(i2c_datas[0] << 8 | i2c_datas [1]);
+	values[1] = (int16_t)(i2c_datas[2] << 8 | i2c_datas [3]);
+	values[2] = (int16_t)(i2c_datas[4] << 8 | i2c_datas [5]);
+
+    return true;  
+}
+
+bool MPU6050ReadGyroRaw(int16_t *values){
+    if (!I2C1MenRead(MPU6050_DEV_ADDR, MPU6050_GYRO_XOUT_H, 1, i2c_datas, 6)) {
+        return false;
+    }
+
+	values[0] = (int16_t)(i2c_datas[0] << 8 | i2c_datas [1]);
+	values[1] = (int16_t)(i2c_datas[2] << 8 | i2c_datas [3]);
+	values[2] = (int16_t)(i2c_datas[4] << 8 | i2c_datas [5]);
+
+    return true;  
+}
+
 bool MPU6050ReadAccel(float *accel_x, float *accel_y, float *accel_z) {
     if (!I2C1MenRead(MPU6050_DEV_ADDR, MPU6050_ACCEL_XOUT_H, 1, i2c_datas, 6)) {
         return false;

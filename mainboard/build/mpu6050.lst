@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s 			page 1
   13:Modules/src/mpu6050.c ****     if(HAL_I2C_IsDeviceReady(&hi2c1, MPU6050_DEV_ADDR, 10, 1000) != HAL_OK) {
   44              		.loc 1 13 5 view .LVU2
   45              		.loc 1 13 8 is_stmt 0 view .LVU3
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s 			page 2
 
 
   46 000a 4FF47A73 		mov	r3, #1000
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s 			page 1
   57:Modules/src/mpu6050.c ****     if (!I2C1MenWrite(MPU6050_DEV_ADDR, MPU6050_SMPLRT_DIV, 1, &i2c_data, 1)) {
   58:Modules/src/mpu6050.c ****         return false;
   59:Modules/src/mpu6050.c ****     }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s 			page 3
 
 
   60:Modules/src/mpu6050.c ****     vTaskDelay(pdMS_TO_TICKS(5));
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s 			page 1
   67              		.loc 1 20 5 is_stmt 1 view .LVU7
   20:Modules/src/mpu6050.c ****         return false;
   68              		.loc 1 20 10 is_stmt 0 view .LVU8
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s 			page 4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s 			page 4
 
 
   69 0022 0122     		movs	r2, #1
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s 			page 1
  112              	.LVL5:
   37:Modules/src/mpu6050.c ****     if (!I2C1MenWrite(MPU6050_DEV_ADDR, MPU6050_PWR_MGMT_1, 1, &i2c_data, 1)) {
  113              		.loc 1 37 5 view .LVU20
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s 			page 5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s 			page 5
 
 
   37:Modules/src/mpu6050.c ****     if (!I2C1MenWrite(MPU6050_DEV_ADDR, MPU6050_PWR_MGMT_1, 1, &i2c_data, 1)) {
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s 			page 1
  155 009a 1B4B     		ldr	r3, .L8+4
  156 009c 0722     		movs	r2, #7
  157 009e 1A70     		strb	r2, [r3]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s 			page 6
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s 			page 6
 
 
   57:Modules/src/mpu6050.c ****         return false;
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s 			page 1
   83:Modules/src/mpu6050.c ****         return false;
  199              		.loc 1 83 10 is_stmt 0 view .LVU47
  200 00d8 0122     		movs	r2, #1
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s 			page 7
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s 			page 7
 
 
  201 00da 0092     		str	r2, [sp]
@@ -400,447 +400,650 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s 			page 1
  231 0108 00000000 		.word	.LANCHOR0
  232              		.cfi_endproc
  233              	.LFE138:
- 235              		.section	.text.MPU6050ReadAccel,"ax",%progbits
+ 235              		.section	.text.MPU6050ReadAccelRaw,"ax",%progbits
  236              		.align	1
- 237              		.global	MPU6050ReadAccel
+ 237              		.global	MPU6050ReadAccelRaw
  238              		.syntax unified
  239              		.thumb
  240              		.thumb_func
  241              		.fpu fpv4-sp-d16
- 243              	MPU6050ReadAccel:
+ 243              	MPU6050ReadAccelRaw:
  244              	.LVL17:
  245              	.LFB139:
  103:Modules/src/mpu6050.c **** 
- 104:Modules/src/mpu6050.c **** bool MPU6050ReadAccel(float *accel_x, float *accel_y, float *accel_z) {
- 246              		.loc 1 104 71 is_stmt 1 view -0
+ 104:Modules/src/mpu6050.c **** bool MPU6050ReadAccelRaw(int16_t *values) {
+ 246              		.loc 1 104 43 is_stmt 1 view -0
  247              		.cfi_startproc
  248              		@ args = 0, pretend = 0, frame = 0
  249              		@ frame_needed = 0, uses_anonymous_args = 0
- 250              		.loc 1 104 71 is_stmt 0 view .LVU55
- 251 0000 70B5     		push	{r4, r5, r6, lr}
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s 			page 8
+ 250              		.loc 1 104 43 is_stmt 0 view .LVU55
+ 251 0000 10B5     		push	{r4, lr}
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s 			page 8
 
 
  252              	.LCFI4:
- 253              		.cfi_def_cfa_offset 16
- 254              		.cfi_offset 4, -16
- 255              		.cfi_offset 5, -12
- 256              		.cfi_offset 6, -8
- 257              		.cfi_offset 14, -4
- 258 0002 82B0     		sub	sp, sp, #8
- 259              	.LCFI5:
- 260              		.cfi_def_cfa_offset 24
- 261 0004 0646     		mov	r6, r0
- 262 0006 0D46     		mov	r5, r1
- 263 0008 1446     		mov	r4, r2
+ 253              		.cfi_def_cfa_offset 8
+ 254              		.cfi_offset 4, -8
+ 255              		.cfi_offset 14, -4
+ 256 0002 82B0     		sub	sp, sp, #8
+ 257              	.LCFI5:
+ 258              		.cfi_def_cfa_offset 16
+ 259 0004 0446     		mov	r4, r0
  105:Modules/src/mpu6050.c ****     if (!I2C1MenRead(MPU6050_DEV_ADDR, MPU6050_ACCEL_XOUT_H, 1, i2c_datas, 6)) {
- 264              		.loc 1 105 5 is_stmt 1 view .LVU56
- 265              		.loc 1 105 10 is_stmt 0 view .LVU57
- 266 000a 0623     		movs	r3, #6
- 267 000c 0093     		str	r3, [sp]
- 268 000e 1A4B     		ldr	r3, .L13
- 269 0010 0122     		movs	r2, #1
- 270              	.LVL18:
- 271              		.loc 1 105 10 view .LVU58
- 272 0012 3B21     		movs	r1, #59
- 273              	.LVL19:
- 274              		.loc 1 105 10 view .LVU59
- 275 0014 D020     		movs	r0, #208
- 276              	.LVL20:
- 277              		.loc 1 105 10 view .LVU60
- 278 0016 FFF7FEFF 		bl	I2C1MenRead
- 279              	.LVL21:
- 280              		.loc 1 105 8 view .LVU61
- 281 001a 0146     		mov	r1, r0
- 282 001c 48B3     		cbz	r0, .L11
+ 260              		.loc 1 105 5 is_stmt 1 view .LVU56
+ 261              		.loc 1 105 10 is_stmt 0 view .LVU57
+ 262 0006 0623     		movs	r3, #6
+ 263 0008 0093     		str	r3, [sp]
+ 264 000a 0C4B     		ldr	r3, .L13
+ 265 000c 0122     		movs	r2, #1
+ 266 000e 3B21     		movs	r1, #59
+ 267 0010 D020     		movs	r0, #208
+ 268              	.LVL18:
+ 269              		.loc 1 105 10 view .LVU58
+ 270 0012 FFF7FEFF 		bl	I2C1MenRead
+ 271              	.LVL19:
+ 272              		.loc 1 105 8 view .LVU59
+ 273 0016 78B1     		cbz	r0, .L11
  106:Modules/src/mpu6050.c ****         return false;
  107:Modules/src/mpu6050.c ****     }
  108:Modules/src/mpu6050.c **** 
- 109:Modules/src/mpu6050.c **** 	ax_raw = (int16_t)(i2c_datas[0] << 8 | i2c_datas [1]);
- 283              		.loc 1 109 2 is_stmt 1 view .LVU62
- 284              		.loc 1 109 30 is_stmt 0 view .LVU63
- 285 001e 164A     		ldr	r2, .L13
- 286 0020 1078     		ldrb	r0, [r2]	@ zero_extendqisi2
- 287              		.loc 1 109 51 view .LVU64
- 288 0022 5378     		ldrb	r3, [r2, #1]	@ zero_extendqisi2
- 289              		.loc 1 109 11 view .LVU65
- 290 0024 43EA0023 		orr	r3, r3, r0, lsl #8
- 291 0028 1BB2     		sxth	r3, r3
- 292 002a 06EE903A 		vmov	s13, r3	@ int
- 110:Modules/src/mpu6050.c **** 	ay_raw = (int16_t)(i2c_datas[2] << 8 | i2c_datas [3]);
- 293              		.loc 1 110 2 is_stmt 1 view .LVU66
- 294              		.loc 1 110 30 is_stmt 0 view .LVU67
- 295 002e 9078     		ldrb	r0, [r2, #2]	@ zero_extendqisi2
- 296              		.loc 1 110 51 view .LVU68
- 297 0030 D378     		ldrb	r3, [r2, #3]	@ zero_extendqisi2
- 298              		.loc 1 110 11 view .LVU69
- 299 0032 43EA0023 		orr	r3, r3, r0, lsl #8
- 300 0036 1BB2     		sxth	r3, r3
- 301 0038 07EE103A 		vmov	s14, r3	@ int
- 111:Modules/src/mpu6050.c **** 	az_raw = (int16_t)(i2c_datas[4] << 8 | i2c_datas [5]);
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s 			page 9
+ 109:Modules/src/mpu6050.c **** 	values[0] = (int16_t)(i2c_datas[0] << 8 | i2c_datas [1]);
+ 274              		.loc 1 109 2 is_stmt 1 view .LVU60
+ 275              		.loc 1 109 33 is_stmt 0 view .LVU61
+ 276 0018 084B     		ldr	r3, .L13
+ 277 001a 1978     		ldrb	r1, [r3]	@ zero_extendqisi2
+ 278              		.loc 1 109 54 view .LVU62
+ 279 001c 5A78     		ldrb	r2, [r3, #1]	@ zero_extendqisi2
+ 280              		.loc 1 109 14 view .LVU63
+ 281 001e 42EA0122 		orr	r2, r2, r1, lsl #8
+ 282              		.loc 1 109 12 view .LVU64
+ 283 0022 2280     		strh	r2, [r4]	@ movhi
+ 110:Modules/src/mpu6050.c **** 	values[1] = (int16_t)(i2c_datas[2] << 8 | i2c_datas [3]);
+ 284              		.loc 1 110 2 is_stmt 1 view .LVU65
+ 285              		.loc 1 110 33 is_stmt 0 view .LVU66
+ 286 0024 9978     		ldrb	r1, [r3, #2]	@ zero_extendqisi2
+ 287              		.loc 1 110 54 view .LVU67
+ 288 0026 DA78     		ldrb	r2, [r3, #3]	@ zero_extendqisi2
+ 289              		.loc 1 110 14 view .LVU68
+ 290 0028 42EA0122 		orr	r2, r2, r1, lsl #8
+ 291              		.loc 1 110 12 view .LVU69
+ 292 002c 6280     		strh	r2, [r4, #2]	@ movhi
+ 111:Modules/src/mpu6050.c **** 	values[2] = (int16_t)(i2c_datas[4] << 8 | i2c_datas [5]);
+ 293              		.loc 1 111 2 is_stmt 1 view .LVU70
+ 294              		.loc 1 111 33 is_stmt 0 view .LVU71
+ 295 002e 1A79     		ldrb	r2, [r3, #4]	@ zero_extendqisi2
+ 296              		.loc 1 111 54 view .LVU72
+ 297 0030 5B79     		ldrb	r3, [r3, #5]	@ zero_extendqisi2
+ 298              		.loc 1 111 14 view .LVU73
+ 299 0032 43EA0223 		orr	r3, r3, r2, lsl #8
+ 300              		.loc 1 111 12 view .LVU74
+ 301 0036 A380     		strh	r3, [r4, #4]	@ movhi
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s 			page 9
 
 
- 302              		.loc 1 111 2 is_stmt 1 view .LVU70
- 303              		.loc 1 111 30 is_stmt 0 view .LVU71
- 304 003c 1079     		ldrb	r0, [r2, #4]	@ zero_extendqisi2
- 305              		.loc 1 111 51 view .LVU72
- 306 003e 5379     		ldrb	r3, [r2, #5]	@ zero_extendqisi2
- 307              		.loc 1 111 11 view .LVU73
- 308 0040 43EA0023 		orr	r3, r3, r0, lsl #8
- 309 0044 1BB2     		sxth	r3, r3
- 310 0046 07EE903A 		vmov	s15, r3	@ int
  112:Modules/src/mpu6050.c **** 
- 113:Modules/src/mpu6050.c **** 	/*** convert the RAW values into acceleration in 'g'
- 114:Modules/src/mpu6050.c **** 	     we have to divide according to the Full scale value set in FS_SEL
- 115:Modules/src/mpu6050.c **** 	     I have configured FS_SEL = 0. So I am dividing by 16384.0
- 116:Modules/src/mpu6050.c **** 	     for more details check ACCEL_CONFIG Register              ****/
- 117:Modules/src/mpu6050.c **** 
- 118:Modules/src/mpu6050.c **** 	*accel_x = ax_raw / 16384.f;
- 311              		.loc 1 118 2 is_stmt 1 view .LVU74
- 312              		.loc 1 118 20 is_stmt 0 view .LVU75
- 313 004a F8EEE66A 		vcvt.f32.s32	s13, s13
- 314 004e 9FED0B6A 		vldr.32	s12, .L13+4
- 315 0052 66EE866A 		vmul.f32	s13, s13, s12
- 316              		.loc 1 118 11 view .LVU76
- 317 0056 C6ED006A 		vstr.32	s13, [r6]
- 119:Modules/src/mpu6050.c **** 	*accel_y = ay_raw / 16384.f;
- 318              		.loc 1 119 2 is_stmt 1 view .LVU77
- 319              		.loc 1 119 20 is_stmt 0 view .LVU78
- 320 005a B8EEC77A 		vcvt.f32.s32	s14, s14
- 321 005e 27EE067A 		vmul.f32	s14, s14, s12
- 322              		.loc 1 119 11 view .LVU79
- 323 0062 85ED007A 		vstr.32	s14, [r5]
- 120:Modules/src/mpu6050.c **** 	*accel_z = az_raw / 16384.f;
- 324              		.loc 1 120 2 is_stmt 1 view .LVU80
- 325              		.loc 1 120 20 is_stmt 0 view .LVU81
- 326 0066 F8EEE77A 		vcvt.f32.s32	s15, s15
- 327 006a 67EE867A 		vmul.f32	s15, s15, s12
- 328              		.loc 1 120 11 view .LVU82
- 329 006e C4ED007A 		vstr.32	s15, [r4]
- 121:Modules/src/mpu6050.c **** 
- 122:Modules/src/mpu6050.c ****     return true;  
- 330              		.loc 1 122 5 is_stmt 1 view .LVU83
- 331              	.L11:
- 123:Modules/src/mpu6050.c **** }
- 332              		.loc 1 123 1 is_stmt 0 view .LVU84
- 333 0072 0846     		mov	r0, r1
- 334 0074 02B0     		add	sp, sp, #8
- 335              	.LCFI6:
- 336              		.cfi_def_cfa_offset 16
- 337              		@ sp needed
- 338 0076 70BD     		pop	{r4, r5, r6, pc}
- 339              	.LVL22:
- 340              	.L14:
- 341              		.loc 1 123 1 view .LVU85
- 342              		.align	2
- 343              	.L13:
- 344 0078 00000000 		.word	.LANCHOR1
- 345 007c 00008038 		.word	947912704
- 346              		.cfi_endproc
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s 			page 10
+ 113:Modules/src/mpu6050.c ****     return true;  
+ 302              		.loc 1 113 5 is_stmt 1 view .LVU75
+ 303              	.L11:
+ 114:Modules/src/mpu6050.c **** }
+ 304              		.loc 1 114 1 is_stmt 0 view .LVU76
+ 305 0038 02B0     		add	sp, sp, #8
+ 306              	.LCFI6:
+ 307              		.cfi_def_cfa_offset 8
+ 308              		@ sp needed
+ 309 003a 10BD     		pop	{r4, pc}
+ 310              	.LVL20:
+ 311              	.L14:
+ 312              		.loc 1 114 1 view .LVU77
+ 313              		.align	2
+ 314              	.L13:
+ 315 003c 00000000 		.word	.LANCHOR1
+ 316              		.cfi_endproc
+ 317              	.LFE139:
+ 319              		.section	.text.MPU6050ReadGyroRaw,"ax",%progbits
+ 320              		.align	1
+ 321              		.global	MPU6050ReadGyroRaw
+ 322              		.syntax unified
+ 323              		.thumb
+ 324              		.thumb_func
+ 325              		.fpu fpv4-sp-d16
+ 327              	MPU6050ReadGyroRaw:
+ 328              	.LVL21:
+ 329              	.LFB140:
+ 115:Modules/src/mpu6050.c **** 
+ 116:Modules/src/mpu6050.c **** bool MPU6050ReadGyroRaw(int16_t *values){
+ 330              		.loc 1 116 41 is_stmt 1 view -0
+ 331              		.cfi_startproc
+ 332              		@ args = 0, pretend = 0, frame = 0
+ 333              		@ frame_needed = 0, uses_anonymous_args = 0
+ 334              		.loc 1 116 41 is_stmt 0 view .LVU79
+ 335 0000 10B5     		push	{r4, lr}
+ 336              	.LCFI7:
+ 337              		.cfi_def_cfa_offset 8
+ 338              		.cfi_offset 4, -8
+ 339              		.cfi_offset 14, -4
+ 340 0002 82B0     		sub	sp, sp, #8
+ 341              	.LCFI8:
+ 342              		.cfi_def_cfa_offset 16
+ 343 0004 0446     		mov	r4, r0
+ 117:Modules/src/mpu6050.c ****     if (!I2C1MenRead(MPU6050_DEV_ADDR, MPU6050_GYRO_XOUT_H, 1, i2c_datas, 6)) {
+ 344              		.loc 1 117 5 is_stmt 1 view .LVU80
+ 345              		.loc 1 117 10 is_stmt 0 view .LVU81
+ 346 0006 0623     		movs	r3, #6
+ 347 0008 0093     		str	r3, [sp]
+ 348 000a 0C4B     		ldr	r3, .L18
+ 349 000c 0122     		movs	r2, #1
+ 350 000e 4321     		movs	r1, #67
+ 351 0010 D020     		movs	r0, #208
+ 352              	.LVL22:
+ 353              		.loc 1 117 10 view .LVU82
+ 354 0012 FFF7FEFF 		bl	I2C1MenRead
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s 			page 10
 
 
- 347              	.LFE139:
- 349              		.section	.text.MPU6050ReadGyro,"ax",%progbits
- 350              		.align	1
- 351              		.global	MPU6050ReadGyro
- 352              		.syntax unified
- 353              		.thumb
- 354              		.thumb_func
- 355              		.fpu fpv4-sp-d16
- 357              	MPU6050ReadGyro:
- 358              	.LVL23:
- 359              	.LFB140:
+ 355              	.LVL23:
+ 356              		.loc 1 117 8 view .LVU83
+ 357 0016 78B1     		cbz	r0, .L16
+ 118:Modules/src/mpu6050.c ****         return false;
+ 119:Modules/src/mpu6050.c ****     }
+ 120:Modules/src/mpu6050.c **** 
+ 121:Modules/src/mpu6050.c **** 	values[0] = (int16_t)(i2c_datas[0] << 8 | i2c_datas [1]);
+ 358              		.loc 1 121 2 is_stmt 1 view .LVU84
+ 359              		.loc 1 121 33 is_stmt 0 view .LVU85
+ 360 0018 084B     		ldr	r3, .L18
+ 361 001a 1978     		ldrb	r1, [r3]	@ zero_extendqisi2
+ 362              		.loc 1 121 54 view .LVU86
+ 363 001c 5A78     		ldrb	r2, [r3, #1]	@ zero_extendqisi2
+ 364              		.loc 1 121 14 view .LVU87
+ 365 001e 42EA0122 		orr	r2, r2, r1, lsl #8
+ 366              		.loc 1 121 12 view .LVU88
+ 367 0022 2280     		strh	r2, [r4]	@ movhi
+ 122:Modules/src/mpu6050.c **** 	values[1] = (int16_t)(i2c_datas[2] << 8 | i2c_datas [3]);
+ 368              		.loc 1 122 2 is_stmt 1 view .LVU89
+ 369              		.loc 1 122 33 is_stmt 0 view .LVU90
+ 370 0024 9978     		ldrb	r1, [r3, #2]	@ zero_extendqisi2
+ 371              		.loc 1 122 54 view .LVU91
+ 372 0026 DA78     		ldrb	r2, [r3, #3]	@ zero_extendqisi2
+ 373              		.loc 1 122 14 view .LVU92
+ 374 0028 42EA0122 		orr	r2, r2, r1, lsl #8
+ 375              		.loc 1 122 12 view .LVU93
+ 376 002c 6280     		strh	r2, [r4, #2]	@ movhi
+ 123:Modules/src/mpu6050.c **** 	values[2] = (int16_t)(i2c_datas[4] << 8 | i2c_datas [5]);
+ 377              		.loc 1 123 2 is_stmt 1 view .LVU94
+ 378              		.loc 1 123 33 is_stmt 0 view .LVU95
+ 379 002e 1A79     		ldrb	r2, [r3, #4]	@ zero_extendqisi2
+ 380              		.loc 1 123 54 view .LVU96
+ 381 0030 5B79     		ldrb	r3, [r3, #5]	@ zero_extendqisi2
+ 382              		.loc 1 123 14 view .LVU97
+ 383 0032 43EA0223 		orr	r3, r3, r2, lsl #8
+ 384              		.loc 1 123 12 view .LVU98
+ 385 0036 A380     		strh	r3, [r4, #4]	@ movhi
  124:Modules/src/mpu6050.c **** 
- 125:Modules/src/mpu6050.c **** bool MPU6050ReadGyro(float *gx, float *gy, float *gz){
- 360              		.loc 1 125 54 is_stmt 1 view -0
- 361              		.cfi_startproc
- 362              		@ args = 0, pretend = 0, frame = 0
- 363              		@ frame_needed = 0, uses_anonymous_args = 0
- 364              		.loc 1 125 54 is_stmt 0 view .LVU87
- 365 0000 70B5     		push	{r4, r5, r6, lr}
- 366              	.LCFI7:
- 367              		.cfi_def_cfa_offset 16
- 368              		.cfi_offset 4, -16
- 369              		.cfi_offset 5, -12
- 370              		.cfi_offset 6, -8
- 371              		.cfi_offset 14, -4
- 372 0002 82B0     		sub	sp, sp, #8
- 373              	.LCFI8:
- 374              		.cfi_def_cfa_offset 24
- 375 0004 0646     		mov	r6, r0
- 376 0006 0D46     		mov	r5, r1
- 377 0008 1446     		mov	r4, r2
- 126:Modules/src/mpu6050.c ****     if (!I2C1MenRead(MPU6050_DEV_ADDR, MPU6050_GYRO_XOUT_H, 1, i2c_datas, 6)) {
- 378              		.loc 1 126 5 is_stmt 1 view .LVU88
- 379              		.loc 1 126 10 is_stmt 0 view .LVU89
- 380 000a 0623     		movs	r3, #6
- 381 000c 0093     		str	r3, [sp]
- 382 000e 1A4B     		ldr	r3, .L18
- 383 0010 0122     		movs	r2, #1
- 384              	.LVL24:
- 385              		.loc 1 126 10 view .LVU90
- 386 0012 4321     		movs	r1, #67
- 387              	.LVL25:
- 388              		.loc 1 126 10 view .LVU91
- 389 0014 D020     		movs	r0, #208
- 390              	.LVL26:
- 391              		.loc 1 126 10 view .LVU92
- 392 0016 FFF7FEFF 		bl	I2C1MenRead
- 393              	.LVL27:
- 394              		.loc 1 126 8 view .LVU93
- 395 001a 0146     		mov	r1, r0
- 396 001c 48B3     		cbz	r0, .L16
- 127:Modules/src/mpu6050.c ****         return false;
- 128:Modules/src/mpu6050.c ****     }
- 129:Modules/src/mpu6050.c **** 
- 130:Modules/src/mpu6050.c **** 	gx_raw = (int16_t)(i2c_datas[0] << 8 | i2c_datas [1]);
- 397              		.loc 1 130 2 is_stmt 1 view .LVU94
- 398              		.loc 1 130 30 is_stmt 0 view .LVU95
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s 			page 11
+ 125:Modules/src/mpu6050.c ****     return true;  
+ 386              		.loc 1 125 5 is_stmt 1 view .LVU99
+ 387              	.L16:
+ 126:Modules/src/mpu6050.c **** }
+ 388              		.loc 1 126 1 is_stmt 0 view .LVU100
+ 389 0038 02B0     		add	sp, sp, #8
+ 390              	.LCFI9:
+ 391              		.cfi_def_cfa_offset 8
+ 392              		@ sp needed
+ 393 003a 10BD     		pop	{r4, pc}
+ 394              	.LVL24:
+ 395              	.L19:
+ 396              		.loc 1 126 1 view .LVU101
+ 397              		.align	2
+ 398              	.L18:
+ 399 003c 00000000 		.word	.LANCHOR1
+ 400              		.cfi_endproc
+ 401              	.LFE140:
+ 403              		.section	.text.MPU6050ReadAccel,"ax",%progbits
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s 			page 11
 
 
- 399 001e 164A     		ldr	r2, .L18
- 400 0020 1078     		ldrb	r0, [r2]	@ zero_extendqisi2
- 401              		.loc 1 130 51 view .LVU96
- 402 0022 5378     		ldrb	r3, [r2, #1]	@ zero_extendqisi2
- 403              		.loc 1 130 11 view .LVU97
- 404 0024 43EA0023 		orr	r3, r3, r0, lsl #8
- 405 0028 1BB2     		sxth	r3, r3
- 406 002a 07EE103A 		vmov	s14, r3	@ int
- 131:Modules/src/mpu6050.c **** 	gy_raw = (int16_t)(i2c_datas[2] << 8 | i2c_datas [3]);
- 407              		.loc 1 131 2 is_stmt 1 view .LVU98
- 408              		.loc 1 131 30 is_stmt 0 view .LVU99
- 409 002e 9078     		ldrb	r0, [r2, #2]	@ zero_extendqisi2
- 410              		.loc 1 131 51 view .LVU100
- 411 0030 D378     		ldrb	r3, [r2, #3]	@ zero_extendqisi2
- 412              		.loc 1 131 11 view .LVU101
- 413 0032 43EA0023 		orr	r3, r3, r0, lsl #8
- 414 0036 1BB2     		sxth	r3, r3
- 415 0038 07EE903A 		vmov	s15, r3	@ int
- 132:Modules/src/mpu6050.c **** 	gz_raw = (int16_t)(i2c_datas[4] << 8 | i2c_datas [5]);
- 416              		.loc 1 132 2 is_stmt 1 view .LVU102
- 417              		.loc 1 132 30 is_stmt 0 view .LVU103
- 418 003c 1079     		ldrb	r0, [r2, #4]	@ zero_extendqisi2
- 419              		.loc 1 132 51 view .LVU104
- 420 003e 5379     		ldrb	r3, [r2, #5]	@ zero_extendqisi2
- 421              		.loc 1 132 11 view .LVU105
- 422 0040 43EA0023 		orr	r3, r3, r0, lsl #8
- 423 0044 1BB2     		sxth	r3, r3
- 133:Modules/src/mpu6050.c **** 
- 134:Modules/src/mpu6050.c **** 	/*** convert the RAW values into dps (?/s)
- 135:Modules/src/mpu6050.c **** 	     we have to divide according to the Full scale value set in FS_SEL
- 136:Modules/src/mpu6050.c **** 	     I have configured FS_SEL = 0. So I am dividing by 131.0
- 137:Modules/src/mpu6050.c **** 	     for more details check GYRO_CONFIG Register              ****/
- 138:Modules/src/mpu6050.c **** 
- 139:Modules/src/mpu6050.c **** 	*gx = gx_raw / 16.4f;
- 424              		.loc 1 139 2 is_stmt 1 view .LVU106
- 425              		.loc 1 139 15 is_stmt 0 view .LVU107
- 426 0046 B8EEC77A 		vcvt.f32.s32	s14, s14
- 427 004a DFED0C6A 		vldr.32	s13, .L18+4
- 428 004e 87EE266A 		vdiv.f32	s12, s14, s13
- 429              		.loc 1 139 6 view .LVU108
- 430 0052 86ED006A 		vstr.32	s12, [r6]
- 140:Modules/src/mpu6050.c **** 	*gy = gy_raw / 16.4f;
- 431              		.loc 1 140 2 is_stmt 1 view .LVU109
- 432              		.loc 1 140 15 is_stmt 0 view .LVU110
- 433 0056 F8EEE77A 		vcvt.f32.s32	s15, s15
- 434 005a 87EEA67A 		vdiv.f32	s14, s15, s13
- 435              		.loc 1 140 6 view .LVU111
- 436 005e 85ED007A 		vstr.32	s14, [r5]
- 141:Modules/src/mpu6050.c **** 	*gz = gz_raw / 16.4f;
- 437              		.loc 1 141 2 is_stmt 1 view .LVU112
- 438              		.loc 1 141 15 is_stmt 0 view .LVU113
- 439 0062 07EE903A 		vmov	s15, r3	@ int
- 440 0066 F8EEE77A 		vcvt.f32.s32	s15, s15
- 441 006a 87EEA67A 		vdiv.f32	s14, s15, s13
- 442              		.loc 1 141 6 view .LVU114
- 443 006e 84ED007A 		vstr.32	s14, [r4]
- 142:Modules/src/mpu6050.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s 			page 12
+ 404              		.align	1
+ 405              		.global	MPU6050ReadAccel
+ 406              		.syntax unified
+ 407              		.thumb
+ 408              		.thumb_func
+ 409              		.fpu fpv4-sp-d16
+ 411              	MPU6050ReadAccel:
+ 412              	.LVL25:
+ 413              	.LFB141:
+ 127:Modules/src/mpu6050.c **** 
+ 128:Modules/src/mpu6050.c **** bool MPU6050ReadAccel(float *accel_x, float *accel_y, float *accel_z) {
+ 414              		.loc 1 128 71 is_stmt 1 view -0
+ 415              		.cfi_startproc
+ 416              		@ args = 0, pretend = 0, frame = 0
+ 417              		@ frame_needed = 0, uses_anonymous_args = 0
+ 418              		.loc 1 128 71 is_stmt 0 view .LVU103
+ 419 0000 70B5     		push	{r4, r5, r6, lr}
+ 420              	.LCFI10:
+ 421              		.cfi_def_cfa_offset 16
+ 422              		.cfi_offset 4, -16
+ 423              		.cfi_offset 5, -12
+ 424              		.cfi_offset 6, -8
+ 425              		.cfi_offset 14, -4
+ 426 0002 82B0     		sub	sp, sp, #8
+ 427              	.LCFI11:
+ 428              		.cfi_def_cfa_offset 24
+ 429 0004 0646     		mov	r6, r0
+ 430 0006 0D46     		mov	r5, r1
+ 431 0008 1446     		mov	r4, r2
+ 129:Modules/src/mpu6050.c ****     if (!I2C1MenRead(MPU6050_DEV_ADDR, MPU6050_ACCEL_XOUT_H, 1, i2c_datas, 6)) {
+ 432              		.loc 1 129 5 is_stmt 1 view .LVU104
+ 433              		.loc 1 129 10 is_stmt 0 view .LVU105
+ 434 000a 0623     		movs	r3, #6
+ 435 000c 0093     		str	r3, [sp]
+ 436 000e 1A4B     		ldr	r3, .L23
+ 437 0010 0122     		movs	r2, #1
+ 438              	.LVL26:
+ 439              		.loc 1 129 10 view .LVU106
+ 440 0012 3B21     		movs	r1, #59
+ 441              	.LVL27:
+ 442              		.loc 1 129 10 view .LVU107
+ 443 0014 D020     		movs	r0, #208
+ 444              	.LVL28:
+ 445              		.loc 1 129 10 view .LVU108
+ 446 0016 FFF7FEFF 		bl	I2C1MenRead
+ 447              	.LVL29:
+ 448              		.loc 1 129 8 view .LVU109
+ 449 001a 0146     		mov	r1, r0
+ 450 001c 48B3     		cbz	r0, .L21
+ 130:Modules/src/mpu6050.c ****         return false;
+ 131:Modules/src/mpu6050.c ****     }
+ 132:Modules/src/mpu6050.c **** 
+ 133:Modules/src/mpu6050.c **** 	ax_raw = (int16_t)(i2c_datas[0] << 8 | i2c_datas [1]);
+ 451              		.loc 1 133 2 is_stmt 1 view .LVU110
+ 452              		.loc 1 133 30 is_stmt 0 view .LVU111
+ 453 001e 164A     		ldr	r2, .L23
+ 454 0020 1078     		ldrb	r0, [r2]	@ zero_extendqisi2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s 			page 12
 
 
- 143:Modules/src/mpu6050.c ****     return true;  
- 444              		.loc 1 143 5 is_stmt 1 view .LVU115
- 445              	.L16:
- 144:Modules/src/mpu6050.c **** }
- 446              		.loc 1 144 1 is_stmt 0 view .LVU116
- 447 0072 0846     		mov	r0, r1
- 448 0074 02B0     		add	sp, sp, #8
- 449              	.LCFI9:
- 450              		.cfi_def_cfa_offset 16
- 451              		@ sp needed
- 452 0076 70BD     		pop	{r4, r5, r6, pc}
- 453              	.LVL28:
- 454              	.L19:
- 455              		.loc 1 144 1 view .LVU117
- 456              		.align	2
- 457              	.L18:
- 458 0078 00000000 		.word	.LANCHOR1
- 459 007c 33338341 		.word	1099117363
- 460              		.cfi_endproc
- 461              	.LFE140:
- 463              		.global	__aeabi_f2d
- 464              		.global	__aeabi_dadd
- 465              		.global	__aeabi_d2f
- 466              		.section	.text.MPU6050ReadTemp,"ax",%progbits
- 467              		.align	1
- 468              		.global	MPU6050ReadTemp
- 469              		.syntax unified
- 470              		.thumb
- 471              		.thumb_func
- 472              		.fpu fpv4-sp-d16
- 474              	MPU6050ReadTemp:
- 475              	.LVL29:
- 476              	.LFB141:
+ 455              		.loc 1 133 51 view .LVU112
+ 456 0022 5378     		ldrb	r3, [r2, #1]	@ zero_extendqisi2
+ 457              		.loc 1 133 11 view .LVU113
+ 458 0024 43EA0023 		orr	r3, r3, r0, lsl #8
+ 459 0028 1BB2     		sxth	r3, r3
+ 460 002a 06EE903A 		vmov	s13, r3	@ int
+ 134:Modules/src/mpu6050.c **** 	ay_raw = (int16_t)(i2c_datas[2] << 8 | i2c_datas [3]);
+ 461              		.loc 1 134 2 is_stmt 1 view .LVU114
+ 462              		.loc 1 134 30 is_stmt 0 view .LVU115
+ 463 002e 9078     		ldrb	r0, [r2, #2]	@ zero_extendqisi2
+ 464              		.loc 1 134 51 view .LVU116
+ 465 0030 D378     		ldrb	r3, [r2, #3]	@ zero_extendqisi2
+ 466              		.loc 1 134 11 view .LVU117
+ 467 0032 43EA0023 		orr	r3, r3, r0, lsl #8
+ 468 0036 1BB2     		sxth	r3, r3
+ 469 0038 07EE103A 		vmov	s14, r3	@ int
+ 135:Modules/src/mpu6050.c **** 	az_raw = (int16_t)(i2c_datas[4] << 8 | i2c_datas [5]);
+ 470              		.loc 1 135 2 is_stmt 1 view .LVU118
+ 471              		.loc 1 135 30 is_stmt 0 view .LVU119
+ 472 003c 1079     		ldrb	r0, [r2, #4]	@ zero_extendqisi2
+ 473              		.loc 1 135 51 view .LVU120
+ 474 003e 5379     		ldrb	r3, [r2, #5]	@ zero_extendqisi2
+ 475              		.loc 1 135 11 view .LVU121
+ 476 0040 43EA0023 		orr	r3, r3, r0, lsl #8
+ 477 0044 1BB2     		sxth	r3, r3
+ 478 0046 07EE903A 		vmov	s15, r3	@ int
+ 136:Modules/src/mpu6050.c **** 
+ 137:Modules/src/mpu6050.c **** 	/*** convert the RAW values into acceleration in 'g'
+ 138:Modules/src/mpu6050.c **** 	     we have to divide according to the Full scale value set in FS_SEL
+ 139:Modules/src/mpu6050.c **** 	     I have configured FS_SEL = 0. So I am dividing by 16384.0
+ 140:Modules/src/mpu6050.c **** 	     for more details check ACCEL_CONFIG Register              ****/
+ 141:Modules/src/mpu6050.c **** 
+ 142:Modules/src/mpu6050.c **** 	*accel_x = ax_raw / 16384.f;
+ 479              		.loc 1 142 2 is_stmt 1 view .LVU122
+ 480              		.loc 1 142 20 is_stmt 0 view .LVU123
+ 481 004a F8EEE66A 		vcvt.f32.s32	s13, s13
+ 482 004e 9FED0B6A 		vldr.32	s12, .L23+4
+ 483 0052 66EE866A 		vmul.f32	s13, s13, s12
+ 484              		.loc 1 142 11 view .LVU124
+ 485 0056 C6ED006A 		vstr.32	s13, [r6]
+ 143:Modules/src/mpu6050.c **** 	*accel_y = ay_raw / 16384.f;
+ 486              		.loc 1 143 2 is_stmt 1 view .LVU125
+ 487              		.loc 1 143 20 is_stmt 0 view .LVU126
+ 488 005a B8EEC77A 		vcvt.f32.s32	s14, s14
+ 489 005e 27EE067A 		vmul.f32	s14, s14, s12
+ 490              		.loc 1 143 11 view .LVU127
+ 491 0062 85ED007A 		vstr.32	s14, [r5]
+ 144:Modules/src/mpu6050.c **** 	*accel_z = az_raw / 16384.f;
+ 492              		.loc 1 144 2 is_stmt 1 view .LVU128
+ 493              		.loc 1 144 20 is_stmt 0 view .LVU129
+ 494 0066 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 495 006a 67EE867A 		vmul.f32	s15, s15, s12
+ 496              		.loc 1 144 11 view .LVU130
+ 497 006e C4ED007A 		vstr.32	s15, [r4]
  145:Modules/src/mpu6050.c **** 
- 146:Modules/src/mpu6050.c **** bool MPU6050ReadTemp(float *celsius) {
- 477              		.loc 1 146 38 is_stmt 1 view -0
- 478              		.cfi_startproc
- 479              		@ args = 0, pretend = 0, frame = 0
- 480              		@ frame_needed = 0, uses_anonymous_args = 0
- 481              		.loc 1 146 38 is_stmt 0 view .LVU119
- 482 0000 30B5     		push	{r4, r5, lr}
- 483              	.LCFI10:
- 484              		.cfi_def_cfa_offset 12
- 485              		.cfi_offset 4, -12
- 486              		.cfi_offset 5, -8
- 487              		.cfi_offset 14, -4
- 488 0002 83B0     		sub	sp, sp, #12
- 489              	.LCFI11:
- 490              		.cfi_def_cfa_offset 24
- 491 0004 0546     		mov	r5, r0
- 147:Modules/src/mpu6050.c ****     if (!I2C1MenRead(MPU6050_DEV_ADDR, MPU6050_TEMP_OUT_H, 1, i2c_datas, 2)) {
- 492              		.loc 1 147 5 is_stmt 1 view .LVU120
- 493              		.loc 1 147 10 is_stmt 0 view .LVU121
- 494 0006 0223     		movs	r3, #2
- 495 0008 0093     		str	r3, [sp]
- 496 000a 154B     		ldr	r3, .L23+8
- 497 000c 0122     		movs	r2, #1
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s 			page 13
+ 146:Modules/src/mpu6050.c ****     return true;  
+ 498              		.loc 1 146 5 is_stmt 1 view .LVU131
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s 			page 13
 
 
- 498 000e 4121     		movs	r1, #65
- 499 0010 D020     		movs	r0, #208
- 500              	.LVL30:
- 501              		.loc 1 147 10 view .LVU122
- 502 0012 FFF7FEFF 		bl	I2C1MenRead
- 503              	.LVL31:
- 504              		.loc 1 147 8 view .LVU123
- 505 0016 0446     		mov	r4, r0
- 506 0018 C8B1     		cbz	r0, .L21
- 148:Modules/src/mpu6050.c ****         return false;
- 149:Modules/src/mpu6050.c ****     }
- 150:Modules/src/mpu6050.c **** 
- 151:Modules/src/mpu6050.c **** 	celsius_raw = (int16_t)(i2c_datas[0] << 8 | i2c_datas [1]);
- 507              		.loc 1 151 2 is_stmt 1 view .LVU124
- 508              		.loc 1 151 35 is_stmt 0 view .LVU125
- 509 001a 114A     		ldr	r2, .L23+8
- 510 001c 1178     		ldrb	r1, [r2]	@ zero_extendqisi2
- 511              		.loc 1 151 56 view .LVU126
- 512 001e 5378     		ldrb	r3, [r2, #1]	@ zero_extendqisi2
- 513              		.loc 1 151 16 view .LVU127
- 514 0020 43EA0123 		orr	r3, r3, r1, lsl #8
- 515 0024 1BB2     		sxth	r3, r3
- 152:Modules/src/mpu6050.c **** 	*celsius =  36.53 + (float)celsius_raw / 340.f;
- 516              		.loc 1 152 2 is_stmt 1 view .LVU128
- 517              		.loc 1 152 22 is_stmt 0 view .LVU129
- 518 0026 07EE903A 		vmov	s15, r3	@ int
- 519 002a F8EEE77A 		vcvt.f32.s32	s15, s15
- 520              		.loc 1 152 41 view .LVU130
- 521 002e 9FED0D7A 		vldr.32	s14, .L23+12
- 522 0032 C7EE877A 		vdiv.f32	s15, s15, s14
- 523 0036 17EE900A 		vmov	r0, s15
- 524 003a FFF7FEFF 		bl	__aeabi_f2d
- 525              	.LVL32:
- 526              		.loc 1 152 20 view .LVU131
- 527 003e 06A3     		adr	r3, .L23
- 528 0040 D3E90023 		ldrd	r2, [r3]
- 529 0044 FFF7FEFF 		bl	__aeabi_dadd
- 530              	.LVL33:
- 531 0048 FFF7FEFF 		bl	__aeabi_d2f
- 532              	.LVL34:
- 533              		.loc 1 152 11 view .LVU132
- 534 004c 2860     		str	r0, [r5]	@ float
+ 499              	.L21:
+ 147:Modules/src/mpu6050.c **** }
+ 500              		.loc 1 147 1 is_stmt 0 view .LVU132
+ 501 0072 0846     		mov	r0, r1
+ 502 0074 02B0     		add	sp, sp, #8
+ 503              	.LCFI12:
+ 504              		.cfi_def_cfa_offset 16
+ 505              		@ sp needed
+ 506 0076 70BD     		pop	{r4, r5, r6, pc}
+ 507              	.LVL30:
+ 508              	.L24:
+ 509              		.loc 1 147 1 view .LVU133
+ 510              		.align	2
+ 511              	.L23:
+ 512 0078 00000000 		.word	.LANCHOR1
+ 513 007c 00008038 		.word	947912704
+ 514              		.cfi_endproc
+ 515              	.LFE141:
+ 517              		.section	.text.MPU6050ReadGyro,"ax",%progbits
+ 518              		.align	1
+ 519              		.global	MPU6050ReadGyro
+ 520              		.syntax unified
+ 521              		.thumb
+ 522              		.thumb_func
+ 523              		.fpu fpv4-sp-d16
+ 525              	MPU6050ReadGyro:
+ 526              	.LVL31:
+ 527              	.LFB142:
+ 148:Modules/src/mpu6050.c **** 
+ 149:Modules/src/mpu6050.c **** bool MPU6050ReadGyro(float *gx, float *gy, float *gz){
+ 528              		.loc 1 149 54 is_stmt 1 view -0
+ 529              		.cfi_startproc
+ 530              		@ args = 0, pretend = 0, frame = 0
+ 531              		@ frame_needed = 0, uses_anonymous_args = 0
+ 532              		.loc 1 149 54 is_stmt 0 view .LVU135
+ 533 0000 70B5     		push	{r4, r5, r6, lr}
+ 534              	.LCFI13:
+ 535              		.cfi_def_cfa_offset 16
+ 536              		.cfi_offset 4, -16
+ 537              		.cfi_offset 5, -12
+ 538              		.cfi_offset 6, -8
+ 539              		.cfi_offset 14, -4
+ 540 0002 82B0     		sub	sp, sp, #8
+ 541              	.LCFI14:
+ 542              		.cfi_def_cfa_offset 24
+ 543 0004 0646     		mov	r6, r0
+ 544 0006 0D46     		mov	r5, r1
+ 545 0008 1446     		mov	r4, r2
+ 150:Modules/src/mpu6050.c ****     if (!I2C1MenRead(MPU6050_DEV_ADDR, MPU6050_GYRO_XOUT_H, 1, i2c_datas, 6)) {
+ 546              		.loc 1 150 5 is_stmt 1 view .LVU136
+ 547              		.loc 1 150 10 is_stmt 0 view .LVU137
+ 548 000a 0623     		movs	r3, #6
+ 549 000c 0093     		str	r3, [sp]
+ 550 000e 1A4B     		ldr	r3, .L28
+ 551 0010 0122     		movs	r2, #1
+ 552              	.LVL32:
+ 553              		.loc 1 150 10 view .LVU138
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s 			page 14
+
+
+ 554 0012 4321     		movs	r1, #67
+ 555              	.LVL33:
+ 556              		.loc 1 150 10 view .LVU139
+ 557 0014 D020     		movs	r0, #208
+ 558              	.LVL34:
+ 559              		.loc 1 150 10 view .LVU140
+ 560 0016 FFF7FEFF 		bl	I2C1MenRead
+ 561              	.LVL35:
+ 562              		.loc 1 150 8 view .LVU141
+ 563 001a 0146     		mov	r1, r0
+ 564 001c 48B3     		cbz	r0, .L26
+ 151:Modules/src/mpu6050.c ****         return false;
+ 152:Modules/src/mpu6050.c ****     }
  153:Modules/src/mpu6050.c **** 
- 154:Modules/src/mpu6050.c ****     return true;      
- 535              		.loc 1 154 5 is_stmt 1 view .LVU133
- 536              	.L21:
- 155:Modules/src/mpu6050.c **** }...
- 537              		.loc 1 155 1 is_stmt 0 view .LVU134
- 538 004e 2046     		mov	r0, r4
- 539 0050 03B0     		add	sp, sp, #12
- 540              	.LCFI12:
- 541              		.cfi_def_cfa_offset 12
- 542              		@ sp needed
- 543 0052 30BD     		pop	{r4, r5, pc}
- 544              	.LVL35:
- 545              	.L24:
- 546              		.loc 1 155 1 view .LVU135
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s 			page 14
+ 154:Modules/src/mpu6050.c **** 	gx_raw = (int16_t)(i2c_datas[0] << 8 | i2c_datas [1]);
+ 565              		.loc 1 154 2 is_stmt 1 view .LVU142
+ 566              		.loc 1 154 30 is_stmt 0 view .LVU143
+ 567 001e 164A     		ldr	r2, .L28
+ 568 0020 1078     		ldrb	r0, [r2]	@ zero_extendqisi2
+ 569              		.loc 1 154 51 view .LVU144
+ 570 0022 5378     		ldrb	r3, [r2, #1]	@ zero_extendqisi2
+ 571              		.loc 1 154 11 view .LVU145
+ 572 0024 43EA0023 		orr	r3, r3, r0, lsl #8
+ 573 0028 1BB2     		sxth	r3, r3
+ 574 002a 07EE103A 		vmov	s14, r3	@ int
+ 155:Modules/src/mpu6050.c **** 	gy_raw = (int16_t)(i2c_datas[2] << 8 | i2c_datas [3]);
+ 575              		.loc 1 155 2 is_stmt 1 view .LVU146
+ 576              		.loc 1 155 30 is_stmt 0 view .LVU147
+ 577 002e 9078     		ldrb	r0, [r2, #2]	@ zero_extendqisi2
+ 578              		.loc 1 155 51 view .LVU148
+ 579 0030 D378     		ldrb	r3, [r2, #3]	@ zero_extendqisi2
+ 580              		.loc 1 155 11 view .LVU149
+ 581 0032 43EA0023 		orr	r3, r3, r0, lsl #8
+ 582 0036 1BB2     		sxth	r3, r3
+ 583 0038 07EE903A 		vmov	s15, r3	@ int
+ 156:Modules/src/mpu6050.c **** 	gz_raw = (int16_t)(i2c_datas[4] << 8 | i2c_datas [5]);
+ 584              		.loc 1 156 2 is_stmt 1 view .LVU150
+ 585              		.loc 1 156 30 is_stmt 0 view .LVU151
+ 586 003c 1079     		ldrb	r0, [r2, #4]	@ zero_extendqisi2
+ 587              		.loc 1 156 51 view .LVU152
+ 588 003e 5379     		ldrb	r3, [r2, #5]	@ zero_extendqisi2
+ 589              		.loc 1 156 11 view .LVU153
+ 590 0040 43EA0023 		orr	r3, r3, r0, lsl #8
+ 591 0044 1BB2     		sxth	r3, r3
+ 157:Modules/src/mpu6050.c **** 
+ 158:Modules/src/mpu6050.c **** 	/*** convert the RAW values into dps (?/s)
+ 159:Modules/src/mpu6050.c **** 	     we have to divide according to the Full scale value set in FS_SEL
+ 160:Modules/src/mpu6050.c **** 	     I have configured FS_SEL = 0. So I am dividing by 131.0
+ 161:Modules/src/mpu6050.c **** 	     for more details check GYRO_CONFIG Register              ****/
+ 162:Modules/src/mpu6050.c **** 
+ 163:Modules/src/mpu6050.c **** 	*gx = gx_raw / 16.4f;
+ 592              		.loc 1 163 2 is_stmt 1 view .LVU154
+ 593              		.loc 1 163 15 is_stmt 0 view .LVU155
+ 594 0046 B8EEC77A 		vcvt.f32.s32	s14, s14
+ 595 004a DFED0C6A 		vldr.32	s13, .L28+4
+ 596 004e 87EE266A 		vdiv.f32	s12, s14, s13
+ 597              		.loc 1 163 6 view .LVU156
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s 			page 15
 
 
- 547 0054 AFF30080 		.align	3
- 548              	.L23:
- 549 0058 A4703D0A 		.word	171798692
- 550 005c D7434240 		.word	1078084567
- 551 0060 00000000 		.word	.LANCHOR1
- 552 0064 0000AA43 		.word	1135214592
- 553              		.cfi_endproc
- 554              	.LFE141:
- 556              		.section	.bss.i2c_data,"aw",%nobits
- 557              		.set	.LANCHOR0,. + 0
- 560              	i2c_data:
- 561 0000 00       		.space	1
- 562              		.section	.bss.i2c_datas,"aw",%nobits
- 563              		.align	2
- 564              		.set	.LANCHOR1,. + 0
- 567              	i2c_datas:
- 568 0000 00000000 		.space	6
- 568      0000
- 569              		.text
- 570              	.Letext0:
- 571              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
- 572              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
- 573              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
- 574              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 575              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
- 576              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 577              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 578              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
- 579              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 580              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 581              		.file 12 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
- 582              		.file 13 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
- 583              		.file 14 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
- 584              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
- 585              		.file 16 "Modules/include/utils.h"
- 586              		.file 17 "Inc/i2c.h"
- 587              		.file 18 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
- 588              		.file 19 "Modules/include/i2c1.h"
- 589              		.file 20 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s 			page 15
+ 598 0052 86ED006A 		vstr.32	s12, [r6]
+ 164:Modules/src/mpu6050.c **** 	*gy = gy_raw / 16.4f;
+ 599              		.loc 1 164 2 is_stmt 1 view .LVU157
+ 600              		.loc 1 164 15 is_stmt 0 view .LVU158
+ 601 0056 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 602 005a 87EEA67A 		vdiv.f32	s14, s15, s13
+ 603              		.loc 1 164 6 view .LVU159
+ 604 005e 85ED007A 		vstr.32	s14, [r5]
+ 165:Modules/src/mpu6050.c **** 	*gz = gz_raw / 16.4f;
+ 605              		.loc 1 165 2 is_stmt 1 view .LVU160
+ 606              		.loc 1 165 15 is_stmt 0 view .LVU161
+ 607 0062 07EE903A 		vmov	s15, r3	@ int
+ 608 0066 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 609 006a 87EEA67A 		vdiv.f32	s14, s15, s13
+ 610              		.loc 1 165 6 view .LVU162
+ 611 006e 84ED007A 		vstr.32	s14, [r4]
+ 166:Modules/src/mpu6050.c **** 
+ 167:Modules/src/mpu6050.c ****     return true;  
+ 612              		.loc 1 167 5 is_stmt 1 view .LVU163
+ 613              	.L26:
+ 168:Modules/src/mpu6050.c **** }
+ 614              		.loc 1 168 1 is_stmt 0 view .LVU164
+ 615 0072 0846     		mov	r0, r1
+ 616 0074 02B0     		add	sp, sp, #8
+ 617              	.LCFI15:
+ 618              		.cfi_def_cfa_offset 16
+ 619              		@ sp needed
+ 620 0076 70BD     		pop	{r4, r5, r6, pc}
+ 621              	.LVL36:
+ 622              	.L29:
+ 623              		.loc 1 168 1 view .LVU165
+ 624              		.align	2
+ 625              	.L28:
+ 626 0078 00000000 		.word	.LANCHOR1
+ 627 007c 33338341 		.word	1099117363
+ 628              		.cfi_endproc
+ 629              	.LFE142:
+ 631              		.global	__aeabi_f2d
+ 632              		.global	__aeabi_dadd
+ 633              		.global	__aeabi_d2f
+ 634              		.section	.text.MPU6050ReadTemp,"ax",%progbits
+ 635              		.align	1
+ 636              		.global	MPU6050ReadTemp
+ 637              		.syntax unified
+ 638              		.thumb
+ 639              		.thumb_func
+ 640              		.fpu fpv4-sp-d16
+ 642              	MPU6050ReadTemp:
+ 643              	.LVL37:
+ 644              	.LFB143:
+ 169:Modules/src/mpu6050.c **** 
+ 170:Modules/src/mpu6050.c **** bool MPU6050ReadTemp(float *celsius) {
+ 645              		.loc 1 170 38 is_stmt 1 view -0
+ 646              		.cfi_startproc
+ 647              		@ args = 0, pretend = 0, frame = 0
+ 648              		@ frame_needed = 0, uses_anonymous_args = 0
+ 649              		.loc 1 170 38 is_stmt 0 view .LVU167
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s 			page 16
+
+
+ 650 0000 30B5     		push	{r4, r5, lr}
+ 651              	.LCFI16:
+ 652              		.cfi_def_cfa_offset 12
+ 653              		.cfi_offset 4, -12
+ 654              		.cfi_offset 5, -8
+ 655              		.cfi_offset 14, -4
+ 656 0002 83B0     		sub	sp, sp, #12
+ 657              	.LCFI17:
+ 658              		.cfi_def_cfa_offset 24
+ 659 0004 0546     		mov	r5, r0
+ 171:Modules/src/mpu6050.c ****     if (!I2C1MenRead(MPU6050_DEV_ADDR, MPU6050_TEMP_OUT_H, 1, i2c_datas, 2)) {
+ 660              		.loc 1 171 5 is_stmt 1 view .LVU168
+ 661              		.loc 1 171 10 is_stmt 0 view .LVU169
+ 662 0006 0223     		movs	r3, #2
+ 663 0008 0093     		str	r3, [sp]
+ 664 000a 154B     		ldr	r3, .L33+8
+ 665 000c 0122     		movs	r2, #1
+ 666 000e 4121     		movs	r1, #65
+ 667 0010 D020     		movs	r0, #208
+ 668              	.LVL38:
+ 669              		.loc 1 171 10 view .LVU170
+ 670 0012 FFF7FEFF 		bl	I2C1MenRead
+ 671              	.LVL39:
+ 672              		.loc 1 171 8 view .LVU171
+ 673 0016 0446     		mov	r4, r0
+ 674 0018 C8B1     		cbz	r0, .L31
+ 172:Modules/src/mpu6050.c ****         return false;
+ 173:Modules/src/mpu6050.c ****     }
+ 174:Modules/src/mpu6050.c **** 
+ 175:Modules/src/mpu6050.c **** 	celsius_raw = (int16_t)(i2c_datas[0] << 8 | i2c_datas [1]);
+ 675              		.loc 1 175 2 is_stmt 1 view .LVU172
+ 676              		.loc 1 175 35 is_stmt 0 view .LVU173
+ 677 001a 114A     		ldr	r2, .L33+8
+ 678 001c 1178     		ldrb	r1, [r2]	@ zero_extendqisi2
+ 679              		.loc 1 175 56 view .LVU174
+ 680 001e 5378     		ldrb	r3, [r2, #1]	@ zero_extendqisi2
+ 681              		.loc 1 175 16 view .LVU175
+ 682 0020 43EA0123 		orr	r3, r3, r1, lsl #8
+ 683 0024 1BB2     		sxth	r3, r3
+ 176:Modules/src/mpu6050.c **** 	*celsius =  36.53 + (float)celsius_raw / 340.f;
+ 684              		.loc 1 176 2 is_stmt 1 view .LVU176
+ 685              		.loc 1 176 22 is_stmt 0 view .LVU177
+ 686 0026 07EE903A 		vmov	s15, r3	@ int
+ 687 002a F8EEE77A 		vcvt.f32.s32	s15, s15
+ 688              		.loc 1 176 41 view .LVU178
+ 689 002e 9FED0D7A 		vldr.32	s14, .L33+12
+ 690 0032 C7EE877A 		vdiv.f32	s15, s15, s14
+ 691 0036 17EE900A 		vmov	r0, s15
+ 692 003a FFF7FEFF 		bl	__aeabi_f2d
+ 693              	.LVL40:
+ 694              		.loc 1 176 20 view .LVU179
+ 695 003e 06A3     		adr	r3, .L33
+ 696 0040 D3E90023 		ldrd	r2, [r3]
+ 697 0044 FFF7FEFF 		bl	__aeabi_dadd
+ 698              	.LVL41:
+ 699 0048 FFF7FEFF 		bl	__aeabi_d2f
+ 700              	.LVL42:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s 			page 17
+
+
+ 701              		.loc 1 176 11 view .LVU180
+ 702 004c 2860     		str	r0, [r5]	@ float
+ 177:Modules/src/mpu6050.c **** 
+ 178:Modules/src/mpu6050.c ****     return true;      
+ 703              		.loc 1 178 5 is_stmt 1 view .LVU181
+ 704              	.L31:
+ 179:Modules/src/mpu6050.c **** }...
+ 705              		.loc 1 179 1 is_stmt 0 view .LVU182
+ 706 004e 2046     		mov	r0, r4
+ 707 0050 03B0     		add	sp, sp, #12
+ 708              	.LCFI18:
+ 709              		.cfi_def_cfa_offset 12
+ 710              		@ sp needed
+ 711 0052 30BD     		pop	{r4, r5, pc}
+ 712              	.LVL43:
+ 713              	.L34:
+ 714              		.loc 1 179 1 view .LVU183
+ 715 0054 AFF30080 		.align	3
+ 716              	.L33:
+ 717 0058 A4703D0A 		.word	171798692
+ 718 005c D7434240 		.word	1078084567
+ 719 0060 00000000 		.word	.LANCHOR1
+ 720 0064 0000AA43 		.word	1135214592
+ 721              		.cfi_endproc
+ 722              	.LFE143:
+ 724              		.section	.bss.i2c_data,"aw",%nobits
+ 725              		.set	.LANCHOR0,. + 0
+ 728              	i2c_data:
+ 729 0000 00       		.space	1
+ 730              		.section	.bss.i2c_datas,"aw",%nobits
+ 731              		.align	2
+ 732              		.set	.LANCHOR1,. + 0
+ 735              	i2c_datas:
+ 736 0000 00000000 		.space	6
+ 736      0000
+ 737              		.text
+ 738              	.Letext0:
+ 739              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
+ 740              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 741              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 742              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 743              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 744              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 745              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 746              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 747              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 748              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 749              		.file 12 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
+ 750              		.file 13 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
+ 751              		.file 14 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
+ 752              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
+ 753              		.file 16 "Modules/include/utils.h"
+ 754              		.file 17 "Inc/i2c.h"
+ 755              		.file 18 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
+ 756              		.file 19 "Modules/include/i2c1.h"
+ 757              		.file 20 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s 			page 18
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 mpu6050.c
-C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s:18     .text.MPU6050Init:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s:26     .text.MPU6050Init:00000000 MPU6050Init
-C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s:230    .text.MPU6050Init:00000104 $d
-C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s:236    .text.MPU6050ReadAccel:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s:243    .text.MPU6050ReadAccel:00000000 MPU6050ReadAccel
-C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s:344    .text.MPU6050ReadAccel:00000078 $d
-C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s:350    .text.MPU6050ReadGyro:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s:357    .text.MPU6050ReadGyro:00000000 MPU6050ReadGyro
-C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s:458    .text.MPU6050ReadGyro:00000078 $d
-C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s:467    .text.MPU6050ReadTemp:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s:474    .text.MPU6050ReadTemp:00000000 MPU6050ReadTemp
-C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s:549    .text.MPU6050ReadTemp:00000058 $d
-C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s:560    .bss.i2c_data:00000000 i2c_data
-C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s:561    .bss.i2c_data:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s:563    .bss.i2c_datas:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccRRzNiS.s:567    .bss.i2c_datas:00000000 i2c_datas
+C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s:18     .text.MPU6050Init:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s:26     .text.MPU6050Init:00000000 MPU6050Init
+C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s:230    .text.MPU6050Init:00000104 $d
+C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s:236    .text.MPU6050ReadAccelRaw:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s:243    .text.MPU6050ReadAccelRaw:00000000 MPU6050ReadAccelRaw
+C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s:315    .text.MPU6050ReadAccelRaw:0000003c $d
+C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s:320    .text.MPU6050ReadGyroRaw:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s:327    .text.MPU6050ReadGyroRaw:00000000 MPU6050ReadGyroRaw
+C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s:399    .text.MPU6050ReadGyroRaw:0000003c $d
+C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s:404    .text.MPU6050ReadAccel:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s:411    .text.MPU6050ReadAccel:00000000 MPU6050ReadAccel
+C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s:512    .text.MPU6050ReadAccel:00000078 $d
+C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s:518    .text.MPU6050ReadGyro:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s:525    .text.MPU6050ReadGyro:00000000 MPU6050ReadGyro
+C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s:626    .text.MPU6050ReadGyro:00000078 $d
+C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s:635    .text.MPU6050ReadTemp:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s:642    .text.MPU6050ReadTemp:00000000 MPU6050ReadTemp
+C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s:717    .text.MPU6050ReadTemp:00000058 $d
+C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s:728    .bss.i2c_data:00000000 i2c_data
+C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s:729    .bss.i2c_data:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s:731    .bss.i2c_datas:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccvpjimD.s:735    .bss.i2c_datas:00000000 i2c_datas
 
 UNDEFINED SYMBOLS
 vTaskDelay

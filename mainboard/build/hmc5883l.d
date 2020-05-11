@@ -1,5 +1,6 @@
-build/sensors.o: Modules/src/sensors.c Modules/include/sensors.h \
- Modules/include/utils.h Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+build/hmc5883l.o: Modules/src/hmc5883l.c Modules/include/hmc5883l.h \
+ Modules/include/i2c1.h Inc/i2c.h Inc/main.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  Inc/stm32f4xx_hal_conf.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
@@ -27,8 +28,7 @@ build/sensors.o: Modules/src/sensors.c Modules/include/sensors.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- Modules/include/mpu6050.h Modules/include/i2c1.h Inc/i2c.h Inc/main.h \
- Modules/include/utils.h \
+ Modules/include/utils.h Modules/include/utils.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  Inc/FreeRTOSConfig.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
@@ -37,12 +37,15 @@ build/sensors.o: Modules/src/sensors.c Modules/include/sensors.h \
  Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
- Modules/include/ms5611.h Modules/include/hmc5883l.h
+ Middlewares/Third_Party/FreeRTOS/Source/include/list.h
 
-Modules/include/sensors.h:
+Modules/include/hmc5883l.h:
 
-Modules/include/utils.h:
+Modules/include/i2c1.h:
+
+Inc/i2c.h:
+
+Inc/main.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 
@@ -104,13 +107,7 @@ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 
-Modules/include/mpu6050.h:
-
-Modules/include/i2c1.h:
-
-Inc/i2c.h:
-
-Inc/main.h:
+Modules/include/utils.h:
 
 Modules/include/utils.h:
 
@@ -131,7 +128,3 @@ Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 
 Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
-
-Modules/include/ms5611.h:
-
-Modules/include/hmc5883l.h:

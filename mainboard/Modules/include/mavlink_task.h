@@ -8,8 +8,8 @@
 #include "usart2.h"
 #include "utils.h"
 #include "motor.h"
+#include "sensors.h"
 
 void MavlinkInit(void);
-
 
 #endif /* __mavlink_task_H */

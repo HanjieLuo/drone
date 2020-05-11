@@ -1,0 +1,447 @@
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccDl27sG.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"hmc5883l.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.HMC5883LInit,"ax",%progbits
+  18              		.align	1
+  19              		.global	HMC5883LInit
+  20              		.arch armv7e-m
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  24              		.fpu fpv4-sp-d16
+  26              	HMC5883LInit:
+  27              	.LFB138:
+  28              		.file 1 "Modules/src/hmc5883l.c"
+   1:Modules/src/hmc5883l.c **** #include "hmc5883l.h"
+   2:Modules/src/hmc5883l.c **** 
+   3:Modules/src/hmc5883l.c **** static uint8_t i2c_data;
+   4:Modules/src/hmc5883l.c **** static uint8_t i2c_datas[6];
+   5:Modules/src/hmc5883l.c **** static int16_t mx_raw, my_raw, mz_raw;
+   6:Modules/src/hmc5883l.c **** 
+   7:Modules/src/hmc5883l.c **** bool HMC5883LInit(void) {
+  29              		.loc 1 7 25 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 30B5     		push	{r4, r5, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 12
+  36              		.cfi_offset 4, -12
+  37              		.cfi_offset 5, -8
+  38              		.cfi_offset 14, -4
+  39 0002 83B0     		sub	sp, sp, #12
+  40              	.LCFI1:
+  41              		.cfi_def_cfa_offset 24
+   8:Modules/src/hmc5883l.c ****     if (HAL_I2C_IsDeviceReady(&hi2c1, HMC5883L_DEFAULT_ADDRESS, 10, 1000) != HAL_OK) {
+  42              		.loc 1 8 5 view .LVU1
+  43              		.loc 1 8 9 is_stmt 0 view .LVU2
+  44 0004 4FF47A73 		mov	r3, #1000
+  45 0008 0A22     		movs	r2, #10
+  46 000a 3C21     		movs	r1, #60
+  47 000c 1248     		ldr	r0, .L6
+  48 000e FFF7FEFF 		bl	HAL_I2C_IsDeviceReady
+  49              	.LVL0:
+  50              		.loc 1 8 8 view .LVU3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccDl27sG.s 			page 2
+
+
+  51 0012 10B1     		cbz	r0, .L5
+   9:Modules/src/hmc5883l.c ****         return false;
+  52              		.loc 1 9 16 view .LVU4
+  53 0014 0020     		movs	r0, #0
+  54              	.L2:
+  10:Modules/src/hmc5883l.c ****     }
+  11:Modules/src/hmc5883l.c **** 
+  12:Modules/src/hmc5883l.c ****     // printf("HMC5883LInit\r\n");
+  13:Modules/src/hmc5883l.c **** 
+  14:Modules/src/hmc5883l.c ****     i2c_data = (HMC5883L_AVERAGING_8 << (HMC5883L_CRA_AVERAGE_BIT - HMC5883L_CRA_AVERAGE_LENGTH + 1
+  15:Modules/src/hmc5883l.c ****                (HMC5883L_RATE_75 << (HMC5883L_CRA_RATE_BIT - HMC5883L_CRA_RATE_LENGTH + 1)) |
+  16:Modules/src/hmc5883l.c ****                (HMC5883L_BIAS_NORMAL << (HMC5883L_CRA_BIAS_BIT - HMC5883L_CRA_BIAS_LENGTH + 1));
+  17:Modules/src/hmc5883l.c ****     I2C1MenWrite(HMC5883L_DEFAULT_ADDRESS, HMC5883L_RA_CONFIG_A, 1, &i2c_data, 1);
+  18:Modules/src/hmc5883l.c **** 
+  19:Modules/src/hmc5883l.c ****     i2c_data = HMC5883L_GAIN_1090 << (HMC5883L_CRB_GAIN_BIT - HMC5883L_CRB_GAIN_LENGTH + 1);
+  20:Modules/src/hmc5883l.c ****     I2C1MenWrite(HMC5883L_DEFAULT_ADDRESS, HMC5883L_RA_CONFIG_B, 1, &i2c_data, 1);
+  21:Modules/src/hmc5883l.c **** 
+  22:Modules/src/hmc5883l.c ****     i2c_data = HMC5883L_MODE_CONTINUOUS << (HMC5883L_MODEREG_BIT - HMC5883L_MODEREG_LENGTH + 1);
+  23:Modules/src/hmc5883l.c ****     I2C1MenWrite(HMC5883L_DEFAULT_ADDRESS, HMC5883L_RA_MODE, 1, &i2c_data, 1);
+  24:Modules/src/hmc5883l.c **** 
+  25:Modules/src/hmc5883l.c ****     return true;
+  26:Modules/src/hmc5883l.c **** }
+  55              		.loc 1 26 1 view .LVU5
+  56 0016 03B0     		add	sp, sp, #12
+  57              	.LCFI2:
+  58              		.cfi_remember_state
+  59              		.cfi_def_cfa_offset 12
+  60              		@ sp needed
+  61 0018 30BD     		pop	{r4, r5, pc}
+  62              	.L5:
+  63              	.LCFI3:
+  64              		.cfi_restore_state
+  14:Modules/src/hmc5883l.c ****                (HMC5883L_RATE_75 << (HMC5883L_CRA_RATE_BIT - HMC5883L_CRA_RATE_LENGTH + 1)) |
+  65              		.loc 1 14 5 is_stmt 1 view .LVU6
+  14:Modules/src/hmc5883l.c ****                (HMC5883L_RATE_75 << (HMC5883L_CRA_RATE_BIT - HMC5883L_CRA_RATE_LENGTH + 1)) |
+  66              		.loc 1 14 14 is_stmt 0 view .LVU7
+  67 001a 104D     		ldr	r5, .L6+4
+  68 001c 7823     		movs	r3, #120
+  69 001e 2B70     		strb	r3, [r5]
+  17:Modules/src/hmc5883l.c **** 
+  70              		.loc 1 17 5 is_stmt 1 view .LVU8
+  71 0020 0124     		movs	r4, #1
+  72 0022 0094     		str	r4, [sp]
+  73 0024 2B46     		mov	r3, r5
+  74 0026 2246     		mov	r2, r4
+  75 0028 0021     		movs	r1, #0
+  76 002a 3C20     		movs	r0, #60
+  77 002c FFF7FEFF 		bl	I2C1MenWrite
+  78              	.LVL1:
+  19:Modules/src/hmc5883l.c ****     I2C1MenWrite(HMC5883L_DEFAULT_ADDRESS, HMC5883L_RA_CONFIG_B, 1, &i2c_data, 1);
+  79              		.loc 1 19 5 view .LVU9
+  19:Modules/src/hmc5883l.c ****     I2C1MenWrite(HMC5883L_DEFAULT_ADDRESS, HMC5883L_RA_CONFIG_B, 1, &i2c_data, 1);
+  80              		.loc 1 19 14 is_stmt 0 view .LVU10
+  81 0030 2023     		movs	r3, #32
+  82 0032 2B70     		strb	r3, [r5]
+  20:Modules/src/hmc5883l.c **** 
+  83              		.loc 1 20 5 is_stmt 1 view .LVU11
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccDl27sG.s 			page 3
+
+
+  84 0034 0094     		str	r4, [sp]
+  85 0036 2B46     		mov	r3, r5
+  86 0038 2246     		mov	r2, r4
+  87 003a 2146     		mov	r1, r4
+  88 003c 3C20     		movs	r0, #60
+  89 003e FFF7FEFF 		bl	I2C1MenWrite
+  90              	.LVL2:
+  22:Modules/src/hmc5883l.c ****     I2C1MenWrite(HMC5883L_DEFAULT_ADDRESS, HMC5883L_RA_MODE, 1, &i2c_data, 1);
+  91              		.loc 1 22 5 view .LVU12
+  22:Modules/src/hmc5883l.c ****     I2C1MenWrite(HMC5883L_DEFAULT_ADDRESS, HMC5883L_RA_MODE, 1, &i2c_data, 1);
+  92              		.loc 1 22 14 is_stmt 0 view .LVU13
+  93 0042 0023     		movs	r3, #0
+  94 0044 2B70     		strb	r3, [r5]
+  23:Modules/src/hmc5883l.c **** 
+  95              		.loc 1 23 5 is_stmt 1 view .LVU14
+  96 0046 0094     		str	r4, [sp]
+  97 0048 2B46     		mov	r3, r5
+  98 004a 2246     		mov	r2, r4
+  99 004c 0221     		movs	r1, #2
+ 100 004e 3C20     		movs	r0, #60
+ 101 0050 FFF7FEFF 		bl	I2C1MenWrite
+ 102              	.LVL3:
+  25:Modules/src/hmc5883l.c **** }
+ 103              		.loc 1 25 5 view .LVU15
+  25:Modules/src/hmc5883l.c **** }
+ 104              		.loc 1 25 12 is_stmt 0 view .LVU16
+ 105 0054 2046     		mov	r0, r4
+ 106 0056 DEE7     		b	.L2
+ 107              	.L7:
+ 108              		.align	2
+ 109              	.L6:
+ 110 0058 00000000 		.word	hi2c1
+ 111 005c 00000000 		.word	.LANCHOR0
+ 112              		.cfi_endproc
+ 113              	.LFE138:
+ 115              		.section	.text.HMC5883LReadMagRaw,"ax",%progbits
+ 116              		.align	1
+ 117              		.global	HMC5883LReadMagRaw
+ 118              		.syntax unified
+ 119              		.thumb
+ 120              		.thumb_func
+ 121              		.fpu fpv4-sp-d16
+ 123              	HMC5883LReadMagRaw:
+ 124              	.LVL4:
+ 125              	.LFB139:
+  27:Modules/src/hmc5883l.c **** 
+  28:Modules/src/hmc5883l.c **** bool HMC5883LReadMagRaw(int16_t *values) {
+ 126              		.loc 1 28 42 is_stmt 1 view -0
+ 127              		.cfi_startproc
+ 128              		@ args = 0, pretend = 0, frame = 0
+ 129              		@ frame_needed = 0, uses_anonymous_args = 0
+ 130              		.loc 1 28 42 is_stmt 0 view .LVU18
+ 131 0000 10B5     		push	{r4, lr}
+ 132              	.LCFI4:
+ 133              		.cfi_def_cfa_offset 8
+ 134              		.cfi_offset 4, -8
+ 135              		.cfi_offset 14, -4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccDl27sG.s 			page 4
+
+
+ 136 0002 82B0     		sub	sp, sp, #8
+ 137              	.LCFI5:
+ 138              		.cfi_def_cfa_offset 16
+ 139 0004 0446     		mov	r4, r0
+  29:Modules/src/hmc5883l.c ****     if (!I2C1MenRead(HMC5883L_DEFAULT_ADDRESS, HMC5883L_RA_DATAX_H, 1, i2c_datas, 6)) {
+ 140              		.loc 1 29 5 is_stmt 1 view .LVU19
+ 141              		.loc 1 29 10 is_stmt 0 view .LVU20
+ 142 0006 0623     		movs	r3, #6
+ 143 0008 0093     		str	r3, [sp]
+ 144 000a 0C4B     		ldr	r3, .L11
+ 145 000c 0122     		movs	r2, #1
+ 146 000e 0321     		movs	r1, #3
+ 147 0010 3C20     		movs	r0, #60
+ 148              	.LVL5:
+ 149              		.loc 1 29 10 view .LVU21
+ 150 0012 FFF7FEFF 		bl	I2C1MenRead
+ 151              	.LVL6:
+ 152              		.loc 1 29 8 view .LVU22
+ 153 0016 78B1     		cbz	r0, .L9
+  30:Modules/src/hmc5883l.c ****         return false;
+  31:Modules/src/hmc5883l.c ****     }
+  32:Modules/src/hmc5883l.c **** 
+  33:Modules/src/hmc5883l.c **** 	values[0] = (int16_t)(i2c_datas[0] << 8 | i2c_datas [1]);
+ 154              		.loc 1 33 2 is_stmt 1 view .LVU23
+ 155              		.loc 1 33 33 is_stmt 0 view .LVU24
+ 156 0018 084B     		ldr	r3, .L11
+ 157 001a 1978     		ldrb	r1, [r3]	@ zero_extendqisi2
+ 158              		.loc 1 33 54 view .LVU25
+ 159 001c 5A78     		ldrb	r2, [r3, #1]	@ zero_extendqisi2
+ 160              		.loc 1 33 14 view .LVU26
+ 161 001e 42EA0122 		orr	r2, r2, r1, lsl #8
+ 162              		.loc 1 33 12 view .LVU27
+ 163 0022 2280     		strh	r2, [r4]	@ movhi
+  34:Modules/src/hmc5883l.c **** 	values[1] = (int16_t)(i2c_datas[2] << 8 | i2c_datas [3]);
+ 164              		.loc 1 34 2 is_stmt 1 view .LVU28
+ 165              		.loc 1 34 33 is_stmt 0 view .LVU29
+ 166 0024 9978     		ldrb	r1, [r3, #2]	@ zero_extendqisi2
+ 167              		.loc 1 34 54 view .LVU30
+ 168 0026 DA78     		ldrb	r2, [r3, #3]	@ zero_extendqisi2
+ 169              		.loc 1 34 14 view .LVU31
+ 170 0028 42EA0122 		orr	r2, r2, r1, lsl #8
+ 171              		.loc 1 34 12 view .LVU32
+ 172 002c 6280     		strh	r2, [r4, #2]	@ movhi
+  35:Modules/src/hmc5883l.c **** 	values[2] = (int16_t)(i2c_datas[4] << 8 | i2c_datas [5]); 
+ 173              		.loc 1 35 2 is_stmt 1 view .LVU33
+ 174              		.loc 1 35 33 is_stmt 0 view .LVU34
+ 175 002e 1A79     		ldrb	r2, [r3, #4]	@ zero_extendqisi2
+ 176              		.loc 1 35 54 view .LVU35
+ 177 0030 5B79     		ldrb	r3, [r3, #5]	@ zero_extendqisi2
+ 178              		.loc 1 35 14 view .LVU36
+ 179 0032 43EA0223 		orr	r3, r3, r2, lsl #8
+ 180              		.loc 1 35 12 view .LVU37
+ 181 0036 A380     		strh	r3, [r4, #4]	@ movhi
+  36:Modules/src/hmc5883l.c ****     return true;  
+ 182              		.loc 1 36 5 is_stmt 1 view .LVU38
+ 183              	.L9:
+  37:Modules/src/hmc5883l.c **** }
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccDl27sG.s 			page 5
+
+
+ 184              		.loc 1 37 1 is_stmt 0 view .LVU39
+ 185 0038 02B0     		add	sp, sp, #8
+ 186              	.LCFI6:
+ 187              		.cfi_def_cfa_offset 8
+ 188              		@ sp needed
+ 189 003a 10BD     		pop	{r4, pc}
+ 190              	.LVL7:
+ 191              	.L12:
+ 192              		.loc 1 37 1 view .LVU40
+ 193              		.align	2
+ 194              	.L11:
+ 195 003c 00000000 		.word	.LANCHOR1
+ 196              		.cfi_endproc
+ 197              	.LFE139:
+ 199              		.section	.text.HMC5883LReadMag,"ax",%progbits
+ 200              		.align	1
+ 201              		.global	HMC5883LReadMag
+ 202              		.syntax unified
+ 203              		.thumb
+ 204              		.thumb_func
+ 205              		.fpu fpv4-sp-d16
+ 207              	HMC5883LReadMag:
+ 208              	.LVL8:
+ 209              	.LFB140:
+  38:Modules/src/hmc5883l.c **** 
+  39:Modules/src/hmc5883l.c **** bool HMC5883LReadMag(float *mx, float *my, float *mz) {
+ 210              		.loc 1 39 55 is_stmt 1 view -0
+ 211              		.cfi_startproc
+ 212              		@ args = 0, pretend = 0, frame = 0
+ 213              		@ frame_needed = 0, uses_anonymous_args = 0
+ 214              		.loc 1 39 55 is_stmt 0 view .LVU42
+ 215 0000 70B5     		push	{r4, r5, r6, lr}
+ 216              	.LCFI7:
+ 217              		.cfi_def_cfa_offset 16
+ 218              		.cfi_offset 4, -16
+ 219              		.cfi_offset 5, -12
+ 220              		.cfi_offset 6, -8
+ 221              		.cfi_offset 14, -4
+ 222 0002 82B0     		sub	sp, sp, #8
+ 223              	.LCFI8:
+ 224              		.cfi_def_cfa_offset 24
+ 225 0004 0646     		mov	r6, r0
+ 226 0006 0D46     		mov	r5, r1
+ 227 0008 1446     		mov	r4, r2
+  40:Modules/src/hmc5883l.c ****     if (!I2C1MenRead(HMC5883L_DEFAULT_ADDRESS, HMC5883L_RA_DATAX_H, 1, i2c_datas, 6)) {
+ 228              		.loc 1 40 5 is_stmt 1 view .LVU43
+ 229              		.loc 1 40 10 is_stmt 0 view .LVU44
+ 230 000a 0623     		movs	r3, #6
+ 231 000c 0093     		str	r3, [sp]
+ 232 000e 1A4B     		ldr	r3, .L16
+ 233 0010 0122     		movs	r2, #1
+ 234              	.LVL9:
+ 235              		.loc 1 40 10 view .LVU45
+ 236 0012 0321     		movs	r1, #3
+ 237              	.LVL10:
+ 238              		.loc 1 40 10 view .LVU46
+ 239 0014 3C20     		movs	r0, #60
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccDl27sG.s 			page 6
+
+
+ 240              	.LVL11:
+ 241              		.loc 1 40 10 view .LVU47
+ 242 0016 FFF7FEFF 		bl	I2C1MenRead
+ 243              	.LVL12:
+ 244              		.loc 1 40 8 view .LVU48
+ 245 001a 0146     		mov	r1, r0
+ 246 001c 48B3     		cbz	r0, .L14
+  41:Modules/src/hmc5883l.c ****         return false;
+  42:Modules/src/hmc5883l.c ****     }
+  43:Modules/src/hmc5883l.c **** 
+  44:Modules/src/hmc5883l.c **** 	mx_raw = (int16_t)(i2c_datas[0] << 8 | i2c_datas [1]);
+ 247              		.loc 1 44 2 is_stmt 1 view .LVU49
+ 248              		.loc 1 44 30 is_stmt 0 view .LVU50
+ 249 001e 164A     		ldr	r2, .L16
+ 250 0020 1078     		ldrb	r0, [r2]	@ zero_extendqisi2
+ 251              		.loc 1 44 51 view .LVU51
+ 252 0022 5378     		ldrb	r3, [r2, #1]	@ zero_extendqisi2
+ 253              		.loc 1 44 11 view .LVU52
+ 254 0024 43EA0023 		orr	r3, r3, r0, lsl #8
+ 255 0028 1BB2     		sxth	r3, r3
+ 256 002a 07EE103A 		vmov	s14, r3	@ int
+  45:Modules/src/hmc5883l.c **** 	my_raw = (int16_t)(i2c_datas[2] << 8 | i2c_datas [3]);
+ 257              		.loc 1 45 2 is_stmt 1 view .LVU53
+ 258              		.loc 1 45 30 is_stmt 0 view .LVU54
+ 259 002e 9078     		ldrb	r0, [r2, #2]	@ zero_extendqisi2
+ 260              		.loc 1 45 51 view .LVU55
+ 261 0030 D378     		ldrb	r3, [r2, #3]	@ zero_extendqisi2
+ 262              		.loc 1 45 11 view .LVU56
+ 263 0032 43EA0023 		orr	r3, r3, r0, lsl #8
+ 264 0036 1BB2     		sxth	r3, r3
+ 265 0038 07EE903A 		vmov	s15, r3	@ int
+  46:Modules/src/hmc5883l.c **** 	mz_raw = (int16_t)(i2c_datas[4] << 8 | i2c_datas [5]);
+ 266              		.loc 1 46 2 is_stmt 1 view .LVU57
+ 267              		.loc 1 46 30 is_stmt 0 view .LVU58
+ 268 003c 1079     		ldrb	r0, [r2, #4]	@ zero_extendqisi2
+ 269              		.loc 1 46 51 view .LVU59
+ 270 003e 5379     		ldrb	r3, [r2, #5]	@ zero_extendqisi2
+ 271              		.loc 1 46 11 view .LVU60
+ 272 0040 43EA0023 		orr	r3, r3, r0, lsl #8
+ 273 0044 1BB2     		sxth	r3, r3
+  47:Modules/src/hmc5883l.c **** 
+  48:Modules/src/hmc5883l.c **** 	*mx = mx_raw / 1090.f;
+ 274              		.loc 1 48 2 is_stmt 1 view .LVU61
+ 275              		.loc 1 48 15 is_stmt 0 view .LVU62
+ 276 0046 B8EEC77A 		vcvt.f32.s32	s14, s14
+ 277 004a DFED0C6A 		vldr.32	s13, .L16+4
+ 278 004e 87EE266A 		vdiv.f32	s12, s14, s13
+ 279              		.loc 1 48 6 view .LVU63
+ 280 0052 86ED006A 		vstr.32	s12, [r6]
+  49:Modules/src/hmc5883l.c **** 	*my = my_raw / 1090.f;
+ 281              		.loc 1 49 2 is_stmt 1 view .LVU64
+ 282              		.loc 1 49 15 is_stmt 0 view .LVU65
+ 283 0056 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 284 005a 87EEA67A 		vdiv.f32	s14, s15, s13
+ 285              		.loc 1 49 6 view .LVU66
+ 286 005e 85ED007A 		vstr.32	s14, [r5]
+  50:Modules/src/hmc5883l.c **** 	*mz = mz_raw / 1090.f;
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccDl27sG.s 			page 7
+
+
+ 287              		.loc 1 50 2 is_stmt 1 view .LVU67
+ 288              		.loc 1 50 15 is_stmt 0 view .LVU68
+ 289 0062 07EE903A 		vmov	s15, r3	@ int
+ 290 0066 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 291 006a 87EEA67A 		vdiv.f32	s14, s15, s13
+ 292              		.loc 1 50 6 view .LVU69
+ 293 006e 84ED007A 		vstr.32	s14, [r4]
+  51:Modules/src/hmc5883l.c **** 
+  52:Modules/src/hmc5883l.c ****     return true;
+ 294              		.loc 1 52 5 is_stmt 1 view .LVU70
+ 295              	.L14:
+  53:Modules/src/hmc5883l.c **** }
+ 296              		.loc 1 53 1 is_stmt 0 view .LVU71
+ 297 0072 0846     		mov	r0, r1
+ 298 0074 02B0     		add	sp, sp, #8
+ 299              	.LCFI9:
+ 300              		.cfi_def_cfa_offset 16
+ 301              		@ sp needed
+ 302 0076 70BD     		pop	{r4, r5, r6, pc}
+ 303              	.LVL13:
+ 304              	.L17:
+ 305              		.loc 1 53 1 view .LVU72
+ 306              		.align	2
+ 307              	.L16:
+ 308 0078 00000000 		.word	.LANCHOR1
+ 309 007c 00408844 		.word	1149779968
+ 310              		.cfi_endproc
+ 311              	.LFE140:
+ 313              		.section	.bss.i2c_data,"aw",%nobits
+ 314              		.set	.LANCHOR0,. + 0
+ 317              	i2c_data:
+ 318 0000 00       		.space	1
+ 319              		.section	.bss.i2c_datas,"aw",%nobits
+ 320              		.align	2
+ 321              		.set	.LANCHOR1,. + 0
+ 324              	i2c_datas:
+ 325 0000 00000000 		.space	6
+ 325      0000
+ 326              		.text
+ 327              	.Letext0:
+ 328              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
+ 329              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 330              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 331              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 332              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 333              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 334              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 335              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 336              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 337              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 338              		.file 12 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
+ 339              		.file 13 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
+ 340              		.file 14 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
+ 341              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
+ 342              		.file 16 "Modules/include/utils.h"
+ 343              		.file 17 "Inc/i2c.h"
+ 344              		.file 18 "Modules/include/i2c1.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccDl27sG.s 			page 8
+
+
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccDl27sG.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 hmc5883l.c
+C:\Users\luoha\AppData\Local\Temp\ccDl27sG.s:18     .text.HMC5883LInit:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccDl27sG.s:26     .text.HMC5883LInit:00000000 HMC5883LInit
+C:\Users\luoha\AppData\Local\Temp\ccDl27sG.s:110    .text.HMC5883LInit:00000058 $d
+C:\Users\luoha\AppData\Local\Temp\ccDl27sG.s:116    .text.HMC5883LReadMagRaw:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccDl27sG.s:123    .text.HMC5883LReadMagRaw:00000000 HMC5883LReadMagRaw
+C:\Users\luoha\AppData\Local\Temp\ccDl27sG.s:195    .text.HMC5883LReadMagRaw:0000003c $d
+C:\Users\luoha\AppData\Local\Temp\ccDl27sG.s:200    .text.HMC5883LReadMag:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccDl27sG.s:207    .text.HMC5883LReadMag:00000000 HMC5883LReadMag
+C:\Users\luoha\AppData\Local\Temp\ccDl27sG.s:308    .text.HMC5883LReadMag:00000078 $d
+C:\Users\luoha\AppData\Local\Temp\ccDl27sG.s:317    .bss.i2c_data:00000000 i2c_data
+C:\Users\luoha\AppData\Local\Temp\ccDl27sG.s:318    .bss.i2c_data:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccDl27sG.s:320    .bss.i2c_datas:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccDl27sG.s:324    .bss.i2c_datas:00000000 i2c_datas
+
+UNDEFINED SYMBOLS
+HAL_I2C_IsDeviceReady
+I2C1MenWrite
+hi2c1
+I2C1MenRead
