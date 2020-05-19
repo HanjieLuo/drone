@@ -1,0 +1,197 @@
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"dmp.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.DmpTask,"ax",%progbits
+  18              		.align	1
+  19              		.global	DmpTask
+  20              		.arch armv7e-m
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  24              		.fpu fpv4-sp-d16
+  26              	DmpTask:
+  27              	.LVL0:
+  28              	.LFB139:
+  29              		.file 1 "Modules/src/dmp.c"
+   1:Modules/src/dmp.c **** #include "dmp.h"
+   2:Modules/src/dmp.c **** 
+   3:Modules/src/dmp.c **** extern xQueueHandle acc_raw_queue;
+   4:Modules/src/dmp.c **** extern xQueueHandle gyro_raw_queue;
+   5:Modules/src/dmp.c **** extern xQueueHandle mag_raw_queue;
+   6:Modules/src/dmp.c **** 
+   7:Modules/src/dmp.c **** static TaskHandle_t dmp_task_handle;
+   8:Modules/src/dmp.c **** STATIC_MEM_TASK_ALLOC(dmp_task, configMINIMAL_STACK_SIZE * 2);
+   9:Modules/src/dmp.c **** 
+  10:Modules/src/dmp.c **** void DmpInit(void) {
+  11:Modules/src/dmp.c ****     dmp_task_handle = STATIC_MEM_TASK_CREATE(dmp_task, DmpTask, "DmpTask", NULL, 4);
+  12:Modules/src/dmp.c **** }
+  13:Modules/src/dmp.c **** 
+  14:Modules/src/dmp.c **** void DmpTask(void *param) {
+  30              		.loc 1 14 27 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+  15:Modules/src/dmp.c ****     // int16_t acc_raw[3], gyro_raw[3], mag_raw[3];
+  16:Modules/src/dmp.c ****     // float acc[3], gyro[3], mag[3];
+  17:Modules/src/dmp.c **** 
+  18:Modules/src/dmp.c ****     // const TickType_t wait_time = pdMS_TO_TICKS(20);
+  19:Modules/src/dmp.c ****     // portTickType last_wait_time = xTaskGetTickCount();
+  20:Modules/src/dmp.c ****     // for (;;) {
+  21:Modules/src/dmp.c ****     //     xQueueReceive(acc_raw_queue, acc_raw, portMAX_DELAY);
+  22:Modules/src/dmp.c ****     //     xQueueReceive(gyro_raw_queue, gyro_raw, portMAX_DELAY);
+  23:Modules/src/dmp.c ****     //     xQueueReceive(mag_raw_queue, mag_raw, portMAX_DELAY);
+  24:Modules/src/dmp.c **** 
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s 			page 2
+
+
+  25:Modules/src/dmp.c ****     //     // usecTimestamp
+  26:Modules/src/dmp.c **** 
+  27:Modules/src/dmp.c ****     //     // printf("Accel: %d, %d, %d\r\n", acc_raw[0], acc_raw[1], acc_raw[2]);
+  28:Modules/src/dmp.c ****     //     // printf("Gyro: %d, %d, %d\r\n", gyro_raw[0], gyro_raw[1], gyro_raw[2]);
+  29:Modules/src/dmp.c ****     //     // printf("Mag: %d, %d, %d\r\n\r\n", mag_raw[0], mag_raw[1], mag_raw[2]);
+  30:Modules/src/dmp.c **** 
+  31:Modules/src/dmp.c **** 
+  32:Modules/src/dmp.c ****     //     vTaskDelayUntil(&last_wait_time, wait_time);
+  33:Modules/src/dmp.c ****     // }
+  34:Modules/src/dmp.c **** }...
+  35              		.loc 1 34 1 view .LVU1
+  36 0000 7047     		bx	lr
+  37              		.cfi_endproc
+  38              	.LFE139:
+  40              		.section	.rodata.DmpInit.str1.4,"aMS",%progbits,1
+  41              		.align	2
+  42              	.LC0:
+  43 0000 446D7054 		.ascii	"DmpTask\000"
+  43      61736B00 
+  44              		.section	.text.DmpInit,"ax",%progbits
+  45              		.align	1
+  46              		.global	DmpInit
+  47              		.syntax unified
+  48              		.thumb
+  49              		.thumb_func
+  50              		.fpu fpv4-sp-d16
+  52              	DmpInit:
+  53              	.LFB138:
+  10:Modules/src/dmp.c **** void DmpInit(void) {
+  54              		.loc 1 10 20 view -0
+  55              		.cfi_startproc
+  56              		@ args = 0, pretend = 0, frame = 0
+  57              		@ frame_needed = 0, uses_anonymous_args = 0
+  58 0000 00B5     		push	{lr}
+  59              	.LCFI0:
+  60              		.cfi_def_cfa_offset 4
+  61              		.cfi_offset 14, -4
+  62 0002 85B0     		sub	sp, sp, #20
+  63              	.LCFI1:
+  64              		.cfi_def_cfa_offset 24
+  11:Modules/src/dmp.c ****     dmp_task_handle = STATIC_MEM_TASK_CREATE(dmp_task, DmpTask, "DmpTask", NULL, 4);
+  65              		.loc 1 11 5 view .LVU3
+  11:Modules/src/dmp.c ****     dmp_task_handle = STATIC_MEM_TASK_CREATE(dmp_task, DmpTask, "DmpTask", NULL, 4);
+  66              		.loc 1 11 23 is_stmt 0 view .LVU4
+  67 0004 074B     		ldr	r3, .L4
+  68 0006 0293     		str	r3, [sp, #8]
+  69 0008 074B     		ldr	r3, .L4+4
+  70 000a 0193     		str	r3, [sp, #4]
+  71 000c 0423     		movs	r3, #4
+  72 000e 0093     		str	r3, [sp]
+  73 0010 0023     		movs	r3, #0
+  74 0012 4FF48072 		mov	r2, #256
+  75 0016 0549     		ldr	r1, .L4+8
+  76 0018 0548     		ldr	r0, .L4+12
+  77 001a FFF7FEFF 		bl	xTaskCreateStatic
+  78              	.LVL1:
+  12:Modules/src/dmp.c **** }
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s 			page 3
+
+
+  79              		.loc 1 12 1 view .LVU5
+  80 001e 05B0     		add	sp, sp, #20
+  81              	.LCFI2:
+  82              		.cfi_def_cfa_offset 4
+  83              		@ sp needed
+  84 0020 5DF804FB 		ldr	pc, [sp], #4
+  85              	.L5:
+  86              		.align	2
+  87              	.L4:
+  88 0024 00000000 		.word	.LANCHOR0
+  89 0028 00000000 		.word	.LANCHOR1
+  90 002c 00000000 		.word	.LC0
+  91 0030 00000000 		.word	DmpTask
+  92              		.cfi_endproc
+  93              	.LFE138:
+  95              		.section	.bss.osSys_dmp_taskStackBuffer,"aw",%nobits
+  96              		.align	2
+  97              		.set	.LANCHOR1,. + 0
+ 100              	osSys_dmp_taskStackBuffer:
+ 101 0000 00000000 		.space	1024
+ 101      00000000 
+ 101      00000000 
+ 101      00000000 
+ 101      00000000 
+ 102              		.section	.bss.osSys_dmp_taskTaskBuffer,"aw",%nobits
+ 103              		.align	2
+ 104              		.set	.LANCHOR0,. + 0
+ 107              	osSys_dmp_taskTaskBuffer:
+ 108 0000 00000000 		.space	84
+ 108      00000000 
+ 108      00000000 
+ 108      00000000 
+ 108      00000000 
+ 109              		.text
+ 110              	.Letext0:
+ 111              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
+ 112              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 113              		.file 4 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
+ 114              		.file 5 "Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"
+ 115              		.file 6 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 116              		.file 7 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
+ 117              		.file 8 "Inc/FreeRTOSConfig.h"
+ 118              		.file 9 "Drivers/CMSIS/Include/core_cm4.h"
+ 119              		.file 10 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 120              		.file 11 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 121              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 122              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 123              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 124              		.file 15 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 125              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 126              		.file 17 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
+ 127              		.file 18 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
+ 128              		.file 19 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
+ 129              		.file 20 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
+ 130              		.file 21 "Modules/include/utils.h"
+ 131              		.file 22 "Inc/i2c.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 dmp.c
+C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s:18     .text.DmpTask:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s:26     .text.DmpTask:00000000 DmpTask
+C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s:41     .rodata.DmpInit.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s:45     .text.DmpInit:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s:52     .text.DmpInit:00000000 DmpInit
+C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s:88     .text.DmpInit:00000024 $d
+C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s:96     .bss.osSys_dmp_taskStackBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s:100    .bss.osSys_dmp_taskStackBuffer:00000000 osSys_dmp_taskStackBuffer
+C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s:103    .bss.osSys_dmp_taskTaskBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s:107    .bss.osSys_dmp_taskTaskBuffer:00000000 osSys_dmp_taskTaskBuffer
+
+UNDEFINED SYMBOLS
+xTaskCreateStatic

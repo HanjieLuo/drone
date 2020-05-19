@@ -27,7 +27,20 @@
             "string": "c",
             "string_view": "c",
             "usart2.h": "c",
-            "mpu6050.h": "c"
+            "mpu6050.h": "c",
+            "array": "c",
+            "deque": "c",
+            "initializer_list": "c",
+            "list": "c",
+            "queue": "c",
+            "random": "c",
+            "type_traits": "c",
+            "vector": "c",
+            "xhash": "c",
+            "xutility": "c",
+            "utility": "c",
+            "atomic": "cpp",
+            "cstdint": "cpp"
         },
         "cortex-debug.armToolchainPath": "e:/GNU Tools Arm Embedded/9 2019-q4-major/bin",
         "cortex-debug.openocdPath": "E:\\OpenOCD-20200310-0.10.0\\bin\\openocd.EXE"

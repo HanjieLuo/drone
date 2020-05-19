@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
   28:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****  *
   29:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****  * Portions Copyright © 2016 STMicroelectronics International N.V. All rights reserved.
   30:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****  * Portions Copyright (c) 2013 ARM LIMITED
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 2
 
 
   31:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****  * All rights reserved.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
   85:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #elif defined ( __ICCARM__ )
   86:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** 
   87:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   #ifndef   __ASM
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 3
 
 
   88:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     #define __ASM                     __asm
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
   58              		.syntax unified
   59              		.thumb
   60              		.thumb_func
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 4
 
 
   61              		.fpu fpv4-sp-d16
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  104              	.LFB109:
  126:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #endif
  127:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 5
 
 
  128:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
   41:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __ASM                                  __asm
   42:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
   43:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __INLINE
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 6
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 6
 
 
   44:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __INLINE                               inline
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
   98:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_WRITE { uint32_t v; };
   99:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
  100:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_WRITE(addr, val)    (void)((((struct T_UINT32_WRITE *)(void *)(addr))-
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 7
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 7
 
 
  101:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  155:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, control" : "=r" (result) );
  156:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
  157:Drivers/CMSIS/Include/cmsis_gcc.h **** }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 8
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 8
 
 
  158:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  209:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, ipsr" : "=r" (result) );
  117              		.loc 2 209 3 view .LVU25
  118              		.syntax unified
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 9
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 9
 
 
  119              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  155              		.cfi_offset 14, -4
  152:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   vTaskStartScheduler();
  156              		.loc 1 152 3 view .LVU30
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 10
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 10
 
 
  157 0002 FFF7FEFF 		bl	vTaskStartScheduler
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  194              	.L10:
  172:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #else
  173:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** 	return (-1);
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 11
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 11
 
 
  174:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #endif	
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  190:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     return xTaskGetTickCount();
  191:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
  192:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 12
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 12
 
 
  234              		.loc 1 192 1 view .LVU46
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  276              		.loc 1 204 3 is_stmt 1 view .LVU51
  205:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   
  206:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #if( configSUPPORT_STATIC_ALLOCATION == 1 ) &&  ( configSUPPORT_DYNAMIC_ALLOCATION == 1 )
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 13
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 13
 
 
  207:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   if((thread_def->buffer != NULL) && (thread_def->controlblock != NULL)) {
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  228:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     return NULL;
  229:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }     
  230:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #endif
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 14
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 14
 
 
  231:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  352 0066 0020     		movs	r0, #0
  353 0068 E6E7     		b	.L19
  354              		.cfi_endproc
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 15
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 15
 
 
  355              	.LFE113:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  251:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @param   thread_id   thread ID obtained by \ref osThreadCreate or \ref osThreadGetId.
  252:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @retval  status code that indicates the execution status of the function.
  253:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @note   MUST REMAIN UNCHANGED: \b osThreadTerminate shall be consistent in every CMSIS-RTOS.
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 16
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 16
 
 
  254:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** */
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  433 0002 4FF08052 		mov	r2, #268435456
  434 0006 1A60     		str	r2, [r3]
  435              		.loc 1 272 3 view .LVU87
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 17
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 17
 
 
  436              		.syntax unified
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  479 0002 0446     		mov	r4, r0
  286:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #if (INCLUDE_vTaskPrioritySet == 1)
  287:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   vTaskPrioritySet(thread_id, makeFreeRtosPriority(priority));
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 18
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 18
 
 
  480              		.loc 1 287 3 is_stmt 1 view .LVU94
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  303:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   if (inHandlerMode())
  521              		.loc 1 303 3 is_stmt 1 view .LVU102
  522              		.loc 1 303 7 is_stmt 0 view .LVU103
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 19
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 19
 
 
  523 0004 FFF7FEFF 		bl	inHandlerMode
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  320:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @retval  status code that indicates the execution status of the function.
  321:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** */
  322:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** osStatus osDelay (uint32_t millisec)
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 20
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 20
 
 
  323:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** {
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  341:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @retval  event that contains signal, message, or mail information or error code.
  342:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @note   MUST REMAIN UNCHANGED: \b osWait shall be consistent in every CMSIS-RTOS.
  343:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 21
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 21
 
 
  344:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** osEvent osWait (uint32_t millisec);
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  393:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** 	return NULL;
  604              		.loc 1 393 2 view .LVU118
  394:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #endif
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 22
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 22
 
 
  395:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** }
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  426:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   {
  427:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     if (xTimerChangePeriod(timer_id, ticks, 0) != pdPASS)
  428:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****       result = osErrorOS;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 23
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 23
 
 
  429:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  458:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     }
  459:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
  460:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #else 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 24
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 24
 
 
  461:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   result = osErrorOS;
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  489:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #endif 
  490:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****  
  491:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   return result;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 25
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 25
 
 
  685              		.loc 1 491 3 view .LVU136
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  726              		.loc 1 506 12 is_stmt 0 view .LVU144
  727 000c 0293     		str	r3, [sp, #8]
  507:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 26
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 26
 
 
  508:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   if (inHandlerMode())
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  774              	.LVL52:
  775              		.loc 1 515 10 view .LVU157
  776 004a 0128     		cmp	r0, #1
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 27
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 27
 
 
  777 004c 05D1     		bne	.L51
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  528:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @brief  Clear the specified Signal Flags of an active thread.
  529:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @param  thread_id  thread ID obtained by \ref osThreadCreate or \ref osThreadGetId.
  530:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @param  signals    specifies the signal flags of the thread that shall be cleared.
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 28
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 28
 
 
  531:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @retval  previous signal flags of the specified thread or 0x80000000 in case of incorrect paramet
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  558:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     if (ticks == 0) {
  559:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****       ticks = 1;
  560:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 29
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 29
 
 
  561:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }  
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  872              	.LCFI19:
  873              		.cfi_restore_state
  569:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     {
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 30
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 30
 
 
  874              		.loc 1 569 5 is_stmt 1 view .LVU179
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  913              		.loc 1 576 18 is_stmt 0 view .LVU194
  914 0052 8623     		movs	r3, #134
  915 0054 0193     		str	r3, [sp, #4]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 31
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 31
 
 
  916 0056 DFE7     		b	.L57
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  607:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     return xSemaphoreCreateMutex(); 
  608:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
  609:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #elif ( configSUPPORT_STATIC_ALLOCATION == 1 )
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 32
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 32
 
 
  610:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   return xSemaphoreCreateMutexStatic( mutex_def->controlblock );
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  989              		.cfi_offset 5, -8
  990              		.cfi_offset 14, -4
  991 0002 83B0     		sub	sp, sp, #12
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 33
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 33
 
 
  992              	.LCFI22:
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  651:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** 	portEND_SWITCHING_ISR(taskWoken);
  1023              		.loc 1 651 2 is_stmt 1 view .LVU222
  1024 0022 019B     		ldr	r3, [sp, #4]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 34
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 34
 
 
  1025 0024 B3B1     		cbz	r3, .L72
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  633:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
  1069              		.loc 1 633 12 view .LVU232
  1070 004c 8020     		movs	r0, #128
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 35
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 35
 
 
  1071              	.LVL72:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  1114              		.cfi_offset 14, -4
  1115 0002 82B0     		sub	sp, sp, #8
  1116              	.LCFI26:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 36
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 36
 
 
  1117              		.cfi_def_cfa_offset 16
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  676:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
  677:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   else if (xSemaphoreGive(mutex_id) != pdTRUE) 
  1162              		.loc 1 677 8 is_stmt 1 view .LVU253
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 37
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 37
 
 
  1163              		.loc 1 677 12 is_stmt 0 view .LVU254
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  1210              		.thumb
  1211              		.thumb_func
  1212              		.fpu fpv4-sp-d16
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 38
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 38
 
 
  1214              	osMutexDelete:
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  1250              	.LFE129:
  1252              		.section	.text.osSemaphoreCreate,"ax",%progbits
  1253              		.align	1
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 39
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 39
 
 
  1254              		.global	osSemaphoreCreate
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  723:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #if (configUSE_COUNTING_SEMAPHORES == 1 )
  724:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****       return xSemaphoreCreateCountingStatic( count, count, semaphore_def->controlblock );
  725:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #else
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 40
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 40
 
 
  726:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****       return NULL;
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  1295              		.cfi_def_cfa_offset 8
  1296              		@ sp needed
  1297 0012 10BD     		pop	{r4, pc}
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 41
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 41
 
 
  1298              	.LVL87:
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  1341 0040 1946     		mov	r1, r3
  1342 0042 FFF7FEFF 		bl	xQueueGenericSend
  1343              	.LVL95:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 42
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 42
 
 
  732:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****       return sema;
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  1382              		.loc 1 785 3 is_stmt 1 view .LVU300
  1383              		.loc 1 785 6 is_stmt 0 view .LVU301
  1384 0008 08B3     		cbz	r0, .L101
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 43
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 43
 
 
  1385 000a 0C46     		mov	r4, r1
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  1420              	@ 804 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c" 1
  1421 0034 BFF36F8F 		isb
  1422              	@ 0 "" 2
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 44
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 44
 
 
  805:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }  
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  1464              	.L107:
  1465 005a 00BF     		.align	2
  1466              	.L106:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 45
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 45
 
 
  1467 005c 04ED00E0 		.word	-536810236
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  1508              		.loc 1 826 5 is_stmt 1 view .LVU330
  1509              		.loc 1 826 9 is_stmt 0 view .LVU331
  1510 0010 01A9     		add	r1, sp, #4
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 46
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 46
 
 
  1511 0012 2046     		mov	r0, r4
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  837:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   return result;
  838:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** }
  1554              		.loc 1 838 1 view .LVU342
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 47
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 47
 
 
  1555 0046 02B0     		add	sp, sp, #8
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  1599 0000 10B5     		push	{r4, lr}
  1600              	.LCFI42:
  1601              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 48
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 48
 
 
  1602              		.cfi_offset 4, -8
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  865:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** //A better implementation will have to modify heap_x.c!
  866:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** 
  867:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 49
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 49
 
 
  868:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** typedef struct os_pool_cb {
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  1670 000e FFF7FEFF 		bl	pvPortMalloc
  1671              	.LVL118:
  892:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 50
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 50
 
 
  893:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  1712              		.loc 1 906 7 is_stmt 1 view .LVU386
  1713              		.loc 1 906 10 is_stmt 0 view .LVU387
  1714 003a 50B1     		cbz	r0, .L131
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 51
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 51
 
 
  907:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****         for (i = 0; i < pool_def->pool_sz; i++) {
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  1742              	.LVL126:
  1743              	.L131:
  912:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****         vPortFree(thePool);
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 52
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 52
 
 
  1744              		.loc 1 912 9 is_stmt 1 view .LVU398
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  1783              		.loc 1 937 1 is_stmt 1 view -0
  1784              		.cfi_startproc
  1785              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 53
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 53
 
 
  1786              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
   23:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h ****  * http://aws.amazon.com/freertos
   24:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h ****  *
   25:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h ****  * 1 tab == 4 spaces!
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 54
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 54
 
 
   26:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h ****  */
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
   80:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** {																				\
   81:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 	/* Set a PendSV to request a context switch. */								\
   82:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 	portNVIC_INT_CTRL_REG = portNVIC_PENDSVSET_BIT;								\
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 55
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 55
 
 
   83:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 																				\
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  137:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 
  138:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 	/* Check the configuration. */
  139:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 	#if( configMAX_PRIORITIES > 32 )
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 56
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 56
 
 
  140:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 		#error configUSE_PORT_OPTIMISED_TASK_SELECTION can only be set to 1 when configMAX_PRIORITIES is 
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  194:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 
  195:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 	__asm volatile
  196:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 	(
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 57
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 57
 
 
  197:Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h **** 		"	mov %0, %1												\n"	\
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  1832              		.loc 1 950 3 is_stmt 1 view .LVU422
  1833              		.loc 1 950 10 is_stmt 0 view .LVU423
  1834 001e 0024     		movs	r4, #0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 58
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 58
 
 
  1835              	.LVL136:
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  955:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****       p = (void *)((uint32_t)(pool_id->pool) + (index * pool_id->item_sz));
  1880              		.loc 1 955 7 is_stmt 1 view .LVU442
  1881              		.loc 1 955 38 is_stmt 0 view .LVU443
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 59
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 59
 
 
  1882 004a 2A68     		ldr	r2, [r5]
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  1922              	.LBE13:
  1923              	.LBE12:
  963:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 60
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 60
 
 
  964:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   else {
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  1961 0002 FFF7FEFF 		bl	osPoolAlloc
  1962              	.LVL152:
  980:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 61
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 61
 
 
  981:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   if (p != NULL)
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
 1003:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   
 1004:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   if (block == NULL) {
  1997              		.loc 1 1004 3 is_stmt 1 view .LVU474
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 62
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 62
 
 
  1998              		.loc 1 1004 6 is_stmt 0 view .LVU475
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  2035 0026 0022     		movs	r2, #0
  2036 0028 5A54     		strb	r2, [r3, r1]
 1022:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 63
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 63
 
 
 1023:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   return osOK;
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  2083              	.LVL165:
  2084              	.LFB138:
 1025:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 64
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 64
 
 
 1026:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** 
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  2117 0014 FFF7FEFF 		bl	xQueueGenericCreateStatic
  2118              	.LVL168:
  2119 0018 04E0     		b	.L154
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 65
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 65
 
 
  2120              	.LVL169:
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  2155              		.cfi_startproc
  2156              		@ args = 0, pretend = 0, frame = 16
  2157              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 66
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 66
 
 
  2158              		.loc 1 1068 1 is_stmt 0 view .LVU523
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
 1079:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****       return osErrorOS;
 1080:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     }
 1081:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     portEND_SWITCHING_ISR(taskWoken);
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 67
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 67
 
 
  2202              		.loc 1 1081 5 is_stmt 1 view .LVU537
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  2244 0054 30BD     		pop	{r4, r5, pc}
  2245              	.LVL179:
  2246              	.L163:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 68
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 68
 
 
  2247              	.LCFI52:
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  2290 0002 84B0     		sub	sp, sp, #16
  2291              	.LCFI54:
  2292              		.cfi_def_cfa_offset 32
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 69
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 69
 
 
  2293 0004 0446     		mov	r4, r0
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  2321 001a F0B1     		cbz	r0, .L172
 1127:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     if (xQueueReceiveFromISR(queue_id, &event.value.v, &taskWoken) == pdTRUE) {
  2322              		.loc 1 1127 5 is_stmt 1 view .LVU568
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 70
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 70
 
 
  2323              		.loc 1 1127 9 is_stmt 0 view .LVU569
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  2366              	.LVL185:
 1110:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
  2367              		.loc 1 1110 12 view .LVU581
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 71
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 71
 
 
  2368 004e 84E80700 		stm	r4, {r0, r1, r2}
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  2407              	.LCFI55:
  2408              		.cfi_remember_state
  2409              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 72
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 72
 
 
  2410              		@ sp needed
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  2442              		@ frame_needed = 0, uses_anonymous_args = 0
  2443              		.loc 1 1169 1 is_stmt 0 view .LVU596
  2444 0000 70B5     		push	{r4, r5, r6, lr}
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 73
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 73
 
 
  2445              	.LCFI57:
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  2486              		.loc 1 1182 33 is_stmt 0 view .LVU613
  2487 0022 2C60     		str	r4, [r5]
 1183:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 74
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 74
 
 
 1184:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   /* Create a queue in FreeRTOS */
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
 1198:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     return NULL;
 1199:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
 1200:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 75
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 75
 
 
 1201:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   return *(queue_def->cb);
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
 1208:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @brief Allocate a memory block from a mail
 1209:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @param  queue_id      mail queue ID obtained with \ref osMailCreate.
 1210:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @param  millisec      timeout value or 0 in case of no time-out.
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 76
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 76
 
 
 1211:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @retval pointer to memory block that can be filled with mail or NULL in case error.
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  2610              	.LFB143:
 1228:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** 
 1229:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** /**
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 77
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 77
 
 
 1230:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @brief Allocate a memory block from a mail and set memory block to zero
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  2647 0016 2268     		ldr	r2, [r4]
 1242:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     for (i = 0; i < queue_id->queue_def->item_sz; i++) {
  2648              		.loc 1 1242 40 discriminator 1 view .LVU664
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 78
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 78
 
 
  2649 0018 5268     		ldr	r2, [r2, #4]
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
 1259:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   portBASE_TYPE taskWoken;
  2689              		.loc 1 1259 3 is_stmt 1 view .LVU671
 1260:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 79
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 79
 
 
 1261:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
 1274:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   else {
 1275:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     if (xQueueSend(queue_id->handle, &mail, 0) != pdTRUE) { 
 1276:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****       return osErrorOS;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 80
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 80
 
 
 1277:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     }
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
 1280:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** }
  2774              		.loc 1 1280 10 view .LVU695
  2775 005a 0020     		movs	r0, #0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 81
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 81
 
 
  2776 005c F7E7     		b	.L201
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
 1295:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   
 1296:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   event.def.mail_id = queue_id;
  2818              		.loc 1 1296 3 view .LVU702
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 82
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 82
 
 
  2819              		.loc 1 1296 21 is_stmt 0 view .LVU703
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
 1321:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     else {
 1322:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****       event.status = osOK;
  2849              		.loc 1 1322 7 is_stmt 1 view .LVU716
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 83
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 83
 
 
  2850              		.loc 1 1322 20 is_stmt 0 view .LVU717
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
 1325:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
 1326:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   else {
 1327:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     if (xQueueReceive(queue_id->handle, &event.value.p, ticks) == pdTRUE) {
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 84
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 84
 
 
  2895              		.loc 1 1327 5 is_stmt 1 view .LVU729
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  2937 007e F4E7     		b	.L217
  2938              	.L226:
  2939              		.align	2
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 85
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 85
 
 
  2940              	.L225:
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  2979              	.L229:
  2980              	.LCFI72:
  2981              		.cfi_def_cfa_offset 0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 86
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 86
 
 
  2982              		.cfi_restore 3
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
 1372:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #endif  /* INCLUDE_xTaskGetSchedulerState */  
 1373:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** }
  3019              		.loc 1 1373 1 view .LVU754
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 87
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 87
 
 
  3020 000a 08BD     		pop	{r3, pc}
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
 1408:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   
 1409:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   return result;
 1410:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 88
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 88
 
 
 1411:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #endif /* INCLUDE_eTaskGetState */
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  3065              		.thumb
  3066              		.thumb_func
  3067              		.fpu fpv4-sp-d16
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 89
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 89
 
 
  3069              	osThreadResume:
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  3109 0020 BFF36F8F 		isb
  3110              	@ 0 "" 2
  3111              		.thumb
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 90
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 90
 
 
  3112              		.syntax unified
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  3150              		.cfi_offset 3, -8
  3151              		.cfi_offset 14, -4
 1474:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   vTaskSuspendAll();
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 91
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 91
 
 
  3152              		.loc 1 1474 3 view .LVU779
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  3192 000c 08BD     		pop	{r3, pc}
  3193              	.L252:
 1486:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     return osOK;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 92
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 92
 
 
  3194              		.loc 1 1486 12 view .LVU788
@@ -5491,42 +5491,53 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
  3212              		.cfi_startproc
  3213              		@ args = 0, pretend = 0, frame = 0
  3214              		@ frame_needed = 0, uses_anonymous_args = 0
- 3215              		@ link register save eliminated.
+ 3215              		.loc 1 1501 1 is_stmt 0 view .LVU790
+ 3216 0000 08B5     		push	{r3, lr}
+ 3217              	.LCFI78:
+ 3218              		.cfi_def_cfa_offset 8
+ 3219              		.cfi_offset 3, -8
+ 3220              		.cfi_offset 14, -4
 1502:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #if INCLUDE_vTaskDelayUntil
 1503:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   TickType_t ticks = (millisec / portTICK_PERIOD_MS);
+ 3221              		.loc 1 1503 3 is_stmt 1 view .LVU791
+ 3222              	.LVL246:
 1504:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   vTaskDelayUntil((TickType_t *) PreviousWakeTime, ticks ? ticks : 1);
+ 3223              		.loc 1 1504 3 view .LVU792
+ 3224 0002 01B9     		cbnz	r1, .L254
+ 3225 0004 0121     		movs	r1, #1
+ 3226              	.LVL247:
+ 3227              	.L254:
+ 3228              		.loc 1 1504 3 is_stmt 0 discriminator 4 view .LVU793
+ 3229 0006 FFF7FEFF 		bl	vTaskDelayUntil
+ 3230              	.LVL248:
 1505:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   
 1506:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   return osOK;
+ 3231              		.loc 1 1506 3 is_stmt 1 discriminator 4 view .LVU794
 1507:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #else
 1508:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   (void) millisec;
- 3216              		.loc 1 1508 3 view .LVU790
 1509:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   (void) PreviousWakeTime;
- 3217              		.loc 1 1509 3 view .LVU791
 1510:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   
 1511:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   return osErrorResource;
- 3218              		.loc 1 1511 3 view .LVU792
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 93
+
+
 1512:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #endif
 1513:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** }
- 3219              		.loc 1 1513 1 is_stmt 0 view .LVU793
- 3220 0000 8120     		movs	r0, #129
- 3221              	.LVL246:
- 3222              		.loc 1 1513 1 view .LVU794
- 3223 0002 7047     		bx	lr
- 3224              		.cfi_endproc
- 3225              	.LFE152:
- 3227              		.section	.text.osAbortDelay,"ax",%progbits
- 3228              		.align	1
- 3229              		.global	osAbortDelay
- 3230              		.syntax unified
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 93
-
-
- 3231              		.thumb
- 3232              		.thumb_func
- 3233              		.fpu fpv4-sp-d16
- 3235              	osAbortDelay:
- 3236              	.LVL247:
- 3237              	.LFB153:
+ 3232              		.loc 1 1513 1 is_stmt 0 discriminator 4 view .LVU795
+ 3233 000a 0020     		movs	r0, #0
+ 3234 000c 08BD     		pop	{r3, pc}
+ 3235              		.cfi_endproc
+ 3236              	.LFE152:
+ 3238              		.section	.text.osAbortDelay,"ax",%progbits
+ 3239              		.align	1
+ 3240              		.global	osAbortDelay
+ 3241              		.syntax unified
+ 3242              		.thumb
+ 3243              		.thumb_func
+ 3244              		.fpu fpv4-sp-d16
+ 3246              	osAbortDelay:
+ 3247              	.LVL249:
+ 3248              	.LFB153:
 1514:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** 
 1515:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** /**
 1516:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @brief   Abort the delay for a specific thread
@@ -5535,11 +5546,11 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
 1519:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** */
 1520:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** osStatus osAbortDelay(osThreadId thread_id)
 1521:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** {
- 3238              		.loc 1 1521 1 is_stmt 1 view -0
- 3239              		.cfi_startproc
- 3240              		@ args = 0, pretend = 0, frame = 0
- 3241              		@ frame_needed = 0, uses_anonymous_args = 0
- 3242              		@ link register save eliminated.
+ 3249              		.loc 1 1521 1 is_stmt 1 view -0
+ 3250              		.cfi_startproc
+ 3251              		@ args = 0, pretend = 0, frame = 0
+ 3252              		@ frame_needed = 0, uses_anonymous_args = 0
+ 3253              		@ link register save eliminated.
 1522:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #if INCLUDE_xTaskAbortDelay
 1523:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   
 1524:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   xTaskAbortDelay(thread_id);
@@ -5547,29 +5558,32 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
 1526:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   return osOK;
 1527:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #else
 1528:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   (void) thread_id;
- 3243              		.loc 1 1528 3 view .LVU796
+ 3254              		.loc 1 1528 3 view .LVU797
 1529:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   
 1530:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   return osErrorResource;
- 3244              		.loc 1 1530 3 view .LVU797
+ 3255              		.loc 1 1530 3 view .LVU798
 1531:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #endif
 1532:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** }
- 3245              		.loc 1 1532 1 is_stmt 0 view .LVU798
- 3246 0000 8120     		movs	r0, #129
- 3247              	.LVL248:
- 3248              		.loc 1 1532 1 view .LVU799
- 3249 0002 7047     		bx	lr
- 3250              		.cfi_endproc
- 3251              	.LFE153:
- 3253              		.section	.text.osThreadList,"ax",%progbits
- 3254              		.align	1
- 3255              		.global	osThreadList
- 3256              		.syntax unified
- 3257              		.thumb
- 3258              		.thumb_func
- 3259              		.fpu fpv4-sp-d16
- 3261              	osThreadList:
- 3262              	.LVL249:
- 3263              	.LFB154:
+ 3256              		.loc 1 1532 1 is_stmt 0 view .LVU799
+ 3257 0000 8120     		movs	r0, #129
+ 3258              	.LVL250:
+ 3259              		.loc 1 1532 1 view .LVU800
+ 3260 0002 7047     		bx	lr
+ 3261              		.cfi_endproc
+ 3262              	.LFE153:
+ 3264              		.section	.text.osThreadList,"ax",%progbits
+ 3265              		.align	1
+ 3266              		.global	osThreadList
+ 3267              		.syntax unified
+ 3268              		.thumb
+ 3269              		.thumb_func
+ 3270              		.fpu fpv4-sp-d16
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 94
+
+
+ 3272              	osThreadList:
+ 3273              	.LVL251:
+ 3274              	.LFB154:
 1533:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** 
 1534:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** /**
 1535:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @brief   Lists all the current threads, along with their current state 
@@ -5578,39 +5592,36 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
 1538:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** *          will be written
 1539:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @retval  status code that indicates the execution status of the function.
 1540:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 94
-
-
 1541:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** osStatus osThreadList (uint8_t *buffer)
 1542:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** {
- 3264              		.loc 1 1542 1 is_stmt 1 view -0
- 3265              		.cfi_startproc
- 3266              		@ args = 0, pretend = 0, frame = 0
- 3267              		@ frame_needed = 0, uses_anonymous_args = 0
- 3268              		@ link register save eliminated.
+ 3275              		.loc 1 1542 1 is_stmt 1 view -0
+ 3276              		.cfi_startproc
+ 3277              		@ args = 0, pretend = 0, frame = 0
+ 3278              		@ frame_needed = 0, uses_anonymous_args = 0
+ 3279              		@ link register save eliminated.
 1543:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #if ( ( configUSE_TRACE_FACILITY == 1 ) && ( configUSE_STATS_FORMATTING_FUNCTIONS == 1 ) )
 1544:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   vTaskList((char *)buffer);
 1545:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #endif
 1546:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   return osOK;
- 3269              		.loc 1 1546 3 view .LVU801
+ 3280              		.loc 1 1546 3 view .LVU802
 1547:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** }
- 3270              		.loc 1 1547 1 is_stmt 0 view .LVU802
- 3271 0000 0020     		movs	r0, #0
- 3272              	.LVL250:
- 3273              		.loc 1 1547 1 view .LVU803
- 3274 0002 7047     		bx	lr
- 3275              		.cfi_endproc
- 3276              	.LFE154:
- 3278              		.section	.text.osMessagePeek,"ax",%progbits
- 3279              		.align	1
- 3280              		.global	osMessagePeek
- 3281              		.syntax unified
- 3282              		.thumb
- 3283              		.thumb_func
- 3284              		.fpu fpv4-sp-d16
- 3286              	osMessagePeek:
- 3287              	.LVL251:
- 3288              	.LFB155:
+ 3281              		.loc 1 1547 1 is_stmt 0 view .LVU803
+ 3282 0000 0020     		movs	r0, #0
+ 3283              	.LVL252:
+ 3284              		.loc 1 1547 1 view .LVU804
+ 3285 0002 7047     		bx	lr
+ 3286              		.cfi_endproc
+ 3287              	.LFE154:
+ 3289              		.section	.text.osMessagePeek,"ax",%progbits
+ 3290              		.align	1
+ 3291              		.global	osMessagePeek
+ 3292              		.syntax unified
+ 3293              		.thumb
+ 3294              		.thumb_func
+ 3295              		.fpu fpv4-sp-d16
+ 3297              	osMessagePeek:
+ 3298              	.LVL253:
+ 3299              	.LFB155:
 1548:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** 
 1549:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** /**
 1550:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @brief  Receive an item from a queue without removing the item from the queue.
@@ -5620,51 +5631,51 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
 1554:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** */
 1555:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** osEvent osMessagePeek (osMessageQId queue_id, uint32_t millisec)
 1556:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** {
- 3289              		.loc 1 1556 1 is_stmt 1 view -0
- 3290              		.cfi_startproc
- 3291              		@ args = 0, pretend = 0, frame = 16
- 3292              		@ frame_needed = 0, uses_anonymous_args = 0
- 3293              		.loc 1 1556 1 is_stmt 0 view .LVU805
- 3294 0000 30B5     		push	{r4, r5, lr}
- 3295              	.LCFI78:
- 3296              		.cfi_def_cfa_offset 12
- 3297              		.cfi_offset 4, -12
- 3298              		.cfi_offset 5, -8
- 3299              		.cfi_offset 14, -4
- 3300 0002 85B0     		sub	sp, sp, #20
- 3301              	.LCFI79:
- 3302              		.cfi_def_cfa_offset 32
- 3303 0004 0446     		mov	r4, r0
+ 3300              		.loc 1 1556 1 is_stmt 1 view -0
+ 3301              		.cfi_startproc
+ 3302              		@ args = 0, pretend = 0, frame = 16
+ 3303              		@ frame_needed = 0, uses_anonymous_args = 0
+ 3304              		.loc 1 1556 1 is_stmt 0 view .LVU806
+ 3305 0000 30B5     		push	{r4, r5, lr}
+ 3306              	.LCFI79:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 95
+
+
+ 3307              		.cfi_def_cfa_offset 12
+ 3308              		.cfi_offset 4, -12
+ 3309              		.cfi_offset 5, -8
+ 3310              		.cfi_offset 14, -4
+ 3311 0002 85B0     		sub	sp, sp, #20
+ 3312              	.LCFI80:
+ 3313              		.cfi_def_cfa_offset 32
+ 3314 0004 0446     		mov	r4, r0
 1557:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   TickType_t ticks;
- 3304              		.loc 1 1557 3 is_stmt 1 view .LVU806
+ 3315              		.loc 1 1557 3 is_stmt 1 view .LVU807
 1558:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   osEvent event;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 95
-
-
- 3305              		.loc 1 1558 3 view .LVU807
+ 3316              		.loc 1 1558 3 view .LVU808
 1559:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   
 1560:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   event.def.message_id = queue_id;
- 3306              		.loc 1 1560 3 view .LVU808
- 3307              		.loc 1 1560 24 is_stmt 0 view .LVU809
- 3308 0006 0391     		str	r1, [sp, #12]
+ 3317              		.loc 1 1560 3 view .LVU809
+ 3318              		.loc 1 1560 24 is_stmt 0 view .LVU810
+ 3319 0006 0391     		str	r1, [sp, #12]
 1561:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   
 1562:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   if (queue_id == NULL) {
- 3309              		.loc 1 1562 3 is_stmt 1 view .LVU810
- 3310              		.loc 1 1562 6 is_stmt 0 view .LVU811
- 3311 0008 89B1     		cbz	r1, .L264
- 3312 000a 0846     		mov	r0, r1
- 3313              	.LVL252:
- 3314              		.loc 1 1562 6 view .LVU812
- 3315 000c 1546     		mov	r5, r2
+ 3320              		.loc 1 1562 3 is_stmt 1 view .LVU811
+ 3321              		.loc 1 1562 6 is_stmt 0 view .LVU812
+ 3322 0008 89B1     		cbz	r1, .L267
+ 3323 000a 0846     		mov	r0, r1
+ 3324              	.LVL254:
+ 3325              		.loc 1 1562 6 view .LVU813
+ 3326 000c 1546     		mov	r5, r2
 1563:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     event.status = osErrorParameter;
 1564:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     return event;
 1565:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
 1566:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   
 1567:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   ticks = 0;
- 3316              		.loc 1 1567 3 is_stmt 1 view .LVU813
- 3317              	.LVL253:
+ 3327              		.loc 1 1567 3 is_stmt 1 view .LVU814
+ 3328              	.LVL255:
 1568:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   if (millisec == osWaitForever) {
- 3318              		.loc 1 1568 3 view .LVU814
+ 3329              		.loc 1 1568 3 view .LVU815
 1569:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     ticks = portMAX_DELAY;
 1570:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
 1571:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   else if (millisec != 0) {
@@ -5675,99 +5686,99 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
 1576:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
 1577:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   
 1578:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   if (xQueuePeek(queue_id, &event.value.v, ticks) == pdTRUE) 
- 3319              		.loc 1 1578 3 view .LVU815
- 3320              		.loc 1 1578 7 is_stmt 0 view .LVU816
- 3321 000e 02A9     		add	r1, sp, #8
- 3322              	.LVL254:
- 3323              		.loc 1 1578 7 view .LVU817
- 3324 0010 FFF7FEFF 		bl	xQueuePeek
- 3325              	.LVL255:
- 3326              		.loc 1 1578 6 view .LVU818
- 3327 0014 0128     		cmp	r0, #1
- 3328 0016 12D0     		beq	.L265
+ 3330              		.loc 1 1578 3 view .LVU816
+ 3331              		.loc 1 1578 7 is_stmt 0 view .LVU817
+ 3332 000e 02A9     		add	r1, sp, #8
+ 3333              	.LVL256:
+ 3334              		.loc 1 1578 7 view .LVU818
+ 3335 0010 FFF7FEFF 		bl	xQueuePeek
+ 3336              	.LVL257:
+ 3337              		.loc 1 1578 6 view .LVU819
+ 3338 0014 0128     		cmp	r0, #1
+ 3339 0016 12D0     		beq	.L268
 1579:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   {
 1580:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     /* We have mail */
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 96
+
+
 1581:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     event.status = osEventMessage;
 1582:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
 1583:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   else 
 1584:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   {
 1585:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     event.status = (ticks == 0) ? osOK : osEventTimeout;
- 3329              		.loc 1 1585 5 is_stmt 1 view .LVU819
- 3330              		.loc 1 1585 40 is_stmt 0 view .LVU820
- 3331 0018 05B1     		cbz	r5, .L261
- 3332 001a 4025     		movs	r5, #64
- 3333              	.LVL256:
- 3334              	.L261:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 96
-
-
- 3335              		.loc 1 1585 18 discriminator 4 view .LVU821
- 3336 001c 0195     		str	r5, [sp, #4]
- 3337              	.L260:
+ 3340              		.loc 1 1585 5 is_stmt 1 view .LVU820
+ 3341              		.loc 1 1585 40 is_stmt 0 view .LVU821
+ 3342 0018 05B1     		cbz	r5, .L264
+ 3343 001a 4025     		movs	r5, #64
+ 3344              	.LVL258:
+ 3345              	.L264:
+ 3346              		.loc 1 1585 18 discriminator 4 view .LVU822
+ 3347 001c 0195     		str	r5, [sp, #4]
+ 3348              	.L263:
 1586:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
 1587:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   
 1588:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   return event;
- 3338              		.loc 1 1588 3 is_stmt 1 view .LVU822
- 3339              		.loc 1 1588 10 is_stmt 0 view .LVU823
- 3340 001e 04AB     		add	r3, sp, #16
- 3341 0020 13E90700 		ldmdb	r3, {r0, r1, r2}
- 3342 0024 84E80700 		stm	r4, {r0, r1, r2}
- 3343              	.LVL257:
- 3344              	.L256:
+ 3349              		.loc 1 1588 3 is_stmt 1 view .LVU823
+ 3350              		.loc 1 1588 10 is_stmt 0 view .LVU824
+ 3351 001e 04AB     		add	r3, sp, #16
+ 3352 0020 13E90700 		ldmdb	r3, {r0, r1, r2}
+ 3353 0024 84E80700 		stm	r4, {r0, r1, r2}
+ 3354              	.LVL259:
+ 3355              	.L259:
 1589:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** }
- 3345              		.loc 1 1589 1 view .LVU824
- 3346 0028 2046     		mov	r0, r4
- 3347 002a 05B0     		add	sp, sp, #20
- 3348              	.LCFI80:
- 3349              		.cfi_remember_state
- 3350              		.cfi_def_cfa_offset 12
- 3351              		@ sp needed
- 3352 002c 30BD     		pop	{r4, r5, pc}
- 3353              	.LVL258:
- 3354              	.L264:
- 3355              	.LCFI81:
- 3356              		.cfi_restore_state
+ 3356              		.loc 1 1589 1 view .LVU825
+ 3357 0028 2046     		mov	r0, r4
+ 3358 002a 05B0     		add	sp, sp, #20
+ 3359              	.LCFI81:
+ 3360              		.cfi_remember_state
+ 3361              		.cfi_def_cfa_offset 12
+ 3362              		@ sp needed
+ 3363 002c 30BD     		pop	{r4, r5, pc}
+ 3364              	.LVL260:
+ 3365              	.L267:
+ 3366              	.LCFI82:
+ 3367              		.cfi_restore_state
 1563:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     return event;
- 3357              		.loc 1 1563 5 is_stmt 1 view .LVU825
+ 3368              		.loc 1 1563 5 is_stmt 1 view .LVU826
 1563:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     return event;
- 3358              		.loc 1 1563 18 is_stmt 0 view .LVU826
- 3359 002e 8023     		movs	r3, #128
- 3360 0030 0193     		str	r3, [sp, #4]
+ 3369              		.loc 1 1563 18 is_stmt 0 view .LVU827
+ 3370 002e 8023     		movs	r3, #128
+ 3371 0030 0193     		str	r3, [sp, #4]
 1564:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
- 3361              		.loc 1 1564 5 is_stmt 1 view .LVU827
+ 3372              		.loc 1 1564 5 is_stmt 1 view .LVU828
 1564:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
- 3362              		.loc 1 1564 12 is_stmt 0 view .LVU828
- 3363 0032 04AB     		add	r3, sp, #16
- 3364 0034 13E90700 		ldmdb	r3, {r0, r1, r2}
- 3365              	.LVL259:
+ 3373              		.loc 1 1564 12 is_stmt 0 view .LVU829
+ 3374 0032 04AB     		add	r3, sp, #16
+ 3375 0034 13E90700 		ldmdb	r3, {r0, r1, r2}
+ 3376              	.LVL261:
 1564:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
- 3366              		.loc 1 1564 12 view .LVU829
- 3367 0038 84E80700 		stm	r4, {r0, r1, r2}
- 3368 003c F4E7     		b	.L256
- 3369              	.LVL260:
- 3370              	.L265:
+ 3377              		.loc 1 1564 12 view .LVU830
+ 3378 0038 84E80700 		stm	r4, {r0, r1, r2}
+ 3379 003c F4E7     		b	.L259
+ 3380              	.LVL262:
+ 3381              	.L268:
 1581:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
- 3371              		.loc 1 1581 5 is_stmt 1 view .LVU830
-1581:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
- 3372              		.loc 1 1581 18 is_stmt 0 view .LVU831
- 3373 003e 1023     		movs	r3, #16
- 3374 0040 0193     		str	r3, [sp, #4]
- 3375 0042 ECE7     		b	.L260
- 3376              		.cfi_endproc
- 3377              	.LFE155:
- 3379              		.section	.text.osMessageWaiting,"ax",%progbits
- 3380              		.align	1
- 3381              		.global	osMessageWaiting
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 97
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 97
 
 
- 3382              		.syntax unified
- 3383              		.thumb
- 3384              		.thumb_func
- 3385              		.fpu fpv4-sp-d16
- 3387              	osMessageWaiting:
- 3388              	.LVL261:
- 3389              	.LFB156:
+ 3382              		.loc 1 1581 5 is_stmt 1 view .LVU831
+1581:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
+ 3383              		.loc 1 1581 18 is_stmt 0 view .LVU832
+ 3384 003e 1023     		movs	r3, #16
+ 3385 0040 0193     		str	r3, [sp, #4]
+ 3386 0042 ECE7     		b	.L263
+ 3387              		.cfi_endproc
+ 3388              	.LFE155:
+ 3390              		.section	.text.osMessageWaiting,"ax",%progbits
+ 3391              		.align	1
+ 3392              		.global	osMessageWaiting
+ 3393              		.syntax unified
+ 3394              		.thumb
+ 3395              		.thumb_func
+ 3396              		.fpu fpv4-sp-d16
+ 3398              	osMessageWaiting:
+ 3399              	.LVL263:
+ 3400              	.LFB156:
 1590:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** 
 1591:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** /**
 1592:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @brief  Get the number of messaged stored in a queue.
@@ -5776,64 +5787,64 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
 1595:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** */
 1596:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** uint32_t osMessageWaiting(osMessageQId queue_id)
 1597:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** {
- 3390              		.loc 1 1597 1 is_stmt 1 view -0
- 3391              		.cfi_startproc
- 3392              		@ args = 0, pretend = 0, frame = 0
- 3393              		@ frame_needed = 0, uses_anonymous_args = 0
- 3394              		.loc 1 1597 1 is_stmt 0 view .LVU833
- 3395 0000 10B5     		push	{r4, lr}
- 3396              	.LCFI82:
- 3397              		.cfi_def_cfa_offset 8
- 3398              		.cfi_offset 4, -8
- 3399              		.cfi_offset 14, -4
- 3400 0002 0446     		mov	r4, r0
+ 3401              		.loc 1 1597 1 is_stmt 1 view -0
+ 3402              		.cfi_startproc
+ 3403              		@ args = 0, pretend = 0, frame = 0
+ 3404              		@ frame_needed = 0, uses_anonymous_args = 0
+ 3405              		.loc 1 1597 1 is_stmt 0 view .LVU834
+ 3406 0000 10B5     		push	{r4, lr}
+ 3407              	.LCFI83:
+ 3408              		.cfi_def_cfa_offset 8
+ 3409              		.cfi_offset 4, -8
+ 3410              		.cfi_offset 14, -4
+ 3411 0002 0446     		mov	r4, r0
 1598:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   if (inHandlerMode()) {
- 3401              		.loc 1 1598 3 is_stmt 1 view .LVU834
- 3402              		.loc 1 1598 7 is_stmt 0 view .LVU835
- 3403 0004 FFF7FEFF 		bl	inHandlerMode
- 3404              	.LVL262:
- 3405              		.loc 1 1598 6 view .LVU836
- 3406 0008 18B1     		cbz	r0, .L267
+ 3412              		.loc 1 1598 3 is_stmt 1 view .LVU835
+ 3413              		.loc 1 1598 7 is_stmt 0 view .LVU836
+ 3414 0004 FFF7FEFF 		bl	inHandlerMode
+ 3415              	.LVL264:
+ 3416              		.loc 1 1598 6 view .LVU837
+ 3417 0008 18B1     		cbz	r0, .L270
 1599:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     return uxQueueMessagesWaitingFromISR(queue_id);
- 3407              		.loc 1 1599 5 is_stmt 1 view .LVU837
- 3408              		.loc 1 1599 12 is_stmt 0 view .LVU838
- 3409 000a 2046     		mov	r0, r4
- 3410 000c FFF7FEFF 		bl	uxQueueMessagesWaitingFromISR
- 3411              	.LVL263:
- 3412              	.L266:
+ 3418              		.loc 1 1599 5 is_stmt 1 view .LVU838
+ 3419              		.loc 1 1599 12 is_stmt 0 view .LVU839
+ 3420 000a 2046     		mov	r0, r4
+ 3421 000c FFF7FEFF 		bl	uxQueueMessagesWaitingFromISR
+ 3422              	.LVL265:
+ 3423              	.L269:
 1600:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
 1601:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   else
 1602:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   {
 1603:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     return uxQueueMessagesWaiting(queue_id);
 1604:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
 1605:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** }
- 3413              		.loc 1 1605 1 view .LVU839
- 3414 0010 10BD     		pop	{r4, pc}
- 3415              	.LVL264:
- 3416              	.L267:
-1603:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
- 3417              		.loc 1 1603 5 is_stmt 1 view .LVU840
-1603:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
- 3418              		.loc 1 1603 12 is_stmt 0 view .LVU841
- 3419 0012 2046     		mov	r0, r4
- 3420 0014 FFF7FEFF 		bl	uxQueueMessagesWaiting
- 3421              	.LVL265:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 98
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 98
 
 
- 3422 0018 FAE7     		b	.L266
- 3423              		.cfi_endproc
- 3424              	.LFE156:
- 3426              		.section	.text.osMessageAvailableSpace,"ax",%progbits
- 3427              		.align	1
- 3428              		.global	osMessageAvailableSpace
- 3429              		.syntax unified
- 3430              		.thumb
- 3431              		.thumb_func
- 3432              		.fpu fpv4-sp-d16
- 3434              	osMessageAvailableSpace:
- 3435              	.LVL266:
- 3436              	.LFB157:
+ 3424              		.loc 1 1605 1 view .LVU840
+ 3425 0010 10BD     		pop	{r4, pc}
+ 3426              	.LVL266:
+ 3427              	.L270:
+1603:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
+ 3428              		.loc 1 1603 5 is_stmt 1 view .LVU841
+1603:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
+ 3429              		.loc 1 1603 12 is_stmt 0 view .LVU842
+ 3430 0012 2046     		mov	r0, r4
+ 3431 0014 FFF7FEFF 		bl	uxQueueMessagesWaiting
+ 3432              	.LVL267:
+ 3433 0018 FAE7     		b	.L269
+ 3434              		.cfi_endproc
+ 3435              	.LFE156:
+ 3437              		.section	.text.osMessageAvailableSpace,"ax",%progbits
+ 3438              		.align	1
+ 3439              		.global	osMessageAvailableSpace
+ 3440              		.syntax unified
+ 3441              		.thumb
+ 3442              		.thumb_func
+ 3443              		.fpu fpv4-sp-d16
+ 3445              	osMessageAvailableSpace:
+ 3446              	.LVL268:
+ 3447              	.LFB157:
 1606:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** 
 1607:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** /**
 1608:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @brief  Get the available space in a message queue.
@@ -5842,116 +5853,116 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
 1611:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** */
 1612:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** uint32_t osMessageAvailableSpace(osMessageQId queue_id)  
 1613:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** {
- 3437              		.loc 1 1613 1 is_stmt 1 view -0
- 3438              		.cfi_startproc
- 3439              		@ args = 0, pretend = 0, frame = 0
- 3440              		@ frame_needed = 0, uses_anonymous_args = 0
- 3441              		.loc 1 1613 1 is_stmt 0 view .LVU843
- 3442 0000 08B5     		push	{r3, lr}
- 3443              	.LCFI83:
- 3444              		.cfi_def_cfa_offset 8
- 3445              		.cfi_offset 3, -8
- 3446              		.cfi_offset 14, -4
+ 3448              		.loc 1 1613 1 is_stmt 1 view -0
+ 3449              		.cfi_startproc
+ 3450              		@ args = 0, pretend = 0, frame = 0
+ 3451              		@ frame_needed = 0, uses_anonymous_args = 0
+ 3452              		.loc 1 1613 1 is_stmt 0 view .LVU844
+ 3453 0000 08B5     		push	{r3, lr}
+ 3454              	.LCFI84:
+ 3455              		.cfi_def_cfa_offset 8
+ 3456              		.cfi_offset 3, -8
+ 3457              		.cfi_offset 14, -4
 1614:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   return uxQueueSpacesAvailable(queue_id);
- 3447              		.loc 1 1614 3 is_stmt 1 view .LVU844
- 3448              		.loc 1 1614 10 is_stmt 0 view .LVU845
- 3449 0002 FFF7FEFF 		bl	uxQueueSpacesAvailable
- 3450              	.LVL267:
+ 3458              		.loc 1 1614 3 is_stmt 1 view .LVU845
+ 3459              		.loc 1 1614 10 is_stmt 0 view .LVU846
+ 3460 0002 FFF7FEFF 		bl	uxQueueSpacesAvailable
+ 3461              	.LVL269:
 1615:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** }
- 3451              		.loc 1 1615 1 view .LVU846
- 3452 0006 08BD     		pop	{r3, pc}
- 3453              		.cfi_endproc
- 3454              	.LFE157:
- 3456              		.section	.text.osMessageDelete,"ax",%progbits
- 3457              		.align	1
- 3458              		.global	osMessageDelete
- 3459              		.syntax unified
- 3460              		.thumb
- 3461              		.thumb_func
- 3462              		.fpu fpv4-sp-d16
- 3464              	osMessageDelete:
- 3465              	.LVL268:
- 3466              	.LFB158:
+ 3462              		.loc 1 1615 1 view .LVU847
+ 3463 0006 08BD     		pop	{r3, pc}
+ 3464              		.cfi_endproc
+ 3465              	.LFE157:
+ 3467              		.section	.text.osMessageDelete,"ax",%progbits
+ 3468              		.align	1
+ 3469              		.global	osMessageDelete
+ 3470              		.syntax unified
+ 3471              		.thumb
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 99
+
+
+ 3472              		.thumb_func
+ 3473              		.fpu fpv4-sp-d16
+ 3475              	osMessageDelete:
+ 3476              	.LVL270:
+ 3477              	.LFB158:
 1616:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** 
 1617:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** /**
 1618:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @brief Delete a Message Queue
 1619:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @param  queue_id  message queue ID obtained with \ref osMessageCreate.
 1620:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @retval  status code that indicates the execution status of the function.
 1621:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 99
-
-
 1622:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** osStatus osMessageDelete (osMessageQId queue_id)
 1623:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** {
- 3467              		.loc 1 1623 1 is_stmt 1 view -0
- 3468              		.cfi_startproc
- 3469              		@ args = 0, pretend = 0, frame = 0
- 3470              		@ frame_needed = 0, uses_anonymous_args = 0
- 3471              		.loc 1 1623 1 is_stmt 0 view .LVU848
- 3472 0000 10B5     		push	{r4, lr}
- 3473              	.LCFI84:
- 3474              		.cfi_def_cfa_offset 8
- 3475              		.cfi_offset 4, -8
- 3476              		.cfi_offset 14, -4
- 3477 0002 0446     		mov	r4, r0
+ 3478              		.loc 1 1623 1 is_stmt 1 view -0
+ 3479              		.cfi_startproc
+ 3480              		@ args = 0, pretend = 0, frame = 0
+ 3481              		@ frame_needed = 0, uses_anonymous_args = 0
+ 3482              		.loc 1 1623 1 is_stmt 0 view .LVU849
+ 3483 0000 10B5     		push	{r4, lr}
+ 3484              	.LCFI85:
+ 3485              		.cfi_def_cfa_offset 8
+ 3486              		.cfi_offset 4, -8
+ 3487              		.cfi_offset 14, -4
+ 3488 0002 0446     		mov	r4, r0
 1624:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   if (inHandlerMode()) {
- 3478              		.loc 1 1624 3 is_stmt 1 view .LVU849
- 3479              		.loc 1 1624 7 is_stmt 0 view .LVU850
- 3480 0004 FFF7FEFF 		bl	inHandlerMode
- 3481              	.LVL269:
- 3482              		.loc 1 1624 6 view .LVU851
- 3483 0008 20B9     		cbnz	r0, .L274
+ 3489              		.loc 1 1624 3 is_stmt 1 view .LVU850
+ 3490              		.loc 1 1624 7 is_stmt 0 view .LVU851
+ 3491 0004 FFF7FEFF 		bl	inHandlerMode
+ 3492              	.LVL271:
+ 3493              		.loc 1 1624 6 view .LVU852
+ 3494 0008 20B9     		cbnz	r0, .L277
 1625:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     return osErrorISR;
 1626:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
 1627:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** 
 1628:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   vQueueDelete(queue_id);
- 3484              		.loc 1 1628 3 is_stmt 1 view .LVU852
- 3485 000a 2046     		mov	r0, r4
- 3486 000c FFF7FEFF 		bl	vQueueDelete
- 3487              	.LVL270:
+ 3495              		.loc 1 1628 3 is_stmt 1 view .LVU853
+ 3496 000a 2046     		mov	r0, r4
+ 3497 000c FFF7FEFF 		bl	vQueueDelete
+ 3498              	.LVL272:
 1629:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** 
 1630:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   return osOK; 
- 3488              		.loc 1 1630 3 view .LVU853
- 3489              		.loc 1 1630 10 is_stmt 0 view .LVU854
- 3490 0010 0020     		movs	r0, #0
- 3491              	.L272:
+ 3499              		.loc 1 1630 3 view .LVU854
+ 3500              		.loc 1 1630 10 is_stmt 0 view .LVU855
+ 3501 0010 0020     		movs	r0, #0
+ 3502              	.L275:
 1631:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** }
- 3492              		.loc 1 1631 1 view .LVU855
- 3493 0012 10BD     		pop	{r4, pc}
- 3494              	.LVL271:
- 3495              	.L274:
+ 3503              		.loc 1 1631 1 view .LVU856
+ 3504 0012 10BD     		pop	{r4, pc}
+ 3505              	.LVL273:
+ 3506              	.L277:
 1625:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     return osErrorISR;
- 3496              		.loc 1 1625 12 view .LVU856
- 3497 0014 8220     		movs	r0, #130
- 3498 0016 FCE7     		b	.L272
- 3499              		.cfi_endproc
- 3500              	.LFE158:
- 3502              		.section	.text.osRecursiveMutexCreate,"ax",%progbits
- 3503              		.align	1
- 3504              		.global	osRecursiveMutexCreate
- 3505              		.syntax unified
- 3506              		.thumb
- 3507              		.thumb_func
- 3508              		.fpu fpv4-sp-d16
- 3510              	osRecursiveMutexCreate:
- 3511              	.LVL272:
- 3512              	.LFB159:
+ 3507              		.loc 1 1625 12 view .LVU857
+ 3508 0014 8220     		movs	r0, #130
+ 3509 0016 FCE7     		b	.L275
+ 3510              		.cfi_endproc
+ 3511              	.LFE158:
+ 3513              		.section	.text.osRecursiveMutexCreate,"ax",%progbits
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 100
+
+
+ 3514              		.align	1
+ 3515              		.global	osRecursiveMutexCreate
+ 3516              		.syntax unified
+ 3517              		.thumb
+ 3518              		.thumb_func
+ 3519              		.fpu fpv4-sp-d16
+ 3521              	osRecursiveMutexCreate:
+ 3522              	.LVL274:
+ 3523              	.LFB159:
 1632:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** 
 1633:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** /**
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 100
-
-
 1634:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @brief  Create and Initialize a Recursive Mutex
 1635:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @param  mutex_def     mutex definition referenced with \ref osMutex.
 1636:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @retval  mutex ID for reference by other functions or NULL in case of error..
 1637:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** */
 1638:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** osMutexId osRecursiveMutexCreate (const osMutexDef_t *mutex_def)
 1639:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** {
- 3513              		.loc 1 1639 1 is_stmt 1 view -0
- 3514              		.cfi_startproc
- 3515              		@ args = 0, pretend = 0, frame = 0
- 3516              		@ frame_needed = 0, uses_anonymous_args = 0
- 3517              		@ link register save eliminated.
+ 3524              		.loc 1 1639 1 is_stmt 1 view -0
+ 3525              		.cfi_startproc
+ 3526              		@ args = 0, pretend = 0, frame = 0
+ 3527              		@ frame_needed = 0, uses_anonymous_args = 0
+ 3528              		@ link register save eliminated.
 1640:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #if (configUSE_RECURSIVE_MUTEXES == 1)
 1641:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #if( configSUPPORT_STATIC_ALLOCATION == 1 ) && ( configSUPPORT_DYNAMIC_ALLOCATION == 1 )
 1642:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** 
@@ -5968,26 +5979,29 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
 1653:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #endif
 1654:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #else
 1655:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   return NULL;
- 3518              		.loc 1 1655 3 view .LVU858
+ 3529              		.loc 1 1655 3 view .LVU859
 1656:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #endif	
 1657:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** }
- 3519              		.loc 1 1657 1 is_stmt 0 view .LVU859
- 3520 0000 0020     		movs	r0, #0
- 3521              	.LVL273:
- 3522              		.loc 1 1657 1 view .LVU860
- 3523 0002 7047     		bx	lr
- 3524              		.cfi_endproc
- 3525              	.LFE159:
- 3527              		.section	.text.osRecursiveMutexRelease,"ax",%progbits
- 3528              		.align	1
- 3529              		.global	osRecursiveMutexRelease
- 3530              		.syntax unified
- 3531              		.thumb
- 3532              		.thumb_func
- 3533              		.fpu fpv4-sp-d16
- 3535              	osRecursiveMutexRelease:
- 3536              	.LVL274:
- 3537              	.LFB160:
+ 3530              		.loc 1 1657 1 is_stmt 0 view .LVU860
+ 3531 0000 0020     		movs	r0, #0
+ 3532              	.LVL275:
+ 3533              		.loc 1 1657 1 view .LVU861
+ 3534 0002 7047     		bx	lr
+ 3535              		.cfi_endproc
+ 3536              	.LFE159:
+ 3538              		.section	.text.osRecursiveMutexRelease,"ax",%progbits
+ 3539              		.align	1
+ 3540              		.global	osRecursiveMutexRelease
+ 3541              		.syntax unified
+ 3542              		.thumb
+ 3543              		.thumb_func
+ 3544              		.fpu fpv4-sp-d16
+ 3546              	osRecursiveMutexRelease:
+ 3547              	.LVL276:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 101
+
+
+ 3548              	.LFB160:
 1658:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** 
 1659:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** /**
 1660:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @brief  Release a Recursive Mutex
@@ -5996,14 +6010,11 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
 1663:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** */
 1664:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** osStatus osRecursiveMutexRelease (osMutexId mutex_id)
 1665:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** {
- 3538              		.loc 1 1665 1 is_stmt 1 view -0
- 3539              		.cfi_startproc
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 101
-
-
- 3540              		@ args = 0, pretend = 0, frame = 0
- 3541              		@ frame_needed = 0, uses_anonymous_args = 0
- 3542              		@ link register save eliminated.
+ 3549              		.loc 1 1665 1 is_stmt 1 view -0
+ 3550              		.cfi_startproc
+ 3551              		@ args = 0, pretend = 0, frame = 0
+ 3552              		@ frame_needed = 0, uses_anonymous_args = 0
+ 3553              		@ link register save eliminated.
 1666:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #if (configUSE_RECURSIVE_MUTEXES == 1)
 1667:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   osStatus result = osOK;
 1668:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****  
@@ -6014,26 +6025,26 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
 1673:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   return result;
 1674:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #else
 1675:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** 	return osErrorResource;
- 3543              		.loc 1 1675 2 view .LVU862
+ 3554              		.loc 1 1675 2 view .LVU863
 1676:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #endif
 1677:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** }
- 3544              		.loc 1 1677 1 is_stmt 0 view .LVU863
- 3545 0000 8120     		movs	r0, #129
- 3546              	.LVL275:
- 3547              		.loc 1 1677 1 view .LVU864
- 3548 0002 7047     		bx	lr
- 3549              		.cfi_endproc
- 3550              	.LFE160:
- 3552              		.section	.text.osRecursiveMutexWait,"ax",%progbits
- 3553              		.align	1
- 3554              		.global	osRecursiveMutexWait
- 3555              		.syntax unified
- 3556              		.thumb
- 3557              		.thumb_func
- 3558              		.fpu fpv4-sp-d16
- 3560              	osRecursiveMutexWait:
- 3561              	.LVL276:
- 3562              	.LFB161:
+ 3555              		.loc 1 1677 1 is_stmt 0 view .LVU864
+ 3556 0000 8120     		movs	r0, #129
+ 3557              	.LVL277:
+ 3558              		.loc 1 1677 1 view .LVU865
+ 3559 0002 7047     		bx	lr
+ 3560              		.cfi_endproc
+ 3561              	.LFE160:
+ 3563              		.section	.text.osRecursiveMutexWait,"ax",%progbits
+ 3564              		.align	1
+ 3565              		.global	osRecursiveMutexWait
+ 3566              		.syntax unified
+ 3567              		.thumb
+ 3568              		.thumb_func
+ 3569              		.fpu fpv4-sp-d16
+ 3571              	osRecursiveMutexWait:
+ 3572              	.LVL278:
+ 3573              	.LFB161:
 1678:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** 
 1679:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** /**
 1680:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @brief  Release a Recursive Mutex
@@ -6043,11 +6054,14 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
 1684:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** */
 1685:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** osStatus osRecursiveMutexWait (osMutexId mutex_id, uint32_t millisec)
 1686:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** {
- 3563              		.loc 1 1686 1 is_stmt 1 view -0
- 3564              		.cfi_startproc
- 3565              		@ args = 0, pretend = 0, frame = 0
- 3566              		@ frame_needed = 0, uses_anonymous_args = 0
- 3567              		@ link register save eliminated.
+ 3574              		.loc 1 1686 1 is_stmt 1 view -0
+ 3575              		.cfi_startproc
+ 3576              		@ args = 0, pretend = 0, frame = 0
+ 3577              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 102
+
+
+ 3578              		@ link register save eliminated.
 1687:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #if (configUSE_RECURSIVE_MUTEXES == 1)
 1688:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   TickType_t ticks;
 1689:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   
@@ -6058,9 +6072,6 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
 1694:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   
 1695:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   ticks = 0;
 1696:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   if (millisec == osWaitForever) 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 102
-
-
 1697:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   {
 1698:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****     ticks = portMAX_DELAY;
 1699:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   }
@@ -6080,26 +6091,26 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
 1713:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   return osOK;
 1714:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #else
 1715:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** 	return osErrorResource;
- 3568              		.loc 1 1715 2 view .LVU866
+ 3579              		.loc 1 1715 2 view .LVU867
 1716:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** #endif
 1717:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** }
- 3569              		.loc 1 1717 1 is_stmt 0 view .LVU867
- 3570 0000 8120     		movs	r0, #129
- 3571              	.LVL277:
- 3572              		.loc 1 1717 1 view .LVU868
- 3573 0002 7047     		bx	lr
- 3574              		.cfi_endproc
- 3575              	.LFE161:
- 3577              		.section	.text.osSemaphoreGetCount,"ax",%progbits
- 3578              		.align	1
- 3579              		.global	osSemaphoreGetCount
- 3580              		.syntax unified
- 3581              		.thumb
- 3582              		.thumb_func
- 3583              		.fpu fpv4-sp-d16
- 3585              	osSemaphoreGetCount:
- 3586              	.LVL278:
- 3587              	.LFB162:
+ 3580              		.loc 1 1717 1 is_stmt 0 view .LVU868
+ 3581 0000 8120     		movs	r0, #129
+ 3582              	.LVL279:
+ 3583              		.loc 1 1717 1 view .LVU869
+ 3584 0002 7047     		bx	lr
+ 3585              		.cfi_endproc
+ 3586              	.LFE161:
+ 3588              		.section	.text.osSemaphoreGetCount,"ax",%progbits
+ 3589              		.align	1
+ 3590              		.global	osSemaphoreGetCount
+ 3591              		.syntax unified
+ 3592              		.thumb
+ 3593              		.thumb_func
+ 3594              		.fpu fpv4-sp-d16
+ 3596              	osSemaphoreGetCount:
+ 3597              	.LVL280:
+ 3598              	.LFB162:
 1718:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** 
 1719:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** /**
 1720:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @brief  Returns the current count value of a counting semaphore
@@ -6107,181 +6118,181 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 1
 1722:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** * @retval  count value
 1723:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** */
 1724:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** uint32_t osSemaphoreGetCount(osSemaphoreId semaphore_id)
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 103
+
+
 1725:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** {
- 3588              		.loc 1 1725 1 is_stmt 1 view -0
- 3589              		.cfi_startproc
- 3590              		@ args = 0, pretend = 0, frame = 0
- 3591              		@ frame_needed = 0, uses_anonymous_args = 0
- 3592              		.loc 1 1725 1 is_stmt 0 view .LVU870
- 3593 0000 08B5     		push	{r3, lr}
- 3594              	.LCFI85:
- 3595              		.cfi_def_cfa_offset 8
- 3596              		.cfi_offset 3, -8
- 3597              		.cfi_offset 14, -4
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 103
-
-
+ 3599              		.loc 1 1725 1 is_stmt 1 view -0
+ 3600              		.cfi_startproc
+ 3601              		@ args = 0, pretend = 0, frame = 0
+ 3602              		@ frame_needed = 0, uses_anonymous_args = 0
+ 3603              		.loc 1 1725 1 is_stmt 0 view .LVU871
+ 3604 0000 08B5     		push	{r3, lr}
+ 3605              	.LCFI86:
+ 3606              		.cfi_def_cfa_offset 8
+ 3607              		.cfi_offset 3, -8
+ 3608              		.cfi_offset 14, -4
 1726:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c ****   return uxSemaphoreGetCount(semaphore_id);
- 3598              		.loc 1 1726 3 is_stmt 1 view .LVU871
- 3599              		.loc 1 1726 10 is_stmt 0 view .LVU872
- 3600 0002 FFF7FEFF 		bl	uxQueueMessagesWaiting
- 3601              	.LVL279:
+ 3609              		.loc 1 1726 3 is_stmt 1 view .LVU872
+ 3610              		.loc 1 1726 10 is_stmt 0 view .LVU873
+ 3611 0002 FFF7FEFF 		bl	uxQueueMessagesWaiting
+ 3612              	.LVL281:
 1727:Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c **** }
- 3602              		.loc 1 1727 1 view .LVU873
- 3603 0006 08BD     		pop	{r3, pc}
- 3604              		.cfi_endproc
- 3605              	.LFE162:
- 3607              		.text
- 3608              	.Letext0:
- 3609              		.file 4 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
- 3610              		.file 5 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
- 3611              		.file 6 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
- 3612              		.file 7 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\std
- 3613              		.file 8 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
- 3614              		.file 9 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
- 3615              		.file 10 "Inc/FreeRTOSConfig.h"
- 3616              		.file 11 "Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h"
- 3617              		.file 12 "Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"
- 3618              		.file 13 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
- 3619              		.file 14 "Middlewares/Third_Party/FreeRTOS/Source/include/timers.h"
- 3620              		.file 15 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
- 3621              		.file 16 "Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h"
- 3622              		.file 17 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h"
- 3623              		.file 18 "Middlewares/Third_Party/FreeRTOS/Source/include/portable.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 104
+ 3613              		.loc 1 1727 1 view .LVU874
+ 3614 0006 08BD     		pop	{r3, pc}
+ 3615              		.cfi_endproc
+ 3616              	.LFE162:
+ 3618              		.text
+ 3619              	.Letext0:
+ 3620              		.file 4 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
+ 3621              		.file 5 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
+ 3622              		.file 6 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
+ 3623              		.file 7 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\std
+ 3624              		.file 8 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
+ 3625              		.file 9 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 3626              		.file 10 "Inc/FreeRTOSConfig.h"
+ 3627              		.file 11 "Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h"
+ 3628              		.file 12 "Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"
+ 3629              		.file 13 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 3630              		.file 14 "Middlewares/Third_Party/FreeRTOS/Source/include/timers.h"
+ 3631              		.file 15 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
+ 3632              		.file 16 "Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h"
+ 3633              		.file 17 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h"
+ 3634              		.file 18 "Middlewares/Third_Party/FreeRTOS/Source/include/portable.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 104
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 cmsis_os.c
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:18     .text.makeFreeRtosPriority:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:25     .text.makeFreeRtosPriority:00000000 makeFreeRtosPriority
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:57     .text.makeCmsisPriority:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:63     .text.makeCmsisPriority:00000000 makeCmsisPriority
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:97     .text.inHandlerMode:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:103    .text.inHandlerMode:00000000 inHandlerMode
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:138    .text.osKernelStart:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:145    .text.osKernelStart:00000000 osKernelStart
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:167    .text.osKernelRunning:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:174    .text.osKernelRunning:00000000 osKernelRunning
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:205    .text.osKernelSysTick:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:212    .text.osKernelSysTick:00000000 osKernelSysTick
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:246    .text.osThreadCreate:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:253    .text.osThreadCreate:00000000 osThreadCreate
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:358    .text.osThreadGetId:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:365    .text.osThreadGetId:00000000 osThreadGetId
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:386    .text.osThreadTerminate:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:393    .text.osThreadTerminate:00000000 osThreadTerminate
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:417    .text.osThreadYield:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:424    .text.osThreadYield:00000000 osThreadYield
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:454    .text.osThreadYield:00000014 $d
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:459    .text.osThreadSetPriority:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:466    .text.osThreadSetPriority:00000000 osThreadSetPriority
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:500    .text.osThreadGetPriority:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:507    .text.osThreadGetPriority:00000000 osThreadGetPriority
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:551    .text.osDelay:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:558    .text.osDelay:00000000 osDelay
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:589    .text.osTimerCreate:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:596    .text.osTimerCreate:00000000 osTimerCreate
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:614    .text.osTimerStart:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:621    .text.osTimerStart:00000000 osTimerStart
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:641    .text.osTimerStop:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:648    .text.osTimerStop:00000000 osTimerStop
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:668    .text.osTimerDelete:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:675    .text.osTimerDelete:00000000 osTimerDelete
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:695    .text.osSignalSet:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:702    .text.osSignalSet:00000000 osSignalSet
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:804    .text.osSignalSet:00000060 $d
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:809    .text.osSignalWait:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:816    .text.osSignalWait:00000000 osSignalWait
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:921    .text.osMutexCreate:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:928    .text.osMutexCreate:00000000 osMutexCreate
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:970    .text.osMutexWait:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:977    .text.osMutexWait:00000000 osMutexWait
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:1090   .text.osMutexWait:0000005c $d
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:1095   .text.osMutexRelease:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:1102   .text.osMutexRelease:00000000 osMutexRelease
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:1202   .text.osMutexRelease:00000058 $d
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:1207   .text.osMutexDelete:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:1214   .text.osMutexDelete:00000000 osMutexDelete
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:1253   .text.osSemaphoreCreate:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:1260   .text.osSemaphoreCreate:00000000 osSemaphoreCreate
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:1352   .text.osSemaphoreWait:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:1359   .text.osSemaphoreWait:00000000 osSemaphoreWait
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:1467   .text.osSemaphoreWait:0000005c $d
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 105
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:18     .text.makeFreeRtosPriority:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:25     .text.makeFreeRtosPriority:00000000 makeFreeRtosPriority
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:57     .text.makeCmsisPriority:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:63     .text.makeCmsisPriority:00000000 makeCmsisPriority
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:97     .text.inHandlerMode:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:103    .text.inHandlerMode:00000000 inHandlerMode
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:138    .text.osKernelStart:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:145    .text.osKernelStart:00000000 osKernelStart
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:167    .text.osKernelRunning:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:174    .text.osKernelRunning:00000000 osKernelRunning
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:205    .text.osKernelSysTick:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:212    .text.osKernelSysTick:00000000 osKernelSysTick
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:246    .text.osThreadCreate:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:253    .text.osThreadCreate:00000000 osThreadCreate
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:358    .text.osThreadGetId:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:365    .text.osThreadGetId:00000000 osThreadGetId
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:386    .text.osThreadTerminate:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:393    .text.osThreadTerminate:00000000 osThreadTerminate
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:417    .text.osThreadYield:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:424    .text.osThreadYield:00000000 osThreadYield
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:454    .text.osThreadYield:00000014 $d
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:459    .text.osThreadSetPriority:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:466    .text.osThreadSetPriority:00000000 osThreadSetPriority
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:500    .text.osThreadGetPriority:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:507    .text.osThreadGetPriority:00000000 osThreadGetPriority
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:551    .text.osDelay:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:558    .text.osDelay:00000000 osDelay
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:589    .text.osTimerCreate:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:596    .text.osTimerCreate:00000000 osTimerCreate
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:614    .text.osTimerStart:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:621    .text.osTimerStart:00000000 osTimerStart
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:641    .text.osTimerStop:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:648    .text.osTimerStop:00000000 osTimerStop
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:668    .text.osTimerDelete:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:675    .text.osTimerDelete:00000000 osTimerDelete
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:695    .text.osSignalSet:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:702    .text.osSignalSet:00000000 osSignalSet
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:804    .text.osSignalSet:00000060 $d
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:809    .text.osSignalWait:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:816    .text.osSignalWait:00000000 osSignalWait
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:921    .text.osMutexCreate:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:928    .text.osMutexCreate:00000000 osMutexCreate
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:970    .text.osMutexWait:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:977    .text.osMutexWait:00000000 osMutexWait
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:1090   .text.osMutexWait:0000005c $d
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:1095   .text.osMutexRelease:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:1102   .text.osMutexRelease:00000000 osMutexRelease
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:1202   .text.osMutexRelease:00000058 $d
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:1207   .text.osMutexDelete:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:1214   .text.osMutexDelete:00000000 osMutexDelete
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:1253   .text.osSemaphoreCreate:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:1260   .text.osSemaphoreCreate:00000000 osSemaphoreCreate
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:1352   .text.osSemaphoreWait:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:1359   .text.osSemaphoreWait:00000000 osSemaphoreWait
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:1467   .text.osSemaphoreWait:0000005c $d
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 105
 
 
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:1472   .text.osSemaphoreRelease:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:1479   .text.osSemaphoreRelease:00000000 osSemaphoreRelease
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:1579   .text.osSemaphoreRelease:00000058 $d
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:1584   .text.osSemaphoreDelete:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:1591   .text.osSemaphoreDelete:00000000 osSemaphoreDelete
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:1630   .text.osPoolCreate:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:1637   .text.osPoolCreate:00000000 osPoolCreate
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:1773   .text.osPoolAlloc:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:1780   .text.osPoolAlloc:00000000 osPoolAlloc
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:1939   .text.osPoolCAlloc:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:1946   .text.osPoolCAlloc:00000000 osPoolCAlloc
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:1977   .text.osPoolFree:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:1984   .text.osPoolFree:00000000 osPoolFree
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:2075   .text.osMessageCreate:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:2082   .text.osMessageCreate:00000000 osMessageCreate
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:2144   .text.osMessagePut:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:2151   .text.osMessagePut:00000000 osMessagePut
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:2263   .text.osMessagePut:00000064 $d
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:2268   .text.osMessageGet:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:2275   .text.osMessageGet:00000000 osMessageGet
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:2424   .text.osMessageGet:00000084 $d
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:2429   .text.osMailCreate:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:2436   .text.osMailCreate:00000000 osMailCreate
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:2561   .text.osMailAlloc:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:2568   .text.osMailAlloc:00000000 osMailAlloc
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:2601   .text.osMailCAlloc:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:2608   .text.osMailCAlloc:00000000 osMailCAlloc
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:2665   .text.osMailPut:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:2672   .text.osMailPut:00000000 osMailPut
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:2784   .text.osMailPut:00000064 $d
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:2789   .text.osMailGet:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:2796   .text.osMailGet:00000000 osMailGet
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:2941   .text.osMailGet:00000080 $d
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:2946   .text.osMailFree:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:2953   .text.osMailFree:00000000 osMailFree
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:2993   .text.osSystickHandler:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3000   .text.osSystickHandler:00000000 osSystickHandler
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3031   .text.osThreadSuspend:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3038   .text.osThreadSuspend:00000000 osThreadSuspend
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3062   .text.osThreadResume:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3069   .text.osThreadResume:00000000 osThreadResume
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3129   .text.osThreadResume:00000030 $d
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3134   .text.osThreadSuspendAll:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3141   .text.osThreadSuspendAll:00000000 osThreadSuspendAll
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3163   .text.osThreadResumeAll:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3170   .text.osThreadResumeAll:00000000 osThreadResumeAll
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3201   .text.osDelayUntil:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3208   .text.osDelayUntil:00000000 osDelayUntil
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3228   .text.osAbortDelay:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3235   .text.osAbortDelay:00000000 osAbortDelay
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3254   .text.osThreadList:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3261   .text.osThreadList:00000000 osThreadList
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3279   .text.osMessagePeek:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3286   .text.osMessagePeek:00000000 osMessagePeek
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3380   .text.osMessageWaiting:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3387   .text.osMessageWaiting:00000000 osMessageWaiting
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3427   .text.osMessageAvailableSpace:00000000 $t
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s 			page 106
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:1472   .text.osSemaphoreRelease:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:1479   .text.osSemaphoreRelease:00000000 osSemaphoreRelease
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:1579   .text.osSemaphoreRelease:00000058 $d
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:1584   .text.osSemaphoreDelete:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:1591   .text.osSemaphoreDelete:00000000 osSemaphoreDelete
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:1630   .text.osPoolCreate:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:1637   .text.osPoolCreate:00000000 osPoolCreate
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:1773   .text.osPoolAlloc:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:1780   .text.osPoolAlloc:00000000 osPoolAlloc
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:1939   .text.osPoolCAlloc:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:1946   .text.osPoolCAlloc:00000000 osPoolCAlloc
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:1977   .text.osPoolFree:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:1984   .text.osPoolFree:00000000 osPoolFree
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:2075   .text.osMessageCreate:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:2082   .text.osMessageCreate:00000000 osMessageCreate
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:2144   .text.osMessagePut:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:2151   .text.osMessagePut:00000000 osMessagePut
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:2263   .text.osMessagePut:00000064 $d
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:2268   .text.osMessageGet:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:2275   .text.osMessageGet:00000000 osMessageGet
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:2424   .text.osMessageGet:00000084 $d
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:2429   .text.osMailCreate:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:2436   .text.osMailCreate:00000000 osMailCreate
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:2561   .text.osMailAlloc:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:2568   .text.osMailAlloc:00000000 osMailAlloc
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:2601   .text.osMailCAlloc:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:2608   .text.osMailCAlloc:00000000 osMailCAlloc
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:2665   .text.osMailPut:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:2672   .text.osMailPut:00000000 osMailPut
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:2784   .text.osMailPut:00000064 $d
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:2789   .text.osMailGet:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:2796   .text.osMailGet:00000000 osMailGet
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:2941   .text.osMailGet:00000080 $d
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:2946   .text.osMailFree:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:2953   .text.osMailFree:00000000 osMailFree
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:2993   .text.osSystickHandler:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3000   .text.osSystickHandler:00000000 osSystickHandler
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3031   .text.osThreadSuspend:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3038   .text.osThreadSuspend:00000000 osThreadSuspend
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3062   .text.osThreadResume:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3069   .text.osThreadResume:00000000 osThreadResume
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3129   .text.osThreadResume:00000030 $d
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3134   .text.osThreadSuspendAll:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3141   .text.osThreadSuspendAll:00000000 osThreadSuspendAll
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3163   .text.osThreadResumeAll:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3170   .text.osThreadResumeAll:00000000 osThreadResumeAll
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3201   .text.osDelayUntil:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3208   .text.osDelayUntil:00000000 osDelayUntil
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3239   .text.osAbortDelay:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3246   .text.osAbortDelay:00000000 osAbortDelay
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3265   .text.osThreadList:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3272   .text.osThreadList:00000000 osThreadList
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3290   .text.osMessagePeek:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3297   .text.osMessagePeek:00000000 osMessagePeek
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3391   .text.osMessageWaiting:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3398   .text.osMessageWaiting:00000000 osMessageWaiting
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3438   .text.osMessageAvailableSpace:00000000 $t
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s 			page 106
 
 
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3434   .text.osMessageAvailableSpace:00000000 osMessageAvailableSpace
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3457   .text.osMessageDelete:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3464   .text.osMessageDelete:00000000 osMessageDelete
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3503   .text.osRecursiveMutexCreate:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3510   .text.osRecursiveMutexCreate:00000000 osRecursiveMutexCreate
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3528   .text.osRecursiveMutexRelease:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3535   .text.osRecursiveMutexRelease:00000000 osRecursiveMutexRelease
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3553   .text.osRecursiveMutexWait:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3560   .text.osRecursiveMutexWait:00000000 osRecursiveMutexWait
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3578   .text.osSemaphoreGetCount:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccqlS6B6.s:3585   .text.osSemaphoreGetCount:00000000 osSemaphoreGetCount
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3445   .text.osMessageAvailableSpace:00000000 osMessageAvailableSpace
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3468   .text.osMessageDelete:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3475   .text.osMessageDelete:00000000 osMessageDelete
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3514   .text.osRecursiveMutexCreate:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3521   .text.osRecursiveMutexCreate:00000000 osRecursiveMutexCreate
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3539   .text.osRecursiveMutexRelease:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3546   .text.osRecursiveMutexRelease:00000000 osRecursiveMutexRelease
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3564   .text.osRecursiveMutexWait:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3571   .text.osRecursiveMutexWait:00000000 osRecursiveMutexWait
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3589   .text.osSemaphoreGetCount:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccRqIgVd.s:3596   .text.osSemaphoreGetCount:00000000 osSemaphoreGetCount
 
 UNDEFINED SYMBOLS
 vTaskStartScheduler
@@ -6320,6 +6331,7 @@ xTaskResumeFromISR
 vTaskResume
 vTaskSuspendAll
 xTaskResumeAll
+vTaskDelayUntil
 xQueuePeek
 uxQueueMessagesWaitingFromISR
 uxQueueMessagesWaiting
