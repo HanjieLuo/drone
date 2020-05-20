@@ -248,10 +248,10 @@ build/mavlink_task.o: Modules/src/mavlink_task.c \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  Modules/include/utils.h Modules/include/utils.h Modules/include/motor.h \
- Inc/tim.h Modules/include/sensors.h Modules/include/mpu6050.h \
+ Inc/tim.h Modules/include/sensors.h Modules/include/hmc5883l.h \
  Modules/include/i2c1.h Inc/i2c.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
- Modules/include/ms5611.h Modules/include/hmc5883l.h
+ Modules/include/mpu6050.h Modules/include/ms5611.h
 
 Modules/include/mavlink_task.h:
 
@@ -767,7 +767,7 @@ Inc/tim.h:
 
 Modules/include/sensors.h:
 
-Modules/include/mpu6050.h:
+Modules/include/hmc5883l.h:
 
 Modules/include/i2c1.h:
 
@@ -775,6 +775,6 @@ Inc/i2c.h:
 
 Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 
-Modules/include/ms5611.h:
+Modules/include/mpu6050.h:
 
-Modules/include/hmc5883l.h:
+Modules/include/ms5611.h:

@@ -32,7 +32,7 @@
 // #include "uart4.h"
 // #include "mavlink_task.h"
 #include "sensors.h"
-#include "dmp.h"
+// #include "dmp.h"
 // #include "ms5611.h"
 // #include "mpu6050.h"
 // #include "i2c1.h"
@@ -85,7 +85,6 @@ int main(void)
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
-  DmpInit();
 
   /* USER CODE BEGIN Init */
 

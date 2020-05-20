@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccq5Atkz.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s 			page 1
   22:Modules/src/dmp.c ****     //     xQueueReceive(gyro_raw_queue, gyro_raw, portMAX_DELAY);
   23:Modules/src/dmp.c ****     //     xQueueReceive(mag_raw_queue, mag_raw, portMAX_DELAY);
   24:Modules/src/dmp.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccq5Atkz.s 			page 2
 
 
   25:Modules/src/dmp.c ****     //     // usecTimestamp
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s 			page 1
   77 001a FFF7FEFF 		bl	xTaskCreateStatic
   78              	.LVL1:
   12:Modules/src/dmp.c **** }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccq5Atkz.s 			page 3
 
 
   79              		.loc 1 12 1 view .LVU5
@@ -177,21 +177,25 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s 			page 1
  129              		.file 20 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
  130              		.file 21 "Modules/include/utils.h"
  131              		.file 22 "Inc/i2c.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s 			page 4
+ 132              		.file 23 "Modules/include/sensors.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccq5Atkz.s 			page 4
+
+
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccq5Atkz.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 dmp.c
-C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s:18     .text.DmpTask:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s:26     .text.DmpTask:00000000 DmpTask
-C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s:41     .rodata.DmpInit.str1.4:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s:45     .text.DmpInit:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s:52     .text.DmpInit:00000000 DmpInit
-C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s:88     .text.DmpInit:00000024 $d
-C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s:96     .bss.osSys_dmp_taskStackBuffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s:100    .bss.osSys_dmp_taskStackBuffer:00000000 osSys_dmp_taskStackBuffer
-C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s:103    .bss.osSys_dmp_taskTaskBuffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccGtHwBT.s:107    .bss.osSys_dmp_taskTaskBuffer:00000000 osSys_dmp_taskTaskBuffer
+C:\Users\luoha\AppData\Local\Temp\ccq5Atkz.s:18     .text.DmpTask:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccq5Atkz.s:26     .text.DmpTask:00000000 DmpTask
+C:\Users\luoha\AppData\Local\Temp\ccq5Atkz.s:41     .rodata.DmpInit.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccq5Atkz.s:45     .text.DmpInit:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccq5Atkz.s:52     .text.DmpInit:00000000 DmpInit
+C:\Users\luoha\AppData\Local\Temp\ccq5Atkz.s:88     .text.DmpInit:00000024 $d
+C:\Users\luoha\AppData\Local\Temp\ccq5Atkz.s:96     .bss.osSys_dmp_taskStackBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccq5Atkz.s:100    .bss.osSys_dmp_taskStackBuffer:00000000 osSys_dmp_taskStackBuffer
+C:\Users\luoha\AppData\Local\Temp\ccq5Atkz.s:103    .bss.osSys_dmp_taskTaskBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccq5Atkz.s:107    .bss.osSys_dmp_taskTaskBuffer:00000000 osSys_dmp_taskTaskBuffer
 
 UNDEFINED SYMBOLS
 xTaskCreateStatic

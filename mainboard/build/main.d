@@ -46,10 +46,9 @@ build/main.o: Src/main.c Inc/main.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/timers.h Inc/dma.h \
  Inc/main.h Inc/i2c.h Inc/tim.h Inc/usart.h Inc/gpio.h \
- Modules/include/sensors.h Modules/include/utils.h \
- Modules/include/mpu6050.h Modules/include/i2c1.h \
- Modules/include/ms5611.h Modules/include/hmc5883l.h \
- Modules/include/dmp.h Modules/include/sensors.h
+ Modules/include/sensors.h Modules/include/hmc5883l.h \
+ Modules/include/i2c1.h Modules/include/utils.h Modules/include/mpu6050.h \
+ Modules/include/ms5611.h
 
 Inc/main.h:
 
@@ -163,16 +162,12 @@ Inc/gpio.h:
 
 Modules/include/sensors.h:
 
+Modules/include/hmc5883l.h:
+
+Modules/include/i2c1.h:
+
 Modules/include/utils.h:
 
 Modules/include/mpu6050.h:
 
-Modules/include/i2c1.h:
-
 Modules/include/ms5611.h:
-
-Modules/include/hmc5883l.h:
-
-Modules/include/dmp.h:
-
-Modules/include/sensors.h:

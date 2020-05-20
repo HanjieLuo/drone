@@ -9,8 +9,9 @@ STATIC_MEM_QUEUE_ALLOC(mag_raw_queue, 1, sizeof(float) * 3);
 
 static TaskHandle_t sensors_read_task_handle;
 STATIC_MEM_TASK_ALLOC(sensors_read_task, configMINIMAL_STACK_SIZE * 3);
+const TickType_t sensors_read_task_wait = pdMS_TO_TICKS(100);
 
-const TickType_t sensors_read_task_wait = pdMS_TO_TICKS(1); 
+float tmpx, tmpy, tmpz;
 
 // void MPU6050Task(void *param);
 // void MS5611Task(void *param);
@@ -58,6 +59,12 @@ void SensorsReadTask(void *param) {
         // printf("Gyro: %d, %d, %d\r\n", gyro_raw[0], gyro_raw[1], gyro_raw[2]);
         // printf("Mag: %d, %d, %d\r\n", mag_raw[0], mag_raw[1], mag_raw[2]);
 
+        // printf("Accel: %f %f %f\r\n", acc[0], acc[1], acc[2]);
+        // printf("Gyro : %f %f %f\r\n", gyro[0], gyro[1], gyro[2]);
+        // printf("Mag  : %f %f %f\r\n\r\n", mag[0], mag[1], mag[2]);
+
+        printf("%f,%f,%f,%f,%f,%f,%f,%f,%f\n", acc[0], acc[1], acc[2], gyro[0], gyro[1], gyro[2], mag[0], mag[1], mag[2]);
+
         vTaskDelayUntil(&last_wait_time, sensors_read_task_wait);
     }
 
@@ -67,8 +74,25 @@ void SensorsReadTask(void *param) {
 }
 
 void IMUCalibration(const int16_t *acc_raw, const int16_t *gyro_raw, const int16_t *mag_raw, float *acc, float *gyro, float *mag) {
+    tmpz = Sa_z * (acc_raw[2] + Ba_z);
+    tmpy = Sa_y * (acc_raw[1] + Ba_y);
+    tmpx = Sa_x * (acc_raw[0] + Ba_x);
 
+    acc[2] = tmpz;
+    acc[1] = tmpy + Ta12 * tmpz;
+    acc[0] = tmpx + Ta01 * tmpy + Ta02 * tmpz;
 
+    tmpx = Sg_x * (gyro_raw[0] + Bg_x);
+    tmpy = Sg_y * (gyro_raw[1] + Bg_y);
+    tmpz = Sg_z * (gyro_raw[2] + Bg_z);
+
+    gyro[0] = (float)tmpx + Tg01 * tmpy + Tg02 * tmpz;
+    gyro[1] = Tg10 * tmpx + (float)tmpy + Tg12 * tmpz;
+    gyro[2] = Tg20 * tmpx + Tg21 * tmpy + (float)tmpz;
+
+    mag[0] = Sm_x * mag_raw[0];
+    mag[1] = Sm_y * mag_raw[1];
+    mag[2] = Sm_z * mag_raw[2];
 }
 
 /*

@@ -13,19 +13,27 @@
 #define SensorsReadMagRaw HMC5883LReadMagRaw
 
 
+// self.acc2real = 9.7833 / 16384.0 = 5.97125244140625e-4‬
+// self.gyro2real = 0.00106422515
+// self.mag2real = 0.00091743119
+
+
 // Acc Calibration params
-const float Ta00 = 1, Ta01 = 9.20578e-05, Ta02 = -0.00458463;
-const float Ta10 = 0, Ta11 = 1, Ta12 = -0.00704855;
-const float Ta20 = 0, Ta21 = 0, Ta22 = 1;
-const Sa_x = 0.999055, Sa_y = 0.996069, Sa_z = 0.995043;
-const Ba_x = -0.563108, Ba_y = -0.0599016, Ba_z = -0.251484;
+const static float Ta00 = 1.0, Ta01 = 9.0941e-05, Ta02 = -0.00458356;
+const static float Ta10 = 0.0, Ta11 = 1.0, Ta12 = -0.00704908;
+const static float Ta20 = 0.0, Ta21 = 0.0, Ta22 = 1.0;
+const static float Sa_x = 0.000596561, Sa_y = 0.000594778, Sa_z = 0.000594165;
+const static float Ba_x = -943.026, Ba_y = -100.32, Ba_z = -421.17;
 
 // Gyro Calibration params
-const float Tg00 = 1, Tg01 = -0.000635797, Tg02 = 0.00508567;
-const float Tg10 = -0.00272401, Tg11 = 1, Tg12 = 0.00577775;
-const float Tg20 = 0.0082499, Tg21 = 0.012745, Tg22 = 1;
-const Sg_x = 0.997496, Sg_y = 0.992593, Sg_z = 1.00596;
-const Bg_x = 0.0250904, Bg_y = 0.00282511, Bg_z = -0.00949097;
+const static float Tg00 = 1.0, Tg01 = -0.0006364, Tg02 = 0.00508642;
+const static float Tg10 = -0.00272323, Tg11 = 1.0, Tg12 = 0.00577732;
+const static float Tg20 = 0.00824933, Tg21 = 0.0127456, Tg22 = 1.0;
+const static float Sg_x = 0.00106156, Sg_y = 0.00105634, Sg_z = 0.00107057;
+const static float Bg_x = 23.5762, Bg_y = 2.65462, Bg_z = -8.9182;
+
+
+const static float Sm_x = 0.00091743119, Sm_y = 0.00091743119, Sm_z = 0.00091743119;
 
 void SensorsInit(void);
 void SensorsReadTask(void *param);
