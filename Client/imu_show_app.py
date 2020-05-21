@@ -1,5 +1,6 @@
+import time
+from com_task import ComTask
 import queue
-import mavlink_task
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from PyQt5 import QtCore, QtWidgets
@@ -29,12 +30,15 @@ class MainWindow(QtWidgets.QMainWindow):
         self.canvas = MplCanvas(self, width=10, height=8, dpi=100)
         self.setCentralWidget(self.canvas)
 
-        self.mavlink_task = mavlink_task.MavkinkTask("COM5", 115200)
-        self.mavlink_task.start()
+        # self.mavlink_task = mavlink_task.MavkinkTask("COM5", 115200)
+        # self.mavlink_task.start()
+        self.com_task = ComTask("COM5", 115200)
+        self.com_task.start()
+        time.sleep(0.5)
 
         self.n_data = 500
-        self.delay = 10 #ms
-        self.basetime = None
+        self.delay = 10  # ms
+        # self.basetime = None
         self.xdata = list()
         self.xacc_data = list()
         self.yacc_data = list()
@@ -62,18 +66,17 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def update_plot(self):
         try:
-            [timestamp, xacc, yacc, zacc, xgyro, ygyro, zgyro, xmag,
-                ymag, zmag] = self.mavlink_task.imu_data.get(block=False)
-            print(self.mavlink_task.imu_data.qsize())
+            [timestamp, xacc, yacc, zacc, xgyro, ygyro, zgyro,
+                xmag, ymag, zmag] = self.com_task.getData()
+            # [timestamp, xacc, yacc, zacc, xgyro, ygyro, zgyro, xmag,
+            #     ymag, zmag] = self.mavlink_task.imu_data.get(block=False)
+            # print(self.mavlink_task.imu_data.qsize())
             # print(self.mavlink_task.imu_data.qsize())
             # print('%f\t%f\t%f\t%f\t%f\t%f\t%f\t%f\t%f\t%f' %
             #               (timestamp, xacc, yacc, zacc, xgyro, ygyro, zgyro, xmag, ymag, zmag))
-            if self.basetime is None:
-                self.basetime = timestamp
 
             if(len(self.xgyro_data) < self.n_data - 1):
-                self.xdata.append(timestamp - self.basetime)
-
+                self.xdata.append(timestamp)
                 self.xacc_data.append(xacc)
                 self.yacc_data.append(yacc)
                 self.zacc_data.append(zacc)
@@ -85,8 +88,13 @@ class MainWindow(QtWidgets.QMainWindow):
                 self.xmag_data.append(xmag)
                 self.ymag_data.append(ymag)
                 self.zmag_data.append(zmag)
+
+                # xlim1, xlim2 = self.canvas.axes[0].get_xlim()
+                # if(timestamp > xlim2):
+                #     for i in range(3):
+                #         self.canvas.axes[i].set_xlim(xlim1, timestamp)
             else:
-                self.xdata = self.xdata[1:] + [timestamp - self.basetime]
+                self.xdata = self.xdata[1:] + [timestamp]
 
                 self.xacc_data = self.xacc_data[1:] + [xacc]
                 self.yacc_data = self.yacc_data[1:] + [yacc]
@@ -100,9 +108,9 @@ class MainWindow(QtWidgets.QMainWindow):
                 self.ymag_data = self.ymag_data[1:] + [ymag]
                 self.zmag_data = self.zmag_data[1:] + [zmag]
 
-                xlim1, xlim2 = self.canvas.axes[0].get_xlim()
-                for i in range(3):
-                    self.canvas.axes[i].set_xlim(xlim1 + self.delay, xlim2 + self.delay)
+            for i in range(3):
+                self.canvas.axes[i].set_xlim(
+                    self.xdata[0], self.xdata[-1] if self.xdata[-1] > self.delay * self.n_data else self.delay * self.n_data)
 
             # Note: we no longer need to clear the axis.
             if self._plot_ref is None:
@@ -112,24 +120,24 @@ class MainWindow(QtWidgets.QMainWindow):
                 self._plot_ref = list()
                 self._plot_ref.append(self.canvas.axes[0].plot(
                     self.xdata, self.xacc_data, 'r', self.xdata, self.yacc_data, 'g', self.xdata, self.zacc_data, 'b'))
-                
+
                 self._plot_ref.append(self.canvas.axes[1].plot(
                     self.xdata, self.xgyro_data, 'r',  self.xdata, self.ygyro_data, 'g', self.xdata, self.zgyro_data, 'b'))
-                
+
                 self._plot_ref.append(self.canvas.axes[2].plot(
                     self.xdata, self.xmag_data, 'r',  self.xdata, self.ymag_data, 'g', self.xdata, self.zmag_data, 'b'))
 
                 for i in range(3):
-                    self.canvas.axes[i].set_xlim(0, self.delay * self.n_data)
+                    # self.canvas.axes[i].set_xlim(self.basetime, self.basetime + self.delay * self.n_data)
                     self._plot_ref[i][0].set_label("X Axis")
                     self._plot_ref[i][1].set_label("Y Axis")
                     self._plot_ref[i][2].set_label("Z Axis")
                     self.canvas.axes[i].legend()
-                
+
                 self.canvas.axes[0].set_ylim(-20, 20)
                 self.canvas.axes[1].set_ylim(-35, 35)
                 self.canvas.axes[2].set_ylim(-1, 1)
-                
+
                 self.canvas.axes[0].set_title("Acceleration")
                 self.canvas.axes[1].set_title("Gyroscope")
                 self.canvas.axes[2].set_title("Magnetometer")
@@ -141,20 +149,21 @@ class MainWindow(QtWidgets.QMainWindow):
                 self._plot_ref[0][1].set_ydata(self.yacc_data)
                 self._plot_ref[0][2].set_xdata(self.xdata)
                 self._plot_ref[0][2].set_ydata(self.zacc_data)
-                
+
                 self._plot_ref[1][0].set_xdata(self.xdata)
                 self._plot_ref[1][0].set_ydata(self.xgyro_data)
                 self._plot_ref[1][1].set_xdata(self.xdata)
                 self._plot_ref[1][1].set_ydata(self.ygyro_data)
                 self._plot_ref[1][2].set_xdata(self.xdata)
                 self._plot_ref[1][2].set_ydata(self.zgyro_data)
-                
+
                 self._plot_ref[2][0].set_xdata(self.xdata)
                 self._plot_ref[2][0].set_ydata(self.xmag_data)
                 self._plot_ref[2][1].set_xdata(self.xdata)
                 self._plot_ref[2][1].set_ydata(self.ymag_data)
                 self._plot_ref[2][2].set_xdata(self.xdata)
                 self._plot_ref[2][2].set_ydata(self.zmag_data)
+
             # Trigger the canvas to update and redraw.
             self.canvas.draw()
         except queue.Empty:
