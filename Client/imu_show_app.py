@@ -32,7 +32,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         # self.mavlink_task = mavlink_task.MavkinkTask("COM5", 115200)
         # self.mavlink_task.start()
-        self.com_task = ComTask("COM5", 115200)
+        self.com_task = ComTask("COM3", 115200)
         self.com_task.start()
         time.sleep(0.5)
 
@@ -136,6 +136,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
                 self.canvas.axes[0].set_ylim(-20, 20)
                 self.canvas.axes[1].set_ylim(-35, 35)
+                # self.canvas.axes[1].set_ylim(-0.1, 0.1)
                 self.canvas.axes[2].set_ylim(-1, 1)
 
                 self.canvas.axes[0].set_title("Acceleration")

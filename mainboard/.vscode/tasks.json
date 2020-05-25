@@ -8,10 +8,10 @@
                 "isDefault": true
             },
             "type": "shell",
-            "command": "E:\\mingw64\\bin\\make.EXE",
+            "command": "C:\\MinGW\\bin\\make.EXE",
             "args": [
-                "GCC_PATH=e:/GNU Tools Arm Embedded/9 2019-q4-major/bin",
-                "-j12"
+                "GCC_PATH=C:/GNU_Tools_Arm_Embedded/bin",
+                "-j9"
             ],
             "problemMatcher": {
                 "pattern": {
@@ -30,7 +30,7 @@
         {
             "label": "Compile current file",
             "type": "shell",
-            "command": "e:\\GNU Tools Arm Embedded\\9 2019-q4-major\\bin\\arm-none-eabi-gcc.EXE",
+            "command": "C:\\GNU_Tools_Arm_Embedded\\bin\\arm-none-eabi-gcc.EXE",
             "args": [
                 "-c",
                 "-DUSE_HAL_DRIVER",
@@ -91,7 +91,7 @@
         {
             "label": "Delete build folder",
             "type": "shell",
-            "command": "E:\\mingw64\\bin\\make.EXE",
+            "command": "C:\\MinGW\\bin\\make.EXE",
             "args": [
                 "clean"
             ],
@@ -103,10 +103,10 @@
         {
             "label": "CPU: Build, Download and run",
             "type": "shell",
-            "command": "E:\\OpenOCD-20200310-0.10.0\\bin\\openocd.EXE",
+            "command": "C:\\OpenOCD-20200408-0.10.0\\bin\\openocd.EXE",
             "args": [
                 "-f",
-                "E:/OpenOCD-20200310-0.10.0/share/openocd/scripts/interface/cmsis-dap.cfg",
+                "C:/OpenOCD-20200408-0.10.0/share/openocd/scripts/interface/cmsis-dap.cfg",
                 "-f",
                 ".vscode/stm32f4x.cfg",
                 "-c",
@@ -118,10 +118,10 @@
         {
             "label": "CPU: Download and run",
             "type": "shell",
-            "command": "E:\\OpenOCD-20200310-0.10.0\\bin\\openocd.EXE",
+            "command": "C:\\OpenOCD-20200408-0.10.0\\bin\\openocd.EXE",
             "args": [
                 "-f",
-                "E:/OpenOCD-20200310-0.10.0/share/openocd/scripts/interface/cmsis-dap.cfg",
+                "C:/OpenOCD-20200408-0.10.0/share/openocd/scripts/interface/cmsis-dap.cfg",
                 "-f",
                 ".vscode/stm32f4x.cfg",
                 "-c",
@@ -132,10 +132,10 @@
         {
             "label": "CPU: Reset and run",
             "type": "shell",
-            "command": "E:\\OpenOCD-20200310-0.10.0\\bin\\openocd.EXE",
+            "command": "C:\\OpenOCD-20200408-0.10.0\\bin\\openocd.EXE",
             "args": [
                 "-f",
-                "E:/OpenOCD-20200310-0.10.0/share/openocd/scripts/interface/cmsis-dap.cfg",
+                "C:/OpenOCD-20200408-0.10.0/share/openocd/scripts/interface/cmsis-dap.cfg",
                 "-f",
                 ".vscode/stm32f4x.cfg",
                 "-c init",
@@ -147,10 +147,10 @@
         {
             "label": "CPU: Halt",
             "type": "shell",
-            "command": "E:\\OpenOCD-20200310-0.10.0\\bin\\openocd.EXE",
+            "command": "C:\\OpenOCD-20200408-0.10.0\\bin\\openocd.EXE",
             "args": [
                 "-f",
-                "E:/OpenOCD-20200310-0.10.0/share/openocd/scripts/interface/cmsis-dap.cfg",
+                "C:/OpenOCD-20200408-0.10.0/share/openocd/scripts/interface/cmsis-dap.cfg",
                 "-f",
                 ".vscode/stm32f4x.cfg",
                 "-c init",
@@ -162,10 +162,10 @@
         {
             "label": "CPU: Run",
             "type": "shell",
-            "command": "E:\\OpenOCD-20200310-0.10.0\\bin\\openocd.EXE",
+            "command": "C:\\OpenOCD-20200408-0.10.0\\bin\\openocd.EXE",
             "args": [
                 "-f",
-                "E:/OpenOCD-20200310-0.10.0/share/openocd/scripts/interface/cmsis-dap.cfg",
+                "C:/OpenOCD-20200408-0.10.0/share/openocd/scripts/interface/cmsis-dap.cfg",
                 "-f",
                 ".vscode/stm32f4x.cfg",
                 "-c init",

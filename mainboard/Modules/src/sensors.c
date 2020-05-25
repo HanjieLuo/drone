@@ -49,8 +49,7 @@ void SensorsReadTask(void *param) {
         MPU6050ReadGyroRaw(gyro_raw);
         HMC5883LReadMagRaw(mag_raw);
 
-        printf("%u,%d,%d,%d,%d,%d,%d\n", pdTICKS_TO_MS(xTaskGetTickCount()), acc_raw[0], acc_raw[1], acc_raw[2], gyro_raw[0], gyro_raw[1], gyro_raw[2]);
-
+        // printf("%u,%d,%d,%d,%d,%d,%d\n", pdTICKS_TO_MS(xTaskGetTickCount()), acc_raw[0], acc_raw[1], acc_raw[2], gyro_raw[0], gyro_raw[1], gyro_raw[2]);
         // IMUCalibration(acc_raw, gyro_raw, mag_raw, acc, gyro, mag);
 
         // xQueueOverwrite(acc_raw_queue, acc_raw);
@@ -67,6 +66,8 @@ void SensorsReadTask(void *param) {
 
         // printf("%f,%f,%f,%f,%f,%f,%f,%f,%f,%f\n", (float)pdTICKS_TO_MS(xTaskGetTickCount()), acc[0], acc[1], acc[2], gyro[0], gyro[1], gyro[2], mag[0], mag[1], mag[2]);
 
+        printf("%f,%d,%d,%d,%d,%d,%d,%d,%d,%d\n", (float)pdTICKS_TO_MS(xTaskGetTickCount()), acc_raw[0], acc_raw[1], acc_raw[2], gyro_raw[0], gyro_raw[1], gyro_raw[2], mag_raw[0], mag_raw[1], mag_raw[2]);
+
         vTaskDelayUntil(&last_wait_time, sensors_read_task_wait);
     }
 
@@ -76,17 +77,17 @@ void SensorsReadTask(void *param) {
 }
 
 void IMUCalibration(const int16_t *acc_raw, const int16_t *gyro_raw, const int16_t *mag_raw, float *acc, float *gyro, float *mag) {
-    tmpz = Sa_z * (acc_raw[2] + Ba_z);
-    tmpy = Sa_y * (acc_raw[1] + Ba_y);
-    tmpx = Sa_x * (acc_raw[0] + Ba_x);
+    tmpz = Sa_z * (acc_raw[2] - Ba_z);
+    tmpy = Sa_y * (acc_raw[1] - Ba_y);
+    tmpx = Sa_x * (acc_raw[0] - Ba_x);
 
     acc[2] = tmpz;
     acc[1] = tmpy + Ta12 * tmpz;
     acc[0] = tmpx + Ta01 * tmpy + Ta02 * tmpz;
 
-    tmpx = Sg_x * (gyro_raw[0] + Bg_x);
-    tmpy = Sg_y * (gyro_raw[1] + Bg_y);
-    tmpz = Sg_z * (gyro_raw[2] + Bg_z);
+    tmpx = Sg_x * (gyro_raw[0] - Bg_x);
+    tmpy = Sg_y * (gyro_raw[1] - Bg_y);
+    tmpz = Sg_z * (gyro_raw[2] - Bg_z);
 
     gyro[0] = (float)tmpx + Tg01 * tmpy + Tg02 * tmpz;
     gyro[1] = Tg10 * tmpx + (float)tmpy + Tg12 * tmpz;

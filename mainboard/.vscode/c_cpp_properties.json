@@ -85,8 +85,8 @@
             "USE_HAL_DRIVER",
             "STM32F407xx"
         ],
-        "gccExePath": "e:\\GNU Tools Arm Embedded\\9 2019-q4-major\\bin\\arm-none-eabi-gcc.EXE",
-        "gccIncludePath": "e:/GNU Tools Arm Embedded/9 2019-q4-major/lib/gcc/arm-none-eabi/9.2.1/include"
+        "gccExePath": "C:\\GNU_Tools_Arm_Embedded\\bin\\arm-none-eabi-gcc.EXE",
+        "gccIncludePath": "C:/GNU_Tools_Arm_Embedded/lib/gcc/arm-none-eabi/9.2.1/include"
     },
     "configurations": [
         {

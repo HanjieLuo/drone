@@ -1,4 +1,3 @@
-#!E:/Python/Python38/python.exe
 '''
 This script runs all other updateXxx.py scripts.
 It should be called once CubeMX project was generated/re-generated or user settings were modified.

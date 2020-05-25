@@ -3,7 +3,7 @@
     "ABOUT2": "User should not edit this fields, instead it should edit 'c_cpp_properties.json'",
     "ABOUT3": "This file is regenerated on 'Update workspace' task.",
     "VERSION": "1.7",
-    "LAST_RUN": "2020-05-20 00:25:01.900962",
+    "LAST_RUN": "2020-05-22 23:33:56.031008",
     "cSources": [
         "Modules/src/usart2.c",
         "Modules/src/motor.c",
@@ -143,10 +143,10 @@
     ],
     "stm32SvdPath": ".vscode/STM32F40x.svd",
     "ABOUT4": "---- Paths below are fetched from user-specific 'toolsPaths.json'. ----",
-    "gccExePath": "e:\\GNU Tools Arm Embedded\\9 2019-q4-major\\bin\\arm-none-eabi-gcc.EXE",
-    "gccInludePath": "e:/GNU Tools Arm Embedded/9 2019-q4-major/lib/gcc/arm-none-eabi/9.2.1/include",
-    "buildToolsPath": "E:\\mingw64\\bin\\make.EXE",
+    "gccExePath": "C:\\GNU_Tools_Arm_Embedded\\bin\\arm-none-eabi-gcc.EXE",
+    "gccInludePath": "C:/GNU_Tools_Arm_Embedded/lib/gcc/arm-none-eabi/9.2.1/include",
+    "buildToolsPath": "C:\\MinGW\\bin\\make.EXE",
     "pythonExec": "python",
-    "openOcdPath": "E:\\OpenOCD-20200310-0.10.0\\bin\\openocd.EXE",
-    "openOcdInterfacePath": "E:/OpenOCD-20200310-0.10.0/share/openocd/scripts/interface/cmsis-dap.cfg"
+    "openOcdPath": "C:\\OpenOCD-20200408-0.10.0\\bin\\openocd.EXE",
+    "openOcdInterfacePath": "C:/OpenOCD-20200408-0.10.0/share/openocd/scripts/interface/cmsis-dap.cfg"
 }

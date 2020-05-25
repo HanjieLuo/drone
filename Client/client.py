@@ -1,4 +1,3 @@
-#!E:/Python/Python38/python.exe
 # -*- coding: UTF-8 -*-
 import time
 import pymavlink

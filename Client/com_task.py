@@ -5,7 +5,6 @@ import time
 import atexit
 import calendar
 import numpy as np
-# import serial.tools.list_ports
 
 class ComTask(threading.Thread):
     def __init__(self, port="COM5", baud=115200):
@@ -77,9 +76,10 @@ class ComTask(threading.Thread):
         
         
 if __name__ == "__main__":
-    com_task = ComTask("COM5", 115200)
-    com_task.record_data()
-    # com_task.start()
-    # while(True):
-    #     print(com_task.getData())
+    com_task = ComTask("COM3", 115200)
+    com_task.start()
+    while(True):
+        print(com_task.getData())
+    
+    # com_task.record_data()
 
