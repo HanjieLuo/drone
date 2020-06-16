@@ -76,6 +76,66 @@ class MagnetometerCalibration:
         ax.scatter(mag_x, mag_y, mag_z, marker='o', color='g')
         plt.show()
     
+    def DrawData(self, X, Y, Z, Ainv):
+        fig = plt.figure(figsize=(10, 10))
+        ax = fig.add_subplot(111, projection='3d')
+        ax.set_xlim(min(X), max(X))
+        ax.set_ylim(min(Y), max(Y))
+        ax.set_zlim(min(Z), max(Z))
+        ax.scatter(X, Y, Z, marker='o', color='g')
+        self.EllipsoidPlot(Ainv, ax)
+        plt.show()
+        
+    # def EllipsoidPlot(self, center, radii, rotation, ax, plot_axes=False, cage_color='b', cage_alpha=0.2):
+    def EllipsoidPlot(self, Ainv, ax, plot_axes=False, cage_color='b', cage_alpha=0.2):
+        """Plot an ellipsoid"""
+        
+        # make some purdy axes
+        axes = np.array([[1.0,0.0,0.0],
+                         [0.0,1.0,0.0],
+                         [0.0,0.0,1.0]])
+        # rotate accordingly
+        for i in range(len(axes)):
+            axes[i] = np.dot(Ainv, axes[i])
+
+        # plot axes
+        for p in axes:
+            X3 = np.linspace(-p[0], p[0], 100)
+            Y3 = np.linspace(-p[1], p[1], 100)
+            Z3 = np.linspace(-p[2], p[2], 100)
+            ax.plot(X3, Y3, Z3, color=cage_color)
+            
+        # u = np.linspace(0.0, 2.0 * np.pi, 100)
+        # v = np.linspace(0.0, np.pi, 100)
+    
+        # # cartesian coordinates that correspond to the spherical angles:
+        # x = np.outer(np.cos(u), np.sin(v))
+        # y = np.outer(np.sin(u), np.sin(v))
+        # z = np.outer(np.ones_like(u), np.cos(v))
+        # # rotate accordingly
+        # for i in range(len(x)):
+        #     for j in range(len(x)):
+        #         [x[i, j], y[i, j], z[i, j]] = np.dot([x[i, j], y[i, j], z[i, j]], Ainv)
+
+        # if plot_axes:
+        #     # make some purdy axes
+        #     axes = np.array([[radii[0],0.0,0.0],
+        #                     [0.0,radii[1],0.0],
+        #                     [0.0,0.0,radii[2]]])
+        #     # rotate accordingly
+        #     for i in range(len(axes)):
+        #         axes[i] = np.dot(axes[i], rotation)
+
+        #     # plot axes
+        #     for p in axes:
+        #         X3 = np.linspace(-p[0], p[0], 100) + center[0]
+        #         Y3 = np.linspace(-p[1], p[1], 100) + center[1]
+        #         Z3 = np.linspace(-p[2], p[2], 100) + center[2]
+        #         ax.plot(X3, Y3, Z3, color=cage_color)
+
+        # plot ellipsoid
+        # ax.plot_wireframe(x, y, z,  rstride=4, cstride=4, color=cage_color, alpha=cage_alpha)
+
     def Calibrate(self, path):
         data_mag = np.loadtxt(self.project_root + path, dtype=np.float32)
         mag_x = data_mag[:, 0]
@@ -84,21 +144,48 @@ class MagnetometerCalibration:
         
         Q, n, d = self.ellipsoid_fitting(mag_x, mag_y, mag_z)
         
-        print(Q)
-        print(n)
-        print(d)
+        '''
+        [1] Renaudin, Valerie, Muhammad Haris Afzal, and Gerard Lachapelle. "Complete Triaxis Magnetometer Calibration in the Magnetic Domain." Journal of Sensors (2010): 1-10.
+        [2] Kok, Manon, et al. "Calibration of a magnetometer in combination with inertial sensors." international conference on information fusion (2012): 787-793.
+        '''
         
         Qinv = np.linalg.inv(Q)
-        print(Qinv)
+        # [2] Eq. 23b
         b = - 0.5 * np.dot(Qinv, n)
-        print(b)
+        # [2] Eq. 22
         alpha = 1.0 / (0.25 * np.dot(n.T, np.dot(Qinv, n)) - d)
-        print(alpha)
+        # [2] Eq. 23a
         Ainv = np.real(np.sqrt(alpha) * linalg.sqrtm(Q))
-        print(Ainv)
+        
+        num = data_mag.shape[0]
+        bm = np.repeat(b, num, axis=1)
+        data_mag_cali = np.dot(Ainv, data_mag.T - bm)
+        # print(data_mag_cali)
+        
+        self.DrawData(data_mag_cali[0, :].tolist(), data_mag_cali[1, :].tolist(), data_mag_cali[2, :].tolist(), Ainv)
 
 
     def ellipsoid_fitting(self, X, Y, Z):
+        ''' Estimate ellipsoid parameters from a set of points.
+
+            Parameters
+            ----------
+            s : array_like
+              The samples (M,N) where M=3 (x,y,z) and N=number of samples.
+
+            Returns
+            -------
+            M, n, d : array_like, array_like, float
+              The ellipsoid parameters M, n, d.
+
+            References
+            ----------
+            .. [1] Qingde Li; Griffiths, J.G., "Least squares ellipsoid specific
+               fitting," in Geometric Modeling and Processing, 2004.
+               Proceedings, vol., no., pp.335-340, 2004
+        '''
+
+        # D (samples)
         a1 = X ** 2
         a2 = Y ** 2
         a3 = Z ** 2
@@ -111,45 +198,43 @@ class MagnetometerCalibration:
         a10 = np.ones(len(X)).T
         D = np.array([a1, a2, a3, a4, a5, a6, a7, a8, a9, a10])
 
-        # Eqn 7, k = 4
-        C1 = np.array([[-1, 1, 1, 0, 0, 0],
-                       [1, -1, 1, 0, 0, 0],
-                       [1, 1, -1, 0, 0, 0],
-                       [0, 0, 0, -4, 0, 0],
-                       [0, 0, 0, 0, -4, 0],
-                       [0, 0, 0, 0, 0, -4]])
+        # S, S_11, S_12, S_21, S_22 (eq. 11)
+        S = np.dot(D, D.T)
+        S_11 = S[:6,:6]
+        S_12 = S[:6,6:]
+        S_21 = S[6:,:6]
+        S_22 = S[6:,6:]
 
-        # Eqn 11
-        S = np.matmul(D, D.T)
-        S11 = S[:6, :6]
-        S12 = S[:6, 6:]
-        S21 = S[6:, :6]
-        S22 = S[6:, 6:]
+        # C (Eq. 8, k=4)
+        C = np.array([[-1,  1,  1,  0,  0,  0],
+                      [ 1, -1,  1,  0,  0,  0],
+                      [ 1,  1, -1,  0,  0,  0],
+                      [ 0,  0,  0, -4,  0,  0],
+                      [ 0,  0,  0,  0, -4,  0],
+                      [ 0,  0,  0,  0,  0, -4]])
 
-        # Eqn 15, find eigenvalue and vector
-        # Since S is symmetric, S12.T = S21
-        tmp = np.matmul(np.linalg.inv(C1), S11 - np.matmul(S12,
-                                                           np.matmul(np.linalg.inv(S22), S21)))
-        eigenValue, eigenVector = np.linalg.eig(tmp)
-        u1 = eigenVector[:, np.argmax(eigenValue)]
+        # v_1 (eq. 15, solution)
+        E = np.dot(linalg.inv(C),
+                   S_11 - np.dot(S_12, np.dot(linalg.inv(S_22), S_21)))
 
-        # Eqn 13 solution
-        u2 = np.matmul(-np.matmul(np.linalg.inv(S22), S21), u1)
+        E_w, E_v = np.linalg.eig(E)
 
-        # Total solution
-        u = np.concatenate([u1, u2]).T
+        v_1 = E_v[:, np.argmax(E_w)]
+        if v_1[0] < 0: v_1 = -v_1
 
-        Q = np.array([[u[0], u[5], u[4]],
-                      [u[5], u[1], u[3]],
-                      [u[4], u[3], u[2]]])
+        # v_2 (eq. 13, solution)
+        v_2 = np.dot(np.dot(-np.linalg.inv(S_22), S_21), v_1)
 
-        n = np.array([[2 * u[6]],
-                      [2 * u[7]],
-                      [2 * u[8]]])
+        # quadric-form parameters
+        M = np.array([[v_1[0], v_1[3], v_1[4]],
+                      [v_1[3], v_1[1], v_1[5]],
+                      [v_1[4], v_1[5], v_1[2]]])
+        n = 2 * np.array([[v_2[0]],
+                      [v_2[1]],
+                      [v_2[2]]])
+        d = v_2[3]
 
-        d = u[9]
-
-        return Q, n, d
+        return M, n, d
 
 
 if __name__ == "__main__":
