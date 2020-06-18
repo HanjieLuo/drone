@@ -76,65 +76,64 @@ class MagnetometerCalibration:
         ax.scatter(mag_x, mag_y, mag_z, marker='o', color='g')
         plt.show()
     
-    def DrawData(self, X, Y, Z, Ainv):
-        fig = plt.figure(figsize=(10, 10))
-        ax = fig.add_subplot(111, projection='3d')
-        ax.set_xlim(min(X), max(X))
-        ax.set_ylim(min(Y), max(Y))
-        ax.set_zlim(min(Z), max(Z))
+    def DrawCircle(self, X, Y, Z, ax=None):
+        if ax is None:
+            fig = plt.figure(figsize=(10, 10))
+            ax = fig.add_subplot(111, projection='3d')
+            fig.suptitle('Calibration Data', fontsize=20)
+        value = X + Y + Z
+        max_value = max([abs(x) for x in value]) * 1.2
+        ax.set_xlim(-max_value, max_value)
+        ax.set_ylim(-max_value, max_value)
+        ax.set_zlim(-max_value, max_value)
         ax.scatter(X, Y, Z, marker='o', color='g')
-        self.EllipsoidPlot(Ainv, ax)
-        plt.show()
         
     # def EllipsoidPlot(self, center, radii, rotation, ax, plot_axes=False, cage_color='b', cage_alpha=0.2):
-    def EllipsoidPlot(self, Ainv, ax, plot_axes=False, cage_color='b', cage_alpha=0.2):
+    def DrawEllipsoid(self, X, Y, Z, A, b, title, cage_alpha=0.2):
         """Plot an ellipsoid"""
         
-        # make some purdy axes
-        axes = np.array([[1.0,0.0,0.0],
-                         [0.0,1.0,0.0],
-                         [0.0,0.0,1.0]])
-        # rotate accordingly
-        for i in range(len(axes)):
-            axes[i] = np.dot(Ainv, axes[i])
-
-        # plot axes
-        for p in axes:
-            X3 = np.linspace(-p[0], p[0], 100)
-            Y3 = np.linspace(-p[1], p[1], 100)
-            Z3 = np.linspace(-p[2], p[2], 100)
-            ax.plot(X3, Y3, Z3, color=cage_color)
-            
-        # u = np.linspace(0.0, 2.0 * np.pi, 100)
-        # v = np.linspace(0.0, np.pi, 100)
+        fig = plt.figure(figsize=(10, 10))
+        ax = fig.add_subplot(111, projection='3d')
+        fig.suptitle(title, fontsize=20)
+        
+        value = X + Y + Z
+        max_value = max([abs(x) for x in value]) * 1.2
+        ax.set_xlim(-max_value, max_value)
+        ax.set_ylim(-max_value, max_value)
+        ax.set_zlim(-max_value, max_value)
+        ax.scatter(X, Y, Z, s=5, marker='o', color='g')
+        
+        center = b.flatten()
+        axes = np.array([[1.0, 0.0, 0.0],
+                         [0.0, 1.0, 0.0],
+                         [0.0, 0.0, 1.0]])
+        for i in range(3):
+            p1 = np.dot(A, axes[:, i]) + center
+            p2 = np.dot(A, -axes[:, i]) + center
+            X3 = np.linspace(p1[0], p2[0], 100)
+            Y3 = np.linspace(p1[1], p2[1], 100)
+            Z3 = np.linspace(p1[2], p2[2], 100)
+            ax.plot(X3, Y3, Z3, color="orange")
+             
+        u = np.linspace(0.0, 2.0 * np.pi, 100)
+        v = np.linspace(0.0, np.pi, 100)
     
-        # # cartesian coordinates that correspond to the spherical angles:
-        # x = np.outer(np.cos(u), np.sin(v))
-        # y = np.outer(np.sin(u), np.sin(v))
-        # z = np.outer(np.ones_like(u), np.cos(v))
-        # # rotate accordingly
-        # for i in range(len(x)):
-        #     for j in range(len(x)):
-        #         [x[i, j], y[i, j], z[i, j]] = np.dot([x[i, j], y[i, j], z[i, j]], Ainv)
+        # cartesian coordinates that correspond to the spherical angles:
+        x = np.outer(np.cos(u), np.sin(v))
+        y = np.outer(np.sin(u), np.sin(v))
+        z = np.outer(np.ones_like(u), np.cos(v))
 
-        # if plot_axes:
-        #     # make some purdy axes
-        #     axes = np.array([[radii[0],0.0,0.0],
-        #                     [0.0,radii[1],0.0],
-        #                     [0.0,0.0,radii[2]]])
-        #     # rotate accordingly
-        #     for i in range(len(axes)):
-        #         axes[i] = np.dot(axes[i], rotation)
+        # rotate accordingly
+        for i in range(len(x)):
+            for j in range(len(x)):
+                # print(np.dot(A, np.array([[x[i, j]], [y[i, j]], [z[i, j]]])) + b)
+                # print(np.sqrt(x[i, j] ** 2 + y[i, j] ** 2 + z[i, j] ** 2))
+                [x[i, j], y[i, j], z[i, j]] = np.dot(A, np.array([[x[i, j]], [y[i, j]], [z[i, j]]])) + b
+    
+        
+        # print(np.dot(A, np.array([[1], [0], [0]])) + center)
 
-        #     # plot axes
-        #     for p in axes:
-        #         X3 = np.linspace(-p[0], p[0], 100) + center[0]
-        #         Y3 = np.linspace(-p[1], p[1], 100) + center[1]
-        #         Z3 = np.linspace(-p[2], p[2], 100) + center[2]
-        #         ax.plot(X3, Y3, Z3, color=cage_color)
-
-        # plot ellipsoid
-        # ax.plot_wireframe(x, y, z,  rstride=4, cstride=4, color=cage_color, alpha=cage_alpha)
+        ax.plot_wireframe(x, y, z,  rstride=4, cstride=4, color="orange", alpha=cage_alpha)
 
     def Calibrate(self, path):
         data_mag = np.loadtxt(self.project_root + path, dtype=np.float32)
@@ -161,8 +160,10 @@ class MagnetometerCalibration:
         bm = np.repeat(b, num, axis=1)
         data_mag_cali = np.dot(Ainv, data_mag.T - bm)
         # print(data_mag_cali)
-        
-        self.DrawData(data_mag_cali[0, :].tolist(), data_mag_cali[1, :].tolist(), data_mag_cali[2, :].tolist(), Ainv)
+        A = np.linalg.inv(Ainv)
+        self.DrawEllipsoid(mag_x.tolist(), mag_y.tolist(), mag_z.tolist(), A, b, "Raw Data")
+        self.DrawEllipsoid(data_mag_cali[0, :].tolist(), data_mag_cali[1, :].tolist(), data_mag_cali[2, :].tolist(), np.identity(3), np.array([[0], [0], [0]]), "Calibration Data")
+        plt.show()
 
 
     def ellipsoid_fitting(self, X, Y, Z):

@@ -50,7 +50,7 @@ void SensorsReadTask(void *param) {
         HMC5883LReadMagRaw(mag_raw);
 
         // printf("%u,%d,%d,%d,%d,%d,%d\n", pdTICKS_TO_MS(xTaskGetTickCount()), acc_raw[0], acc_raw[1], acc_raw[2], gyro_raw[0], gyro_raw[1], gyro_raw[2]);
-        // IMUCalibration(acc_raw, gyro_raw, mag_raw, acc, gyro, mag);
+        IMUCalibration(acc_raw, gyro_raw, mag_raw, acc, gyro, mag);
 
         // xQueueOverwrite(acc_raw_queue, acc_raw);
         // xQueueOverwrite(gyro_raw_queue, gyro_raw);
@@ -64,9 +64,9 @@ void SensorsReadTask(void *param) {
         // printf("Gyro : %f %f %f\r\n", gyro[0], gyro[1], gyro[2]);
         // printf("Mag  : %f %f %f\r\n\r\n", mag[0], mag[1], mag[2]);
 
-        // printf("%f,%f,%f,%f,%f,%f,%f,%f,%f,%f\n", (float)pdTICKS_TO_MS(xTaskGetTickCount()), acc[0], acc[1], acc[2], gyro[0], gyro[1], gyro[2], mag[0], mag[1], mag[2]);
+        printf("%f,%f,%f,%f,%f,%f,%f,%f,%f,%f\n", (float)pdTICKS_TO_MS(xTaskGetTickCount()), acc[0], acc[1], acc[2], gyro[0], gyro[1], gyro[2], mag[0], mag[1], mag[2]);
 
-        printf("%f,%d,%d,%d,%d,%d,%d,%d,%d,%d\n", (float)pdTICKS_TO_MS(xTaskGetTickCount()), acc_raw[0], acc_raw[1], acc_raw[2], gyro_raw[0], gyro_raw[1], gyro_raw[2], mag_raw[0], mag_raw[1], mag_raw[2]);
+        // printf("%f,%d,%d,%d,%d,%d,%d,%d,%d,%d\n", (float)pdTICKS_TO_MS(xTaskGetTickCount()), acc_raw[0], acc_raw[1], acc_raw[2], gyro_raw[0], gyro_raw[1], gyro_raw[2], mag_raw[0], mag_raw[1], mag_raw[2]);
 
         vTaskDelayUntil(&last_wait_time, sensors_read_task_wait);
     }
@@ -89,13 +89,17 @@ void IMUCalibration(const int16_t *acc_raw, const int16_t *gyro_raw, const int16
     tmpy = Sg_y * (gyro_raw[1] - Bg_y);
     tmpz = Sg_z * (gyro_raw[2] - Bg_z);
 
-    gyro[0] = (float)tmpx + Tg01 * tmpy + Tg02 * tmpz;
-    gyro[1] = Tg10 * tmpx + (float)tmpy + Tg12 * tmpz;
-    gyro[2] = Tg20 * tmpx + Tg21 * tmpy + (float)tmpz;
+    gyro[0] = tmpx + Tg01 * tmpy + Tg02 * tmpz;
+    gyro[1] = Tg10 * tmpx + tmpy + Tg12 * tmpz;
+    gyro[2] = Tg20 * tmpx + Tg21 * tmpy + tmpz;
 
-    mag[0] = Sm_x * mag_raw[0];
-    mag[1] = Sm_y * mag_raw[1];
-    mag[2] = Sm_z * mag_raw[2];
+    tmpx = mag_raw[0] - Bm_x;
+    tmpy = mag_raw[1] - Bm_y;
+    tmpz = mag_raw[2] - Bm_z;
+
+    mag[0] = tmpx * Tm00 + tmpy * Tm01  + tmpz * Tm02;
+    mag[1] = tmpx * Tm10 + tmpy * Tm11  + tmpz * Tm12;
+    mag[2] = tmpx * Tm20 + tmpy * Tm21  + tmpz * Tm22;
 }
 
 /*
