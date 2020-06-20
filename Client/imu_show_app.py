@@ -1,3 +1,5 @@
+from com_task import ComTask
+import sys
 import time
 import queue
 from matplotlib.figure import Figure
@@ -6,12 +8,6 @@ from PyQt5 import QtCore, QtWidgets
 import random
 import matplotlib
 matplotlib.use('Qt5Agg')
-import sys
-import os
-PACKAGE_PARENT = '..'
-SCRIPT_DIR = os.path.dirname(os.path.realpath(
-    os.path.join(os.getcwd(), os.path.expanduser(__file__))))
-sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)))
 
 
 class MplCanvas(FigureCanvas):
@@ -36,7 +32,6 @@ class MainWindow(QtWidgets.QMainWindow):
 
         # self.mavlink_task = mavlink_task.MavkinkTask("COM5", 115200)
         # self.mavlink_task.start()
-        from com_task import ComTask
         self.com_task = ComTask("COM5", 115200)
         self.com_task.start()
         time.sleep(0.5)
@@ -78,7 +73,7 @@ class MainWindow(QtWidgets.QMainWindow):
             # print(self.mavlink_task.imu_data.qsize())
             # print(self.mavlink_task.imu_data.qsize())
             print('%f\t%f\t%f\t%f\t%f\t%f\t%f\t%f\t%f\t%f' %
-                          (timestamp, xacc, yacc, zacc, xgyro, ygyro, zgyro, xmag, ymag, zmag))
+                  (timestamp, xacc, yacc, zacc, xgyro, ygyro, zgyro, xmag, ymag, zmag))
 
             if(len(self.xgyro_data) < self.n_data - 1):
                 self.xdata.append(timestamp)
@@ -142,7 +137,8 @@ class MainWindow(QtWidgets.QMainWindow):
                 self.canvas.axes[0].set_ylim(-20, 20)
                 self.canvas.axes[1].set_ylim(-35, 35)
                 # self.canvas.axes[1].set_ylim(-0.1, 0.1)
-                self.canvas.axes[2].set_ylim(-1.1, 1.1)【【
+                self.canvas.axes[2].set_ylim(-1.1, 1.1)
+                # self.canvas.axes[2].set_ylim(-1000, 1000)
 
                 self.canvas.axes[0].set_title("Acceleration")
                 self.canvas.axes[1].set_title("Gyroscope")

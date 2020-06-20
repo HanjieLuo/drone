@@ -31,8 +31,8 @@ bool HMC5883LReadMagRaw(int16_t *values) {
     }
 
 	values[0] = (int16_t)(i2c_datas[0] << 8 | i2c_datas [1]);
-	values[1] = (int16_t)(i2c_datas[2] << 8 | i2c_datas [3]);
-	values[2] = (int16_t)(i2c_datas[4] << 8 | i2c_datas [5]); 
+    values[1] = (int16_t)(i2c_datas[4] << 8 | i2c_datas [5]); 
+	values[2] = (int16_t)(i2c_datas[2] << 8 | i2c_datas [3]);
     return true;  
 }
 
@@ -42,8 +42,8 @@ bool HMC5883LReadMag(float *mx, float *my, float *mz) {
     }
 
 	mx_raw = (int16_t)(i2c_datas[0] << 8 | i2c_datas [1]);
-	my_raw = (int16_t)(i2c_datas[2] << 8 | i2c_datas [3]);
-	mz_raw = (int16_t)(i2c_datas[4] << 8 | i2c_datas [5]);
+	mz_raw = (int16_t)(i2c_datas[2] << 8 | i2c_datas [3]);
+	my_raw = (int16_t)(i2c_datas[4] << 8 | i2c_datas [5]);
 
 	*mx = mx_raw / 1090.f;
 	*my = my_raw / 1090.f;

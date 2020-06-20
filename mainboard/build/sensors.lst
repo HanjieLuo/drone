@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 1
   21:Modules/src/sensors.c **** // static TaskHandle_t ms5611_task_handle;
   22:Modules/src/sensors.c **** // STATIC_MEM_TASK_ALLOC(ms5611_task, configMINIMAL_STACK_SIZE *5);
   23:Modules/src/sensors.c **** // static TaskHandle_t hmc5883l_task_handle;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s 			page 2
 
 
   24:Modules/src/sensors.c **** // STATIC_MEM_TASK_ALLOC(hmc5883l_task, configMINIMAL_STACK_SIZE *5);
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 1
   81 003a 1860     		str	r0, [r3]
   30:Modules/src/sensors.c **** 
   31:Modules/src/sensors.c ****     sensors_read_task_handle = STATIC_MEM_TASK_CREATE(sensors_read_task, SensorsReadTask, "SensorsR
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s 			page 3
 
 
   82              		.loc 1 31 5 is_stmt 1 view .LVU10
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 1
   38:Modules/src/sensors.c ****     bool IS_SENSORS_OK = MPU6050Init();
   39:Modules/src/sensors.c ****     IS_SENSORS_OK &= HMC5883LInit();
   40:Modules/src/sensors.c ****     IS_SENSORS_OK &= MS5611Init();
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s 			page 4
 
 
   41:Modules/src/sensors.c ****     if (!IS_SENSORS_OK) return;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 1
   80:Modules/src/sensors.c ****     tmpz = Sa_z * (acc_raw[2] - Ba_z);
  147              		.loc 1 80 5 is_stmt 1 view .LVU15
  148              		.loc 1 80 27 is_stmt 0 view .LVU16
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s 			page 5
 
 
  149 0006 B0F90440 		ldrsh	r4, [r0, #4]
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 1
  198              		.loc 1 85 19 view .LVU35
  199 0078 36EE077A 		vadd.f32	s14, s12, s14
  200              		.loc 1 85 12 view .LVU36
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 6
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s 			page 6
 
 
  201 007c 83ED017A 		vstr.32	s14, [r3, #4]
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 1
  250 00ec 37EE067A 		vadd.f32	s14, s14, s12
  251              		.loc 1 90 17 view .LVU57
  252 00f0 9FED596A 		vldr.32	s12, .L7+68
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 7
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s 			page 7
 
 
  253 00f4 27EE067A 		vmul.f32	s14, s14, s12
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 1
  301 0160 07EE903A 		vmov	s15, r3	@ int
  302              		.loc 1 96 23 view .LVU79
  303 0164 F8EEE77A 		vcvt.f32.s32	s15, s15
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 8
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s 			page 8
 
 
  304 0168 9FED427A 		vldr.32	s14, .L7+96
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 1
  353 01dc 37EE267A 		vadd.f32	s14, s14, s13
  354              		.loc 1 101 48 view .LVU100
  355 01e0 D4ED006A 		vldr.32	s13, [r4]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 9
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s 			page 9
 
 
  356 01e4 DFED2A5A 		vldr.32	s11, .L7+124
@@ -538,21 +538,21 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 1
  408 025c 15D426BA 		.word	-1171860459
  409 0260 FCABA63B 		.word	1000778748
  410 0264 387832BB 		.word	-1154320328
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 10
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s 			page 10
 
 
  411 0268 AC4FBD3B 		.word	1002262444
  412 026c 3328073C 		.word	1007102003
  413 0270 ECD2503C 		.word	1011929836
- 414 0274 3EFD1B43 		.word	1125907774
- 415 0278 0A580F43 		.word	1125079050
- 416 027c 54372E43 		.word	1127102292
- 417 0280 27AB173B 		.word	991406887
- 418 0284 33FC9337 		.word	932445235
- 419 0288 14A9F3B5 		.word	-1242322668
- 420 028c 03D02B3B 		.word	992727043
- 421 0290 C08A8638 		.word	948341440
- 422 0294 BE15143B 		.word	991172030
+ 414 0274 09262643 		.word	1126573577
+ 415 0278 064E3A43 		.word	1127894534
+ 416 027c 671A1D43 		.word	1125980775
+ 417 0280 5D1B153B 		.word	991239005
+ 418 0284 01C39D37 		.word	933085953
+ 419 0288 D83B8338 		.word	948124632
+ 420 028c 6EB3113B 		.word	991015790
+ 421 0290 FB0CECB5 		.word	-1242821381
+ 422 0294 88FA283B 		.word	992541320
  423              		.cfi_endproc
  424              	.LFE140:
  426              		.global	__aeabi_f2d
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 1
  459              	.LVL9:
   38:Modules/src/sensors.c ****     IS_SENSORS_OK &= HMC5883LInit();
  460              		.loc 1 38 26 view .LVU116
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 11
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s 			page 11
 
 
  461 0008 0446     		mov	r4, r0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 1
  499              		.loc 1 50 9 discriminator 1 view .LVU132
  500 0030 1CA8     		add	r0, sp, #112
  501 0032 FFF7FEFF 		bl	HMC5883LReadMagRaw
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 12
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s 			page 12
 
 
  502              	.LVL17:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 1
  552 00a6 FFF7FEFF 		bl	__aeabi_f2d
  553              	.LVL26:
  554 00aa CDE90601 		strd	r0, [sp, #24]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 13
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s 			page 13
 
 
  555 00ae 1B98     		ldr	r0, [sp, #108]	@ float
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 1
  607      00000000 
  607      00000000 
  607      00000000 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 14
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s 			page 14
 
 
  608              		.section	.bss.osSys_acc_raw_queueStorage,"aw",%nobits
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 1
  656      00000000 
  656      00000000 
  656      00000000 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 15
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s 			page 15
 
 
  657              		.section	.rodata.sensors_read_task_wait,"a"
@@ -873,46 +873,46 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 1
  688              		.file 25 "Modules/include/hmc5883l.h"
  689              		.file 26 "Modules/include/ms5611.h"
  690              		.file 27 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\stdio.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s 			page 16
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s 			page 16
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 sensors.c
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:18     .rodata.SensorsInit.str1.4:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:22     .text.SensorsInit:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:30     .text.SensorsInit:00000000 SensorsInit
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:105    .text.SensorsInit:0000005c $d
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:18     .rodata.SensorsInit.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:22     .text.SensorsInit:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:30     .text.SensorsInit:00000000 SensorsInit
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:105    .text.SensorsInit:0000005c $d
                             *COM*:00000004 acc_raw_queue
                             *COM*:00000004 gyro_raw_queue
                             *COM*:00000004 mag_raw_queue
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:439    .text.SensorsReadTask:00000000 SensorsReadTask
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:122    .text.IMUCalibration:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:129    .text.IMUCalibration:00000000 IMUCalibration
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:390    .text.IMUCalibration:00000214 $d
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:439    .text.SensorsReadTask:00000000 SensorsReadTask
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:122    .text.IMUCalibration:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:129    .text.IMUCalibration:00000000 IMUCalibration
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:390    .text.IMUCalibration:00000214 $d
                             *COM*:00000004 tmpz
                             *COM*:00000004 tmpy
                             *COM*:00000004 tmpx
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:428    .rodata.SensorsReadTask.str1.4:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:432    .text.SensorsReadTask:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:589    .text.SensorsReadTask:000000e4 $d
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:661    .rodata.sensors_read_task_wait:00000000 sensors_read_task_wait
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:602    .bss.osSys_acc_raw_queueMgm:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:606    .bss.osSys_acc_raw_queueMgm:00000000 osSys_acc_raw_queueMgm
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:609    .bss.osSys_acc_raw_queueStorage:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:613    .bss.osSys_acc_raw_queueStorage:00000000 osSys_acc_raw_queueStorage
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:616    .bss.osSys_gyro_raw_queueMgm:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:620    .bss.osSys_gyro_raw_queueMgm:00000000 osSys_gyro_raw_queueMgm
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:623    .bss.osSys_gyro_raw_queueStorage:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:627    .bss.osSys_gyro_raw_queueStorage:00000000 osSys_gyro_raw_queueStorage
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:630    .bss.osSys_mag_raw_queueMgm:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:634    .bss.osSys_mag_raw_queueMgm:00000000 osSys_mag_raw_queueMgm
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:637    .bss.osSys_mag_raw_queueStorage:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:641    .bss.osSys_mag_raw_queueStorage:00000000 osSys_mag_raw_queueStorage
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:644    .bss.osSys_sensors_read_taskStackBuffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:648    .bss.osSys_sensors_read_taskStackBuffer:00000000 osSys_sensors_read_taskStackBuffer
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:651    .bss.osSys_sensors_read_taskTaskBuffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:655    .bss.osSys_sensors_read_taskTaskBuffer:00000000 osSys_sensors_read_taskTaskBuffer
-C:\Users\luoha\AppData\Local\Temp\cc0Lwcue.s:658    .rodata.sensors_read_task_wait:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:428    .rodata.SensorsReadTask.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:432    .text.SensorsReadTask:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:589    .text.SensorsReadTask:000000e4 $d
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:661    .rodata.sensors_read_task_wait:00000000 sensors_read_task_wait
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:602    .bss.osSys_acc_raw_queueMgm:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:606    .bss.osSys_acc_raw_queueMgm:00000000 osSys_acc_raw_queueMgm
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:609    .bss.osSys_acc_raw_queueStorage:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:613    .bss.osSys_acc_raw_queueStorage:00000000 osSys_acc_raw_queueStorage
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:616    .bss.osSys_gyro_raw_queueMgm:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:620    .bss.osSys_gyro_raw_queueMgm:00000000 osSys_gyro_raw_queueMgm
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:623    .bss.osSys_gyro_raw_queueStorage:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:627    .bss.osSys_gyro_raw_queueStorage:00000000 osSys_gyro_raw_queueStorage
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:630    .bss.osSys_mag_raw_queueMgm:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:634    .bss.osSys_mag_raw_queueMgm:00000000 osSys_mag_raw_queueMgm
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:637    .bss.osSys_mag_raw_queueStorage:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:641    .bss.osSys_mag_raw_queueStorage:00000000 osSys_mag_raw_queueStorage
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:644    .bss.osSys_sensors_read_taskStackBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:648    .bss.osSys_sensors_read_taskStackBuffer:00000000 osSys_sensors_read_taskStackBuffer
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:651    .bss.osSys_sensors_read_taskTaskBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:655    .bss.osSys_sensors_read_taskTaskBuffer:00000000 osSys_sensors_read_taskTaskBuffer
+C:\Users\luoha\AppData\Local\Temp\ccOOYm9D.s:658    .rodata.sensors_read_task_wait:00000000 $d
 
 UNDEFINED SYMBOLS
 xQueueGenericCreateStatic

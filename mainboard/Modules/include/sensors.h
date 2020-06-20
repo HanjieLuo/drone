@@ -33,10 +33,10 @@ const static float Tg20 = 0.00824933, Tg21 = 0.0127456, Tg22 = 1.0;
 const static float Sg_x = 0.00106156, Sg_y = 0.00105634, Sg_z = 0.00107057;
 const static float Bg_x = 23.5762, Bg_y = 2.65462, Bg_z = -8.9182;
 
-const static float Tm00 = 2.31427865e-03, Tm01 = 1.76412053e-05, Tm02 = -1.81541194e-06;
-const static float Tm10 = 1.76412053e-05, Tm11 = 2.62165140e-03, Tm12 = 6.41546244e-05;
-const static float Tm20 = -1.81541194e-06, Tm21 = 6.41546244e-05, Tm22 = 2.25959672e-03;
-const static float Bm_x = -155.98922035, Bm_y = 143.34390496, Bm_z = 174.21612748;
+const static float Tm00 = 2.27519066e-03, Tm01 = 1.88066651e-05, Tm02 = 6.25771359e-05;
+const static float Tm10 = 1.88066651e-05, Tm11 = 2.22321915e-03, Tm12 = -1.75871479e-06;
+const static float Tm20 = 6.25771359e-05, Tm21 = -1.75871479e-06, Tm22 = 2.57840928e-03;
+const static float Bm_x = -166.14858027, Bm_y = 186.30477602, Bm_z = 157.10313941;
 
 void SensorsInit(void);
 void SensorsReadTask(void *param);
