@@ -3461,41 +3461,41 @@ LOAD e:/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.
                 0x000010e4       0x1e e:/gnu tools arm embedded/9 2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7e-m+fp/hard/crtn.o
 OUTPUT(build/mainboard.elf elf32-littlearm)
 
-.debug_info     0x00000000    0x32bda
+.debug_info     0x00000000    0x32bdb
  .debug_info    0x00000000     0x155d build/usart2.o
  .debug_info    0x0000155d     0x11c7 build/utils.o
  .debug_info    0x00002724     0x18cd build/mpu6050.o
  .debug_info    0x00003ff1     0x187c build/ms5611.o
  .debug_info    0x0000586d     0x15bc build/hmc5883l.o
- .debug_info    0x00006e29     0x1e93 build/sensors.o
- .debug_info    0x00008cbc     0x184f build/i2c1.o
- .debug_info    0x0000a50b     0x1f26 build/main.o
- .debug_info    0x0000c431     0x1494 build/gpio.o
- .debug_info    0x0000d8c5     0x1610 build/dma.o
- .debug_info    0x0000eed5     0x140f build/freertos.o
- .debug_info    0x000102e4     0x1b69 build/i2c.o
- .debug_info    0x00011e4d     0x1a78 build/tim.o
- .debug_info    0x000138c5     0x19b5 build/usart.o
- .debug_info    0x0001527a     0x185d build/stm32f4xx_it.o
- .debug_info    0x00016ad7     0x14f1 build/stm32f4xx_hal_msp.o
- .debug_info    0x00017fc8      0xd9e build/stm32f4xx_hal_timebase_tim.o
- .debug_info    0x00018d66      0xc44 build/stm32f4xx_hal_rcc.o
- .debug_info    0x000199aa      0x915 build/stm32f4xx_hal_gpio.o
- .debug_info    0x0001a2bf      0xc8b build/stm32f4xx_hal_dma.o
- .debug_info    0x0001af4a     0x123e build/stm32f4xx_hal_cortex.o
- .debug_info    0x0001c188      0xb5e build/stm32f4xx_hal.o
- .debug_info    0x0001cce6     0x3b0f build/stm32f4xx_hal_i2c.o
- .debug_info    0x000207f5     0x39b3 build/stm32f4xx_hal_tim.o
- .debug_info    0x000241a8     0x187c build/stm32f4xx_hal_tim_ex.o
- .debug_info    0x00025a24     0x1b31 build/stm32f4xx_hal_uart.o
- .debug_info    0x00027555      0x63c build/system_stm32f4xx.o
- .debug_info    0x00027b91      0xca4 build/list.o
- .debug_info    0x00028835     0x2d69 build/queue.o
- .debug_info    0x0002b59e     0x3464 build/tasks.o
- .debug_info    0x0002ea02     0x2dbe build/cmsis_os.o
- .debug_info    0x000317c0      0xe30 build/heap_4.o
- .debug_info    0x000325f0      0x5c8 build/port.o
- .debug_info    0x00032bb8       0x22 build/startup_stm32f407xx.o
+ .debug_info    0x00006e29     0x1e94 build/sensors.o
+ .debug_info    0x00008cbd     0x184f build/i2c1.o
+ .debug_info    0x0000a50c     0x1f26 build/main.o
+ .debug_info    0x0000c432     0x1494 build/gpio.o
+ .debug_info    0x0000d8c6     0x1610 build/dma.o
+ .debug_info    0x0000eed6     0x140f build/freertos.o
+ .debug_info    0x000102e5     0x1b69 build/i2c.o
+ .debug_info    0x00011e4e     0x1a78 build/tim.o
+ .debug_info    0x000138c6     0x19b5 build/usart.o
+ .debug_info    0x0001527b     0x185d build/stm32f4xx_it.o
+ .debug_info    0x00016ad8     0x14f1 build/stm32f4xx_hal_msp.o
+ .debug_info    0x00017fc9      0xd9e build/stm32f4xx_hal_timebase_tim.o
+ .debug_info    0x00018d67      0xc44 build/stm32f4xx_hal_rcc.o
+ .debug_info    0x000199ab      0x915 build/stm32f4xx_hal_gpio.o
+ .debug_info    0x0001a2c0      0xc8b build/stm32f4xx_hal_dma.o
+ .debug_info    0x0001af4b     0x123e build/stm32f4xx_hal_cortex.o
+ .debug_info    0x0001c189      0xb5e build/stm32f4xx_hal.o
+ .debug_info    0x0001cce7     0x3b0f build/stm32f4xx_hal_i2c.o
+ .debug_info    0x000207f6     0x39b3 build/stm32f4xx_hal_tim.o
+ .debug_info    0x000241a9     0x187c build/stm32f4xx_hal_tim_ex.o
+ .debug_info    0x00025a25     0x1b31 build/stm32f4xx_hal_uart.o
+ .debug_info    0x00027556      0x63c build/system_stm32f4xx.o
+ .debug_info    0x00027b92      0xca4 build/list.o
+ .debug_info    0x00028836     0x2d69 build/queue.o
+ .debug_info    0x0002b59f     0x3464 build/tasks.o
+ .debug_info    0x0002ea03     0x2dbe build/cmsis_os.o
+ .debug_info    0x000317c1      0xe30 build/heap_4.o
+ .debug_info    0x000325f1      0x5c8 build/port.o
+ .debug_info    0x00032bb9       0x22 build/startup_stm32f407xx.o
 
 .debug_abbrev   0x00000000     0x5b6a
  .debug_abbrev  0x00000000      0x2b3 build/usart2.o

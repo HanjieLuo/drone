@@ -39,6 +39,25 @@ class ComTask(threading.Thread):
                 acc_file.write(acc_data)
                 gyro_file.write(gyro_data)
                 print('%f\t%f\t%f\t%f\t%f\t%f\t%f' % (data[0], data[1], data[2], data[3], data[4], data[5], data[6]))
+    
+    def record_data2(self):
+        ts = calendar.timegm(time.gmtime())
+        file = open('./magnetometer_calibration/data/drone_imu_' + str(ts) + '.txt', 'w')
+        
+        def cleanup():
+            print("Exit")
+            file.close()
+        
+        atexit.register(cleanup)
+            
+        while True:
+            if self.data_string is not None:
+                data = np.fromstring(self.data_string.decode('UTF-8'), dtype=float, sep=',')
+                if data.shape[0] == 10:
+                    imu_data = '%f,%f,%f,%f,%f,%f,%f,%f,%f,%f\n' % (data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9])
+                    file.write(imu_data)
+                    print('%f\t%f\t%f\t%f\t%f\t%f\t%f\t%f\t%f\t%f' % (data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9]))
+                    time.sleep(0.1)
 
     def run(self):
         self.getIMU()
@@ -76,10 +95,9 @@ class ComTask(threading.Thread):
         
         
 if __name__ == "__main__":
-    com_task = ComTask("COM3", 115200)
+    com_task = ComTask("COM5", 115200)
     com_task.start()
-    while(True):
-        print(com_task.getData())
+    # while(True):
+    #     print(com_task.getData())
     
-    # com_task.record_data()
-
+    com_task.record_data2()

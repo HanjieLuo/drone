@@ -9,7 +9,7 @@ STATIC_MEM_QUEUE_ALLOC(mag_raw_queue, 1, sizeof(float) * 3);
 
 static TaskHandle_t sensors_read_task_handle;
 STATIC_MEM_TASK_ALLOC(sensors_read_task, configMINIMAL_STACK_SIZE * 3);
-const TickType_t sensors_read_task_wait = pdMS_TO_TICKS(10);
+const TickType_t sensors_read_task_wait = pdMS_TO_TICKS(100);
 
 float tmpx, tmpy, tmpz;
 
