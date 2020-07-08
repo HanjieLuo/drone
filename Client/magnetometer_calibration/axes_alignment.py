@@ -3,10 +3,13 @@ import atexit
 import time
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
+from mpl_toolkits.mplot3d import proj3d
+from matplotlib.patches import FancyArrowPatch
 import numpy as np
 import sys
 import os
 import cv2
+import math
 from liegroups.numpy import SO3
 PACKAGE_PARENT = '..'
 SCRIPT_DIR = os.path.dirname(os.path.realpath(
@@ -14,40 +17,116 @@ SCRIPT_DIR = os.path.dirname(os.path.realpath(
 sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)))
 
 
+class Arrow3D(FancyArrowPatch):
+    def __init__(self, xs, ys, zs, *args, **kwargs):
+        FancyArrowPatch.__init__(self, (0,0), (0,0), *args, **kwargs)
+        self._verts3d = xs, ys, zs
+
+    def draw(self, renderer):
+        xs3d, ys3d, zs3d = self._verts3d
+        xs, ys, zs = proj3d.proj_transform(xs3d, ys3d, zs3d, renderer.M)
+        self.set_positions((xs[0],ys[0]),(xs[1],ys[1]))
+        FancyArrowPatch.draw(self, renderer)
+
+
 class AxesAlign:
     def __init__(self):
         self.project_root = os.path.dirname(os.path.realpath(__file__))
 
-    def TestDataGenerator(self, num, R=None, noise=False):
+    def VirtualDataGenerator(self, num, theta=None, R=None, noise=False):
         if R is None:
             axis = np.random.standard_normal((3,))
-            # print(axis)
-            # print(np.linalg.norm(axis))
             axis /= np.linalg.norm(axis)
-            # print(axis)
             theta = np.random.uniform(0, 2*np.pi)
             axis *= theta
-            # print(axis)
             R, _ = cv2.Rodrigues(axis)
-
-        result = []
-        for i in range(num):
-            acc = np.random.standard_normal((3, 1))
-            acc /= np.linalg.norm(acc)
-
-            mag = np.dot(R, acc)
-            if noise is True:
-                e = np.random.normal(0, 0.01, size=(3, 1))
-                mag += e
-
-            mag /= np.linalg.norm(mag)
-
-            result.append([acc[0, 0], acc[1, 0], acc[2, 0], mag[0, 0], mag[1, 0], mag[2, 0]])
         
-        return np.array(result), R
+        if theta is None:
+            theta = np.random.uniform(low=-np.pi, high=np.pi)
 
-    def DrawData(self, acc, mag):
-        num = acc.shape[0]
+        d = math.cos(theta)
+        
+        data_acc = np.zeros((3, num))
+        data_mag = np.zeros((3, num))
+    
+        for i in range(num):
+            mag = np.random.standard_normal((3))
+            mag /= np.linalg.norm(mag)
+            
+            mag_n = np.dot(R, mag)
+                        
+            if noise is True:
+                e = np.random.normal(0, 0.01, size=(3))
+                theta += e
+            
+            while True:
+                acc = np.random.standard_normal((3))
+                
+                A = mag_n[0] * acc[0] + mag_n[1] * acc[1]
+                B = (acc[0] * acc[0] + acc[1] * acc[1]) * d * d
+                D = mag_n[2] * mag_n[2] - d * d
+                E = 2 * A * mag_n[2]
+                F = A * A - B
+                
+                if (E * E - 4 * D * F) < 0:
+                    continue
+                
+                acc[2] = (- E + math.sqrt(E * E - 4 * D * F)) / (2 * D)
+                acc /= np.linalg.norm(acc)
+                
+                acc2 = -acc;
+                
+                e1 = abs(np.dot(acc.T, mag_n) - d)
+                e2 = abs(np.dot(acc2.T, mag_n) - d)
+                
+                if(e2 < e1):
+                    acc = acc2
+                    
+                break
+            # acc = np.dot(R, mag)
+            # if noise is True:
+            #     e = np.random.normal(0, 0.01, size=(3))
+            #     acc += e
+
+            # acc /= np.linalg.norm(acc)
+
+            data_acc[:, i] = acc
+            data_mag[:, i] = mag
+        
+        return data_acc, data_mag, R, d
+    
+    def DrawAxes(self, R):
+        fig = plt.figure(figsize=(10, 10))
+        ax = fig.add_subplot(111, projection='3d')
+        ax.set_xlim(-1.2, 1.2)
+        ax.set_ylim(-1.2, 1.2)
+        ax.set_zlim(-1.2, 1.2)
+        ax.set_xlabel('X axis')
+        ax.set_ylabel('Y axis')
+        ax.set_zlabel('Z axis')
+        
+        acc_X = Arrow3D([0,1],[0,0],[0,0], mutation_scale=20, lw=1, arrowstyle="-|>", color="r")
+        acc_Y = Arrow3D([0,0],[0,1],[0,0], mutation_scale=20, lw=1, arrowstyle="-|>", color="g")
+        acc_Z = Arrow3D([0,0],[0,0],[0,1], mutation_scale=20, lw=1, arrowstyle="-|>", color="b")
+        
+        mag_X = Arrow3D([0, R[0, 0]],[0, R[0, 1]],[0, R[0, 2]], mutation_scale=20, lw=1, arrowstyle="-|>", color="r", linestyle="dashed")
+        mag_Y = Arrow3D([0, R[1, 0]],[0, R[1, 1]],[0, R[1, 2]], mutation_scale=20, lw=1, arrowstyle="-|>", color="g", linestyle="dashed")
+        mag_Z = Arrow3D([0, R[2, 0]],[0, R[2, 1]],[0, R[2, 2]], mutation_scale=20, lw=1, arrowstyle="-|>", color="b", linestyle="dashed")
+
+        ax.add_artist(acc_X)
+        ax.add_artist(acc_Y)
+        ax.add_artist(acc_Z)
+        ax.add_artist(mag_X)
+        ax.add_artist(mag_Y)
+        ax.add_artist(mag_Z)
+    
+        ax.scatter([0],[0],[0],color="y",s=20)
+
+        plt.show()
+        
+
+    def DrawData(self, acc, mag, R=None, show_mag=False):
+        num = acc.shape[1]
 
         fig = plt.figure(figsize=(10, 10))
         ax = fig.add_subplot(111, projection='3d')
@@ -57,131 +136,140 @@ class AxesAlign:
         ax.set_xlabel('X axis')
         ax.set_ylabel('Y axis')
         ax.set_zlabel('Z axis')
+        
+        px = np.zeros(num)
+        py = np.zeros(num)
+        pz = np.zeros(num)
+        
+        pu = acc[0, :]
+        pv = acc[1, :]
+        pw = acc[2, :]
 
-        x = np.zeros(num)
-        y = np.zeros(num)
-        z = np.zeros(num)
-        u = acc[:, 0]
-        v = acc[:, 1]
-        w = acc[:, 2]
+        l1 = ax.quiver(px, py, pz, pu, pv, pw, arrow_length_ratio=0.1, linewidths=0.5, colors="red")
 
-        ax.quiver(x, y, z, u, v, w, arrow_length_ratio=0.1, colors="red")
+        if show_mag is True:
+            pu = mag[0, :]
+            pv = mag[1, :]
+            pw = mag[2, :]
+            ax.quiver(px, py, pz, pu, pv, pw, arrow_length_ratio=0.1, linewidths=0.5, colors="blue")
 
-        u = mag[:, 0]
-        v = mag[:, 1]
-        w = mag[:, 2]
+        if R is not None:
+            m_align = np.dot(R, mag)
 
-        ax.quiver(x, y, z, u, v, w, arrow_length_ratio=0.1, colors="blue")
+            pu = m_align[0, :]
+            pv = m_align[1, :]
+            pw = m_align[2, :]
+
+            l2 = ax.plot(pu, pv, pw, 'ob', markersize=3)
+            
+            plt.legend(handles=[l1, l2[0]], labels=['Accelerometer vectors', 'Aligned Magnetometer vectors'])
 
         plt.show()
 
-    def Align(self, acc, mag):
-        num = acc.shape[0]
+    def Align(self, acc, mag, max_itor=100, norm=False, debug_show=False):
+        num = acc.shape[1]
 
         x = np.zeros((4, 1))
         J = np.ones((num, 4))
         f = np.zeros((num, 1)) 
-
-        px = np.zeros(num)
-        py = np.zeros(num)
-        pz = np.zeros(num)
+        
+        if norm is True:
+            acc /= np.linalg.norm(acc, axis=0)
+            mag /= np.linalg.norm(mag, axis=0)
 
         idx = 0
+        flag = False
         while True:
             d = x[3, 0]
-            R = SO3.exp(np.array([x[0, 0], x[1, 0], x[2, 0]])).mat
+            R = SO3.exp(x[:3, 0]).mat
 
             for i in range(num):
-                a = acc[i].reshape(3, 1)
-                m = mag[i].reshape(3, 1)
+                a = acc[:, i]
+                m = mag[:, i]
                 
                 f[i] = d - np.dot(np.dot(a.T, R), m)
                 
-                ahat = np.array([[0, -a[2,0], a[1,0]], [a[2,0], 0, -a[0,0]], [-a[1,0], a[0, 0], 0]])
+                ahat = np.array([[0, -a[2], a[1]], [a[2], 0, -a[0]], [-a[1], a[0], 0]])
 
-                J[i, :3] = - np.dot(np.dot(m.T, R), ahat)
+                J[i, :3] = - np.dot((np.dot(R, m)).T, ahat)
 
             Jt_J_inv = np.linalg.inv(np.dot(J.T, J))
             dx = - np.dot(Jt_J_inv, np.dot(J.T, f))      
             x += dx
             
             dx_norm = np.linalg.norm(dx)
-            print(str(idx) + ", " + str(dx_norm))
+            
+            # if debug_show is True:
+            #     print(str(idx) + ", " + str(dx_norm))
+            
             idx+=1
             
-            if(dx_norm < 1e-8):
+            if dx_norm < 1e-8:
+                flag = True
+                break
+            
+            if idx > max_itor:
                 break
         
+        if flag is False:
+            return False, np.eye(3), 0
+
         d = x[3, 0]
-        R = SO3.exp(np.array([x[0, 0], x[1, 0], x[2, 0]])).mat
-        # print("======= Result =======")
-        # print("R:")
-        # print(R)
-        # print("d:")
-        # print(d)
+        R = SO3.exp(x[:3, 0]).mat
         
-        fig = plt.figure(figsize=(10, 10))
-        ax = fig.add_subplot(111, projection='3d')
-        ax.set_xlim(-1.2, 1.2)
-        ax.set_ylim(-1.2, 1.2)
-        ax.set_zlim(-1.2, 1.2)
-        ax.set_xlabel('X axis')
-        ax.set_ylabel('Y axis')
-        ax.set_zlabel('Z axis')
+        if debug_show is True:
+            # self.DrawData(acc, mag, R)
+            self.DrawAxes(R)
         
-        pu = acc[:, 0]
-        pv = acc[:, 1]
-        pw = acc[:, 2]
+        return True, R, d
 
-        ax.quiver(px, py, pz, pu, pv, pw, arrow_length_ratio=0.1, colors="red")
+    def TestVirtualData(self, num):
+        # Method 1
+        theta = np.pi / 4
+        R = np.array([[1, 0, 0], [0, np.cos(theta), -np.sin(theta)], [0, np.sin(theta), np.cos(theta)]])
+        data_acc, data_mag, R_gt, d_gt = self.VirtualDataGenerator(num, R, noise=False)
+        
+        # Method 2
+        # data_acc, data_mag, R_gt = self.TestDataGenerator(num, noise=False)
+        
+        flag, R, d = self.Align(data_acc, data_mag, debug_show=True)
+    
+        print("R_gt")
+        print(R_gt)
+        print("d_gt")
+        print(d_gt)
+        print("R result")
+        print(R)
+        print("d")
+        print(d)
+    
+    def TestRealData(self, path):
+        data = np.loadtxt(self.project_root + path, dtype=np.float32, delimiter=",")
+        
+        num = data.shape[0]
+        print(num)
+        indexs = np.random.choice(np.arange(num), 1500, replace=False)
 
-        # pu = mag[:, 0]
-        # pv = mag[:, 1]
-        # pw = mag[:, 2]
+        acc = data[indexs, 1:4].T
+        mag = data[indexs, 7:].T
+        
+        acc /= np.linalg.norm(acc, axis=0)
+        mag /= np.linalg.norm(mag, axis=0)
 
-        # ax.quiver(px, py, pz, pu, pv, pw, arrow_length_ratio=0.1, colors="blue")
-
-        m_align = (np.dot(R, mag.T)).T
-
-        pu = m_align[:, 0]
-        pv = m_align[:, 1]
-        pw = m_align[:, 2]
-
-        ax.plot(pu, pv, pw, 'ob', markersize=3)
-        # ax.quiver(px, py, pz, pu, pv, pw, arrow_length_ratio=0.1, colors="yellow")
-
-        plt.show()
-        return R, d
-
+        # self.DrawData(acc, mag, show_mag=True)
+        
+        flag, R, d = self.Align(acc, mag, debug_show=True)
+        
+        print("R")
+        print(R)
+        print("d")
+        print(d)
+        
 
 if __name__ == "__main__":
     axes_align = AxesAlign()
-
-    # theta = 0.1
-    # R = np.array([[1, 0, 0], [0, np.cos(theta), -np.sin(theta)], [0, np.sin(theta), np.cos(theta)]])
-    # print(R)
-    # data = axes_align.TestDataGenerator(100, R, noise=False)
-
-    data, R = axes_align.TestDataGenerator(1000, noise=False)
     
-    acc = data[:, :3]
-    mag = data[:, 3:]
-
-    # axes_align.DrawData(acc, mag)
-
-    R_fit, d_fit = axes_align.Align(acc, mag)
+    # axes_align.TestVirtualData(100)
     
-    print(R)
-    print(R_fit)
-    print(np.dot(R.T, R_fit))
-    # print(np.linalg.norm(R_fit[:, 0]))
-    # print(np.linalg.norm(R_fit[:, 1]))
-    # print(np.linalg.norm(R_fit[:, 2]))
-    
-    
-
-
-    # data = np.loadtxt(axes_align.project_root + "/data/drone_mag_1590423949.txt", dtype=np.float32)
-    
-    # mag_cali.Calibrate(mag_x, mag_y, mag_z)
+    axes_align.TestRealData("/data/drone_imu_1594140390.txt")
     
