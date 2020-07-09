@@ -203,6 +203,8 @@ class AxesAlign:
             idx += 1
             if idx > max_itor:
                 break
+        
+        self.DrawAxes(R_best)
 
         return flag_best, R_best, d_best
 
@@ -314,5 +316,9 @@ if __name__ == "__main__":
     
     # axes_align.TestVirtualData(100)
     
-    axes_align.TestRealData("/data/drone_imu_1594140390.txt")
+    # axes_align.TestRealData("/data/drone_imu_1594140390.txt")
+    
+    R = np.array( [[ 9.98554420e-01,1.59317702e-02,-5.13346769e-02],[-1.59614459e-02,9.99872594e-01,-1.68150874e-04],[ 5.13254576e-02,9.87283469e-04,9.98681492e-01]])
+    Ainv = np.array( [[ 2.27519066e-03,1.88066651e-05,6.25771359e-05],[ 1.88066651e-05,2.22321915e-03,-1.75871479e-06],[ 6.25771359e-05,-1.75871479e-06,2.57840928e-03]])
+    print(np.dot(R,Ainv))
     
