@@ -166,6 +166,47 @@ class AxesAlign:
 
         plt.show()
 
+    def AlignRansac(self, acc, mag, max_itor=100, norm=False, debug_show=False):
+        num = acc.shape[1]
+        num_indexs = np.arange(num)
+
+        if norm is True:
+            acc /= np.linalg.norm(acc, axis=0)
+            mag /= np.linalg.norm(mag, axis=0)
+
+        idx = 0
+        errors_best = 1e10
+        R_best = np.eye(3)
+        d_best = 0.0
+        flag_best = False
+        while True:
+            indexs = np.random.choice(num_indexs, 500, replace=False)
+            acc_sub = acc[:, indexs]
+            mag_sub = mag[:, indexs]
+
+            flag, R, d = self.Align(acc_sub, mag_sub, 30, norm=norm, debug_show=debug_show)
+
+            if flag is True:
+                errors = 0.0
+                for i in range(num):
+                    e = d - np.dot(acc[:, i].T, np.dot(R, mag[:, i]))
+                    errors += (e*e)
+                if errors_best > errors:
+                    errors_best = errors
+                    R_best = R.copy()
+                    d_best = d
+                    print(errors_best)
+
+
+            flag_best = flag_best | flag
+
+            idx += 1
+            if idx > max_itor:
+                break
+
+        return flag_best, R_best, d_best
+
+
     def Align(self, acc, mag, max_itor=100, norm=False, debug_show=False):
         num = acc.shape[1]
 
@@ -245,25 +286,27 @@ class AxesAlign:
     
     def TestRealData(self, path):
         data = np.loadtxt(self.project_root + path, dtype=np.float32, delimiter=",")
-        
-        num = data.shape[0]
-        print(num)
-        indexs = np.random.choice(np.arange(num), 1500, replace=False)
 
-        acc = data[indexs, 1:4].T
-        mag = data[indexs, 7:].T
-        
-        acc /= np.linalg.norm(acc, axis=0)
-        mag /= np.linalg.norm(mag, axis=0)
+        acc = data[:, 1:4].T
+        mag = data[:, 7:].T
 
-        # self.DrawData(acc, mag, show_mag=True)
         
-        flag, R, d = self.Align(acc, mag, debug_show=True)
+        # flag, R, d = self.Align(acc, mag, norm=True, debug_show=True)
+
+        flag, R, d = self.AlignRansac(acc, mag, 3000, norm=True, debug_show=False)
         
         print("R")
         print(R)
         print("d")
         print(d)
+
+        # 17.929908083938276
+        # R
+        # [[ 9.98554420e-01  1.59317702e-02 -5.13346769e-02]
+        #  [-1.59614459e-02  9.99872594e-01 -1.68150874e-04]
+        #  [ 5.13254576e-02  9.87283469e-04  9.98681492e-01]]
+        # d
+        # 0.6394624321452079
         
 
 if __name__ == "__main__":
