@@ -343,10 +343,11 @@ class AxesAlign:
         print("d")
         print(d)
     
-    def StaticIntervalsDetector(self, data, T_init=50, T_wait=2, static_std_scale=2):
+    def StaticIntervalsDetector(self, data, T_init=50, T_wait=2, static_std_scale=2, debug_show=False):
         data_num = data.shape[0]
 
         acc = data[:, 1:4]
+        mag = data[:, 7:]
         dt =  (data[:, 0] - data[0, 0] ) * 0.001
         
         idx_init_end = 0
@@ -357,7 +358,7 @@ class AxesAlign:
         
         acc_init = acc[:idx_init_end, :]
         acc_static_std = np.std(acc_init, axis=0, ddof=1) * static_std_scale
-        print(acc_static_std)
+        # print(acc_static_std)
         
         win_size = np.round(T_wait / dt[1])
         if win_size % 2 == 0:
@@ -365,39 +366,46 @@ class AxesAlign:
         half_win_size = int(win_size / 2)
 
         static_intervals = []
+        static_indexs = []
         find_interval_start = False
         start_id = 0
         for i in range(idx_init_end + half_win_size, data_num - half_win_size):
             acc_interval = acc[i - half_win_size: i + half_win_size + 1, :]
             acc_interval_std = np.std(acc_interval, axis=0, ddof=1)
-            # print(acc_interval)
-            # print(acc_interval_std)
-            # c = sys.stdin.read(1)
             if acc_interval_std[0] <= acc_static_std[0] and acc_interval_std[1] <= acc_static_std[1] and acc_interval_std[2] <= acc_static_std[2]:
                 if find_interval_start is False:
                     start_id = i
                     find_interval_start = True
+                static_indexs.append(i)
             else:
                 if find_interval_start is True:
-                    static_intervals.append([start_id, i])
+                    static_intervals.append([start_id, i - 1])
                     find_interval_start = False
+        if find_interval_start is True:
+            static_intervals.append([start_id, i])
+
+        acc_static = acc.take(static_indexs, axis=0)
+        mag_static = mag.take(static_indexs, axis=0)
+            
+        if debug_show is True:
+            # print(len(static_intervals))
+            static_show = []
+            for idx in static_intervals:
+                static_show.append((dt[idx[0]], dt[idx[1]] - dt[idx[0]]))
+            
+            # c = sys.stdin.read(1)
+            # print(static_intervals)
+            fig, ax = plt.subplots() 
+            # plt.plot(dt, acc[:, 0], 'r-', dt, acc[:, 1], 'g-', dt, acc[:, 2], 'b-')
+            ax.plot(dt, acc[:, 0], 'r-', label='acc x')  # Plot some data on the axes.
+            ax.plot(dt, acc[:, 1], 'g-', label='acc y')  # Plot more data on the axes...
+            ax.plot(dt, acc[:, 2], 'b-', label='acc z')  # ... and some more.
+            ax.broken_barh(static_show, (-20, 40), facecolors ='tab:cyan', label='static interval') 
+            ax.set_ylim(-20, 20)
+            ax.legend()
+            plt.show()
         
-        print(len(static_intervals))
-        static_show = []
-        for idx in static_intervals:
-            static_show.append((dt[idx[0]], dt[idx[1]] - dt[idx[0]]))
-        
-        # c = sys.stdin.read(1)
-        # print(static_intervals)
-        fig, ax = plt.subplots() 
-        # plt.plot(dt, acc[:, 0], 'r-', dt, acc[:, 1], 'g-', dt, acc[:, 2], 'b-')
-        ax.plot(dt, acc[:, 0], 'r-', label='acc x')  # Plot some data on the axes.
-        ax.plot(dt, acc[:, 1], 'g-', label='acc y')  # Plot more data on the axes...
-        ax.plot(dt, acc[:, 2], 'b-', label='acc z')  # ... and some more.
-        ax.broken_barh(static_show, (-20, 40), facecolors ='tab:cyan', label='static interval') 
-        ax.set_ylim(-20, 20)
-        ax.legend()
-        plt.show()
+        return acc_static, mag_static
         
     def RunRealData(self, path):
         data = np.loadtxt(self.project_root + path, dtype=np.float32, delimiter=",")
@@ -406,29 +414,35 @@ class AxesAlign:
         mag_norm = np.linalg.norm(data[:, 7:], axis=1)
         data_inlider = data[(mag_norm<1.2) & (mag_norm > 0.8)]
         
-        self.StaticIntervalsDetector(data_inlider)
-
-
-        # acc = data[:, 1:4].T
-        # mag = data[:, 7:].T
-
+        acc_static, mag_static = self.StaticIntervalsDetector(data_inlider)
+        # x = np.arange(acc_static.shape[0])
+        # plt.plot(x, acc_static[:, 0], 'r-', x, acc_static[:, 1], 'g-', x, acc_static[:, 2], 'b-')
+        # plt.show()
         
-        # flag, R, d = self.Align(acc, mag, norm=True, debug_show=True)
+        # flag, R, d = self.Align(acc_static.T, mag_static.T, norm=True, debug_show=True)
 
-        # flag, R, d = self.AlignRansac(acc, mag, 3000, norm=True, debug_show=False)
+        flag, R, d = self.AlignRansac(acc_static.T, mag_static.T, 3000, norm=True, debug_show=False)
         
-        # print("R")
-        # print(R)
-        # print("d")
-        # print(d)
+        
+        np.set_printoptions(precision=10)
+        print("R")
+        print(R)
+        print("d")
+        print(d)
 
-        # 17.929908083938276
+        # error: 6.020256221141558
         # R
-        # [[ 9.98554420e-01  1.59317702e-02 -5.13346769e-02]
-        #  [-1.59614459e-02  9.99872594e-01 -1.68150874e-04]
-        #  [ 5.13254576e-02  9.87283469e-04  9.98681492e-01]]
+        # [[ 0.9996613759 -0.0145143345  0.0215978633]
+        #  [ 0.0144040375  0.9998824543  0.0052536868]
+        #  [-0.0216715783 -0.0049408113  0.999752935 ]]
         # d
-        # 0.6394624321452079
+        # 0.6433718256321436
+        # Tm = R * Ainv
+        # [[ 2.2754987917e-03 -1.3506234138e-05  1.1826960352e-04]
+        # [ 5.1905146781e-05  2.2232194724e-03  1.2689010139e-05]
+        # [ 1.3161782481e-05 -1.3150356768e-05  2.5764247895e-03]]
+
+        return R, d
         
 
 if __name__ == "__main__":
@@ -437,9 +451,10 @@ if __name__ == "__main__":
     # axes_align.RunVirtualData(100)
     
     # axes_align.RecordCaliData()
-    axes_align.RunRealData("/data/drone_calied_acc_gyro_mag_1612700585.txt")
+    R, d = axes_align.RunRealData("/data/drone_calied_acc_gyro_mag_1612700585.txt")
     
-    # R = np.array( [[ 9.98554420e-01,1.59317702e-02,-5.13346769e-02],[-1.59614459e-02,9.99872594e-01,-1.68150874e-04],[ 5.13254576e-02,9.87283469e-04,9.98681492e-01]])
+    # R = np.array( [[0.9996613759, -0.0145143345,  0.0215978633],[0.0144040375,  0.9998824543,  0.0052536868],[-0.0216715783, -0.0049408113,  0.999752935]])
     # Ainv = np.array( [[ 2.27519066e-03,1.88066651e-05,6.25771359e-05],[ 1.88066651e-05,2.22321915e-03,-1.75871479e-06],[ 6.25771359e-05,-1.75871479e-06,2.57840928e-03]])
+    # np.set_printoptions(precision=10)
     # print(np.dot(R,Ainv))
     
