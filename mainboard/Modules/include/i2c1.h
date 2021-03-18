@@ -17,4 +17,7 @@ void HAL_I2C_MemTxCpltCallback(I2C_HandleTypeDef *hi2c);
 void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *hi2c);
 void HAL_I2C_MasterRxCpltCallback(I2C_HandleTypeDef *hi2c);
 
+// ============================== Test =================================
+void TestI2C1MenRead();
+
 #endif /* __I2C1_H */

@@ -32,6 +32,13 @@ DMA_HandleTypeDef hdma_i2c1_tx;
 void MX_I2C1_Init(void)
 {
 
+  /* USER CODE BEGIN I2C1_Init 0 */
+
+  /* USER CODE END I2C1_Init 0 */
+
+  /* USER CODE BEGIN I2C1_Init 1 */
+
+  /* USER CODE END I2C1_Init 1 */
   hi2c1.Instance = I2C1;
   hi2c1.Init.ClockSpeed = 400000;
   hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
@@ -45,6 +52,9 @@ void MX_I2C1_Init(void)
   {
     Error_Handler();
   }
+  /* USER CODE BEGIN I2C1_Init 2 */
+
+  /* USER CODE END I2C1_Init 2 */
 
 }
 
@@ -83,7 +93,7 @@ void HAL_I2C_MspInit(I2C_HandleTypeDef* i2cHandle)
     hdma_i2c1_rx.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
     hdma_i2c1_rx.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
     hdma_i2c1_rx.Init.Mode = DMA_NORMAL;
-    hdma_i2c1_rx.Init.Priority = DMA_PRIORITY_MEDIUM;
+    hdma_i2c1_rx.Init.Priority = DMA_PRIORITY_HIGH;
     hdma_i2c1_rx.Init.FIFOMode = DMA_FIFOMODE_DISABLE;
     if (HAL_DMA_Init(&hdma_i2c1_rx) != HAL_OK)
     {
@@ -101,7 +111,7 @@ void HAL_I2C_MspInit(I2C_HandleTypeDef* i2cHandle)
     hdma_i2c1_tx.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
     hdma_i2c1_tx.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
     hdma_i2c1_tx.Init.Mode = DMA_NORMAL;
-    hdma_i2c1_tx.Init.Priority = DMA_PRIORITY_MEDIUM;
+    hdma_i2c1_tx.Init.Priority = DMA_PRIORITY_HIGH;
     hdma_i2c1_tx.Init.FIFOMode = DMA_FIFOMODE_DISABLE;
     if (HAL_DMA_Init(&hdma_i2c1_tx) != HAL_OK)
     {

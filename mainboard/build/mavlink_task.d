@@ -231,9 +231,9 @@ build/mavlink_task.o: Modules/src/mavlink_task.c \
  Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
@@ -251,7 +251,8 @@ build/mavlink_task.o: Modules/src/mavlink_task.c \
  Inc/tim.h Modules/include/sensors.h Modules/include/hmc5883l.h \
  Modules/include/i2c1.h Inc/i2c.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
- Modules/include/mpu6050.h Modules/include/ms5611.h
+ Modules/include/mpu6050.h Modules/include/ms5611.h \
+ Modules/include/system_task.h Modules/include/config.h
 
 Modules/include/mavlink_task.h:
 
@@ -725,11 +726,11 @@ Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h:
 
-Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h:
-
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h:
 
@@ -778,3 +779,7 @@ Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 Modules/include/mpu6050.h:
 
 Modules/include/ms5611.h:
+
+Modules/include/system_task.h:
+
+Modules/include/config.h:

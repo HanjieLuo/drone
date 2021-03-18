@@ -3,7 +3,7 @@
     "ABOUT2": "User should not edit this fields, instead it should edit 'c_cpp_properties.json'",
     "ABOUT3": "This file is regenerated on 'Update workspace' task.",
     "VERSION": "1.7",
-    "LAST_RUN": "2021-03-14 02:32:54.493991",
+    "LAST_RUN": "2021-03-18 22:38:49.988819",
     "cSources": [
         "Modules/src/usart2.c",
         "Modules/src/motor.c",
@@ -15,6 +15,7 @@
         "Modules/src/sensors.c",
         "Modules/src/i2c1.c",
         "Modules/src/dmp.c",
+        "Modules/src/system_task.c",
         "Src/main.c",
         "Src/gpio.c",
         "Src/dma.c",

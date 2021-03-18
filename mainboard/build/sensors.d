@@ -19,9 +19,9 @@ build/sensors.o: Modules/src/sensors.c Modules/include/sensors.h \
  Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
@@ -40,7 +40,9 @@ build/sensors.o: Modules/src/sensors.c Modules/include/sensors.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
  Modules/include/mpu6050.h Modules/include/ms5611.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+ Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
+ Modules/include/system_task.h Modules/include/config.h \
+ Modules/include/sensors.h
 
 Modules/include/sensors.h:
 
@@ -94,11 +96,11 @@ Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h:
 
-Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h:
-
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h:
 
@@ -141,3 +143,9 @@ Modules/include/ms5611.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 
 Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
+
+Modules/include/system_task.h:
+
+Modules/include/config.h:
+
+Modules/include/sensors.h:

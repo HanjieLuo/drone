@@ -7,9 +7,9 @@ STATIC_MEM_QUEUE_ALLOC(gyro_raw_queue, 1, sizeof(float) * 3);
 xQueueHandle mag_raw_queue;
 STATIC_MEM_QUEUE_ALLOC(mag_raw_queue, 1, sizeof(float) * 3);
 
-static TaskHandle_t sensors_read_task_handle;
-STATIC_MEM_TASK_ALLOC(sensors_read_task, configMINIMAL_STACK_SIZE * 3);
-const TickType_t sensors_read_task_wait = pdMS_TO_TICKS(50);
+static TaskHandle_t sensors_task_handle;
+STATIC_MEM_TASK_ALLOC(sensors_task, SENSORS_TASK_STACKSIZE);
+const TickType_t sensors_task_wait = pdMS_TO_TICKS(50);
 
 float tmpx, tmpy, tmpz;
 
@@ -23,34 +23,52 @@ float tmpx, tmpy, tmpz;
 // static TaskHandle_t hmc5883l_task_handle;
 // STATIC_MEM_TASK_ALLOC(hmc5883l_task, configMINIMAL_STACK_SIZE *5);
 
-void SensorsInit(void) {
+bool SensorsInit(void) {
+    printf("Init Sensors...\r\n");
+
+    bool IS_MPU6050_OK = MPU6050Init();
+    printf("MPU6050Init:  %u\r\n", IS_MPU6050_OK);
+
+    bool IS_HMC5883_OK = HMC5883LInit();
+    printf("HMC5883LInit: %u\r\n", IS_HMC5883_OK);
+
+    bool IS_MS5611_OK = MS5611Init();
+    printf("MS5611Init:   %u\r\n", IS_MS5611_OK);
+
     acc_raw_queue = STATIC_MEM_QUEUE_CREATE(acc_raw_queue);
     gyro_raw_queue = STATIC_MEM_QUEUE_CREATE(gyro_raw_queue);
     mag_raw_queue = STATIC_MEM_QUEUE_CREATE(mag_raw_queue);
 
-    sensors_read_task_handle = STATIC_MEM_TASK_CREATE(sensors_read_task, SensorsReadTask, "SensorsReadTask", NULL, 5);
+    sensors_task_handle = STATIC_MEM_TASK_CREATE(sensors_task, SensorsTask, "SensorsTask", NULL, SENSORS_TASK_PRI);
     // mpu6050_task_handle = STATIC_MEM_TASK_CREATE(mpu6050_task, MPU6050Task, "MPU6050Task", NULL, 1);
     // ms5611_task_handle = STATIC_MEM_TASK_CREATE(ms5611_task, MS5611Task, "MS5611Task", NULL, 1);
     // hmc5883l_task_handle = STATIC_MEM_TASK_CREATE(hmc5883l_task, HMC5883LTask, "HMC5883LTask", NULL, 1);
+
+    bool IS_SENSORS_OK = IS_MPU6050_OK & IS_HMC5883_OK & IS_MS5611_OK;
+    if (IS_SENSORS_OK) {
+        printf("Success to Init Sensors!\r\n\r\n");
+    } else {
+        printf("Fail to Init Sensors!\r\n\r\n"); 
+    }
+
+    return IS_SENSORS_OK;
 }
 
-void SensorsReadTask(void *param) {
-    bool IS_SENSORS_OK = MPU6050Init();
-    IS_SENSORS_OK &= HMC5883LInit();
-    IS_SENSORS_OK &= MS5611Init();
-    if (!IS_SENSORS_OK) return;
+void SensorsTask(void *param) {
+    SystemWaitStart();
 
-    int16_t acc_raw[3], gyro_raw[3], mag_raw[3];
-    float acc[3], gyro[3], mag[3];
+    // int16_t acc_raw[3], gyro_raw[3], mag_raw[3];
+    // float acc[3], gyro[3], mag[3];
 
     portTickType last_wait_time = xTaskGetTickCount();
     for(;;) {
-        MPU6050ReadAccelRaw(acc_raw);
-        MPU6050ReadGyroRaw(gyro_raw);
-        HMC5883LReadMagRaw(mag_raw);
+        // MPU6050ReadAccelRaw(acc_raw);
+        // MPU6050ReadGyroRaw(gyro_raw);
+        // HMC5883LReadMagRaw(mag_raw);
 
         // printf("%u,%d,%d,%d,%d,%d,%d\n", pdTICKS_TO_MS(xTaskGetTickCount()), acc_raw[0], acc_raw[1], acc_raw[2], gyro_raw[0], gyro_raw[1], gyro_raw[2]);
-        IMUCalibration(acc_raw, gyro_raw, mag_raw, acc, gyro, mag);
+        
+        // IMUCalibration(acc_raw, gyro_raw, mag_raw, acc, gyro, mag);
 
         // xQueueOverwrite(acc_raw_queue, acc_raw);
         // xQueueOverwrite(gyro_raw_queue, gyro_raw);
@@ -64,11 +82,11 @@ void SensorsReadTask(void *param) {
         // printf("Gyro : %f %f %f\r\n", gyro[0], gyro[1], gyro[2]);
         // printf("Mag  : %f %f %f\r\n\r\n", mag[0], mag[1], mag[2]);
 
-        printf("%f,%f,%f,%f,%f,%f,%f,%f,%f,%f\n", (float)pdTICKS_TO_MS(xTaskGetTickCount()), acc[0], acc[1], acc[2], gyro[0], gyro[1], gyro[2], mag[0], mag[1], mag[2]);
+        // printf("%f,%f,%f,%f,%f,%f,%f,%f,%f,%f\n", (float)pdTICKS_TO_MS(xTaskGetTickCount()), acc[0], acc[1], acc[2], gyro[0], gyro[1], gyro[2], mag[0], mag[1], mag[2]);
 
         // printf("%f,%d,%d,%d,%d,%d,%d,%d,%d,%d\n", (float)pdTICKS_TO_MS(xTaskGetTickCount()), acc_raw[0], acc_raw[1], acc_raw[2], gyro_raw[0], gyro_raw[1], gyro_raw[2], mag_raw[0], mag_raw[1], mag_raw[2]);
 
-        vTaskDelayUntil(&last_wait_time, sensors_read_task_wait);
+        vTaskDelayUntil(&last_wait_time, sensors_task_wait);
     }
 
     // int16_t* acc_raw  = pvPortMalloc(sizeof(int16_t) * 3);

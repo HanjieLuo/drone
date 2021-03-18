@@ -7,6 +7,7 @@
 #include "ms5611.h"
 #include "queue.h"
 #include "utils.h"
+#include "system_task.h"
 
 #define SensorsReadAccelRaw MPU6050ReadAccelRaw
 #define SensorsReadGyroRaw MPU6050ReadGyroRaw
@@ -54,8 +55,8 @@ const static float Tm10 = 5.1905146781e-05, Tm11 = 2.2232194724e-03, Tm12 = 1.26
 const static float Tm20 = 1.3161782481e-05, Tm21 = -1.3150356768e-05, Tm22 = 2.5764247895e-03;
 const static float Bm_x = -166.14858027, Bm_y = 186.30477602, Bm_z = 157.10313941;
 
-void SensorsInit(void);
-void SensorsReadTask(void *param);
+bool SensorsInit(void);
+void SensorsTask(void *param);
 
 void IMUCalibration(const int16_t *acc_raw, const int16_t *gyro_raw, const int16_t *mag_raw, float *acc, float *gyro, float *mag);
 

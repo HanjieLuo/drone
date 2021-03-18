@@ -36,6 +36,13 @@ DMA_HandleTypeDef hdma_usart2_tx;
 void MX_USART1_UART_Init(void)
 {
 
+  /* USER CODE BEGIN USART1_Init 0 */
+
+  /* USER CODE END USART1_Init 0 */
+
+  /* USER CODE BEGIN USART1_Init 1 */
+
+  /* USER CODE END USART1_Init 1 */
   huart1.Instance = USART1;
   huart1.Init.BaudRate = 115200;
   huart1.Init.WordLength = UART_WORDLENGTH_8B;
@@ -48,6 +55,9 @@ void MX_USART1_UART_Init(void)
   {
     Error_Handler();
   }
+  /* USER CODE BEGIN USART1_Init 2 */
+
+  /* USER CODE END USART1_Init 2 */
 
 }
 /* USART2 init function */
@@ -55,6 +65,13 @@ void MX_USART1_UART_Init(void)
 void MX_USART2_UART_Init(void)
 {
 
+  /* USER CODE BEGIN USART2_Init 0 */
+
+  /* USER CODE END USART2_Init 0 */
+
+  /* USER CODE BEGIN USART2_Init 1 */
+
+  /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
   huart2.Init.BaudRate = 115200;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
@@ -67,6 +84,9 @@ void MX_USART2_UART_Init(void)
   {
     Error_Handler();
   }
+  /* USER CODE BEGIN USART2_Init 2 */
+
+  /* USER CODE END USART2_Init 2 */
 
 }
 
@@ -132,7 +152,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
     __HAL_LINKDMA(uartHandle,hdmatx,hdma_usart1_tx);
 
     /* USART1 interrupt Init */
-    HAL_NVIC_SetPriority(USART1_IRQn, 5, 0);
+    HAL_NVIC_SetPriority(USART1_IRQn, 10, 0);
     HAL_NVIC_EnableIRQ(USART1_IRQn);
   /* USER CODE BEGIN USART1_MspInit 1 */
 
@@ -196,7 +216,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
     __HAL_LINKDMA(uartHandle,hdmatx,hdma_usart2_tx);
 
     /* USART2 interrupt Init */
-    HAL_NVIC_SetPriority(USART2_IRQn, 5, 0);
+    HAL_NVIC_SetPriority(USART2_IRQn, 6, 0);
     HAL_NVIC_EnableIRQ(USART2_IRQn);
   /* USER CODE BEGIN USART2_MspInit 1 */
 

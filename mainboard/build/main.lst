@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccDjZWQ6.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -47,29 +47,29 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s 			page 1
   17:Src/main.c    ****   ******************************************************************************
   18:Src/main.c    ****   */
   19:Src/main.c    **** /* USER CODE END Header */
-  20:Src/main.c    **** 
-  21:Src/main.c    **** /* Includes ------------------------------------------------------------------*/
-  22:Src/main.c    **** #include "main.h"
-  23:Src/main.c    **** #include "cmsis_os.h"
-  24:Src/main.c    **** #include "dma.h"
-  25:Src/main.c    **** #include "i2c.h"
-  26:Src/main.c    **** #include "tim.h"
-  27:Src/main.c    **** #include "usart.h"
-  28:Src/main.c    **** #include "gpio.h"
-  29:Src/main.c    **** 
-  30:Src/main.c    **** /* Private includes ----------------------------------------------------------*/
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s 			page 2
+  20:Src/main.c    **** /* Includes ------------------------------------------------------------------*/
+  21:Src/main.c    **** #include "main.h"
+  22:Src/main.c    **** #include "cmsis_os.h"
+  23:Src/main.c    **** #include "dma.h"
+  24:Src/main.c    **** #include "i2c.h"
+  25:Src/main.c    **** #include "tim.h"
+  26:Src/main.c    **** #include "usart.h"
+  27:Src/main.c    **** #include "gpio.h"
+  28:Src/main.c    **** 
+  29:Src/main.c    **** /* Private includes ----------------------------------------------------------*/
+  30:Src/main.c    **** /* USER CODE BEGIN Includes */
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccDjZWQ6.s 			page 2
 
 
-  31:Src/main.c    **** /* USER CODE BEGIN Includes */
-  32:Src/main.c    **** // #include "uart4.h"
-  33:Src/main.c    **** // #include "mavlink_task.h"
-  34:Src/main.c    **** #include "sensors.h"
-  35:Src/main.c    **** // #include "dmp.h"
-  36:Src/main.c    **** // #include "ms5611.h"
-  37:Src/main.c    **** // #include "mpu6050.h"
-  38:Src/main.c    **** // #include "i2c1.h"
-  39:Src/main.c    **** // #include "gy_86.h"
+  31:Src/main.c    **** // #include "uart4.h"
+  32:Src/main.c    **** // #include "mavlink_task.h"
+  33:Src/main.c    **** // #include "sensors.h"
+  34:Src/main.c    **** // #include "dmp.h"
+  35:Src/main.c    **** // #include "ms5611.h"
+  36:Src/main.c    **** // #include "mpu6050.h"
+  37:Src/main.c    **** // #include "i2c1.h"
+  38:Src/main.c    **** // #include "gy_86.h"
+  39:Src/main.c    **** #include "system_task.h"
   40:Src/main.c    **** /* USER CODE END Includes */
   41:Src/main.c    **** 
   42:Src/main.c    **** /* Private typedef -----------------------------------------------------------*/
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s 			page 1
   85:Src/main.c    **** 
   86:Src/main.c    ****   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   87:Src/main.c    ****   HAL_Init();
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccDjZWQ6.s 			page 3
 
 
   88:Src/main.c    **** 
@@ -143,60 +143,63 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s 			page 1
  107:Src/main.c    ****   MX_USART2_UART_Init();
  108:Src/main.c    ****   MX_I2C1_Init();
  109:Src/main.c    ****   /* USER CODE BEGIN 2 */
- 110:Src/main.c    ****   // MotorInit();
- 111:Src/main.c    **** 
- 112:Src/main.c    ****   SensorsInit();
- 113:Src/main.c    ****   // MavlinkInit();
- 114:Src/main.c    ****   
- 115:Src/main.c    ****   // MS5611Init();
- 116:Src/main.c    ****   // I2C1Init();
- 117:Src/main.c    ****   // bool flag = MPU6050Init();
- 118:Src/main.c    ****   // printf("status:%u\r\n", flag);
- 119:Src/main.c    ****   // float ax, ay, az;
- 120:Src/main.c    ****   // Uart4Init();
- 121:Src/main.c    ****   // uint8_t buffer[] = "Hello world\r\n";
- 122:Src/main.c    ****   /* USER CODE END 2 */
- 123:Src/main.c    **** 
- 124:Src/main.c    ****   /* Call init function for freertos objects (in freertos.c) */
- 125:Src/main.c    ****   MX_FREERTOS_Init(); 
- 126:Src/main.c    ****   /* Start scheduler */
- 127:Src/main.c    ****   osKernelStart();
- 128:Src/main.c    ****  
- 129:Src/main.c    ****   /* We should never get here as control is now taken by the scheduler */
- 130:Src/main.c    ****   /* Infinite loop */
- 131:Src/main.c    ****   /* USER CODE BEGIN WHILE */
- 132:Src/main.c    ****   while (1)
- 133:Src/main.c    ****   {
- 134:Src/main.c    ****     /* USER CODE END WHILE */
- 135:Src/main.c    **** 
- 136:Src/main.c    ****     /* USER CODE BEGIN 3 */
- 137:Src/main.c    **** 
- 138:Src/main.c    ****     // MPU6050ReadAccel(&ax, &ay, &az);
- 139:Src/main.c    ****     // printf("%f\r\n", 3.1415926);
- 140:Src/main.c    ****     // printf("%f, %f, %f \r\n", ax, ay, az);
- 141:Src/main.c    ****     // HAL_Delay(1000);
- 142:Src/main.c    ****     // HAL_UART_Transmit_DMA(&huart4, buffer, sizeof(buffer));
- 143:Src/main.c    ****     // HAL_UART_Transmit_DMA(&huart1, buffer, sizeof(buffer));
- 144:Src/main.c    ****     // printf("%d ok1\r\n", 10);
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s 			page 4
+ 110:Src/main.c    **** 
+ 111:Src/main.c    ****   SystemLaunch();
+ 112:Src/main.c    **** 
+ 113:Src/main.c    ****   // SensorsInit();
+ 114:Src/main.c    ****   // MavlinkInit();
+ 115:Src/main.c    ****   
+ 116:Src/main.c    ****   // MotorInit();
+ 117:Src/main.c    ****   // TestI2C1MenRead();
+ 118:Src/main.c    ****   // MS5611Init();
+ 119:Src/main.c    ****   // I2C1Init();
+ 120:Src/main.c    ****   // bool flag = MPU6050Init();
+ 121:Src/main.c    ****   // printf("status:%u\r\n", flag);
+ 122:Src/main.c    ****   // float ax, ay, az;
+ 123:Src/main.c    ****   // Uart4Init();
+ 124:Src/main.c    ****   // uint8_t buffer[] = "Hello world\r\n";
+ 125:Src/main.c    ****   /* USER CODE END 2 */
+ 126:Src/main.c    **** 
+ 127:Src/main.c    ****   /* Call init function for freertos objects (in freertos.c) */
+ 128:Src/main.c    ****   MX_FREERTOS_Init();
+ 129:Src/main.c    ****   /* Start scheduler */
+ 130:Src/main.c    ****   osKernelStart();
+ 131:Src/main.c    **** 
+ 132:Src/main.c    ****   /* We should never get here as control is now taken by the scheduler */
+ 133:Src/main.c    ****   /* Infinite loop */
+ 134:Src/main.c    ****   /* USER CODE BEGIN WHILE */
+ 135:Src/main.c    ****   while (1)
+ 136:Src/main.c    ****   {
+ 137:Src/main.c    ****     /* USER CODE END WHILE */
+ 138:Src/main.c    **** 
+ 139:Src/main.c    ****     /* USER CODE BEGIN 3 */
+ 140:Src/main.c    **** 
+ 141:Src/main.c    ****     // MPU6050ReadAccel(&ax, &ay, &az);
+ 142:Src/main.c    ****     // printf("%f\r\n", 3.1415926);
+ 143:Src/main.c    ****     // printf("%f, %f, %f \r\n", ax, ay, az);
+ 144:Src/main.c    ****     // HAL_Delay(1000);
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccDjZWQ6.s 			page 4
 
 
- 145:Src/main.c    ****     // HAL_Delay(10);
- 146:Src/main.c    ****     // printf("%d ok2\r\n", 10);
- 147:Src/main.c    ****     // HAL_Delay(10);
- 148:Src/main.c    ****     // printf("%d ok3\r\n", 10);
- 149:Src/main.c    ****     // HAL_Delay(1000);
- 150:Src/main.c    ****   }
- 151:Src/main.c    ****   /* USER CODE END 3 */
- 152:Src/main.c    **** }
- 153:Src/main.c    **** 
- 154:Src/main.c    **** /**
- 155:Src/main.c    ****   * @brief System Clock Configuration
- 156:Src/main.c    ****   * @retval None
- 157:Src/main.c    ****   */
- 158:Src/main.c    **** void SystemClock_Config(void)
- 159:Src/main.c    **** {
-  29              		.loc 1 159 1 view -0
+ 145:Src/main.c    ****     // HAL_UART_Transmit_DMA(&huart4, buffer, sizeof(buffer));
+ 146:Src/main.c    ****     // HAL_UART_Transmit_DMA(&huart1, buffer, sizeof(buffer));
+ 147:Src/main.c    ****     // printf("%d ok1\r\n", 10);
+ 148:Src/main.c    ****     // HAL_Delay(10);
+ 149:Src/main.c    ****     // printf("%d ok2\r\n", 10);
+ 150:Src/main.c    ****     // HAL_Delay(10);
+ 151:Src/main.c    ****     // printf("%d ok3\r\n", 10);
+ 152:Src/main.c    ****     // HAL_Delay(1000);
+ 153:Src/main.c    ****   }
+ 154:Src/main.c    ****   /* USER CODE END 3 */
+ 155:Src/main.c    **** }
+ 156:Src/main.c    **** 
+ 157:Src/main.c    **** /**
+ 158:Src/main.c    ****   * @brief System Clock Configuration
+ 159:Src/main.c    ****   * @retval None
+ 160:Src/main.c    ****   */
+ 161:Src/main.c    **** void SystemClock_Config(void)
+ 162:Src/main.c    **** {
+  29              		.loc 1 162 1 view -0
   30              		.cfi_startproc
   31              		@ args = 0, pretend = 0, frame = 80
   32              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -209,159 +212,160 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s 			page 1
   39 0002 95B0     		sub	sp, sp, #84
   40              	.LCFI1:
   41              		.cfi_def_cfa_offset 96
- 160:Src/main.c    ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
-  42              		.loc 1 160 3 view .LVU1
-  43              		.loc 1 160 22 is_stmt 0 view .LVU2
+ 163:Src/main.c    ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  42              		.loc 1 163 3 view .LVU1
+  43              		.loc 1 163 22 is_stmt 0 view .LVU2
   44 0004 3022     		movs	r2, #48
   45 0006 0021     		movs	r1, #0
   46 0008 08A8     		add	r0, sp, #32
   47 000a FFF7FEFF 		bl	memset
   48              	.LVL0:
- 161:Src/main.c    ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
-  49              		.loc 1 161 3 is_stmt 1 view .LVU3
-  50              		.loc 1 161 22 is_stmt 0 view .LVU4
+ 164:Src/main.c    ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  49              		.loc 1 164 3 is_stmt 1 view .LVU3
+  50              		.loc 1 164 22 is_stmt 0 view .LVU4
   51 000e 0024     		movs	r4, #0
   52 0010 0394     		str	r4, [sp, #12]
   53 0012 0494     		str	r4, [sp, #16]
   54 0014 0594     		str	r4, [sp, #20]
   55 0016 0694     		str	r4, [sp, #24]
   56 0018 0794     		str	r4, [sp, #28]
- 162:Src/main.c    **** 
- 163:Src/main.c    ****   /** Configure the main internal regulator output voltage 
- 164:Src/main.c    ****   */
- 165:Src/main.c    ****   __HAL_RCC_PWR_CLK_ENABLE();
-  57              		.loc 1 165 3 is_stmt 1 view .LVU5
+ 165:Src/main.c    **** 
+ 166:Src/main.c    ****   /** Configure the main internal regulator output voltage
+ 167:Src/main.c    ****   */
+ 168:Src/main.c    ****   __HAL_RCC_PWR_CLK_ENABLE();
+  57              		.loc 1 168 3 is_stmt 1 view .LVU5
   58              	.LBB2:
-  59              		.loc 1 165 3 view .LVU6
+  59              		.loc 1 168 3 view .LVU6
   60 001a 0194     		str	r4, [sp, #4]
-  61              		.loc 1 165 3 view .LVU7
+  61              		.loc 1 168 3 view .LVU7
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccDjZWQ6.s 			page 5
+
+
   62 001c 1B4B     		ldr	r3, .L3
   63 001e 1A6C     		ldr	r2, [r3, #64]
   64 0020 42F08052 		orr	r2, r2, #268435456
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s 			page 5
-
-
   65 0024 1A64     		str	r2, [r3, #64]
-  66              		.loc 1 165 3 view .LVU8
+  66              		.loc 1 168 3 view .LVU8
   67 0026 1B6C     		ldr	r3, [r3, #64]
   68 0028 03F08053 		and	r3, r3, #268435456
   69 002c 0193     		str	r3, [sp, #4]
-  70              		.loc 1 165 3 view .LVU9
+  70              		.loc 1 168 3 view .LVU9
   71 002e 019B     		ldr	r3, [sp, #4]
   72              	.LBE2:
-  73              		.loc 1 165 3 view .LVU10
- 166:Src/main.c    ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
-  74              		.loc 1 166 3 view .LVU11
+  73              		.loc 1 168 3 view .LVU10
+ 169:Src/main.c    ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+  74              		.loc 1 169 3 view .LVU11
   75              	.LBB3:
-  76              		.loc 1 166 3 view .LVU12
+  76              		.loc 1 169 3 view .LVU12
   77 0030 0294     		str	r4, [sp, #8]
-  78              		.loc 1 166 3 view .LVU13
+  78              		.loc 1 169 3 view .LVU13
   79 0032 174B     		ldr	r3, .L3+4
   80 0034 1A68     		ldr	r2, [r3]
   81 0036 42F48042 		orr	r2, r2, #16384
   82 003a 1A60     		str	r2, [r3]
-  83              		.loc 1 166 3 view .LVU14
+  83              		.loc 1 169 3 view .LVU14
   84 003c 1B68     		ldr	r3, [r3]
   85 003e 03F48043 		and	r3, r3, #16384
   86 0042 0293     		str	r3, [sp, #8]
-  87              		.loc 1 166 3 view .LVU15
+  87              		.loc 1 169 3 view .LVU15
   88 0044 029B     		ldr	r3, [sp, #8]
   89              	.LBE3:
-  90              		.loc 1 166 3 view .LVU16
- 167:Src/main.c    ****   /** Initializes the CPU, AHB and APB busses clocks 
- 168:Src/main.c    ****   */
- 169:Src/main.c    ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
-  91              		.loc 1 169 3 view .LVU17
-  92              		.loc 1 169 36 is_stmt 0 view .LVU18
+  90              		.loc 1 169 3 view .LVU16
+ 170:Src/main.c    ****   /** Initializes the RCC Oscillators according to the specified parameters
+ 171:Src/main.c    ****   * in the RCC_OscInitTypeDef structure.
+ 172:Src/main.c    ****   */
+ 173:Src/main.c    ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  91              		.loc 1 173 3 view .LVU17
+  92              		.loc 1 173 36 is_stmt 0 view .LVU18
   93 0046 0123     		movs	r3, #1
   94 0048 0893     		str	r3, [sp, #32]
- 170:Src/main.c    ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
-  95              		.loc 1 170 3 is_stmt 1 view .LVU19
-  96              		.loc 1 170 30 is_stmt 0 view .LVU20
+ 174:Src/main.c    ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  95              		.loc 1 174 3 is_stmt 1 view .LVU19
+  96              		.loc 1 174 30 is_stmt 0 view .LVU20
   97 004a 4FF48033 		mov	r3, #65536
   98 004e 0993     		str	r3, [sp, #36]
- 171:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-  99              		.loc 1 171 3 is_stmt 1 view .LVU21
- 100              		.loc 1 171 34 is_stmt 0 view .LVU22
+ 175:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  99              		.loc 1 175 3 is_stmt 1 view .LVU21
+ 100              		.loc 1 175 34 is_stmt 0 view .LVU22
  101 0050 0225     		movs	r5, #2
  102 0052 0E95     		str	r5, [sp, #56]
- 172:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
- 103              		.loc 1 172 3 is_stmt 1 view .LVU23
- 104              		.loc 1 172 35 is_stmt 0 view .LVU24
+ 176:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+ 103              		.loc 1 176 3 is_stmt 1 view .LVU23
+ 104              		.loc 1 176 35 is_stmt 0 view .LVU24
  105 0054 4FF48003 		mov	r3, #4194304
  106 0058 0F93     		str	r3, [sp, #60]
- 173:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLM = 4;
- 107              		.loc 1 173 3 is_stmt 1 view .LVU25
- 108              		.loc 1 173 30 is_stmt 0 view .LVU26
+ 177:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLM = 4;
+ 107              		.loc 1 177 3 is_stmt 1 view .LVU25
+ 108              		.loc 1 177 30 is_stmt 0 view .LVU26
  109 005a 0423     		movs	r3, #4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccDjZWQ6.s 			page 6
+
+
  110 005c 1093     		str	r3, [sp, #64]
- 174:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLN = 168;
- 111              		.loc 1 174 3 is_stmt 1 view .LVU27
- 112              		.loc 1 174 30 is_stmt 0 view .LVU28
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s 			page 6
-
-
+ 178:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLN = 168;
+ 111              		.loc 1 178 3 is_stmt 1 view .LVU27
+ 112              		.loc 1 178 30 is_stmt 0 view .LVU28
  113 005e A822     		movs	r2, #168
  114 0060 1192     		str	r2, [sp, #68]
- 175:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
- 115              		.loc 1 175 3 is_stmt 1 view .LVU29
- 116              		.loc 1 175 30 is_stmt 0 view .LVU30
+ 179:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
+ 115              		.loc 1 179 3 is_stmt 1 view .LVU29
+ 116              		.loc 1 179 30 is_stmt 0 view .LVU30
  117 0062 1295     		str	r5, [sp, #72]
- 176:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLQ = 4;
- 118              		.loc 1 176 3 is_stmt 1 view .LVU31
- 119              		.loc 1 176 30 is_stmt 0 view .LVU32
+ 180:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLQ = 4;
+ 118              		.loc 1 180 3 is_stmt 1 view .LVU31
+ 119              		.loc 1 180 30 is_stmt 0 view .LVU32
  120 0064 1393     		str	r3, [sp, #76]
- 177:Src/main.c    ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
- 121              		.loc 1 177 3 is_stmt 1 view .LVU33
- 122              		.loc 1 177 7 is_stmt 0 view .LVU34
+ 181:Src/main.c    ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 121              		.loc 1 181 3 is_stmt 1 view .LVU33
+ 122              		.loc 1 181 7 is_stmt 0 view .LVU34
  123 0066 08A8     		add	r0, sp, #32
  124 0068 FFF7FEFF 		bl	HAL_RCC_OscConfig
  125              	.LVL1:
- 178:Src/main.c    ****   {
- 179:Src/main.c    ****     Error_Handler();
- 180:Src/main.c    ****   }
- 181:Src/main.c    ****   /** Initializes the CPU, AHB and APB busses clocks 
- 182:Src/main.c    ****   */
- 183:Src/main.c    ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
- 126              		.loc 1 183 3 is_stmt 1 view .LVU35
- 127              		.loc 1 183 31 is_stmt 0 view .LVU36
+ 182:Src/main.c    ****   {
+ 183:Src/main.c    ****     Error_Handler();
+ 184:Src/main.c    ****   }
+ 185:Src/main.c    ****   /** Initializes the CPU, AHB and APB buses clocks
+ 186:Src/main.c    ****   */
+ 187:Src/main.c    ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+ 126              		.loc 1 187 3 is_stmt 1 view .LVU35
+ 127              		.loc 1 187 31 is_stmt 0 view .LVU36
  128 006c 0F23     		movs	r3, #15
  129 006e 0393     		str	r3, [sp, #12]
- 184:Src/main.c    ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
- 185:Src/main.c    ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
- 130              		.loc 1 185 3 is_stmt 1 view .LVU37
- 131              		.loc 1 185 34 is_stmt 0 view .LVU38
+ 188:Src/main.c    ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+ 189:Src/main.c    ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+ 130              		.loc 1 189 3 is_stmt 1 view .LVU37
+ 131              		.loc 1 189 34 is_stmt 0 view .LVU38
  132 0070 0495     		str	r5, [sp, #16]
- 186:Src/main.c    ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
- 133              		.loc 1 186 3 is_stmt 1 view .LVU39
- 134              		.loc 1 186 35 is_stmt 0 view .LVU40
+ 190:Src/main.c    ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 133              		.loc 1 190 3 is_stmt 1 view .LVU39
+ 134              		.loc 1 190 35 is_stmt 0 view .LVU40
  135 0072 0594     		str	r4, [sp, #20]
- 187:Src/main.c    ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
- 136              		.loc 1 187 3 is_stmt 1 view .LVU41
- 137              		.loc 1 187 36 is_stmt 0 view .LVU42
+ 191:Src/main.c    ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
+ 136              		.loc 1 191 3 is_stmt 1 view .LVU41
+ 137              		.loc 1 191 36 is_stmt 0 view .LVU42
  138 0074 4FF4A053 		mov	r3, #5120
  139 0078 0693     		str	r3, [sp, #24]
- 188:Src/main.c    ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
- 140              		.loc 1 188 3 is_stmt 1 view .LVU43
- 141              		.loc 1 188 36 is_stmt 0 view .LVU44
+ 192:Src/main.c    ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
+ 140              		.loc 1 192 3 is_stmt 1 view .LVU43
+ 141              		.loc 1 192 36 is_stmt 0 view .LVU44
  142 007a 4FF48053 		mov	r3, #4096
  143 007e 0793     		str	r3, [sp, #28]
- 189:Src/main.c    **** 
- 190:Src/main.c    ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5) != HAL_OK)
- 144              		.loc 1 190 3 is_stmt 1 view .LVU45
- 145              		.loc 1 190 7 is_stmt 0 view .LVU46
+ 193:Src/main.c    **** 
+ 194:Src/main.c    ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5) != HAL_OK)
+ 144              		.loc 1 194 3 is_stmt 1 view .LVU45
+ 145              		.loc 1 194 7 is_stmt 0 view .LVU46
  146 0080 0521     		movs	r1, #5
  147 0082 03A8     		add	r0, sp, #12
  148 0084 FFF7FEFF 		bl	HAL_RCC_ClockConfig
  149              	.LVL2:
- 191:Src/main.c    ****   {
- 192:Src/main.c    ****     Error_Handler();
- 193:Src/main.c    ****   }
- 194:Src/main.c    **** }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s 			page 7
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccDjZWQ6.s 			page 7
 
 
- 150              		.loc 1 194 1 view .LVU47
+ 195:Src/main.c    ****   {
+ 196:Src/main.c    ****     Error_Handler();
+ 197:Src/main.c    ****   }
+ 198:Src/main.c    **** }
+ 150              		.loc 1 198 1 view .LVU47
  151 0088 15B0     		add	sp, sp, #84
  152              	.LCFI2:
  153              		.cfi_def_cfa_offset 12
@@ -414,13 +418,13 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s 			page 1
  196              		.loc 1 105 3 view .LVU53
  197 0012 FFF7FEFF 		bl	MX_USART1_UART_Init
  198              	.LVL7:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccDjZWQ6.s 			page 8
+
+
  106:Src/main.c    ****   MX_USART2_UART_Init();
  199              		.loc 1 106 3 view .LVU54
  200 0016 FFF7FEFF 		bl	MX_TIM4_Init
  201              	.LVL8:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s 			page 8
-
-
  107:Src/main.c    ****   MX_I2C1_Init();
  202              		.loc 1 107 3 view .LVU55
  203 001a FFF7FEFF 		bl	MX_USART2_UART_Init
@@ -429,25 +433,25 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s 			page 1
  205              		.loc 1 108 3 view .LVU56
  206 001e FFF7FEFF 		bl	MX_I2C1_Init
  207              	.LVL10:
- 112:Src/main.c    ****   // MavlinkInit();
- 208              		.loc 1 112 3 view .LVU57
- 209 0022 FFF7FEFF 		bl	SensorsInit
+ 111:Src/main.c    **** 
+ 208              		.loc 1 111 3 view .LVU57
+ 209 0022 FFF7FEFF 		bl	SystemLaunch
  210              	.LVL11:
- 125:Src/main.c    ****   /* Start scheduler */
- 211              		.loc 1 125 3 view .LVU58
+ 128:Src/main.c    ****   /* Start scheduler */
+ 211              		.loc 1 128 3 view .LVU58
  212 0026 FFF7FEFF 		bl	MX_FREERTOS_Init
  213              	.LVL12:
- 127:Src/main.c    ****  
- 214              		.loc 1 127 3 view .LVU59
+ 130:Src/main.c    **** 
+ 214              		.loc 1 130 3 view .LVU59
  215 002a FFF7FEFF 		bl	osKernelStart
  216              	.LVL13:
  217              	.L6:
- 132:Src/main.c    ****   {
- 218              		.loc 1 132 3 discriminator 1 view .LVU60
- 150:Src/main.c    ****   /* USER CODE END 3 */
- 219              		.loc 1 150 3 discriminator 1 view .LVU61
- 132:Src/main.c    ****   {
- 220              		.loc 1 132 9 discriminator 1 view .LVU62
+ 135:Src/main.c    ****   {
+ 218              		.loc 1 135 3 discriminator 1 view .LVU60
+ 153:Src/main.c    ****   /* USER CODE END 3 */
+ 219              		.loc 1 153 3 discriminator 1 view .LVU61
+ 135:Src/main.c    ****   {
+ 220              		.loc 1 135 9 discriminator 1 view .LVU62
  221 002e FEE7     		b	.L6
  222              		.cfi_endproc
  223              	.LFE138:
@@ -461,62 +465,62 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s 			page 1
  233              	HAL_TIM_PeriodElapsedCallback:
  234              	.LVL14:
  235              	.LFB140:
- 195:Src/main.c    **** 
- 196:Src/main.c    **** /* USER CODE BEGIN 4 */
- 197:Src/main.c    **** 
- 198:Src/main.c    **** /* USER CODE END 4 */
  199:Src/main.c    **** 
- 200:Src/main.c    ****  /**
- 201:Src/main.c    ****   * @brief  Period elapsed callback in non blocking mode
- 202:Src/main.c    ****   * @note   This function is called  when TIM7 interrupt took place, inside
- 203:Src/main.c    ****   * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
- 204:Src/main.c    ****   * a global variable "uwTick" used as application time base.
- 205:Src/main.c    ****   * @param  htim : TIM handle
- 206:Src/main.c    ****   * @retval None
- 207:Src/main.c    ****   */
- 208:Src/main.c    **** void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
- 209:Src/main.c    **** {
- 236              		.loc 1 209 1 view -0
+ 200:Src/main.c    **** /* USER CODE BEGIN 4 */
+ 201:Src/main.c    **** 
+ 202:Src/main.c    **** /* USER CODE END 4 */
+ 203:Src/main.c    **** 
+ 204:Src/main.c    ****  /**
+ 205:Src/main.c    ****   * @brief  Period elapsed callback in non blocking mode
+ 206:Src/main.c    ****   * @note   This function is called  when TIM7 interrupt took place, inside
+ 207:Src/main.c    ****   * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
+ 208:Src/main.c    ****   * a global variable "uwTick" used as application time base.
+ 209:Src/main.c    ****   * @param  htim : TIM handle
+ 210:Src/main.c    ****   * @retval None
+ 211:Src/main.c    ****   */
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccDjZWQ6.s 			page 9
+
+
+ 212:Src/main.c    **** void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+ 213:Src/main.c    **** {
+ 236              		.loc 1 213 1 view -0
  237              		.cfi_startproc
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s 			page 9
-
-
  238              		@ args = 0, pretend = 0, frame = 0
  239              		@ frame_needed = 0, uses_anonymous_args = 0
- 240              		.loc 1 209 1 is_stmt 0 view .LVU64
+ 240              		.loc 1 213 1 is_stmt 0 view .LVU64
  241 0000 08B5     		push	{r3, lr}
  242              	.LCFI4:
  243              		.cfi_def_cfa_offset 8
  244              		.cfi_offset 3, -8
  245              		.cfi_offset 14, -4
- 210:Src/main.c    ****   /* USER CODE BEGIN Callback 0 */
- 211:Src/main.c    **** 
- 212:Src/main.c    ****   /* USER CODE END Callback 0 */
- 213:Src/main.c    ****   if (htim->Instance == TIM7) {
- 246              		.loc 1 213 3 is_stmt 1 view .LVU65
- 247              		.loc 1 213 11 is_stmt 0 view .LVU66
+ 214:Src/main.c    ****   /* USER CODE BEGIN Callback 0 */
+ 215:Src/main.c    **** 
+ 216:Src/main.c    ****   /* USER CODE END Callback 0 */
+ 217:Src/main.c    ****   if (htim->Instance == TIM7) {
+ 246              		.loc 1 217 3 is_stmt 1 view .LVU65
+ 247              		.loc 1 217 11 is_stmt 0 view .LVU66
  248 0002 0268     		ldr	r2, [r0]
- 249              		.loc 1 213 6 view .LVU67
+ 249              		.loc 1 217 6 view .LVU67
  250 0004 034B     		ldr	r3, .L12
  251 0006 9A42     		cmp	r2, r3
  252 0008 00D0     		beq	.L11
  253              	.LVL15:
  254              	.L8:
- 214:Src/main.c    ****     HAL_IncTick();
- 215:Src/main.c    ****   }
- 216:Src/main.c    ****   /* USER CODE BEGIN Callback 1 */
- 217:Src/main.c    **** 
- 218:Src/main.c    ****   /* USER CODE END Callback 1 */
- 219:Src/main.c    **** }
- 255              		.loc 1 219 1 view .LVU68
+ 218:Src/main.c    ****     HAL_IncTick();
+ 219:Src/main.c    ****   }
+ 220:Src/main.c    ****   /* USER CODE BEGIN Callback 1 */
+ 221:Src/main.c    **** 
+ 222:Src/main.c    ****   /* USER CODE END Callback 1 */
+ 223:Src/main.c    **** }
+ 255              		.loc 1 223 1 view .LVU68
  256 000a 08BD     		pop	{r3, pc}
  257              	.LVL16:
  258              	.L11:
- 214:Src/main.c    ****     HAL_IncTick();
- 259              		.loc 1 214 5 is_stmt 1 view .LVU69
+ 218:Src/main.c    ****     HAL_IncTick();
+ 259              		.loc 1 218 5 is_stmt 1 view .LVU69
  260 000c FFF7FEFF 		bl	HAL_IncTick
  261              	.LVL17:
- 262              		.loc 1 219 1 is_stmt 0 view .LVU70
+ 262              		.loc 1 223 1 is_stmt 0 view .LVU70
  263 0010 FBE7     		b	.L8
  264              	.L13:
  265 0012 00BF     		.align	2
@@ -533,27 +537,27 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s 			page 1
  277              		.fpu fpv4-sp-d16
  279              	Error_Handler:
  280              	.LFB141:
- 220:Src/main.c    **** 
- 221:Src/main.c    **** /**
- 222:Src/main.c    ****   * @brief  This function is executed in case of error occurrence.
- 223:Src/main.c    ****   * @retval None
- 224:Src/main.c    ****   */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s 			page 10
+ 224:Src/main.c    **** 
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccDjZWQ6.s 			page 10
 
 
- 225:Src/main.c    **** void Error_Handler(void)
- 226:Src/main.c    **** {
- 281              		.loc 1 226 1 is_stmt 1 view -0
+ 225:Src/main.c    **** /**
+ 226:Src/main.c    ****   * @brief  This function is executed in case of error occurrence.
+ 227:Src/main.c    ****   * @retval None
+ 228:Src/main.c    ****   */
+ 229:Src/main.c    **** void Error_Handler(void)
+ 230:Src/main.c    **** {
+ 281              		.loc 1 230 1 is_stmt 1 view -0
  282              		.cfi_startproc
  283              		@ args = 0, pretend = 0, frame = 0
  284              		@ frame_needed = 0, uses_anonymous_args = 0
  285              		@ link register save eliminated.
- 227:Src/main.c    ****   /* USER CODE BEGIN Error_Handler_Debug */
- 228:Src/main.c    ****   /* User can add his own implementation to report the HAL error return state */
- 229:Src/main.c    **** 
- 230:Src/main.c    ****   /* USER CODE END Error_Handler_Debug */
- 231:Src/main.c    **** }
- 286              		.loc 1 231 1 view .LVU72
+ 231:Src/main.c    ****   /* USER CODE BEGIN Error_Handler_Debug */
+ 232:Src/main.c    ****   /* User can add his own implementation to report the HAL error return state */
+ 233:Src/main.c    **** 
+ 234:Src/main.c    ****   /* USER CODE END Error_Handler_Debug */
+ 235:Src/main.c    **** }
+ 286              		.loc 1 235 1 view .LVU72
  287 0000 7047     		bx	lr
  288              		.cfi_endproc
  289              	.LFE141:
@@ -583,23 +587,24 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s 			page 1
  314              		.file 23 "Modules/include/sensors.h"
  315              		.file 24 "Inc/gpio.h"
  316              		.file 25 "Inc/dma.h"
- 317              		.file 26 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h"
- 318              		.file 27 "<built-in>"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s 			page 11
+ 317              		.file 26 "Modules/include/system_task.h"
+ 318              		.file 27 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h"
+ 319              		.file 28 "<built-in>"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccDjZWQ6.s 			page 11
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s:18     .text.SystemClock_Config:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s:26     .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s:159    .text.SystemClock_Config:0000008c $d
-C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s:165    .text.main:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s:172    .text.main:00000000 main
-C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s:226    .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s:233    .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
-C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s:267    .text.HAL_TIM_PeriodElapsedCallback:00000014 $d
-C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s:272    .text.Error_Handler:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc6QUFLg.s:279    .text.Error_Handler:00000000 Error_Handler
+C:\Users\luoha\AppData\Local\Temp\ccDjZWQ6.s:18     .text.SystemClock_Config:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccDjZWQ6.s:26     .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\luoha\AppData\Local\Temp\ccDjZWQ6.s:159    .text.SystemClock_Config:0000008c $d
+C:\Users\luoha\AppData\Local\Temp\ccDjZWQ6.s:165    .text.main:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccDjZWQ6.s:172    .text.main:00000000 main
+C:\Users\luoha\AppData\Local\Temp\ccDjZWQ6.s:226    .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccDjZWQ6.s:233    .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
+C:\Users\luoha\AppData\Local\Temp\ccDjZWQ6.s:267    .text.HAL_TIM_PeriodElapsedCallback:00000014 $d
+C:\Users\luoha\AppData\Local\Temp\ccDjZWQ6.s:272    .text.Error_Handler:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccDjZWQ6.s:279    .text.Error_Handler:00000000 Error_Handler
 
 UNDEFINED SYMBOLS
 memset
@@ -612,7 +617,7 @@ MX_USART1_UART_Init
 MX_TIM4_Init
 MX_USART2_UART_Init
 MX_I2C1_Init
-SensorsInit
+SystemLaunch
 MX_FREERTOS_Init
 osKernelStart
 HAL_IncTick

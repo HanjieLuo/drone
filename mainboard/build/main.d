@@ -11,9 +11,9 @@ build/main.o: Src/main.c Inc/main.h \
  Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
@@ -46,9 +46,11 @@ build/main.o: Src/main.c Inc/main.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/timers.h Inc/dma.h \
  Inc/main.h Inc/i2c.h Inc/tim.h Inc/usart.h Inc/gpio.h \
- Modules/include/sensors.h Modules/include/hmc5883l.h \
- Modules/include/i2c1.h Modules/include/utils.h Modules/include/mpu6050.h \
- Modules/include/ms5611.h
+ Modules/include/system_task.h Modules/include/config.h \
+ Modules/include/utils.h Modules/include/sensors.h \
+ Modules/include/hmc5883l.h Modules/include/i2c1.h \
+ Modules/include/mpu6050.h Modules/include/ms5611.h \
+ Modules/include/system_task.h
 
 Inc/main.h:
 
@@ -80,11 +82,11 @@ Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h:
 
-Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h:
-
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h:
+
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h:
 
@@ -160,14 +162,20 @@ Inc/usart.h:
 
 Inc/gpio.h:
 
+Modules/include/system_task.h:
+
+Modules/include/config.h:
+
+Modules/include/utils.h:
+
 Modules/include/sensors.h:
 
 Modules/include/hmc5883l.h:
 
 Modules/include/i2c1.h:
 
-Modules/include/utils.h:
-
 Modules/include/mpu6050.h:
 
 Modules/include/ms5611.h:
+
+Modules/include/system_task.h:

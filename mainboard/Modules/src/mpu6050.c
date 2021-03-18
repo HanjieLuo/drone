@@ -24,14 +24,14 @@ bool MPU6050Init(void) {
 
     // printf("MPU6050_WHO_AM_I\r\n");
 
-    //复位 MPU6050
+    // DEVICE_RESET  resets all internal registers to their default values. No acknowledge!
     i2c_data = 0X80;
-    if (!I2C1MenWrite(MPU6050_DEV_ADDR, MPU6050_PWR_MGMT_1, 1, &i2c_data, 1)) {
+    if(HAL_I2C_Mem_Write_DMA(&hi2c1, MPU6050_DEV_ADDR, MPU6050_PWR_MGMT_1, 1, &i2c_data, 1) != HAL_OK) {
         return false;
-    }
+    } 
     vTaskDelay(pdMS_TO_TICKS(100));
-    // printf("MPU6050_PWR_MGMT_1\r\n");
 
+    // printf("MPU6050_PWR_MGMT_1\r\n");
 
     // power management register 0X6B we should write all 0's to wake the sensor up
     i2c_data = 0;

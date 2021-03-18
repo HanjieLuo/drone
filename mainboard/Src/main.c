@@ -30,12 +30,13 @@
 /* USER CODE BEGIN Includes */
 // #include "uart4.h"
 // #include "mavlink_task.h"
-#include "sensors.h"
+// #include "sensors.h"
 // #include "dmp.h"
 // #include "ms5611.h"
 // #include "mpu6050.h"
 // #include "i2c1.h"
 // #include "gy_86.h"
+#include "system_task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -106,11 +107,14 @@ int main(void)
   MX_USART2_UART_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-  // MotorInit();
 
-  SensorsInit();
+  SystemLaunch();
+
+  // SensorsInit();
   // MavlinkInit();
   
+  // MotorInit();
+  // TestI2C1MenRead();
   // MS5611Init();
   // I2C1Init();
   // bool flag = MPU6050Init();
