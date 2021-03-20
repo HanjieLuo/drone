@@ -35,11 +35,11 @@ bool SensorsInit(void) {
     bool IS_MS5611_OK = MS5611Init();
     printf("MS5611Init:   %u\r\n", IS_MS5611_OK);
 
-    acc_raw_queue = STATIC_MEM_QUEUE_CREATE(acc_raw_queue);
-    gyro_raw_queue = STATIC_MEM_QUEUE_CREATE(gyro_raw_queue);
-    mag_raw_queue = STATIC_MEM_QUEUE_CREATE(mag_raw_queue);
+    // acc_raw_queue = STATIC_MEM_QUEUE_CREATE(acc_raw_queue);
+    // gyro_raw_queue = STATIC_MEM_QUEUE_CREATE(gyro_raw_queue);
+    // mag_raw_queue = STATIC_MEM_QUEUE_CREATE(mag_raw_queue);
 
-    sensors_task_handle = STATIC_MEM_TASK_CREATE(sensors_task, SensorsTask, "SensorsTask", NULL, SENSORS_TASK_PRI);
+    // sensors_task_handle = STATIC_MEM_TASK_CREATE(sensors_task, SensorsTask, "SensorsTask", NULL, SENSORS_TASK_PRI);
     // mpu6050_task_handle = STATIC_MEM_TASK_CREATE(mpu6050_task, MPU6050Task, "MPU6050Task", NULL, 1);
     // ms5611_task_handle = STATIC_MEM_TASK_CREATE(ms5611_task, MS5611Task, "MS5611Task", NULL, 1);
     // hmc5883l_task_handle = STATIC_MEM_TASK_CREATE(hmc5883l_task, HMC5883LTask, "HMC5883LTask", NULL, 1);
