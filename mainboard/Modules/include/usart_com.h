@@ -1,5 +1,5 @@
-#ifndef __usart2_H
-#define __usart2_H
+#ifndef __USART_COM_H
+#define __USART_COM_H
 
 #include "usart.h"
 #include "FreeRTOS.h"
@@ -18,6 +18,11 @@ void DMA1_Stream5_IRQHandler(void);
 void DMA1_Stream6_IRQHandler(void);
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
 void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef *huart);
-// void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart);
 
-#endif /* __usart2_H */
+#ifdef USE_SISTEMVEIW
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart);
+#endif 
+
+
+
+#endif /* __USART_COM_H */

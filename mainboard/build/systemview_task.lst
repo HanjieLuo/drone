@@ -1,0 +1,522 @@
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccQ3a0GA.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"systemview_task.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.SystemViewTask,"ax",%progbits
+  18              		.align	1
+  19              		.arch armv7e-m
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  23              		.fpu fpv4-sp-d16
+  25              	SystemViewTask:
+  26              	.LVL0:
+  27              	.LFB139:
+  28              		.file 1 "Modules/src/systemview_task.c"
+   1:Modules/src/systemview_task.c **** #include "systemview_task.h"
+   2:Modules/src/systemview_task.c **** 
+   3:Modules/src/systemview_task.c **** #define SYSVIEW_SINGLE_TX 256
+   4:Modules/src/systemview_task.c **** 
+   5:Modules/src/systemview_task.c **** extern TaskHandle_t system_view_notify;
+   6:Modules/src/systemview_task.c **** 
+   7:Modules/src/systemview_task.c **** STATIC_MEM_TASK_ALLOC(systemview_task, SYSTEMVIEW_TASK_STACKSIZE);
+   8:Modules/src/systemview_task.c **** static void SystemViewTask(void *param);
+   9:Modules/src/systemview_task.c **** 
+  10:Modules/src/systemview_task.c **** uint8_t hello_message[32] = {
+  11:Modules/src/systemview_task.c ****     'S', 'E', 'G', 'G', 'E', 'R', ' ',
+  12:Modules/src/systemview_task.c ****     'S', 'y', 's', 't', 'e', 'm', 'V', 'i', 'e', 'w',
+  13:Modules/src/systemview_task.c ****     ' ', 'V', '0' + SEGGER_SYSVIEW_MAJOR,
+  14:Modules/src/systemview_task.c ****     '.', '0' + (SEGGER_SYSVIEW_MINOR / 10),
+  15:Modules/src/systemview_task.c ****     '0' + (SEGGER_SYSVIEW_MINOR % 10),
+  16:Modules/src/systemview_task.c ****     '.', '0' + (SEGGER_SYSVIEW_REV / 10),
+  17:Modules/src/systemview_task.c ****     '0' + (SEGGER_SYSVIEW_REV % 10),
+  18:Modules/src/systemview_task.c ****     '\0', 0, 0, 0, 0, 0};
+  19:Modules/src/systemview_task.c **** 
+  20:Modules/src/systemview_task.c **** void SystemViewLaunch(void) {
+  21:Modules/src/systemview_task.c ****     // uint8_t buffer[] = "Hello world\r\n";
+  22:Modules/src/systemview_task.c ****     // HAL_UART_Transmit_DMA(&huart1, buffer, sizeof(buffer));
+  23:Modules/src/systemview_task.c **** 
+  24:Modules/src/systemview_task.c ****     CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
+  25:Modules/src/systemview_task.c ****     DWT->CYCCNT = 0;
+  26:Modules/src/systemview_task.c ****     DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
+  27:Modules/src/systemview_task.c **** 
+  28:Modules/src/systemview_task.c ****     SEGGER_SYSVIEW_Conf();
+  29:Modules/src/systemview_task.c **** 
+  30:Modules/src/systemview_task.c ****     STATIC_MEM_TASK_CREATE(systemview_task, SystemViewTask, "SystemViewTask", NULL, SYSTEMVIEW_TASK
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccQ3a0GA.s 			page 2
+
+
+  31:Modules/src/systemview_task.c **** }
+  32:Modules/src/systemview_task.c **** 
+  33:Modules/src/systemview_task.c **** void SystemViewTask(void *param) {
+  29              		.loc 1 33 34 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 264
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		.loc 1 33 34 is_stmt 0 view .LVU1
+  34 0000 70B5     		push	{r4, r5, r6, lr}
+  35              	.LCFI0:
+  36              		.cfi_def_cfa_offset 16
+  37              		.cfi_offset 4, -16
+  38              		.cfi_offset 5, -12
+  39              		.cfi_offset 6, -8
+  40              		.cfi_offset 14, -4
+  41 0002 C2B0     		sub	sp, sp, #264
+  42              	.LCFI1:
+  43              		.cfi_def_cfa_offset 280
+  34:Modules/src/systemview_task.c ****     system_view_notify = xTaskGetCurrentTaskHandle();
+  44              		.loc 1 34 5 is_stmt 1 view .LVU2
+  45              		.loc 1 34 26 is_stmt 0 view .LVU3
+  46 0004 FFF7FEFF 		bl	xTaskGetCurrentTaskHandle
+  47              	.LVL1:
+  48              		.loc 1 34 24 view .LVU4
+  49 0008 2C4B     		ldr	r3, .L12
+  50 000a 1860     		str	r0, [r3]
+  35:Modules/src/systemview_task.c **** 
+  36:Modules/src/systemview_task.c ****     // 获取Channel ID
+  37:Modules/src/systemview_task.c ****     int channel_id = SEGGER_SYSVIEW_GetChannelID();
+  51              		.loc 1 37 5 is_stmt 1 view .LVU5
+  52              		.loc 1 37 22 is_stmt 0 view .LVU6
+  53 000c FFF7FEFF 		bl	SEGGER_SYSVIEW_GetChannelID
+  54              	.LVL2:
+  55 0010 0646     		mov	r6, r0
+  56              	.LVL3:
+  38:Modules/src/systemview_task.c **** 
+  39:Modules/src/systemview_task.c ****     //发送HELLO包
+  40:Modules/src/systemview_task.c ****     HAL_UART_Transmit_DMA(&huart1, hello_message, 32);
+  57              		.loc 1 40 5 is_stmt 1 view .LVU7
+  58 0012 2022     		movs	r2, #32
+  59 0014 2A49     		ldr	r1, .L12+4
+  60 0016 2B48     		ldr	r0, .L12+8
+  61              	.LVL4:
+  62              		.loc 1 40 5 is_stmt 0 view .LVU8
+  63 0018 FFF7FEFF 		bl	HAL_UART_Transmit_DMA
+  64              	.LVL5:
+  41:Modules/src/systemview_task.c **** 
+  42:Modules/src/systemview_task.c ****     uint8_t rx_buf;
+  65              		.loc 1 42 5 is_stmt 1 view .LVU9
+  43:Modules/src/systemview_task.c ****     uint8_t tx_buf[SYSVIEW_SINGLE_TX];
+  66              		.loc 1 43 5 view .LVU10
+  44:Modules/src/systemview_task.c ****     uint32_t notify_flag;
+  67              		.loc 1 44 5 view .LVU11
+  45:Modules/src/systemview_task.c ****     bool dma_in_progress = true;
+  68              		.loc 1 45 5 view .LVU12
+  46:Modules/src/systemview_task.c ****     TickType_t prev_send;
+  69              		.loc 1 46 5 view .LVU13
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccQ3a0GA.s 			page 3
+
+
+  47:Modules/src/systemview_task.c **** 
+  48:Modules/src/systemview_task.c ****     //启动记录
+  49:Modules/src/systemview_task.c ****     SEGGER_SYSVIEW_Start();
+  70              		.loc 1 49 5 view .LVU14
+  71 001c FFF7FEFF 		bl	SEGGER_SYSVIEW_Start
+  72              	.LVL6:
+  45:Modules/src/systemview_task.c ****     TickType_t prev_send;
+  73              		.loc 1 45 10 is_stmt 0 view .LVU15
+  74 0020 0124     		movs	r4, #1
+  75 0022 1BE0     		b	.L2
+  76              	.LVL7:
+  77              	.L11:
+  50:Modules/src/systemview_task.c **** 
+  51:Modules/src/systemview_task.c ****     while (1) {
+  52:Modules/src/systemview_task.c ****         if (xTaskNotifyWait(0x00, 0x03, &notify_flag, pdMS_TO_TICKS(400)) == pdTRUE) {
+  53:Modules/src/systemview_task.c ****             if (notify_flag & 0x01) {
+  78              		.loc 1 53 13 is_stmt 1 view .LVU16
+  79              		.loc 1 53 29 is_stmt 0 view .LVU17
+  80 0024 009B     		ldr	r3, [sp]
+  81              		.loc 1 53 16 view .LVU18
+  82 0026 13F0010F 		tst	r3, #1
+  83 002a 08D1     		bne	.L9
+  54:Modules/src/systemview_task.c ****                 SEGGER_RTT_WriteDownBufferNoLock(channel_id, &rx_buf, 0x01);
+  55:Modules/src/systemview_task.c ****                 HAL_UART_Receive_IT(&huart1, &rx_buf, 0x01);
+  56:Modules/src/systemview_task.c ****             } else if (notify_flag & 0x02) {
+  84              		.loc 1 56 20 is_stmt 1 view .LVU19
+  85              		.loc 1 56 23 is_stmt 0 view .LVU20
+  86 002c 13F0020F 		tst	r3, #2
+  87 0030 1DD0     		beq	.L3
+  57:Modules/src/systemview_task.c ****                 if (dma_in_progress) {
+  88              		.loc 1 57 17 is_stmt 1 view .LVU21
+  89              		.loc 1 57 20 is_stmt 0 view .LVU22
+  90 0032 E4B1     		cbz	r4, .L3
+  58:Modules/src/systemview_task.c ****                     dma_in_progress = false;
+  91              		.loc 1 58 21 is_stmt 1 view .LVU23
+  92              	.LVL8:
+  59:Modules/src/systemview_task.c ****                     prev_send       = xTaskGetTickCount();
+  93              		.loc 1 59 21 view .LVU24
+  94              		.loc 1 59 39 is_stmt 0 view .LVU25
+  95 0034 FFF7FEFF 		bl	xTaskGetTickCount
+  96              	.LVL9:
+  97 0038 0546     		mov	r5, r0
+  98              	.LVL10:
+  58:Modules/src/systemview_task.c ****                     dma_in_progress = false;
+  99              		.loc 1 58 37 view .LVU26
+ 100 003a 0024     		movs	r4, #0
+ 101 003c 17E0     		b	.L3
+ 102              	.LVL11:
+ 103              	.L9:
+ 104              	.LBB2:
+  54:Modules/src/systemview_task.c ****                 HAL_UART_Receive_IT(&huart1, &rx_buf, 0x01);
+ 105              		.loc 1 54 17 is_stmt 1 view .LVU27
+ 106 003e 0122     		movs	r2, #1
+ 107 0040 0DF20711 		addw	r1, sp, #263
+ 108 0044 3046     		mov	r0, r6
+ 109 0046 FFF7FEFF 		bl	SEGGER_RTT_WriteDownBufferNoLock
+ 110              	.LVL12:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccQ3a0GA.s 			page 4
+
+
+  55:Modules/src/systemview_task.c ****             } else if (notify_flag & 0x02) {
+ 111              		.loc 1 55 17 view .LVU28
+ 112 004a 0122     		movs	r2, #1
+ 113 004c 0DF20711 		addw	r1, sp, #263
+ 114 0050 1C48     		ldr	r0, .L12+8
+ 115 0052 FFF7FEFF 		bl	HAL_UART_Receive_IT
+ 116              	.LVL13:
+ 117              	.LBE2:
+ 118 0056 0AE0     		b	.L3
+ 119              	.LVL14:
+ 120              	.L6:
+ 121              	.LBB3:
+  60:Modules/src/systemview_task.c ****                 }
+  61:Modules/src/systemview_task.c ****             }
+  62:Modules/src/systemview_task.c ****         }
+  63:Modules/src/systemview_task.c **** 
+  64:Modules/src/systemview_task.c ****         if (dma_in_progress == false && xTaskGetTickCount() - prev_send >= pdMS_TO_TICKS(400)) {
+  65:Modules/src/systemview_task.c ****             unsigned int tx_length = SEGGER_RTT_GetBytesInBuffer(channel_id);
+  66:Modules/src/systemview_task.c ****             if (tx_length >= SYSVIEW_SINGLE_TX) {
+  67:Modules/src/systemview_task.c ****                 uint32_t num = SEGGER_RTT_ReadUpBufferNoLock(channel_id, tx_buf, SYSVIEW_SINGLE_TX)
+  68:Modules/src/systemview_task.c ****                 HAL_UART_Transmit_DMA(&huart1, tx_buf, num);
+  69:Modules/src/systemview_task.c ****             } else if (tx_length != 0) {
+ 122              		.loc 1 69 20 view .LVU29
+ 123              		.loc 1 69 23 is_stmt 0 view .LVU30
+ 124 0058 18BB     		cbnz	r0, .L10
+  70:Modules/src/systemview_task.c ****                 uint32_t num = SEGGER_RTT_ReadUpBufferNoLock(channel_id, tx_buf, tx_length);
+  71:Modules/src/systemview_task.c ****                 HAL_UART_Transmit_DMA(&huart1, tx_buf, num);
+  72:Modules/src/systemview_task.c ****             }
+  73:Modules/src/systemview_task.c ****             dma_in_progress = true;
+ 125              		.loc 1 73 29 view .LVU31
+ 126 005a 0124     		movs	r4, #1
+ 127              	.LVL15:
+ 128              	.L2:
+ 129              		.loc 1 73 29 view .LVU32
+ 130              	.LBE3:
+  51:Modules/src/systemview_task.c ****         if (xTaskNotifyWait(0x00, 0x03, &notify_flag, pdMS_TO_TICKS(400)) == pdTRUE) {
+ 131              		.loc 1 51 5 is_stmt 1 view .LVU33
+  52:Modules/src/systemview_task.c ****             if (notify_flag & 0x01) {
+ 132              		.loc 1 52 9 view .LVU34
+  52:Modules/src/systemview_task.c ****             if (notify_flag & 0x01) {
+ 133              		.loc 1 52 13 is_stmt 0 view .LVU35
+ 134 005c 4FF4C873 		mov	r3, #400
+ 135 0060 6A46     		mov	r2, sp
+ 136 0062 0321     		movs	r1, #3
+ 137 0064 0020     		movs	r0, #0
+ 138 0066 FFF7FEFF 		bl	xTaskNotifyWait
+ 139              	.LVL16:
+  52:Modules/src/systemview_task.c ****             if (notify_flag & 0x01) {
+ 140              		.loc 1 52 12 view .LVU36
+ 141 006a 0128     		cmp	r0, #1
+ 142 006c DAD0     		beq	.L11
+ 143              	.LVL17:
+ 144              	.L3:
+  64:Modules/src/systemview_task.c ****             unsigned int tx_length = SEGGER_RTT_GetBytesInBuffer(channel_id);
+ 145              		.loc 1 64 9 is_stmt 1 view .LVU37
+  64:Modules/src/systemview_task.c ****             unsigned int tx_length = SEGGER_RTT_GetBytesInBuffer(channel_id);
+ 146              		.loc 1 64 12 is_stmt 0 view .LVU38
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccQ3a0GA.s 			page 5
+
+
+ 147 006e 002C     		cmp	r4, #0
+ 148 0070 F4D1     		bne	.L2
+  64:Modules/src/systemview_task.c ****             unsigned int tx_length = SEGGER_RTT_GetBytesInBuffer(channel_id);
+ 149              		.loc 1 64 41 discriminator 1 view .LVU39
+ 150 0072 FFF7FEFF 		bl	xTaskGetTickCount
+ 151              	.LVL18:
+  64:Modules/src/systemview_task.c ****             unsigned int tx_length = SEGGER_RTT_GetBytesInBuffer(channel_id);
+ 152              		.loc 1 64 61 discriminator 1 view .LVU40
+ 153 0076 401B     		subs	r0, r0, r5
+  64:Modules/src/systemview_task.c ****             unsigned int tx_length = SEGGER_RTT_GetBytesInBuffer(channel_id);
+ 154              		.loc 1 64 38 discriminator 1 view .LVU41
+ 155 0078 B0F5C87F 		cmp	r0, #400
+ 156 007c EED3     		bcc	.L2
+ 157              	.LBB6:
+  65:Modules/src/systemview_task.c ****             if (tx_length >= SYSVIEW_SINGLE_TX) {
+ 158              		.loc 1 65 13 is_stmt 1 view .LVU42
+  65:Modules/src/systemview_task.c ****             if (tx_length >= SYSVIEW_SINGLE_TX) {
+ 159              		.loc 1 65 38 is_stmt 0 view .LVU43
+ 160 007e 3046     		mov	r0, r6
+ 161 0080 FFF7FEFF 		bl	SEGGER_RTT_GetBytesInBuffer
+ 162              	.LVL19:
+  66:Modules/src/systemview_task.c ****                 uint32_t num = SEGGER_RTT_ReadUpBufferNoLock(channel_id, tx_buf, SYSVIEW_SINGLE_TX)
+ 163              		.loc 1 66 13 is_stmt 1 view .LVU44
+  66:Modules/src/systemview_task.c ****                 uint32_t num = SEGGER_RTT_ReadUpBufferNoLock(channel_id, tx_buf, SYSVIEW_SINGLE_TX)
+ 164              		.loc 1 66 16 is_stmt 0 view .LVU45
+ 165 0084 FF28     		cmp	r0, #255
+ 166 0086 E7D9     		bls	.L6
+ 167              	.LBB4:
+  67:Modules/src/systemview_task.c ****                 HAL_UART_Transmit_DMA(&huart1, tx_buf, num);
+ 168              		.loc 1 67 17 is_stmt 1 view .LVU46
+  67:Modules/src/systemview_task.c ****                 HAL_UART_Transmit_DMA(&huart1, tx_buf, num);
+ 169              		.loc 1 67 32 is_stmt 0 view .LVU47
+ 170 0088 4FF48072 		mov	r2, #256
+ 171 008c 01A9     		add	r1, sp, #4
+ 172 008e 3046     		mov	r0, r6
+ 173              	.LVL20:
+  67:Modules/src/systemview_task.c ****                 HAL_UART_Transmit_DMA(&huart1, tx_buf, num);
+ 174              		.loc 1 67 32 view .LVU48
+ 175 0090 FFF7FEFF 		bl	SEGGER_RTT_ReadUpBufferNoLock
+ 176              	.LVL21:
+  68:Modules/src/systemview_task.c ****             } else if (tx_length != 0) {
+ 177              		.loc 1 68 17 is_stmt 1 view .LVU49
+ 178 0094 82B2     		uxth	r2, r0
+ 179 0096 01A9     		add	r1, sp, #4
+ 180 0098 0A48     		ldr	r0, .L12+8
+ 181              	.LVL22:
+  68:Modules/src/systemview_task.c ****             } else if (tx_length != 0) {
+ 182              		.loc 1 68 17 is_stmt 0 view .LVU50
+ 183 009a FFF7FEFF 		bl	HAL_UART_Transmit_DMA
+ 184              	.LVL23:
+ 185              	.LBE4:
+ 186              		.loc 1 73 29 view .LVU51
+ 187 009e 0124     		movs	r4, #1
+ 188              	.LVL24:
+ 189              		.loc 1 73 29 view .LVU52
+ 190 00a0 DCE7     		b	.L2
+ 191              	.LVL25:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccQ3a0GA.s 			page 6
+
+
+ 192              	.L10:
+ 193              	.LBB5:
+  70:Modules/src/systemview_task.c ****                 HAL_UART_Transmit_DMA(&huart1, tx_buf, num);
+ 194              		.loc 1 70 17 is_stmt 1 view .LVU53
+  70:Modules/src/systemview_task.c ****                 HAL_UART_Transmit_DMA(&huart1, tx_buf, num);
+ 195              		.loc 1 70 32 is_stmt 0 view .LVU54
+ 196 00a2 0246     		mov	r2, r0
+ 197 00a4 01A9     		add	r1, sp, #4
+ 198 00a6 3046     		mov	r0, r6
+ 199              	.LVL26:
+  70:Modules/src/systemview_task.c ****                 HAL_UART_Transmit_DMA(&huart1, tx_buf, num);
+ 200              		.loc 1 70 32 view .LVU55
+ 201 00a8 FFF7FEFF 		bl	SEGGER_RTT_ReadUpBufferNoLock
+ 202              	.LVL27:
+  71:Modules/src/systemview_task.c ****             }
+ 203              		.loc 1 71 17 is_stmt 1 view .LVU56
+ 204 00ac 82B2     		uxth	r2, r0
+ 205 00ae 01A9     		add	r1, sp, #4
+ 206 00b0 0448     		ldr	r0, .L12+8
+ 207              	.LVL28:
+  71:Modules/src/systemview_task.c ****             }
+ 208              		.loc 1 71 17 is_stmt 0 view .LVU57
+ 209 00b2 FFF7FEFF 		bl	HAL_UART_Transmit_DMA
+ 210              	.LVL29:
+ 211              	.LBE5:
+ 212              		.loc 1 73 29 view .LVU58
+ 213 00b6 0124     		movs	r4, #1
+ 214              	.LVL30:
+ 215              		.loc 1 73 29 view .LVU59
+ 216 00b8 D0E7     		b	.L2
+ 217              	.L13:
+ 218 00ba 00BF     		.align	2
+ 219              	.L12:
+ 220 00bc 00000000 		.word	system_view_notify
+ 221 00c0 00000000 		.word	.LANCHOR0
+ 222 00c4 00000000 		.word	huart1
+ 223              	.LBE6:
+ 224              		.cfi_endproc
+ 225              	.LFE139:
+ 227              		.section	.rodata.SystemViewLaunch.str1.4,"aMS",%progbits,1
+ 228              		.align	2
+ 229              	.LC0:
+ 230 0000 53797374 		.ascii	"SystemViewTask\000"
+ 230      656D5669 
+ 230      65775461 
+ 230      736B00
+ 231              		.section	.text.SystemViewLaunch,"ax",%progbits
+ 232              		.align	1
+ 233              		.global	SystemViewLaunch
+ 234              		.syntax unified
+ 235              		.thumb
+ 236              		.thumb_func
+ 237              		.fpu fpv4-sp-d16
+ 239              	SystemViewLaunch:
+ 240              	.LFB138:
+  20:Modules/src/systemview_task.c ****     // uint8_t buffer[] = "Hello world\r\n";
+ 241              		.loc 1 20 29 is_stmt 1 view -0
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccQ3a0GA.s 			page 7
+
+
+ 242              		.cfi_startproc
+ 243              		@ args = 0, pretend = 0, frame = 0
+ 244              		@ frame_needed = 0, uses_anonymous_args = 0
+ 245 0000 10B5     		push	{r4, lr}
+ 246              	.LCFI2:
+ 247              		.cfi_def_cfa_offset 8
+ 248              		.cfi_offset 4, -8
+ 249              		.cfi_offset 14, -4
+ 250 0002 84B0     		sub	sp, sp, #16
+ 251              	.LCFI3:
+ 252              		.cfi_def_cfa_offset 24
+  24:Modules/src/systemview_task.c ****     DWT->CYCCNT = 0;
+ 253              		.loc 1 24 5 view .LVU61
+  24:Modules/src/systemview_task.c ****     DWT->CYCCNT = 0;
+ 254              		.loc 1 24 22 is_stmt 0 view .LVU62
+ 255 0004 0E4A     		ldr	r2, .L16
+ 256 0006 D368     		ldr	r3, [r2, #12]
+ 257 0008 43F08073 		orr	r3, r3, #16777216
+ 258 000c D360     		str	r3, [r2, #12]
+  25:Modules/src/systemview_task.c ****     DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
+ 259              		.loc 1 25 5 is_stmt 1 view .LVU63
+  25:Modules/src/systemview_task.c ****     DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
+ 260              		.loc 1 25 17 is_stmt 0 view .LVU64
+ 261 000e 0D4B     		ldr	r3, .L16+4
+ 262 0010 0024     		movs	r4, #0
+ 263 0012 5C60     		str	r4, [r3, #4]
+  26:Modules/src/systemview_task.c **** 
+ 264              		.loc 1 26 5 is_stmt 1 view .LVU65
+  26:Modules/src/systemview_task.c **** 
+ 265              		.loc 1 26 15 is_stmt 0 view .LVU66
+ 266 0014 1A68     		ldr	r2, [r3]
+ 267 0016 42F00102 		orr	r2, r2, #1
+ 268 001a 1A60     		str	r2, [r3]
+  28:Modules/src/systemview_task.c **** 
+ 269              		.loc 1 28 5 is_stmt 1 view .LVU67
+ 270 001c FFF7FEFF 		bl	SEGGER_SYSVIEW_Conf
+ 271              	.LVL31:
+  30:Modules/src/systemview_task.c **** }
+ 272              		.loc 1 30 5 view .LVU68
+ 273 0020 094B     		ldr	r3, .L16+8
+ 274 0022 0293     		str	r3, [sp, #8]
+ 275 0024 094B     		ldr	r3, .L16+12
+ 276 0026 0193     		str	r3, [sp, #4]
+ 277 0028 0623     		movs	r3, #6
+ 278 002a 0093     		str	r3, [sp]
+ 279 002c 2346     		mov	r3, r4
+ 280 002e 4FF48072 		mov	r2, #256
+ 281 0032 0749     		ldr	r1, .L16+16
+ 282 0034 0748     		ldr	r0, .L16+20
+ 283 0036 FFF7FEFF 		bl	xTaskCreateStatic
+ 284              	.LVL32:
+  31:Modules/src/systemview_task.c **** 
+ 285              		.loc 1 31 1 is_stmt 0 view .LVU69
+ 286 003a 04B0     		add	sp, sp, #16
+ 287              	.LCFI4:
+ 288              		.cfi_def_cfa_offset 8
+ 289              		@ sp needed
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccQ3a0GA.s 			page 8
+
+
+ 290 003c 10BD     		pop	{r4, pc}
+ 291              	.L17:
+ 292 003e 00BF     		.align	2
+ 293              	.L16:
+ 294 0040 F0ED00E0 		.word	-536810000
+ 295 0044 001000E0 		.word	-536866816
+ 296 0048 00000000 		.word	.LANCHOR1
+ 297 004c 00000000 		.word	.LANCHOR2
+ 298 0050 00000000 		.word	.LC0
+ 299 0054 00000000 		.word	SystemViewTask
+ 300              		.cfi_endproc
+ 301              	.LFE138:
+ 303              		.global	hello_message
+ 304              		.section	.bss.osSys_systemview_taskStackBuffer,"aw",%nobits
+ 305              		.align	2
+ 306              		.set	.LANCHOR2,. + 0
+ 309              	osSys_systemview_taskStackBuffer:
+ 310 0000 00000000 		.space	1024
+ 310      00000000 
+ 310      00000000 
+ 310      00000000 
+ 310      00000000 
+ 311              		.section	.bss.osSys_systemview_taskTaskBuffer,"aw",%nobits
+ 312              		.align	2
+ 313              		.set	.LANCHOR1,. + 0
+ 316              	osSys_systemview_taskTaskBuffer:
+ 317 0000 00000000 		.space	84
+ 317      00000000 
+ 317      00000000 
+ 317      00000000 
+ 317      00000000 
+ 318              		.section	.data.hello_message,"aw"
+ 319              		.align	2
+ 320              		.set	.LANCHOR0,. + 0
+ 323              	hello_message:
+ 324 0000 53454747 		.ascii	"SEGGER SystemView V3.10.00\000\000\000\000\000\000"
+ 324      45522053 
+ 324      79737465 
+ 324      6D566965 
+ 324      77205633 
+ 325              		.text
+ 326              	.Letext0:
+ 327              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
+ 328              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 329              		.file 4 "Inc/FreeRTOSConfig.h"
+ 330              		.file 5 "Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW.h"
+ 331              		.file 6 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
+ 332              		.file 7 "Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"
+ 333              		.file 8 "Drivers/CMSIS/Include/core_cm4.h"
+ 334              		.file 9 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 335              		.file 10 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 336              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 337              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 338              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 339              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 340              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
+ 341              		.file 16 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccQ3a0GA.s 			page 9
+
+
+ 342              		.file 17 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
+ 343              		.file 18 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
+ 344              		.file 19 "Modules/include/utils.h"
+ 345              		.file 20 "Inc/usart.h"
+ 346              		.file 21 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccQ3a0GA.s 			page 10
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 systemview_task.c
+C:\Users\luoha\AppData\Local\Temp\ccQ3a0GA.s:18     .text.SystemViewTask:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccQ3a0GA.s:25     .text.SystemViewTask:00000000 SystemViewTask
+C:\Users\luoha\AppData\Local\Temp\ccQ3a0GA.s:220    .text.SystemViewTask:000000bc $d
+C:\Users\luoha\AppData\Local\Temp\ccQ3a0GA.s:228    .rodata.SystemViewLaunch.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccQ3a0GA.s:232    .text.SystemViewLaunch:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccQ3a0GA.s:239    .text.SystemViewLaunch:00000000 SystemViewLaunch
+C:\Users\luoha\AppData\Local\Temp\ccQ3a0GA.s:294    .text.SystemViewLaunch:00000040 $d
+C:\Users\luoha\AppData\Local\Temp\ccQ3a0GA.s:323    .data.hello_message:00000000 hello_message
+C:\Users\luoha\AppData\Local\Temp\ccQ3a0GA.s:305    .bss.osSys_systemview_taskStackBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccQ3a0GA.s:309    .bss.osSys_systemview_taskStackBuffer:00000000 osSys_systemview_taskStackBuffer
+C:\Users\luoha\AppData\Local\Temp\ccQ3a0GA.s:312    .bss.osSys_systemview_taskTaskBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccQ3a0GA.s:316    .bss.osSys_systemview_taskTaskBuffer:00000000 osSys_systemview_taskTaskBuffer
+C:\Users\luoha\AppData\Local\Temp\ccQ3a0GA.s:319    .data.hello_message:00000000 $d
+
+UNDEFINED SYMBOLS
+xTaskGetCurrentTaskHandle
+SEGGER_SYSVIEW_GetChannelID
+HAL_UART_Transmit_DMA
+SEGGER_SYSVIEW_Start
+xTaskGetTickCount
+SEGGER_RTT_WriteDownBufferNoLock
+HAL_UART_Receive_IT
+xTaskNotifyWait
+SEGGER_RTT_GetBytesInBuffer
+SEGGER_RTT_ReadUpBufferNoLock
+system_view_notify
+huart1
+SEGGER_SYSVIEW_Conf
+xTaskCreateStatic

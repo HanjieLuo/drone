@@ -137,6 +137,14 @@ standard names. */
 /* Section where parameter definitions can be added (for instance, to override default ones in FreeRTOS.h) */
 #define configAPPLICATION_ALLOCATED_HEAP 4
 #define configUSE_TASK_NOTIFICATIONS 1
+
+#include "config.h"
+#ifdef USE_SISTEMVEIW
+#define INCLUDE_xTaskGetIdleTaskHandle 1
+#define INCLUDE_pxTaskGetStackStart 1
+
+#include "SEGGER_SYSVIEW_FreeRTOS.h"
+#endif 
 /* USER CODE END Defines */
 
 #endif /* FREERTOS_CONFIG_H */

@@ -30,7 +30,14 @@ build/main.o: Src/main.c Inc/main.h \
  Modules/include/utils.h \
  Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
- Inc/FreeRTOSConfig.h \
+ Inc/FreeRTOSConfig.h Modules/include/config.h \
+ Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.h \
+ Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW.h \
+ Middlewares/Third_Party/SystemView/SEGGER/SEGGER.h \
+ Middlewares/Third_Party/SystemView/Config/Global.h \
+ Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_ConfDefaults.h \
+ Middlewares/Third_Party/SystemView/Config/SEGGER_SYSVIEW_Conf.h \
+ Middlewares/Third_Party/SystemView/Config/SEGGER_RTT_Conf.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
@@ -50,7 +57,8 @@ build/main.o: Src/main.c Inc/main.h \
  Modules/include/utils.h Modules/include/sensors.h \
  Modules/include/hmc5883l.h Modules/include/i2c1.h \
  Modules/include/mpu6050.h Modules/include/ms5611.h \
- Modules/include/system_task.h
+ Modules/include/system_task.h Modules/include/systemview_task.h \
+ Modules/include/usart_com.h
 
 Inc/main.h:
 
@@ -122,6 +130,22 @@ Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 
 Inc/FreeRTOSConfig.h:
 
+Modules/include/config.h:
+
+Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.h:
+
+Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW.h:
+
+Middlewares/Third_Party/SystemView/SEGGER/SEGGER.h:
+
+Middlewares/Third_Party/SystemView/Config/Global.h:
+
+Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_ConfDefaults.h:
+
+Middlewares/Third_Party/SystemView/Config/SEGGER_SYSVIEW_Conf.h:
+
+Middlewares/Third_Party/SystemView/Config/SEGGER_RTT_Conf.h:
+
 Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
 
 Middlewares/Third_Party/FreeRTOS/Source/include/portable.h:
@@ -179,3 +203,7 @@ Modules/include/mpu6050.h:
 Modules/include/ms5611.h:
 
 Modules/include/system_task.h:
+
+Modules/include/systemview_task.h:
+
+Modules/include/usart_com.h:

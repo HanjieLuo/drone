@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOu0xxY.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOdoxCX.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -17,18 +17,31 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOu0xxY.s 			page 1
   14              		.text
   15              	.Ltext0:
   16              		.cfi_sections	.debug_frame
-  17              		.section	.text.__io_putchar,"ax",%progbits
-  18              		.align	1
-  19              		.global	__io_putchar
-  20              		.arch armv7e-m
-  21              		.syntax unified
-  22              		.thumb
-  23              		.thumb_func
-  24              		.fpu fpv4-sp-d16
-  26              	__io_putchar:
-  27              	.LVL0:
-  28              	.LFB133:
-  29              		.file 1 "Modules/src/utils.c"
+  17              		.section	.rodata.itoa.str1.4,"aMS",%progbits,1
+  18              		.align	2
+  19              	.LC0:
+  20 0000 7A797877 		.ascii	"zyxwvutsrqponmlkjihgfedcba9876543210123456789abcdef"
+  20      76757473 
+  20      7271706F 
+  20      6E6D6C6B 
+  20      6A696867 
+  21 0033 6768696A 		.ascii	"ghijklmnopqrstuvwxyz\000"
+  21      6B6C6D6E 
+  21      6F707172 
+  21      73747576 
+  21      7778797A 
+  22              		.section	.text.itoa,"ax",%progbits
+  23              		.align	1
+  24              		.global	itoa
+  25              		.arch armv7e-m
+  26              		.syntax unified
+  27              		.thumb
+  28              		.thumb_func
+  29              		.fpu fpv4-sp-d16
+  31              	itoa:
+  32              	.LVL0:
+  33              	.LFB133:
+  34              		.file 1 "Modules/src/utils.c"
    1:Modules/src/utils.c **** #include "utils.h"
    2:Modules/src/utils.c **** 
    3:Modules/src/utils.c **** #ifdef __GNUC__
@@ -37,357 +50,227 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOu0xxY.s 			page 1
    6:Modules/src/utils.c **** #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
    7:Modules/src/utils.c **** #endif
    8:Modules/src/utils.c **** 
-   9:Modules/src/utils.c **** PUTCHAR_PROTOTYPE {
-  30              		.loc 1 9 19 view -0
-  31              		.cfi_startproc
-  32              		@ args = 0, pretend = 0, frame = 8
-  33              		@ frame_needed = 0, uses_anonymous_args = 0
-  34              		.loc 1 9 19 is_stmt 0 view .LVU1
-  35 0000 00B5     		push	{lr}
-  36              	.LCFI0:
-  37              		.cfi_def_cfa_offset 4
-  38              		.cfi_offset 14, -4
-  39 0002 83B0     		sub	sp, sp, #12
-  40              	.LCFI1:
-  41              		.cfi_def_cfa_offset 16
-  42 0004 0190     		str	r0, [sp, #4]
-  10:Modules/src/utils.c ****     /* Place your implementation of fputc here */
-  11:Modules/src/utils.c ****     /* e.g. write a character to the USART1 and Loop until the end of transmission */
-  12:Modules/src/utils.c ****     HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, 0xFFFF);
-  43              		.loc 1 12 5 is_stmt 1 view .LVU2
-  44 0006 4FF6FF73 		movw	r3, #65535
-  45 000a 0122     		movs	r2, #1
-  46 000c 01A9     		add	r1, sp, #4
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOu0xxY.s 			page 2
+   9:Modules/src/utils.c **** 
+  10:Modules/src/utils.c **** // PUTCHAR_PROTOTYPE {
+  11:Modules/src/utils.c **** //     /* Place your implementation of fputc here */
+  12:Modules/src/utils.c **** //     /* e.g. write a character to the USART1 and Loop until the end of transmission */
+  13:Modules/src/utils.c **** //     HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, 0xFFFF);
+  14:Modules/src/utils.c **** //     return ch;
+  15:Modules/src/utils.c **** // }
+  16:Modules/src/utils.c **** 
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOdoxCX.s 			page 2
 
 
-  47 000e 0348     		ldr	r0, .L3
-  48              	.LVL1:
-  49              		.loc 1 12 5 is_stmt 0 view .LVU3
-  50 0010 FFF7FEFF 		bl	HAL_UART_Transmit
-  51              	.LVL2:
-  13:Modules/src/utils.c ****     return ch;
-  52              		.loc 1 13 5 is_stmt 1 view .LVU4
-  14:Modules/src/utils.c **** }
-  53              		.loc 1 14 1 is_stmt 0 view .LVU5
-  54 0014 0198     		ldr	r0, [sp, #4]
-  55 0016 03B0     		add	sp, sp, #12
-  56              	.LCFI2:
-  57              		.cfi_def_cfa_offset 4
-  58              		@ sp needed
-  59 0018 5DF804FB 		ldr	pc, [sp], #4
-  60              	.L4:
-  61              		.align	2
-  62              	.L3:
-  63 001c 00000000 		.word	huart1
-  64              		.cfi_endproc
-  65              	.LFE133:
-  67              		.section	.text._write,"ax",%progbits
-  68              		.align	1
-  69              		.global	_write
-  70              		.syntax unified
-  71              		.thumb
-  72              		.thumb_func
-  73              		.fpu fpv4-sp-d16
-  75              	_write:
-  76              	.LVL3:
-  77              	.LFB134:
-  15:Modules/src/utils.c **** 
-  16:Modules/src/utils.c **** int _write(int32_t file, uint8_t *ptr, int32_t len) {
-  78              		.loc 1 16 53 is_stmt 1 view -0
-  79              		.cfi_startproc
-  80              		@ args = 0, pretend = 0, frame = 0
-  81              		@ frame_needed = 0, uses_anonymous_args = 0
-  82              		.loc 1 16 53 is_stmt 0 view .LVU7
-  83 0000 70B5     		push	{r4, r5, r6, lr}
-  84              	.LCFI3:
-  85              		.cfi_def_cfa_offset 16
-  86              		.cfi_offset 4, -16
-  87              		.cfi_offset 5, -12
-  88              		.cfi_offset 6, -8
-  89              		.cfi_offset 14, -4
-  90 0002 0C46     		mov	r4, r1
-  91 0004 1646     		mov	r6, r2
-  17:Modules/src/utils.c ****     /* Implement your write code here, this is used by puts and printf for example */
-  18:Modules/src/utils.c ****     int DataIdx;
-  92              		.loc 1 18 5 is_stmt 1 view .LVU8
-  19:Modules/src/utils.c ****     for (DataIdx = 0; DataIdx < len; DataIdx++) {
-  93              		.loc 1 19 5 view .LVU9
-  94              	.LVL4:
-  95              		.loc 1 19 18 is_stmt 0 view .LVU10
-  96 0006 0025     		movs	r5, #0
-  97              	.LVL5:
-  98              	.L6:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOu0xxY.s 			page 3
+  17:Modules/src/utils.c **** // int _write(int32_t file, uint8_t *ptr, int32_t len) {
+  18:Modules/src/utils.c **** //     /* Implement your write code here, this is used by puts and printf for example */
+  19:Modules/src/utils.c **** //     int DataIdx;
+  20:Modules/src/utils.c **** //     for (DataIdx = 0; DataIdx < len; DataIdx++) {
+  21:Modules/src/utils.c **** //         __io_putchar(*ptr++);
+  22:Modules/src/utils.c **** //     }
+  23:Modules/src/utils.c **** //     // HAL_UART_Transmit_DMA(&huart1, ptr, len);
+  24:Modules/src/utils.c **** //     return len;
+  25:Modules/src/utils.c **** //     /* return len; */
+  26:Modules/src/utils.c **** // }
+  27:Modules/src/utils.c **** 
+  28:Modules/src/utils.c **** 
+  29:Modules/src/utils.c **** char *itoa(int value, char *result, int base) {
+  35              		.loc 1 29 47 view -0
+  36              		.cfi_startproc
+  37              		@ args = 0, pretend = 0, frame = 0
+  38              		@ frame_needed = 0, uses_anonymous_args = 0
+  39              		@ link register save eliminated.
+  40              		.loc 1 29 47 is_stmt 0 view .LVU1
+  41 0000 F0B4     		push	{r4, r5, r6, r7}
+  42              	.LCFI0:
+  43              		.cfi_def_cfa_offset 16
+  44              		.cfi_offset 4, -16
+  45              		.cfi_offset 5, -12
+  46              		.cfi_offset 6, -8
+  47              		.cfi_offset 7, -4
+  48 0002 0546     		mov	r5, r0
+  49 0004 0846     		mov	r0, r1
+  50              	.LVL1:
+  30:Modules/src/utils.c ****     // check that the base if valid
+  31:Modules/src/utils.c ****     if (base < 2 || base > 36) {
+  51              		.loc 1 31 5 is_stmt 1 view .LVU2
+  52              		.loc 1 31 18 is_stmt 0 view .LVU3
+  53 0006 931E     		subs	r3, r2, #2
+  54              		.loc 1 31 8 view .LVU4
+  55 0008 222B     		cmp	r3, #34
+  56 000a 14D8     		bhi	.L9
+  32:Modules/src/utils.c ****         *result = '\0';
+  33:Modules/src/utils.c ****         return result;
+  34:Modules/src/utils.c ****     }
+  35:Modules/src/utils.c **** 
+  36:Modules/src/utils.c ****     char *ptr = result, *ptr1 = result, tmp_char;
+  57              		.loc 1 36 11 view .LVU5
+  58 000c 0B46     		mov	r3, r1
+  59              	.LVL2:
+  60              	.L2:
+  37:Modules/src/utils.c ****     int tmp_value;
+  61              		.loc 1 37 5 is_stmt 1 discriminator 1 view .LVU6
+  38:Modules/src/utils.c **** 
+  39:Modules/src/utils.c ****     do {
+  62              		.loc 1 39 5 discriminator 1 view .LVU7
+  40:Modules/src/utils.c ****         tmp_value = value;
+  63              		.loc 1 40 9 discriminator 1 view .LVU8
+  41:Modules/src/utils.c ****         value /= base;
+  64              		.loc 1 41 9 discriminator 1 view .LVU9
+  65 000e 2E46     		mov	r6, r5
+  66              		.loc 1 41 15 is_stmt 0 discriminator 1 view .LVU10
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOdoxCX.s 			page 3
 
 
-  99              		.loc 1 19 23 is_stmt 1 discriminator 1 view .LVU11
- 100              		.loc 1 19 5 is_stmt 0 discriminator 1 view .LVU12
- 101 0008 B542     		cmp	r5, r6
- 102 000a 05DA     		bge	.L9
-  20:Modules/src/utils.c ****         __io_putchar(*ptr++);
- 103              		.loc 1 20 9 is_stmt 1 discriminator 3 view .LVU13
- 104              	.LVL6:
- 105              		.loc 1 20 9 is_stmt 0 discriminator 3 view .LVU14
- 106 000c 14F8010B 		ldrb	r0, [r4], #1	@ zero_extendqisi2
- 107              	.LVL7:
- 108              		.loc 1 20 9 discriminator 3 view .LVU15
- 109 0010 FFF7FEFF 		bl	__io_putchar
- 110              	.LVL8:
-  19:Modules/src/utils.c ****     for (DataIdx = 0; DataIdx < len; DataIdx++) {
- 111              		.loc 1 19 38 is_stmt 1 discriminator 3 view .LVU16
-  19:Modules/src/utils.c ****     for (DataIdx = 0; DataIdx < len; DataIdx++) {
- 112              		.loc 1 19 45 is_stmt 0 discriminator 3 view .LVU17
- 113 0014 0135     		adds	r5, r5, #1
- 114              	.LVL9:
-  19:Modules/src/utils.c ****     for (DataIdx = 0; DataIdx < len; DataIdx++) {
- 115              		.loc 1 19 45 discriminator 3 view .LVU18
- 116 0016 F7E7     		b	.L6
- 117              	.L9:
-  21:Modules/src/utils.c ****     }
-  22:Modules/src/utils.c ****     // HAL_UART_Transmit_DMA(&huart1, ptr, len);
-  23:Modules/src/utils.c ****     return len;
- 118              		.loc 1 23 5 is_stmt 1 view .LVU19
-  24:Modules/src/utils.c ****     /* return len; */
-  25:Modules/src/utils.c **** }
- 119              		.loc 1 25 1 is_stmt 0 view .LVU20
- 120 0018 3046     		mov	r0, r6
- 121 001a 70BD     		pop	{r4, r5, r6, pc}
- 122              		.loc 1 25 1 view .LVU21
- 123              		.cfi_endproc
- 124              	.LFE134:
- 126              		.section	.rodata.itoa.str1.4,"aMS",%progbits,1
- 127              		.align	2
- 128              	.LC0:
- 129 0000 7A797877 		.ascii	"zyxwvutsrqponmlkjihgfedcba9876543210123456789abcdef"
- 129      76757473 
- 129      7271706F 
- 129      6E6D6C6B 
- 129      6A696867 
- 130 0033 6768696A 		.ascii	"ghijklmnopqrstuvwxyz\000"
- 130      6B6C6D6E 
- 130      6F707172 
- 130      73747576 
- 130      7778797A 
- 131              		.section	.text.itoa,"ax",%progbits
- 132              		.align	1
- 133              		.global	itoa
- 134              		.syntax unified
- 135              		.thumb
- 136              		.thumb_func
- 137              		.fpu fpv4-sp-d16
- 139              	itoa:
- 140              	.LVL10:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOu0xxY.s 			page 4
+  67 0010 95FBF2F5 		sdiv	r5, r5, r2
+  68              	.LVL3:
+  42:Modules/src/utils.c ****         *ptr++ = "zyxwvutsrqponmlkjihgfedcba9876543210123456789abcdefghijklmnopqrstuvwxyz"[35 + (tm
+  69              		.loc 1 42 9 is_stmt 1 discriminator 1 view .LVU11
+  70              		.loc 1 42 95 is_stmt 0 discriminator 1 view .LVU12
+  71 0014 02FB1564 		mls	r4, r2, r5, r6
+  72 0018 2334     		adds	r4, r4, #35
+  73 001a 1946     		mov	r1, r3
+  74              		.loc 1 42 13 discriminator 1 view .LVU13
+  75 001c 0133     		adds	r3, r3, #1
+  76              	.LVL4:
+  77              		.loc 1 42 91 discriminator 1 view .LVU14
+  78 001e 0E4F     		ldr	r7, .L11
+  79 0020 3C5D     		ldrb	r4, [r7, r4]	@ zero_extendqisi2
+  80              		.loc 1 42 16 discriminator 1 view .LVU15
+  81 0022 0C70     		strb	r4, [r1]
+  43:Modules/src/utils.c ****     } while (value);
+  82              		.loc 1 43 13 is_stmt 1 discriminator 1 view .LVU16
+  83              		.loc 1 43 5 is_stmt 0 discriminator 1 view .LVU17
+  84 0024 002D     		cmp	r5, #0
+  85 0026 F2D1     		bne	.L2
+  44:Modules/src/utils.c **** 
+  45:Modules/src/utils.c ****     // Apply negative sign
+  46:Modules/src/utils.c ****     if (tmp_value < 0) *ptr++ = '-';
+  86              		.loc 1 46 5 is_stmt 1 view .LVU18
+  87              		.loc 1 46 8 is_stmt 0 view .LVU19
+  88 0028 002E     		cmp	r6, #0
+  89 002a 07DB     		blt	.L10
+  90              	.LVL5:
+  91              	.L4:
+  47:Modules/src/utils.c ****     *ptr-- = '\0';
+  92              		.loc 1 47 5 is_stmt 1 view .LVU20
+  93              		.loc 1 47 12 is_stmt 0 view .LVU21
+  94 002c 0022     		movs	r2, #0
+  95 002e 03F80129 		strb	r2, [r3], #-1
+  96              	.LVL6:
+  48:Modules/src/utils.c ****     while (ptr1 < ptr) {
+  97              		.loc 1 48 5 is_stmt 1 view .LVU22
+  36:Modules/src/utils.c ****     int tmp_value;
+  98              		.loc 1 36 26 is_stmt 0 view .LVU23
+  99 0032 0246     		mov	r2, r0
+ 100              		.loc 1 48 11 view .LVU24
+ 101 0034 0CE0     		b	.L5
+ 102              	.LVL7:
+ 103              	.L9:
+  32:Modules/src/utils.c ****         return result;
+ 104              		.loc 1 32 9 is_stmt 1 view .LVU25
+  32:Modules/src/utils.c ****         return result;
+ 105              		.loc 1 32 17 is_stmt 0 view .LVU26
+ 106 0036 0023     		movs	r3, #0
+ 107 0038 0B70     		strb	r3, [r1]
+  33:Modules/src/utils.c ****     }
+ 108              		.loc 1 33 9 is_stmt 1 view .LVU27
+  33:Modules/src/utils.c ****     }
+ 109              		.loc 1 33 16 is_stmt 0 view .LVU28
+ 110 003a 0BE0     		b	.L3
+ 111              	.LVL8:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOdoxCX.s 			page 4
 
 
- 141              	.LFB135:
-  26:Modules/src/utils.c **** 
-  27:Modules/src/utils.c **** char *itoa(int value, char *result, int base) {
- 142              		.loc 1 27 47 is_stmt 1 view -0
- 143              		.cfi_startproc
- 144              		@ args = 0, pretend = 0, frame = 0
- 145              		@ frame_needed = 0, uses_anonymous_args = 0
- 146              		@ link register save eliminated.
- 147              		.loc 1 27 47 is_stmt 0 view .LVU23
- 148 0000 F0B4     		push	{r4, r5, r6, r7}
- 149              	.LCFI4:
- 150              		.cfi_def_cfa_offset 16
- 151              		.cfi_offset 4, -16
- 152              		.cfi_offset 5, -12
- 153              		.cfi_offset 6, -8
- 154              		.cfi_offset 7, -4
- 155 0002 0546     		mov	r5, r0
- 156 0004 0846     		mov	r0, r1
- 157              	.LVL11:
-  28:Modules/src/utils.c ****     // check that the base if valid
-  29:Modules/src/utils.c ****     if (base < 2 || base > 36) {
- 158              		.loc 1 29 5 is_stmt 1 view .LVU24
- 159              		.loc 1 29 18 is_stmt 0 view .LVU25
- 160 0006 931E     		subs	r3, r2, #2
- 161              		.loc 1 29 8 view .LVU26
- 162 0008 222B     		cmp	r3, #34
- 163 000a 14D8     		bhi	.L18
-  30:Modules/src/utils.c ****         *result = '\0';
-  31:Modules/src/utils.c ****         return result;
-  32:Modules/src/utils.c ****     }
-  33:Modules/src/utils.c **** 
-  34:Modules/src/utils.c ****     char *ptr = result, *ptr1 = result, tmp_char;
- 164              		.loc 1 34 11 view .LVU27
- 165 000c 0B46     		mov	r3, r1
- 166              	.LVL12:
- 167              	.L11:
-  35:Modules/src/utils.c ****     int tmp_value;
- 168              		.loc 1 35 5 is_stmt 1 discriminator 1 view .LVU28
-  36:Modules/src/utils.c **** 
-  37:Modules/src/utils.c ****     do {
- 169              		.loc 1 37 5 discriminator 1 view .LVU29
-  38:Modules/src/utils.c ****         tmp_value = value;
- 170              		.loc 1 38 9 discriminator 1 view .LVU30
-  39:Modules/src/utils.c ****         value /= base;
- 171              		.loc 1 39 9 discriminator 1 view .LVU31
- 172 000e 2E46     		mov	r6, r5
- 173              		.loc 1 39 15 is_stmt 0 discriminator 1 view .LVU32
- 174 0010 95FBF2F5 		sdiv	r5, r5, r2
- 175              	.LVL13:
-  40:Modules/src/utils.c ****         *ptr++ = "zyxwvutsrqponmlkjihgfedcba9876543210123456789abcdefghijklmnopqrstuvwxyz"[35 + (tm
- 176              		.loc 1 40 9 is_stmt 1 discriminator 1 view .LVU33
- 177              		.loc 1 40 95 is_stmt 0 discriminator 1 view .LVU34
- 178 0014 02FB1564 		mls	r4, r2, r5, r6
- 179 0018 2334     		adds	r4, r4, #35
- 180 001a 1946     		mov	r1, r3
- 181              		.loc 1 40 13 discriminator 1 view .LVU35
- 182 001c 0133     		adds	r3, r3, #1
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOu0xxY.s 			page 5
+ 112              	.L10:
+  46:Modules/src/utils.c ****     *ptr-- = '\0';
+ 113              		.loc 1 46 24 is_stmt 1 discriminator 1 view .LVU29
+  46:Modules/src/utils.c ****     *ptr-- = '\0';
+ 114              		.loc 1 46 31 is_stmt 0 discriminator 1 view .LVU30
+ 115 003c 2D22     		movs	r2, #45
+ 116              	.LVL9:
+  46:Modules/src/utils.c ****     *ptr-- = '\0';
+ 117              		.loc 1 46 31 discriminator 1 view .LVU31
+ 118 003e 1A70     		strb	r2, [r3]
+  46:Modules/src/utils.c ****     *ptr-- = '\0';
+ 119              		.loc 1 46 28 discriminator 1 view .LVU32
+ 120 0040 8B1C     		adds	r3, r1, #2
+ 121              	.LVL10:
+  46:Modules/src/utils.c ****     *ptr-- = '\0';
+ 122              		.loc 1 46 28 discriminator 1 view .LVU33
+ 123 0042 F3E7     		b	.L4
+ 124              	.LVL11:
+ 125              	.L6:
+  49:Modules/src/utils.c ****         tmp_char = *ptr;
+ 126              		.loc 1 49 9 is_stmt 1 view .LVU34
+ 127              		.loc 1 49 18 is_stmt 0 view .LVU35
+ 128 0044 1978     		ldrb	r1, [r3]	@ zero_extendqisi2
+ 129              	.LVL12:
+  50:Modules/src/utils.c ****         *ptr--   = *ptr1;
+ 130              		.loc 1 50 9 is_stmt 1 view .LVU36
+ 131              		.loc 1 50 20 is_stmt 0 view .LVU37
+ 132 0046 1478     		ldrb	r4, [r2]	@ zero_extendqisi2
+ 133              		.loc 1 50 18 view .LVU38
+ 134 0048 03F80149 		strb	r4, [r3], #-1
+ 135              	.LVL13:
+  51:Modules/src/utils.c ****         *ptr1++  = tmp_char;
+ 136              		.loc 1 51 9 is_stmt 1 view .LVU39
+ 137              		.loc 1 51 18 is_stmt 0 view .LVU40
+ 138 004c 02F8011B 		strb	r1, [r2], #1
+ 139              	.LVL14:
+ 140              	.L5:
+  48:Modules/src/utils.c ****         tmp_char = *ptr;
+ 141              		.loc 1 48 11 is_stmt 1 view .LVU41
+ 142 0050 9342     		cmp	r3, r2
+ 143 0052 F7D8     		bhi	.L6
+ 144              	.LVL15:
+ 145              	.L3:
+  52:Modules/src/utils.c ****     }
+  53:Modules/src/utils.c ****     return result;
+  54:Modules/src/utils.c **** }
+ 146              		.loc 1 54 1 is_stmt 0 view .LVU42
+ 147 0054 F0BC     		pop	{r4, r5, r6, r7}
+ 148              	.LCFI1:
+ 149              		.cfi_restore 7
+ 150              		.cfi_restore 6
+ 151              		.cfi_restore 5
+ 152              		.cfi_restore 4
+ 153              		.cfi_def_cfa_offset 0
+ 154              	.LVL16:
+ 155              		.loc 1 54 1 view .LVU43
+ 156 0056 7047     		bx	lr
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOdoxCX.s 			page 5
 
 
- 183              	.LVL14:
- 184              		.loc 1 40 91 discriminator 1 view .LVU36
- 185 001e 0E4F     		ldr	r7, .L20
- 186 0020 3C5D     		ldrb	r4, [r7, r4]	@ zero_extendqisi2
- 187              		.loc 1 40 16 discriminator 1 view .LVU37
- 188 0022 0C70     		strb	r4, [r1]
-  41:Modules/src/utils.c ****     } while (value);
- 189              		.loc 1 41 13 is_stmt 1 discriminator 1 view .LVU38
- 190              		.loc 1 41 5 is_stmt 0 discriminator 1 view .LVU39
- 191 0024 002D     		cmp	r5, #0
- 192 0026 F2D1     		bne	.L11
-  42:Modules/src/utils.c **** 
-  43:Modules/src/utils.c ****     // Apply negative sign
-  44:Modules/src/utils.c ****     if (tmp_value < 0) *ptr++ = '-';
- 193              		.loc 1 44 5 is_stmt 1 view .LVU40
- 194              		.loc 1 44 8 is_stmt 0 view .LVU41
- 195 0028 002E     		cmp	r6, #0
- 196 002a 07DB     		blt	.L19
- 197              	.LVL15:
- 198              	.L13:
-  45:Modules/src/utils.c ****     *ptr-- = '\0';
- 199              		.loc 1 45 5 is_stmt 1 view .LVU42
- 200              		.loc 1 45 12 is_stmt 0 view .LVU43
- 201 002c 0022     		movs	r2, #0
- 202 002e 03F80129 		strb	r2, [r3], #-1
- 203              	.LVL16:
-  46:Modules/src/utils.c ****     while (ptr1 < ptr) {
- 204              		.loc 1 46 5 is_stmt 1 view .LVU44
-  34:Modules/src/utils.c ****     int tmp_value;
- 205              		.loc 1 34 26 is_stmt 0 view .LVU45
- 206 0032 0246     		mov	r2, r0
- 207              		.loc 1 46 11 view .LVU46
- 208 0034 0CE0     		b	.L14
- 209              	.LVL17:
- 210              	.L18:
-  30:Modules/src/utils.c ****         return result;
- 211              		.loc 1 30 9 is_stmt 1 view .LVU47
-  30:Modules/src/utils.c ****         return result;
- 212              		.loc 1 30 17 is_stmt 0 view .LVU48
- 213 0036 0023     		movs	r3, #0
- 214 0038 0B70     		strb	r3, [r1]
-  31:Modules/src/utils.c ****     }
- 215              		.loc 1 31 9 is_stmt 1 view .LVU49
-  31:Modules/src/utils.c ****     }
- 216              		.loc 1 31 16 is_stmt 0 view .LVU50
- 217 003a 0BE0     		b	.L12
- 218              	.LVL18:
- 219              	.L19:
-  44:Modules/src/utils.c ****     *ptr-- = '\0';
- 220              		.loc 1 44 24 is_stmt 1 discriminator 1 view .LVU51
-  44:Modules/src/utils.c ****     *ptr-- = '\0';
- 221              		.loc 1 44 31 is_stmt 0 discriminator 1 view .LVU52
- 222 003c 2D22     		movs	r2, #45
- 223              	.LVL19:
-  44:Modules/src/utils.c ****     *ptr-- = '\0';
- 224              		.loc 1 44 31 discriminator 1 view .LVU53
- 225 003e 1A70     		strb	r2, [r3]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOu0xxY.s 			page 6
-
-
-  44:Modules/src/utils.c ****     *ptr-- = '\0';
- 226              		.loc 1 44 28 discriminator 1 view .LVU54
- 227 0040 8B1C     		adds	r3, r1, #2
- 228              	.LVL20:
-  44:Modules/src/utils.c ****     *ptr-- = '\0';
- 229              		.loc 1 44 28 discriminator 1 view .LVU55
- 230 0042 F3E7     		b	.L13
- 231              	.LVL21:
- 232              	.L15:
-  47:Modules/src/utils.c ****         tmp_char = *ptr;
- 233              		.loc 1 47 9 is_stmt 1 view .LVU56
- 234              		.loc 1 47 18 is_stmt 0 view .LVU57
- 235 0044 1978     		ldrb	r1, [r3]	@ zero_extendqisi2
- 236              	.LVL22:
-  48:Modules/src/utils.c ****         *ptr--   = *ptr1;
- 237              		.loc 1 48 9 is_stmt 1 view .LVU58
- 238              		.loc 1 48 20 is_stmt 0 view .LVU59
- 239 0046 1478     		ldrb	r4, [r2]	@ zero_extendqisi2
- 240              		.loc 1 48 18 view .LVU60
- 241 0048 03F80149 		strb	r4, [r3], #-1
- 242              	.LVL23:
-  49:Modules/src/utils.c ****         *ptr1++  = tmp_char;
- 243              		.loc 1 49 9 is_stmt 1 view .LVU61
- 244              		.loc 1 49 18 is_stmt 0 view .LVU62
- 245 004c 02F8011B 		strb	r1, [r2], #1
- 246              	.LVL24:
- 247              	.L14:
-  46:Modules/src/utils.c ****         tmp_char = *ptr;
- 248              		.loc 1 46 11 is_stmt 1 view .LVU63
- 249 0050 9342     		cmp	r3, r2
- 250 0052 F7D8     		bhi	.L15
- 251              	.LVL25:
- 252              	.L12:
-  50:Modules/src/utils.c ****     }
-  51:Modules/src/utils.c ****     return result;
-  52:Modules/src/utils.c **** }
- 253              		.loc 1 52 1 is_stmt 0 view .LVU64
- 254 0054 F0BC     		pop	{r4, r5, r6, r7}
- 255              	.LCFI5:
- 256              		.cfi_restore 7
- 257              		.cfi_restore 6
- 258              		.cfi_restore 5
- 259              		.cfi_restore 4
- 260              		.cfi_def_cfa_offset 0
- 261              	.LVL26:
- 262              		.loc 1 52 1 view .LVU65
- 263 0056 7047     		bx	lr
- 264              	.L21:
- 265              		.align	2
- 266              	.L20:
- 267 0058 00000000 		.word	.LC0
- 268              		.cfi_endproc
- 269              	.LFE135:
- 271              		.text
- 272              	.Letext0:
- 273              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
- 274              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOu0xxY.s 			page 7
-
-
- 275              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
- 276              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 277              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
- 278              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 279              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 280              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 281              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 282              		.file 11 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
- 283              		.file 12 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
- 284              		.file 13 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
- 285              		.file 14 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
- 286              		.file 15 "Modules/include/utils.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOu0xxY.s 			page 8
+ 157              	.L12:
+ 158              		.align	2
+ 159              	.L11:
+ 160 0058 00000000 		.word	.LC0
+ 161              		.cfi_endproc
+ 162              	.LFE133:
+ 164              		.text
+ 165              	.Letext0:
+ 166              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
+ 167              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 168              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 169              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 170              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 171              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 172              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 173              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 174              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 175              		.file 11 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
+ 176              		.file 12 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
+ 177              		.file 13 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
+ 178              		.file 14 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
+ 179              		.file 15 "Modules/include/utils.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOdoxCX.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 utils.c
-C:\Users\luoha\AppData\Local\Temp\ccOu0xxY.s:18     .text.__io_putchar:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccOu0xxY.s:26     .text.__io_putchar:00000000 __io_putchar
-C:\Users\luoha\AppData\Local\Temp\ccOu0xxY.s:63     .text.__io_putchar:0000001c $d
-C:\Users\luoha\AppData\Local\Temp\ccOu0xxY.s:68     .text._write:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccOu0xxY.s:75     .text._write:00000000 _write
-C:\Users\luoha\AppData\Local\Temp\ccOu0xxY.s:127    .rodata.itoa.str1.4:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccOu0xxY.s:132    .text.itoa:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccOu0xxY.s:139    .text.itoa:00000000 itoa
-C:\Users\luoha\AppData\Local\Temp\ccOu0xxY.s:267    .text.itoa:00000058 $d
+C:\Users\luoha\AppData\Local\Temp\ccOdoxCX.s:18     .rodata.itoa.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccOdoxCX.s:23     .text.itoa:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccOdoxCX.s:31     .text.itoa:00000000 itoa
+C:\Users\luoha\AppData\Local\Temp\ccOdoxCX.s:160    .text.itoa:00000058 $d
 
-UNDEFINED SYMBOLS
-HAL_UART_Transmit
-huart1
+NO UNDEFINED SYMBOLS

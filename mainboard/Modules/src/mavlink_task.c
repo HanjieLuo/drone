@@ -18,7 +18,7 @@ static void MavlinkProcessMsg(mavlink_message_t *msg);
 // static void MavlinkParse(uint8_t *buffer, size_t len);
 
 void MavlinkInit(void) {
-    Usart2Init();
+    UsartInit();
     mavlink_task_handle = STATIC_MEM_TASK_CREATE(mavlink_task, MavlinkTask, "MavlinkTask", NULL, 1);
 }
 

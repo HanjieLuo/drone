@@ -1,7 +1,14 @@
 build/mavlink_task.o: Modules/src/mavlink_task.c \
  Modules/include/mavlink_task.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
- Inc/FreeRTOSConfig.h \
+ Inc/FreeRTOSConfig.h Modules/include/config.h \
+ Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.h \
+ Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW.h \
+ Middlewares/Third_Party/SystemView/SEGGER/SEGGER.h \
+ Middlewares/Third_Party/SystemView/Config/Global.h \
+ Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_ConfDefaults.h \
+ Middlewares/Third_Party/SystemView/Config/SEGGER_SYSVIEW_Conf.h \
+ Middlewares/Third_Party/SystemView/Config/SEGGER_RTT_Conf.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
@@ -218,7 +225,7 @@ build/mavlink_task.o: Modules/src/mavlink_task.c \
  Modules/include/MAVLink/common/./mavlink_msg_open_drone_id_operator_id.h \
  Modules/include/MAVLink/common/./mavlink_msg_open_drone_id_message_pack.h \
  Modules/include/MAVLink/common/../mavlink_get_info.h \
- Modules/include/usart2.h Inc/usart.h Inc/main.h \
+ Modules/include/usart_com.h Inc/usart.h Inc/main.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  Inc/stm32f4xx_hal_conf.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -259,6 +266,22 @@ Modules/include/mavlink_task.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 
 Inc/FreeRTOSConfig.h:
+
+Modules/include/config.h:
+
+Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.h:
+
+Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW.h:
+
+Middlewares/Third_Party/SystemView/SEGGER/SEGGER.h:
+
+Middlewares/Third_Party/SystemView/Config/Global.h:
+
+Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_ConfDefaults.h:
+
+Middlewares/Third_Party/SystemView/Config/SEGGER_SYSVIEW_Conf.h:
+
+Middlewares/Third_Party/SystemView/Config/SEGGER_RTT_Conf.h:
 
 Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
 
@@ -692,7 +715,7 @@ Modules/include/MAVLink/common/./mavlink_msg_open_drone_id_message_pack.h:
 
 Modules/include/MAVLink/common/../mavlink_get_info.h:
 
-Modules/include/usart2.h:
+Modules/include/usart_com.h:
 
 Inc/usart.h:
 

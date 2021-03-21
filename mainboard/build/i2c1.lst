@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 1
   48 0008 1646     		mov	r6, r2
   49 000a 1F46     		mov	r7, r3
    9:Modules/src/i2c1.c ****     i2c1_notify = xTaskGetCurrentTaskHandle();
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s 			page 2
 
 
   50              		.loc 1 9 5 is_stmt 1 view .LVU2
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 1
   14:Modules/src/i2c1.c ****             return true;
   91              		.loc 1 14 12 is_stmt 0 view .LVU13
   92 003a 0128     		cmp	r0, #1
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s 			page 3
 
 
   93 003c 01D0     		beq	.L4
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 1
  144              		.loc 1 22 17 view .LVU20
  145 0010 0D4B     		ldr	r3, .L15
  146 0012 1860     		str	r0, [r3]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s 			page 4
 
 
   23:Modules/src/i2c1.c ****     if(HAL_I2C_Mem_Write_DMA(&hi2c1, DevAddress, MemAddress, MemAddSize, pData, Size) == HAL_OK) {
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 1
  185 003e 0020     		movs	r0, #0
  186 0040 F4E7     		b	.L10
  187              	.L12:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s 			page 5
 
 
   29:Modules/src/i2c1.c ****         }
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 1
  239              	.LVL12:
  240              		.loc 1 37 7 view .LVU39
  241 001c 08B1     		cbz	r0, .L22
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 6
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s 			page 6
 
 
   38:Modules/src/i2c1.c ****         // printf("ulTaskNotifyTake\r\n");
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 1
  283              	.LVL15:
  284              	.LFB141:
   47:Modules/src/i2c1.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 7
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s 			page 7
 
 
   48:Modules/src/i2c1.c **** bool I2C1Write(uint16_t DevAddress, uint8_t *pData, uint16_t Size) {
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 1
  326 0022 4FF47A71 		mov	r1, #1000
  327 0026 0120     		movs	r0, #1
  328 0028 FFF7FEFF 		bl	ulTaskNotifyTake
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 8
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s 			page 8
 
 
  329              	.LVL19:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 1
  377 0006 0195     		str	r5, [sp, #4]
   63:Modules/src/i2c1.c ****     vTaskNotifyGiveFromISR(i2c1_notify, &xHigherPriorityTaskWoken);
  378              		.loc 1 63 5 is_stmt 1 view .LVU68
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 9
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s 			page 9
 
 
  379 0008 084C     		ldr	r4, .L36
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 1
  432              	.LVL23:
  433              	.LFB143:
   67:Modules/src/i2c1.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 10
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s 			page 10
 
 
   68:Modules/src/i2c1.c **** void HAL_I2C_MemTxCpltCallback(I2C_HandleTypeDef *hi2c) {
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 1
  482              	.L38:
   74:Modules/src/i2c1.c **** }
  483              		.loc 1 74 1 is_stmt 0 view .LVU91
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 11
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s 			page 11
 
 
  484 0028 03B0     		add	sp, sp, #12
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 1
  534              		.loc 1 80 5 is_stmt 1 view .LVU98
  535              		.loc 1 80 17 is_stmt 0 view .LVU99
  536 0012 2560     		str	r5, [r4]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 12
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s 			page 12
 
 
   81:Modules/src/i2c1.c ****     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 1
  589              		.cfi_def_cfa_offset 12
  590              		.cfi_offset 4, -12
  591              		.cfi_offset 5, -8
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 13
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s 			page 13
 
 
  592              		.cfi_offset 14, -4
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 1
  640 002c 00000000 		.word	.LANCHOR0
  641 0030 04ED00E0 		.word	-536810236
  642              		.cfi_endproc
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 14
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s 			page 14
 
 
  643              	.LFE145:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 1
  675              		.cfi_startproc
  676              		@ args = 0, pretend = 0, frame = 8
  677              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 15
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s 			page 15
 
 
  678 0000 00B5     		push	{lr}
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 1
  709 002c 30B1     		cbz	r0, .L54
  117:Modules/src/i2c1.c ****         while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY) {
  118:Modules/src/i2c1.c ****             vTaskDelay(pdMS_TO_TICKS(1));
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 16
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s 			page 16
 
 
  119:Modules/src/i2c1.c ****         }
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 1
  749 0062 0123     		movs	r3, #1
  750 0064 0193     		str	r3, [sp, #4]
  751 0066 0DF10F02 		add	r2, sp, #15
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 17
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s 			page 17
 
 
  752 006a 0092     		str	r2, [sp]
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 1
  795              	.LFE146:
  797              		.section	.bss.i2c1_notify,"aw",%nobits
  798              		.align	2
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 18
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s 			page 18
 
 
  799              		.set	.LANCHOR0,. + 0
@@ -1043,45 +1043,46 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 1
  820              		.file 16 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\types.h"
  821              		.file 17 "Modules/include/utils.h"
  822              		.file 18 "Inc/i2c.h"
- 823              		.file 19 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
- 824              		.file 20 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
- 825              		.file 21 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\stdio.h"
- 826              		.file 22 "<built-in>"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s 			page 19
+ 823              		.file 19 "Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW.h"
+ 824              		.file 20 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
+ 825              		.file 21 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 826              		.file 22 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\stdio.h"
+ 827              		.file 23 "<built-in>"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s 			page 19
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 i2c1.c
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:18     .text.I2C1MenRead:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:26     .text.I2C1MenRead:00000000 I2C1MenRead
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:104    .text.I2C1MenRead:00000048 $d
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:110    .text.I2C1MenWrite:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:117    .text.I2C1MenWrite:00000000 I2C1MenWrite
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:194    .text.I2C1MenWrite:00000048 $d
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:200    .text.I2C1Read:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:207    .text.I2C1Read:00000000 I2C1Read
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:269    .text.I2C1Read:00000038 $d
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:275    .text.I2C1Write:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:282    .text.I2C1Write:00000000 I2C1Write
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:344    .text.I2C1Write:00000038 $d
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:350    .text.HAL_I2C_MemRxCpltCallback:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:357    .text.HAL_I2C_MemRxCpltCallback:00000000 HAL_I2C_MemRxCpltCallback
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:418    .text.HAL_I2C_MemRxCpltCallback:0000002c $d
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:424    .text.HAL_I2C_MemTxCpltCallback:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:431    .text.HAL_I2C_MemTxCpltCallback:00000000 HAL_I2C_MemTxCpltCallback
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:492    .text.HAL_I2C_MemTxCpltCallback:0000002c $d
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:498    .text.HAL_I2C_MasterTxCpltCallback:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:505    .text.HAL_I2C_MasterTxCpltCallback:00000000 HAL_I2C_MasterTxCpltCallback
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:566    .text.HAL_I2C_MasterTxCpltCallback:0000002c $d
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:572    .text.HAL_I2C_MasterRxCpltCallback:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:579    .text.HAL_I2C_MasterRxCpltCallback:00000000 HAL_I2C_MasterRxCpltCallback
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:640    .text.HAL_I2C_MasterRxCpltCallback:0000002c $d
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:646    .rodata.TestI2C1MenRead.str1.4:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:665    .text.TestI2C1MenRead:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:672    .text.TestI2C1MenRead:00000000 TestI2C1MenRead
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:787    .text.TestI2C1MenRead:00000094 $d
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:798    .bss.i2c1_notify:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc9mldmC.s:802    .bss.i2c1_notify:00000000 i2c1_notify
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:18     .text.I2C1MenRead:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:26     .text.I2C1MenRead:00000000 I2C1MenRead
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:104    .text.I2C1MenRead:00000048 $d
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:110    .text.I2C1MenWrite:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:117    .text.I2C1MenWrite:00000000 I2C1MenWrite
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:194    .text.I2C1MenWrite:00000048 $d
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:200    .text.I2C1Read:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:207    .text.I2C1Read:00000000 I2C1Read
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:269    .text.I2C1Read:00000038 $d
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:275    .text.I2C1Write:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:282    .text.I2C1Write:00000000 I2C1Write
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:344    .text.I2C1Write:00000038 $d
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:350    .text.HAL_I2C_MemRxCpltCallback:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:357    .text.HAL_I2C_MemRxCpltCallback:00000000 HAL_I2C_MemRxCpltCallback
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:418    .text.HAL_I2C_MemRxCpltCallback:0000002c $d
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:424    .text.HAL_I2C_MemTxCpltCallback:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:431    .text.HAL_I2C_MemTxCpltCallback:00000000 HAL_I2C_MemTxCpltCallback
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:492    .text.HAL_I2C_MemTxCpltCallback:0000002c $d
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:498    .text.HAL_I2C_MasterTxCpltCallback:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:505    .text.HAL_I2C_MasterTxCpltCallback:00000000 HAL_I2C_MasterTxCpltCallback
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:566    .text.HAL_I2C_MasterTxCpltCallback:0000002c $d
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:572    .text.HAL_I2C_MasterRxCpltCallback:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:579    .text.HAL_I2C_MasterRxCpltCallback:00000000 HAL_I2C_MasterRxCpltCallback
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:640    .text.HAL_I2C_MasterRxCpltCallback:0000002c $d
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:646    .rodata.TestI2C1MenRead.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:665    .text.TestI2C1MenRead:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:672    .text.TestI2C1MenRead:00000000 TestI2C1MenRead
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:787    .text.TestI2C1MenRead:00000094 $d
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:798    .bss.i2c1_notify:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccYYFJrb.s:802    .bss.i2c1_notify:00000000 i2c1_notify
 
 UNDEFINED SYMBOLS
 xTaskGetCurrentTaskHandle

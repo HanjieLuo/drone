@@ -37,6 +37,10 @@
 // #include "i2c1.h"
 // #include "gy_86.h"
 #include "system_task.h"
+
+#ifdef USE_SISTEMVEIW
+#include "systemview_task.h"
+#endif
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -108,6 +112,10 @@ int main(void)
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
 
+#ifdef USE_SISTEMVEIW
+  SystemViewLaunch();
+#endif 
+
   SystemLaunch();
 
   // SensorsInit();
@@ -121,7 +129,10 @@ int main(void)
   // printf("status:%u\r\n", flag);
   // float ax, ay, az;
   // Uart4Init();
+
   // uint8_t buffer[] = "Hello world\r\n";
+  // HAL_UART_Transmit_DMA(&huart1, buffer, sizeof(buffer));
+
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */

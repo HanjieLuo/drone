@@ -11,7 +11,13 @@ void SystemLaunch(void) {
 }
 
 void SystemTask(void *param) {
-    SystemInitiate();
+    // SystemInitiate();
+
+    uint8_t buffer[] = "Hello world\r\n";
+    while(1) {
+        HAL_UART_Transmit_DMA(&huart1, buffer, sizeof(buffer));
+        vTaskDelay(pdMS_TO_TICKS(1000));
+    }
 }
 
 void SystemInitiate(void) {
@@ -22,6 +28,7 @@ void SystemInitiate(void) {
     is_init = is_ok;
     printf("SystemInitiate: %u\r\n\r\n", is_init);
 }
+
 
 void SystemWaitStart(void) {
     if(!is_init) {

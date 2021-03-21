@@ -1,4 +1,4 @@
-#include "usart2.h"
+#include "usart_com.h"
 
 static uint8_t rx_buffer[RX_BUFFER_SIZE];
 
@@ -7,7 +7,12 @@ STATIC_MEM_QUEUE_ALLOC(usart2_queue, 5, sizeof(usart2_queue_buffer));
 
 static void UartRxCheck(void);
 
-void Usart2Init(void) {
+#ifdef USE_SISTEMVEIW
+TaskHandle_t system_view_notify = NULL;
+#endif 
+
+
+void UsartInit(void) {
     usart2_queue = STATIC_MEM_QUEUE_CREATE(usart2_queue);
 
     //使能IDLE中断
@@ -40,6 +45,13 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
     if (huart->Instance == USART2) {
         UartRxCheck();
     }
+#ifdef USE_SISTEMVEIW
+    else if (huart->Instance == USART1) {
+        BaseType_t higher_woken = pdFALSE;
+        xTaskNotifyFromISR(system_view_notify, 0x01, eSetBits, &higher_woken);
+        portYIELD_FROM_ISR(higher_woken);
+    }
+#endif 
 }
 
 void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef *huart) {
@@ -47,6 +59,18 @@ void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef *huart) {
         UartRxCheck();
     }
 }
+
+#ifdef USE_SISTEMVEIW
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {
+    if (huart->Instance == USART1) {
+        BaseType_t higher_woken = pdFALSE;
+        xTaskNotifyFromISR(system_view_notify, 0x02, eSetBits, &higher_woken);
+        portYIELD_FROM_ISR(higher_woken);
+        // uint8_t buffer[] = "HAL_UART_TxCpltCallback\r\n";
+        // HAL_UART_Transmit_DMA(&huart1, buffer, sizeof(buffer));
+    }
+}
+#endif 
 
 static void UartRxCheck(void) {
     static size_t old_pos;

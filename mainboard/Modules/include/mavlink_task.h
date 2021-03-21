@@ -5,7 +5,7 @@
 #include "queue.h"
 #include "MAVLink/common/mavlink.h"
 
-#include "usart2.h"
+#include "usart_com.h"
 #include "utils.h"
 #include "motor.h"
 #include "sensors.h"

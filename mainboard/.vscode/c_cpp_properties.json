@@ -2,7 +2,7 @@
     "env": {
         "____________________USER_FIELDS_CAN_BE_MODIFIED____________________": "",
         "user_cSources": [
-            "Modules/src/usart2.c",
+            "Modules/src/usart_com.c",
             "Modules/src/motor.c",
             "Modules/src/mavlink_task.c",
             "Modules/src/utils.c",
@@ -12,12 +12,23 @@
             "Modules/src/sensors.c",
             "Modules/src/i2c1.c",
             "Modules/src/dmp.c",
-            "Modules/src/system_task.c"
+            "Modules/src/system_task.c",
+            "Modules/src/systemview_task.c",
+            "Middlewares/Third_Party/SystemView/Config/SEGGER_SYSVIEW_Config_FreeRTOS.c",
+            "Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c",
+            "Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT.c",
+            "Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.c",
+            "Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW.c",
+            "Middlewares/Third_Party/SystemView/SEGGER/Syscalls/SEGGER_RTT_Syscalls_GCC.c"
         ],
-        "user_asmSources": [],
+        "user_asmSources": [
+            "Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_ASM_ARMv7M.s"
+        ],
         "user_ldSources": [],
         "user_cIncludes": [
-            "Modules/include"
+            "Modules/include",
+            "Middlewares/Third_Party/SystemView/Config",
+            "Middlewares/Third_Party/SystemView/SEGGER"
         ],
         "user_asmIncludes": [],
         "user_ldIncludes": [],
