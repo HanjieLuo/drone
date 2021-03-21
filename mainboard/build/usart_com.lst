@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cceXG0re.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s 			page 1
   29:Modules/src/usart_com.c ****     } else {
   30:Modules/src/usart_com.c ****         HAL_UART_IRQHandler(&huart2);
   31:Modules/src/usart_com.c ****     }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cceXG0re.s 			page 2
 
 
   32:Modules/src/usart_com.c **** }
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s 			page 1
   38              	.LCFI1:
   39              		.cfi_def_cfa_offset 24
   76:Modules/src/usart_com.c ****     static size_t old_pos;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cceXG0re.s 			page 3
 
 
   40              		.loc 1 76 5 view .LVU1
@@ -136,7 +136,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s 			page 1
   82:Modules/src/usart_com.c ****     pos = RX_BUFFER_SIZE - __HAL_DMA_GET_COUNTER(huart2.hdmarx);
   47              		.loc 1 82 5 is_stmt 1 view .LVU6
   48              		.loc 1 82 28 is_stmt 0 view .LVU7
-  49 0008 214B     		ldr	r3, .L8
+  49 0008 244B     		ldr	r3, .L9
   50 000a 9B6B     		ldr	r3, [r3, #56]
   51 000c 1B68     		ldr	r3, [r3]
   52 000e 5C68     		ldr	r4, [r3, #4]
@@ -149,7 +149,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s 			page 1
   86:Modules/src/usart_com.c ****     if (pos != old_pos) {    /* Check change in received data */
   56              		.loc 1 86 5 is_stmt 1 view .LVU9
   57              		.loc 1 86 13 is_stmt 0 view .LVU10
-  58 0014 1F4B     		ldr	r3, .L8+4
+  58 0014 224B     		ldr	r3, .L9+4
   59 0016 1B68     		ldr	r3, [r3]
   60              		.loc 1 86 8 view .LVU11
   61 0018 A342     		cmp	r3, r4
@@ -157,13 +157,13 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s 			page 1
   87:Modules/src/usart_com.c ****         if (pos > old_pos) { /* Current position is over previous one */
   63              		.loc 1 87 9 is_stmt 1 view .LVU12
   64              		.loc 1 87 12 is_stmt 0 view .LVU13
-  65 001c 1BD2     		bcs	.L3
+  65 001c 1DD2     		bcs	.L3
   88:Modules/src/usart_com.c ****             /* We are in "linear" mode */
   89:Modules/src/usart_com.c ****             /* Process data directly by subtracting "pointers" */
   90:Modules/src/usart_com.c ****             buffer.addr   = &rx_buffer[old_pos];
   66              		.loc 1 90 13 is_stmt 1 view .LVU14
   67              		.loc 1 90 29 is_stmt 0 view .LVU15
-  68 001e 1E4A     		ldr	r2, .L8+8
+  68 001e 214A     		ldr	r2, .L9+8
   69 0020 1A44     		add	r2, r2, r3
   70              		.loc 1 90 27 view .LVU16
   71 0022 0392     		str	r2, [sp, #12]
@@ -178,10 +178,10 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s 			page 1
   78 0028 0023     		movs	r3, #0
   79 002a 01AA     		add	r2, sp, #4
   80 002c 02A9     		add	r1, sp, #8
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s 			page 4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cceXG0re.s 			page 4
 
 
-  81 002e 1B48     		ldr	r0, .L8+12
+  81 002e 1E48     		ldr	r0, .L9+12
   82 0030 0068     		ldr	r0, [r0]
   83 0032 FFF7FEFF 		bl	xQueueGenericSendFromISR
   84              	.LVL1:
@@ -203,7 +203,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s 			page 1
  107:Modules/src/usart_com.c ****     old_pos = pos; /* Save current position as old */
   86              		.loc 1 107 5 view .LVU21
   87              		.loc 1 107 13 is_stmt 0 view .LVU22
-  88 0036 174B     		ldr	r3, .L8+4
+  88 0036 1A4B     		ldr	r3, .L9+4
   89 0038 1C60     		str	r4, [r3]
  108:Modules/src/usart_com.c **** 
  109:Modules/src/usart_com.c ****     /* Check and manually update if we reached end of buffer */
@@ -211,7 +211,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s 			page 1
   90              		.loc 1 110 5 is_stmt 1 view .LVU23
   91              		.loc 1 110 8 is_stmt 0 view .LVU24
   92 003a 802C     		cmp	r4, #128
-  93 003c 25D0     		beq	.L7
+  93 003c 27D0     		beq	.L8
   94              	.L4:
  111:Modules/src/usart_com.c ****         old_pos = 0;
  112:Modules/src/usart_com.c ****     }
@@ -219,738 +219,782 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s 			page 1
  114:Modules/src/usart_com.c ****     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
   95              		.loc 1 114 5 is_stmt 1 view .LVU25
   96 003e 019B     		ldr	r3, [sp, #4]
-  97 0040 3BB1     		cbz	r3, .L1
+  97 0040 43B3     		cbz	r3, .L5
   98              		.loc 1 114 5 discriminator 1 view .LVU26
-  99 0042 174B     		ldr	r3, .L8+16
- 100 0044 4FF08052 		mov	r2, #268435456
- 101 0048 1A60     		str	r2, [r3]
- 102              		.loc 1 114 5 discriminator 1 view .LVU27
- 103              		.syntax unified
- 104              	@ 114 "Modules/src/usart_com.c" 1
- 105 004a BFF34F8F 		dsb
- 106              	@ 0 "" 2
- 107              		.loc 1 114 5 discriminator 1 view .LVU28
- 108              	@ 114 "Modules/src/usart_com.c" 1
- 109 004e BFF36F8F 		isb
- 110              	@ 0 "" 2
- 111              		.loc 1 114 49 discriminator 1 view .LVU29
- 112              		.thumb
- 113              		.syntax unified
- 114              	.L1:
+  99 0042 FFF7FEFF 		bl	SEGGER_SYSVIEW_RecordExitISRToScheduler
+ 100              	.LVL2:
+ 101              		.loc 1 114 5 discriminator 1 view .LVU27
+ 102 0046 194B     		ldr	r3, .L9+16
+ 103 0048 4FF08052 		mov	r2, #268435456
+ 104 004c 1A60     		str	r2, [r3]
+ 105              		.loc 1 114 5 discriminator 1 view .LVU28
+ 106              		.syntax unified
+ 107              	@ 114 "Modules/src/usart_com.c" 1
+ 108 004e BFF34F8F 		dsb
+ 109              	@ 0 "" 2
+ 110              		.loc 1 114 5 discriminator 1 view .LVU29
+ 111              	@ 114 "Modules/src/usart_com.c" 1
+ 112 0052 BFF36F8F 		isb
+ 113              	@ 0 "" 2
+ 114              		.loc 1 114 5 discriminator 1 view .LVU30
+ 115              		.thumb
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cceXG0re.s 			page 5
+
+
+ 116              		.syntax unified
+ 117              	.L1:
  115:Modules/src/usart_com.c **** }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s 			page 5
-
-
- 115              		.loc 1 115 1 is_stmt 0 view .LVU30
- 116 0052 04B0     		add	sp, sp, #16
- 117              	.LCFI2:
- 118              		.cfi_remember_state
- 119              		.cfi_def_cfa_offset 8
- 120              		@ sp needed
- 121 0054 10BD     		pop	{r4, pc}
- 122              	.LVL2:
- 123              	.L3:
- 124              	.LCFI3:
- 125              		.cfi_restore_state
+ 118              		.loc 1 115 1 is_stmt 0 view .LVU31
+ 119 0056 04B0     		add	sp, sp, #16
+ 120              	.LCFI2:
+ 121              		.cfi_remember_state
+ 122              		.cfi_def_cfa_offset 8
+ 123              		@ sp needed
+ 124 0058 10BD     		pop	{r4, pc}
+ 125              	.LVL3:
+ 126              	.L3:
+ 127              	.LCFI3:
+ 128              		.cfi_restore_state
   96:Modules/src/usart_com.c ****             buffer.length = RX_BUFFER_SIZE - old_pos;
- 126              		.loc 1 96 13 is_stmt 1 view .LVU31
+ 129              		.loc 1 96 13 is_stmt 1 view .LVU32
   96:Modules/src/usart_com.c ****             buffer.length = RX_BUFFER_SIZE - old_pos;
- 127              		.loc 1 96 29 is_stmt 0 view .LVU32
- 128 0056 104A     		ldr	r2, .L8+8
- 129 0058 1A44     		add	r2, r2, r3
+ 130              		.loc 1 96 29 is_stmt 0 view .LVU33
+ 131 005a 124A     		ldr	r2, .L9+8
+ 132 005c 1A44     		add	r2, r2, r3
   96:Modules/src/usart_com.c ****             buffer.length = RX_BUFFER_SIZE - old_pos;
- 130              		.loc 1 96 27 view .LVU33
- 131 005a 0392     		str	r2, [sp, #12]
+ 133              		.loc 1 96 27 view .LVU34
+ 134 005e 0392     		str	r2, [sp, #12]
   97:Modules/src/usart_com.c ****             xQueueSendFromISR(usart2_queue, &buffer, &xHigherPriorityTaskWoken);
- 132              		.loc 1 97 13 is_stmt 1 view .LVU34
+ 135              		.loc 1 97 13 is_stmt 1 view .LVU35
   97:Modules/src/usart_com.c ****             xQueueSendFromISR(usart2_queue, &buffer, &xHigherPriorityTaskWoken);
- 133              		.loc 1 97 44 is_stmt 0 view .LVU35
- 134 005c C3F18003 		rsb	r3, r3, #128
+ 136              		.loc 1 97 44 is_stmt 0 view .LVU36
+ 137 0060 C3F18003 		rsb	r3, r3, #128
   97:Modules/src/usart_com.c ****             xQueueSendFromISR(usart2_queue, &buffer, &xHigherPriorityTaskWoken);
- 135              		.loc 1 97 27 view .LVU36
- 136 0060 0293     		str	r3, [sp, #8]
+ 138              		.loc 1 97 27 view .LVU37
+ 139 0064 0293     		str	r3, [sp, #8]
   98:Modules/src/usart_com.c ****             /* Check and continue with beginning of buffer */
- 137              		.loc 1 98 13 is_stmt 1 view .LVU37
- 138 0062 0023     		movs	r3, #0
- 139 0064 01AA     		add	r2, sp, #4
- 140 0066 02A9     		add	r1, sp, #8
- 141 0068 0C48     		ldr	r0, .L8+12
- 142 006a 0068     		ldr	r0, [r0]
- 143 006c FFF7FEFF 		bl	xQueueGenericSendFromISR
- 144              	.LVL3:
+ 140              		.loc 1 98 13 is_stmt 1 view .LVU38
+ 141 0066 0023     		movs	r3, #0
+ 142 0068 01AA     		add	r2, sp, #4
+ 143 006a 02A9     		add	r1, sp, #8
+ 144 006c 0E48     		ldr	r0, .L9+12
+ 145 006e 0068     		ldr	r0, [r0]
+ 146 0070 FFF7FEFF 		bl	xQueueGenericSendFromISR
+ 147              	.LVL4:
  100:Modules/src/usart_com.c ****                 buffer.addr   = &rx_buffer[0];
- 145              		.loc 1 100 13 view .LVU38
+ 148              		.loc 1 100 13 view .LVU39
  100:Modules/src/usart_com.c ****                 buffer.addr   = &rx_buffer[0];
- 146              		.loc 1 100 16 is_stmt 0 view .LVU39
- 147 0070 002C     		cmp	r4, #0
- 148 0072 E0D0     		beq	.L2
+ 149              		.loc 1 100 16 is_stmt 0 view .LVU40
+ 150 0074 002C     		cmp	r4, #0
+ 151 0076 DED0     		beq	.L2
  101:Modules/src/usart_com.c ****                 buffer.length = pos;
- 149              		.loc 1 101 17 is_stmt 1 view .LVU40
+ 152              		.loc 1 101 17 is_stmt 1 view .LVU41
  101:Modules/src/usart_com.c ****                 buffer.length = pos;
- 150              		.loc 1 101 31 is_stmt 0 view .LVU41
- 151 0074 084B     		ldr	r3, .L8+8
- 152 0076 0393     		str	r3, [sp, #12]
+ 153              		.loc 1 101 31 is_stmt 0 view .LVU42
+ 154 0078 0A4B     		ldr	r3, .L9+8
+ 155 007a 0393     		str	r3, [sp, #12]
  102:Modules/src/usart_com.c ****                 xQueueSendFromISR(usart2_queue, &buffer, &xHigherPriorityTaskWoken);
- 153              		.loc 1 102 17 is_stmt 1 view .LVU42
+ 156              		.loc 1 102 17 is_stmt 1 view .LVU43
  102:Modules/src/usart_com.c ****                 xQueueSendFromISR(usart2_queue, &buffer, &xHigherPriorityTaskWoken);
- 154              		.loc 1 102 31 is_stmt 0 view .LVU43
- 155 0078 0294     		str	r4, [sp, #8]
+ 157              		.loc 1 102 31 is_stmt 0 view .LVU44
+ 158 007c 0294     		str	r4, [sp, #8]
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cceXG0re.s 			page 6
+
+
  103:Modules/src/usart_com.c ****             }
- 156              		.loc 1 103 17 is_stmt 1 view .LVU44
- 157 007a 0023     		movs	r3, #0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s 			page 6
-
-
- 158 007c 01AA     		add	r2, sp, #4
- 159 007e 02A9     		add	r1, sp, #8
- 160 0080 0648     		ldr	r0, .L8+12
- 161 0082 0068     		ldr	r0, [r0]
- 162 0084 FFF7FEFF 		bl	xQueueGenericSendFromISR
- 163              	.LVL4:
- 164 0088 D5E7     		b	.L2
- 165              	.L7:
+ 159              		.loc 1 103 17 is_stmt 1 view .LVU45
+ 160 007e 0023     		movs	r3, #0
+ 161 0080 01AA     		add	r2, sp, #4
+ 162 0082 02A9     		add	r1, sp, #8
+ 163 0084 0848     		ldr	r0, .L9+12
+ 164 0086 0068     		ldr	r0, [r0]
+ 165 0088 FFF7FEFF 		bl	xQueueGenericSendFromISR
+ 166              	.LVL5:
+ 167 008c D3E7     		b	.L2
+ 168              	.L8:
  111:Modules/src/usart_com.c ****     }
- 166              		.loc 1 111 9 view .LVU45
+ 169              		.loc 1 111 9 view .LVU46
  111:Modules/src/usart_com.c ****     }
- 167              		.loc 1 111 17 is_stmt 0 view .LVU46
- 168 008a 0022     		movs	r2, #0
- 169 008c 1A60     		str	r2, [r3]
- 170 008e D6E7     		b	.L4
- 171              	.L9:
- 172              		.align	2
- 173              	.L8:
- 174 0090 00000000 		.word	huart2
- 175 0094 00000000 		.word	.LANCHOR0
- 176 0098 00000000 		.word	.LANCHOR1
- 177 009c 00000000 		.word	usart2_queue
- 178 00a0 04ED00E0 		.word	-536810236
- 179              		.cfi_endproc
- 180              	.LFE145:
- 182              		.section	.text.UsartInit,"ax",%progbits
- 183              		.align	1
- 184              		.global	UsartInit
- 185              		.syntax unified
- 186              		.thumb
- 187              		.thumb_func
- 188              		.fpu fpv4-sp-d16
- 190              	UsartInit:
- 191              	.LFB138:
+ 170              		.loc 1 111 17 is_stmt 0 view .LVU47
+ 171 008e 0022     		movs	r2, #0
+ 172 0090 1A60     		str	r2, [r3]
+ 173 0092 D4E7     		b	.L4
+ 174              	.L5:
+ 114:Modules/src/usart_com.c **** }
+ 175              		.loc 1 114 5 is_stmt 1 discriminator 2 view .LVU48
+ 176 0094 FFF7FEFF 		bl	SEGGER_SYSVIEW_RecordExitISR
+ 177              	.LVL6:
+ 114:Modules/src/usart_com.c **** }
+ 178              		.loc 1 114 49 discriminator 2 view .LVU49
+ 179              		.loc 1 115 1 is_stmt 0 discriminator 2 view .LVU50
+ 180 0098 DDE7     		b	.L1
+ 181              	.L10:
+ 182 009a 00BF     		.align	2
+ 183              	.L9:
+ 184 009c 00000000 		.word	huart2
+ 185 00a0 00000000 		.word	.LANCHOR0
+ 186 00a4 00000000 		.word	.LANCHOR1
+ 187 00a8 00000000 		.word	usart2_queue
+ 188 00ac 04ED00E0 		.word	-536810236
+ 189              		.cfi_endproc
+ 190              	.LFE145:
+ 192              		.section	.text.UsartInit,"ax",%progbits
+ 193              		.align	1
+ 194              		.global	UsartInit
+ 195              		.syntax unified
+ 196              		.thumb
+ 197              		.thumb_func
+ 198              		.fpu fpv4-sp-d16
+ 200              	UsartInit:
+ 201              	.LFB138:
   15:Modules/src/usart_com.c ****     usart2_queue = STATIC_MEM_QUEUE_CREATE(usart2_queue);
- 192              		.loc 1 15 22 is_stmt 1 view -0
- 193              		.cfi_startproc
- 194              		@ args = 0, pretend = 0, frame = 0
- 195              		@ frame_needed = 0, uses_anonymous_args = 0
- 196 0000 00B5     		push	{lr}
- 197              	.LCFI4:
- 198              		.cfi_def_cfa_offset 4
- 199              		.cfi_offset 14, -4
- 200 0002 83B0     		sub	sp, sp, #12
- 201              	.LCFI5:
- 202              		.cfi_def_cfa_offset 16
-  16:Modules/src/usart_com.c **** 
- 203              		.loc 1 16 5 view .LVU48
-  16:Modules/src/usart_com.c **** 
- 204              		.loc 1 16 20 is_stmt 0 view .LVU49
- 205 0004 0023     		movs	r3, #0
- 206 0006 0093     		str	r3, [sp]
- 207 0008 0A4B     		ldr	r3, .L12
- 208 000a 0B4A     		ldr	r2, .L12+4
- 209 000c 0821     		movs	r1, #8
- 210 000e 0520     		movs	r0, #5
- 211 0010 FFF7FEFF 		bl	xQueueGenericCreateStatic
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s 			page 7
+ 202              		.loc 1 15 22 is_stmt 1 view -0
+ 203              		.cfi_startproc
+ 204              		@ args = 0, pretend = 0, frame = 0
+ 205              		@ frame_needed = 0, uses_anonymous_args = 0
+ 206 0000 00B5     		push	{lr}
+ 207              	.LCFI4:
+ 208              		.cfi_def_cfa_offset 4
+ 209              		.cfi_offset 14, -4
+ 210 0002 83B0     		sub	sp, sp, #12
+ 211              	.LCFI5:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cceXG0re.s 			page 7
 
 
- 212              	.LVL5:
+ 212              		.cfi_def_cfa_offset 16
   16:Modules/src/usart_com.c **** 
- 213              		.loc 1 16 18 view .LVU50
- 214 0014 094B     		ldr	r3, .L12+8
- 215 0016 1860     		str	r0, [r3]
+ 213              		.loc 1 16 5 view .LVU52
+  16:Modules/src/usart_com.c **** 
+ 214              		.loc 1 16 20 is_stmt 0 view .LVU53
+ 215 0004 0023     		movs	r3, #0
+ 216 0006 0093     		str	r3, [sp]
+ 217 0008 0A4B     		ldr	r3, .L13
+ 218 000a 0B4A     		ldr	r2, .L13+4
+ 219 000c 0821     		movs	r1, #8
+ 220 000e 0520     		movs	r0, #5
+ 221 0010 FFF7FEFF 		bl	xQueueGenericCreateStatic
+ 222              	.LVL7:
+  16:Modules/src/usart_com.c **** 
+ 223              		.loc 1 16 18 view .LVU54
+ 224 0014 094B     		ldr	r3, .L13+8
+ 225 0016 1860     		str	r0, [r3]
   19:Modules/src/usart_com.c ****     //使能接收中断
- 216              		.loc 1 19 5 is_stmt 1 view .LVU51
- 217 0018 0948     		ldr	r0, .L12+12
- 218 001a 0268     		ldr	r2, [r0]
- 219 001c D368     		ldr	r3, [r2, #12]
- 220 001e 43F01003 		orr	r3, r3, #16
- 221 0022 D360     		str	r3, [r2, #12]
+ 226              		.loc 1 19 5 is_stmt 1 view .LVU55
+ 227 0018 0948     		ldr	r0, .L13+12
+ 228 001a 0268     		ldr	r2, [r0]
+ 229 001c D368     		ldr	r3, [r2, #12]
+ 230 001e 43F01003 		orr	r3, r3, #16
+ 231 0022 D360     		str	r3, [r2, #12]
   21:Modules/src/usart_com.c **** }
- 222              		.loc 1 21 5 view .LVU52
- 223 0024 8022     		movs	r2, #128
- 224 0026 0749     		ldr	r1, .L12+16
- 225 0028 FFF7FEFF 		bl	HAL_UART_Receive_DMA
- 226              	.LVL6:
+ 232              		.loc 1 21 5 view .LVU56
+ 233 0024 8022     		movs	r2, #128
+ 234 0026 0749     		ldr	r1, .L13+16
+ 235 0028 FFF7FEFF 		bl	HAL_UART_Receive_DMA
+ 236              	.LVL8:
   22:Modules/src/usart_com.c **** 
- 227              		.loc 1 22 1 is_stmt 0 view .LVU53
- 228 002c 03B0     		add	sp, sp, #12
- 229              	.LCFI6:
- 230              		.cfi_def_cfa_offset 4
- 231              		@ sp needed
- 232 002e 5DF804FB 		ldr	pc, [sp], #4
- 233              	.L13:
- 234 0032 00BF     		.align	2
- 235              	.L12:
- 236 0034 00000000 		.word	.LANCHOR2
- 237 0038 00000000 		.word	.LANCHOR3
- 238 003c 00000000 		.word	usart2_queue
- 239 0040 00000000 		.word	huart2
- 240 0044 00000000 		.word	.LANCHOR1
- 241              		.cfi_endproc
- 242              	.LFE138:
- 244              		.section	.text.USART2_IRQHandler,"ax",%progbits
- 245              		.align	1
- 246              		.global	USART2_IRQHandler
- 247              		.syntax unified
- 248              		.thumb
- 249              		.thumb_func
- 250              		.fpu fpv4-sp-d16
- 252              	USART2_IRQHandler:
- 253              	.LFB139:
+ 237              		.loc 1 22 1 is_stmt 0 view .LVU57
+ 238 002c 03B0     		add	sp, sp, #12
+ 239              	.LCFI6:
+ 240              		.cfi_def_cfa_offset 4
+ 241              		@ sp needed
+ 242 002e 5DF804FB 		ldr	pc, [sp], #4
+ 243              	.L14:
+ 244 0032 00BF     		.align	2
+ 245              	.L13:
+ 246 0034 00000000 		.word	.LANCHOR2
+ 247 0038 00000000 		.word	.LANCHOR3
+ 248 003c 00000000 		.word	usart2_queue
+ 249 0040 00000000 		.word	huart2
+ 250 0044 00000000 		.word	.LANCHOR1
+ 251              		.cfi_endproc
+ 252              	.LFE138:
+ 254              		.section	.text.USART2_IRQHandler,"ax",%progbits
+ 255              		.align	1
+ 256              		.global	USART2_IRQHandler
+ 257              		.syntax unified
+ 258              		.thumb
+ 259              		.thumb_func
+ 260              		.fpu fpv4-sp-d16
+ 262              	USART2_IRQHandler:
+ 263              	.LFB139:
   24:Modules/src/usart_com.c ****     // printf("UART4_IRQHandler\r\n");
- 254              		.loc 1 24 30 is_stmt 1 view -0
- 255              		.cfi_startproc
- 256              		@ args = 0, pretend = 0, frame = 8
- 257              		@ frame_needed = 0, uses_anonymous_args = 0
- 258 0000 00B5     		push	{lr}
- 259              	.LCFI7:
- 260              		.cfi_def_cfa_offset 4
- 261              		.cfi_offset 14, -4
- 262 0002 83B0     		sub	sp, sp, #12
- 263              	.LCFI8:
- 264              		.cfi_def_cfa_offset 16
-  26:Modules/src/usart_com.c ****         __HAL_UART_CLEAR_IDLEFLAG(&huart2);
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s 			page 8
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cceXG0re.s 			page 8
 
 
- 265              		.loc 1 26 5 view .LVU55
+ 264              		.loc 1 24 30 is_stmt 1 view -0
+ 265              		.cfi_startproc
+ 266              		@ args = 0, pretend = 0, frame = 8
+ 267              		@ frame_needed = 0, uses_anonymous_args = 0
+ 268 0000 00B5     		push	{lr}
+ 269              	.LCFI7:
+ 270              		.cfi_def_cfa_offset 4
+ 271              		.cfi_offset 14, -4
+ 272 0002 83B0     		sub	sp, sp, #12
+ 273              	.LCFI8:
+ 274              		.cfi_def_cfa_offset 16
   26:Modules/src/usart_com.c ****         __HAL_UART_CLEAR_IDLEFLAG(&huart2);
- 266              		.loc 1 26 9 is_stmt 0 view .LVU56
- 267 0004 0A4B     		ldr	r3, .L18
- 268 0006 1B68     		ldr	r3, [r3]
- 269 0008 1A68     		ldr	r2, [r3]
+ 275              		.loc 1 26 5 view .LVU59
   26:Modules/src/usart_com.c ****         __HAL_UART_CLEAR_IDLEFLAG(&huart2);
- 270              		.loc 1 26 8 view .LVU57
- 271 000a 12F0100F 		tst	r2, #16
- 272 000e 0BD0     		beq	.L15
+ 276              		.loc 1 26 9 is_stmt 0 view .LVU60
+ 277 0004 0A4B     		ldr	r3, .L19
+ 278 0006 1B68     		ldr	r3, [r3]
+ 279 0008 1A68     		ldr	r2, [r3]
+  26:Modules/src/usart_com.c ****         __HAL_UART_CLEAR_IDLEFLAG(&huart2);
+ 280              		.loc 1 26 8 view .LVU61
+ 281 000a 12F0100F 		tst	r2, #16
+ 282 000e 0BD0     		beq	.L16
   27:Modules/src/usart_com.c ****         UartRxCheck();
- 273              		.loc 1 27 9 is_stmt 1 view .LVU58
- 274              	.LBB2:
+ 283              		.loc 1 27 9 is_stmt 1 view .LVU62
+ 284              	.LBB2:
   27:Modules/src/usart_com.c ****         UartRxCheck();
- 275              		.loc 1 27 9 view .LVU59
- 276 0010 0022     		movs	r2, #0
- 277 0012 0192     		str	r2, [sp, #4]
+ 285              		.loc 1 27 9 view .LVU63
+ 286 0010 0022     		movs	r2, #0
+ 287 0012 0192     		str	r2, [sp, #4]
   27:Modules/src/usart_com.c ****         UartRxCheck();
- 278              		.loc 1 27 9 view .LVU60
- 279 0014 1A68     		ldr	r2, [r3]
- 280 0016 0192     		str	r2, [sp, #4]
+ 288              		.loc 1 27 9 view .LVU64
+ 289 0014 1A68     		ldr	r2, [r3]
+ 290 0016 0192     		str	r2, [sp, #4]
   27:Modules/src/usart_com.c ****         UartRxCheck();
- 281              		.loc 1 27 9 view .LVU61
- 282 0018 5B68     		ldr	r3, [r3, #4]
- 283 001a 0193     		str	r3, [sp, #4]
+ 291              		.loc 1 27 9 view .LVU65
+ 292 0018 5B68     		ldr	r3, [r3, #4]
+ 293 001a 0193     		str	r3, [sp, #4]
   27:Modules/src/usart_com.c ****         UartRxCheck();
- 284              		.loc 1 27 9 view .LVU62
- 285 001c 019B     		ldr	r3, [sp, #4]
- 286              	.LBE2:
+ 294              		.loc 1 27 9 view .LVU66
+ 295 001c 019B     		ldr	r3, [sp, #4]
+ 296              	.LBE2:
   27:Modules/src/usart_com.c ****         UartRxCheck();
- 287              		.loc 1 27 9 view .LVU63
+ 297              		.loc 1 27 9 view .LVU67
   28:Modules/src/usart_com.c ****     } else {
- 288              		.loc 1 28 9 view .LVU64
- 289 001e FFF7FEFF 		bl	UartRxCheck
- 290              	.LVL7:
- 291              	.L14:
+ 298              		.loc 1 28 9 view .LVU68
+ 299 001e FFF7FEFF 		bl	UartRxCheck
+ 300              	.LVL9:
+ 301              	.L15:
   32:Modules/src/usart_com.c **** 
- 292              		.loc 1 32 1 is_stmt 0 view .LVU65
- 293 0022 03B0     		add	sp, sp, #12
- 294              	.LCFI9:
- 295              		.cfi_remember_state
- 296              		.cfi_def_cfa_offset 4
- 297              		@ sp needed
- 298 0024 5DF804FB 		ldr	pc, [sp], #4
- 299              	.L15:
- 300              	.LCFI10:
- 301              		.cfi_restore_state
+ 302              		.loc 1 32 1 is_stmt 0 view .LVU69
+ 303 0022 03B0     		add	sp, sp, #12
+ 304              	.LCFI9:
+ 305              		.cfi_remember_state
+ 306              		.cfi_def_cfa_offset 4
+ 307              		@ sp needed
+ 308 0024 5DF804FB 		ldr	pc, [sp], #4
+ 309              	.L16:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cceXG0re.s 			page 9
+
+
+ 310              	.LCFI10:
+ 311              		.cfi_restore_state
   30:Modules/src/usart_com.c ****     }
- 302              		.loc 1 30 9 is_stmt 1 view .LVU66
- 303 0028 0148     		ldr	r0, .L18
- 304 002a FFF7FEFF 		bl	HAL_UART_IRQHandler
- 305              	.LVL8:
+ 312              		.loc 1 30 9 is_stmt 1 view .LVU70
+ 313 0028 0148     		ldr	r0, .L19
+ 314 002a FFF7FEFF 		bl	HAL_UART_IRQHandler
+ 315              	.LVL10:
   32:Modules/src/usart_com.c **** 
- 306              		.loc 1 32 1 is_stmt 0 view .LVU67
- 307 002e F8E7     		b	.L14
- 308              	.L19:
- 309              		.align	2
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s 			page 9
-
-
- 310              	.L18:
- 311 0030 00000000 		.word	huart2
- 312              		.cfi_endproc
- 313              	.LFE139:
- 315              		.section	.text.DMA1_Stream5_IRQHandler,"ax",%progbits
- 316              		.align	1
- 317              		.global	DMA1_Stream5_IRQHandler
- 318              		.syntax unified
- 319              		.thumb
- 320              		.thumb_func
- 321              		.fpu fpv4-sp-d16
- 323              	DMA1_Stream5_IRQHandler:
- 324              	.LFB140:
+ 316              		.loc 1 32 1 is_stmt 0 view .LVU71
+ 317 002e F8E7     		b	.L15
+ 318              	.L20:
+ 319              		.align	2
+ 320              	.L19:
+ 321 0030 00000000 		.word	huart2
+ 322              		.cfi_endproc
+ 323              	.LFE139:
+ 325              		.section	.text.DMA1_Stream5_IRQHandler,"ax",%progbits
+ 326              		.align	1
+ 327              		.global	DMA1_Stream5_IRQHandler
+ 328              		.syntax unified
+ 329              		.thumb
+ 330              		.thumb_func
+ 331              		.fpu fpv4-sp-d16
+ 333              	DMA1_Stream5_IRQHandler:
+ 334              	.LFB140:
   34:Modules/src/usart_com.c ****     // printf("DMA1_Stream2_IRQHandler\r\n");
- 325              		.loc 1 34 36 is_stmt 1 view -0
- 326              		.cfi_startproc
- 327              		@ args = 0, pretend = 0, frame = 0
- 328              		@ frame_needed = 0, uses_anonymous_args = 0
- 329 0000 08B5     		push	{r3, lr}
- 330              	.LCFI11:
- 331              		.cfi_def_cfa_offset 8
- 332              		.cfi_offset 3, -8
- 333              		.cfi_offset 14, -4
+ 335              		.loc 1 34 36 is_stmt 1 view -0
+ 336              		.cfi_startproc
+ 337              		@ args = 0, pretend = 0, frame = 0
+ 338              		@ frame_needed = 0, uses_anonymous_args = 0
+ 339 0000 08B5     		push	{r3, lr}
+ 340              	.LCFI11:
+ 341              		.cfi_def_cfa_offset 8
+ 342              		.cfi_offset 3, -8
+ 343              		.cfi_offset 14, -4
   36:Modules/src/usart_com.c **** }
- 334              		.loc 1 36 5 view .LVU69
- 335 0002 024B     		ldr	r3, .L22
- 336 0004 986B     		ldr	r0, [r3, #56]
- 337 0006 FFF7FEFF 		bl	HAL_DMA_IRQHandler
- 338              	.LVL9:
+ 344              		.loc 1 36 5 view .LVU73
+ 345 0002 024B     		ldr	r3, .L23
+ 346 0004 986B     		ldr	r0, [r3, #56]
+ 347 0006 FFF7FEFF 		bl	HAL_DMA_IRQHandler
+ 348              	.LVL11:
   37:Modules/src/usart_com.c **** 
- 339              		.loc 1 37 1 is_stmt 0 view .LVU70
- 340 000a 08BD     		pop	{r3, pc}
- 341              	.L23:
- 342              		.align	2
- 343              	.L22:
- 344 000c 00000000 		.word	huart2
- 345              		.cfi_endproc
- 346              	.LFE140:
- 348              		.section	.text.DMA1_Stream6_IRQHandler,"ax",%progbits
- 349              		.align	1
- 350              		.global	DMA1_Stream6_IRQHandler
- 351              		.syntax unified
- 352              		.thumb
- 353              		.thumb_func
- 354              		.fpu fpv4-sp-d16
- 356              	DMA1_Stream6_IRQHandler:
- 357              	.LFB141:
+ 349              		.loc 1 37 1 is_stmt 0 view .LVU74
+ 350 000a 08BD     		pop	{r3, pc}
+ 351              	.L24:
+ 352              		.align	2
+ 353              	.L23:
+ 354 000c 00000000 		.word	huart2
+ 355              		.cfi_endproc
+ 356              	.LFE140:
+ 358              		.section	.text.DMA1_Stream6_IRQHandler,"ax",%progbits
+ 359              		.align	1
+ 360              		.global	DMA1_Stream6_IRQHandler
+ 361              		.syntax unified
+ 362              		.thumb
+ 363              		.thumb_func
+ 364              		.fpu fpv4-sp-d16
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cceXG0re.s 			page 10
+
+
+ 366              	DMA1_Stream6_IRQHandler:
+ 367              	.LFB141:
   39:Modules/src/usart_com.c ****     // printf("DMA1_Stream4_IRQHandler\r\n");
- 358              		.loc 1 39 36 is_stmt 1 view -0
- 359              		.cfi_startproc
- 360              		@ args = 0, pretend = 0, frame = 0
- 361              		@ frame_needed = 0, uses_anonymous_args = 0
- 362 0000 08B5     		push	{r3, lr}
- 363              	.LCFI12:
- 364              		.cfi_def_cfa_offset 8
- 365              		.cfi_offset 3, -8
- 366              		.cfi_offset 14, -4
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s 			page 10
-
-
+ 368              		.loc 1 39 36 is_stmt 1 view -0
+ 369              		.cfi_startproc
+ 370              		@ args = 0, pretend = 0, frame = 0
+ 371              		@ frame_needed = 0, uses_anonymous_args = 0
+ 372 0000 08B5     		push	{r3, lr}
+ 373              	.LCFI12:
+ 374              		.cfi_def_cfa_offset 8
+ 375              		.cfi_offset 3, -8
+ 376              		.cfi_offset 14, -4
   41:Modules/src/usart_com.c **** }
- 367              		.loc 1 41 5 view .LVU72
- 368 0002 024B     		ldr	r3, .L26
- 369 0004 586B     		ldr	r0, [r3, #52]
- 370 0006 FFF7FEFF 		bl	HAL_DMA_IRQHandler
- 371              	.LVL10:
+ 377              		.loc 1 41 5 view .LVU76
+ 378 0002 024B     		ldr	r3, .L27
+ 379 0004 586B     		ldr	r0, [r3, #52]
+ 380 0006 FFF7FEFF 		bl	HAL_DMA_IRQHandler
+ 381              	.LVL12:
   42:Modules/src/usart_com.c **** 
- 372              		.loc 1 42 1 is_stmt 0 view .LVU73
- 373 000a 08BD     		pop	{r3, pc}
- 374              	.L27:
- 375              		.align	2
- 376              	.L26:
- 377 000c 00000000 		.word	huart2
- 378              		.cfi_endproc
- 379              	.LFE141:
- 381              		.section	.text.HAL_UART_RxCpltCallback,"ax",%progbits
- 382              		.align	1
- 383              		.global	HAL_UART_RxCpltCallback
- 384              		.syntax unified
- 385              		.thumb
- 386              		.thumb_func
- 387              		.fpu fpv4-sp-d16
- 389              	HAL_UART_RxCpltCallback:
- 390              	.LVL11:
- 391              	.LFB142:
+ 382              		.loc 1 42 1 is_stmt 0 view .LVU77
+ 383 000a 08BD     		pop	{r3, pc}
+ 384              	.L28:
+ 385              		.align	2
+ 386              	.L27:
+ 387 000c 00000000 		.word	huart2
+ 388              		.cfi_endproc
+ 389              	.LFE141:
+ 391              		.section	.text.HAL_UART_RxCpltCallback,"ax",%progbits
+ 392              		.align	1
+ 393              		.global	HAL_UART_RxCpltCallback
+ 394              		.syntax unified
+ 395              		.thumb
+ 396              		.thumb_func
+ 397              		.fpu fpv4-sp-d16
+ 399              	HAL_UART_RxCpltCallback:
+ 400              	.LVL13:
+ 401              	.LFB142:
   44:Modules/src/usart_com.c ****     if (huart->Instance == USART2) {
- 392              		.loc 1 44 57 is_stmt 1 view -0
- 393              		.cfi_startproc
- 394              		@ args = 0, pretend = 0, frame = 8
- 395              		@ frame_needed = 0, uses_anonymous_args = 0
+ 402              		.loc 1 44 57 is_stmt 1 view -0
+ 403              		.cfi_startproc
+ 404              		@ args = 0, pretend = 0, frame = 8
+ 405              		@ frame_needed = 0, uses_anonymous_args = 0
   44:Modules/src/usart_com.c ****     if (huart->Instance == USART2) {
- 396              		.loc 1 44 57 is_stmt 0 view .LVU75
- 397 0000 00B5     		push	{lr}
- 398              	.LCFI13:
- 399              		.cfi_def_cfa_offset 4
- 400              		.cfi_offset 14, -4
- 401 0002 85B0     		sub	sp, sp, #20
- 402              	.LCFI14:
- 403              		.cfi_def_cfa_offset 24
+ 406              		.loc 1 44 57 is_stmt 0 view .LVU79
+ 407 0000 00B5     		push	{lr}
+ 408              	.LCFI13:
+ 409              		.cfi_def_cfa_offset 4
+ 410              		.cfi_offset 14, -4
+ 411 0002 85B0     		sub	sp, sp, #20
+ 412              	.LCFI14:
+ 413              		.cfi_def_cfa_offset 24
   45:Modules/src/usart_com.c ****         UartRxCheck();
- 404              		.loc 1 45 5 is_stmt 1 view .LVU76
+ 414              		.loc 1 45 5 is_stmt 1 view .LVU80
   45:Modules/src/usart_com.c ****         UartRxCheck();
- 405              		.loc 1 45 14 is_stmt 0 view .LVU77
- 406 0004 0368     		ldr	r3, [r0]
+ 415              		.loc 1 45 14 is_stmt 0 view .LVU81
+ 416 0004 0368     		ldr	r3, [r0]
   45:Modules/src/usart_com.c ****         UartRxCheck();
- 407              		.loc 1 45 8 view .LVU78
- 408 0006 114A     		ldr	r2, .L35
- 409 0008 9342     		cmp	r3, r2
- 410 000a 05D0     		beq	.L33
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cceXG0re.s 			page 11
+
+
+ 417              		.loc 1 45 8 view .LVU82
+ 418 0006 134A     		ldr	r2, .L37
+ 419 0008 9342     		cmp	r3, r2
+ 420 000a 05D0     		beq	.L35
   49:Modules/src/usart_com.c ****         BaseType_t higher_woken = pdFALSE;
- 411              		.loc 1 49 10 is_stmt 1 view .LVU79
+ 421              		.loc 1 49 10 is_stmt 1 view .LVU83
   49:Modules/src/usart_com.c ****         BaseType_t higher_woken = pdFALSE;
- 412              		.loc 1 49 13 is_stmt 0 view .LVU80
- 413 000c 104A     		ldr	r2, .L35+4
- 414 000e 9342     		cmp	r3, r2
- 415 0010 05D0     		beq	.L34
- 416              	.LVL12:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s 			page 11
-
-
- 417              	.L28:
+ 422              		.loc 1 49 13 is_stmt 0 view .LVU84
+ 423 000c 124A     		ldr	r2, .L37+4
+ 424 000e 9342     		cmp	r3, r2
+ 425 0010 05D0     		beq	.L36
+ 426              	.LVL14:
+ 427              	.L29:
   55:Modules/src/usart_com.c **** 
- 418              		.loc 1 55 1 view .LVU81
- 419 0012 05B0     		add	sp, sp, #20
- 420              	.LCFI15:
- 421              		.cfi_remember_state
- 422              		.cfi_def_cfa_offset 4
- 423              		@ sp needed
- 424 0014 5DF804FB 		ldr	pc, [sp], #4
- 425              	.LVL13:
- 426              	.L33:
- 427              	.LCFI16:
- 428              		.cfi_restore_state
+ 428              		.loc 1 55 1 view .LVU85
+ 429 0012 05B0     		add	sp, sp, #20
+ 430              	.LCFI15:
+ 431              		.cfi_remember_state
+ 432              		.cfi_def_cfa_offset 4
+ 433              		@ sp needed
+ 434 0014 5DF804FB 		ldr	pc, [sp], #4
+ 435              	.LVL15:
+ 436              	.L35:
+ 437              	.LCFI16:
+ 438              		.cfi_restore_state
   46:Modules/src/usart_com.c ****     }
- 429              		.loc 1 46 9 is_stmt 1 view .LVU82
- 430 0018 FFF7FEFF 		bl	UartRxCheck
- 431              	.LVL14:
+ 439              		.loc 1 46 9 is_stmt 1 view .LVU86
+ 440 0018 FFF7FEFF 		bl	UartRxCheck
+ 441              	.LVL16:
   46:Modules/src/usart_com.c ****     }
- 432              		.loc 1 46 9 is_stmt 0 view .LVU83
- 433 001c F9E7     		b	.L28
- 434              	.LVL15:
- 435              	.L34:
- 436              	.LBB3:
+ 442              		.loc 1 46 9 is_stmt 0 view .LVU87
+ 443 001c F9E7     		b	.L29
+ 444              	.LVL17:
+ 445              	.L36:
+ 446              	.LBB3:
   50:Modules/src/usart_com.c ****         xTaskNotifyFromISR(system_view_notify, 0x01, eSetBits, &higher_woken);
- 437              		.loc 1 50 9 is_stmt 1 view .LVU84
+ 447              		.loc 1 50 9 is_stmt 1 view .LVU88
   50:Modules/src/usart_com.c ****         xTaskNotifyFromISR(system_view_notify, 0x01, eSetBits, &higher_woken);
- 438              		.loc 1 50 20 is_stmt 0 view .LVU85
- 439 001e 0023     		movs	r3, #0
- 440 0020 0393     		str	r3, [sp, #12]
+ 448              		.loc 1 50 20 is_stmt 0 view .LVU89
+ 449 001e 0023     		movs	r3, #0
+ 450 0020 0393     		str	r3, [sp, #12]
   51:Modules/src/usart_com.c ****         portYIELD_FROM_ISR(higher_woken);
- 441              		.loc 1 51 9 is_stmt 1 view .LVU86
- 442 0022 03AA     		add	r2, sp, #12
- 443 0024 0092     		str	r2, [sp]
- 444 0026 0122     		movs	r2, #1
- 445 0028 1146     		mov	r1, r2
- 446 002a 0A48     		ldr	r0, .L35+8
- 447              	.LVL16:
+ 451              		.loc 1 51 9 is_stmt 1 view .LVU90
+ 452 0022 03AA     		add	r2, sp, #12
+ 453 0024 0092     		str	r2, [sp]
+ 454 0026 0122     		movs	r2, #1
+ 455 0028 1146     		mov	r1, r2
+ 456 002a 0C48     		ldr	r0, .L37+8
+ 457              	.LVL18:
   51:Modules/src/usart_com.c ****         portYIELD_FROM_ISR(higher_woken);
- 448              		.loc 1 51 9 is_stmt 0 view .LVU87
- 449 002c 0068     		ldr	r0, [r0]
- 450 002e FFF7FEFF 		bl	xTaskGenericNotifyFromISR
- 451              	.LVL17:
+ 458              		.loc 1 51 9 is_stmt 0 view .LVU91
+ 459 002c 0068     		ldr	r0, [r0]
+ 460 002e FFF7FEFF 		bl	xTaskGenericNotifyFromISR
+ 461              	.LVL19:
   52:Modules/src/usart_com.c ****     }
- 452              		.loc 1 52 9 is_stmt 1 view .LVU88
- 453 0032 039B     		ldr	r3, [sp, #12]
- 454 0034 002B     		cmp	r3, #0
- 455 0036 ECD0     		beq	.L28
-  52:Modules/src/usart_com.c ****     }
- 456              		.loc 1 52 9 discriminator 1 view .LVU89
- 457 0038 074B     		ldr	r3, .L35+12
- 458 003a 4FF08052 		mov	r2, #268435456
- 459 003e 1A60     		str	r2, [r3]
-  52:Modules/src/usart_com.c ****     }
- 460              		.loc 1 52 9 discriminator 1 view .LVU90
- 461              		.syntax unified
- 462              	@ 52 "Modules/src/usart_com.c" 1
- 463 0040 BFF34F8F 		dsb
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s 			page 12
+ 462              		.loc 1 52 9 is_stmt 1 view .LVU92
+ 463 0032 039B     		ldr	r3, [sp, #12]
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cceXG0re.s 			page 12
 
 
- 464              	@ 0 "" 2
+ 464 0034 53B1     		cbz	r3, .L32
   52:Modules/src/usart_com.c ****     }
- 465              		.loc 1 52 9 discriminator 1 view .LVU91
- 466              	@ 52 "Modules/src/usart_com.c" 1
- 467 0044 BFF36F8F 		isb
- 468              	@ 0 "" 2
+ 465              		.loc 1 52 9 discriminator 1 view .LVU93
+ 466 0036 FFF7FEFF 		bl	SEGGER_SYSVIEW_RecordExitISRToScheduler
+ 467              	.LVL20:
   52:Modules/src/usart_com.c ****     }
- 469              		.loc 1 52 41 discriminator 1 view .LVU92
- 470              		.thumb
- 471              		.syntax unified
- 472              	.LBE3:
+ 468              		.loc 1 52 9 discriminator 1 view .LVU94
+ 469 003a 094B     		ldr	r3, .L37+12
+ 470 003c 4FF08052 		mov	r2, #268435456
+ 471 0040 1A60     		str	r2, [r3]
+  52:Modules/src/usart_com.c ****     }
+ 472              		.loc 1 52 9 discriminator 1 view .LVU95
+ 473              		.syntax unified
+ 474              	@ 52 "Modules/src/usart_com.c" 1
+ 475 0042 BFF34F8F 		dsb
+ 476              	@ 0 "" 2
+  52:Modules/src/usart_com.c ****     }
+ 477              		.loc 1 52 9 discriminator 1 view .LVU96
+ 478              	@ 52 "Modules/src/usart_com.c" 1
+ 479 0046 BFF36F8F 		isb
+ 480              	@ 0 "" 2
+  52:Modules/src/usart_com.c ****     }
+ 481              		.loc 1 52 9 discriminator 1 view .LVU97
+ 482              		.thumb
+ 483              		.syntax unified
+ 484 004a E2E7     		b	.L29
+ 485              	.L32:
+  52:Modules/src/usart_com.c ****     }
+ 486              		.loc 1 52 9 discriminator 2 view .LVU98
+ 487 004c FFF7FEFF 		bl	SEGGER_SYSVIEW_RecordExitISR
+ 488              	.LVL21:
+  52:Modules/src/usart_com.c ****     }
+ 489              		.loc 1 52 41 discriminator 2 view .LVU99
+ 490              	.LBE3:
   55:Modules/src/usart_com.c **** 
- 473              		.loc 1 55 1 is_stmt 0 discriminator 1 view .LVU93
- 474 0048 E3E7     		b	.L28
- 475              	.L36:
- 476 004a 00BF     		.align	2
- 477              	.L35:
- 478 004c 00440040 		.word	1073759232
- 479 0050 00100140 		.word	1073811456
- 480 0054 00000000 		.word	.LANCHOR4
- 481 0058 04ED00E0 		.word	-536810236
- 482              		.cfi_endproc
- 483              	.LFE142:
- 485              		.section	.text.HAL_UART_RxHalfCpltCallback,"ax",%progbits
- 486              		.align	1
- 487              		.global	HAL_UART_RxHalfCpltCallback
- 488              		.syntax unified
- 489              		.thumb
- 490              		.thumb_func
- 491              		.fpu fpv4-sp-d16
- 493              	HAL_UART_RxHalfCpltCallback:
- 494              	.LVL18:
- 495              	.LFB143:
+ 491              		.loc 1 55 1 is_stmt 0 discriminator 2 view .LVU100
+ 492 0050 DFE7     		b	.L29
+ 493              	.L38:
+ 494 0052 00BF     		.align	2
+ 495              	.L37:
+ 496 0054 00440040 		.word	1073759232
+ 497 0058 00100140 		.word	1073811456
+ 498 005c 00000000 		.word	.LANCHOR4
+ 499 0060 04ED00E0 		.word	-536810236
+ 500              		.cfi_endproc
+ 501              	.LFE142:
+ 503              		.section	.text.HAL_UART_RxHalfCpltCallback,"ax",%progbits
+ 504              		.align	1
+ 505              		.global	HAL_UART_RxHalfCpltCallback
+ 506              		.syntax unified
+ 507              		.thumb
+ 508              		.thumb_func
+ 509              		.fpu fpv4-sp-d16
+ 511              	HAL_UART_RxHalfCpltCallback:
+ 512              	.LVL22:
+ 513              	.LFB143:
   57:Modules/src/usart_com.c ****     if (huart->Instance == USART2) {
- 496              		.loc 1 57 61 is_stmt 1 view -0
- 497              		.cfi_startproc
- 498              		@ args = 0, pretend = 0, frame = 0
- 499              		@ frame_needed = 0, uses_anonymous_args = 0
-  57:Modules/src/usart_com.c ****     if (huart->Instance == USART2) {
- 500              		.loc 1 57 61 is_stmt 0 view .LVU95
- 501 0000 08B5     		push	{r3, lr}
- 502              	.LCFI17:
- 503              		.cfi_def_cfa_offset 8
- 504              		.cfi_offset 3, -8
- 505              		.cfi_offset 14, -4
-  58:Modules/src/usart_com.c ****         UartRxCheck();
- 506              		.loc 1 58 5 is_stmt 1 view .LVU96
-  58:Modules/src/usart_com.c ****         UartRxCheck();
- 507              		.loc 1 58 14 is_stmt 0 view .LVU97
- 508 0002 0268     		ldr	r2, [r0]
-  58:Modules/src/usart_com.c ****         UartRxCheck();
- 509              		.loc 1 58 8 view .LVU98
- 510 0004 034B     		ldr	r3, .L41
- 511 0006 9A42     		cmp	r2, r3
- 512 0008 00D0     		beq	.L40
- 513              	.LVL19:
- 514              	.L37:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s 			page 13
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cceXG0re.s 			page 13
 
 
+ 514              		.loc 1 57 61 is_stmt 1 view -0
+ 515              		.cfi_startproc
+ 516              		@ args = 0, pretend = 0, frame = 0
+ 517              		@ frame_needed = 0, uses_anonymous_args = 0
+  57:Modules/src/usart_com.c ****     if (huart->Instance == USART2) {
+ 518              		.loc 1 57 61 is_stmt 0 view .LVU102
+ 519 0000 08B5     		push	{r3, lr}
+ 520              	.LCFI17:
+ 521              		.cfi_def_cfa_offset 8
+ 522              		.cfi_offset 3, -8
+ 523              		.cfi_offset 14, -4
+  58:Modules/src/usart_com.c ****         UartRxCheck();
+ 524              		.loc 1 58 5 is_stmt 1 view .LVU103
+  58:Modules/src/usart_com.c ****         UartRxCheck();
+ 525              		.loc 1 58 14 is_stmt 0 view .LVU104
+ 526 0002 0268     		ldr	r2, [r0]
+  58:Modules/src/usart_com.c ****         UartRxCheck();
+ 527              		.loc 1 58 8 view .LVU105
+ 528 0004 034B     		ldr	r3, .L43
+ 529 0006 9A42     		cmp	r2, r3
+ 530 0008 00D0     		beq	.L42
+ 531              	.LVL23:
+ 532              	.L39:
   61:Modules/src/usart_com.c **** 
- 515              		.loc 1 61 1 view .LVU99
- 516 000a 08BD     		pop	{r3, pc}
- 517              	.LVL20:
- 518              	.L40:
+ 533              		.loc 1 61 1 view .LVU106
+ 534 000a 08BD     		pop	{r3, pc}
+ 535              	.LVL24:
+ 536              	.L42:
   59:Modules/src/usart_com.c ****     }
- 519              		.loc 1 59 9 is_stmt 1 view .LVU100
- 520 000c FFF7FEFF 		bl	UartRxCheck
- 521              	.LVL21:
+ 537              		.loc 1 59 9 is_stmt 1 view .LVU107
+ 538 000c FFF7FEFF 		bl	UartRxCheck
+ 539              	.LVL25:
   61:Modules/src/usart_com.c **** 
- 522              		.loc 1 61 1 is_stmt 0 view .LVU101
- 523 0010 FBE7     		b	.L37
- 524              	.L42:
- 525 0012 00BF     		.align	2
- 526              	.L41:
- 527 0014 00440040 		.word	1073759232
- 528              		.cfi_endproc
- 529              	.LFE143:
- 531              		.section	.text.HAL_UART_TxCpltCallback,"ax",%progbits
- 532              		.align	1
- 533              		.global	HAL_UART_TxCpltCallback
- 534              		.syntax unified
- 535              		.thumb
- 536              		.thumb_func
- 537              		.fpu fpv4-sp-d16
- 539              	HAL_UART_TxCpltCallback:
- 540              	.LVL22:
- 541              	.LFB144:
+ 540              		.loc 1 61 1 is_stmt 0 view .LVU108
+ 541 0010 FBE7     		b	.L39
+ 542              	.L44:
+ 543 0012 00BF     		.align	2
+ 544              	.L43:
+ 545 0014 00440040 		.word	1073759232
+ 546              		.cfi_endproc
+ 547              	.LFE143:
+ 549              		.section	.text.HAL_UART_TxCpltCallback,"ax",%progbits
+ 550              		.align	1
+ 551              		.global	HAL_UART_TxCpltCallback
+ 552              		.syntax unified
+ 553              		.thumb
+ 554              		.thumb_func
+ 555              		.fpu fpv4-sp-d16
+ 557              	HAL_UART_TxCpltCallback:
+ 558              	.LVL26:
+ 559              	.LFB144:
   64:Modules/src/usart_com.c ****     if (huart->Instance == USART1) {
- 542              		.loc 1 64 57 is_stmt 1 view -0
- 543              		.cfi_startproc
- 544              		@ args = 0, pretend = 0, frame = 8
- 545              		@ frame_needed = 0, uses_anonymous_args = 0
+ 560              		.loc 1 64 57 is_stmt 1 view -0
+ 561              		.cfi_startproc
+ 562              		@ args = 0, pretend = 0, frame = 8
+ 563              		@ frame_needed = 0, uses_anonymous_args = 0
   65:Modules/src/usart_com.c ****         BaseType_t higher_woken = pdFALSE;
- 546              		.loc 1 65 5 view .LVU103
-  65:Modules/src/usart_com.c ****         BaseType_t higher_woken = pdFALSE;
- 547              		.loc 1 65 14 is_stmt 0 view .LVU104
- 548 0000 0268     		ldr	r2, [r0]
-  65:Modules/src/usart_com.c ****         BaseType_t higher_woken = pdFALSE;
- 549              		.loc 1 65 8 view .LVU105
- 550 0002 0E4B     		ldr	r3, .L51
- 551 0004 9A42     		cmp	r2, r3
- 552 0006 00D0     		beq	.L50
- 553 0008 7047     		bx	lr
- 554              	.L50:
-  64:Modules/src/usart_com.c ****     if (huart->Instance == USART1) {
- 555              		.loc 1 64 57 view .LVU106
- 556 000a 00B5     		push	{lr}
- 557              	.LCFI18:
- 558              		.cfi_def_cfa_offset 4
- 559              		.cfi_offset 14, -4
- 560 000c 85B0     		sub	sp, sp, #20
- 561              	.LCFI19:
- 562              		.cfi_def_cfa_offset 24
- 563              	.LBB4:
-  66:Modules/src/usart_com.c ****         xTaskNotifyFromISR(system_view_notify, 0x02, eSetBits, &higher_woken);
- 564              		.loc 1 66 9 is_stmt 1 view .LVU107
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s 			page 14
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cceXG0re.s 			page 14
 
 
+ 564              		.loc 1 65 5 view .LVU110
+  65:Modules/src/usart_com.c ****         BaseType_t higher_woken = pdFALSE;
+ 565              		.loc 1 65 14 is_stmt 0 view .LVU111
+ 566 0000 0268     		ldr	r2, [r0]
+  65:Modules/src/usart_com.c ****         BaseType_t higher_woken = pdFALSE;
+ 567              		.loc 1 65 8 view .LVU112
+ 568 0002 114B     		ldr	r3, .L54
+ 569 0004 9A42     		cmp	r2, r3
+ 570 0006 00D0     		beq	.L53
+ 571 0008 7047     		bx	lr
+ 572              	.L53:
+  64:Modules/src/usart_com.c ****     if (huart->Instance == USART1) {
+ 573              		.loc 1 64 57 view .LVU113
+ 574 000a 00B5     		push	{lr}
+ 575              	.LCFI18:
+ 576              		.cfi_def_cfa_offset 4
+ 577              		.cfi_offset 14, -4
+ 578 000c 85B0     		sub	sp, sp, #20
+ 579              	.LCFI19:
+ 580              		.cfi_def_cfa_offset 24
+ 581              	.LBB4:
   66:Modules/src/usart_com.c ****         xTaskNotifyFromISR(system_view_notify, 0x02, eSetBits, &higher_woken);
- 565              		.loc 1 66 20 is_stmt 0 view .LVU108
- 566 000e 0023     		movs	r3, #0
- 567 0010 0393     		str	r3, [sp, #12]
+ 582              		.loc 1 66 9 is_stmt 1 view .LVU114
+  66:Modules/src/usart_com.c ****         xTaskNotifyFromISR(system_view_notify, 0x02, eSetBits, &higher_woken);
+ 583              		.loc 1 66 20 is_stmt 0 view .LVU115
+ 584 000e 0023     		movs	r3, #0
+ 585 0010 0393     		str	r3, [sp, #12]
   67:Modules/src/usart_com.c ****         portYIELD_FROM_ISR(higher_woken);
- 568              		.loc 1 67 9 is_stmt 1 view .LVU109
- 569 0012 03AA     		add	r2, sp, #12
- 570 0014 0092     		str	r2, [sp]
- 571 0016 0122     		movs	r2, #1
- 572 0018 0221     		movs	r1, #2
- 573 001a 0948     		ldr	r0, .L51+4
- 574              	.LVL23:
+ 586              		.loc 1 67 9 is_stmt 1 view .LVU116
+ 587 0012 03AA     		add	r2, sp, #12
+ 588 0014 0092     		str	r2, [sp]
+ 589 0016 0122     		movs	r2, #1
+ 590 0018 0221     		movs	r1, #2
+ 591 001a 0C48     		ldr	r0, .L54+4
+ 592              	.LVL27:
   67:Modules/src/usart_com.c ****         portYIELD_FROM_ISR(higher_woken);
- 575              		.loc 1 67 9 is_stmt 0 view .LVU110
- 576 001c 0068     		ldr	r0, [r0]
- 577 001e FFF7FEFF 		bl	xTaskGenericNotifyFromISR
- 578              	.LVL24:
+ 593              		.loc 1 67 9 is_stmt 0 view .LVU117
+ 594 001c 0068     		ldr	r0, [r0]
+ 595 001e FFF7FEFF 		bl	xTaskGenericNotifyFromISR
+ 596              	.LVL28:
   68:Modules/src/usart_com.c ****         // uint8_t buffer[] = "HAL_UART_TxCpltCallback\r\n";
- 579              		.loc 1 68 9 is_stmt 1 view .LVU111
- 580 0022 039B     		ldr	r3, [sp, #12]
- 581 0024 3BB1     		cbz	r3, .L43
+ 597              		.loc 1 68 9 is_stmt 1 view .LVU118
+ 598 0022 039B     		ldr	r3, [sp, #12]
+ 599 0024 63B1     		cbz	r3, .L47
   68:Modules/src/usart_com.c ****         // uint8_t buffer[] = "HAL_UART_TxCpltCallback\r\n";
- 582              		.loc 1 68 9 discriminator 1 view .LVU112
- 583 0026 074B     		ldr	r3, .L51+8
- 584 0028 4FF08052 		mov	r2, #268435456
- 585 002c 1A60     		str	r2, [r3]
+ 600              		.loc 1 68 9 discriminator 1 view .LVU119
+ 601 0026 FFF7FEFF 		bl	SEGGER_SYSVIEW_RecordExitISRToScheduler
+ 602              	.LVL29:
   68:Modules/src/usart_com.c ****         // uint8_t buffer[] = "HAL_UART_TxCpltCallback\r\n";
- 586              		.loc 1 68 9 discriminator 1 view .LVU113
- 587              		.syntax unified
- 588              	@ 68 "Modules/src/usart_com.c" 1
- 589 002e BFF34F8F 		dsb
- 590              	@ 0 "" 2
+ 603              		.loc 1 68 9 discriminator 1 view .LVU120
+ 604 002a 094B     		ldr	r3, .L54+8
+ 605 002c 4FF08052 		mov	r2, #268435456
+ 606 0030 1A60     		str	r2, [r3]
   68:Modules/src/usart_com.c ****         // uint8_t buffer[] = "HAL_UART_TxCpltCallback\r\n";
- 591              		.loc 1 68 9 discriminator 1 view .LVU114
- 592              	@ 68 "Modules/src/usart_com.c" 1
- 593 0032 BFF36F8F 		isb
- 594              	@ 0 "" 2
+ 607              		.loc 1 68 9 discriminator 1 view .LVU121
+ 608              		.syntax unified
+ 609              	@ 68 "Modules/src/usart_com.c" 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cceXG0re.s 			page 15
+
+
+ 610 0032 BFF34F8F 		dsb
+ 611              	@ 0 "" 2
   68:Modules/src/usart_com.c ****         // uint8_t buffer[] = "HAL_UART_TxCpltCallback\r\n";
- 595              		.loc 1 68 41 discriminator 1 view .LVU115
- 596              		.thumb
- 597              		.syntax unified
- 598              	.L43:
- 599              	.LBE4:
+ 612              		.loc 1 68 9 discriminator 1 view .LVU122
+ 613              	@ 68 "Modules/src/usart_com.c" 1
+ 614 0036 BFF36F8F 		isb
+ 615              	@ 0 "" 2
+  68:Modules/src/usart_com.c ****         // uint8_t buffer[] = "HAL_UART_TxCpltCallback\r\n";
+ 616              		.loc 1 68 9 discriminator 1 view .LVU123
+ 617              		.thumb
+ 618              		.syntax unified
+ 619              	.L45:
+ 620              	.LBE4:
   72:Modules/src/usart_com.c **** #endif 
- 600              		.loc 1 72 1 is_stmt 0 view .LVU116
- 601 0036 05B0     		add	sp, sp, #20
- 602              	.LCFI20:
- 603              		.cfi_def_cfa_offset 4
- 604              		@ sp needed
- 605 0038 5DF804FB 		ldr	pc, [sp], #4
- 606              	.L52:
- 607              		.align	2
- 608              	.L51:
- 609 003c 00100140 		.word	1073811456
- 610 0040 00000000 		.word	.LANCHOR4
- 611 0044 04ED00E0 		.word	-536810236
- 612              		.cfi_endproc
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s 			page 15
+ 621              		.loc 1 72 1 is_stmt 0 view .LVU124
+ 622 003a 05B0     		add	sp, sp, #20
+ 623              	.LCFI20:
+ 624              		.cfi_remember_state
+ 625              		.cfi_def_cfa_offset 4
+ 626              		@ sp needed
+ 627 003c 5DF804FB 		ldr	pc, [sp], #4
+ 628              	.L47:
+ 629              	.LCFI21:
+ 630              		.cfi_restore_state
+ 631              	.LBB5:
+  68:Modules/src/usart_com.c ****         // uint8_t buffer[] = "HAL_UART_TxCpltCallback\r\n";
+ 632              		.loc 1 68 9 is_stmt 1 discriminator 2 view .LVU125
+ 633 0040 FFF7FEFF 		bl	SEGGER_SYSVIEW_RecordExitISR
+ 634              	.LVL30:
+  68:Modules/src/usart_com.c ****         // uint8_t buffer[] = "HAL_UART_TxCpltCallback\r\n";
+ 635              		.loc 1 68 41 discriminator 2 view .LVU126
+ 636              	.LBE5:
+  72:Modules/src/usart_com.c **** #endif 
+ 637              		.loc 1 72 1 is_stmt 0 discriminator 2 view .LVU127
+ 638 0044 F9E7     		b	.L45
+ 639              	.L55:
+ 640 0046 00BF     		.align	2
+ 641              	.L54:
+ 642 0048 00100140 		.word	1073811456
+ 643 004c 00000000 		.word	.LANCHOR4
+ 644 0050 04ED00E0 		.word	-536810236
+ 645              		.cfi_endproc
+ 646              	.LFE144:
+ 648              		.global	system_view_notify
+ 649              		.comm	usart2_queue,4,4
+ 650              		.section	.bss.old_pos.10434,"aw",%nobits
+ 651              		.align	2
+ 652              		.set	.LANCHOR0,. + 0
+ 655              	old_pos.10434:
+ 656 0000 00000000 		.space	4
+ 657              		.section	.bss.osSys_usart2_queueMgm,"aw",%nobits
+ 658              		.align	2
+ 659              		.set	.LANCHOR2,. + 0
+ 662              	osSys_usart2_queueMgm:
+ 663 0000 00000000 		.space	72
+ 663      00000000 
+ 663      00000000 
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cceXG0re.s 			page 16
 
 
- 613              	.LFE144:
- 615              		.global	system_view_notify
- 616              		.comm	usart2_queue,4,4
- 617              		.section	.bss.old_pos.10432,"aw",%nobits
- 618              		.align	2
- 619              		.set	.LANCHOR0,. + 0
- 622              	old_pos.10432:
- 623 0000 00000000 		.space	4
- 624              		.section	.bss.osSys_usart2_queueMgm,"aw",%nobits
- 625              		.align	2
- 626              		.set	.LANCHOR2,. + 0
- 629              	osSys_usart2_queueMgm:
- 630 0000 00000000 		.space	72
- 630      00000000 
- 630      00000000 
- 630      00000000 
- 630      00000000 
- 631              		.section	.bss.osSys_usart2_queueStorage,"aw",%nobits
- 632              		.align	2
- 633              		.set	.LANCHOR3,. + 0
- 636              	osSys_usart2_queueStorage:
- 637 0000 00000000 		.space	40
- 637      00000000 
- 637      00000000 
- 637      00000000 
- 637      00000000 
- 638              		.section	.bss.rx_buffer,"aw",%nobits
- 639              		.align	2
- 640              		.set	.LANCHOR1,. + 0
- 643              	rx_buffer:
- 644 0000 00000000 		.space	128
- 644      00000000 
- 644      00000000 
- 644      00000000 
- 644      00000000 
- 645              		.section	.bss.system_view_notify,"aw",%nobits
- 646              		.align	2
- 647              		.set	.LANCHOR4,. + 0
- 650              	system_view_notify:
- 651 0000 00000000 		.space	4
- 652              		.text
- 653              	.Letext0:
- 654              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
- 655              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
- 656              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
- 657              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 658              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
- 659              		.file 7 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\std
- 660              		.file 8 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
- 661              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 662              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 663              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 664              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 665              		.file 13 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
- 666              		.file 14 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
- 667              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
- 668              		.file 16 "Modules/include/utils.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s 			page 16
-
-
- 669              		.file 17 "Inc/usart.h"
- 670              		.file 18 "Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW.h"
- 671              		.file 19 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
- 672              		.file 20 "Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"
- 673              		.file 21 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
- 674              		.file 22 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
- 675              		.file 23 "Modules/include/usart_com.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s 			page 17
+ 663      00000000 
+ 663      00000000 
+ 664              		.section	.bss.osSys_usart2_queueStorage,"aw",%nobits
+ 665              		.align	2
+ 666              		.set	.LANCHOR3,. + 0
+ 669              	osSys_usart2_queueStorage:
+ 670 0000 00000000 		.space	40
+ 670      00000000 
+ 670      00000000 
+ 670      00000000 
+ 670      00000000 
+ 671              		.section	.bss.rx_buffer,"aw",%nobits
+ 672              		.align	2
+ 673              		.set	.LANCHOR1,. + 0
+ 676              	rx_buffer:
+ 677 0000 00000000 		.space	128
+ 677      00000000 
+ 677      00000000 
+ 677      00000000 
+ 677      00000000 
+ 678              		.section	.bss.system_view_notify,"aw",%nobits
+ 679              		.align	2
+ 680              		.set	.LANCHOR4,. + 0
+ 683              	system_view_notify:
+ 684 0000 00000000 		.space	4
+ 685              		.text
+ 686              	.Letext0:
+ 687              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
+ 688              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 689              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 690              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 691              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 692              		.file 7 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\std
+ 693              		.file 8 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
+ 694              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 695              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 696              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 697              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 698              		.file 13 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
+ 699              		.file 14 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
+ 700              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
+ 701              		.file 16 "Modules/include/utils.h"
+ 702              		.file 17 "Inc/usart.h"
+ 703              		.file 18 "Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW.h"
+ 704              		.file 19 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
+ 705              		.file 20 "Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"
+ 706              		.file 21 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 707              		.file 22 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
+ 708              		.file 23 "Modules/include/usart_com.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cceXG0re.s 			page 17
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 usart_com.c
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:18     .text.UartRxCheck:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:25     .text.UartRxCheck:00000000 UartRxCheck
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:174    .text.UartRxCheck:00000090 $d
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:18     .text.UartRxCheck:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:25     .text.UartRxCheck:00000000 UartRxCheck
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:184    .text.UartRxCheck:0000009c $d
                             *COM*:00000004 usart2_queue
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:183    .text.UsartInit:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:190    .text.UsartInit:00000000 UsartInit
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:236    .text.UsartInit:00000034 $d
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:245    .text.USART2_IRQHandler:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:252    .text.USART2_IRQHandler:00000000 USART2_IRQHandler
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:311    .text.USART2_IRQHandler:00000030 $d
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:316    .text.DMA1_Stream5_IRQHandler:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:323    .text.DMA1_Stream5_IRQHandler:00000000 DMA1_Stream5_IRQHandler
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:344    .text.DMA1_Stream5_IRQHandler:0000000c $d
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:349    .text.DMA1_Stream6_IRQHandler:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:356    .text.DMA1_Stream6_IRQHandler:00000000 DMA1_Stream6_IRQHandler
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:377    .text.DMA1_Stream6_IRQHandler:0000000c $d
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:382    .text.HAL_UART_RxCpltCallback:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:389    .text.HAL_UART_RxCpltCallback:00000000 HAL_UART_RxCpltCallback
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:478    .text.HAL_UART_RxCpltCallback:0000004c $d
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:486    .text.HAL_UART_RxHalfCpltCallback:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:493    .text.HAL_UART_RxHalfCpltCallback:00000000 HAL_UART_RxHalfCpltCallback
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:527    .text.HAL_UART_RxHalfCpltCallback:00000014 $d
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:532    .text.HAL_UART_TxCpltCallback:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:539    .text.HAL_UART_TxCpltCallback:00000000 HAL_UART_TxCpltCallback
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:609    .text.HAL_UART_TxCpltCallback:0000003c $d
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:650    .bss.system_view_notify:00000000 system_view_notify
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:618    .bss.old_pos.10432:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:622    .bss.old_pos.10432:00000000 old_pos.10432
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:625    .bss.osSys_usart2_queueMgm:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:629    .bss.osSys_usart2_queueMgm:00000000 osSys_usart2_queueMgm
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:632    .bss.osSys_usart2_queueStorage:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:636    .bss.osSys_usart2_queueStorage:00000000 osSys_usart2_queueStorage
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:639    .bss.rx_buffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:643    .bss.rx_buffer:00000000 rx_buffer
-C:\Users\luoha\AppData\Local\Temp\cc8C4gmr.s:646    .bss.system_view_notify:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:193    .text.UsartInit:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:200    .text.UsartInit:00000000 UsartInit
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:246    .text.UsartInit:00000034 $d
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:255    .text.USART2_IRQHandler:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:262    .text.USART2_IRQHandler:00000000 USART2_IRQHandler
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:321    .text.USART2_IRQHandler:00000030 $d
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:326    .text.DMA1_Stream5_IRQHandler:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:333    .text.DMA1_Stream5_IRQHandler:00000000 DMA1_Stream5_IRQHandler
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:354    .text.DMA1_Stream5_IRQHandler:0000000c $d
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:359    .text.DMA1_Stream6_IRQHandler:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:366    .text.DMA1_Stream6_IRQHandler:00000000 DMA1_Stream6_IRQHandler
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:387    .text.DMA1_Stream6_IRQHandler:0000000c $d
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:392    .text.HAL_UART_RxCpltCallback:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:399    .text.HAL_UART_RxCpltCallback:00000000 HAL_UART_RxCpltCallback
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:496    .text.HAL_UART_RxCpltCallback:00000054 $d
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:504    .text.HAL_UART_RxHalfCpltCallback:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:511    .text.HAL_UART_RxHalfCpltCallback:00000000 HAL_UART_RxHalfCpltCallback
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:545    .text.HAL_UART_RxHalfCpltCallback:00000014 $d
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:550    .text.HAL_UART_TxCpltCallback:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:557    .text.HAL_UART_TxCpltCallback:00000000 HAL_UART_TxCpltCallback
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:642    .text.HAL_UART_TxCpltCallback:00000048 $d
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:683    .bss.system_view_notify:00000000 system_view_notify
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:651    .bss.old_pos.10434:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:655    .bss.old_pos.10434:00000000 old_pos.10434
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:658    .bss.osSys_usart2_queueMgm:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:662    .bss.osSys_usart2_queueMgm:00000000 osSys_usart2_queueMgm
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:665    .bss.osSys_usart2_queueStorage:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:669    .bss.osSys_usart2_queueStorage:00000000 osSys_usart2_queueStorage
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:672    .bss.rx_buffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:676    .bss.rx_buffer:00000000 rx_buffer
+C:\Users\luoha\AppData\Local\Temp\cceXG0re.s:679    .bss.system_view_notify:00000000 $d
 
 UNDEFINED SYMBOLS
 xQueueGenericSendFromISR
+SEGGER_SYSVIEW_RecordExitISRToScheduler
+SEGGER_SYSVIEW_RecordExitISR
 huart2
 xQueueGenericCreateStatic
 HAL_UART_Receive_DMA

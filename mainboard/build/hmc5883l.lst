@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccq7Po5q.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s 			page 1
   48 000e FFF7FEFF 		bl	HAL_I2C_IsDeviceReady
   49              	.LVL0:
   50              		.loc 1 8 8 view .LVU3
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccq7Po5q.s 			page 2
 
 
   51 0012 10B1     		cbz	r0, .L5
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s 			page 1
   82 0032 2B70     		strb	r3, [r5]
   20:Modules/src/hmc5883l.c **** 
   83              		.loc 1 20 5 is_stmt 1 view .LVU11
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccq7Po5q.s 			page 3
 
 
   84 0034 0094     		str	r4, [sp]
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s 			page 1
  133              		.cfi_def_cfa_offset 8
  134              		.cfi_offset 4, -8
  135              		.cfi_offset 14, -4
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s 			page 4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccq7Po5q.s 			page 4
 
 
  136 0002 82B0     		sub	sp, sp, #8
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s 			page 1
  182              		.loc 1 36 5 is_stmt 1 view .LVU38
  183              	.L9:
   37:Modules/src/hmc5883l.c **** }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s 			page 5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccq7Po5q.s 			page 5
 
 
  184              		.loc 1 37 1 is_stmt 0 view .LVU39
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s 			page 1
  237 0012 0321     		movs	r1, #3
  238              	.LVL10:
  239              		.loc 1 40 10 view .LVU46
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s 			page 6
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccq7Po5q.s 			page 6
 
 
  240 0014 3C20     		movs	r0, #60
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s 			page 1
  285 005a C7EE876A 		vdiv.f32	s13, s15, s14
  286              		.loc 1 49 6 view .LVU66
  287 005e C6ED006A 		vstr.32	s13, [r6]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s 			page 7
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccq7Po5q.s 			page 7
 
 
   50:Modules/src/hmc5883l.c **** 	*mz = mz_raw / 1090.f;
@@ -418,29 +418,29 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s 			page 1
  342              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
  343              		.file 16 "Modules/include/utils.h"
  344              		.file 17 "Inc/i2c.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s 			page 8
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccq7Po5q.s 			page 8
 
 
  345              		.file 18 "Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW.h"
  346              		.file 19 "Modules/include/i2c1.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s 			page 9
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccq7Po5q.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 hmc5883l.c
-C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s:18     .text.HMC5883LInit:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s:26     .text.HMC5883LInit:00000000 HMC5883LInit
-C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s:110    .text.HMC5883LInit:00000058 $d
-C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s:116    .text.HMC5883LReadMagRaw:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s:123    .text.HMC5883LReadMagRaw:00000000 HMC5883LReadMagRaw
-C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s:195    .text.HMC5883LReadMagRaw:0000003c $d
-C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s:200    .text.HMC5883LReadMag:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s:207    .text.HMC5883LReadMag:00000000 HMC5883LReadMag
-C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s:309    .text.HMC5883LReadMag:00000078 $d
-C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s:318    .bss.i2c_data:00000000 i2c_data
-C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s:319    .bss.i2c_data:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s:321    .bss.i2c_datas:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc4hJ1g6.s:325    .bss.i2c_datas:00000000 i2c_datas
+C:\Users\luoha\AppData\Local\Temp\ccq7Po5q.s:18     .text.HMC5883LInit:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccq7Po5q.s:26     .text.HMC5883LInit:00000000 HMC5883LInit
+C:\Users\luoha\AppData\Local\Temp\ccq7Po5q.s:110    .text.HMC5883LInit:00000058 $d
+C:\Users\luoha\AppData\Local\Temp\ccq7Po5q.s:116    .text.HMC5883LReadMagRaw:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccq7Po5q.s:123    .text.HMC5883LReadMagRaw:00000000 HMC5883LReadMagRaw
+C:\Users\luoha\AppData\Local\Temp\ccq7Po5q.s:195    .text.HMC5883LReadMagRaw:0000003c $d
+C:\Users\luoha\AppData\Local\Temp\ccq7Po5q.s:200    .text.HMC5883LReadMag:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccq7Po5q.s:207    .text.HMC5883LReadMag:00000000 HMC5883LReadMag
+C:\Users\luoha\AppData\Local\Temp\ccq7Po5q.s:309    .text.HMC5883LReadMag:00000078 $d
+C:\Users\luoha\AppData\Local\Temp\ccq7Po5q.s:318    .bss.i2c_data:00000000 i2c_data
+C:\Users\luoha\AppData\Local\Temp\ccq7Po5q.s:319    .bss.i2c_data:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccq7Po5q.s:321    .bss.i2c_datas:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccq7Po5q.s:325    .bss.i2c_datas:00000000 i2c_datas
 
 UNDEFINED SYMBOLS
 HAL_I2C_IsDeviceReady

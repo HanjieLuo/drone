@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s 			page 1
   40              	.LCFI0:
   41              		.cfi_def_cfa_offset 4
   42              		.cfi_offset 14, -4
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s 			page 2
 
 
   43 0002 85B0     		sub	sp, sp, #20
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s 			page 1
   90              	.LFB138:
    9:Modules/src/system_task.c ****     STATIC_MEM_TASK_CREATE(system_task, SystemTask, "SystemTask", NULL, SYSTEM_TASK_PRI);
   91              		.loc 1 9 25 view -0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s 			page 3
 
 
   92              		.cfi_startproc
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s 			page 1
  141              		.fpu fpv4-sp-d16
  143              	SystemInitiate:
  144              	.LFB140:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s 			page 4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s 			page 4
 
 
   20:Modules/src/system_task.c ****     }
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s 			page 1
  181 001a F5E7     		b	.L10
  182              	.L15:
  183              		.align	2
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s 			page 5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s 			page 5
 
 
  184              	.L14:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s 			page 1
  233              		.set	.LANCHOR2,. + 0
  236              	is_init:
  237 0000 00       		.space	1
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s 			page 6
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s 			page 6
 
 
  238              		.section	.bss.osSys_system_taskStackBuffer,"aw",%nobits
@@ -344,32 +344,32 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s 			page 1
  274              		.file 22 "Modules/include/sensors.h"
  275              		.file 23 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
  276              		.file 24 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\stdio.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s 			page 7
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 system_task.c
-C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s:18     .rodata.SystemTask.str1.4:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s:22     .text.SystemTask:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s:29     .text.SystemTask:00000000 SystemTask
-C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s:72     .text.SystemTask:00000024 $d
-C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s:78     .rodata.SystemLaunch.str1.4:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s:82     .text.SystemLaunch:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s:89     .text.SystemLaunch:00000000 SystemLaunch
-C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s:124    .text.SystemLaunch:00000024 $d
-C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s:132    .rodata.SystemInitiate.str1.4:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s:136    .text.SystemInitiate:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s:143    .text.SystemInitiate:00000000 SystemInitiate
-C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s:185    .text.SystemInitiate:0000001c $d
-C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s:191    .text.SystemWaitStart:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s:198    .text.SystemWaitStart:00000000 SystemWaitStart
-C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s:228    .text.SystemWaitStart:00000014 $d
-C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s:236    .bss.is_init:00000000 is_init
-C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s:237    .bss.is_init:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s:239    .bss.osSys_system_taskStackBuffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s:243    .bss.osSys_system_taskStackBuffer:00000000 osSys_system_taskStackBuffer
-C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s:246    .bss.osSys_system_taskTaskBuffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cch1lGYv.s:250    .bss.osSys_system_taskTaskBuffer:00000000 osSys_system_taskTaskBuffer
+C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s:18     .rodata.SystemTask.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s:22     .text.SystemTask:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s:29     .text.SystemTask:00000000 SystemTask
+C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s:72     .text.SystemTask:00000024 $d
+C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s:78     .rodata.SystemLaunch.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s:82     .text.SystemLaunch:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s:89     .text.SystemLaunch:00000000 SystemLaunch
+C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s:124    .text.SystemLaunch:00000024 $d
+C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s:132    .rodata.SystemInitiate.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s:136    .text.SystemInitiate:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s:143    .text.SystemInitiate:00000000 SystemInitiate
+C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s:185    .text.SystemInitiate:0000001c $d
+C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s:191    .text.SystemWaitStart:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s:198    .text.SystemWaitStart:00000000 SystemWaitStart
+C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s:228    .text.SystemWaitStart:00000014 $d
+C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s:236    .bss.is_init:00000000 is_init
+C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s:237    .bss.is_init:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s:239    .bss.osSys_system_taskStackBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s:243    .bss.osSys_system_taskStackBuffer:00000000 osSys_system_taskStackBuffer
+C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s:246    .bss.osSys_system_taskTaskBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccaFBpZD.s:250    .bss.osSys_system_taskTaskBuffer:00000000 osSys_system_taskTaskBuffer
 
 UNDEFINED SYMBOLS
 HAL_UART_Transmit_DMA
