@@ -5,6 +5,9 @@
         },
         {
             "path": "..\\Client"
+        },
+        {
+            "path": "..\\Doc"
         }
     ],
     "settings": {

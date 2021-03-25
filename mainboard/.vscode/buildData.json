@@ -3,7 +3,7 @@
     "ABOUT2": "User should not edit this fields, instead it should edit 'c_cpp_properties.json'",
     "ABOUT3": "This file is regenerated on 'Update workspace' task.",
     "VERSION": "1.7",
-    "LAST_RUN": "2021-03-22 01:03:22.311571",
+    "LAST_RUN": "2021-03-24 01:06:32.534780",
     "cSources": [
         "Modules/src/usart_com.c",
         "Modules/src/motor.c",
@@ -16,13 +16,6 @@
         "Modules/src/i2c1.c",
         "Modules/src/dmp.c",
         "Modules/src/system_task.c",
-        "Modules/src/systemview_task.c",
-        "Middlewares/Third_Party/SystemView/Config/SEGGER_SYSVIEW_Config_FreeRTOS.c",
-        "Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c",
-        "Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT.c",
-        "Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.c",
-        "Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW.c",
-        "Middlewares/Third_Party/SystemView/SEGGER/Syscalls/SEGGER_RTT_Syscalls_GCC.c",
         "Src/main.c",
         "Src/gpio.c",
         "Src/dma.c",
@@ -67,12 +60,12 @@
     "ldSources": [
         "-lc",
         "-lm",
-        "-lnosys"
+        "-lnosys",
+        "-larm_cortexM4lf_math"
     ],
     "cIncludes": [
         "Modules/include",
-        "Middlewares/Third_Party/SystemView/Config",
-        "Middlewares/Third_Party/SystemView/SEGGER",
+        "Drivers/CMSIS/DSP/Include",
         "Inc",
         "Drivers/STM32F4xx_HAL_Driver/Inc",
         "Drivers/STM32F4xx_HAL_Driver/Inc/Legacy",
@@ -86,7 +79,9 @@
     "asmIncludes": [
         "Inc"
     ],
-    "ldIncludes": [],
+    "ldIncludes": [
+        "Drivers/CMSIS/Lib/GCC"
+    ],
     "cDefines": [
         "USE_HAL_DRIVER",
         "STM32F407xx"
@@ -100,8 +95,7 @@
         "-DUSE_HAL_DRIVER",
         "-DSTM32F407xx",
         "-IModules/include",
-        "-IMiddlewares/Third_Party/SystemView/Config",
-        "-IMiddlewares/Third_Party/SystemView/SEGGER",
+        "-IDrivers/CMSIS/DSP/Include",
         "-IInc",
         "-IDrivers/STM32F4xx_HAL_Driver/Inc",
         "-IDrivers/STM32F4xx_HAL_Driver/Inc/Legacy",
@@ -115,6 +109,10 @@
         "-Wall",
         "-fdata-sections",
         "-ffunction-sections",
+        "-D",
+        "__FPU_PRESENT=1",
+        "-D",
+        "ARM_MATH_CM4",
         "-g",
         "-gdwarf-2",
         "-MMD",
@@ -139,9 +137,11 @@
         "-mfloat-abi=hard",
         "-specs=nano.specs",
         "-TSTM32F407VETx_FLASH.ld",
+        "-LDrivers/CMSIS/Lib/GCC",
         "-lc",
         "-lm",
         "-lnosys",
+        "-larm_cortexM4lf_math",
         "-Wl,-Map=build/mainboard.map,--cref",
         "-Wl,--gc-sections",
         "-u",

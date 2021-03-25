@@ -217,7 +217,7 @@ class Makefile():
         data = self.searchAndAppend(data, self.mkfStr.asmSources, asmSources)
 
         ldSources = cP.getCPropertiesKeyData(cPropertiesData, self.cPStr.user_ldSources)
-        data = self.searchAndAppend(data, self.mkfStr.ldSources, ldSources, preappend='-l:')
+        data = self.searchAndAppend(data, self.mkfStr.ldSources, ldSources, preappend='-l')
 
         # includes
         cIncludes = cP.getCPropertiesKeyData(cPropertiesData, self.cPStr.user_cIncludes)

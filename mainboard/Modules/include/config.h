@@ -1,7 +1,7 @@
 #ifndef __CONFIG_H
 #define __CONFIG_H
 
-#define USE_SISTEMVEIW 1
+// #define USE_SISTEMVEIW 1
 
 // Task priorities. Higher number higher priority
 #define SYSTEMVIEW_TASK_PRI     6

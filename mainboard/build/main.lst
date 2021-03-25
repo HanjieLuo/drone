@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccwUgoTG.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -26,7 +26,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s 			page 1
   23              		.thumb_func
   24              		.fpu fpv4-sp-d16
   26              	SystemClock_Config:
-  27              	.LFB139:
+  27              	.LFB172:
   28              		.file 1 "Src/main.c"
    1:Src/main.c    **** /* USER CODE BEGIN Header */
    2:Src/main.c    **** /**
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s 			page 1
   28:Src/main.c    **** 
   29:Src/main.c    **** /* Private includes ----------------------------------------------------------*/
   30:Src/main.c    **** /* USER CODE BEGIN Includes */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccwUgoTG.s 			page 2
 
 
   31:Src/main.c    **** // #include "uart4.h"
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s 			page 1
   85:Src/main.c    **** 
   86:Src/main.c    ****   /* USER CODE END 1 */
   87:Src/main.c    **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccwUgoTG.s 			page 3
 
 
   88:Src/main.c    ****   /* MCU Configuration--------------------------------------------------------*/
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s 			page 1
  142:Src/main.c    **** 
  143:Src/main.c    ****   /* We should never get here as control is now taken by the scheduler */
  144:Src/main.c    ****   /* Infinite loop */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s 			page 4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccwUgoTG.s 			page 4
 
 
  145:Src/main.c    ****   /* USER CODE BEGIN WHILE */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s 			page 1
   52 0010 0394     		str	r4, [sp, #12]
   53 0012 0494     		str	r4, [sp, #16]
   54 0014 0594     		str	r4, [sp, #20]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s 			page 5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccwUgoTG.s 			page 5
 
 
   55 0016 0694     		str	r4, [sp, #24]
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s 			page 1
  186:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   99              		.loc 1 186 3 is_stmt 1 view .LVU21
  100              		.loc 1 186 34 is_stmt 0 view .LVU22
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s 			page 6
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccwUgoTG.s 			page 6
 
 
  101 0050 0225     		movs	r5, #2
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s 			page 1
  139 0078 0693     		str	r3, [sp, #24]
  203:Src/main.c    ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
  140              		.loc 1 203 3 is_stmt 1 view .LVU43
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s 			page 7
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccwUgoTG.s 			page 7
 
 
  141              		.loc 1 203 36 is_stmt 0 view .LVU44
@@ -388,7 +388,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s 			page 1
  159 008c 00380240 		.word	1073887232
  160 0090 00700040 		.word	1073770496
  161              		.cfi_endproc
- 162              	.LFE139:
+ 162              	.LFE172:
  164              		.section	.text.main,"ax",%progbits
  165              		.align	1
  166              		.global	main
@@ -397,7 +397,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s 			page 1
  169              		.thumb_func
  170              		.fpu fpv4-sp-d16
  172              	main:
- 173              	.LFB138:
+ 173              	.LFB171:
   83:Src/main.c    ****   /* USER CODE BEGIN 1 */
  174              		.loc 1 83 1 is_stmt 1 view -0
  175              		.cfi_startproc
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s 			page 1
  188 0006 FFF7FEFF 		bl	SystemClock_Config
  189              	.LVL4:
  107:Src/main.c    ****   MX_DMA_Init();
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s 			page 8
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccwUgoTG.s 			page 8
 
 
  190              		.loc 1 107 3 view .LVU51
@@ -444,47 +444,43 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s 			page 1
  205              		.loc 1 112 3 view .LVU56
  206 001e FFF7FEFF 		bl	MX_I2C1_Init
  207              	.LVL10:
- 116:Src/main.c    **** #endif 
- 208              		.loc 1 116 3 view .LVU57
- 209 0022 FFF7FEFF 		bl	SystemViewLaunch
- 210              	.LVL11:
  119:Src/main.c    **** 
- 211              		.loc 1 119 3 view .LVU58
- 212 0026 FFF7FEFF 		bl	SystemLaunch
- 213              	.LVL12:
+ 208              		.loc 1 119 3 view .LVU57
+ 209 0022 FFF7FEFF 		bl	SystemLaunch
+ 210              	.LVL11:
  139:Src/main.c    ****   /* Start scheduler */
- 214              		.loc 1 139 3 view .LVU59
- 215 002a FFF7FEFF 		bl	MX_FREERTOS_Init
- 216              	.LVL13:
+ 211              		.loc 1 139 3 view .LVU58
+ 212 0026 FFF7FEFF 		bl	MX_FREERTOS_Init
+ 213              	.LVL12:
  141:Src/main.c    **** 
- 217              		.loc 1 141 3 view .LVU60
- 218 002e FFF7FEFF 		bl	osKernelStart
- 219              	.LVL14:
- 220              	.L6:
+ 214              		.loc 1 141 3 view .LVU59
+ 215 002a FFF7FEFF 		bl	osKernelStart
+ 216              	.LVL13:
+ 217              	.L6:
  146:Src/main.c    ****   {
- 221              		.loc 1 146 3 discriminator 1 view .LVU61
+ 218              		.loc 1 146 3 discriminator 1 view .LVU60
  164:Src/main.c    ****   /* USER CODE END 3 */
- 222              		.loc 1 164 3 discriminator 1 view .LVU62
+ 219              		.loc 1 164 3 discriminator 1 view .LVU61
  146:Src/main.c    ****   {
- 223              		.loc 1 146 9 discriminator 1 view .LVU63
- 224 0032 FEE7     		b	.L6
- 225              		.cfi_endproc
- 226              	.LFE138:
- 228              		.section	.text.HAL_TIM_PeriodElapsedCallback,"ax",%progbits
- 229              		.align	1
- 230              		.global	HAL_TIM_PeriodElapsedCallback
- 231              		.syntax unified
- 232              		.thumb
- 233              		.thumb_func
- 234              		.fpu fpv4-sp-d16
- 236              	HAL_TIM_PeriodElapsedCallback:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s 			page 9
-
-
- 237              	.LVL15:
- 238              	.LFB140:
+ 220              		.loc 1 146 9 discriminator 1 view .LVU62
+ 221 002e FEE7     		b	.L6
+ 222              		.cfi_endproc
+ 223              	.LFE171:
+ 225              		.section	.text.HAL_TIM_PeriodElapsedCallback,"ax",%progbits
+ 226              		.align	1
+ 227              		.global	HAL_TIM_PeriodElapsedCallback
+ 228              		.syntax unified
+ 229              		.thumb
+ 230              		.thumb_func
+ 231              		.fpu fpv4-sp-d16
+ 233              	HAL_TIM_PeriodElapsedCallback:
+ 234              	.LVL14:
+ 235              	.LFB173:
  210:Src/main.c    **** 
  211:Src/main.c    **** /* USER CODE BEGIN 4 */
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccwUgoTG.s 			page 9
+
+
  212:Src/main.c    **** 
  213:Src/main.c    **** /* USER CODE END 4 */
  214:Src/main.c    **** 
@@ -498,63 +494,63 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s 			page 1
  222:Src/main.c    ****   */
  223:Src/main.c    **** void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
  224:Src/main.c    **** {
- 239              		.loc 1 224 1 view -0
- 240              		.cfi_startproc
- 241              		@ args = 0, pretend = 0, frame = 0
- 242              		@ frame_needed = 0, uses_anonymous_args = 0
- 243              		.loc 1 224 1 is_stmt 0 view .LVU65
- 244 0000 08B5     		push	{r3, lr}
- 245              	.LCFI4:
- 246              		.cfi_def_cfa_offset 8
- 247              		.cfi_offset 3, -8
- 248              		.cfi_offset 14, -4
+ 236              		.loc 1 224 1 view -0
+ 237              		.cfi_startproc
+ 238              		@ args = 0, pretend = 0, frame = 0
+ 239              		@ frame_needed = 0, uses_anonymous_args = 0
+ 240              		.loc 1 224 1 is_stmt 0 view .LVU64
+ 241 0000 08B5     		push	{r3, lr}
+ 242              	.LCFI4:
+ 243              		.cfi_def_cfa_offset 8
+ 244              		.cfi_offset 3, -8
+ 245              		.cfi_offset 14, -4
  225:Src/main.c    ****   /* USER CODE BEGIN Callback 0 */
  226:Src/main.c    **** 
  227:Src/main.c    ****   /* USER CODE END Callback 0 */
  228:Src/main.c    ****   if (htim->Instance == TIM7) {
- 249              		.loc 1 228 3 is_stmt 1 view .LVU66
- 250              		.loc 1 228 11 is_stmt 0 view .LVU67
- 251 0002 0268     		ldr	r2, [r0]
- 252              		.loc 1 228 6 view .LVU68
- 253 0004 034B     		ldr	r3, .L12
- 254 0006 9A42     		cmp	r2, r3
- 255 0008 00D0     		beq	.L11
- 256              	.LVL16:
- 257              	.L8:
+ 246              		.loc 1 228 3 is_stmt 1 view .LVU65
+ 247              		.loc 1 228 11 is_stmt 0 view .LVU66
+ 248 0002 0268     		ldr	r2, [r0]
+ 249              		.loc 1 228 6 view .LVU67
+ 250 0004 034B     		ldr	r3, .L12
+ 251 0006 9A42     		cmp	r2, r3
+ 252 0008 00D0     		beq	.L11
+ 253              	.LVL15:
+ 254              	.L8:
  229:Src/main.c    ****     HAL_IncTick();
  230:Src/main.c    ****   }
  231:Src/main.c    ****   /* USER CODE BEGIN Callback 1 */
  232:Src/main.c    **** 
  233:Src/main.c    ****   /* USER CODE END Callback 1 */
  234:Src/main.c    **** }
- 258              		.loc 1 234 1 view .LVU69
- 259 000a 08BD     		pop	{r3, pc}
- 260              	.LVL17:
- 261              	.L11:
+ 255              		.loc 1 234 1 view .LVU68
+ 256 000a 08BD     		pop	{r3, pc}
+ 257              	.LVL16:
+ 258              	.L11:
  229:Src/main.c    ****     HAL_IncTick();
- 262              		.loc 1 229 5 is_stmt 1 view .LVU70
- 263 000c FFF7FEFF 		bl	HAL_IncTick
- 264              	.LVL18:
- 265              		.loc 1 234 1 is_stmt 0 view .LVU71
- 266 0010 FBE7     		b	.L8
- 267              	.L13:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s 			page 10
+ 259              		.loc 1 229 5 is_stmt 1 view .LVU69
+ 260 000c FFF7FEFF 		bl	HAL_IncTick
+ 261              	.LVL17:
+ 262              		.loc 1 234 1 is_stmt 0 view .LVU70
+ 263 0010 FBE7     		b	.L8
+ 264              	.L13:
+ 265 0012 00BF     		.align	2
+ 266              	.L12:
+ 267 0014 00140040 		.word	1073746944
+ 268              		.cfi_endproc
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccwUgoTG.s 			page 10
 
 
- 268 0012 00BF     		.align	2
- 269              	.L12:
- 270 0014 00140040 		.word	1073746944
- 271              		.cfi_endproc
- 272              	.LFE140:
- 274              		.section	.text.Error_Handler,"ax",%progbits
- 275              		.align	1
- 276              		.global	Error_Handler
- 277              		.syntax unified
- 278              		.thumb
- 279              		.thumb_func
- 280              		.fpu fpv4-sp-d16
- 282              	Error_Handler:
- 283              	.LFB141:
+ 269              	.LFE173:
+ 271              		.section	.text.Error_Handler,"ax",%progbits
+ 272              		.align	1
+ 273              		.global	Error_Handler
+ 274              		.syntax unified
+ 275              		.thumb
+ 276              		.thumb_func
+ 277              		.fpu fpv4-sp-d16
+ 279              	Error_Handler:
+ 280              	.LFB174:
  235:Src/main.c    **** 
  236:Src/main.c    **** /**
  237:Src/main.c    ****   * @brief  This function is executed in case of error occurrence.
@@ -562,69 +558,68 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s 			page 1
  239:Src/main.c    ****   */
  240:Src/main.c    **** void Error_Handler(void)
  241:Src/main.c    **** {
- 284              		.loc 1 241 1 is_stmt 1 view -0
- 285              		.cfi_startproc
- 286              		@ args = 0, pretend = 0, frame = 0
- 287              		@ frame_needed = 0, uses_anonymous_args = 0
- 288              		@ link register save eliminated.
+ 281              		.loc 1 241 1 is_stmt 1 view -0
+ 282              		.cfi_startproc
+ 283              		@ args = 0, pretend = 0, frame = 0
+ 284              		@ frame_needed = 0, uses_anonymous_args = 0
+ 285              		@ link register save eliminated.
  242:Src/main.c    ****   /* USER CODE BEGIN Error_Handler_Debug */
  243:Src/main.c    ****   /* User can add his own implementation to report the HAL error return state */
  244:Src/main.c    **** 
  245:Src/main.c    ****   /* USER CODE END Error_Handler_Debug */
  246:Src/main.c    **** }
- 289              		.loc 1 246 1 view .LVU73
- 290 0000 7047     		bx	lr
- 291              		.cfi_endproc
- 292              	.LFE141:
- 294              		.text
- 295              	.Letext0:
- 296              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
- 297              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
- 298              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
- 299              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 300              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
- 301              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 302              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h"
- 303              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
- 304              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 305              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
- 306              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
- 307              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 308              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 309              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
- 310              		.file 16 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
- 311              		.file 17 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
- 312              		.file 18 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
- 313              		.file 19 "Modules/include/utils.h"
- 314              		.file 20 "Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW.h"
- 315              		.file 21 "Inc/i2c.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s 			page 11
+ 286              		.loc 1 246 1 view .LVU72
+ 287 0000 7047     		bx	lr
+ 288              		.cfi_endproc
+ 289              	.LFE174:
+ 291              		.text
+ 292              	.Letext0:
+ 293              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
+ 294              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 295              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 296              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 297              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 298              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 299              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h"
+ 300              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
+ 301              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 302              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 303              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 304              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 305              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 306              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
+ 307              		.file 16 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
+ 308              		.file 17 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
+ 309              		.file 18 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
+ 310              		.file 19 "Modules/include/utils.h"
+ 311              		.file 20 "Inc/i2c.h"
+ 312              		.file 21 "Inc/tim.h"
+ 313              		.file 22 "Inc/usart.h"
+ 314              		.file 23 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\math.h"
+ 315              		.file 24 "Modules/include/sensors.h"
+ 316              		.file 25 "Inc/gpio.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccwUgoTG.s 			page 11
 
 
- 316              		.file 22 "Inc/tim.h"
- 317              		.file 23 "Inc/usart.h"
- 318              		.file 24 "Modules/include/sensors.h"
- 319              		.file 25 "Inc/gpio.h"
- 320              		.file 26 "Inc/dma.h"
- 321              		.file 27 "Modules/include/systemview_task.h"
- 322              		.file 28 "Modules/include/system_task.h"
- 323              		.file 29 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h"
- 324              		.file 30 "<built-in>"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s 			page 12
+ 317              		.file 26 "Inc/dma.h"
+ 318              		.file 27 "Modules/include/system_task.h"
+ 319              		.file 28 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h"
+ 320              		.file 29 "<built-in>"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccwUgoTG.s 			page 12
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s:18     .text.SystemClock_Config:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s:26     .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s:159    .text.SystemClock_Config:0000008c $d
-C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s:165    .text.main:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s:172    .text.main:00000000 main
-C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s:229    .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s:236    .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
-C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s:270    .text.HAL_TIM_PeriodElapsedCallback:00000014 $d
-C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s:275    .text.Error_Handler:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccIyHIY4.s:282    .text.Error_Handler:00000000 Error_Handler
+C:\Users\luoha\AppData\Local\Temp\ccwUgoTG.s:18     .text.SystemClock_Config:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccwUgoTG.s:26     .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\luoha\AppData\Local\Temp\ccwUgoTG.s:159    .text.SystemClock_Config:0000008c $d
+C:\Users\luoha\AppData\Local\Temp\ccwUgoTG.s:165    .text.main:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccwUgoTG.s:172    .text.main:00000000 main
+C:\Users\luoha\AppData\Local\Temp\ccwUgoTG.s:226    .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccwUgoTG.s:233    .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
+C:\Users\luoha\AppData\Local\Temp\ccwUgoTG.s:267    .text.HAL_TIM_PeriodElapsedCallback:00000014 $d
+C:\Users\luoha\AppData\Local\Temp\ccwUgoTG.s:272    .text.Error_Handler:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccwUgoTG.s:279    .text.Error_Handler:00000000 Error_Handler
 
 UNDEFINED SYMBOLS
 memset
@@ -637,7 +632,6 @@ MX_USART1_UART_Init
 MX_TIM4_Init
 MX_USART2_UART_Init
 MX_I2C1_Init
-SystemViewLaunch
 SystemLaunch
 MX_FREERTOS_Init
 osKernelStart

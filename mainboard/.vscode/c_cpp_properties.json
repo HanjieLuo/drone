@@ -12,29 +12,25 @@
             "Modules/src/sensors.c",
             "Modules/src/i2c1.c",
             "Modules/src/dmp.c",
-            "Modules/src/system_task.c",
-            "Modules/src/systemview_task.c",
-            "Middlewares/Third_Party/SystemView/Config/SEGGER_SYSVIEW_Config_FreeRTOS.c",
-            "Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c",
-            "Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT.c",
-            "Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.c",
-            "Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW.c",
-            "Middlewares/Third_Party/SystemView/SEGGER/Syscalls/SEGGER_RTT_Syscalls_GCC.c"
+            "Modules/src/system_task.c"
         ],
-        "user_asmSources": [
-            "Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_ASM_ARMv7M.s"
+        "user_asmSources": [],
+        "user_ldSources": [
+            "arm_cortexM4lf_math"
         ],
-        "user_ldSources": [],
         "user_cIncludes": [
             "Modules/include",
-            "Middlewares/Third_Party/SystemView/Config",
-            "Middlewares/Third_Party/SystemView/SEGGER"
+            "Drivers/CMSIS/DSP/Include"
         ],
         "user_asmIncludes": [],
-        "user_ldIncludes": [],
+        "user_ldIncludes": [
+            "Drivers/CMSIS/Lib/GCC"
+        ],
         "user_cDefines": [],
         "user_asmDefines": [],
-        "user_cFlags": [],
+        "user_cFlags": [
+            "-D __FPU_PRESENT=1 -D ARM_MATH_CM4"
+        ],
         "user_asmFlags": [],
         "user_ldFlags": [
             "-u _printf_float"

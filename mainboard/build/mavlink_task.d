@@ -2,13 +2,6 @@ build/mavlink_task.o: Modules/src/mavlink_task.c \
  Modules/include/mavlink_task.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  Inc/FreeRTOSConfig.h Modules/include/config.h \
- Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.h \
- Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW.h \
- Middlewares/Third_Party/SystemView/SEGGER/SEGGER.h \
- Middlewares/Third_Party/SystemView/Config/Global.h \
- Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_ConfDefaults.h \
- Middlewares/Third_Party/SystemView/Config/SEGGER_SYSVIEW_Conf.h \
- Middlewares/Third_Party/SystemView/Config/SEGGER_RTT_Conf.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
@@ -255,8 +248,8 @@ build/mavlink_task.o: Modules/src/mavlink_task.c \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  Modules/include/utils.h Modules/include/utils.h Modules/include/motor.h \
- Inc/tim.h Modules/include/sensors.h Modules/include/hmc5883l.h \
- Modules/include/i2c1.h Inc/i2c.h \
+ Inc/tim.h Modules/include/sensors.h Drivers/CMSIS/DSP/Include/arm_math.h \
+ Modules/include/hmc5883l.h Modules/include/i2c1.h Inc/i2c.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  Modules/include/mpu6050.h Modules/include/ms5611.h \
  Modules/include/system_task.h Modules/include/config.h
@@ -268,20 +261,6 @@ Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 Inc/FreeRTOSConfig.h:
 
 Modules/include/config.h:
-
-Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.h:
-
-Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW.h:
-
-Middlewares/Third_Party/SystemView/SEGGER/SEGGER.h:
-
-Middlewares/Third_Party/SystemView/Config/Global.h:
-
-Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_ConfDefaults.h:
-
-Middlewares/Third_Party/SystemView/Config/SEGGER_SYSVIEW_Conf.h:
-
-Middlewares/Third_Party/SystemView/Config/SEGGER_RTT_Conf.h:
 
 Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
 
@@ -790,6 +769,8 @@ Modules/include/motor.h:
 Inc/tim.h:
 
 Modules/include/sensors.h:
+
+Drivers/CMSIS/DSP/Include/arm_math.h:
 
 Modules/include/hmc5883l.h:
 

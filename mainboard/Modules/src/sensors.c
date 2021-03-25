@@ -9,19 +9,9 @@ STATIC_MEM_QUEUE_ALLOC(mag_raw_queue, 1, sizeof(float) * 3);
 
 static TaskHandle_t sensors_task_handle;
 STATIC_MEM_TASK_ALLOC(sensors_task, SENSORS_TASK_STACKSIZE);
-const TickType_t sensors_task_wait = pdMS_TO_TICKS(50);
+const TickType_t sensors_task_wait = pdMS_TO_TICKS(1000);
 
 float tmpx, tmpy, tmpz;
-
-// void MPU6050Task(void *param);
-// void MS5611Task(void *param);
-// void HMC5883LTask(void *param);
-// static TaskHandle_t mpu6050_task_handle;
-// STATIC_MEM_TASK_ALLOC(mpu6050_task, configMINIMAL_STACK_SIZE * 5);
-// static TaskHandle_t ms5611_task_handle;
-// STATIC_MEM_TASK_ALLOC(ms5611_task, configMINIMAL_STACK_SIZE *5);
-// static TaskHandle_t hmc5883l_task_handle;
-// STATIC_MEM_TASK_ALLOC(hmc5883l_task, configMINIMAL_STACK_SIZE *5);
 
 bool SensorsInit(void) {
     printf("Init Sensors...\r\n");
@@ -39,10 +29,7 @@ bool SensorsInit(void) {
     // gyro_raw_queue = STATIC_MEM_QUEUE_CREATE(gyro_raw_queue);
     // mag_raw_queue = STATIC_MEM_QUEUE_CREATE(mag_raw_queue);
 
-    // sensors_task_handle = STATIC_MEM_TASK_CREATE(sensors_task, SensorsTask, "SensorsTask", NULL, SENSORS_TASK_PRI);
-    // mpu6050_task_handle = STATIC_MEM_TASK_CREATE(mpu6050_task, MPU6050Task, "MPU6050Task", NULL, 1);
-    // ms5611_task_handle = STATIC_MEM_TASK_CREATE(ms5611_task, MS5611Task, "MS5611Task", NULL, 1);
-    // hmc5883l_task_handle = STATIC_MEM_TASK_CREATE(hmc5883l_task, HMC5883LTask, "HMC5883LTask", NULL, 1);
+    sensors_task_handle = STATIC_MEM_TASK_CREATE(sensors_task, SensorsTask, "SensorsTask", NULL, SENSORS_TASK_PRI);
 
     bool IS_SENSORS_OK = IS_MPU6050_OK & IS_HMC5883_OK & IS_MS5611_OK;
     if (IS_SENSORS_OK) {
@@ -57,18 +44,33 @@ bool SensorsInit(void) {
 void SensorsTask(void *param) {
     SystemWaitStart();
 
-    // int16_t acc_raw[3], gyro_raw[3], mag_raw[3];
-    // float acc[3], gyro[3], mag[3];
+    int16_t acc_raw[3], gyro_raw[3], mag_raw[3];
+    float acc[3], gyro[3], mag[3];
+
+    TickType_t xTimeBefore, xTotalTimeSuspended;
 
     portTickType last_wait_time = xTaskGetTickCount();
     for(;;) {
-        // MPU6050ReadAccelRaw(acc_raw);
-        // MPU6050ReadGyroRaw(gyro_raw);
-        // HMC5883LReadMagRaw(mag_raw);
+        MPU6050ReadAccelRaw(acc_raw);
+        MPU6050ReadGyroRaw(gyro_raw);
+        HMC5883LReadMagRaw(mag_raw);
 
         // printf("%u,%d,%d,%d,%d,%d,%d\n", pdTICKS_TO_MS(xTaskGetTickCount()), acc_raw[0], acc_raw[1], acc_raw[2], gyro_raw[0], gyro_raw[1], gyro_raw[2]);
         
+        // xTimeBefore = xTaskGetTickCount();
+        // vTaskDelay(pdMS_TO_TICKS(5));
+        IMUCalibration(acc_raw, gyro_raw, mag_raw, acc, gyro, mag);
         // IMUCalibration(acc_raw, gyro_raw, mag_raw, acc, gyro, mag);
+        // IMUCalibration(acc_raw, gyro_raw, mag_raw, acc, gyro, mag);
+        // IMUCalibration(acc_raw, gyro_raw, mag_raw, acc, gyro, mag);
+        // IMUCalibration(acc_raw, gyro_raw, mag_raw, acc, gyro, mag);
+        // IMUCalibration(acc_raw, gyro_raw, mag_raw, acc, gyro, mag);
+        // IMUCalibration(acc_raw, gyro_raw, mag_raw, acc, gyro, mag);
+        // IMUCalibration(acc_raw, gyro_raw, mag_raw, acc, gyro, mag);
+        // IMUCalibration(acc_raw, gyro_raw, mag_raw, acc, gyro, mag);
+        // IMUCalibration(acc_raw, gyro_raw, mag_raw, acc, gyro, mag);
+        // xTotalTimeSuspended = xTaskGetTickCount() - xTimeBefore;
+        // printf("%lu\r\n", xTotalTimeSuspended);
 
         // xQueueOverwrite(acc_raw_queue, acc_raw);
         // xQueueOverwrite(gyro_raw_queue, gyro_raw);
@@ -95,93 +97,27 @@ void SensorsTask(void *param) {
 }
 
 void IMUCalibration(const int16_t *acc_raw, const int16_t *gyro_raw, const int16_t *mag_raw, float *acc, float *gyro, float *mag) {
-    tmpz = Sa_z * (acc_raw[2] - Ba_z);
-    tmpy = Sa_y * (acc_raw[1] - Ba_y);
-    tmpx = Sa_x * (acc_raw[0] - Ba_x);
+    tmpz = acc_raw[2] - Ba_z;
+    tmpy = acc_raw[1] - Ba_y;
+    tmpx = acc_raw[0] - Ba_x;
 
     acc[2] = tmpz;
-    acc[1] = tmpy + Ta12 * tmpz;
-    acc[0] = tmpx + Ta01 * tmpy + Ta02 * tmpz;
+    acc[1] = tmpy + Ma12 * tmpz;
+    acc[0] = tmpx + Ma01 * tmpy + Ma02 * tmpz;
 
-    tmpx = Sg_x * (gyro_raw[0] - Bg_x);
-    tmpy = Sg_y * (gyro_raw[1] - Bg_y);
-    tmpz = Sg_z * (gyro_raw[2] - Bg_z);
+    tmpx = gyro_raw[0] - Bg_x;
+    tmpy = gyro_raw[1] - Bg_y;
+    tmpz = gyro_raw[2] - Bg_z;
 
-    gyro[0] = tmpx + Tg01 * tmpy + Tg02 * tmpz;
-    gyro[1] = Tg10 * tmpx + tmpy + Tg12 * tmpz;
-    gyro[2] = Tg20 * tmpx + Tg21 * tmpy + tmpz;
+    gyro[0] = Mg00 * tmpx + Mg01 * tmpy + Mg02 * tmpz;
+    gyro[1] = Mg10 * tmpx + Mg11 * tmpy + Mg12 * tmpz;
+    gyro[2] = Mg20 * tmpx + Mg21 * tmpy + Mg22 * tmpz;
 
     tmpx = mag_raw[0] - Bm_x;
     tmpy = mag_raw[1] - Bm_y;
     tmpz = mag_raw[2] - Bm_z;
 
-    mag[0] = tmpx * Tm00 + tmpy * Tm01  + tmpz * Tm02;
-    mag[1] = tmpx * Tm10 + tmpy * Tm11  + tmpz * Tm12;
-    mag[2] = tmpx * Tm20 + tmpy * Tm21  + tmpz * Tm22;
+    mag[0] = Mm00 * tmpx + Mm01 * tmpy + Mm02 * tmpz;
+    mag[1] = Mm10 * tmpx + Mm11 * tmpy + Mm12 * tmpz;
+    mag[2] = Mm20 * tmpx + Mm21 * tmpy + Mm22 * tmpz;
 }
-
-/*
-void MPU6050Task(void *param) {
-    float accel_x, accel_y, accel_z;
-    float gyro_x, gyro_y, gyro_z;
-    float celsius;
-
-    if(!MPU6050Init()) return;
-
-    for(;;) {
-        printf("================\r\n");
-        MPU6050ReadAccel(&accel_x, &accel_y, &accel_z);
-        printf("Accel: %f, %f, %f\r\n", accel_x, accel_y, accel_z);
-
-        MPU6050ReadGyro(&gyro_x, &gyro_y, &gyro_z);
-        printf("Gyro: %f, %f, %f\r\n", gyro_x, gyro_y, gyro_z);
-       
-        MPU6050ReadTemp(&celsius);
-        printf("Temp: %f\r\n", celsius);
-        printf("================\r\n");
-        vTaskDelay(pdMS_TO_TICKS(100));
-    }
-}
-*/
-
-/*
-void MS5611Task(void *param) {
-    // if(!MPU6050Init()) return;
-    // uint32_t temp_raw, press_raw;
-    float alt;
-
-    if(!MS5611Init()) return;
-
-    for(;;) {
-        printf("================\r\n");
-        MS5611Calculate();
-        MS5611ReadAlt(&alt);
-        printf("Alt: %f\r\n", alt);
-
-        // MS5611ReadRawTemp(&temp_raw);
-        // printf("Temp: %lu\r\n", temp_raw);
-
-        // MS5611ReadRawPress(&press_raw);
-        // printf("Press: %lu\r\n", press_raw);
-        printf("================\r\n");
-        // vTaskDelay(pdMS_TO_TICKS(1));      
-    }
-}
-*/
-
-/*
-void HMC5883LTask(void *param) {
-    float mx, my, mz;
-
-    if(!MPU6050Init()) return;
-    if(!HMC5883LInit()) return;
-
-    for(;;) { 
-        printf("================\r\n");
-        HMC5883LReadMag(&mx, &my, &mz);
-        printf("Mag: %f, %f, %f\r\n", mx, my, mz);
-        printf("================\r\n");
-        vTaskDelay(pdMS_TO_TICKS(100));
-    }
-}
-*/
