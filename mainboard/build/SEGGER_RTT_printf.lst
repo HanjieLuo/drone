@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
   28:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c **** *                                                                    *
   29:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c **** * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND             *
   30:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c **** * CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,        *
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 2
 
 
   31:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c **** * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF           *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
   85:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****   char*     pBuffer;
   86:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****   unsigned  BufferSize;
   87:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****   unsigned  Cnt;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 3
 
 
   88:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
   54              		.loc 1 116 5 is_stmt 1 view .LVU9
   55              		.loc 1 116 8 is_stmt 0 view .LVU10
   56 000e 2068     		ldr	r0, [r4]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 4
 
 
   57              		.loc 1 116 25 view .LVU11
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
   93 002c A368     		ldr	r3, [r4, #8]
  124:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****     if (SEGGER_RTT_Write(p->RTTBufferIndex, p->pBuffer, p->Cnt) != p->Cnt) {
   94              		.loc 1 124 8 view .LVU26
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 5
 
 
   95 002e 9842     		cmp	r0, r3
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  141 0006 0F46     		mov	r7, r1
  142 0008 1546     		mov	r5, r2
  143 000a 1E46     		mov	r6, r3
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 6
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 6
 
 
  144 000c DDF828A0 		ldr	r10, [sp, #40]
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  178              		.loc 1 154 3 is_stmt 1 view .LVU52
  179              		.loc 1 154 6 is_stmt 0 view .LVU53
  180 0026 B045     		cmp	r8, r6
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 7
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 7
 
 
  181 0028 00D2     		bcs	.L10
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  220 0058 FFF7FEFF 		bl	_StoreChar
  221              	.LVL17:
  170:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****         if (pBufferDesc->ReturnValue < 0) {
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 8
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 8
 
 
  222              		.loc 1 170 9 view .LVU68
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  189:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****         }
  190:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****       }
  191:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****       Digit *= Base;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 9
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 9
 
 
  256              		.loc 1 191 7 is_stmt 1 view .LVU80
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  199:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****       if (pBufferDesc->ReturnValue < 0) {
  287              		.loc 1 199 7 view .LVU94
  288 0092 124A     		ldr	r2, .L29
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 10
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 10
 
 
  289 0094 D15C     		ldrb	r1, [r2, r3]	@ zero_extendqisi2
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  322              		.loc 1 210 15 is_stmt 1 view .LVU107
  323 00bc BAF1000F 		cmp	r10, #0
  324 00c0 FAD0     		beq	.L7
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 11
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 11
 
 
  210:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****         while ((FieldWidth != 0u) && (Width < FieldWidth)) {
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  368              		.cfi_def_cfa_offset 36
  369              		.cfi_offset 4, -36
  370              		.cfi_offset 5, -32
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 12
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 12
 
 
  371              		.cfi_offset 6, -28
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  412 0028 F9E7     		b	.L32
  413              	.L49:
  239:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****   }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 13
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 13
 
 
  240:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****   if (NumDigits > Width) {
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  255:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****         if (pBufferDesc->ReturnValue < 0) {
  256:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****           break;
  257:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****         }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 14
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 14
 
 
  258:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****       }
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  283:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****               break;
  284:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****             }
  285:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****           }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 15
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 15
 
 
  286:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****         }
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  255:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****           break;
  518              		.loc 1 255 12 view .LVU170
  519 009c 002B     		cmp	r3, #0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 16
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 16
 
 
  520 009e F2DA     		bge	.L39
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  562 00d2 FFF7FEFF 		bl	_StoreChar
  563              	.LVL50:
  282:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****               break;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 17
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 17
 
 
  564              		.loc 1 282 13 view .LVU183
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  317:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c **** *  Return values
  318:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c **** *    >= 0:  Number of bytes which have been stored in the "Up"-buffer.
  319:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c **** *     < 0:  Error
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 18
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 18
 
 
  320:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c **** */
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  637 0016 1790     		str	r0, [sp, #92]
  334:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****   BufferDesc.ReturnValue    = 0;
  638              		.loc 1 334 3 is_stmt 1 view .LVU205
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 19
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 19
 
 
  639              		.loc 1 334 29 is_stmt 0 view .LVU206
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  353:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****         case '+': FormatFlags |= FORMAT_FLAG_PRINT_SIGN;   sFormat++; break;
  675              		.loc 1 353 19 is_stmt 1 view .LVU221
  676              		.loc 1 353 31 is_stmt 0 view .LVU222
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 20
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 20
 
 
  677 0032 40F00400 		orr	r0, r0, #4
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  721              		.p2align 2
  722              	.L59:
  723 0054 3B000000 		.word	.L62+1
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 21
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 21
 
 
  724 0058 43000000 		.word	.L85+1
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  766              		.loc 1 369 15 is_stmt 1 view .LVU253
  363:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****         if ((c < '0') || (c > '9')) {
  767              		.loc 1 363 11 is_stmt 0 view .LVU254
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 22
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 22
 
 
  768 00a6 F1E7     		b	.L65
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  378:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****           c = *sFormat;
  797              		.loc 1 378 9 is_stmt 1 view .LVU266
  379:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****           if ((c < '0') || (c > '9')) {
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 23
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 23
 
 
  798              		.loc 1 379 11 view .LVU267
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  832              		.loc 1 398 15 is_stmt 1 view .LVU283
  833              	.L70:
  391:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****         if ((c == 'l') || (c == 'h')) {
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 24
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 24
 
 
  834              		.loc 1 391 7 view .LVU284
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  881 010c 57       		.byte	(.L77-.L74)/2
  882 010d 18       		.byte	(.L72-.L74)/2
  883 010e 18       		.byte	(.L72-.L74)/2
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 25
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 25
 
 
  884 010f 48       		.byte	(.L76-.L74)/2
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  425:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****           const char * s = va_arg(*pParamList, const char *);
  426:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****           do {
  427:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****             c = *s;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 26
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 26
 
 
  428:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****             s++;
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  939              		.loc 1 342 8 is_stmt 0 view .LVU312
  940 0134 2529     		cmp	r1, #37
  941 0136 3FF471AF 		beq	.L89
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 27
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 27
 
 
  448:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****     }
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  984              	.LVL100:
  416:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****         break;
  985              		.loc 1 416 9 view .LVU325
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 28
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 28
 
 
  986 0168 FFF7FEFF 		bl	_PrintUnsigned
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  1027              		.loc 1 427 13 view .LVU338
  427:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****             s++;
  1028              		.loc 1 427 15 is_stmt 0 view .LVU339
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 29
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 29
 
 
  1029 018c 14F8011B 		ldrb	r1, [r4], #1	@ zero_extendqisi2
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  1069              		.loc 1 438 9 is_stmt 0 view .LVU353
  1070 01b6 FFF7FEFF 		bl	_PrintUnsigned
  1071              	.LVL116:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 30
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 30
 
 
  439:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c ****       case '%':
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  1110              	.LCFI8:
  1111              		.cfi_remember_state
  1112              		.cfi_def_cfa_offset 20
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 31
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 31
 
 
  1113              		@ sp needed
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  492:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c **** *          s: Print the string pointed to by the argument
  493:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c **** *          p: Print the argument as an 8-digit hexadecimal integer. (Argument shall be a pointer to
  494:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c **** */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 32
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 32
 
 
  495:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT_printf.c **** int SEGGER_RTT_printf(unsigned BufferIndex, const char * sFormat, ...) {
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  1184              		.cfi_def_cfa_offset 0
  1185 001c 7047     		bx	lr
  1186              		.cfi_endproc
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 33
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 33
 
 
  1187              	.LFE4:
@@ -1940,29 +1940,29 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 1
  1203              		.file 7 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\std
  1204              		.file 8 "Middlewares/Third_Party/SystemView/SEGGER/SEGGER_RTT.h"
  1205              		.file 9 "<built-in>"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9d501r.s 			page 34
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s 			page 34
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 SEGGER_RTT_printf.c
-C:\Users\luoha\AppData\Local\Temp\cc9d501r.s:18     .text._StoreChar:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc9d501r.s:25     .text._StoreChar:00000000 _StoreChar
-C:\Users\luoha\AppData\Local\Temp\cc9d501r.s:113    .text._PrintUnsigned:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc9d501r.s:119    .text._PrintUnsigned:00000000 _PrintUnsigned
-C:\Users\luoha\AppData\Local\Temp\cc9d501r.s:347    .text._PrintUnsigned:000000dc $d
-C:\Users\luoha\AppData\Local\Temp\cc9d501r.s:352    .text._PrintInt:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc9d501r.s:358    .text._PrintInt:00000000 _PrintInt
-C:\Users\luoha\AppData\Local\Temp\cc9d501r.s:587    .text.SEGGER_RTT_vprintf:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc9d501r.s:594    .text.SEGGER_RTT_vprintf:00000000 SEGGER_RTT_vprintf
-C:\Users\luoha\AppData\Local\Temp\cc9d501r.s:723    .text.SEGGER_RTT_vprintf:00000054 $d
-C:\Users\luoha\AppData\Local\Temp\cc9d501r.s:738    .text.SEGGER_RTT_vprintf:0000008c $t
-C:\Users\luoha\AppData\Local\Temp\cc9d501r.s:857    .text.SEGGER_RTT_vprintf:000000f4 $d
-C:\Users\luoha\AppData\Local\Temp\cc9d501r.s:1129   .text.SEGGER_RTT_printf:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc9d501r.s:1136   .text.SEGGER_RTT_printf:00000000 SEGGER_RTT_printf
-C:\Users\luoha\AppData\Local\Temp\cc9d501r.s:1190   .rodata._aV2C.6307:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc9d501r.s:1194   .rodata._aV2C.6307:00000000 _aV2C.6307
-C:\Users\luoha\AppData\Local\Temp\cc9d501r.s:890    .text.SEGGER_RTT_vprintf:00000115 $d
-C:\Users\luoha\AppData\Local\Temp\cc9d501r.s:890    .text.SEGGER_RTT_vprintf:00000116 $t
+C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s:18     .text._StoreChar:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s:25     .text._StoreChar:00000000 _StoreChar
+C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s:113    .text._PrintUnsigned:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s:119    .text._PrintUnsigned:00000000 _PrintUnsigned
+C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s:347    .text._PrintUnsigned:000000dc $d
+C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s:352    .text._PrintInt:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s:358    .text._PrintInt:00000000 _PrintInt
+C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s:587    .text.SEGGER_RTT_vprintf:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s:594    .text.SEGGER_RTT_vprintf:00000000 SEGGER_RTT_vprintf
+C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s:723    .text.SEGGER_RTT_vprintf:00000054 $d
+C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s:738    .text.SEGGER_RTT_vprintf:0000008c $t
+C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s:857    .text.SEGGER_RTT_vprintf:000000f4 $d
+C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s:1129   .text.SEGGER_RTT_printf:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s:1136   .text.SEGGER_RTT_printf:00000000 SEGGER_RTT_printf
+C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s:1190   .rodata._aV2C.6307:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s:1194   .rodata._aV2C.6307:00000000 _aV2C.6307
+C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s:890    .text.SEGGER_RTT_vprintf:00000115 $d
+C:\Users\luoha\AppData\Local\Temp\ccpIpSDs.s:890    .text.SEGGER_RTT_vprintf:00000116 $t
 
 UNDEFINED SYMBOLS
 SEGGER_RTT_Write

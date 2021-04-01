@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccId1a09.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIzSq1T.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccId1a09.s 			page 1
   28:Src/gpio.c    **** /* Configure GPIO                                                             */
   29:Src/gpio.c    **** /*----------------------------------------------------------------------------*/
   30:Src/gpio.c    **** /* USER CODE BEGIN 1 */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccId1a09.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIzSq1T.s 			page 2
 
 
   31:Src/gpio.c    **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccId1a09.s 			page 1
   66              		.loc 1 47 3 view .LVU8
   48:Src/gpio.c    ****   __HAL_RCC_GPIOH_CLK_ENABLE();
   67              		.loc 1 48 3 view .LVU9
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccId1a09.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIzSq1T.s 			page 3
 
 
   68              	.LBB3:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccId1a09.s 			page 1
  119              		.loc 1 51 3 view .LVU29
  120 0064 1A6B     		ldr	r2, [r3, #48]
  121 0066 42F00202 		orr	r2, r2, #2
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccId1a09.s 			page 4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIzSq1T.s 			page 4
 
 
  122 006a 1A63     		str	r2, [r3, #48]
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccId1a09.s 			page 1
  164 009e 00BF     		.align	2
  165              	.L3:
  166 00a0 00380240 		.word	1073887232
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccId1a09.s 			page 5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIzSq1T.s 			page 5
 
 
  167 00a4 00080240 		.word	1073874944
@@ -261,14 +261,14 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccId1a09.s 			page 1
  185              		.file 14 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
  186              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
  187              		.file 16 "Modules/include/utils.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccId1a09.s 			page 6
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccIzSq1T.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gpio.c
-C:\Users\luoha\AppData\Local\Temp\ccId1a09.s:18     .text.MX_GPIO_Init:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccId1a09.s:26     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-C:\Users\luoha\AppData\Local\Temp\ccId1a09.s:166    .text.MX_GPIO_Init:000000a0 $d
+C:\Users\luoha\AppData\Local\Temp\ccIzSq1T.s:18     .text.MX_GPIO_Init:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccIzSq1T.s:26     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\luoha\AppData\Local\Temp\ccIzSq1T.s:166    .text.MX_GPIO_Init:000000a0 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin

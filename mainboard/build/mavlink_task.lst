@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccEUUSrB.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cce80RdE.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -26,7 +26,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccEUUSrB.s 			page 1
   23              		.fpu fpv4-sp-d16
   25              	MavlinkTask:
   26              	.LVL0:
-  27              	.LFB2769:
+  27              	.LFB2736:
   28              		.file 1 "Modules/src/mavlink_task.c"
    1:Modules/src/mavlink_task.c **** #include "mavlink_task.h"
    2:Modules/src/mavlink_task.c **** 
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccEUUSrB.s 			page 1
   29              		.loc 1 27 31 view -0
   30              		.cfi_startproc
   31              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccEUUSrB.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cce80RdE.s 			page 2
 
 
   32              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccEUUSrB.s 			page 1
   64:Modules/src/mavlink_task.c **** 
   65:Modules/src/mavlink_task.c ****         // printf("Accel: %d, %d, %d\r\n", acc_raw[0], acc_raw[1], acc_raw[2]);
   66:Modules/src/mavlink_task.c ****         // printf("Gyro: %d, %d, %d\r\n", gyr_raw[0], gyr_raw[1], gyr_raw[2]);
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccEUUSrB.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cce80RdE.s 			page 3
 
 
   67:Modules/src/mavlink_task.c ****         // printf("Mag: %d, %d, %d\r\n", mag_raw[0], mag_raw[1], mag_raw[2]);
@@ -130,7 +130,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccEUUSrB.s 			page 1
   51              		.loc 1 38 11 discriminator 1 view .LVU10
   52 0006 FEE7     		b	.L2
   53              		.cfi_endproc
-  54              	.LFE2769:
+  54              	.LFE2736:
   56              		.section	.rodata.MavlinkInit.str1.4,"aMS",%progbits,1
   57              		.align	2
   58              	.LC0:
@@ -145,7 +145,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccEUUSrB.s 			page 1
   65              		.thumb_func
   66              		.fpu fpv4-sp-d16
   68              	MavlinkInit:
-  69              	.LFB2768:
+  69              	.LFB2735:
   20:Modules/src/mavlink_task.c ****     UsartInit();
   70              		.loc 1 20 24 view -0
   71              		.cfi_startproc
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccEUUSrB.s 			page 1
   95 001c 0548     		ldr	r0, .L6+12
   96 001e FFF7FEFF 		bl	xTaskCreateStatic
   97              	.LVL4:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccEUUSrB.s 			page 4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cce80RdE.s 			page 4
 
 
   23:Modules/src/mavlink_task.c **** 
@@ -196,7 +196,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccEUUSrB.s 			page 1
  109 0030 00000000 		.word	.LC0
  110 0034 00000000 		.word	MavlinkTask
  111              		.cfi_endproc
- 112              	.LFE2768:
+ 112              	.LFE2735:
  114              		.section	.bss.osSys_mavlink_taskStackBuffer,"aw",%nobits
  115              		.align	2
  116              		.set	.LANCHOR1,. + 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccEUUSrB.s 			page 1
  148              		.file 20 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
  149              		.file 21 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
  150              		.file 22 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccEUUSrB.s 			page 5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cce80RdE.s 			page 5
 
 
  151              		.file 23 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
@@ -248,22 +248,21 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccEUUSrB.s 			page 1
  155              		.file 27 "Inc/tim.h"
  156              		.file 28 "Inc/i2c.h"
  157              		.file 29 "Modules/include/MAVLink/common/../mavlink_sha256.h"
- 158              		.file 30 "Modules/include/sensors.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccEUUSrB.s 			page 6
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cce80RdE.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 mavlink_task.c
-C:\Users\luoha\AppData\Local\Temp\ccEUUSrB.s:18     .text.MavlinkTask:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccEUUSrB.s:25     .text.MavlinkTask:00000000 MavlinkTask
-C:\Users\luoha\AppData\Local\Temp\ccEUUSrB.s:57     .rodata.MavlinkInit.str1.4:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccEUUSrB.s:61     .text.MavlinkInit:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccEUUSrB.s:68     .text.MavlinkInit:00000000 MavlinkInit
-C:\Users\luoha\AppData\Local\Temp\ccEUUSrB.s:107    .text.MavlinkInit:00000028 $d
-C:\Users\luoha\AppData\Local\Temp\ccEUUSrB.s:115    .bss.osSys_mavlink_taskStackBuffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccEUUSrB.s:119    .bss.osSys_mavlink_taskStackBuffer:00000000 osSys_mavlink_taskStackBuffer
-C:\Users\luoha\AppData\Local\Temp\ccEUUSrB.s:122    .bss.osSys_mavlink_taskTaskBuffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccEUUSrB.s:126    .bss.osSys_mavlink_taskTaskBuffer:00000000 osSys_mavlink_taskTaskBuffer
+C:\Users\luoha\AppData\Local\Temp\cce80RdE.s:18     .text.MavlinkTask:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cce80RdE.s:25     .text.MavlinkTask:00000000 MavlinkTask
+C:\Users\luoha\AppData\Local\Temp\cce80RdE.s:57     .rodata.MavlinkInit.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cce80RdE.s:61     .text.MavlinkInit:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cce80RdE.s:68     .text.MavlinkInit:00000000 MavlinkInit
+C:\Users\luoha\AppData\Local\Temp\cce80RdE.s:107    .text.MavlinkInit:00000028 $d
+C:\Users\luoha\AppData\Local\Temp\cce80RdE.s:115    .bss.osSys_mavlink_taskStackBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cce80RdE.s:119    .bss.osSys_mavlink_taskStackBuffer:00000000 osSys_mavlink_taskStackBuffer
+C:\Users\luoha\AppData\Local\Temp\cce80RdE.s:122    .bss.osSys_mavlink_taskTaskBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cce80RdE.s:126    .bss.osSys_mavlink_taskTaskBuffer:00000000 osSys_mavlink_taskTaskBuffer
 
 UNDEFINED SYMBOLS
 xTaskGetTickCount

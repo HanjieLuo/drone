@@ -1,6 +1,15 @@
-build/hmc5883l.o: Modules/src/hmc5883l.c Modules/include/hmc5883l.h \
- Modules/include/i2c1.h Inc/i2c.h Inc/main.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+build/filter.o: Modules/src/filter.c Modules/include/filter.h \
+ Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
+ Inc/FreeRTOSConfig.h Modules/include/config.h \
+ Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
+ Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
+ Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
+ Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
+ Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
+ Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
+ Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
+ Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
+ Modules/include/utils.h Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  Inc/stm32f4xx_hal_conf.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
@@ -28,24 +37,33 @@ build/hmc5883l.o: Modules/src/hmc5883l.c Modules/include/hmc5883l.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- Modules/include/utils.h Modules/include/config.h Modules/include/utils.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
- Inc/FreeRTOSConfig.h Modules/include/config.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
- Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+ Modules/include/config.h
 
-Modules/include/hmc5883l.h:
+Modules/include/filter.h:
 
-Modules/include/i2c1.h:
+Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 
-Inc/i2c.h:
+Inc/FreeRTOSConfig.h:
 
-Inc/main.h:
+Modules/include/config.h:
+
+Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
+
+Middlewares/Third_Party/FreeRTOS/Source/include/portable.h:
+
+Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h:
+
+Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h:
+
+Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
+
+Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
+
+Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
+
+Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
+
+Modules/include/utils.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 
@@ -107,28 +125,4 @@ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 
-Modules/include/utils.h:
-
 Modules/include/config.h:
-
-Modules/include/utils.h:
-
-Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
-
-Inc/FreeRTOSConfig.h:
-
-Modules/include/config.h:
-
-Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
-
-Middlewares/Third_Party/FreeRTOS/Source/include/portable.h:
-
-Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h:
-
-Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h:
-
-Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
-
-Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
-
-Middlewares/Third_Party/FreeRTOS/Source/include/list.h:

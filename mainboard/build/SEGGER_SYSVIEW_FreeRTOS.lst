@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 1
   29:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.c **** * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND             *
   30:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.c **** * CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,        *
   31:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.c **** * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF           *
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s 			page 2
 
 
   32:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.c **** * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE           *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 1
   86:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.c **** 
   87:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.c ****   for (n = 0; n < _NumTasks; n++) {
   88:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.c **** #if INCLUDE_uxTaskGetStackHighWaterMark // Report Task Stack High Watermark
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s 			page 3
 
 
   89:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.c ****     _aTasks[n].uStackHighWaterMark = uxTaskGetStackHighWaterMark((TaskHandle_t)_aTasks[n].xHandle);
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 1
   61 0028 1046     		mov	r0, r2
   62 002a 1946     		mov	r1, r3
   63              	.LVL3:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s 			page 4
 
 
  110:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.c ****   return Time;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 1
  149:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.c **** /*********************************************************************
  150:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.c **** *
  151:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.c **** *       SYSVIEW_UpdateTask()
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s 			page 5
 
 
  152:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.c **** *
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 1
   96              		.loc 1 190 17 is_stmt 0 view .LVU14
   97 0002 234B     		ldr	r3, .L12
   98 0004 1C68     		ldr	r4, [r3]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 6
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s 			page 6
 
 
   99              		.loc 1 190 6 view .LVU15
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 1
  135              	.L3:
  206:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.c ****     //
  207:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.c ****     // Task is in the middle of the list.
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 7
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s 			page 7
 
 
  208:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.c ****     // Move last item to current position and decrement number of tasks.
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 1
  171              	.LVL11:
  172              	.L11:
  211:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.c ****     _aTasks[n].pcTaskName          = _aTasks[_NumTasks - 1].pcTaskName;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 8
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s 			page 8
 
 
  173              		.loc 1 211 5 is_stmt 1 view .LVU38
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 1
  210              		.loc 1 216 5 is_stmt 1 view .LVU55
  211 007e 0023     		movs	r3, #0
  212 0080 A351     		str	r3, [r4, r6]	@ unaligned
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 9
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s 			page 9
 
 
  213 0082 5360     		str	r3, [r2, #4]	@ unaligned
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 1
  232:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.c ****   TaskInfo.TaskID     = TaskID;
  255              		.loc 1 232 3 view .LVU62
  256              		.loc 1 232 23 is_stmt 0 view .LVU63
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 10
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s 			page 10
 
 
  257 0004 0190     		str	r0, [sp, #4]
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 1
  297              		.section	.text.SYSVIEW_AddTask,"ax",%progbits
  298              		.align	1
  299              		.global	SYSVIEW_AddTask
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 11
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s 			page 11
 
 
  300              		.syntax unified
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 1
  345 0018 114B     		ldr	r3, .L21+4
  346 001a 1A68     		ldr	r2, [r3]
  132:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.c ****     SEGGER_SYSVIEW_Warn("SYSTEMVIEW: Could not record task information. Maximum number of tasks rea
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 12
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s 			page 12
 
 
  347              		.loc 1 132 6 view .LVU87
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 1
  387              		.cfi_remember_state
  388              		.cfi_def_cfa_offset 20
  389              		@ sp needed
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 13
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s 			page 13
 
 
  390 0050 F0BD     		pop	{r4, r5, r6, r7, pc}
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 1
  442 000a 9046     		mov	r8, r2
  443 000c 9946     		mov	r9, r3
  157:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.c ****   
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 14
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s 			page 14
 
 
  444              		.loc 1 157 3 is_stmt 1 view .LVU106
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 1
  163:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.c ****     if (_aTasks[n].xHandle == xHandle) {
  483              		.loc 1 163 31 discriminator 2 view .LVU122
  484 0034 F2E7     		b	.L25
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 15
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s 			page 15
 
 
  485              	.L26:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 1
  526              	.L28:
  527              	.LCFI14:
  528              		.cfi_restore_state
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 16
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s 			page 16
 
 
  176:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.c ****   }
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 1
  578              		.loc 1 87 17 is_stmt 0 discriminator 1 view .LVU142
  579 0006 0A4B     		ldr	r3, .L37
  580 0008 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 17
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s 			page 17
 
 
   87:Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.c **** #if INCLUDE_uxTaskGetStackHighWaterMark // Report Task Stack High Watermark
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 1
  633              	_aTasks:
  634 0000 00000000 		.space	160
  634      00000000 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 18
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s 			page 18
 
 
  634      00000000 
@@ -1033,43 +1033,43 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 1
  643              	.Letext0:
  644              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
  645              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
- 646              		.file 4 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
- 647              		.file 5 "Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW.h"
- 648              		.file 6 "Inc/FreeRTOSConfig.h"
+ 646              		.file 4 "Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW.h"
+ 647              		.file 5 "Inc/FreeRTOSConfig.h"
+ 648              		.file 6 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
  649              		.file 7 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
  650              		.file 8 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
  651              		.file 9 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\std
  652              		.file 10 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
  653              		.file 11 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\string.h"
  654              		.file 12 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s 			page 19
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s 			page 19
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 SEGGER_SYSVIEW_FreeRTOS.c
-C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s:18     .text._cbGetTime:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s:25     .text._cbGetTime:00000000 _cbGetTime
-C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s:71     .text.SYSVIEW_DeleteTask:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s:78     .text.SYSVIEW_DeleteTask:00000000 SYSVIEW_DeleteTask
-C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s:225    .text.SYSVIEW_DeleteTask:00000090 $d
-C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s:231    .text.SYSVIEW_SendTaskInfo:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s:238    .text.SYSVIEW_SendTaskInfo:00000000 SYSVIEW_SendTaskInfo
-C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s:290    .rodata.SYSVIEW_AddTask.str1.4:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s:298    .text.SYSVIEW_AddTask:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s:305    .text.SYSVIEW_AddTask:00000000 SYSVIEW_AddTask
-C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s:404    .text.SYSVIEW_AddTask:0000005c $d
-C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s:412    .text.SYSVIEW_UpdateTask:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s:419    .text.SYSVIEW_UpdateTask:00000000 SYSVIEW_UpdateTask
-C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s:542    .text.SYSVIEW_UpdateTask:0000007c $d
-C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s:549    .text._cbSendTaskList:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s:555    .text._cbSendTaskList:00000000 _cbSendTaskList
-C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s:615    .text._cbSendTaskList:00000030 $d
-C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s:639    .rodata.SYSVIEW_X_OS_TraceAPI:00000000 SYSVIEW_X_OS_TraceAPI
-C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s:622    .bss._NumTasks:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s:626    .bss._NumTasks:00000000 _NumTasks
-C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s:629    .bss._aTasks:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s:633    .bss._aTasks:00000000 _aTasks
-C:\Users\luoha\AppData\Local\Temp\cc9vlXhu.s:636    .rodata.SYSVIEW_X_OS_TraceAPI:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s:18     .text._cbGetTime:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s:25     .text._cbGetTime:00000000 _cbGetTime
+C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s:71     .text.SYSVIEW_DeleteTask:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s:78     .text.SYSVIEW_DeleteTask:00000000 SYSVIEW_DeleteTask
+C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s:225    .text.SYSVIEW_DeleteTask:00000090 $d
+C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s:231    .text.SYSVIEW_SendTaskInfo:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s:238    .text.SYSVIEW_SendTaskInfo:00000000 SYSVIEW_SendTaskInfo
+C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s:290    .rodata.SYSVIEW_AddTask.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s:298    .text.SYSVIEW_AddTask:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s:305    .text.SYSVIEW_AddTask:00000000 SYSVIEW_AddTask
+C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s:404    .text.SYSVIEW_AddTask:0000005c $d
+C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s:412    .text.SYSVIEW_UpdateTask:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s:419    .text.SYSVIEW_UpdateTask:00000000 SYSVIEW_UpdateTask
+C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s:542    .text.SYSVIEW_UpdateTask:0000007c $d
+C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s:549    .text._cbSendTaskList:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s:555    .text._cbSendTaskList:00000000 _cbSendTaskList
+C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s:615    .text._cbSendTaskList:00000030 $d
+C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s:639    .rodata.SYSVIEW_X_OS_TraceAPI:00000000 SYSVIEW_X_OS_TraceAPI
+C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s:622    .bss._NumTasks:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s:626    .bss._NumTasks:00000000 _NumTasks
+C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s:629    .bss._aTasks:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s:633    .bss._aTasks:00000000 _aTasks
+C:\Users\luoha\AppData\Local\Temp\ccmh2E5y.s:636    .rodata.SYSVIEW_X_OS_TraceAPI:00000000 $d
 
 UNDEFINED SYMBOLS
 xTaskGetTickCountFromISR

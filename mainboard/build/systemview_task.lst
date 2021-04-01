@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccSNkZc.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s 			page 1
   28:Modules/src/systemview_task.c ****     SEGGER_SYSVIEW_Conf();
   29:Modules/src/systemview_task.c **** 
   30:Modules/src/systemview_task.c ****     STATIC_MEM_TASK_CREATE(systemview_task, SystemViewTask, "SystemViewTask", NULL, SYSTEMVIEW_TASK
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccSNkZc.s 			page 2
 
 
   31:Modules/src/systemview_task.c **** }
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s 			page 1
   68              		.loc 1 45 5 view .LVU12
   46:Modules/src/systemview_task.c ****     TickType_t prev_send;
   69              		.loc 1 46 5 view .LVU13
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccSNkZc.s 			page 3
 
 
   47:Modules/src/systemview_task.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s 			page 1
  108 0044 3046     		mov	r0, r6
  109 0046 FFF7FEFF 		bl	SEGGER_RTT_WriteDownBufferNoLock
  110              	.LVL12:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s 			page 4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccSNkZc.s 			page 4
 
 
   55:Modules/src/systemview_task.c ****             } else if (notify_flag & 0x02) {
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s 			page 1
  145              		.loc 1 64 9 is_stmt 1 view .LVU37
   64:Modules/src/systemview_task.c ****             unsigned int tx_length = SEGGER_RTT_GetBytesInBuffer(channel_id);
  146              		.loc 1 64 12 is_stmt 0 view .LVU38
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s 			page 5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccSNkZc.s 			page 5
 
 
  147 006e 002C     		cmp	r4, #0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s 			page 1
  189              		.loc 1 73 29 view .LVU52
  190 00a0 DCE7     		b	.L2
  191              	.LVL25:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s 			page 6
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccSNkZc.s 			page 6
 
 
  192              	.L10:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s 			page 1
  240              	.LFB138:
   20:Modules/src/systemview_task.c ****     // uint8_t buffer[] = "Hello world\r\n";
  241              		.loc 1 20 29 is_stmt 1 view -0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s 			page 7
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccSNkZc.s 			page 7
 
 
  242              		.cfi_startproc
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s 			page 1
  287              	.LCFI4:
  288              		.cfi_def_cfa_offset 8
  289              		@ sp needed
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s 			page 8
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccSNkZc.s 			page 8
 
 
  290 003c 10BD     		pop	{r4, pc}
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s 			page 1
  339              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
  340              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
  341              		.file 16 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s 			page 9
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccSNkZc.s 			page 9
 
 
  342              		.file 17 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
@@ -486,24 +486,24 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s 			page 1
  344              		.file 19 "Modules/include/utils.h"
  345              		.file 20 "Inc/usart.h"
  346              		.file 21 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s 			page 10
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cccSNkZc.s 			page 10
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 systemview_task.c
-C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s:18     .text.SystemViewTask:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s:25     .text.SystemViewTask:00000000 SystemViewTask
-C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s:220    .text.SystemViewTask:000000bc $d
-C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s:228    .rodata.SystemViewLaunch.str1.4:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s:232    .text.SystemViewLaunch:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s:239    .text.SystemViewLaunch:00000000 SystemViewLaunch
-C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s:294    .text.SystemViewLaunch:00000040 $d
-C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s:323    .data.hello_message:00000000 hello_message
-C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s:305    .bss.osSys_systemview_taskStackBuffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s:309    .bss.osSys_systemview_taskStackBuffer:00000000 osSys_systemview_taskStackBuffer
-C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s:312    .bss.osSys_systemview_taskTaskBuffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s:316    .bss.osSys_systemview_taskTaskBuffer:00000000 osSys_systemview_taskTaskBuffer
-C:\Users\luoha\AppData\Local\Temp\ccOlJsjI.s:319    .data.hello_message:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cccSNkZc.s:18     .text.SystemViewTask:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cccSNkZc.s:25     .text.SystemViewTask:00000000 SystemViewTask
+C:\Users\luoha\AppData\Local\Temp\cccSNkZc.s:220    .text.SystemViewTask:000000bc $d
+C:\Users\luoha\AppData\Local\Temp\cccSNkZc.s:228    .rodata.SystemViewLaunch.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cccSNkZc.s:232    .text.SystemViewLaunch:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cccSNkZc.s:239    .text.SystemViewLaunch:00000000 SystemViewLaunch
+C:\Users\luoha\AppData\Local\Temp\cccSNkZc.s:294    .text.SystemViewLaunch:00000040 $d
+C:\Users\luoha\AppData\Local\Temp\cccSNkZc.s:323    .data.hello_message:00000000 hello_message
+C:\Users\luoha\AppData\Local\Temp\cccSNkZc.s:305    .bss.osSys_systemview_taskStackBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cccSNkZc.s:309    .bss.osSys_systemview_taskStackBuffer:00000000 osSys_systemview_taskStackBuffer
+C:\Users\luoha\AppData\Local\Temp\cccSNkZc.s:312    .bss.osSys_systemview_taskTaskBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cccSNkZc.s:316    .bss.osSys_systemview_taskTaskBuffer:00000000 osSys_systemview_taskTaskBuffer
+C:\Users\luoha\AppData\Local\Temp\cccSNkZc.s:319    .data.hello_message:00000000 $d
 
 UNDEFINED SYMBOLS
 xTaskGetCurrentTaskHandle

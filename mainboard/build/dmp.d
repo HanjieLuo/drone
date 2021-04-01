@@ -9,16 +9,16 @@ build/dmp.o: Modules/src/dmp.c Modules/include/dmp.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
- Modules/include/sensors.h Drivers/CMSIS/DSP/Include/arm_math.h \
- Drivers/CMSIS/Include/core_cm4.h Drivers/CMSIS/Include/cmsis_version.h \
- Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h \
- Modules/include/hmc5883l.h Modules/include/i2c1.h Inc/i2c.h Inc/main.h \
+ Modules/include/sensors.h Modules/include/hmc5883l.h \
+ Modules/include/i2c1.h Inc/i2c.h Inc/main.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  Inc/stm32f4xx_hal_conf.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h \
+ Drivers/CMSIS/Include/core_cm4.h Drivers/CMSIS/Include/cmsis_version.h \
+ Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h \
  Drivers/CMSIS/Include/mpu_armv7.h \
  Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
@@ -39,10 +39,10 @@ build/dmp.o: Modules/src/dmp.c Modules/include/dmp.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- Modules/include/utils.h Modules/include/utils.h \
+ Modules/include/utils.h Modules/include/config.h Modules/include/utils.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  Modules/include/mpu6050.h Modules/include/ms5611.h \
- Modules/include/system_task.h Modules/include/config.h
+ Modules/include/filter.h Modules/include/system_task.h
 
 Modules/include/dmp.h:
 
@@ -70,16 +70,6 @@ Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
 
 Modules/include/sensors.h:
 
-Drivers/CMSIS/DSP/Include/arm_math.h:
-
-Drivers/CMSIS/Include/core_cm4.h:
-
-Drivers/CMSIS/Include/cmsis_version.h:
-
-Drivers/CMSIS/Include/cmsis_compiler.h:
-
-Drivers/CMSIS/Include/cmsis_gcc.h:
-
 Modules/include/hmc5883l.h:
 
 Modules/include/i2c1.h:
@@ -99,6 +89,14 @@ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h:
 Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 
 Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h:
+
+Drivers/CMSIS/Include/core_cm4.h:
+
+Drivers/CMSIS/Include/cmsis_version.h:
+
+Drivers/CMSIS/Include/cmsis_compiler.h:
+
+Drivers/CMSIS/Include/cmsis_gcc.h:
 
 Drivers/CMSIS/Include/mpu_armv7.h:
 
@@ -142,6 +140,8 @@ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 
 Modules/include/utils.h:
 
+Modules/include/config.h:
+
 Modules/include/utils.h:
 
 Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
@@ -150,6 +150,6 @@ Modules/include/mpu6050.h:
 
 Modules/include/ms5611.h:
 
-Modules/include/system_task.h:
+Modules/include/filter.h:
 
-Modules/include/config.h:
+Modules/include/system_task.h:

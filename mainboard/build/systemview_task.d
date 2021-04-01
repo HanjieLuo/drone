@@ -2,6 +2,13 @@ build/systemview_task.o: Modules/src/systemview_task.c \
  Modules/include/systemview_task.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  Inc/FreeRTOSConfig.h Modules/include/config.h \
+ Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.h \
+ Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW.h \
+ Middlewares/Third_Party/SystemView/SEGGER/SEGGER.h \
+ Middlewares/Third_Party/SystemView/Config/Global.h \
+ Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_ConfDefaults.h \
+ Middlewares/Third_Party/SystemView/Config/SEGGER_SYSVIEW_Conf.h \
+ Middlewares/Third_Party/SystemView/Config/SEGGER_RTT_Conf.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
@@ -49,6 +56,20 @@ Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 Inc/FreeRTOSConfig.h:
 
 Modules/include/config.h:
+
+Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_FreeRTOS.h:
+
+Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW.h:
+
+Middlewares/Third_Party/SystemView/SEGGER/SEGGER.h:
+
+Middlewares/Third_Party/SystemView/Config/Global.h:
+
+Middlewares/Third_Party/SystemView/SEGGER/SEGGER_SYSVIEW_ConfDefaults.h:
+
+Middlewares/Third_Party/SystemView/Config/SEGGER_SYSVIEW_Conf.h:
+
+Middlewares/Third_Party/SystemView/Config/SEGGER_RTT_Conf.h:
 
 Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
 

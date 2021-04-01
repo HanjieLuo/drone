@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cco5eouV.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -48,9 +48,9 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cco5eouV.s 			page 1
   18:Modules/src/ms5611.c **** static uint16_t TREF;      // Reference temperature
   19:Modules/src/ms5611.c **** static uint16_t TEMPSENS;  // Temperature coefficient of the temperature
   20:Modules/src/ms5611.c **** 
-  21:Modules/src/ms5611.c **** static int32_t temperature;  //° *100
-  22:Modules/src/ms5611.c **** static int32_t pressure;     //pa *100
-  23:Modules/src/ms5611.c **** static float altitude;       //m
+  21:Modules/src/ms5611.c **** // static int32_t temperature;  //° *100
+  22:Modules/src/ms5611.c **** // static int32_t pressure;     //pa *100
+  23:Modules/src/ms5611.c **** // static float altitude;       //m
   24:Modules/src/ms5611.c **** 
   25:Modules/src/ms5611.c **** bool MS5611Init(void) {
   29              		.loc 1 25 23 view -0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cco5eouV.s 			page 1
   31              		@ args = 0, pretend = 0, frame = 16
   32              		@ frame_needed = 0, uses_anonymous_args = 0
   33 0000 30B5     		push	{r4, r5, lr}
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cco5eouV.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s 			page 2
 
 
   34              	.LCFI0:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cco5eouV.s 			page 1
   59:Modules/src/ms5611.c **** 
   60:Modules/src/ms5611.c ****     vTaskDelay(pdMS_TO_TICKS(10));
   61:Modules/src/ms5611.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cco5eouV.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s 			page 3
 
 
   62:Modules/src/ms5611.c ****     return true;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cco5eouV.s 			page 1
   43:Modules/src/ms5611.c ****         command = MS5611_PROM_C1 + i * 2;
   96              		.loc 1 43 25 discriminator 1 view .LVU17
   43:Modules/src/ms5611.c ****         command = MS5611_PROM_C1 + i * 2;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cco5eouV.s 			page 4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s 			page 4
 
 
   97              		.loc 1 43 5 is_stmt 0 discriminator 1 view .LVU18
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cco5eouV.s 			page 1
  137 0078 E1E7     		b	.L3
  138              	.L9:
   43:Modules/src/ms5611.c ****         command = MS5611_PROM_C1 + i * 2;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cco5eouV.s 			page 5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s 			page 5
 
 
  139              		.loc 1 43 33 discriminator 2 view .LVU33
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cco5eouV.s 			page 1
  176              		.loc 1 57 14 view .LVU50
  177 00aa 0C4B     		ldr	r3, .L10+24
  178 00ac 1A80     		strh	r2, [r3]	@ movhi
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cco5eouV.s 			page 6
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s 			page 6
 
 
   58:Modules/src/ms5611.c **** 
@@ -351,702 +351,845 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cco5eouV.s 			page 1
  221              	.LVL8:
  222              	.LFB139:
   64:Modules/src/ms5611.c **** 
-  65:Modules/src/ms5611.c **** void MS5611ReadRawTemp(uint32_t *value) {
+  65:Modules/src/ms5611.c **** bool MS5611ReadRawTemp(uint32_t *value) {
  223              		.loc 1 65 41 is_stmt 1 view -0
  224              		.cfi_startproc
  225              		@ args = 0, pretend = 0, frame = 0
  226              		@ frame_needed = 0, uses_anonymous_args = 0
  227              		.loc 1 65 41 is_stmt 0 view .LVU59
- 228 0000 38B5     		push	{r3, r4, r5, lr}
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cco5eouV.s 			page 7
+ 228 0000 10B5     		push	{r4, lr}
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s 			page 7
 
 
  229              	.LCFI4:
- 230              		.cfi_def_cfa_offset 16
- 231              		.cfi_offset 3, -16
- 232              		.cfi_offset 4, -12
- 233              		.cfi_offset 5, -8
- 234              		.cfi_offset 14, -4
- 235 0002 0546     		mov	r5, r0
+ 230              		.cfi_def_cfa_offset 8
+ 231              		.cfi_offset 4, -8
+ 232              		.cfi_offset 14, -4
+ 233 0002 0446     		mov	r4, r0
   66:Modules/src/ms5611.c ****     command = MS5611_D2_OSR_4096;
- 236              		.loc 1 66 5 is_stmt 1 view .LVU60
- 237              		.loc 1 66 13 is_stmt 0 view .LVU61
- 238 0004 104C     		ldr	r4, .L14
- 239 0006 5823     		movs	r3, #88
- 240 0008 2370     		strb	r3, [r4]
-  67:Modules/src/ms5611.c ****     I2C1Write(MS5611_ADDR, &command, 1);
- 241              		.loc 1 67 5 is_stmt 1 view .LVU62
- 242 000a 0122     		movs	r2, #1
- 243 000c 2146     		mov	r1, r4
- 244 000e EE20     		movs	r0, #238
- 245              	.LVL9:
- 246              		.loc 1 67 5 is_stmt 0 view .LVU63
- 247 0010 FFF7FEFF 		bl	I2C1Write
- 248              	.LVL10:
-  68:Modules/src/ms5611.c ****     // if (!I2C1Write(MS5611_ADDR, &command, 1)) {return false;}
+ 234              		.loc 1 66 5 is_stmt 1 view .LVU60
+ 235              		.loc 1 66 13 is_stmt 0 view .LVU61
+ 236 0004 1249     		ldr	r1, .L16
+ 237 0006 5823     		movs	r3, #88
+ 238 0008 0B70     		strb	r3, [r1]
+  67:Modules/src/ms5611.c ****     // I2C1Write(MS5611_ADDR, &command, 1);
+  68:Modules/src/ms5611.c ****     if (!I2C1Write(MS5611_ADDR, &command, 1)) {return false;}
+ 239              		.loc 1 68 5 is_stmt 1 view .LVU62
+ 240              		.loc 1 68 10 is_stmt 0 view .LVU63
+ 241 000a 0122     		movs	r2, #1
+ 242 000c EE20     		movs	r0, #238
+ 243              	.LVL9:
+ 244              		.loc 1 68 10 view .LVU64
+ 245 000e FFF7FEFF 		bl	I2C1Write
+ 246              	.LVL10:
+ 247              		.loc 1 68 8 view .LVU65
+ 248 0012 00B9     		cbnz	r0, .L15
+ 249              	.L13:
   69:Modules/src/ms5611.c **** 
   70:Modules/src/ms5611.c ****     vTaskDelay(pdMS_TO_TICKS(MS5611_CONVERSION_OSR_4096));
- 249              		.loc 1 70 5 is_stmt 1 view .LVU64
- 250 0014 0A20     		movs	r0, #10
- 251 0016 FFF7FEFF 		bl	vTaskDelay
- 252              	.LVL11:
   71:Modules/src/ms5611.c **** 
   72:Modules/src/ms5611.c ****     command = MS5611_OSR_256;
- 253              		.loc 1 72 5 view .LVU65
- 254              		.loc 1 72 13 is_stmt 0 view .LVU66
- 255 001a 0023     		movs	r3, #0
- 256 001c 2370     		strb	r3, [r4]
-  73:Modules/src/ms5611.c ****     I2C1Write(MS5611_ADDR, &command, 1);
- 257              		.loc 1 73 5 is_stmt 1 view .LVU67
- 258 001e 0122     		movs	r2, #1
- 259 0020 2146     		mov	r1, r4
- 260 0022 EE20     		movs	r0, #238
- 261 0024 FFF7FEFF 		bl	I2C1Write
- 262              	.LVL12:
-  74:Modules/src/ms5611.c ****     I2C1Read(MS5611_ADDR, buffer, 3);
- 263              		.loc 1 74 5 view .LVU68
- 264 0028 084C     		ldr	r4, .L14+4
- 265 002a 0322     		movs	r2, #3
- 266 002c 2146     		mov	r1, r4
- 267 002e EE20     		movs	r0, #238
- 268 0030 FFF7FEFF 		bl	I2C1Read
- 269              	.LVL13:
-  75:Modules/src/ms5611.c ****     // if (!I2C1Write(MS5611_ADDR, &command, 1)) { return false;}
-  76:Modules/src/ms5611.c ****     // if (!I2C1Read(MS5611_ADDR, buffer, 3)) { return false;}
+  73:Modules/src/ms5611.c ****     // I2C1Write(MS5611_ADDR, &command, 1);
+  74:Modules/src/ms5611.c ****     // I2C1Read(MS5611_ADDR, buffer, 3);
+  75:Modules/src/ms5611.c ****     if (!I2C1Write(MS5611_ADDR, &command, 1)) { return false;}
+  76:Modules/src/ms5611.c ****     if (!I2C1Read(MS5611_ADDR, buffer, 3)) { return false;}
   77:Modules/src/ms5611.c **** 
   78:Modules/src/ms5611.c ****     *value = (buffer[0] << 16) | (buffer[1] << 8) | buffer[2];
- 270              		.loc 1 78 5 view .LVU69
- 271              		.loc 1 78 21 is_stmt 0 view .LVU70
- 272 0034 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cco5eouV.s 			page 8
+  79:Modules/src/ms5611.c ****     return true;
+  80:Modules/src/ms5611.c **** }
+ 250              		.loc 1 80 1 view .LVU66
+ 251 0014 10BD     		pop	{r4, pc}
+ 252              	.LVL11:
+ 253              	.L15:
+  70:Modules/src/ms5611.c **** 
+ 254              		.loc 1 70 5 is_stmt 1 view .LVU67
+ 255 0016 0A20     		movs	r0, #10
+ 256 0018 FFF7FEFF 		bl	vTaskDelay
+ 257              	.LVL12:
+  72:Modules/src/ms5611.c ****     // I2C1Write(MS5611_ADDR, &command, 1);
+ 258              		.loc 1 72 5 view .LVU68
+  72:Modules/src/ms5611.c ****     // I2C1Write(MS5611_ADDR, &command, 1);
+ 259              		.loc 1 72 13 is_stmt 0 view .LVU69
+ 260 001c 0C49     		ldr	r1, .L16
+ 261 001e 0023     		movs	r3, #0
+ 262 0020 0B70     		strb	r3, [r1]
+  75:Modules/src/ms5611.c ****     if (!I2C1Read(MS5611_ADDR, buffer, 3)) { return false;}
+ 263              		.loc 1 75 5 is_stmt 1 view .LVU70
+  75:Modules/src/ms5611.c ****     if (!I2C1Read(MS5611_ADDR, buffer, 3)) { return false;}
+ 264              		.loc 1 75 10 is_stmt 0 view .LVU71
+ 265 0022 0122     		movs	r2, #1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s 			page 8
 
 
- 273              		.loc 1 78 41 view .LVU71
- 274 0036 6378     		ldrb	r3, [r4, #1]	@ zero_extendqisi2
- 275              		.loc 1 78 45 view .LVU72
- 276 0038 1B02     		lsls	r3, r3, #8
- 277              		.loc 1 78 32 view .LVU73
- 278 003a 43EA0243 		orr	r3, r3, r2, lsl #16
- 279              		.loc 1 78 59 view .LVU74
- 280 003e A278     		ldrb	r2, [r4, #2]	@ zero_extendqisi2
- 281              		.loc 1 78 51 view .LVU75
- 282 0040 1343     		orrs	r3, r3, r2
- 283              		.loc 1 78 12 view .LVU76
- 284 0042 2B60     		str	r3, [r5]
+ 266 0024 EE20     		movs	r0, #238
+ 267 0026 FFF7FEFF 		bl	I2C1Write
+ 268              	.LVL13:
+  75:Modules/src/ms5611.c ****     if (!I2C1Read(MS5611_ADDR, buffer, 3)) { return false;}
+ 269              		.loc 1 75 8 view .LVU72
+ 270 002a 0028     		cmp	r0, #0
+ 271 002c F2D0     		beq	.L13
+  76:Modules/src/ms5611.c **** 
+ 272              		.loc 1 76 5 is_stmt 1 view .LVU73
+  76:Modules/src/ms5611.c **** 
+ 273              		.loc 1 76 10 is_stmt 0 view .LVU74
+ 274 002e 0322     		movs	r2, #3
+ 275 0030 0849     		ldr	r1, .L16+4
+ 276 0032 EE20     		movs	r0, #238
+ 277 0034 FFF7FEFF 		bl	I2C1Read
+ 278              	.LVL14:
+  76:Modules/src/ms5611.c **** 
+ 279              		.loc 1 76 8 view .LVU75
+ 280 0038 0028     		cmp	r0, #0
+ 281 003a EBD0     		beq	.L13
+  78:Modules/src/ms5611.c ****     return true;
+ 282              		.loc 1 78 5 is_stmt 1 view .LVU76
+  78:Modules/src/ms5611.c ****     return true;
+ 283              		.loc 1 78 21 is_stmt 0 view .LVU77
+ 284 003c 054A     		ldr	r2, .L16+4
+ 285 003e 1178     		ldrb	r1, [r2]	@ zero_extendqisi2
+  78:Modules/src/ms5611.c ****     return true;
+ 286              		.loc 1 78 41 view .LVU78
+ 287 0040 5378     		ldrb	r3, [r2, #1]	@ zero_extendqisi2
+  78:Modules/src/ms5611.c ****     return true;
+ 288              		.loc 1 78 45 view .LVU79
+ 289 0042 1B02     		lsls	r3, r3, #8
+  78:Modules/src/ms5611.c ****     return true;
+ 290              		.loc 1 78 32 view .LVU80
+ 291 0044 43EA0143 		orr	r3, r3, r1, lsl #16
+  78:Modules/src/ms5611.c ****     return true;
+ 292              		.loc 1 78 59 view .LVU81
+ 293 0048 9278     		ldrb	r2, [r2, #2]	@ zero_extendqisi2
+  78:Modules/src/ms5611.c ****     return true;
+ 294              		.loc 1 78 51 view .LVU82
+ 295 004a 1343     		orrs	r3, r3, r2
+  78:Modules/src/ms5611.c ****     return true;
+ 296              		.loc 1 78 12 view .LVU83
+ 297 004c 2360     		str	r3, [r4]
   79:Modules/src/ms5611.c **** }
- 285              		.loc 1 79 1 view .LVU77
- 286 0044 38BD     		pop	{r3, r4, r5, pc}
- 287              	.LVL14:
- 288              	.L15:
- 289              		.loc 1 79 1 view .LVU78
- 290 0046 00BF     		.align	2
- 291              	.L14:
- 292 0048 00000000 		.word	.LANCHOR0
- 293 004c 00000000 		.word	.LANCHOR7
- 294              		.cfi_endproc
- 295              	.LFE139:
- 297              		.section	.text.MS5611ReadRawPress,"ax",%progbits
- 298              		.align	1
- 299              		.global	MS5611ReadRawPress
- 300              		.syntax unified
- 301              		.thumb
- 302              		.thumb_func
- 303              		.fpu fpv4-sp-d16
- 305              	MS5611ReadRawPress:
- 306              	.LVL15:
- 307              	.LFB140:
-  80:Modules/src/ms5611.c **** 
-  81:Modules/src/ms5611.c **** void MS5611ReadRawPress(uint32_t *value) {
- 308              		.loc 1 81 42 is_stmt 1 view -0
- 309              		.cfi_startproc
- 310              		@ args = 0, pretend = 0, frame = 0
- 311              		@ frame_needed = 0, uses_anonymous_args = 0
- 312              		.loc 1 81 42 is_stmt 0 view .LVU80
- 313 0000 38B5     		push	{r3, r4, r5, lr}
- 314              	.LCFI5:
- 315              		.cfi_def_cfa_offset 16
- 316              		.cfi_offset 3, -16
- 317              		.cfi_offset 4, -12
- 318              		.cfi_offset 5, -8
- 319              		.cfi_offset 14, -4
- 320 0002 0546     		mov	r5, r0
-  82:Modules/src/ms5611.c ****     command = MS5611_D1_OSR_4096;
- 321              		.loc 1 82 5 is_stmt 1 view .LVU81
- 322              		.loc 1 82 13 is_stmt 0 view .LVU82
- 323 0004 104C     		ldr	r4, .L18
- 324 0006 4823     		movs	r3, #72
- 325 0008 2370     		strb	r3, [r4]
-  83:Modules/src/ms5611.c ****     I2C1Write(MS5611_ADDR, &command, 1);
- 326              		.loc 1 83 5 is_stmt 1 view .LVU83
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cco5eouV.s 			page 9
+ 298              		.loc 1 79 5 is_stmt 1 view .LVU84
+  79:Modules/src/ms5611.c **** }
+ 299              		.loc 1 79 12 is_stmt 0 view .LVU85
+ 300 004e E1E7     		b	.L13
+ 301              	.L17:
+ 302              		.align	2
+ 303              	.L16:
+ 304 0050 00000000 		.word	.LANCHOR0
+ 305 0054 00000000 		.word	.LANCHOR7
+ 306              		.cfi_endproc
+ 307              	.LFE139:
+ 309              		.section	.text.MS5611ReadRawPress,"ax",%progbits
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s 			page 9
 
 
- 327 000a 0122     		movs	r2, #1
- 328 000c 2146     		mov	r1, r4
- 329 000e EE20     		movs	r0, #238
- 330              	.LVL16:
- 331              		.loc 1 83 5 is_stmt 0 view .LVU84
- 332 0010 FFF7FEFF 		bl	I2C1Write
- 333              	.LVL17:
-  84:Modules/src/ms5611.c **** 
-  85:Modules/src/ms5611.c ****     vTaskDelay(pdMS_TO_TICKS(MS5611_CONVERSION_OSR_4096));
- 334              		.loc 1 85 5 is_stmt 1 view .LVU85
- 335 0014 0A20     		movs	r0, #10
- 336 0016 FFF7FEFF 		bl	vTaskDelay
- 337              	.LVL18:
+ 310              		.align	1
+ 311              		.global	MS5611ReadRawPress
+ 312              		.syntax unified
+ 313              		.thumb
+ 314              		.thumb_func
+ 315              		.fpu fpv4-sp-d16
+ 317              	MS5611ReadRawPress:
+ 318              	.LVL15:
+ 319              	.LFB140:
+  81:Modules/src/ms5611.c **** 
+  82:Modules/src/ms5611.c **** bool MS5611ReadRawPress(uint32_t *value) {
+ 320              		.loc 1 82 42 is_stmt 1 view -0
+ 321              		.cfi_startproc
+ 322              		@ args = 0, pretend = 0, frame = 0
+ 323              		@ frame_needed = 0, uses_anonymous_args = 0
+ 324              		.loc 1 82 42 is_stmt 0 view .LVU87
+ 325 0000 10B5     		push	{r4, lr}
+ 326              	.LCFI5:
+ 327              		.cfi_def_cfa_offset 8
+ 328              		.cfi_offset 4, -8
+ 329              		.cfi_offset 14, -4
+ 330 0002 0446     		mov	r4, r0
+  83:Modules/src/ms5611.c ****     command = MS5611_D1_OSR_4096;
+ 331              		.loc 1 83 5 is_stmt 1 view .LVU88
+ 332              		.loc 1 83 13 is_stmt 0 view .LVU89
+ 333 0004 1249     		ldr	r1, .L22
+ 334 0006 4823     		movs	r3, #72
+ 335 0008 0B70     		strb	r3, [r1]
+  84:Modules/src/ms5611.c ****     // I2C1Write(MS5611_ADDR, &command, 1);
+  85:Modules/src/ms5611.c ****     if (!I2C1Write(MS5611_ADDR, &command, 1)) {return false;}
+ 336              		.loc 1 85 5 is_stmt 1 view .LVU90
+ 337              		.loc 1 85 10 is_stmt 0 view .LVU91
+ 338 000a 0122     		movs	r2, #1
+ 339 000c EE20     		movs	r0, #238
+ 340              	.LVL16:
+ 341              		.loc 1 85 10 view .LVU92
+ 342 000e FFF7FEFF 		bl	I2C1Write
+ 343              	.LVL17:
+ 344              		.loc 1 85 8 view .LVU93
+ 345 0012 00B9     		cbnz	r0, .L21
+ 346              	.L19:
   86:Modules/src/ms5611.c **** 
-  87:Modules/src/ms5611.c ****     command = MS5611_OSR_256;
- 338              		.loc 1 87 5 view .LVU86
- 339              		.loc 1 87 13 is_stmt 0 view .LVU87
- 340 001a 0023     		movs	r3, #0
- 341 001c 2370     		strb	r3, [r4]
-  88:Modules/src/ms5611.c ****     I2C1Write(MS5611_ADDR, &command, 1);
- 342              		.loc 1 88 5 is_stmt 1 view .LVU88
- 343 001e 0122     		movs	r2, #1
- 344 0020 2146     		mov	r1, r4
- 345 0022 EE20     		movs	r0, #238
- 346 0024 FFF7FEFF 		bl	I2C1Write
- 347              	.LVL19:
-  89:Modules/src/ms5611.c ****     I2C1Read(MS5611_ADDR, buffer, 3);
- 348              		.loc 1 89 5 view .LVU89
- 349 0028 084C     		ldr	r4, .L18+4
- 350 002a 0322     		movs	r2, #3
- 351 002c 2146     		mov	r1, r4
- 352 002e EE20     		movs	r0, #238
- 353 0030 FFF7FEFF 		bl	I2C1Read
- 354              	.LVL20:
-  90:Modules/src/ms5611.c **** 
-  91:Modules/src/ms5611.c ****     *value = (buffer[0] << 16) | (buffer[1] << 8) | buffer[2];
- 355              		.loc 1 91 5 view .LVU90
- 356              		.loc 1 91 21 is_stmt 0 view .LVU91
- 357 0034 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
- 358              		.loc 1 91 41 view .LVU92
- 359 0036 6378     		ldrb	r3, [r4, #1]	@ zero_extendqisi2
- 360              		.loc 1 91 45 view .LVU93
- 361 0038 1B02     		lsls	r3, r3, #8
- 362              		.loc 1 91 32 view .LVU94
- 363 003a 43EA0243 		orr	r3, r3, r2, lsl #16
- 364              		.loc 1 91 59 view .LVU95
- 365 003e A278     		ldrb	r2, [r4, #2]	@ zero_extendqisi2
- 366              		.loc 1 91 51 view .LVU96
- 367 0040 1343     		orrs	r3, r3, r2
- 368              		.loc 1 91 12 view .LVU97
- 369 0042 2B60     		str	r3, [r5]
-  92:Modules/src/ms5611.c **** }
- 370              		.loc 1 92 1 view .LVU98
- 371 0044 38BD     		pop	{r3, r4, r5, pc}
- 372              	.LVL21:
- 373              	.L19:
- 374              		.loc 1 92 1 view .LVU99
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cco5eouV.s 			page 10
+  87:Modules/src/ms5611.c ****     vTaskDelay(pdMS_TO_TICKS(MS5611_CONVERSION_OSR_4096));
+  88:Modules/src/ms5611.c **** 
+  89:Modules/src/ms5611.c ****     command = MS5611_OSR_256;
+  90:Modules/src/ms5611.c ****     // I2C1Write(MS5611_ADDR, &command, 1);
+  91:Modules/src/ms5611.c ****     // I2C1Read(MS5611_ADDR, buffer, 3);
+  92:Modules/src/ms5611.c ****     if (!I2C1Write(MS5611_ADDR, &command, 1)) {return false;}
+  93:Modules/src/ms5611.c ****     if (!I2C1Read(MS5611_ADDR, buffer, 3)) {return false;}
+  94:Modules/src/ms5611.c **** 
+  95:Modules/src/ms5611.c ****     *value = (buffer[0] << 16) | (buffer[1] << 8) | buffer[2];
+  96:Modules/src/ms5611.c ****     return true;
+  97:Modules/src/ms5611.c **** }
+ 347              		.loc 1 97 1 view .LVU94
+ 348 0014 10BD     		pop	{r4, pc}
+ 349              	.LVL18:
+ 350              	.L21:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s 			page 10
 
 
- 375 0046 00BF     		.align	2
- 376              	.L18:
- 377 0048 00000000 		.word	.LANCHOR0
- 378 004c 00000000 		.word	.LANCHOR7
- 379              		.cfi_endproc
- 380              	.LFE140:
- 382              		.global	__aeabi_f2d
- 383              		.global	__aeabi_dsub
- 384              		.global	__aeabi_dmul
- 385              		.global	__aeabi_d2f
- 386              		.section	.text.MS5611Calculate,"ax",%progbits
- 387              		.align	1
- 388              		.global	MS5611Calculate
- 389              		.syntax unified
- 390              		.thumb
- 391              		.thumb_func
- 392              		.fpu fpv4-sp-d16
- 394              	MS5611Calculate:
- 395              	.LFB141:
+  87:Modules/src/ms5611.c **** 
+ 351              		.loc 1 87 5 is_stmt 1 view .LVU95
+ 352 0016 0A20     		movs	r0, #10
+ 353 0018 FFF7FEFF 		bl	vTaskDelay
+ 354              	.LVL19:
+  89:Modules/src/ms5611.c ****     // I2C1Write(MS5611_ADDR, &command, 1);
+ 355              		.loc 1 89 5 view .LVU96
+  89:Modules/src/ms5611.c ****     // I2C1Write(MS5611_ADDR, &command, 1);
+ 356              		.loc 1 89 13 is_stmt 0 view .LVU97
+ 357 001c 0C49     		ldr	r1, .L22
+ 358 001e 0023     		movs	r3, #0
+ 359 0020 0B70     		strb	r3, [r1]
+  92:Modules/src/ms5611.c ****     if (!I2C1Read(MS5611_ADDR, buffer, 3)) {return false;}
+ 360              		.loc 1 92 5 is_stmt 1 view .LVU98
+  92:Modules/src/ms5611.c ****     if (!I2C1Read(MS5611_ADDR, buffer, 3)) {return false;}
+ 361              		.loc 1 92 10 is_stmt 0 view .LVU99
+ 362 0022 0122     		movs	r2, #1
+ 363 0024 EE20     		movs	r0, #238
+ 364 0026 FFF7FEFF 		bl	I2C1Write
+ 365              	.LVL20:
+  92:Modules/src/ms5611.c ****     if (!I2C1Read(MS5611_ADDR, buffer, 3)) {return false;}
+ 366              		.loc 1 92 8 view .LVU100
+ 367 002a 0028     		cmp	r0, #0
+ 368 002c F2D0     		beq	.L19
   93:Modules/src/ms5611.c **** 
-  94:Modules/src/ms5611.c **** void MS5611Calculate(void) {
- 396              		.loc 1 94 28 is_stmt 1 view -0
- 397              		.cfi_startproc
- 398              		@ args = 0, pretend = 0, frame = 16
- 399              		@ frame_needed = 0, uses_anonymous_args = 0
- 400 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
- 401              	.LCFI6:
- 402              		.cfi_def_cfa_offset 36
- 403              		.cfi_offset 4, -36
- 404              		.cfi_offset 5, -32
- 405              		.cfi_offset 6, -28
- 406              		.cfi_offset 7, -24
- 407              		.cfi_offset 8, -20
- 408              		.cfi_offset 9, -16
- 409              		.cfi_offset 10, -12
- 410              		.cfi_offset 11, -8
- 411              		.cfi_offset 14, -4
- 412 0004 85B0     		sub	sp, sp, #20
- 413              	.LCFI7:
- 414              		.cfi_def_cfa_offset 56
-  95:Modules/src/ms5611.c ****     int32_t dT;
- 415              		.loc 1 95 5 view .LVU101
-  96:Modules/src/ms5611.c ****     int64_t TEMP, OFF, SENS;
- 416              		.loc 1 96 5 view .LVU102
-  97:Modules/src/ms5611.c ****     uint32_t D1, D2;
- 417              		.loc 1 97 5 view .LVU103
+ 369              		.loc 1 93 5 is_stmt 1 view .LVU101
+  93:Modules/src/ms5611.c **** 
+ 370              		.loc 1 93 10 is_stmt 0 view .LVU102
+ 371 002e 0322     		movs	r2, #3
+ 372 0030 0849     		ldr	r1, .L22+4
+ 373 0032 EE20     		movs	r0, #238
+ 374 0034 FFF7FEFF 		bl	I2C1Read
+ 375              	.LVL21:
+  93:Modules/src/ms5611.c **** 
+ 376              		.loc 1 93 8 view .LVU103
+ 377 0038 0028     		cmp	r0, #0
+ 378 003a EBD0     		beq	.L19
+  95:Modules/src/ms5611.c ****     return true;
+ 379              		.loc 1 95 5 is_stmt 1 view .LVU104
+  95:Modules/src/ms5611.c ****     return true;
+ 380              		.loc 1 95 21 is_stmt 0 view .LVU105
+ 381 003c 054A     		ldr	r2, .L22+4
+ 382 003e 1178     		ldrb	r1, [r2]	@ zero_extendqisi2
+  95:Modules/src/ms5611.c ****     return true;
+ 383              		.loc 1 95 41 view .LVU106
+ 384 0040 5378     		ldrb	r3, [r2, #1]	@ zero_extendqisi2
+  95:Modules/src/ms5611.c ****     return true;
+ 385              		.loc 1 95 45 view .LVU107
+ 386 0042 1B02     		lsls	r3, r3, #8
+  95:Modules/src/ms5611.c ****     return true;
+ 387              		.loc 1 95 32 view .LVU108
+ 388 0044 43EA0143 		orr	r3, r3, r1, lsl #16
+  95:Modules/src/ms5611.c ****     return true;
+ 389              		.loc 1 95 59 view .LVU109
+ 390 0048 9278     		ldrb	r2, [r2, #2]	@ zero_extendqisi2
+  95:Modules/src/ms5611.c ****     return true;
+ 391              		.loc 1 95 51 view .LVU110
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s 			page 11
+
+
+ 392 004a 1343     		orrs	r3, r3, r2
+  95:Modules/src/ms5611.c ****     return true;
+ 393              		.loc 1 95 12 view .LVU111
+ 394 004c 2360     		str	r3, [r4]
+  96:Modules/src/ms5611.c **** }
+ 395              		.loc 1 96 5 is_stmt 1 view .LVU112
+  96:Modules/src/ms5611.c **** }
+ 396              		.loc 1 96 12 is_stmt 0 view .LVU113
+ 397 004e E1E7     		b	.L19
+ 398              	.L23:
+ 399              		.align	2
+ 400              	.L22:
+ 401 0050 00000000 		.word	.LANCHOR0
+ 402 0054 00000000 		.word	.LANCHOR7
+ 403              		.cfi_endproc
+ 404              	.LFE140:
+ 406              		.global	__aeabi_l2f
+ 407              		.global	__aeabi_f2d
+ 408              		.global	__aeabi_dsub
+ 409              		.global	__aeabi_dmul
+ 410              		.global	__aeabi_d2f
+ 411              		.section	.text.MS5611ReadAlt,"ax",%progbits
+ 412              		.align	1
+ 413              		.global	MS5611ReadAlt
+ 414              		.syntax unified
+ 415              		.thumb
+ 416              		.thumb_func
+ 417              		.fpu fpv4-sp-d16
+ 419              	MS5611ReadAlt:
+ 420              	.LVL22:
+ 421              	.LFB141:
   98:Modules/src/ms5611.c **** 
-  99:Modules/src/ms5611.c ****     MS5611ReadRawPress(&D1);
- 418              		.loc 1 99 5 view .LVU104
- 419 0006 03A8     		add	r0, sp, #12
- 420 0008 FFF7FEFF 		bl	MS5611ReadRawPress
- 421              	.LVL22:
- 100:Modules/src/ms5611.c ****     MS5611ReadRawTemp(&D2);
- 422              		.loc 1 100 5 view .LVU105
- 423 000c 02A8     		add	r0, sp, #8
- 424 000e FFF7FEFF 		bl	MS5611ReadRawTemp
- 425              	.LVL23:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cco5eouV.s 			page 11
+  99:Modules/src/ms5611.c **** bool MS5611ReadAlt(float* alt) {
+ 422              		.loc 1 99 32 is_stmt 1 view -0
+ 423              		.cfi_startproc
+ 424              		@ args = 0, pretend = 0, frame = 24
+ 425              		@ frame_needed = 0, uses_anonymous_args = 0
+ 426              		.loc 1 99 32 is_stmt 0 view .LVU115
+ 427 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 428              	.LCFI6:
+ 429              		.cfi_def_cfa_offset 36
+ 430              		.cfi_offset 4, -36
+ 431              		.cfi_offset 5, -32
+ 432              		.cfi_offset 6, -28
+ 433              		.cfi_offset 7, -24
+ 434              		.cfi_offset 8, -20
+ 435              		.cfi_offset 9, -16
+ 436              		.cfi_offset 10, -12
+ 437              		.cfi_offset 11, -8
+ 438              		.cfi_offset 14, -4
+ 439 0004 87B0     		sub	sp, sp, #28
+ 440              	.LCFI7:
+ 441              		.cfi_def_cfa_offset 64
+ 442 0006 0090     		str	r0, [sp]
+ 100:Modules/src/ms5611.c ****     int32_t dT;
+ 443              		.loc 1 100 5 is_stmt 1 view .LVU116
+ 101:Modules/src/ms5611.c ****     int64_t TEMP, OFF, SENS;
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s 			page 12
 
 
- 101:Modules/src/ms5611.c **** 
- 102:Modules/src/ms5611.c ****     dT   = D2 - ((int32_t)TREF << 8);                         //实际和参考温度之间的差
- 426              		.loc 1 102 5 view .LVU106
- 427              		.loc 1 102 18 is_stmt 0 view .LVU107
- 428 0012 6D4B     		ldr	r3, .L24+16
- 429 0014 1B88     		ldrh	r3, [r3]
- 430              		.loc 1 102 15 view .LVU108
- 431 0016 0298     		ldr	r0, [sp, #8]
- 432 0018 A0EB0320 		sub	r0, r0, r3, lsl #8
- 433              	.LVL24:
- 103:Modules/src/ms5611.c ****     TEMP = 2000 + (((int64_t)dT * (int64_t)TEMPSENS) >> 23);  //实际温度
- 434              		.loc 1 103 5 is_stmt 1 view .LVU109
- 435              		.loc 1 103 21 is_stmt 0 view .LVU110
- 436 001c 4FEAE079 		asr	r9, r0, #31
- 437              		.loc 1 103 35 view .LVU111
- 438 0020 6A4B     		ldr	r3, .L24+20
- 439 0022 1A88     		ldrh	r2, [r3]
- 440              		.loc 1 103 33 view .LVU112
- 441 0024 A0FB0267 		umull	r6, r7, r0, r2
- 442 0028 02FB0977 		mla	r7, r2, r9, r7
- 443              		.loc 1 103 54 view .LVU113
- 444 002c F30D     		lsrs	r3, r6, #23
- 445 002e 43EA4723 		orr	r3, r3, r7, lsl #9
- 446 0032 4FEAE75C 		asr	ip, r7, #23
- 447              		.loc 1 103 10 view .LVU114
- 448 0036 13F5FA64 		adds	r4, r3, #2000
- 449 003a 4CF10005 		adc	r5, ip, #0
- 450              	.LVL25:
- 104:Modules/src/ms5611.c ****     OFF  = OFF_t2 + (((int64_t)TCO * (int64_t)dT) >> 7);      //实际温度的零偏
- 451              		.loc 1 104 5 is_stmt 1 view .LVU115
- 452              		.loc 1 104 23 is_stmt 0 view .LVU116
- 453 003e 644A     		ldr	r2, .L24+24
- 454 0040 B2F800A0 		ldrh	r10, [r2]
- 455              		.loc 1 104 36 view .LVU117
- 456 0044 A0FB0A67 		umull	r6, r7, r0, r10
- 457 0048 0AFB0977 		mla	r7, r10, r9, r7
- 458              		.loc 1 104 51 view .LVU118
- 459 004c F209     		lsrs	r2, r6, #7
- 460 004e 42EA4762 		orr	r2, r2, r7, lsl #25
- 461 0052 4FEAE71E 		asr	lr, r7, #7
- 462              		.loc 1 104 19 view .LVU119
- 463 0056 5F4E     		ldr	r6, .L24+28
- 464 0058 3168     		ldr	r1, [r6]
- 465 005a 7668     		ldr	r6, [r6, #4]
- 466              		.loc 1 104 10 view .LVU120
- 467 005c 5218     		adds	r2, r2, r1
- 468 005e 4EEB060E 		adc	lr, lr, r6
- 469              	.LVL26:
- 105:Modules/src/ms5611.c ****     SENS = SENS_t2 + (((int64_t)TCS * (int64_t)dT) >> 8);     //实际温度的灵敏度
- 470              		.loc 1 105 5 is_stmt 1 view .LVU121
- 471              		.loc 1 105 24 is_stmt 0 view .LVU122
- 472 0062 5D49     		ldr	r1, .L24+32
- 473 0064 0E88     		ldrh	r6, [r1]
- 474              		.loc 1 105 37 view .LVU123
- 475 0066 A0FB0601 		umull	r0, r1, r0, r6
- 476              	.LVL27:
- 477              		.loc 1 105 37 view .LVU124
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cco5eouV.s 			page 12
-
-
- 478 006a 06FB0911 		mla	r1, r6, r9, r1
- 479              		.loc 1 105 52 view .LVU125
- 480 006e 060A     		lsrs	r6, r0, #8
- 481 0070 46EA0166 		orr	r6, r6, r1, lsl #24
- 482 0074 0F12     		asrs	r7, r1, #8
- 483              		.loc 1 105 20 view .LVU126
- 484 0076 5948     		ldr	r0, .L24+36
- 485 0078 0168     		ldr	r1, [r0]
- 486 007a 4068     		ldr	r0, [r0, #4]
- 487              		.loc 1 105 10 view .LVU127
- 488 007c 7618     		adds	r6, r6, r1
- 489 007e 40EB0707 		adc	r7, r0, r7
- 490              	.LVL28:
- 106:Modules/src/ms5611.c **** 
- 107:Modules/src/ms5611.c ****     //二阶温度补偿参考MS5611数据手册的第9页
- 108:Modules/src/ms5611.c ****     if (TEMP < 2000) {  //当温度小于20°时二阶温度补偿
- 491              		.loc 1 108 5 is_stmt 1 view .LVU128
- 492              		.loc 1 108 8 is_stmt 0 view .LVU129
- 493 0082 B4F5FA6F 		cmp	r4, #2000
- 494 0086 75F10001 		sbcs	r1, r5, #0
- 495 008a 5FDA     		bge	.L21
- 496              	.LBB4:
- 109:Modules/src/ms5611.c ****         int64_t T2    = ((int64_t)dT * (int64_t)dT) >> 31;
- 497              		.loc 1 109 9 is_stmt 1 view .LVU130
- 498              	.LVL29:
- 110:Modules/src/ms5611.c ****         int64_t OFF2  = (5 * (TEMP - 2000) * (TEMP - 2000)) >> 1;
- 499              		.loc 1 110 9 view .LVU131
- 500              		.loc 1 110 44 is_stmt 0 view .LVU132
- 501 008c 03FB0CF8 		mul	r8, r3, ip
- 502 0090 A3FB0301 		umull	r0, r1, r3, r3
- 503 0094 CDE90001 		strd	r0, [sp]
- 504 0098 01EB4801 		add	r1, r1, r8, lsl #1
- 505 009c 0191     		str	r1, [sp, #4]
- 506 009e 4FEA810A 		lsl	r10, r1, #2
- 507 00a2 0099     		ldr	r1, [sp]
- 508 00a4 4FEA8109 		lsl	r9, r1, #2
- 509 00a8 4AEA9178 		orr	r8, r10, r1, lsr #30
- 510 00ac DDE900AB 		ldrd	r10, [sp]
- 511 00b0 19EB0A00 		adds	r0, r9, r10
- 512 00b4 48EB0B01 		adc	r1, r8, fp
- 513              		.loc 1 110 17 view .LVU133
- 514 00b8 4FEA5009 		lsr	r9, r0, #1
- 515 00bc 49EAC179 		orr	r9, r9, r1, lsl #31
- 516 00c0 4FEA610A 		asr	r10, r1, #1
- 517              	.LVL30:
- 111:Modules/src/ms5611.c ****         int64_t SENS2 = OFF2 >> 1;
- 518              		.loc 1 111 9 is_stmt 1 view .LVU134
- 519              		.loc 1 111 17 is_stmt 0 view .LVU135
- 520 00c4 4FEA9008 		lsr	r8, r0, #2
- 521 00c8 48EA8178 		orr	r8, r8, r1, lsl #30
- 522 00cc 4FEAA10B 		asr	fp, r1, #2
- 523              	.LVL31:
- 112:Modules/src/ms5611.c ****         if (TEMP < -1500)  //当温度小于-15°时
- 524              		.loc 1 112 9 is_stmt 1 view .LVU136
- 525              		.loc 1 112 12 is_stmt 0 view .LVU137
- 526 00d0 4348     		ldr	r0, .L24+40
- 527 00d2 4FF0FF31 		mov	r1, #-1
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cco5eouV.s 			page 13
-
-
- 528 00d6 8442     		cmp	r4, r0
- 529 00d8 75EB0101 		sbcs	r1, r5, r1
- 530 00dc 2EDA     		bge	.L22
- 113:Modules/src/ms5611.c ****         {
- 114:Modules/src/ms5611.c ****             OFF2 += 7 * (TEMP + 1500) * (TEMP + 1500);
- 531              		.loc 1 114 13 is_stmt 1 view .LVU138
- 532              		.loc 1 114 31 is_stmt 0 view .LVU139
- 533 00de 40F6AC50 		movw	r0, #3500
- 534 00e2 1818     		adds	r0, r3, r0
- 535 00e4 4FF00003 		mov	r3, #0
- 536              	.LVL32:
- 537              		.loc 1 114 31 view .LVU140
- 538 00e8 4CEB030C 		adc	ip, ip, r3
- 539              	.LVL33:
- 540              		.loc 1 114 39 view .LVU141
- 541 00ec 00FB0CFC 		mul	ip, r0, ip
- 542 00f0 A0FB0001 		umull	r0, r1, r0, r0
- 543              		.loc 1 114 39 view .LVU142
- 544 00f4 01EB4C01 		add	r1, r1, ip, lsl #1
- 545 00f8 CD00     		lsls	r5, r1, #3
- 546 00fa C300     		lsls	r3, r0, #3
- 547 00fc 45EA5074 		orr	r4, r5, r0, lsr #29
- 548              		.loc 1 114 39 view .LVU143
- 549 0100 1B1A     		subs	r3, r3, r0
- 550 0102 64EB0104 		sbc	r4, r4, r1
- 551              		.loc 1 114 18 view .LVU144
- 552 0106 19EB0309 		adds	r9, r9, r3
- 553              	.LVL34:
- 554              		.loc 1 114 18 view .LVU145
- 555 010a 4AEB040A 		adc	r10, r10, r4
- 556              	.LVL35:
- 115:Modules/src/ms5611.c ****             SENS2 += (11 * (TEMP + 1500) * (TEMP + 1500)) >> 1;
- 557              		.loc 1 115 13 is_stmt 1 view .LVU146
- 558              		.loc 1 115 42 is_stmt 0 view .LVU147
- 559 010e 0318     		adds	r3, r0, r0
- 560 0110 41EB0105 		adc	r5, r1, r1
- 561 0114 1B18     		adds	r3, r3, r0
- 562 0116 41EB0505 		adc	r5, r1, r5
- 563 011a AC00     		lsls	r4, r5, #2
- 564 011c 44EA9374 		orr	r4, r4, r3, lsr #30
- 565 0120 4FEA830C 		lsl	ip, r3, #2
- 566 0124 BCEB0003 		subs	r3, ip, r0
- 567 0128 64EB0101 		sbc	r1, r4, r1
- 568              		.loc 1 115 59 view .LVU148
- 569 012c 5808     		lsrs	r0, r3, #1
- 570 012e 40EAC170 		orr	r0, r0, r1, lsl #31
- 571 0132 4C10     		asrs	r4, r1, #1
- 572              		.loc 1 115 19 view .LVU149
- 573 0134 18EB0008 		adds	r8, r8, r0
- 574              	.LVL36:
- 575              		.loc 1 115 19 view .LVU150
- 576 0138 4BEB040B 		adc	fp, fp, r4
- 577              	.LVL37:
- 578              	.L22:
- 116:Modules/src/ms5611.c ****         }
- 117:Modules/src/ms5611.c ****         TEMP -= T2;
- 579              		.loc 1 117 9 is_stmt 1 view .LVU151
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cco5eouV.s 			page 14
-
-
- 118:Modules/src/ms5611.c ****         OFF -= OFF2;
- 580              		.loc 1 118 9 view .LVU152
- 581              		.loc 1 118 13 is_stmt 0 view .LVU153
- 582 013c B2EB0902 		subs	r2, r2, r9
- 583              	.LVL38:
- 584              		.loc 1 118 13 view .LVU154
- 585 0140 6EEB0A0E 		sbc	lr, lr, r10
- 586              	.LVL39:
- 119:Modules/src/ms5611.c ****         SENS -= SENS2;
- 587              		.loc 1 119 9 is_stmt 1 view .LVU155
- 588              		.loc 1 119 14 is_stmt 0 view .LVU156
- 589 0144 B6EB0806 		subs	r6, r6, r8
- 590              	.LVL40:
- 591              		.loc 1 119 14 view .LVU157
- 592 0148 67EB0B07 		sbc	r7, r7, fp
- 593              	.LVL41:
- 594              	.L21:
- 595              		.loc 1 119 14 view .LVU158
- 596              	.LBE4:
- 120:Modules/src/ms5611.c ****     }
- 121:Modules/src/ms5611.c **** 
- 122:Modules/src/ms5611.c ****     temperature = TEMP;
- 597              		.loc 1 122 5 is_stmt 1 view .LVU159
- 123:Modules/src/ms5611.c ****     pressure    = (((D1 * SENS) >> 21) - OFF) >> 15;  //单位为Pa
- 598              		.loc 1 123 5 view .LVU160
- 599              		.loc 1 123 25 is_stmt 0 view .LVU161
- 600 014c 039B     		ldr	r3, [sp, #12]
- 601 014e A3FB0601 		umull	r0, r1, r3, r6
- 602 0152 03FB0711 		mla	r1, r3, r7, r1
- 603              		.loc 1 123 33 view .LVU162
- 604 0156 430D     		lsrs	r3, r0, #21
- 605 0158 43EAC123 		orr	r3, r3, r1, lsl #11
- 606 015c 4C15     		asrs	r4, r1, #21
- 607              		.loc 1 123 40 view .LVU163
- 608 015e 9A1A     		subs	r2, r3, r2
- 609              	.LVL42:
- 610              		.loc 1 123 40 view .LVU164
- 611 0160 64EB0E0E 		sbc	lr, r4, lr
- 612              		.loc 1 123 47 view .LVU165
- 613 0164 D20B     		lsrs	r2, r2, #15
- 614 0166 42EA4E42 		orr	r2, r2, lr, lsl #17
- 124:Modules/src/ms5611.c **** 
- 125:Modules/src/ms5611.c ****     // alt_3 = (101000 - pressure)/1000.0f;
- 126:Modules/src/ms5611.c **** 
- 127:Modules/src/ms5611.c ****     // press    = (float)pressure;
- 128:Modules/src/ms5611.c ****     // r        = press / 101325.0;
- 129:Modules/src/ms5611.c ****     // c        = 1.0 / 5.255;
- 130:Modules/src/ms5611.c ****     // altitude = (1 - pow(r, c)) * 44330.77;
+ 444              		.loc 1 101 5 view .LVU117
+ 102:Modules/src/ms5611.c ****     uint32_t D1, D2;
+ 445              		.loc 1 102 5 view .LVU118
+ 103:Modules/src/ms5611.c **** 
+ 104:Modules/src/ms5611.c ****     // MS5611ReadRawPress(&D1);
+ 105:Modules/src/ms5611.c ****     // MS5611ReadRawTemp(&D2);
+ 106:Modules/src/ms5611.c ****     if (!MS5611ReadRawPress(&D1)) {return false;}
+ 446              		.loc 1 106 5 view .LVU119
+ 447              		.loc 1 106 10 is_stmt 0 view .LVU120
+ 448 0008 05A8     		add	r0, sp, #20
+ 449              	.LVL23:
+ 450              		.loc 1 106 10 view .LVU121
+ 451 000a FFF7FEFF 		bl	MS5611ReadRawPress
+ 452              	.LVL24:
+ 453              		.loc 1 106 8 view .LVU122
+ 454 000e 0546     		mov	r5, r0
+ 455 0010 18B9     		cbnz	r0, .L29
+ 456              	.L25:
+ 107:Modules/src/ms5611.c ****     if (!MS5611ReadRawTemp(&D2)) {return false;}
+ 108:Modules/src/ms5611.c **** 
+ 109:Modules/src/ms5611.c ****     dT   = D2 - ((int32_t)TREF << 8);                         //实际和参考温度之间的差
+ 110:Modules/src/ms5611.c ****     TEMP = 2000 + (((int64_t)dT * (int64_t)TEMPSENS) >> 23);  //实际温度, ° *100
+ 111:Modules/src/ms5611.c ****     OFF  = OFF_t2 + (((int64_t)TCO * (int64_t)dT) >> 7);      //实际温度的零偏
+ 112:Modules/src/ms5611.c ****     SENS = SENS_t2 + (((int64_t)TCS * (int64_t)dT) >> 8);     //实际温度的灵敏度
+ 113:Modules/src/ms5611.c **** 
+ 114:Modules/src/ms5611.c ****     //二阶温度补偿参考MS5611数据手册的第9页
+ 115:Modules/src/ms5611.c ****     if (TEMP < 2000) {  //当温度小于20°时二阶温度补偿
+ 116:Modules/src/ms5611.c ****         int64_t T2    = ((int64_t)dT * (int64_t)dT) >> 31;
+ 117:Modules/src/ms5611.c ****         int64_t OFF2  = (5 * (TEMP - 2000) * (TEMP - 2000)) >> 1;
+ 118:Modules/src/ms5611.c ****         int64_t SENS2 = OFF2 >> 1;
+ 119:Modules/src/ms5611.c ****         if (TEMP < -1500)  //当温度小于-15°时
+ 120:Modules/src/ms5611.c ****         {
+ 121:Modules/src/ms5611.c ****             OFF2 += 7 * (TEMP + 1500) * (TEMP + 1500);
+ 122:Modules/src/ms5611.c ****             SENS2 += (11 * (TEMP + 1500) * (TEMP + 1500)) >> 1;
+ 123:Modules/src/ms5611.c ****         }
+ 124:Modules/src/ms5611.c ****         TEMP -= T2;
+ 125:Modules/src/ms5611.c ****         OFF -= OFF2;
+ 126:Modules/src/ms5611.c ****         SENS -= SENS2;
+ 127:Modules/src/ms5611.c ****     }
+ 128:Modules/src/ms5611.c **** 
+ 129:Modules/src/ms5611.c ****     // temperature = TEMP; //° *100
+ 130:Modules/src/ms5611.c ****     float pressure    = (float)( (((D1 * SENS) >> 21) - OFF) >> 15 );  //单位为Pa, pa *100
  131:Modules/src/ms5611.c **** 
- 132:Modules/src/ms5611.c ****     // alt = 44330.0f * (1.0f - pow((P/1011.6), 0.190295f));
- 133:Modules/src/ms5611.c **** 
- 134:Modules/src/ms5611.c ****     // float temperature_K,presure_Pa,altitude_m;
- 135:Modules/src/ms5611.c **** 	// uint32_t ms5611_ground_pressure = 102365U;
- 136:Modules/src/ms5611.c **** 	// temperature_K = get_temperature() + 273.15f;
- 137:Modules/src/ms5611.c **** 	// presure_Pa = get_Pressure(); 
- 138:Modules/src/ms5611.c **** 	// altitude_m = 153.8462f * temperature_K * (1.0f - expf(0.190259f * logf(presure_Pa/ms5611_ground
- 139:Modules/src/ms5611.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cco5eouV.s 			page 15
+ 132:Modules/src/ms5611.c **** 	*alt = 44330.77f * (1.0f - pow((pressure/101325.0f), 0.1902632f));
+ 133:Modules/src/ms5611.c ****     return true;
+ 134:Modules/src/ms5611.c **** }...
+ 457              		.loc 1 134 1 view .LVU123
+ 458 0012 2846     		mov	r0, r5
+ 459 0014 07B0     		add	sp, sp, #28
+ 460              	.LCFI8:
+ 461              		.cfi_remember_state
+ 462              		.cfi_def_cfa_offset 36
+ 463              	.LVL25:
+ 464              		.loc 1 134 1 view .LVU124
+ 465              		@ sp needed
+ 466 0016 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 467              	.LVL26:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s 			page 13
 
 
- 140:Modules/src/ms5611.c **** 	altitude = 44330.77f * (1.0f - pow((pressure/101325.0f), 0.1902632f));
- 615              		.loc 1 140 2 is_stmt 1 view .LVU166
- 616              		.loc 1 140 46 is_stmt 0 view .LVU167
- 617 016a 07EE902A 		vmov	s15, r2	@ int
- 618 016e F8EEE77A 		vcvt.f32.s32	s15, s15
- 619              		.loc 1 140 33 view .LVU168
- 620 0172 9FED1C7A 		vldr.32	s14, .L24+44
- 621 0176 C7EE877A 		vdiv.f32	s15, s15, s14
- 622 017a 17EE900A 		vmov	r0, s15
- 623 017e FFF7FEFF 		bl	__aeabi_f2d
- 624              	.LVL43:
- 625              		.loc 1 140 33 view .LVU169
- 626 0182 9FED0D1B 		vldr.64	d1, .L24
- 627 0186 41EC100B 		vmov	d0, r0, r1
- 628 018a FFF7FEFF 		bl	pow
- 629              	.LVL44:
- 630 018e 53EC102B 		vmov	r2, r3, d0
- 631              		.loc 1 140 31 view .LVU170
- 632 0192 0020     		movs	r0, #0
- 633 0194 1449     		ldr	r1, .L24+48
- 634 0196 FFF7FEFF 		bl	__aeabi_dsub
- 635              	.LVL45:
- 636              		.loc 1 140 23 view .LVU171
- 637 019a 09A3     		adr	r3, .L24+8
- 638 019c D3E90023 		ldrd	r2, [r3]
- 639 01a0 FFF7FEFF 		bl	__aeabi_dmul
- 640              	.LVL46:
- 641 01a4 FFF7FEFF 		bl	__aeabi_d2f
- 642              	.LVL47:
- 643              		.loc 1 140 11 view .LVU172
- 644 01a8 104B     		ldr	r3, .L24+52
- 645 01aa 1860     		str	r0, [r3]	@ float
- 141:Modules/src/ms5611.c **** 
- 142:Modules/src/ms5611.c **** }
- 646              		.loc 1 142 1 view .LVU173
- 647 01ac 05B0     		add	sp, sp, #20
- 648              	.LCFI8:
- 649              		.cfi_def_cfa_offset 36
- 650              		@ sp needed
- 651 01ae BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
- 652              	.LVL48:
- 653              	.L25:
- 654              		.loc 1 142 1 view .LVU174
- 655 01b2 00BFAFF3 		.align	3
- 655      0080
- 656              	.L24:
- 657 01b8 00000060 		.word	1610612736
- 658 01bc 8B5AC83F 		.word	1070094987
- 659 01c0 000000A0 		.word	-1610612736
- 660 01c4 58A5E540 		.word	1088791896
- 661 01c8 00000000 		.word	.LANCHOR5
- 662 01cc 00000000 		.word	.LANCHOR6
- 663 01d0 00000000 		.word	.LANCHOR4
- 664 01d4 00000000 		.word	.LANCHOR2
- 665 01d8 00000000 		.word	.LANCHOR3
- 666 01dc 00000000 		.word	.LANCHOR1
- 667 01e0 24FAFFFF 		.word	-1500
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cco5eouV.s 			page 16
+ 468              	.L29:
+ 469              	.LCFI9:
+ 470              		.cfi_restore_state
+ 107:Modules/src/ms5611.c ****     if (!MS5611ReadRawTemp(&D2)) {return false;}
+ 471              		.loc 1 107 5 is_stmt 1 view .LVU125
+ 107:Modules/src/ms5611.c ****     if (!MS5611ReadRawTemp(&D2)) {return false;}
+ 472              		.loc 1 107 10 is_stmt 0 view .LVU126
+ 473 001a 04A8     		add	r0, sp, #16
+ 474 001c FFF7FEFF 		bl	MS5611ReadRawTemp
+ 475              	.LVL27:
+ 107:Modules/src/ms5611.c ****     if (!MS5611ReadRawTemp(&D2)) {return false;}
+ 476              		.loc 1 107 8 view .LVU127
+ 477 0020 0546     		mov	r5, r0
+ 478 0022 0028     		cmp	r0, #0
+ 479 0024 F5D0     		beq	.L25
+ 109:Modules/src/ms5611.c ****     dT   = D2 - ((int32_t)TREF << 8);                         //实际和参考温度之间的差
+ 480              		.loc 1 109 5 is_stmt 1 view .LVU128
+ 109:Modules/src/ms5611.c ****     dT   = D2 - ((int32_t)TREF << 8);                         //实际和参考温度之间的差
+ 481              		.loc 1 109 18 is_stmt 0 view .LVU129
+ 482 0026 6E4B     		ldr	r3, .L30+16
+ 483 0028 1B88     		ldrh	r3, [r3]
+ 109:Modules/src/ms5611.c ****     dT   = D2 - ((int32_t)TREF << 8);                         //实际和参考温度之间的差
+ 484              		.loc 1 109 15 view .LVU130
+ 485 002a 049A     		ldr	r2, [sp, #16]
+ 486 002c A2EB0322 		sub	r2, r2, r3, lsl #8
+ 487              	.LVL28:
+ 110:Modules/src/ms5611.c ****     TEMP = 2000 + (((int64_t)dT * (int64_t)TEMPSENS) >> 23);  //实际温度, ° *100
+ 488              		.loc 1 110 5 is_stmt 1 view .LVU131
+ 110:Modules/src/ms5611.c ****     TEMP = 2000 + (((int64_t)dT * (int64_t)TEMPSENS) >> 23);  //实际温度, ° *100
+ 489              		.loc 1 110 21 is_stmt 0 view .LVU132
+ 490 0030 4FEAE279 		asr	r9, r2, #31
+ 110:Modules/src/ms5611.c ****     TEMP = 2000 + (((int64_t)dT * (int64_t)TEMPSENS) >> 23);  //实际温度, ° *100
+ 491              		.loc 1 110 35 view .LVU133
+ 492 0034 6B4B     		ldr	r3, .L30+20
+ 493 0036 1E88     		ldrh	r6, [r3]
+ 110:Modules/src/ms5611.c ****     TEMP = 2000 + (((int64_t)dT * (int64_t)TEMPSENS) >> 23);  //实际温度, ° *100
+ 494              		.loc 1 110 33 view .LVU134
+ 495 0038 A2FB0601 		umull	r0, r1, r2, r6
+ 496 003c 06FB0911 		mla	r1, r6, r9, r1
+ 110:Modules/src/ms5611.c ****     TEMP = 2000 + (((int64_t)dT * (int64_t)TEMPSENS) >> 23);  //实际温度, ° *100
+ 497              		.loc 1 110 54 view .LVU135
+ 498 0040 C40D     		lsrs	r4, r0, #23
+ 499 0042 44EA4124 		orr	r4, r4, r1, lsl #9
+ 500 0046 4FEAE15C 		asr	ip, r1, #23
+ 110:Modules/src/ms5611.c ****     TEMP = 2000 + (((int64_t)dT * (int64_t)TEMPSENS) >> 23);  //实际温度, ° *100
+ 501              		.loc 1 110 10 view .LVU136
+ 502 004a 14F5FA63 		adds	r3, r4, #2000
+ 503 004e 9A46     		mov	r10, r3
+ 504 0050 4CF10003 		adc	r3, ip, #0
+ 505 0054 9B46     		mov	fp, r3
+ 506              	.LVL29:
+ 111:Modules/src/ms5611.c ****     OFF  = OFF_t2 + (((int64_t)TCO * (int64_t)dT) >> 7);      //实际温度的零偏
+ 507              		.loc 1 111 5 is_stmt 1 view .LVU137
+ 111:Modules/src/ms5611.c ****     OFF  = OFF_t2 + (((int64_t)TCO * (int64_t)dT) >> 7);      //实际温度的零偏
+ 508              		.loc 1 111 23 is_stmt 0 view .LVU138
+ 509 0056 644B     		ldr	r3, .L30+24
+ 510 0058 1888     		ldrh	r0, [r3]
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s 			page 14
 
 
- 668 01e4 80E6C547 		.word	1204151936
- 669 01e8 0000F03F 		.word	1072693248
- 670 01ec 00000000 		.word	.LANCHOR8
- 671              		.cfi_endproc
- 672              	.LFE141:
- 674              		.section	.text.MS5611ReadAlt,"ax",%progbits
- 675              		.align	1
- 676              		.global	MS5611ReadAlt
- 677              		.syntax unified
- 678              		.thumb
- 679              		.thumb_func
- 680              		.fpu fpv4-sp-d16
- 682              	MS5611ReadAlt:
- 683              	.LVL49:
- 684              	.LFB142:
- 143:Modules/src/ms5611.c **** 
- 144:Modules/src/ms5611.c **** void MS5611ReadAlt(float *alt) {
- 685              		.loc 1 144 32 is_stmt 1 view -0
- 686              		.cfi_startproc
- 687              		@ args = 0, pretend = 0, frame = 0
- 688              		@ frame_needed = 0, uses_anonymous_args = 0
- 689              		@ link register save eliminated.
- 145:Modules/src/ms5611.c ****     *alt = altitude;
- 690              		.loc 1 145 5 view .LVU176
- 691              		.loc 1 145 10 is_stmt 0 view .LVU177
- 692 0000 014B     		ldr	r3, .L27
- 693 0002 1B68     		ldr	r3, [r3]	@ float
- 694 0004 0360     		str	r3, [r0]	@ float
- 146:Modules/src/ms5611.c **** }...
- 695              		.loc 1 146 1 view .LVU178
- 696 0006 7047     		bx	lr
- 697              	.L28:
- 698              		.align	2
- 699              	.L27:
- 700 0008 00000000 		.word	.LANCHOR8
- 701              		.cfi_endproc
- 702              	.LFE142:
- 704              		.section	.bss.OFF_t2,"aw",%nobits
- 705              		.align	3
- 706              		.set	.LANCHOR2,. + 0
- 709              	OFF_t2:
- 710 0000 00000000 		.space	8
- 710      00000000 
- 711              		.section	.bss.SENS_t2,"aw",%nobits
- 712              		.align	3
- 713              		.set	.LANCHOR1,. + 0
- 716              	SENS_t2:
- 717 0000 00000000 		.space	8
- 717      00000000 
- 718              		.section	.bss.TCO,"aw",%nobits
- 719              		.align	1
- 720              		.set	.LANCHOR4,. + 0
- 723              	TCO:
- 724 0000 0000     		.space	2
- 725              		.section	.bss.TCS,"aw",%nobits
- 726              		.align	1
- 727              		.set	.LANCHOR3,. + 0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cco5eouV.s 			page 17
+ 111:Modules/src/ms5611.c ****     OFF  = OFF_t2 + (((int64_t)TCO * (int64_t)dT) >> 7);      //实际温度的零偏
+ 511              		.loc 1 111 36 view .LVU139
+ 512 005a A2FB0067 		umull	r6, r7, r2, r0
+ 513 005e 00FB0977 		mla	r7, r0, r9, r7
+ 111:Modules/src/ms5611.c ****     OFF  = OFF_t2 + (((int64_t)TCO * (int64_t)dT) >> 7);      //实际温度的零偏
+ 514              		.loc 1 111 51 view .LVU140
+ 515 0062 F009     		lsrs	r0, r6, #7
+ 516 0064 40EA4760 		orr	r0, r0, r7, lsl #25
+ 517 0068 F911     		asrs	r1, r7, #7
+ 111:Modules/src/ms5611.c ****     OFF  = OFF_t2 + (((int64_t)TCO * (int64_t)dT) >> 7);      //实际温度的零偏
+ 518              		.loc 1 111 19 view .LVU141
+ 519 006a 604E     		ldr	r6, .L30+28
+ 520 006c 3368     		ldr	r3, [r6]
+ 521 006e 7668     		ldr	r6, [r6, #4]
+ 111:Modules/src/ms5611.c ****     OFF  = OFF_t2 + (((int64_t)TCO * (int64_t)dT) >> 7);      //实际温度的零偏
+ 522              		.loc 1 111 10 view .LVU142
+ 523 0070 C018     		adds	r0, r0, r3
+ 524 0072 46EB0101 		adc	r1, r6, r1
+ 525              	.LVL30:
+ 112:Modules/src/ms5611.c ****     SENS = SENS_t2 + (((int64_t)TCS * (int64_t)dT) >> 8);     //实际温度的灵敏度
+ 526              		.loc 1 112 5 is_stmt 1 view .LVU143
+ 112:Modules/src/ms5611.c ****     SENS = SENS_t2 + (((int64_t)TCS * (int64_t)dT) >> 8);     //实际温度的灵敏度
+ 527              		.loc 1 112 24 is_stmt 0 view .LVU144
+ 528 0076 5E4B     		ldr	r3, .L30+32
+ 529 0078 1E88     		ldrh	r6, [r3]
+ 112:Modules/src/ms5611.c ****     SENS = SENS_t2 + (((int64_t)TCS * (int64_t)dT) >> 8);     //实际温度的灵敏度
+ 530              		.loc 1 112 37 view .LVU145
+ 531 007a A2FB0623 		umull	r2, r3, r2, r6
+ 532              	.LVL31:
+ 112:Modules/src/ms5611.c ****     SENS = SENS_t2 + (((int64_t)TCS * (int64_t)dT) >> 8);     //实际温度的灵敏度
+ 533              		.loc 1 112 37 view .LVU146
+ 534 007e 06FB0933 		mla	r3, r6, r9, r3
+ 112:Modules/src/ms5611.c ****     SENS = SENS_t2 + (((int64_t)TCS * (int64_t)dT) >> 8);     //实际温度的灵敏度
+ 535              		.loc 1 112 52 view .LVU147
+ 536 0082 160A     		lsrs	r6, r2, #8
+ 537 0084 46EA0366 		orr	r6, r6, r3, lsl #24
+ 538 0088 1F12     		asrs	r7, r3, #8
+ 112:Modules/src/ms5611.c ****     SENS = SENS_t2 + (((int64_t)TCS * (int64_t)dT) >> 8);     //实际温度的灵敏度
+ 539              		.loc 1 112 20 view .LVU148
+ 540 008a 5A4A     		ldr	r2, .L30+36
+ 541 008c 1368     		ldr	r3, [r2]
+ 542 008e 5268     		ldr	r2, [r2, #4]
+ 112:Modules/src/ms5611.c ****     SENS = SENS_t2 + (((int64_t)TCS * (int64_t)dT) >> 8);     //实际温度的灵敏度
+ 543              		.loc 1 112 10 view .LVU149
+ 544 0090 F318     		adds	r3, r6, r3
+ 545 0092 47EB0202 		adc	r2, r7, r2
+ 546              	.LVL32:
+ 115:Modules/src/ms5611.c ****     if (TEMP < 2000) {  //当温度小于20°时二阶温度补偿
+ 547              		.loc 1 115 5 is_stmt 1 view .LVU150
+ 115:Modules/src/ms5611.c ****     if (TEMP < 2000) {  //当温度小于20°时二阶温度补偿
+ 548              		.loc 1 115 8 is_stmt 0 view .LVU151
+ 549 0096 D146     		mov	r9, r10
+ 550 0098 DA46     		mov	r10, fp
+ 551 009a 5F46     		mov	r7, fp
+ 552 009c B9F5FA6F 		cmp	r9, #2000
+ 553 00a0 77F10007 		sbcs	r7, r7, #0
+ 554 00a4 62DA     		bge	.L26
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s 			page 15
 
 
- 730              	TCS:
- 731 0000 0000     		.space	2
- 732              		.section	.bss.TEMPSENS,"aw",%nobits
- 733              		.align	1
- 734              		.set	.LANCHOR6,. + 0
- 737              	TEMPSENS:
- 738 0000 0000     		.space	2
- 739              		.section	.bss.TREF,"aw",%nobits
- 740              		.align	1
- 741              		.set	.LANCHOR5,. + 0
- 744              	TREF:
- 745 0000 0000     		.space	2
- 746              		.section	.bss.altitude,"aw",%nobits
- 747              		.align	2
- 748              		.set	.LANCHOR8,. + 0
- 751              	altitude:
- 752 0000 00000000 		.space	4
- 753              		.section	.bss.buffer,"aw",%nobits
- 754              		.align	2
- 755              		.set	.LANCHOR7,. + 0
- 758              	buffer:
- 759 0000 000000   		.space	3
- 760              		.section	.bss.command,"aw",%nobits
- 761              		.set	.LANCHOR0,. + 0
- 764              	command:
- 765 0000 00       		.space	1
- 766              		.text
- 767              	.Letext0:
- 768              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
- 769              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
- 770              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
- 771              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 772              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
- 773              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 774              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 775              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
- 776              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 777              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 778              		.file 12 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
- 779              		.file 13 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
- 780              		.file 14 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
- 781              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
- 782              		.file 16 "Modules/include/utils.h"
- 783              		.file 17 "Inc/i2c.h"
- 784              		.file 18 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
- 785              		.file 19 "Modules/include/i2c1.h"
- 786              		.file 20 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
- 787              		.file 21 "<built-in>"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cco5eouV.s 			page 18
+ 555              	.LBB4:
+ 116:Modules/src/ms5611.c ****         int64_t T2    = ((int64_t)dT * (int64_t)dT) >> 31;
+ 556              		.loc 1 116 9 is_stmt 1 view .LVU152
+ 557              	.LVL33:
+ 117:Modules/src/ms5611.c ****         int64_t OFF2  = (5 * (TEMP - 2000) * (TEMP - 2000)) >> 1;
+ 558              		.loc 1 117 9 view .LVU153
+ 117:Modules/src/ms5611.c ****         int64_t OFF2  = (5 * (TEMP - 2000) * (TEMP - 2000)) >> 1;
+ 559              		.loc 1 117 44 is_stmt 0 view .LVU154
+ 560 00a6 04FB0CFE 		mul	lr, r4, ip
+ 561 00aa A4FB0467 		umull	r6, r7, r4, r4
+ 562 00ae 07EB4E07 		add	r7, r7, lr, lsl #1
+ 563 00b2 4FEA8708 		lsl	r8, r7, #2
+ 564 00b6 4FEA860B 		lsl	fp, r6, #2
+ 565 00ba 48EA967E 		orr	lr, r8, r6, lsr #30
+ 566 00be 1BEB060B 		adds	fp, fp, r6
+ 567 00c2 4EEB0706 		adc	r6, lr, r7
+ 117:Modules/src/ms5611.c ****         int64_t OFF2  = (5 * (TEMP - 2000) * (TEMP - 2000)) >> 1;
+ 568              		.loc 1 117 17 view .LVU155
+ 569 00c6 4FEA5B08 		lsr	r8, fp, #1
+ 570 00ca 48EAC678 		orr	r8, r8, r6, lsl #31
+ 571 00ce 7710     		asrs	r7, r6, #1
+ 572 00d0 0197     		str	r7, [sp, #4]
+ 573              	.LVL34:
+ 118:Modules/src/ms5611.c ****         int64_t SENS2 = OFF2 >> 1;
+ 574              		.loc 1 118 9 is_stmt 1 view .LVU156
+ 118:Modules/src/ms5611.c ****         int64_t SENS2 = OFF2 >> 1;
+ 575              		.loc 1 118 17 is_stmt 0 view .LVU157
+ 576 00d2 4FEA9B0E 		lsr	lr, fp, #2
+ 577 00d6 4EEA867E 		orr	lr, lr, r6, lsl #30
+ 578 00da B610     		asrs	r6, r6, #2
+ 579 00dc 0296     		str	r6, [sp, #8]
+ 580              	.LVL35:
+ 119:Modules/src/ms5611.c ****         if (TEMP < -1500)  //当温度小于-15°时
+ 581              		.loc 1 119 9 is_stmt 1 view .LVU158
+ 119:Modules/src/ms5611.c ****         if (TEMP < -1500)  //当温度小于-15°时
+ 582              		.loc 1 119 12 is_stmt 0 view .LVU159
+ 583 00de 464E     		ldr	r6, .L30+40
+ 584              	.LVL36:
+ 119:Modules/src/ms5611.c ****         if (TEMP < -1500)  //当温度小于-15°时
+ 585              		.loc 1 119 12 view .LVU160
+ 586 00e0 4FF0FF37 		mov	r7, #-1
+ 587              	.LVL37:
+ 119:Modules/src/ms5611.c ****         if (TEMP < -1500)  //当温度小于-15°时
+ 588              		.loc 1 119 12 view .LVU161
+ 589 00e4 B145     		cmp	r9, r6
+ 590 00e6 7AEB0706 		sbcs	r6, r10, r7
+ 591 00ea 35DA     		bge	.L27
+ 121:Modules/src/ms5611.c ****             OFF2 += 7 * (TEMP + 1500) * (TEMP + 1500);
+ 592              		.loc 1 121 13 is_stmt 1 view .LVU162
+ 121:Modules/src/ms5611.c ****             OFF2 += 7 * (TEMP + 1500) * (TEMP + 1500);
+ 593              		.loc 1 121 31 is_stmt 0 view .LVU163
+ 594 00ec 40F6AC56 		movw	r6, #3500
+ 595 00f0 A619     		adds	r6, r4, r6
+ 596 00f2 4FF00004 		mov	r4, #0
+ 597              	.LVL38:
+ 121:Modules/src/ms5611.c ****             OFF2 += 7 * (TEMP + 1500) * (TEMP + 1500);
+ 598              		.loc 1 121 31 view .LVU164
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s 			page 16
+
+
+ 599 00f6 4CEB040C 		adc	ip, ip, r4
+ 600              	.LVL39:
+ 121:Modules/src/ms5611.c ****             OFF2 += 7 * (TEMP + 1500) * (TEMP + 1500);
+ 601              		.loc 1 121 39 view .LVU165
+ 602 00fa 06FB0CFC 		mul	ip, r6, ip
+ 603 00fe A6FB0667 		umull	r6, r7, r6, r6
+ 121:Modules/src/ms5611.c ****             OFF2 += 7 * (TEMP + 1500) * (TEMP + 1500);
+ 604              		.loc 1 121 39 view .LVU166
+ 605 0102 07EB4C07 		add	r7, r7, ip, lsl #1
+ 606 0106 4FEAC70B 		lsl	fp, r7, #3
+ 607 010a F400     		lsls	r4, r6, #3
+ 608 010c 4BEA567C 		orr	ip, fp, r6, lsr #29
+ 609 0110 A41B     		subs	r4, r4, r6
+ 610 0112 6CEB070C 		sbc	ip, ip, r7
+ 121:Modules/src/ms5611.c ****             OFF2 += 7 * (TEMP + 1500) * (TEMP + 1500);
+ 611              		.loc 1 121 18 view .LVU167
+ 612 0116 18EB0408 		adds	r8, r8, r4
+ 613              	.LVL40:
+ 121:Modules/src/ms5611.c ****             OFF2 += 7 * (TEMP + 1500) * (TEMP + 1500);
+ 614              		.loc 1 121 18 view .LVU168
+ 615 011a 019C     		ldr	r4, [sp, #4]
+ 616 011c 44EB0C04 		adc	r4, r4, ip
+ 617 0120 0194     		str	r4, [sp, #4]
+ 618              	.LVL41:
+ 122:Modules/src/ms5611.c ****             SENS2 += (11 * (TEMP + 1500) * (TEMP + 1500)) >> 1;
+ 619              		.loc 1 122 13 is_stmt 1 view .LVU169
+ 122:Modules/src/ms5611.c ****             SENS2 += (11 * (TEMP + 1500) * (TEMP + 1500)) >> 1;
+ 620              		.loc 1 122 42 is_stmt 0 view .LVU170
+ 621 0122 B419     		adds	r4, r6, r6
+ 622              	.LVL42:
+ 122:Modules/src/ms5611.c ****             SENS2 += (11 * (TEMP + 1500) * (TEMP + 1500)) >> 1;
+ 623              		.loc 1 122 42 view .LVU171
+ 624 0124 47EB070C 		adc	ip, r7, r7
+ 625 0128 A419     		adds	r4, r4, r6
+ 626 012a 4CEB070C 		adc	ip, ip, r7
+ 627 012e 4FEA8C0B 		lsl	fp, ip, #2
+ 628 0132 4BEA947B 		orr	fp, fp, r4, lsr #30
+ 629 0136 A400     		lsls	r4, r4, #2
+ 630 0138 0394     		str	r4, [sp, #12]
+ 631 013a 039C     		ldr	r4, [sp, #12]
+ 632 013c A41B     		subs	r4, r4, r6
+ 633 013e 6BEB070C 		sbc	ip, fp, r7
+ 122:Modules/src/ms5611.c ****             SENS2 += (11 * (TEMP + 1500) * (TEMP + 1500)) >> 1;
+ 634              		.loc 1 122 59 view .LVU172
+ 635 0142 6608     		lsrs	r6, r4, #1
+ 636 0144 46EACC76 		orr	r6, r6, ip, lsl #31
+ 637 0148 4FEA6C07 		asr	r7, ip, #1
+ 122:Modules/src/ms5611.c ****             SENS2 += (11 * (TEMP + 1500) * (TEMP + 1500)) >> 1;
+ 638              		.loc 1 122 19 view .LVU173
+ 639 014c 1EEB060E 		adds	lr, lr, r6
+ 640              	.LVL43:
+ 122:Modules/src/ms5611.c ****             SENS2 += (11 * (TEMP + 1500) * (TEMP + 1500)) >> 1;
+ 641              		.loc 1 122 19 view .LVU174
+ 642 0150 029C     		ldr	r4, [sp, #8]
+ 643 0152 47EB0404 		adc	r4, r7, r4
+ 644 0156 0294     		str	r4, [sp, #8]
+ 645              	.LVL44:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s 			page 17
+
+
+ 646              	.L27:
+ 124:Modules/src/ms5611.c ****         TEMP -= T2;
+ 647              		.loc 1 124 9 is_stmt 1 view .LVU175
+ 125:Modules/src/ms5611.c ****         OFF -= OFF2;
+ 648              		.loc 1 125 9 view .LVU176
+ 125:Modules/src/ms5611.c ****         OFF -= OFF2;
+ 649              		.loc 1 125 13 is_stmt 0 view .LVU177
+ 650 0158 B0EB0800 		subs	r0, r0, r8
+ 651              	.LVL45:
+ 125:Modules/src/ms5611.c ****         OFF -= OFF2;
+ 652              		.loc 1 125 13 view .LVU178
+ 653 015c 019C     		ldr	r4, [sp, #4]
+ 654 015e 61EB0401 		sbc	r1, r1, r4
+ 655              	.LVL46:
+ 126:Modules/src/ms5611.c ****         SENS -= SENS2;
+ 656              		.loc 1 126 9 is_stmt 1 view .LVU179
+ 126:Modules/src/ms5611.c ****         SENS -= SENS2;
+ 657              		.loc 1 126 14 is_stmt 0 view .LVU180
+ 658 0162 B3EB0E03 		subs	r3, r3, lr
+ 659              	.LVL47:
+ 126:Modules/src/ms5611.c ****         SENS -= SENS2;
+ 660              		.loc 1 126 14 view .LVU181
+ 661 0166 029C     		ldr	r4, [sp, #8]
+ 662 0168 62EB0402 		sbc	r2, r2, r4
+ 663              	.LVL48:
+ 664              	.L26:
+ 126:Modules/src/ms5611.c ****         SENS -= SENS2;
+ 665              		.loc 1 126 14 view .LVU182
+ 666              	.LBE4:
+ 130:Modules/src/ms5611.c ****     float pressure    = (float)( (((D1 * SENS) >> 21) - OFF) >> 15 );  //单位为Pa, pa *100
+ 667              		.loc 1 130 5 is_stmt 1 view .LVU183
+ 130:Modules/src/ms5611.c ****     float pressure    = (float)( (((D1 * SENS) >> 21) - OFF) >> 15 );  //单位为Pa, pa *100
+ 668              		.loc 1 130 40 is_stmt 0 view .LVU184
+ 669 016c 059C     		ldr	r4, [sp, #20]
+ 670 016e A4FB0367 		umull	r6, r7, r4, r3
+ 671 0172 04FB0277 		mla	r7, r4, r2, r7
+ 130:Modules/src/ms5611.c ****     float pressure    = (float)( (((D1 * SENS) >> 21) - OFF) >> 15 );  //单位为Pa, pa *100
+ 672              		.loc 1 130 48 view .LVU185
+ 673 0176 730D     		lsrs	r3, r6, #21
+ 674              	.LVL49:
+ 130:Modules/src/ms5611.c ****     float pressure    = (float)( (((D1 * SENS) >> 21) - OFF) >> 15 );  //单位为Pa, pa *100
+ 675              		.loc 1 130 48 view .LVU186
+ 676 0178 43EAC723 		orr	r3, r3, r7, lsl #11
+ 677 017c 7A15     		asrs	r2, r7, #21
+ 130:Modules/src/ms5611.c ****     float pressure    = (float)( (((D1 * SENS) >> 21) - OFF) >> 15 );  //单位为Pa, pa *100
+ 678              		.loc 1 130 55 view .LVU187
+ 679 017e 181A     		subs	r0, r3, r0
+ 680              	.LVL50:
+ 130:Modules/src/ms5611.c ****     float pressure    = (float)( (((D1 * SENS) >> 21) - OFF) >> 15 );  //单位为Pa, pa *100
+ 681              		.loc 1 130 55 view .LVU188
+ 682 0180 62EB0101 		sbc	r1, r2, r1
+ 130:Modules/src/ms5611.c ****     float pressure    = (float)( (((D1 * SENS) >> 21) - OFF) >> 15 );  //单位为Pa, pa *100
+ 683              		.loc 1 130 62 view .LVU189
+ 684 0184 C00B     		lsrs	r0, r0, #15
+ 130:Modules/src/ms5611.c ****     float pressure    = (float)( (((D1 * SENS) >> 21) - OFF) >> 15 );  //单位为Pa, pa *100
+ 685              		.loc 1 130 11 view .LVU190
+ 686 0186 40EA4140 		orr	r0, r0, r1, lsl #17
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s 			page 18
+
+
+ 687 018a C913     		asrs	r1, r1, #15
+ 688 018c FFF7FEFF 		bl	__aeabi_l2f
+ 689              	.LVL51:
+ 130:Modules/src/ms5611.c ****     float pressure    = (float)( (((D1 * SENS) >> 21) - OFF) >> 15 );  //单位为Pa, pa *100
+ 690              		.loc 1 130 11 view .LVU191
+ 691 0190 07EE100A 		vmov	s14, r0
+ 692              	.LVL52:
+ 132:Modules/src/ms5611.c **** 	*alt = 44330.77f * (1.0f - pow((pressure/101325.0f), 0.1902632f));
+ 693              		.loc 1 132 2 is_stmt 1 view .LVU192
+ 132:Modules/src/ms5611.c **** 	*alt = 44330.77f * (1.0f - pow((pressure/101325.0f), 0.1902632f));
+ 694              		.loc 1 132 29 is_stmt 0 view .LVU193
+ 695 0194 DFED197A 		vldr.32	s15, .L30+44
+ 696 0198 C7EE277A 		vdiv.f32	s15, s14, s15
+ 697 019c 17EE900A 		vmov	r0, s15
+ 698              	.LVL53:
+ 132:Modules/src/ms5611.c **** 	*alt = 44330.77f * (1.0f - pow((pressure/101325.0f), 0.1902632f));
+ 699              		.loc 1 132 29 view .LVU194
+ 700 01a0 FFF7FEFF 		bl	__aeabi_f2d
+ 701              	.LVL54:
+ 132:Modules/src/ms5611.c **** 	*alt = 44330.77f * (1.0f - pow((pressure/101325.0f), 0.1902632f));
+ 702              		.loc 1 132 29 view .LVU195
+ 703 01a4 9FED0A1B 		vldr.64	d1, .L30
+ 704 01a8 41EC100B 		vmov	d0, r0, r1
+ 705 01ac FFF7FEFF 		bl	pow
+ 706              	.LVL55:
+ 707 01b0 53EC102B 		vmov	r2, r3, d0
+ 132:Modules/src/ms5611.c **** 	*alt = 44330.77f * (1.0f - pow((pressure/101325.0f), 0.1902632f));
+ 708              		.loc 1 132 27 view .LVU196
+ 709 01b4 0020     		movs	r0, #0
+ 710 01b6 1249     		ldr	r1, .L30+48
+ 711 01b8 FFF7FEFF 		bl	__aeabi_dsub
+ 712              	.LVL56:
+ 132:Modules/src/ms5611.c **** 	*alt = 44330.77f * (1.0f - pow((pressure/101325.0f), 0.1902632f));
+ 713              		.loc 1 132 19 view .LVU197
+ 714 01bc 06A3     		adr	r3, .L30+8
+ 715 01be D3E90023 		ldrd	r2, [r3]
+ 716 01c2 FFF7FEFF 		bl	__aeabi_dmul
+ 717              	.LVL57:
+ 718 01c6 FFF7FEFF 		bl	__aeabi_d2f
+ 719              	.LVL58:
+ 132:Modules/src/ms5611.c **** 	*alt = 44330.77f * (1.0f - pow((pressure/101325.0f), 0.1902632f));
+ 720              		.loc 1 132 7 view .LVU198
+ 721 01ca 009B     		ldr	r3, [sp]
+ 722 01cc 1860     		str	r0, [r3]	@ float
+ 133:Modules/src/ms5611.c ****     return true;
+ 723              		.loc 1 133 5 is_stmt 1 view .LVU199
+ 133:Modules/src/ms5611.c ****     return true;
+ 724              		.loc 1 133 12 is_stmt 0 view .LVU200
+ 725 01ce 20E7     		b	.L25
+ 726              	.L31:
+ 727              		.align	3
+ 728              	.L30:
+ 729 01d0 00000060 		.word	1610612736
+ 730 01d4 8B5AC83F 		.word	1070094987
+ 731 01d8 000000A0 		.word	-1610612736
+ 732 01dc 58A5E540 		.word	1088791896
+ 733 01e0 00000000 		.word	.LANCHOR5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s 			page 19
+
+
+ 734 01e4 00000000 		.word	.LANCHOR6
+ 735 01e8 00000000 		.word	.LANCHOR4
+ 736 01ec 00000000 		.word	.LANCHOR2
+ 737 01f0 00000000 		.word	.LANCHOR3
+ 738 01f4 00000000 		.word	.LANCHOR1
+ 739 01f8 24FAFFFF 		.word	-1500
+ 740 01fc 80E6C547 		.word	1204151936
+ 741 0200 0000F03F 		.word	1072693248
+ 742              		.cfi_endproc
+ 743              	.LFE141:
+ 745              		.section	.bss.OFF_t2,"aw",%nobits
+ 746              		.align	3
+ 747              		.set	.LANCHOR2,. + 0
+ 750              	OFF_t2:
+ 751 0000 00000000 		.space	8
+ 751      00000000 
+ 752              		.section	.bss.SENS_t2,"aw",%nobits
+ 753              		.align	3
+ 754              		.set	.LANCHOR1,. + 0
+ 757              	SENS_t2:
+ 758 0000 00000000 		.space	8
+ 758      00000000 
+ 759              		.section	.bss.TCO,"aw",%nobits
+ 760              		.align	1
+ 761              		.set	.LANCHOR4,. + 0
+ 764              	TCO:
+ 765 0000 0000     		.space	2
+ 766              		.section	.bss.TCS,"aw",%nobits
+ 767              		.align	1
+ 768              		.set	.LANCHOR3,. + 0
+ 771              	TCS:
+ 772 0000 0000     		.space	2
+ 773              		.section	.bss.TEMPSENS,"aw",%nobits
+ 774              		.align	1
+ 775              		.set	.LANCHOR6,. + 0
+ 778              	TEMPSENS:
+ 779 0000 0000     		.space	2
+ 780              		.section	.bss.TREF,"aw",%nobits
+ 781              		.align	1
+ 782              		.set	.LANCHOR5,. + 0
+ 785              	TREF:
+ 786 0000 0000     		.space	2
+ 787              		.section	.bss.buffer,"aw",%nobits
+ 788              		.align	2
+ 789              		.set	.LANCHOR7,. + 0
+ 792              	buffer:
+ 793 0000 000000   		.space	3
+ 794              		.section	.bss.command,"aw",%nobits
+ 795              		.set	.LANCHOR0,. + 0
+ 798              	command:
+ 799 0000 00       		.space	1
+ 800              		.text
+ 801              	.Letext0:
+ 802              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
+ 803              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 804              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 805              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s 			page 20
+
+
+ 806              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 807              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 808              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 809              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 810              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 811              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 812              		.file 12 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
+ 813              		.file 13 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
+ 814              		.file 14 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
+ 815              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
+ 816              		.file 16 "Modules/include/utils.h"
+ 817              		.file 17 "Inc/i2c.h"
+ 818              		.file 18 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
+ 819              		.file 19 "Modules/include/i2c1.h"
+ 820              		.file 20 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 821              		.file 21 "<built-in>"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s 			page 21
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 ms5611.c
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:18     .text.MS5611Init:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:26     .text.MS5611Init:00000000 MS5611Init
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:200    .text.MS5611Init:000000c4 $d
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:213    .text.MS5611ReadRawTemp:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:220    .text.MS5611ReadRawTemp:00000000 MS5611ReadRawTemp
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:292    .text.MS5611ReadRawTemp:00000048 $d
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:298    .text.MS5611ReadRawPress:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:305    .text.MS5611ReadRawPress:00000000 MS5611ReadRawPress
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:377    .text.MS5611ReadRawPress:00000048 $d
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:387    .text.MS5611Calculate:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:394    .text.MS5611Calculate:00000000 MS5611Calculate
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:657    .text.MS5611Calculate:000001b8 $d
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:675    .text.MS5611ReadAlt:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:682    .text.MS5611ReadAlt:00000000 MS5611ReadAlt
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:700    .text.MS5611ReadAlt:00000008 $d
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:705    .bss.OFF_t2:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:709    .bss.OFF_t2:00000000 OFF_t2
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:712    .bss.SENS_t2:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:716    .bss.SENS_t2:00000000 SENS_t2
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:719    .bss.TCO:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:723    .bss.TCO:00000000 TCO
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:726    .bss.TCS:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:730    .bss.TCS:00000000 TCS
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:733    .bss.TEMPSENS:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:737    .bss.TEMPSENS:00000000 TEMPSENS
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:740    .bss.TREF:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:744    .bss.TREF:00000000 TREF
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:747    .bss.altitude:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:751    .bss.altitude:00000000 altitude
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:754    .bss.buffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:758    .bss.buffer:00000000 buffer
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:764    .bss.command:00000000 command
-C:\Users\luoha\AppData\Local\Temp\cco5eouV.s:765    .bss.command:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:18     .text.MS5611Init:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:26     .text.MS5611Init:00000000 MS5611Init
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:200    .text.MS5611Init:000000c4 $d
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:213    .text.MS5611ReadRawTemp:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:220    .text.MS5611ReadRawTemp:00000000 MS5611ReadRawTemp
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:304    .text.MS5611ReadRawTemp:00000050 $d
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:310    .text.MS5611ReadRawPress:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:317    .text.MS5611ReadRawPress:00000000 MS5611ReadRawPress
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:401    .text.MS5611ReadRawPress:00000050 $d
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:412    .text.MS5611ReadAlt:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:419    .text.MS5611ReadAlt:00000000 MS5611ReadAlt
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:729    .text.MS5611ReadAlt:000001d0 $d
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:746    .bss.OFF_t2:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:750    .bss.OFF_t2:00000000 OFF_t2
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:753    .bss.SENS_t2:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:757    .bss.SENS_t2:00000000 SENS_t2
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:760    .bss.TCO:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:764    .bss.TCO:00000000 TCO
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:767    .bss.TCS:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:771    .bss.TCS:00000000 TCS
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:774    .bss.TEMPSENS:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:778    .bss.TEMPSENS:00000000 TEMPSENS
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:781    .bss.TREF:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:785    .bss.TREF:00000000 TREF
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:788    .bss.buffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:792    .bss.buffer:00000000 buffer
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:798    .bss.command:00000000 command
+C:\Users\luoha\AppData\Local\Temp\cc0QzH2F.s:799    .bss.command:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_I2C_IsDeviceReady
@@ -1055,6 +1198,7 @@ vTaskDelay
 I2C1MenRead
 hi2c1
 I2C1Read
+__aeabi_l2f
 __aeabi_f2d
 __aeabi_dsub
 __aeabi_dmul

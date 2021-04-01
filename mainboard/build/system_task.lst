@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -32,7 +32,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s 			page 1
   27              		.thumb_func
   28              		.fpu fpv4-sp-d16
   30              	SystemLaunch:
-  31              	.LFB171:
+  31              	.LFB138:
   32              		.file 1 "Modules/src/system_task.c"
    1:Modules/src/system_task.c **** #include "system_task.h"
    2:Modules/src/system_task.c **** 
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s 			page 1
   44              		.loc 1 10 5 view .LVU1
   45 0004 074B     		ldr	r3, .L3
   46 0006 0293     		str	r3, [sp, #8]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s 			page 2
 
 
   47 0008 074B     		ldr	r3, .L3+4
@@ -86,7 +86,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s 			page 1
   68 002c 00000000 		.word	.LC0
   69 0030 00000000 		.word	SystemTask
   70              		.cfi_endproc
-  71              	.LFE171:
+  71              	.LFE138:
   73              		.section	.rodata.SystemInitiate.str1.4,"aMS",%progbits,1
   74              		.align	2
   75              	.LC1:
@@ -103,7 +103,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s 			page 1
   82              		.thumb_func
   83              		.fpu fpv4-sp-d16
   85              	SystemInitiate:
-  86              	.LFB173:
+  86              	.LFB140:
   12:Modules/src/system_task.c **** 
   13:Modules/src/system_task.c **** void SystemTask(void *param) {
   14:Modules/src/system_task.c ****     SystemInitiate();
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s 			page 1
   23:Modules/src/system_task.c ****     //     HAL_UART_Transmit_DMA(&huart1, buffer, sizeof(buffer));
   24:Modules/src/system_task.c ****     //     vTaskDelay(pdMS_TO_TICKS(1000));
   25:Modules/src/system_task.c ****     // }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s 			page 3
 
 
   26:Modules/src/system_task.c **** }
@@ -178,13 +178,13 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s 			page 1
  124              	.L10:
  125              		.align	2
  126              	.L9:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s 			page 4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s 			page 4
 
 
  127 001c 00000000 		.word	.LANCHOR2
  128 0020 00000000 		.word	.LC1
  129              		.cfi_endproc
- 130              	.LFE173:
+ 130              	.LFE140:
  132              		.section	.text.SystemTask,"ax",%progbits
  133              		.align	1
  134              		.syntax unified
@@ -193,7 +193,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s 			page 1
  137              		.fpu fpv4-sp-d16
  139              	SystemTask:
  140              	.LVL5:
- 141              	.LFB172:
+ 141              	.LFB139:
   13:Modules/src/system_task.c ****     SystemInitiate();
  142              		.loc 1 13 30 is_stmt 1 view -0
  143              		.cfi_startproc
@@ -223,7 +223,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s 			page 1
  162              		.loc 1 16 10 discriminator 1 view .LVU20
  163 000e FAE7     		b	.L12
  164              		.cfi_endproc
- 165              	.LFE172:
+ 165              	.LFE139:
  167              		.section	.text.SystemWaitStart,"ax",%progbits
  168              		.align	1
  169              		.global	SystemWaitStart
@@ -232,13 +232,13 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s 			page 1
  172              		.thumb_func
  173              		.fpu fpv4-sp-d16
  175              	SystemWaitStart:
- 176              	.LFB174:
+ 176              	.LFB141:
   36:Modules/src/system_task.c **** 
   37:Modules/src/system_task.c **** 
   38:Modules/src/system_task.c **** void SystemWaitStart(void) {
  177              		.loc 1 38 28 view -0
  178              		.cfi_startproc
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s 			page 5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s 			page 5
 
 
  179              		@ args = 0, pretend = 0, frame = 0
@@ -275,7 +275,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s 			page 1
  204              	.L18:
  205 0014 00000000 		.word	.LANCHOR2
  206              		.cfi_endproc
- 207              	.LFE174:
+ 207              	.LFE141:
  209              		.section	.bss.is_init,"aw",%nobits
  210              		.set	.LANCHOR2,. + 0
  213              	is_init:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s 			page 1
  228      00000000 
  228      00000000 
  228      00000000 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s 			page 6
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s 			page 6
 
 
  229              		.text
@@ -321,35 +321,35 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s 			page 1
  246              		.file 17 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
  247              		.file 18 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
  248              		.file 19 "Modules/include/utils.h"
- 249              		.file 20 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\math.h"
- 250              		.file 21 "Inc/i2c.h"
- 251              		.file 22 "Modules/include/sensors.h"
- 252              		.file 23 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 249              		.file 20 "Inc/i2c.h"
+ 250              		.file 21 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\math.h"
+ 251              		.file 22 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 252              		.file 23 "Modules/include/sensors.h"
  253              		.file 24 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\stdio.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s 			page 7
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 system_task.c
-C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s:18     .rodata.SystemLaunch.str1.4:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s:22     .text.SystemLaunch:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s:30     .text.SystemLaunch:00000000 SystemLaunch
-C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s:66     .text.SystemLaunch:00000024 $d
-C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s:139    .text.SystemTask:00000000 SystemTask
-C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s:74     .rodata.SystemInitiate.str1.4:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s:78     .text.SystemInitiate:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s:85     .text.SystemInitiate:00000000 SystemInitiate
-C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s:127    .text.SystemInitiate:0000001c $d
-C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s:133    .text.SystemTask:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s:168    .text.SystemWaitStart:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s:175    .text.SystemWaitStart:00000000 SystemWaitStart
-C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s:205    .text.SystemWaitStart:00000014 $d
-C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s:213    .bss.is_init:00000000 is_init
-C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s:214    .bss.is_init:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s:216    .bss.osSys_system_taskStackBuffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s:220    .bss.osSys_system_taskStackBuffer:00000000 osSys_system_taskStackBuffer
-C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s:223    .bss.osSys_system_taskTaskBuffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccoqae8C.s:227    .bss.osSys_system_taskTaskBuffer:00000000 osSys_system_taskTaskBuffer
+C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:18     .rodata.SystemLaunch.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:22     .text.SystemLaunch:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:30     .text.SystemLaunch:00000000 SystemLaunch
+C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:66     .text.SystemLaunch:00000024 $d
+C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:139    .text.SystemTask:00000000 SystemTask
+C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:74     .rodata.SystemInitiate.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:78     .text.SystemInitiate:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:85     .text.SystemInitiate:00000000 SystemInitiate
+C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:127    .text.SystemInitiate:0000001c $d
+C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:133    .text.SystemTask:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:168    .text.SystemWaitStart:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:175    .text.SystemWaitStart:00000000 SystemWaitStart
+C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:205    .text.SystemWaitStart:00000014 $d
+C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:213    .bss.is_init:00000000 is_init
+C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:214    .bss.is_init:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:216    .bss.osSys_system_taskStackBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:220    .bss.osSys_system_taskStackBuffer:00000000 osSys_system_taskStackBuffer
+C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:223    .bss.osSys_system_taskTaskBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:227    .bss.osSys_system_taskTaskBuffer:00000000 osSys_system_taskTaskBuffer
 
 UNDEFINED SYMBOLS
 xTaskCreateStatic

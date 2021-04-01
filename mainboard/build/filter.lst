@@ -1,0 +1,418 @@
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccUfuGyS.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"filter.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.Lowpass2Init,"ax",%progbits
+  18              		.align	1
+  19              		.global	Lowpass2Init
+  20              		.arch armv7e-m
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  24              		.fpu fpv4-sp-d16
+  26              	Lowpass2Init:
+  27              	.LVL0:
+  28              	.LFB138:
+  29              		.file 1 "Modules/src/filter.c"
+   1:Modules/src/filter.c **** #include "filter.h"
+   2:Modules/src/filter.c **** 
+   3:Modules/src/filter.c **** void Lowpass2Init(Lowpass2Data* lowpass2_data, float sample_freq, float cutoff_freq) {
+  30              		.loc 1 3 86 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+   4:Modules/src/filter.c ****     if (lowpass2_data == NULL || cutoff_freq <= 0.0f) {
+  34              		.loc 1 4 5 view .LVU1
+  35              		.loc 1 4 8 is_stmt 0 view .LVU2
+  36 0000 C0B3     		cbz	r0, .L4
+   3:Modules/src/filter.c ****     if (lowpass2_data == NULL || cutoff_freq <= 0.0f) {
+  37              		.loc 1 3 86 discriminator 1 view .LVU3
+  38 0002 10B5     		push	{r4, lr}
+  39              	.LCFI0:
+  40              		.cfi_def_cfa_offset 8
+  41              		.cfi_offset 4, -8
+  42              		.cfi_offset 14, -4
+  43 0004 0446     		mov	r4, r0
+  44              		.loc 1 4 31 discriminator 1 view .LVU4
+  45 0006 F5EEC00A 		vcmpe.f32	s1, #0
+  46 000a F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+  47 000e 30D9     		bls	.L1
+   5:Modules/src/filter.c ****         return;
+   6:Modules/src/filter.c ****     }
+   7:Modules/src/filter.c **** 
+   8:Modules/src/filter.c ****     // ω_cut = 2pi * cutoff_freq
+   9:Modules/src/filter.c ****     // Ts = 1 / sample_freq
+  10:Modules/src/filter.c ****     // K=tan(ω_cut * Ts / 2) = tan((2pi * cutoff_freq) / (2 * sample_freq)) = tan((pi * cutoff_fre
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccUfuGyS.s 			page 2
+
+
+  11:Modules/src/filter.c ****     float K = tanf(PI * cutoff_freq / sample_freq);
+  48              		.loc 1 11 5 is_stmt 1 view .LVU5
+  49              		.loc 1 11 23 is_stmt 0 view .LVU6
+  50 0010 DFED197A 		vldr.32	s15, .L7
+  51 0014 60EEA70A 		vmul.f32	s1, s1, s15
+  52              	.LVL1:
+  53              		.loc 1 11 15 view .LVU7
+  54 0018 80EE800A 		vdiv.f32	s0, s1, s0
+  55              	.LVL2:
+  56              		.loc 1 11 15 view .LVU8
+  57 001c FFF7FEFF 		bl	tanf
+  58              	.LVL3:
+  12:Modules/src/filter.c ****     // c = (K^2 + K/Q + 1), Q = 1 / sqrt(2)
+  13:Modules/src/filter.c ****     float c                        = 1.0f + 1.41421356237f * K + K * K;
+  59              		.loc 1 13 5 is_stmt 1 view .LVU9
+  60              		.loc 1 13 60 is_stmt 0 view .LVU10
+  61 0020 9FED167A 		vldr.32	s14, .L7+4
+  62 0024 60EE076A 		vmul.f32	s13, s0, s14
+  63              		.loc 1 13 43 view .LVU11
+  64 0028 B7EE007A 		vmov.f32	s14, #1.0e+0
+  65 002c 76EE877A 		vadd.f32	s15, s13, s14
+  66              		.loc 1 13 68 view .LVU12
+  67 0030 20EE000A 		vmul.f32	s0, s0, s0
+  68              	.LVL4:
+  69              		.loc 1 13 11 view .LVU13
+  70 0034 77EE807A 		vadd.f32	s15, s15, s0
+  71              	.LVL5:
+  14:Modules/src/filter.c ****     lowpass2_data->b0              = K * K / c;
+  72              		.loc 1 14 5 is_stmt 1 view .LVU14
+  73              		.loc 1 14 44 is_stmt 0 view .LVU15
+  74 0038 80EE276A 		vdiv.f32	s12, s0, s15
+  75              		.loc 1 14 36 view .LVU16
+  76 003c 84ED026A 		vstr.32	s12, [r4, #8]
+  15:Modules/src/filter.c ****     lowpass2_data->b1              = 2.0f * lowpass2_data->b0;
+  77              		.loc 1 15 5 is_stmt 1 view .LVU17
+  78              		.loc 1 15 43 is_stmt 0 view .LVU18
+  79 0040 76EE065A 		vadd.f32	s11, s12, s12
+  80              		.loc 1 15 36 view .LVU19
+  81 0044 C4ED035A 		vstr.32	s11, [r4, #12]
+  16:Modules/src/filter.c ****     lowpass2_data->b2              = lowpass2_data->b0;
+  82              		.loc 1 16 5 is_stmt 1 view .LVU20
+  83              		.loc 1 16 36 is_stmt 0 view .LVU21
+  84 0048 84ED046A 		vstr.32	s12, [r4, #16]
+  17:Modules/src/filter.c ****     lowpass2_data->a1              = 2.0f * (K * K - 1.0f) / c;
+  85              		.loc 1 17 5 is_stmt 1 view .LVU22
+  86              		.loc 1 17 52 is_stmt 0 view .LVU23
+  87 004c 30EE476A 		vsub.f32	s12, s0, s14
+  88              		.loc 1 17 43 view .LVU24
+  89 0050 36EE066A 		vadd.f32	s12, s12, s12
+  90              		.loc 1 17 60 view .LVU25
+  91 0054 C6EE275A 		vdiv.f32	s11, s12, s15
+  92              		.loc 1 17 36 view .LVU26
+  93 0058 C4ED005A 		vstr.32	s11, [r4]
+  18:Modules/src/filter.c ****     lowpass2_data->a2              = (1.0f - 1.41421356237f * K + K * K) / c;
+  94              		.loc 1 18 5 is_stmt 1 view .LVU27
+  95              		.loc 1 18 44 is_stmt 0 view .LVU28
+  96 005c 37EE667A 		vsub.f32	s14, s14, s13
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccUfuGyS.s 			page 3
+
+
+  97              		.loc 1 18 65 view .LVU29
+  98 0060 30EE070A 		vadd.f32	s0, s0, s14
+  99              		.loc 1 18 74 view .LVU30
+ 100 0064 80EE277A 		vdiv.f32	s14, s0, s15
+ 101              		.loc 1 18 36 view .LVU31
+ 102 0068 84ED017A 		vstr.32	s14, [r4, #4]
+  19:Modules/src/filter.c ****     lowpass2_data->delay_element_1 = 0.0f;
+ 103              		.loc 1 19 5 is_stmt 1 view .LVU32
+ 104              		.loc 1 19 36 is_stmt 0 view .LVU33
+ 105 006c 0023     		movs	r3, #0
+ 106 006e 6361     		str	r3, [r4, #20]	@ float
+  20:Modules/src/filter.c ****     lowpass2_data->delay_element_2 = 0.0f;
+ 107              		.loc 1 20 5 is_stmt 1 view .LVU34
+ 108              		.loc 1 20 36 is_stmt 0 view .LVU35
+ 109 0070 A361     		str	r3, [r4, #24]	@ float
+ 110              	.LVL6:
+ 111              	.L1:
+  21:Modules/src/filter.c **** }
+ 112              		.loc 1 21 1 view .LVU36
+ 113 0072 10BD     		pop	{r4, pc}
+ 114              	.LVL7:
+ 115              	.L4:
+ 116              	.LCFI1:
+ 117              		.cfi_def_cfa_offset 0
+ 118              		.cfi_restore 4
+ 119              		.cfi_restore 14
+ 120              		.loc 1 21 1 view .LVU37
+ 121 0074 7047     		bx	lr
+ 122              	.L8:
+ 123 0076 00BF     		.align	2
+ 124              	.L7:
+ 125 0078 DB0F4940 		.word	1078530011
+ 126 007c F304B53F 		.word	1068827891
+ 127              		.cfi_endproc
+ 128              	.LFE138:
+ 130              		.section	.text.Lowpass2Apply,"ax",%progbits
+ 131              		.align	1
+ 132              		.global	Lowpass2Apply
+ 133              		.syntax unified
+ 134              		.thumb
+ 135              		.thumb_func
+ 136              		.fpu fpv4-sp-d16
+ 138              	Lowpass2Apply:
+ 139              	.LVL8:
+ 140              	.LFB139:
+  22:Modules/src/filter.c **** 
+  23:Modules/src/filter.c **** float Lowpass2Apply(Lowpass2Data* lowpass2_data, float sample) {
+ 141              		.loc 1 23 64 is_stmt 1 view -0
+ 142              		.cfi_startproc
+ 143              		@ args = 0, pretend = 0, frame = 0
+ 144              		@ frame_needed = 0, uses_anonymous_args = 0
+ 145              		@ link register save eliminated.
+  24:Modules/src/filter.c ****     // w[n] = x[n] - a1 * w[n-1] - a2 * w[n-2]
+  25:Modules/src/filter.c ****     float delay_element_0 = sample - lowpass2_data->delay_element_1 * lowpass2_data->a1 - lowpass2_
+ 146              		.loc 1 25 5 view .LVU39
+ 147              		.loc 1 25 51 is_stmt 0 view .LVU40
+ 148 0000 D0ED056A 		vldr.32	s13, [r0, #20]
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccUfuGyS.s 			page 4
+
+
+ 149              		.loc 1 25 84 view .LVU41
+ 150 0004 D0ED007A 		vldr.32	s15, [r0]
+ 151              		.loc 1 25 69 view .LVU42
+ 152 0008 66EEA77A 		vmul.f32	s15, s13, s15
+ 153              		.loc 1 25 36 view .LVU43
+ 154 000c 70EE677A 		vsub.f32	s15, s0, s15
+ 155              		.loc 1 25 104 view .LVU44
+ 156 0010 90ED067A 		vldr.32	s14, [r0, #24]
+ 157              		.loc 1 25 137 view .LVU45
+ 158 0014 90ED016A 		vldr.32	s12, [r0, #4]
+ 159              		.loc 1 25 122 view .LVU46
+ 160 0018 27EE066A 		vmul.f32	s12, s14, s12
+ 161              		.loc 1 25 11 view .LVU47
+ 162 001c 77EEC67A 		vsub.f32	s15, s15, s12
+ 163              	.LVL9:
+  26:Modules/src/filter.c **** 
+  27:Modules/src/filter.c ****     if (!isfinite(delay_element_0)) {
+ 164              		.loc 1 27 5 is_stmt 1 view .LVU48
+ 165              		.loc 1 27 10 is_stmt 0 view .LVU49
+ 166 0020 F0EEE75A 		vabs.f32	s11, s15
+ 167              		.loc 1 27 8 view .LVU50
+ 168 0024 9FED0E6A 		vldr.32	s12, .L11
+ 169 0028 F4EE465A 		vcmp.f32	s11, s12
+ 170 002c F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 171 0030 01D8     		bhi	.L10
+  25:Modules/src/filter.c **** 
+ 172              		.loc 1 25 11 view .LVU51
+ 173 0032 B0EE670A 		vmov.f32	s0, s15
+ 174              	.LVL10:
+ 175              	.L10:
+  28:Modules/src/filter.c ****         // don't allow bad values to propigate via the filter
+  29:Modules/src/filter.c ****         delay_element_0 = sample;
+  30:Modules/src/filter.c ****     }
+  31:Modules/src/filter.c **** 
+  32:Modules/src/filter.c ****     // y[n] = b0 * w[n] + b1 * w[n-1] + b2 * w[n-2]
+  33:Modules/src/filter.c ****     float output = delay_element_0 * lowpass2_data->b0 + lowpass2_data->delay_element_1 * lowpass2_
+ 176              		.loc 1 33 5 is_stmt 1 view .LVU52
+ 177              		.loc 1 33 51 is_stmt 0 view .LVU53
+ 178 0036 D0ED027A 		vldr.32	s15, [r0, #8]
+ 179              		.loc 1 33 36 view .LVU54
+ 180 003a 67EE807A 		vmul.f32	s15, s15, s0
+ 181              		.loc 1 33 104 view .LVU55
+ 182 003e 90ED036A 		vldr.32	s12, [r0, #12]
+ 183              		.loc 1 33 89 view .LVU56
+ 184 0042 26EE866A 		vmul.f32	s12, s13, s12
+ 185              		.loc 1 33 56 view .LVU57
+ 186 0046 77EE867A 		vadd.f32	s15, s15, s12
+ 187              		.loc 1 33 157 view .LVU58
+ 188 004a 90ED046A 		vldr.32	s12, [r0, #16]
+ 189              		.loc 1 33 142 view .LVU59
+ 190 004e 27EE067A 		vmul.f32	s14, s14, s12
+ 191              	.LVL11:
+  34:Modules/src/filter.c **** 
+  35:Modules/src/filter.c ****     lowpass2_data->delay_element_2 = lowpass2_data->delay_element_1;
+ 192              		.loc 1 35 5 is_stmt 1 view .LVU60
+ 193              		.loc 1 35 36 is_stmt 0 view .LVU61
+ 194 0052 C0ED066A 		vstr.32	s13, [r0, #24]
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccUfuGyS.s 			page 5
+
+
+  36:Modules/src/filter.c ****     lowpass2_data->delay_element_1 = delay_element_0;
+ 195              		.loc 1 36 5 is_stmt 1 view .LVU62
+ 196              		.loc 1 36 36 is_stmt 0 view .LVU63
+ 197 0056 80ED050A 		vstr.32	s0, [r0, #20]
+  37:Modules/src/filter.c **** 
+  38:Modules/src/filter.c ****     return output;
+ 198              		.loc 1 38 5 is_stmt 1 view .LVU64
+  39:Modules/src/filter.c **** }
+ 199              		.loc 1 39 1 is_stmt 0 view .LVU65
+ 200 005a 37EE870A 		vadd.f32	s0, s15, s14
+ 201              	.LVL12:
+ 202              		.loc 1 39 1 view .LVU66
+ 203 005e 7047     		bx	lr
+ 204              	.L12:
+ 205              		.align	2
+ 206              	.L11:
+ 207 0060 FFFF7F7F 		.word	2139095039
+ 208              		.cfi_endproc
+ 209              	.LFE139:
+ 211              		.section	.text.Lowpass2Reset,"ax",%progbits
+ 212              		.align	1
+ 213              		.global	Lowpass2Reset
+ 214              		.syntax unified
+ 215              		.thumb
+ 216              		.thumb_func
+ 217              		.fpu fpv4-sp-d16
+ 219              	Lowpass2Reset:
+ 220              	.LVL13:
+ 221              	.LFB140:
+  40:Modules/src/filter.c **** 
+  41:Modules/src/filter.c **** float Lowpass2Reset(Lowpass2Data* lowpass2_data, float sample) {
+ 222              		.loc 1 41 64 is_stmt 1 view -0
+ 223              		.cfi_startproc
+ 224              		@ args = 0, pretend = 0, frame = 0
+ 225              		@ frame_needed = 0, uses_anonymous_args = 0
+ 226              		.loc 1 41 64 is_stmt 0 view .LVU68
+ 227 0000 08B5     		push	{r3, lr}
+ 228              	.LCFI2:
+ 229              		.cfi_def_cfa_offset 8
+ 230              		.cfi_offset 3, -8
+ 231              		.cfi_offset 14, -4
+  42:Modules/src/filter.c ****     float dval                     = sample / (lowpass2_data->b0 + lowpass2_data->b1 + lowpass2_dat
+ 232              		.loc 1 42 5 is_stmt 1 view .LVU69
+ 233              		.loc 1 42 61 is_stmt 0 view .LVU70
+ 234 0002 D0ED027A 		vldr.32	s15, [r0, #8]
+ 235              		.loc 1 42 81 view .LVU71
+ 236 0006 90ED037A 		vldr.32	s14, [r0, #12]
+ 237              		.loc 1 42 66 view .LVU72
+ 238 000a 77EE877A 		vadd.f32	s15, s15, s14
+ 239              		.loc 1 42 101 view .LVU73
+ 240 000e 90ED047A 		vldr.32	s14, [r0, #16]
+ 241              		.loc 1 42 86 view .LVU74
+ 242 0012 77EE877A 		vadd.f32	s15, s15, s14
+ 243              		.loc 1 42 11 view .LVU75
+ 244 0016 80EE277A 		vdiv.f32	s14, s0, s15
+ 245              	.LVL14:
+  43:Modules/src/filter.c ****     lowpass2_data->delay_element_1 = dval;
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccUfuGyS.s 			page 6
+
+
+ 246              		.loc 1 43 5 is_stmt 1 view .LVU76
+ 247              		.loc 1 43 36 is_stmt 0 view .LVU77
+ 248 001a 80ED057A 		vstr.32	s14, [r0, #20]
+  44:Modules/src/filter.c ****     lowpass2_data->delay_element_2 = dval;
+ 249              		.loc 1 44 5 is_stmt 1 view .LVU78
+ 250              		.loc 1 44 36 is_stmt 0 view .LVU79
+ 251 001e 80ED067A 		vstr.32	s14, [r0, #24]
+  45:Modules/src/filter.c ****     return Lowpass2Apply(lowpass2_data, sample);
+ 252              		.loc 1 45 5 is_stmt 1 view .LVU80
+ 253              		.loc 1 45 12 is_stmt 0 view .LVU81
+ 254 0022 FFF7FEFF 		bl	Lowpass2Apply
+ 255              	.LVL15:
+  46:Modules/src/filter.c **** }
+ 256              		.loc 1 46 1 view .LVU82
+ 257 0026 08BD     		pop	{r3, pc}
+ 258              		.cfi_endproc
+ 259              	.LFE140:
+ 261              		.section	.text.Lowpass2Apply3Axis,"ax",%progbits
+ 262              		.align	1
+ 263              		.global	Lowpass2Apply3Axis
+ 264              		.syntax unified
+ 265              		.thumb
+ 266              		.thumb_func
+ 267              		.fpu fpv4-sp-d16
+ 269              	Lowpass2Apply3Axis:
+ 270              	.LVL16:
+ 271              	.LFB141:
+  47:Modules/src/filter.c **** 
+  48:Modules/src/filter.c **** void Lowpass2Apply3Axis(Lowpass2Data* lowpass2_data, float *data) {
+ 272              		.loc 1 48 67 is_stmt 1 view -0
+ 273              		.cfi_startproc
+ 274              		@ args = 0, pretend = 0, frame = 0
+ 275              		@ frame_needed = 0, uses_anonymous_args = 0
+ 276              		.loc 1 48 67 is_stmt 0 view .LVU84
+ 277 0000 38B5     		push	{r3, r4, r5, lr}
+ 278              	.LCFI3:
+ 279              		.cfi_def_cfa_offset 16
+ 280              		.cfi_offset 3, -16
+ 281              		.cfi_offset 4, -12
+ 282              		.cfi_offset 5, -8
+ 283              		.cfi_offset 14, -4
+ 284 0002 0546     		mov	r5, r0
+ 285 0004 0C46     		mov	r4, r1
+  49:Modules/src/filter.c ****     data[0] = Lowpass2Apply(&lowpass2_data[0], data[0]);
+ 286              		.loc 1 49 5 is_stmt 1 view .LVU85
+ 287              		.loc 1 49 15 is_stmt 0 view .LVU86
+ 288 0006 91ED000A 		vldr.32	s0, [r1]
+ 289 000a FFF7FEFF 		bl	Lowpass2Apply
+ 290              	.LVL17:
+ 291              		.loc 1 49 13 view .LVU87
+ 292 000e 84ED000A 		vstr.32	s0, [r4]
+  50:Modules/src/filter.c ****     data[1] = Lowpass2Apply(&lowpass2_data[1], data[1]);
+ 293              		.loc 1 50 5 is_stmt 1 view .LVU88
+ 294              		.loc 1 50 15 is_stmt 0 view .LVU89
+ 295 0012 94ED010A 		vldr.32	s0, [r4, #4]
+ 296 0016 05F11C00 		add	r0, r5, #28
+ 297 001a FFF7FEFF 		bl	Lowpass2Apply
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccUfuGyS.s 			page 7
+
+
+ 298              	.LVL18:
+ 299              		.loc 1 50 13 view .LVU90
+ 300 001e 84ED010A 		vstr.32	s0, [r4, #4]
+  51:Modules/src/filter.c ****     data[2] = Lowpass2Apply(&lowpass2_data[2], data[2]);
+ 301              		.loc 1 51 5 is_stmt 1 view .LVU91
+ 302              		.loc 1 51 15 is_stmt 0 view .LVU92
+ 303 0022 94ED020A 		vldr.32	s0, [r4, #8]
+ 304 0026 05F13800 		add	r0, r5, #56
+ 305 002a FFF7FEFF 		bl	Lowpass2Apply
+ 306              	.LVL19:
+ 307              		.loc 1 51 13 view .LVU93
+ 308 002e 84ED020A 		vstr.32	s0, [r4, #8]
+  52:Modules/src/filter.c **** }...
+ 309              		.loc 1 52 1 view .LVU94
+ 310 0032 38BD     		pop	{r3, r4, r5, pc}
+ 311              		.loc 1 52 1 view .LVU95
+ 312              		.cfi_endproc
+ 313              	.LFE141:
+ 315              		.text
+ 316              	.Letext0:
+ 317              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
+ 318              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
+ 319              		.file 4 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
+ 320              		.file 5 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\std
+ 321              		.file 6 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
+ 322              		.file 7 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\math.h"
+ 323              		.file 8 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 324              		.file 9 "Inc/FreeRTOSConfig.h"
+ 325              		.file 10 "Drivers/CMSIS/Include/core_cm4.h"
+ 326              		.file 11 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 327              		.file 12 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 328              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 329              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 330              		.file 15 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 331              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 332              		.file 17 "Modules/include/utils.h"
+ 333              		.file 18 "Modules/include/filter.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccUfuGyS.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 filter.c
+C:\Users\luoha\AppData\Local\Temp\ccUfuGyS.s:18     .text.Lowpass2Init:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccUfuGyS.s:26     .text.Lowpass2Init:00000000 Lowpass2Init
+C:\Users\luoha\AppData\Local\Temp\ccUfuGyS.s:125    .text.Lowpass2Init:00000078 $d
+C:\Users\luoha\AppData\Local\Temp\ccUfuGyS.s:131    .text.Lowpass2Apply:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccUfuGyS.s:138    .text.Lowpass2Apply:00000000 Lowpass2Apply
+C:\Users\luoha\AppData\Local\Temp\ccUfuGyS.s:207    .text.Lowpass2Apply:00000060 $d
+C:\Users\luoha\AppData\Local\Temp\ccUfuGyS.s:212    .text.Lowpass2Reset:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccUfuGyS.s:219    .text.Lowpass2Reset:00000000 Lowpass2Reset
+C:\Users\luoha\AppData\Local\Temp\ccUfuGyS.s:262    .text.Lowpass2Apply3Axis:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccUfuGyS.s:269    .text.Lowpass2Apply3Axis:00000000 Lowpass2Apply3Axis
+
+UNDEFINED SYMBOLS
+tanf

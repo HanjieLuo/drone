@@ -18,9 +18,9 @@ static uint16_t TCO;       // Temperature coefficient of pressure offset
 static uint16_t TREF;      // Reference temperature
 static uint16_t TEMPSENS;  // Temperature coefficient of the temperature
 
-static int32_t temperature;  //° *100
-static int32_t pressure;     //pa *100
-static float altitude;       //m
+// static int32_t temperature;  //° *100
+// static int32_t pressure;     //pa *100
+// static float altitude;       //m
 
 bool MS5611Init(void) {
     if (HAL_I2C_IsDeviceReady(&hi2c1, MS5611_ADDR, 10, 1000) != HAL_OK) {
@@ -62,45 +62,52 @@ bool MS5611Init(void) {
     return true;
 }
 
-void MS5611ReadRawTemp(uint32_t *value) {
+bool MS5611ReadRawTemp(uint32_t *value) {
     command = MS5611_D2_OSR_4096;
-    I2C1Write(MS5611_ADDR, &command, 1);
-    // if (!I2C1Write(MS5611_ADDR, &command, 1)) {return false;}
+    // I2C1Write(MS5611_ADDR, &command, 1);
+    if (!I2C1Write(MS5611_ADDR, &command, 1)) {return false;}
 
     vTaskDelay(pdMS_TO_TICKS(MS5611_CONVERSION_OSR_4096));
 
     command = MS5611_OSR_256;
-    I2C1Write(MS5611_ADDR, &command, 1);
-    I2C1Read(MS5611_ADDR, buffer, 3);
-    // if (!I2C1Write(MS5611_ADDR, &command, 1)) { return false;}
-    // if (!I2C1Read(MS5611_ADDR, buffer, 3)) { return false;}
+    // I2C1Write(MS5611_ADDR, &command, 1);
+    // I2C1Read(MS5611_ADDR, buffer, 3);
+    if (!I2C1Write(MS5611_ADDR, &command, 1)) { return false;}
+    if (!I2C1Read(MS5611_ADDR, buffer, 3)) { return false;}
 
     *value = (buffer[0] << 16) | (buffer[1] << 8) | buffer[2];
+    return true;
 }
 
-void MS5611ReadRawPress(uint32_t *value) {
+bool MS5611ReadRawPress(uint32_t *value) {
     command = MS5611_D1_OSR_4096;
-    I2C1Write(MS5611_ADDR, &command, 1);
+    // I2C1Write(MS5611_ADDR, &command, 1);
+    if (!I2C1Write(MS5611_ADDR, &command, 1)) {return false;}
 
     vTaskDelay(pdMS_TO_TICKS(MS5611_CONVERSION_OSR_4096));
 
     command = MS5611_OSR_256;
-    I2C1Write(MS5611_ADDR, &command, 1);
-    I2C1Read(MS5611_ADDR, buffer, 3);
+    // I2C1Write(MS5611_ADDR, &command, 1);
+    // I2C1Read(MS5611_ADDR, buffer, 3);
+    if (!I2C1Write(MS5611_ADDR, &command, 1)) {return false;}
+    if (!I2C1Read(MS5611_ADDR, buffer, 3)) {return false;}
 
     *value = (buffer[0] << 16) | (buffer[1] << 8) | buffer[2];
+    return true;
 }
 
-void MS5611Calculate(void) {
+bool MS5611ReadAlt(float* alt) {
     int32_t dT;
     int64_t TEMP, OFF, SENS;
     uint32_t D1, D2;
 
-    MS5611ReadRawPress(&D1);
-    MS5611ReadRawTemp(&D2);
+    // MS5611ReadRawPress(&D1);
+    // MS5611ReadRawTemp(&D2);
+    if (!MS5611ReadRawPress(&D1)) {return false;}
+    if (!MS5611ReadRawTemp(&D2)) {return false;}
 
     dT   = D2 - ((int32_t)TREF << 8);                         //实际和参考温度之间的差
-    TEMP = 2000 + (((int64_t)dT * (int64_t)TEMPSENS) >> 23);  //实际温度
+    TEMP = 2000 + (((int64_t)dT * (int64_t)TEMPSENS) >> 23);  //实际温度, ° *100
     OFF  = OFF_t2 + (((int64_t)TCO * (int64_t)dT) >> 7);      //实际温度的零偏
     SENS = SENS_t2 + (((int64_t)TCS * (int64_t)dT) >> 8);     //实际温度的灵敏度
 
@@ -119,28 +126,9 @@ void MS5611Calculate(void) {
         SENS -= SENS2;
     }
 
-    temperature = TEMP;
-    pressure    = (((D1 * SENS) >> 21) - OFF) >> 15;  //单位为Pa
+    // temperature = TEMP; //° *100
+    float pressure    = (float)( (((D1 * SENS) >> 21) - OFF) >> 15 );  //单位为Pa, pa *100
 
-    // alt_3 = (101000 - pressure)/1000.0f;
-
-    // press    = (float)pressure;
-    // r        = press / 101325.0;
-    // c        = 1.0 / 5.255;
-    // altitude = (1 - pow(r, c)) * 44330.77;
-
-    // alt = 44330.0f * (1.0f - pow((P/1011.6), 0.190295f));
-
-    // float temperature_K,presure_Pa,altitude_m;
-	// uint32_t ms5611_ground_pressure = 102365U;
-	// temperature_K = get_temperature() + 273.15f;
-	// presure_Pa = get_Pressure(); 
-	// altitude_m = 153.8462f * temperature_K * (1.0f - expf(0.190259f * logf(presure_Pa/ms5611_ground_pressure)));
-
-	altitude = 44330.77f * (1.0f - pow((pressure/101325.0f), 0.1902632f));
-
-}
-
-void MS5611ReadAlt(float *alt) {
-    *alt = altitude;
+	*alt = 44330.77f * (1.0f - pow((pressure/101325.0f), 0.1902632f));
+    return true;
 }

@@ -27,7 +27,7 @@ build/main.o: Src/main.c Inc/main.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- Modules/include/utils.h \
+ Modules/include/utils.h Modules/include/config.h \
  Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  Inc/FreeRTOSConfig.h Modules/include/config.h \
@@ -46,11 +46,11 @@ build/main.o: Src/main.c Inc/main.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/timers.h Inc/dma.h \
  Inc/main.h Inc/i2c.h Inc/tim.h Inc/usart.h Inc/gpio.h \
- Modules/include/system_task.h Modules/include/config.h \
- Modules/include/utils.h Modules/include/sensors.h \
- Drivers/CMSIS/DSP/Include/arm_math.h Modules/include/hmc5883l.h \
+ Modules/include/system_task.h Modules/include/utils.h \
+ Modules/include/sensors.h Modules/include/hmc5883l.h \
  Modules/include/i2c1.h Modules/include/mpu6050.h \
- Modules/include/ms5611.h Modules/include/system_task.h
+ Modules/include/ms5611.h Modules/include/filter.h \
+ Modules/include/system_task.h
 
 Inc/main.h:
 
@@ -116,6 +116,8 @@ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 
 Modules/include/utils.h:
 
+Modules/include/config.h:
+
 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:
 
 Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
@@ -166,13 +168,9 @@ Inc/gpio.h:
 
 Modules/include/system_task.h:
 
-Modules/include/config.h:
-
 Modules/include/utils.h:
 
 Modules/include/sensors.h:
-
-Drivers/CMSIS/DSP/Include/arm_math.h:
 
 Modules/include/hmc5883l.h:
 
@@ -181,5 +179,7 @@ Modules/include/i2c1.h:
 Modules/include/mpu6050.h:
 
 Modules/include/ms5611.h:
+
+Modules/include/filter.h:
 
 Modules/include/system_task.h:

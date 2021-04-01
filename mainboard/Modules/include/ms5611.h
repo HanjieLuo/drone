@@ -60,10 +60,9 @@
 // #define MS5611_PROM_REG_SIZE 2   // size in bytes of a prom registry.
 
 bool MS5611Init(void);
-void MS5611ReadRawTemp(uint32_t *value);
-void MS5611ReadRawPress(uint32_t *value);
-void MS5611Calculate(void);
-void MS5611ReadAlt(float *alt);
+bool MS5611ReadRawTemp(uint32_t *value);
+bool MS5611ReadRawPress(uint32_t *value);
+bool MS5611ReadAlt(float *alt);
 
 // bool MS5611ReadPress();
 // bool MS5611ReadTemp(float *celsius);

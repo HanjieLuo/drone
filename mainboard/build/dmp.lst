@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccWTdLID.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccwdBcUJ.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -27,7 +27,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccWTdLID.s 			page 1
   24              		.fpu fpv4-sp-d16
   26              	DmpTask:
   27              	.LVL0:
-  28              	.LFB172:
+  28              	.LFB139:
   29              		.file 1 "Modules/src/dmp.c"
    1:Modules/src/dmp.c **** #include "dmp.h"
    2:Modules/src/dmp.c **** 
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccWTdLID.s 			page 1
   22:Modules/src/dmp.c ****     //     xQueueReceive(gyro_raw_queue, gyro_raw, portMAX_DELAY);
   23:Modules/src/dmp.c ****     //     xQueueReceive(mag_raw_queue, mag_raw, portMAX_DELAY);
   24:Modules/src/dmp.c **** 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccWTdLID.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccwdBcUJ.s 			page 2
 
 
   25:Modules/src/dmp.c ****     //     // usecTimestamp
@@ -74,7 +74,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccWTdLID.s 			page 1
   35              		.loc 1 34 1 view .LVU1
   36 0000 7047     		bx	lr
   37              		.cfi_endproc
-  38              	.LFE172:
+  38              	.LFE139:
   40              		.section	.rodata.DmpInit.str1.4,"aMS",%progbits,1
   41              		.align	2
   42              	.LC0:
@@ -88,7 +88,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccWTdLID.s 			page 1
   49              		.thumb_func
   50              		.fpu fpv4-sp-d16
   52              	DmpInit:
-  53              	.LFB171:
+  53              	.LFB138:
   10:Modules/src/dmp.c **** void DmpInit(void) {
   54              		.loc 1 10 20 view -0
   55              		.cfi_startproc
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccWTdLID.s 			page 1
   77 001a FFF7FEFF 		bl	xTaskCreateStatic
   78              	.LVL1:
   12:Modules/src/dmp.c **** }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccWTdLID.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccwdBcUJ.s 			page 3
 
 
   79              		.loc 1 12 1 view .LVU5
@@ -135,7 +135,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccWTdLID.s 			page 1
   90 002c 00000000 		.word	.LC0
   91 0030 00000000 		.word	DmpTask
   92              		.cfi_endproc
-  93              	.LFE171:
+  93              	.LFE138:
   95              		.section	.bss.osSys_dmp_taskStackBuffer,"aw",%nobits
   96              		.align	2
   97              		.set	.LANCHOR1,. + 0
@@ -162,41 +162,40 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccWTdLID.s 			page 1
  114              		.file 5 "Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"
  115              		.file 6 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
  116              		.file 7 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
- 117              		.file 8 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
- 118              		.file 9 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
- 119              		.file 10 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
- 120              		.file 11 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
- 121              		.file 12 "Inc/FreeRTOSConfig.h"
- 122              		.file 13 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\math.h"
- 123              		.file 14 "Drivers/CMSIS/Include/core_cm4.h"
- 124              		.file 15 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 125              		.file 16 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
- 126              		.file 17 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 127              		.file 18 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 128              		.file 19 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
- 129              		.file 20 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 130              		.file 21 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 131              		.file 22 "Modules/include/utils.h"
- 132              		.file 23 "Inc/i2c.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccWTdLID.s 			page 4
+ 117              		.file 8 "Inc/FreeRTOSConfig.h"
+ 118              		.file 9 "Drivers/CMSIS/Include/core_cm4.h"
+ 119              		.file 10 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 120              		.file 11 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 121              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 122              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 123              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 124              		.file 15 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 125              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 126              		.file 17 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
+ 127              		.file 18 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
+ 128              		.file 19 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
+ 129              		.file 20 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
+ 130              		.file 21 "Modules/include/utils.h"
+ 131              		.file 22 "Inc/i2c.h"
+ 132              		.file 23 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\math.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccwdBcUJ.s 			page 4
 
 
- 133              		.file 24 "Modules/include/sensors.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccWTdLID.s 			page 5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccwdBcUJ.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 dmp.c
-C:\Users\luoha\AppData\Local\Temp\ccWTdLID.s:18     .text.DmpTask:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccWTdLID.s:26     .text.DmpTask:00000000 DmpTask
-C:\Users\luoha\AppData\Local\Temp\ccWTdLID.s:41     .rodata.DmpInit.str1.4:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccWTdLID.s:45     .text.DmpInit:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccWTdLID.s:52     .text.DmpInit:00000000 DmpInit
-C:\Users\luoha\AppData\Local\Temp\ccWTdLID.s:88     .text.DmpInit:00000024 $d
-C:\Users\luoha\AppData\Local\Temp\ccWTdLID.s:96     .bss.osSys_dmp_taskStackBuffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccWTdLID.s:100    .bss.osSys_dmp_taskStackBuffer:00000000 osSys_dmp_taskStackBuffer
-C:\Users\luoha\AppData\Local\Temp\ccWTdLID.s:103    .bss.osSys_dmp_taskTaskBuffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccWTdLID.s:107    .bss.osSys_dmp_taskTaskBuffer:00000000 osSys_dmp_taskTaskBuffer
+C:\Users\luoha\AppData\Local\Temp\ccwdBcUJ.s:18     .text.DmpTask:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccwdBcUJ.s:26     .text.DmpTask:00000000 DmpTask
+C:\Users\luoha\AppData\Local\Temp\ccwdBcUJ.s:41     .rodata.DmpInit.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccwdBcUJ.s:45     .text.DmpInit:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccwdBcUJ.s:52     .text.DmpInit:00000000 DmpInit
+C:\Users\luoha\AppData\Local\Temp\ccwdBcUJ.s:88     .text.DmpInit:00000024 $d
+C:\Users\luoha\AppData\Local\Temp\ccwdBcUJ.s:96     .bss.osSys_dmp_taskStackBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccwdBcUJ.s:100    .bss.osSys_dmp_taskStackBuffer:00000000 osSys_dmp_taskStackBuffer
+C:\Users\luoha\AppData\Local\Temp\ccwdBcUJ.s:103    .bss.osSys_dmp_taskTaskBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccwdBcUJ.s:107    .bss.osSys_dmp_taskTaskBuffer:00000000 osSys_dmp_taskTaskBuffer
 
 UNDEFINED SYMBOLS
 xTaskCreateStatic

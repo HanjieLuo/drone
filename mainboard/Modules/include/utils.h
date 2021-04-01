@@ -4,6 +4,9 @@
 #include "stm32f4xx_hal.h"
 #include "stdio.h"
 #include <stdbool.h>
+#include "config.h"
+
+#define PI 3.14159265358979323846f
 
 #define pdTICKS_TO_MS( xTicks ) ( ( TickType_t ) ( ( ( TickType_t ) ( xTicks ) * ( TickType_t ) 1000 ) / ( TickType_t ) configTICK_RATE_HZ ))
 #define pdTICKS_TO_US( xTicks ) ( ( uint64_t ) ( ( ( uint64_t ) xTicks * ( uint64_t ) 1000000 ) / ( uint64_t )configTICK_RATE_HZ ))
