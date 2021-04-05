@@ -47,10 +47,12 @@ build/main.o: Src/main.c Inc/main.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/timers.h Inc/dma.h \
  Inc/main.h Inc/i2c.h Inc/tim.h Inc/usart.h Inc/gpio.h \
  Modules/include/system_task.h Modules/include/utils.h \
- Modules/include/sensors.h Modules/include/hmc5883l.h \
+ Modules/include/sensors_task.h Modules/include/hmc5883l.h \
  Modules/include/i2c1.h Modules/include/mpu6050.h \
  Modules/include/ms5611.h Modules/include/filter.h \
- Modules/include/system_task.h
+ Modules/include/system_task.h Modules/include/state_estimator_task.h \
+ Modules/include/eskf.h Modules/include/matrix.h \
+ Drivers/CMSIS/DSP/Include/arm_math.h
 
 Inc/main.h:
 
@@ -170,7 +172,7 @@ Modules/include/system_task.h:
 
 Modules/include/utils.h:
 
-Modules/include/sensors.h:
+Modules/include/sensors_task.h:
 
 Modules/include/hmc5883l.h:
 
@@ -183,3 +185,11 @@ Modules/include/ms5611.h:
 Modules/include/filter.h:
 
 Modules/include/system_task.h:
+
+Modules/include/state_estimator_task.h:
+
+Modules/include/eskf.h:
+
+Modules/include/matrix.h:
+
+Drivers/CMSIS/DSP/Include/arm_math.h:

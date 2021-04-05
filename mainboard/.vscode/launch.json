@@ -10,7 +10,7 @@
             "executable": "build/mainboard.elf",
             "svdFile": ".vscode/STM32F40x.svd",
             "configFiles": [
-                "E:/OpenOCD-20200310-0.10.0/share/openocd/scripts/interface/cmsis-dap.cfg",
+                "C:/OpenOCD-20200408-0.10.0/share/openocd/scripts/interface/cmsis-dap.cfg",
                 ".vscode/stm32f4x.cfg"
             ],
             "preLaunchTask": "Build project"

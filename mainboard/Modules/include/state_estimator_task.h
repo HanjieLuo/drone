@@ -1,0 +1,13 @@
+#ifndef __STATE_ESTIMATOR_TASK_H
+#define __STATE_ESTIMATOR_TASK_H
+
+#include "FreeRTOS.h"
+#include "queue.h"
+#include "utils.h"
+#include "sensors_task.h"
+#include "eskf.h"
+
+void StateEstimatorLaunch(void);
+void StateEstimatorTask(void *param);
+
+#endif /* __STATE_ESTIMATOR_TASK_H */

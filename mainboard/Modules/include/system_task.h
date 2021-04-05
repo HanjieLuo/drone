@@ -6,7 +6,8 @@
 
 #include "config.h"
 #include "utils.h"
-#include "sensors.h"
+#include "sensors_task.h"
+#include "state_estimator_task.h"
 
 void SystemLaunch(void);
 // This permits to guarantee that the system task is initialized before other tasks waits for the start event.

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckenaP8.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 1
   35      746F2049 
   35      6E697420 
   35      53656E73 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckenaP8.s 			page 2
 
 
   36              		.align	2
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 1
   37:Modules/src/sensors.c **** // Ainv:
   38:Modules/src/sensors.c **** // [[ 2.27519066e-03  1.88066651e-05  6.25771359e-05]
   39:Modules/src/sensors.c **** //  [ 1.88066651e-05  2.22321915e-03 -1.75871479e-06]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckenaP8.s 			page 3
 
 
   40:Modules/src/sensors.c **** //  [ 6.25771359e-05 -1.75871479e-06  2.57840928e-03]]
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 1
   73:Modules/src/sensors.c ****     printf("Init Sensors...\r\n");
   72              		.loc 1 73 5 view .LVU1
   73 000a 3D48     		ldr	r0, .L7
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckenaP8.s 			page 4
 
 
   74 000c FFF7FEFF 		bl	puts
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 1
  117              		.loc 1 84 9 view .LVU15
  118              		.loc 1 84 22 is_stmt 0 view .LVU16
  119 003a 0024     		movs	r4, #0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckenaP8.s 			page 5
 
 
  120              		.loc 1 84 5 view .LVU17
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 1
  162 0080 FFF7FEFF 		bl	xQueueGenericCreateStatic
  163              	.LVL18:
  164              		.loc 1 92 15 view .LVU27
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 6
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckenaP8.s 			page 6
 
 
  165 0084 284B     		ldr	r3, .L7+40
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 1
  214 00d2 2248     		ldr	r0, .L7+92
  215 00d4 FFF7FEFF 		bl	xTaskCreateStatic
  216              	.LVL22:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 7
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckenaP8.s 			page 7
 
 
   98:Modules/src/sensors.c **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 1
  260 010c 3C000000 		.word	.LC3
  261 0110 00007A44 		.word	1148846080
  262 0114 00000000 		.word	.LANCHOR0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 8
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckenaP8.s 			page 8
 
 
  263 0118 0000A042 		.word	1117782016
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 1
  130:Modules/src/sensors.c ****         xQueueOverwrite(gyro_queue, gyro);
  131:Modules/src/sensors.c **** 
  132:Modules/src/sensors.c ****         if (--mag_meas_count == 0) {
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 9
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckenaP8.s 			page 9
 
 
  133:Modules/src/sensors.c ****             HMC5883LReadMagRaw(mag_raw);
@@ -494,7 +494,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 1
  143:Modules/src/sensors.c ****         } 
  144:Modules/src/sensors.c **** 
  145:Modules/src/sensors.c ****         // printf("%lu,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f\n", (unsigned long)pdTICKS_TO_MS(xTaskGetTickC
- 146:Modules/src/sensors.c ****         // printf("%lu\n", (unsigned long)pdTICKS_TO_MS(xTaskGetTickCount())); 
+ 146:Modules/src/sensors.c ****         printf("%lu\n", (unsigned long)pdTICKS_TO_MS(xTaskGetTickCount())); 
  147:Modules/src/sensors.c ****         vTaskDelayUntil(&last_wait_time, sensors_task_wait);
  148:Modules/src/sensors.c **** 
  149:Modules/src/sensors.c ****         // HAL_GPIO_WritePin(GPIOC, GPIO_PIN_1, GPIO_PIN_SET);
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 1
  300              		@ frame_needed = 0, uses_anonymous_args = 0
  301              		@ link register save eliminated.
  184:Modules/src/sensors.c ****     // 1.9us
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 10
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckenaP8.s 			page 10
 
 
  185:Modules/src/sensors.c ****     float tmpz = acc_raw[2] - Ba_z;
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 1
  350 005c 82ED016A 		vstr.32	s12, [r2, #4]
  191:Modules/src/sensors.c ****     acc[0] = Ma00 * tmpx + Ma01 * tmpy + Ma02 * tmpz;
  351              		.loc 1 191 5 is_stmt 1 view .LVU69
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 11
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckenaP8.s 			page 11
 
 
  352              		.loc 1 191 19 is_stmt 0 view .LVU70
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 1
  196:Modules/src/sensors.c **** 
  197:Modules/src/sensors.c ****     gyro[0] = Mg00 * tmpx + Mg01 * tmpy + Mg02 * tmpz;
  402              		.loc 1 197 5 is_stmt 1 view .LVU89
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 12
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckenaP8.s 			page 12
 
 
  403              		.loc 1 197 20 is_stmt 0 view .LVU90
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 1
  202:Modules/src/sensors.c ****     /* DSP version 1.39us
  203:Modules/src/sensors.c ****     arm_matrix_instance_f32 m_imu_data, m_B, m_unbias, m_M;
  204:Modules/src/sensors.c ****     float32_t imu_data[9], B_data[9], unbias_data[9];
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 13
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckenaP8.s 			page 13
 
 
  205:Modules/src/sensors.c **** 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 1
  465 014c 435068B3 		.word	-1285009341
  466 0150 80C33636 		.word	909558656
  467 0154 0F9CBC41 		.word	1102879759
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 14
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckenaP8.s 			page 14
 
 
  468 0158 4BE52940 		.word	1076487499
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 1
  519              		.loc 1 251 25 is_stmt 0 view .LVU121
  520 0028 B0F90430 		ldrsh	r3, [r0, #4]
  521 002c 07EE103A 		vmov	s14, r3	@ int
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 15
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckenaP8.s 			page 15
 
 
  522              		.loc 1 251 29 view .LVU122
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 1
  572 0098 DFED0F6A 		vldr.32	s13, .L13+44
  573 009c 27EE267A 		vmul.f32	s14, s14, s13
  574              	.LVL48:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 16
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckenaP8.s 			page 16
 
 
  575              		.loc 1 255 40 view .LVU143
@@ -925,439 +925,466 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 1
  595 00d8 3CD9283B 		.word	992532796
  596              		.cfi_endproc
  597              	.LFE141:
- 599              		.section	.text.SensorsTask,"ax",%progbits
- 600              		.align	1
- 601              		.global	SensorsTask
- 602              		.syntax unified
- 603              		.thumb
- 604              		.thumb_func
- 605              		.fpu fpv4-sp-d16
- 607              	SensorsTask:
- 608              	.LVL49:
- 609              	.LFB139:
+ 599              		.section	.rodata.SensorsTask.str1.4,"aMS",%progbits,1
+ 600              		.align	2
+ 601              	.LC7:
+ 602 0000 256C750A 		.ascii	"%lu\012\000"
+ 602      00
+ 603              		.section	.text.SensorsTask,"ax",%progbits
+ 604              		.align	1
+ 605              		.global	SensorsTask
+ 606              		.syntax unified
+ 607              		.thumb
+ 608              		.thumb_func
+ 609              		.fpu fpv4-sp-d16
+ 611              	SensorsTask:
+ 612              	.LVL49:
+ 613              	.LFB139:
  109:Modules/src/sensors.c ****     SystemWaitStart();
- 610              		.loc 1 109 31 is_stmt 1 view -0
- 611              		.cfi_startproc
- 612              		@ args = 0, pretend = 0, frame = 72
- 613              		@ frame_needed = 0, uses_anonymous_args = 0
+ 614              		.loc 1 109 31 is_stmt 1 view -0
+ 615              		.cfi_startproc
+ 616              		@ args = 0, pretend = 0, frame = 72
+ 617              		@ frame_needed = 0, uses_anonymous_args = 0
  109:Modules/src/sensors.c ****     SystemWaitStart();
- 614              		.loc 1 109 31 is_stmt 0 view .LVU147
- 615 0000 30B5     		push	{r4, r5, lr}
- 616              	.LCFI6:
- 617              		.cfi_def_cfa_offset 12
- 618              		.cfi_offset 4, -12
- 619              		.cfi_offset 5, -8
- 620              		.cfi_offset 14, -4
- 621 0002 93B0     		sub	sp, sp, #76
- 622              	.LCFI7:
- 623              		.cfi_def_cfa_offset 88
+ 618              		.loc 1 109 31 is_stmt 0 view .LVU147
+ 619 0000 30B5     		push	{r4, r5, lr}
+ 620              	.LCFI6:
+ 621              		.cfi_def_cfa_offset 12
+ 622              		.cfi_offset 4, -12
+ 623              		.cfi_offset 5, -8
+ 624              		.cfi_offset 14, -4
+ 625 0002 93B0     		sub	sp, sp, #76
+ 626              	.LCFI7:
+ 627              		.cfi_def_cfa_offset 88
  110:Modules/src/sensors.c **** 
- 624              		.loc 1 110 5 is_stmt 1 view .LVU148
- 625 0004 FFF7FEFF 		bl	SystemWaitStart
- 626              	.LVL50:
- 112:Modules/src/sensors.c ****     float alt = 0.f, acc[3] = {0}, gyro[3] = {0}, mag[3] = {0};
- 627              		.loc 1 112 5 view .LVU149
- 112:Modules/src/sensors.c ****     float alt = 0.f, acc[3] = {0}, gyro[3] = {0}, mag[3] = {0};
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 17
+ 628              		.loc 1 110 5 is_stmt 1 view .LVU148
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckenaP8.s 			page 17
 
 
- 628              		.loc 1 112 13 is_stmt 0 view .LVU150
- 629 0008 0023     		movs	r3, #0
- 630 000a 1093     		str	r3, [sp, #64]
- 631 000c ADF84430 		strh	r3, [sp, #68]	@ movhi
+ 629 0004 FFF7FEFF 		bl	SystemWaitStart
+ 630              	.LVL50:
  112:Modules/src/sensors.c ****     float alt = 0.f, acc[3] = {0}, gyro[3] = {0}, mag[3] = {0};
- 632              		.loc 1 112 31 view .LVU151
- 633 0010 0E93     		str	r3, [sp, #56]
- 634 0012 ADF83C30 		strh	r3, [sp, #60]	@ movhi
+ 631              		.loc 1 112 5 view .LVU149
  112:Modules/src/sensors.c ****     float alt = 0.f, acc[3] = {0}, gyro[3] = {0}, mag[3] = {0};
- 635              		.loc 1 112 50 view .LVU152
- 636 0016 0C93     		str	r3, [sp, #48]
- 637 0018 ADF83430 		strh	r3, [sp, #52]	@ movhi
+ 632              		.loc 1 112 13 is_stmt 0 view .LVU150
+ 633 0008 0023     		movs	r3, #0
+ 634 000a 1093     		str	r3, [sp, #64]
+ 635 000c ADF84430 		strh	r3, [sp, #68]	@ movhi
+ 112:Modules/src/sensors.c ****     float alt = 0.f, acc[3] = {0}, gyro[3] = {0}, mag[3] = {0};
+ 636              		.loc 1 112 31 view .LVU151
+ 637 0010 0E93     		str	r3, [sp, #56]
+ 638 0012 ADF83C30 		strh	r3, [sp, #60]	@ movhi
+ 112:Modules/src/sensors.c ****     float alt = 0.f, acc[3] = {0}, gyro[3] = {0}, mag[3] = {0};
+ 639              		.loc 1 112 50 view .LVU152
+ 640 0016 0C93     		str	r3, [sp, #48]
+ 641 0018 ADF83430 		strh	r3, [sp, #52]	@ movhi
  113:Modules/src/sensors.c **** 
- 638              		.loc 1 113 5 is_stmt 1 view .LVU153
+ 642              		.loc 1 113 5 is_stmt 1 view .LVU153
  113:Modules/src/sensors.c **** 
- 639              		.loc 1 113 11 is_stmt 0 view .LVU154
- 640 001c 0022     		movs	r2, #0
- 641 001e 0B92     		str	r2, [sp, #44]	@ float
+ 643              		.loc 1 113 11 is_stmt 0 view .LVU154
+ 644 001c 0022     		movs	r2, #0
+ 645 001e 0B92     		str	r2, [sp, #44]	@ float
  113:Modules/src/sensors.c **** 
- 642              		.loc 1 113 22 view .LVU155
- 643 0020 0893     		str	r3, [sp, #32]
- 644 0022 0993     		str	r3, [sp, #36]
- 645 0024 0A93     		str	r3, [sp, #40]
+ 646              		.loc 1 113 22 view .LVU155
+ 647 0020 0893     		str	r3, [sp, #32]
+ 648 0022 0993     		str	r3, [sp, #36]
+ 649 0024 0A93     		str	r3, [sp, #40]
  113:Modules/src/sensors.c **** 
- 646              		.loc 1 113 36 view .LVU156
- 647 0026 0593     		str	r3, [sp, #20]
- 648 0028 0693     		str	r3, [sp, #24]
- 649 002a 0793     		str	r3, [sp, #28]
+ 650              		.loc 1 113 36 view .LVU156
+ 651 0026 0593     		str	r3, [sp, #20]
+ 652 0028 0693     		str	r3, [sp, #24]
+ 653 002a 0793     		str	r3, [sp, #28]
  113:Modules/src/sensors.c **** 
- 650              		.loc 1 113 51 view .LVU157
- 651 002c 0293     		str	r3, [sp, #8]
- 652 002e 0393     		str	r3, [sp, #12]
- 653 0030 0493     		str	r3, [sp, #16]
+ 654              		.loc 1 113 51 view .LVU157
+ 655 002c 0293     		str	r3, [sp, #8]
+ 656 002e 0393     		str	r3, [sp, #12]
+ 657 0030 0493     		str	r3, [sp, #16]
  115:Modules/src/sensors.c ****     uint8_t alt_meas_count = alt_meas_delay;
- 654              		.loc 1 115 5 is_stmt 1 view .LVU158
- 655              	.LVL51:
+ 658              		.loc 1 115 5 is_stmt 1 view .LVU158
+ 659              	.LVL51:
  116:Modules/src/sensors.c **** 
- 656              		.loc 1 116 5 view .LVU159
+ 660              		.loc 1 116 5 view .LVU159
  118:Modules/src/sensors.c **** 
- 657              		.loc 1 118 5 view .LVU160
+ 661              		.loc 1 118 5 view .LVU160
  118:Modules/src/sensors.c **** 
- 658              		.loc 1 118 35 is_stmt 0 view .LVU161
- 659 0032 FFF7FEFF 		bl	xTaskGetTickCount
- 660              	.LVL52:
+ 662              		.loc 1 118 35 is_stmt 0 view .LVU161
+ 663 0032 FFF7FEFF 		bl	xTaskGetTickCount
+ 664              	.LVL52:
  118:Modules/src/sensors.c **** 
- 661              		.loc 1 118 18 view .LVU162
- 662 0036 0190     		str	r0, [sp, #4]
+ 665              		.loc 1 118 18 view .LVU162
+ 666 0036 0190     		str	r0, [sp, #4]
  116:Modules/src/sensors.c **** 
- 663              		.loc 1 116 13 view .LVU163
- 664 0038 0A24     		movs	r4, #10
+ 667              		.loc 1 116 13 view .LVU163
+ 668 0038 0A24     		movs	r4, #10
  115:Modules/src/sensors.c ****     uint8_t alt_meas_count = alt_meas_delay;
- 665              		.loc 1 115 13 view .LVU164
- 666 003a 0D25     		movs	r5, #13
- 667 003c 13E0     		b	.L18
- 668              	.LVL53:
- 669              	.L20:
+ 669              		.loc 1 115 13 view .LVU164
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckenaP8.s 			page 18
+
+
+ 670 003a 0D25     		movs	r5, #13
+ 671 003c 20E0     		b	.L18
+ 672              	.LVL53:
+ 673              	.L20:
  133:Modules/src/sensors.c ****             CalibrateMag(mag_raw, mag);
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 18
-
-
- 670              		.loc 1 133 13 is_stmt 1 view .LVU165
- 671 003e 0CA8     		add	r0, sp, #48
- 672 0040 FFF7FEFF 		bl	HMC5883LReadMagRaw
- 673              	.LVL54:
+ 674              		.loc 1 133 13 is_stmt 1 view .LVU165
+ 675 003e 0CA8     		add	r0, sp, #48
+ 676 0040 FFF7FEFF 		bl	HMC5883LReadMagRaw
+ 677              	.LVL54:
  134:Modules/src/sensors.c ****             xQueueOverwrite(mag_queue, mag);
- 674              		.loc 1 134 13 view .LVU166
- 675 0044 02A9     		add	r1, sp, #8
- 676 0046 0CA8     		add	r0, sp, #48
- 677 0048 FFF7FEFF 		bl	CalibrateMag
- 678              	.LVL55:
+ 678              		.loc 1 134 13 view .LVU166
+ 679 0044 02A9     		add	r1, sp, #8
+ 680 0046 0CA8     		add	r0, sp, #48
+ 681 0048 FFF7FEFF 		bl	CalibrateMag
+ 682              	.LVL55:
  135:Modules/src/sensors.c ****             mag_meas_count = mag_meas_delay;
- 679              		.loc 1 135 13 view .LVU167
- 680 004c 0223     		movs	r3, #2
- 681 004e 0022     		movs	r2, #0
- 682 0050 02A9     		add	r1, sp, #8
- 683 0052 2048     		ldr	r0, .L21
- 684 0054 0068     		ldr	r0, [r0]
- 685 0056 FFF7FEFF 		bl	xQueueGenericSend
- 686              	.LVL56:
+ 683              		.loc 1 135 13 view .LVU167
+ 684 004c 0223     		movs	r3, #2
+ 685 004e 0022     		movs	r2, #0
+ 686 0050 02A9     		add	r1, sp, #8
+ 687 0052 2648     		ldr	r0, .L21
+ 688 0054 0068     		ldr	r0, [r0]
+ 689 0056 FFF7FEFF 		bl	xQueueGenericSend
+ 690              	.LVL56:
  136:Modules/src/sensors.c ****         }
- 687              		.loc 1 136 13 view .LVU168
+ 691              		.loc 1 136 13 view .LVU168
  136:Modules/src/sensors.c ****         }
- 688              		.loc 1 136 28 is_stmt 0 view .LVU169
- 689 005a 0D25     		movs	r5, #13
- 690 005c 29E0     		b	.L16
- 691              	.LVL57:
- 692              	.L17:
+ 692              		.loc 1 136 28 is_stmt 0 view .LVU169
+ 693 005a 0D25     		movs	r5, #13
+ 694 005c 36E0     		b	.L16
+ 695              	.LVL57:
+ 696              	.L17:
+ 146:Modules/src/sensors.c ****         vTaskDelayUntil(&last_wait_time, sensors_task_wait);
+ 697              		.loc 1 146 9 is_stmt 1 view .LVU170
+ 146:Modules/src/sensors.c ****         vTaskDelayUntil(&last_wait_time, sensors_task_wait);
+ 698              		.loc 1 146 40 is_stmt 0 view .LVU171
+ 699 005e FFF7FEFF 		bl	xTaskGetTickCount
+ 700              	.LVL58:
+ 701 0062 4FF47A71 		mov	r1, #1000
+ 702 0066 01FB00F1 		mul	r1, r1, r0
+ 146:Modules/src/sensors.c ****         vTaskDelayUntil(&last_wait_time, sensors_task_wait);
+ 703              		.loc 1 146 9 view .LVU172
+ 704 006a 2148     		ldr	r0, .L21+4
+ 705 006c A0FB0131 		umull	r3, r1, r0, r1
+ 706 0070 8909     		lsrs	r1, r1, #6
+ 707 0072 2048     		ldr	r0, .L21+8
+ 708 0074 FFF7FEFF 		bl	printf
+ 709              	.LVL59:
  147:Modules/src/sensors.c **** 
- 693              		.loc 1 147 9 is_stmt 1 view .LVU170
- 694 005e 0121     		movs	r1, #1
- 695 0060 01A8     		add	r0, sp, #4
- 696 0062 FFF7FEFF 		bl	vTaskDelayUntil
- 697              	.LVL58:
+ 710              		.loc 1 147 9 is_stmt 1 view .LVU173
+ 711 0078 0121     		movs	r1, #1
+ 712 007a 01A8     		add	r0, sp, #4
+ 713 007c FFF7FEFF 		bl	vTaskDelayUntil
+ 714              	.LVL60:
  120:Modules/src/sensors.c ****         MPU6050ReadAccelRaw(acc_raw);
- 698              		.loc 1 120 10 view .LVU171
- 699              	.L18:
+ 715              		.loc 1 120 10 view .LVU174
+ 716              	.L18:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckenaP8.s 			page 19
+
+
  120:Modules/src/sensors.c ****         MPU6050ReadAccelRaw(acc_raw);
- 700              		.loc 1 120 5 view .LVU172
+ 717              		.loc 1 120 5 view .LVU175
  121:Modules/src/sensors.c ****         MPU6050ReadGyroRaw(gyro_raw);
- 701              		.loc 1 121 9 view .LVU173
- 702 0066 10A8     		add	r0, sp, #64
- 703 0068 FFF7FEFF 		bl	MPU6050ReadAccelRaw
- 704              	.LVL59:
+ 718              		.loc 1 121 9 view .LVU176
+ 719 0080 10A8     		add	r0, sp, #64
+ 720 0082 FFF7FEFF 		bl	MPU6050ReadAccelRaw
+ 721              	.LVL61:
  122:Modules/src/sensors.c ****       
- 705              		.loc 1 122 9 view .LVU174
- 706 006c 0EA8     		add	r0, sp, #56
- 707 006e FFF7FEFF 		bl	MPU6050ReadGyroRaw
- 708              	.LVL60:
+ 722              		.loc 1 122 9 view .LVU177
+ 723 0086 0EA8     		add	r0, sp, #56
+ 724 0088 FFF7FEFF 		bl	MPU6050ReadGyroRaw
+ 725              	.LVL62:
  124:Modules/src/sensors.c **** 
- 709              		.loc 1 124 9 view .LVU175
- 710 0072 05AB     		add	r3, sp, #20
- 711 0074 08AA     		add	r2, sp, #32
- 712 0076 0EA9     		add	r1, sp, #56
- 713 0078 10A8     		add	r0, sp, #64
- 714 007a FFF7FEFF 		bl	CalibrateIMU
- 715              	.LVL61:
+ 726              		.loc 1 124 9 view .LVU178
+ 727 008c 05AB     		add	r3, sp, #20
+ 728 008e 08AA     		add	r2, sp, #32
+ 729 0090 0EA9     		add	r1, sp, #56
+ 730 0092 10A8     		add	r0, sp, #64
+ 731 0094 FFF7FEFF 		bl	CalibrateIMU
+ 732              	.LVL63:
  126:Modules/src/sensors.c ****         Lowpass2Apply3Axis((Lowpass2Data*)(&gyro_lpf), gyro);
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 19
-
-
- 716              		.loc 1 126 9 view .LVU176
- 717 007e 08A9     		add	r1, sp, #32
- 718 0080 1548     		ldr	r0, .L21+4
- 719 0082 FFF7FEFF 		bl	Lowpass2Apply3Axis
- 720              	.LVL62:
+ 733              		.loc 1 126 9 view .LVU179
+ 734 0098 08A9     		add	r1, sp, #32
+ 735 009a 1748     		ldr	r0, .L21+12
+ 736 009c FFF7FEFF 		bl	Lowpass2Apply3Axis
+ 737              	.LVL64:
  127:Modules/src/sensors.c **** 
- 721              		.loc 1 127 9 view .LVU177
- 722 0086 05A9     		add	r1, sp, #20
- 723 0088 1448     		ldr	r0, .L21+8
- 724 008a FFF7FEFF 		bl	Lowpass2Apply3Axis
- 725              	.LVL63:
+ 738              		.loc 1 127 9 view .LVU180
+ 739 00a0 05A9     		add	r1, sp, #20
+ 740 00a2 1648     		ldr	r0, .L21+16
+ 741 00a4 FFF7FEFF 		bl	Lowpass2Apply3Axis
+ 742              	.LVL65:
  129:Modules/src/sensors.c ****         xQueueOverwrite(gyro_queue, gyro);
- 726              		.loc 1 129 9 view .LVU178
- 727 008e 0223     		movs	r3, #2
- 728 0090 0022     		movs	r2, #0
- 729 0092 08A9     		add	r1, sp, #32
- 730 0094 1248     		ldr	r0, .L21+12
- 731 0096 0068     		ldr	r0, [r0]
- 732 0098 FFF7FEFF 		bl	xQueueGenericSend
- 733              	.LVL64:
+ 743              		.loc 1 129 9 view .LVU181
+ 744 00a8 0223     		movs	r3, #2
+ 745 00aa 0022     		movs	r2, #0
+ 746 00ac 08A9     		add	r1, sp, #32
+ 747 00ae 1448     		ldr	r0, .L21+20
+ 748 00b0 0068     		ldr	r0, [r0]
+ 749 00b2 FFF7FEFF 		bl	xQueueGenericSend
+ 750              	.LVL66:
  130:Modules/src/sensors.c **** 
- 734              		.loc 1 130 9 view .LVU179
- 735 009c 0223     		movs	r3, #2
- 736 009e 0022     		movs	r2, #0
- 737 00a0 05A9     		add	r1, sp, #20
- 738 00a2 1048     		ldr	r0, .L21+16
- 739 00a4 0068     		ldr	r0, [r0]
- 740 00a6 FFF7FEFF 		bl	xQueueGenericSend
- 741              	.LVL65:
+ 751              		.loc 1 130 9 view .LVU182
+ 752 00b6 0223     		movs	r3, #2
+ 753 00b8 0022     		movs	r2, #0
+ 754 00ba 05A9     		add	r1, sp, #20
+ 755 00bc 1148     		ldr	r0, .L21+24
+ 756 00be 0068     		ldr	r0, [r0]
+ 757 00c0 FFF7FEFF 		bl	xQueueGenericSend
+ 758              	.LVL67:
  132:Modules/src/sensors.c ****             HMC5883LReadMagRaw(mag_raw);
- 742              		.loc 1 132 9 view .LVU180
+ 759              		.loc 1 132 9 view .LVU183
  132:Modules/src/sensors.c ****             HMC5883LReadMagRaw(mag_raw);
- 743              		.loc 1 132 12 is_stmt 0 view .LVU181
- 744 00aa 6B1E     		subs	r3, r5, #1
- 745              	.LVL66:
+ 760              		.loc 1 132 12 is_stmt 0 view .LVU184
+ 761 00c4 6B1E     		subs	r3, r5, #1
+ 762              	.LVL68:
  132:Modules/src/sensors.c ****             HMC5883LReadMagRaw(mag_raw);
- 746              		.loc 1 132 12 view .LVU182
- 747 00ac 13F0FF05 		ands	r5, r3, #255
- 748 00b0 C5D0     		beq	.L20
- 749              	.LVL67:
- 750              	.L16:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckenaP8.s 			page 20
+
+
+ 763              		.loc 1 132 12 view .LVU185
+ 764 00c6 13F0FF05 		ands	r5, r3, #255
+ 765 00ca B8D0     		beq	.L20
+ 766              	.LVL69:
+ 767              	.L16:
  139:Modules/src/sensors.c ****             MS5611ReadAlt(&alt);
- 751              		.loc 1 139 9 is_stmt 1 view .LVU183
+ 768              		.loc 1 139 9 is_stmt 1 view .LVU186
  139:Modules/src/sensors.c ****             MS5611ReadAlt(&alt);
- 752              		.loc 1 139 12 is_stmt 0 view .LVU184
- 753 00b2 631E     		subs	r3, r4, #1
- 754              	.LVL68:
+ 769              		.loc 1 139 12 is_stmt 0 view .LVU187
+ 770 00cc 631E     		subs	r3, r4, #1
+ 771              	.LVL70:
  139:Modules/src/sensors.c ****             MS5611ReadAlt(&alt);
- 755              		.loc 1 139 12 view .LVU185
- 756 00b4 13F0FF04 		ands	r4, r3, #255
- 757 00b8 D1D1     		bne	.L17
+ 772              		.loc 1 139 12 view .LVU188
+ 773 00ce 13F0FF04 		ands	r4, r3, #255
+ 774 00d2 C4D1     		bne	.L17
  140:Modules/src/sensors.c ****             xQueueOverwrite(alt_queue, &alt);
- 758              		.loc 1 140 13 is_stmt 1 view .LVU186
- 759 00ba 0BA8     		add	r0, sp, #44
- 760 00bc FFF7FEFF 		bl	MS5611ReadAlt
- 761              	.LVL69:
+ 775              		.loc 1 140 13 is_stmt 1 view .LVU189
+ 776 00d4 0BA8     		add	r0, sp, #44
+ 777 00d6 FFF7FEFF 		bl	MS5611ReadAlt
+ 778              	.LVL71:
  141:Modules/src/sensors.c ****             alt_meas_count = alt_meas_delay;
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 20
-
-
- 762              		.loc 1 141 13 view .LVU187
- 763 00c0 0223     		movs	r3, #2
- 764 00c2 0022     		movs	r2, #0
- 765 00c4 0BA9     		add	r1, sp, #44
- 766 00c6 0848     		ldr	r0, .L21+20
- 767 00c8 0068     		ldr	r0, [r0]
- 768 00ca FFF7FEFF 		bl	xQueueGenericSend
- 769              	.LVL70:
+ 779              		.loc 1 141 13 view .LVU190
+ 780 00da 0223     		movs	r3, #2
+ 781 00dc 0022     		movs	r2, #0
+ 782 00de 0BA9     		add	r1, sp, #44
+ 783 00e0 0948     		ldr	r0, .L21+28
+ 784 00e2 0068     		ldr	r0, [r0]
+ 785 00e4 FFF7FEFF 		bl	xQueueGenericSend
+ 786              	.LVL72:
  142:Modules/src/sensors.c ****         } 
- 770              		.loc 1 142 13 view .LVU188
+ 787              		.loc 1 142 13 view .LVU191
  142:Modules/src/sensors.c ****         } 
- 771              		.loc 1 142 28 is_stmt 0 view .LVU189
- 772 00ce 0A24     		movs	r4, #10
- 773 00d0 C5E7     		b	.L17
- 774              	.L22:
- 775 00d2 00BF     		.align	2
- 776              	.L21:
- 777 00d4 00000000 		.word	mag_queue
- 778 00d8 00000000 		.word	.LANCHOR0
- 779 00dc 00000000 		.word	.LANCHOR1
- 780 00e0 00000000 		.word	acc_queue
- 781 00e4 00000000 		.word	gyro_queue
- 782 00e8 00000000 		.word	alt_queue
- 783              		.cfi_endproc
- 784              	.LFE139:
- 786              		.global	sensors_task_wait
- 787              		.comm	alt_queue,4,4
- 788              		.comm	mag_queue,4,4
- 789              		.comm	gyro_queue,4,4
- 790              		.comm	acc_queue,4,4
- 791              		.section	.bss.acc_lpf,"aw",%nobits
+ 788              		.loc 1 142 28 is_stmt 0 view .LVU192
+ 789 00e8 0A24     		movs	r4, #10
+ 790 00ea B8E7     		b	.L17
+ 791              	.L22:
  792              		.align	2
- 793              		.set	.LANCHOR0,. + 0
- 796              	acc_lpf:
- 797 0000 00000000 		.space	84
- 797      00000000 
- 797      00000000 
- 797      00000000 
- 797      00000000 
- 798              		.section	.bss.gyro_lpf,"aw",%nobits
- 799              		.align	2
- 800              		.set	.LANCHOR1,. + 0
- 803              	gyro_lpf:
- 804 0000 00000000 		.space	84
- 804      00000000 
- 804      00000000 
- 804      00000000 
- 804      00000000 
- 805              		.section	.bss.osSys_acc_queueMgm,"aw",%nobits
- 806              		.align	2
- 807              		.set	.LANCHOR2,. + 0
- 810              	osSys_acc_queueMgm:
- 811 0000 00000000 		.space	72
- 811      00000000 
- 811      00000000 
- 811      00000000 
- 811      00000000 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 21
+ 793              	.L21:
+ 794 00ec 00000000 		.word	mag_queue
+ 795 00f0 D34D6210 		.word	274877907
+ 796 00f4 00000000 		.word	.LC7
+ 797 00f8 00000000 		.word	.LANCHOR0
+ 798 00fc 00000000 		.word	.LANCHOR1
+ 799 0100 00000000 		.word	acc_queue
+ 800 0104 00000000 		.word	gyro_queue
+ 801 0108 00000000 		.word	alt_queue
+ 802              		.cfi_endproc
+ 803              	.LFE139:
+ 805              		.global	sensors_task_wait
+ 806              		.comm	alt_queue,4,4
+ 807              		.comm	mag_queue,4,4
+ 808              		.comm	gyro_queue,4,4
+ 809              		.comm	acc_queue,4,4
+ 810              		.section	.bss.acc_lpf,"aw",%nobits
+ 811              		.align	2
+ 812              		.set	.LANCHOR0,. + 0
+ 815              	acc_lpf:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckenaP8.s 			page 21
 
 
- 812              		.section	.bss.osSys_acc_queueStorage,"aw",%nobits
- 813              		.align	2
- 814              		.set	.LANCHOR3,. + 0
- 817              	osSys_acc_queueStorage:
- 818 0000 00000000 		.space	12
- 818      00000000 
- 818      00000000 
- 819              		.section	.bss.osSys_alt_queueMgm,"aw",%nobits
- 820              		.align	2
- 821              		.set	.LANCHOR8,. + 0
- 824              	osSys_alt_queueMgm:
- 825 0000 00000000 		.space	72
- 825      00000000 
- 825      00000000 
- 825      00000000 
- 825      00000000 
- 826              		.section	.bss.osSys_alt_queueStorage,"aw",%nobits
- 827              		.align	2
- 828              		.set	.LANCHOR9,. + 0
- 831              	osSys_alt_queueStorage:
- 832 0000 00000000 		.space	4
- 833              		.section	.bss.osSys_gyro_queueMgm,"aw",%nobits
- 834              		.align	2
- 835              		.set	.LANCHOR4,. + 0
- 838              	osSys_gyro_queueMgm:
- 839 0000 00000000 		.space	72
- 839      00000000 
- 839      00000000 
- 839      00000000 
- 839      00000000 
- 840              		.section	.bss.osSys_gyro_queueStorage,"aw",%nobits
- 841              		.align	2
- 842              		.set	.LANCHOR5,. + 0
- 845              	osSys_gyro_queueStorage:
- 846 0000 00000000 		.space	12
- 846      00000000 
- 846      00000000 
- 847              		.section	.bss.osSys_mag_queueMgm,"aw",%nobits
- 848              		.align	2
- 849              		.set	.LANCHOR6,. + 0
- 852              	osSys_mag_queueMgm:
- 853 0000 00000000 		.space	72
- 853      00000000 
- 853      00000000 
- 853      00000000 
- 853      00000000 
- 854              		.section	.bss.osSys_mag_queueStorage,"aw",%nobits
- 855              		.align	2
- 856              		.set	.LANCHOR7,. + 0
- 859              	osSys_mag_queueStorage:
- 860 0000 00000000 		.space	12
- 860      00000000 
- 860      00000000 
- 861              		.section	.bss.osSys_sensors_taskStackBuffer,"aw",%nobits
- 862              		.align	2
- 863              		.set	.LANCHOR11,. + 0
- 866              	osSys_sensors_taskStackBuffer:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 22
+ 816 0000 00000000 		.space	84
+ 816      00000000 
+ 816      00000000 
+ 816      00000000 
+ 816      00000000 
+ 817              		.section	.bss.gyro_lpf,"aw",%nobits
+ 818              		.align	2
+ 819              		.set	.LANCHOR1,. + 0
+ 822              	gyro_lpf:
+ 823 0000 00000000 		.space	84
+ 823      00000000 
+ 823      00000000 
+ 823      00000000 
+ 823      00000000 
+ 824              		.section	.bss.osSys_acc_queueMgm,"aw",%nobits
+ 825              		.align	2
+ 826              		.set	.LANCHOR2,. + 0
+ 829              	osSys_acc_queueMgm:
+ 830 0000 00000000 		.space	72
+ 830      00000000 
+ 830      00000000 
+ 830      00000000 
+ 830      00000000 
+ 831              		.section	.bss.osSys_acc_queueStorage,"aw",%nobits
+ 832              		.align	2
+ 833              		.set	.LANCHOR3,. + 0
+ 836              	osSys_acc_queueStorage:
+ 837 0000 00000000 		.space	12
+ 837      00000000 
+ 837      00000000 
+ 838              		.section	.bss.osSys_alt_queueMgm,"aw",%nobits
+ 839              		.align	2
+ 840              		.set	.LANCHOR8,. + 0
+ 843              	osSys_alt_queueMgm:
+ 844 0000 00000000 		.space	72
+ 844      00000000 
+ 844      00000000 
+ 844      00000000 
+ 844      00000000 
+ 845              		.section	.bss.osSys_alt_queueStorage,"aw",%nobits
+ 846              		.align	2
+ 847              		.set	.LANCHOR9,. + 0
+ 850              	osSys_alt_queueStorage:
+ 851 0000 00000000 		.space	4
+ 852              		.section	.bss.osSys_gyro_queueMgm,"aw",%nobits
+ 853              		.align	2
+ 854              		.set	.LANCHOR4,. + 0
+ 857              	osSys_gyro_queueMgm:
+ 858 0000 00000000 		.space	72
+ 858      00000000 
+ 858      00000000 
+ 858      00000000 
+ 858      00000000 
+ 859              		.section	.bss.osSys_gyro_queueStorage,"aw",%nobits
+ 860              		.align	2
+ 861              		.set	.LANCHOR5,. + 0
+ 864              	osSys_gyro_queueStorage:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckenaP8.s 			page 22
 
 
- 867 0000 00000000 		.space	1024
- 867      00000000 
- 867      00000000 
- 867      00000000 
- 867      00000000 
- 868              		.section	.bss.osSys_sensors_taskTaskBuffer,"aw",%nobits
- 869              		.align	2
- 870              		.set	.LANCHOR10,. + 0
- 873              	osSys_sensors_taskTaskBuffer:
- 874 0000 00000000 		.space	84
- 874      00000000 
- 874      00000000 
- 874      00000000 
- 874      00000000 
- 875              		.section	.rodata.sensors_task_wait,"a"
- 876              		.align	2
- 879              	sensors_task_wait:
- 880 0000 01000000 		.word	1
- 881              		.text
- 882              	.Letext0:
- 883              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
- 884              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
- 885              		.file 4 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
- 886              		.file 5 "Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"
- 887              		.file 6 "Inc/FreeRTOSConfig.h"
- 888              		.file 7 "Drivers/CMSIS/Include/core_cm4.h"
- 889              		.file 8 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 890              		.file 9 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
- 891              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 892              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 893              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
- 894              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 895              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 896              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
- 897              		.file 16 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
- 898              		.file 17 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
- 899              		.file 18 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
- 900              		.file 19 "Modules/include/utils.h"
- 901              		.file 20 "Inc/i2c.h"
- 902              		.file 21 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
- 903              		.file 22 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
- 904              		.file 23 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\math.h"
- 905              		.file 24 "Modules/include/filter.h"
- 906              		.file 25 "Modules/include/system_task.h"
- 907              		.file 26 "Modules/include/hmc5883l.h"
- 908              		.file 27 "Modules/include/mpu6050.h"
- 909              		.file 28 "Modules/include/ms5611.h"
- 910              		.file 29 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\stdio.h"
- 911              		.file 30 "<built-in>"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 23
+ 865 0000 00000000 		.space	12
+ 865      00000000 
+ 865      00000000 
+ 866              		.section	.bss.osSys_mag_queueMgm,"aw",%nobits
+ 867              		.align	2
+ 868              		.set	.LANCHOR6,. + 0
+ 871              	osSys_mag_queueMgm:
+ 872 0000 00000000 		.space	72
+ 872      00000000 
+ 872      00000000 
+ 872      00000000 
+ 872      00000000 
+ 873              		.section	.bss.osSys_mag_queueStorage,"aw",%nobits
+ 874              		.align	2
+ 875              		.set	.LANCHOR7,. + 0
+ 878              	osSys_mag_queueStorage:
+ 879 0000 00000000 		.space	12
+ 879      00000000 
+ 879      00000000 
+ 880              		.section	.bss.osSys_sensors_taskStackBuffer,"aw",%nobits
+ 881              		.align	2
+ 882              		.set	.LANCHOR11,. + 0
+ 885              	osSys_sensors_taskStackBuffer:
+ 886 0000 00000000 		.space	1024
+ 886      00000000 
+ 886      00000000 
+ 886      00000000 
+ 886      00000000 
+ 887              		.section	.bss.osSys_sensors_taskTaskBuffer,"aw",%nobits
+ 888              		.align	2
+ 889              		.set	.LANCHOR10,. + 0
+ 892              	osSys_sensors_taskTaskBuffer:
+ 893 0000 00000000 		.space	84
+ 893      00000000 
+ 893      00000000 
+ 893      00000000 
+ 893      00000000 
+ 894              		.section	.rodata.sensors_task_wait,"a"
+ 895              		.align	2
+ 898              	sensors_task_wait:
+ 899 0000 01000000 		.word	1
+ 900              		.text
+ 901              	.Letext0:
+ 902              		.file 2 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 903              		.file 3 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 904              		.file 4 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
+ 905              		.file 5 "Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"
+ 906              		.file 6 "Inc/FreeRTOSConfig.h"
+ 907              		.file 7 "Drivers/CMSIS/Include/core_cm4.h"
+ 908              		.file 8 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 909              		.file 9 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 910              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 911              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 912              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 913              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 914              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 915              		.file 15 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\lock.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckenaP8.s 			page 23
+
+
+ 916              		.file 16 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\_types.h"
+ 917              		.file 17 "c:\\gnu_tools_arm_embedded\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h"
+ 918              		.file 18 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\reent.h"
+ 919              		.file 19 "Modules/include/utils.h"
+ 920              		.file 20 "Inc/i2c.h"
+ 921              		.file 21 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 922              		.file 22 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
+ 923              		.file 23 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\math.h"
+ 924              		.file 24 "Modules/include/filter.h"
+ 925              		.file 25 "Modules/include/system_task.h"
+ 926              		.file 26 "Modules/include/hmc5883l.h"
+ 927              		.file 27 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\stdio.h"
+ 928              		.file 28 "Modules/include/mpu6050.h"
+ 929              		.file 29 "Modules/include/ms5611.h"
+ 930              		.file 30 "<built-in>"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckenaP8.s 			page 24
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 sensors.c
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:18     .rodata.SensorsInit.str1.4:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:40     .text.SensorsInit:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:48     .text.SensorsInit:00000000 SensorsInit
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:257    .text.SensorsInit:00000100 $d
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:18     .rodata.SensorsInit.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:40     .text.SensorsInit:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:48     .text.SensorsInit:00000000 SensorsInit
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:257    .text.SensorsInit:00000100 $d
                             *COM*:00000004 acc_queue
                             *COM*:00000004 gyro_queue
                             *COM*:00000004 mag_queue
                             *COM*:00000004 alt_queue
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:607    .text.SensorsTask:00000000 SensorsTask
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:287    .text.CalibrateIMU:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:294    .text.CalibrateIMU:00000000 CalibrateIMU
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:458    .text.CalibrateIMU:00000130 $d
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:483    .text.CalibrateMag:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:490    .text.CalibrateMag:00000000 CalibrateMag
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:584    .text.CalibrateMag:000000ac $d
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:600    .text.SensorsTask:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:777    .text.SensorsTask:000000d4 $d
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:879    .rodata.sensors_task_wait:00000000 sensors_task_wait
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:792    .bss.acc_lpf:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:796    .bss.acc_lpf:00000000 acc_lpf
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:799    .bss.gyro_lpf:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:803    .bss.gyro_lpf:00000000 gyro_lpf
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:806    .bss.osSys_acc_queueMgm:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:810    .bss.osSys_acc_queueMgm:00000000 osSys_acc_queueMgm
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:813    .bss.osSys_acc_queueStorage:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:817    .bss.osSys_acc_queueStorage:00000000 osSys_acc_queueStorage
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:820    .bss.osSys_alt_queueMgm:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:824    .bss.osSys_alt_queueMgm:00000000 osSys_alt_queueMgm
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:827    .bss.osSys_alt_queueStorage:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:831    .bss.osSys_alt_queueStorage:00000000 osSys_alt_queueStorage
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:834    .bss.osSys_gyro_queueMgm:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:838    .bss.osSys_gyro_queueMgm:00000000 osSys_gyro_queueMgm
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:841    .bss.osSys_gyro_queueStorage:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:845    .bss.osSys_gyro_queueStorage:00000000 osSys_gyro_queueStorage
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:848    .bss.osSys_mag_queueMgm:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:852    .bss.osSys_mag_queueMgm:00000000 osSys_mag_queueMgm
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:855    .bss.osSys_mag_queueStorage:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:859    .bss.osSys_mag_queueStorage:00000000 osSys_mag_queueStorage
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:862    .bss.osSys_sensors_taskStackBuffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:866    .bss.osSys_sensors_taskStackBuffer:00000000 osSys_sensors_taskStackBuffer
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:869    .bss.osSys_sensors_taskTaskBuffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:873    .bss.osSys_sensors_taskTaskBuffer:00000000 osSys_sensors_taskTaskBuffer
-C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s:876    .rodata.sensors_task_wait:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:611    .text.SensorsTask:00000000 SensorsTask
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:287    .text.CalibrateIMU:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:294    .text.CalibrateIMU:00000000 CalibrateIMU
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:458    .text.CalibrateIMU:00000130 $d
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:483    .text.CalibrateMag:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:490    .text.CalibrateMag:00000000 CalibrateMag
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:584    .text.CalibrateMag:000000ac $d
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:600    .rodata.SensorsTask.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:604    .text.SensorsTask:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:794    .text.SensorsTask:000000ec $d
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:898    .rodata.sensors_task_wait:00000000 sensors_task_wait
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:811    .bss.acc_lpf:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:815    .bss.acc_lpf:00000000 acc_lpf
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:818    .bss.gyro_lpf:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:822    .bss.gyro_lpf:00000000 gyro_lpf
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:825    .bss.osSys_acc_queueMgm:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:829    .bss.osSys_acc_queueMgm:00000000 osSys_acc_queueMgm
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:832    .bss.osSys_acc_queueStorage:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:836    .bss.osSys_acc_queueStorage:00000000 osSys_acc_queueStorage
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:839    .bss.osSys_alt_queueMgm:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:843    .bss.osSys_alt_queueMgm:00000000 osSys_alt_queueMgm
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:846    .bss.osSys_alt_queueStorage:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:850    .bss.osSys_alt_queueStorage:00000000 osSys_alt_queueStorage
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:853    .bss.osSys_gyro_queueMgm:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:857    .bss.osSys_gyro_queueMgm:00000000 osSys_gyro_queueMgm
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:860    .bss.osSys_gyro_queueStorage:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:864    .bss.osSys_gyro_queueStorage:00000000 osSys_gyro_queueStorage
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:867    .bss.osSys_mag_queueMgm:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:871    .bss.osSys_mag_queueMgm:00000000 osSys_mag_queueMgm
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:874    .bss.osSys_mag_queueStorage:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:878    .bss.osSys_mag_queueStorage:00000000 osSys_mag_queueStorage
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:881    .bss.osSys_sensors_taskStackBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:885    .bss.osSys_sensors_taskStackBuffer:00000000 osSys_sensors_taskStackBuffer
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:888    .bss.osSys_sensors_taskTaskBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:892    .bss.osSys_sensors_taskTaskBuffer:00000000 osSys_sensors_taskTaskBuffer
+C:\Users\luoha\AppData\Local\Temp\cckenaP8.s:895    .rodata.sensors_task_wait:00000000 $d
 
 UNDEFINED SYMBOLS
 puts
@@ -1369,10 +1396,10 @@ Lowpass2Init
 xQueueGenericCreateStatic
 xTaskCreateStatic
 SystemWaitStart
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cckenaP8.s 			page 25
+
+
 xTaskGetTickCount
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc95P5u1.s 			page 24
-
-
 HMC5883LReadMagRaw
 xQueueGenericSend
 vTaskDelayUntil

@@ -1,0 +1,192 @@
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc02VLBx.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"eskf.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.EskfInit,"ax",%progbits
+  18              		.align	1
+  19              		.global	EskfInit
+  20              		.arch armv7e-m
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  24              		.fpu fpv4-sp-d16
+  26              	EskfInit:
+  27              	.LVL0:
+  28              	.LFB171:
+  29              		.file 1 "Modules/src/eskf.c"
+   1:Modules/src/eskf.c **** #include "eskf.h"
+   2:Modules/src/eskf.c **** 
+   3:Modules/src/eskf.c **** MAT_ALLOC(gravity, 3, 1);
+   4:Modules/src/eskf.c **** float32_t std_acc_noise[3], std_gyro_noise[3], std_acc_bias_noise[3], std_gyro_bias_noise[3];
+   5:Modules/src/eskf.c **** 
+   6:Modules/src/eskf.c **** bool EskfInit(const float32_t *_gravity,
+   7:Modules/src/eskf.c ****               const float32_t *_std_acc_noise,
+   8:Modules/src/eskf.c ****               const float32_t *_std_gyro_noise,
+   9:Modules/src/eskf.c ****               const float32_t *_std_acc_bias_noise,
+  10:Modules/src/eskf.c ****               const float32_t *_std_gyro_bias_noise) {
+  30              		.loc 1 10 54 view -0
+  31              		.cfi_startproc
+  32              		@ args = 4, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		.loc 1 10 54 is_stmt 0 view .LVU1
+  35 0000 2DE9F843 		push	{r3, r4, r5, r6, r7, r8, r9, lr}
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 32
+  38              		.cfi_offset 3, -32
+  39              		.cfi_offset 4, -28
+  40              		.cfi_offset 5, -24
+  41              		.cfi_offset 6, -20
+  42              		.cfi_offset 7, -16
+  43              		.cfi_offset 8, -12
+  44              		.cfi_offset 9, -8
+  45              		.cfi_offset 14, -4
+  46 0004 8046     		mov	r8, r0
+  47 0006 0E46     		mov	r6, r1
+  48 0008 1446     		mov	r4, r2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc02VLBx.s 			page 2
+
+
+  49 000a 1D46     		mov	r5, r3
+  50 000c 089F     		ldr	r7, [sp, #32]
+  11:Modules/src/eskf.c **** 
+  12:Modules/src/eskf.c ****     MAT_INIT(gravity, 3, 1);
+  51              		.loc 1 12 5 is_stmt 1 view .LVU2
+  52 000e DFF86890 		ldr	r9, .L3+20
+  53 0012 144B     		ldr	r3, .L3
+  54              	.LVL1:
+  55              		.loc 1 12 5 is_stmt 0 view .LVU3
+  56 0014 0122     		movs	r2, #1
+  57              	.LVL2:
+  58              		.loc 1 12 5 view .LVU4
+  59 0016 0321     		movs	r1, #3
+  60              	.LVL3:
+  61              		.loc 1 12 5 view .LVU5
+  62 0018 4846     		mov	r0, r9
+  63              	.LVL4:
+  64              		.loc 1 12 5 view .LVU6
+  65 001a FFF7FEFF 		bl	arm_mat_init_f32
+  66              	.LVL5:
+  13:Modules/src/eskf.c **** 
+  14:Modules/src/eskf.c ****     memcpy(MAT_DATA(gravity), _gravity, 3 * sizeof(float32_t));
+  67              		.loc 1 14 5 is_stmt 1 view .LVU7
+  68              		.loc 1 14 12 is_stmt 0 view .LVU8
+  69 001e D9F80430 		ldr	r3, [r9, #4]
+  70              		.loc 1 14 5 view .LVU9
+  71 0022 D8F80000 		ldr	r0, [r8]	@ unaligned
+  72 0026 D8F80410 		ldr	r1, [r8, #4]	@ unaligned
+  73 002a D8F80820 		ldr	r2, [r8, #8]	@ unaligned
+  74 002e 1860     		str	r0, [r3]	@ unaligned
+  75 0030 5960     		str	r1, [r3, #4]	@ unaligned
+  76 0032 9A60     		str	r2, [r3, #8]	@ unaligned
+  15:Modules/src/eskf.c ****     memcpy(std_acc_noise, _std_acc_noise, 3 * sizeof(float32_t));
+  77              		.loc 1 15 5 is_stmt 1 view .LVU10
+  78 0034 0C4B     		ldr	r3, .L3+4
+  79 0036 3068     		ldr	r0, [r6]	@ unaligned
+  80 0038 7168     		ldr	r1, [r6, #4]	@ unaligned
+  81 003a B268     		ldr	r2, [r6, #8]	@ unaligned
+  82 003c 07C3     		stmia	r3!, {r0, r1, r2}
+  16:Modules/src/eskf.c ****     memcpy(std_gyro_noise, _std_gyro_noise, 3 * sizeof(float32_t));
+  83              		.loc 1 16 5 view .LVU11
+  84 003e 0B4B     		ldr	r3, .L3+8
+  85 0040 2068     		ldr	r0, [r4]	@ unaligned
+  86 0042 6168     		ldr	r1, [r4, #4]	@ unaligned
+  87 0044 A268     		ldr	r2, [r4, #8]	@ unaligned
+  88 0046 07C3     		stmia	r3!, {r0, r1, r2}
+  17:Modules/src/eskf.c ****     memcpy(std_acc_bias_noise, _std_acc_bias_noise, 3 * sizeof(float32_t));
+  89              		.loc 1 17 5 view .LVU12
+  90 0048 094C     		ldr	r4, .L3+12
+  91              	.LVL6:
+  92              		.loc 1 17 5 is_stmt 0 view .LVU13
+  93 004a 2868     		ldr	r0, [r5]	@ unaligned
+  94 004c 6968     		ldr	r1, [r5, #4]	@ unaligned
+  95 004e AA68     		ldr	r2, [r5, #8]	@ unaligned
+  96 0050 07C4     		stmia	r4!, {r0, r1, r2}
+  18:Modules/src/eskf.c ****     memcpy(std_gyro_bias_noise, _std_gyro_bias_noise, 3 * sizeof(float32_t));
+  97              		.loc 1 18 5 is_stmt 1 view .LVU14
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc02VLBx.s 			page 3
+
+
+  98 0052 084B     		ldr	r3, .L3+16
+  99 0054 3868     		ldr	r0, [r7]	@ unaligned
+ 100 0056 7968     		ldr	r1, [r7, #4]	@ unaligned
+ 101 0058 BA68     		ldr	r2, [r7, #8]	@ unaligned
+ 102 005a 07C3     		stmia	r3!, {r0, r1, r2}
+  19:Modules/src/eskf.c **** 
+  20:Modules/src/eskf.c ****     
+  21:Modules/src/eskf.c **** 
+  22:Modules/src/eskf.c ****     return true;
+ 103              		.loc 1 22 5 view .LVU15
+  23:Modules/src/eskf.c **** }
+ 104              		.loc 1 23 1 is_stmt 0 view .LVU16
+ 105 005c 0120     		movs	r0, #1
+ 106 005e BDE8F883 		pop	{r3, r4, r5, r6, r7, r8, r9, pc}
+ 107              	.LVL7:
+ 108              	.L4:
+ 109              		.loc 1 23 1 view .LVU17
+ 110 0062 00BF     		.align	2
+ 111              	.L3:
+ 112 0064 00000000 		.word	gravity_arr
+ 113 0068 00000000 		.word	std_acc_noise
+ 114 006c 00000000 		.word	std_gyro_noise
+ 115 0070 00000000 		.word	std_acc_bias_noise
+ 116 0074 00000000 		.word	std_gyro_bias_noise
+ 117 0078 00000000 		.word	gravity
+ 118              		.cfi_endproc
+ 119              	.LFE171:
+ 121              		.comm	std_gyro_bias_noise,12,4
+ 122              		.comm	std_acc_bias_noise,12,4
+ 123              		.comm	std_gyro_noise,12,4
+ 124              		.comm	std_acc_noise,12,4
+ 125              		.comm	gravity_arr,12,4
+ 126              		.comm	gravity,8,4
+ 127              		.text
+ 128              	.Letext0:
+ 129              		.file 2 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 130              		.file 3 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 131              		.file 4 "Inc/FreeRTOSConfig.h"
+ 132              		.file 5 "Drivers/CMSIS/Include/core_cm4.h"
+ 133              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 134              		.file 7 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 135              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 136              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 137              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 138              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 139              		.file 12 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\lock.h"
+ 140              		.file 13 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\_types.h"
+ 141              		.file 14 "c:\\gnu_tools_arm_embedded\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h"
+ 142              		.file 15 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\reent.h"
+ 143              		.file 16 "Modules/include/utils.h"
+ 144              		.file 17 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\math.h"
+ 145              		.file 18 "Drivers/CMSIS/DSP/Include/arm_math.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc02VLBx.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 eskf.c
+C:\Users\luoha\AppData\Local\Temp\cc02VLBx.s:18     .text.EskfInit:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cc02VLBx.s:26     .text.EskfInit:00000000 EskfInit
+C:\Users\luoha\AppData\Local\Temp\cc02VLBx.s:112    .text.EskfInit:00000064 $d
+                            *COM*:0000000c gravity_arr
+                            *COM*:0000000c std_acc_noise
+                            *COM*:0000000c std_gyro_noise
+                            *COM*:0000000c std_acc_bias_noise
+                            *COM*:0000000c std_gyro_bias_noise
+                            *COM*:00000008 gravity
+
+UNDEFINED SYMBOLS
+arm_mat_init_f32

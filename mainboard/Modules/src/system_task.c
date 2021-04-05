@@ -13,6 +13,9 @@ void SystemLaunch(void) {
 void SystemTask(void *param) {
     SystemInitiate();
 
+    SensorsLaunch();
+    StateEstimatorLaunch();
+
     while(1) {
         vTaskDelay(portMAX_DELAY);
     }

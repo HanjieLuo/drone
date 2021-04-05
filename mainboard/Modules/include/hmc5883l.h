@@ -4,6 +4,8 @@
 #include "i2c1.h"
 #include "utils.h"
 
+#define SensorsReadMagRaw HMC5883LReadMagRaw
+
 #define HMC5883L_ADDRESS            0x1E // this device only has one address
 #define HMC5883L_DEFAULT_ADDRESS    0x3C // HMC5883L_ADDRESS << 1
 
@@ -71,5 +73,7 @@
 bool HMC5883LInit(void);
 bool HMC5883LReadMagRaw(int16_t *values);
 bool HMC5883LReadMag(float *mx, float *my, float *mz);
+
+void CalibrateMag(const int16_t *mag_raw, float *mag);
 
 #endif /* __HMC5883L_H */

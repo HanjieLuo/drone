@@ -5,14 +5,16 @@
 
 // Task priorities. Higher number higher priority
 // Max: configMAX_PRIORITIES
-#define SYSTEMVIEW_TASK_PRI     6
-#define SENSORS_TASK_PRI        7
-#define SYSTEM_TASK_PRI         2
+#define SYSTEMVIEW_TASK_PRI         6
+#define SENSORS_TASK_PRI            5
+#define STATE_ESTIMATOR_TASK_PRI    4
+#define SYSTEM_TASK_PRI             2
 
 //Task stack sizes
-#define SYSTEM_TASK_STACKSIZE         (2 * configMINIMAL_STACK_SIZE)
-#define SENSORS_TASK_STACKSIZE        (2 * configMINIMAL_STACK_SIZE)
-#define SYSTEMVIEW_TASK_STACKSIZE     (2 * configMINIMAL_STACK_SIZE)
+#define SYSTEM_TASK_STACKSIZE           (2 * configMINIMAL_STACK_SIZE)
+#define SENSORS_TASK_STACKSIZE          (2 * configMINIMAL_STACK_SIZE)
+#define STATE_ESTIMATOR_TASK_STACKSIZE  (2 * configMINIMAL_STACK_SIZE)
+#define SYSTEMVIEW_TASK_STACKSIZE       (2 * configMINIMAL_STACK_SIZE)
 
 // HZ
 #define IMU_SAMPLE_FREQ 1000    //MPU6050

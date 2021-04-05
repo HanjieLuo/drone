@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccglgKHd.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -32,7 +32,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s 			page 1
   27              		.thumb_func
   28              		.fpu fpv4-sp-d16
   30              	SystemLaunch:
-  31              	.LFB138:
+  31              	.LFB171:
   32              		.file 1 "Modules/src/system_task.c"
    1:Modules/src/system_task.c **** #include "system_task.h"
    2:Modules/src/system_task.c **** 
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s 			page 1
   44              		.loc 1 10 5 view .LVU1
   45 0004 074B     		ldr	r3, .L3
   46 0006 0293     		str	r3, [sp, #8]
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccglgKHd.s 			page 2
 
 
   47 0008 074B     		ldr	r3, .L3+4
@@ -86,7 +86,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s 			page 1
   68 002c 00000000 		.word	.LC0
   69 0030 00000000 		.word	SystemTask
   70              		.cfi_endproc
-  71              	.LFE138:
+  71              	.LFE171:
   73              		.section	.rodata.SystemInitiate.str1.4,"aMS",%progbits,1
   74              		.align	2
   75              	.LC1:
@@ -103,28 +103,31 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s 			page 1
   82              		.thumb_func
   83              		.fpu fpv4-sp-d16
   85              	SystemInitiate:
-  86              	.LFB140:
+  86              	.LFB173:
   12:Modules/src/system_task.c **** 
   13:Modules/src/system_task.c **** void SystemTask(void *param) {
   14:Modules/src/system_task.c ****     SystemInitiate();
   15:Modules/src/system_task.c **** 
-  16:Modules/src/system_task.c ****     while(1) {
-  17:Modules/src/system_task.c ****         vTaskDelay(portMAX_DELAY);
-  18:Modules/src/system_task.c ****     }
-  19:Modules/src/system_task.c **** 
-  20:Modules/src/system_task.c **** 
-  21:Modules/src/system_task.c ****     // uint8_t buffer[] = "Hello world\r\n";
-  22:Modules/src/system_task.c ****     // while(1) {
-  23:Modules/src/system_task.c ****     //     HAL_UART_Transmit_DMA(&huart1, buffer, sizeof(buffer));
-  24:Modules/src/system_task.c ****     //     vTaskDelay(pdMS_TO_TICKS(1000));
-  25:Modules/src/system_task.c ****     // }
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s 			page 3
+  16:Modules/src/system_task.c ****     SensorsLaunch();
+  17:Modules/src/system_task.c ****     StateEstimatorLaunch();
+  18:Modules/src/system_task.c **** 
+  19:Modules/src/system_task.c ****     while(1) {
+  20:Modules/src/system_task.c ****         vTaskDelay(portMAX_DELAY);
+  21:Modules/src/system_task.c ****     }
+  22:Modules/src/system_task.c **** 
+  23:Modules/src/system_task.c **** 
+  24:Modules/src/system_task.c ****     // uint8_t buffer[] = "Hello world\r\n";
+  25:Modules/src/system_task.c ****     // while(1) {
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccglgKHd.s 			page 3
 
 
-  26:Modules/src/system_task.c **** }
-  27:Modules/src/system_task.c **** 
-  28:Modules/src/system_task.c **** void SystemInitiate(void) {
-  87              		.loc 1 28 27 is_stmt 1 view -0
+  26:Modules/src/system_task.c ****     //     HAL_UART_Transmit_DMA(&huart1, buffer, sizeof(buffer));
+  27:Modules/src/system_task.c ****     //     vTaskDelay(pdMS_TO_TICKS(1000));
+  28:Modules/src/system_task.c ****     // }
+  29:Modules/src/system_task.c **** }
+  30:Modules/src/system_task.c **** 
+  31:Modules/src/system_task.c **** void SystemInitiate(void) {
+  87              		.loc 1 31 27 is_stmt 1 view -0
   88              		.cfi_startproc
   89              		@ args = 0, pretend = 0, frame = 0
   90              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -133,58 +136,58 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s 			page 1
   93              		.cfi_def_cfa_offset 8
   94              		.cfi_offset 3, -8
   95              		.cfi_offset 14, -4
-  29:Modules/src/system_task.c ****     if(is_init) return;
-  96              		.loc 1 29 5 view .LVU4
-  97              		.loc 1 29 8 is_stmt 0 view .LVU5
+  32:Modules/src/system_task.c ****     if(is_init) return;
+  96              		.loc 1 32 5 view .LVU4
+  97              		.loc 1 32 8 is_stmt 0 view .LVU5
   98 0002 064B     		ldr	r3, .L9
   99 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 100              		.loc 1 29 7 view .LVU6
+ 100              		.loc 1 32 7 view .LVU6
  101 0006 03B1     		cbz	r3, .L8
  102              	.L5:
-  30:Modules/src/system_task.c ****     
-  31:Modules/src/system_task.c ****     bool is_ok = SensorsInit();
-  32:Modules/src/system_task.c **** 
-  33:Modules/src/system_task.c ****     is_init = is_ok;
-  34:Modules/src/system_task.c ****     printf("SystemInitiate: %u\r\n\r\n", is_init);
-  35:Modules/src/system_task.c **** }
- 103              		.loc 1 35 1 view .LVU7
+  33:Modules/src/system_task.c ****     
+  34:Modules/src/system_task.c ****     bool is_ok = SensorsInit();
+  35:Modules/src/system_task.c **** 
+  36:Modules/src/system_task.c ****     is_init = is_ok;
+  37:Modules/src/system_task.c ****     printf("SystemInitiate: %u\r\n\r\n", is_init);
+  38:Modules/src/system_task.c **** }
+ 103              		.loc 1 38 1 view .LVU7
  104 0008 08BD     		pop	{r3, pc}
  105              	.L8:
-  31:Modules/src/system_task.c **** 
- 106              		.loc 1 31 5 is_stmt 1 view .LVU8
-  31:Modules/src/system_task.c **** 
- 107              		.loc 1 31 18 is_stmt 0 view .LVU9
+  34:Modules/src/system_task.c **** 
+ 106              		.loc 1 34 5 is_stmt 1 view .LVU8
+  34:Modules/src/system_task.c **** 
+ 107              		.loc 1 34 18 is_stmt 0 view .LVU9
  108 000a FFF7FEFF 		bl	SensorsInit
  109              	.LVL1:
  110 000e 0146     		mov	r1, r0
  111              	.LVL2:
-  33:Modules/src/system_task.c ****     printf("SystemInitiate: %u\r\n\r\n", is_init);
- 112              		.loc 1 33 5 is_stmt 1 view .LVU10
-  33:Modules/src/system_task.c ****     printf("SystemInitiate: %u\r\n\r\n", is_init);
- 113              		.loc 1 33 13 is_stmt 0 view .LVU11
+  36:Modules/src/system_task.c ****     printf("SystemInitiate: %u\r\n\r\n", is_init);
+ 112              		.loc 1 36 5 is_stmt 1 view .LVU10
+  36:Modules/src/system_task.c ****     printf("SystemInitiate: %u\r\n\r\n", is_init);
+ 113              		.loc 1 36 13 is_stmt 0 view .LVU11
  114 0010 024B     		ldr	r3, .L9
  115 0012 1870     		strb	r0, [r3]
-  34:Modules/src/system_task.c **** }
- 116              		.loc 1 34 5 is_stmt 1 view .LVU12
+  37:Modules/src/system_task.c **** }
+ 116              		.loc 1 37 5 is_stmt 1 view .LVU12
  117 0014 0248     		ldr	r0, .L9+4
  118              	.LVL3:
-  34:Modules/src/system_task.c **** }
- 119              		.loc 1 34 5 is_stmt 0 view .LVU13
+  37:Modules/src/system_task.c **** }
+ 119              		.loc 1 37 5 is_stmt 0 view .LVU13
  120 0016 FFF7FEFF 		bl	printf
  121              	.LVL4:
-  34:Modules/src/system_task.c **** }
- 122              		.loc 1 34 5 view .LVU14
+  37:Modules/src/system_task.c **** }
+ 122              		.loc 1 37 5 view .LVU14
  123 001a F5E7     		b	.L5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccglgKHd.s 			page 4
+
+
  124              	.L10:
  125              		.align	2
  126              	.L9:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s 			page 4
-
-
  127 001c 00000000 		.word	.LANCHOR2
  128 0020 00000000 		.word	.LC1
  129              		.cfi_endproc
- 130              	.LFE140:
+ 130              	.LFE173:
  132              		.section	.text.SystemTask,"ax",%progbits
  133              		.align	1
  134              		.syntax unified
@@ -193,7 +196,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s 			page 1
  137              		.fpu fpv4-sp-d16
  139              	SystemTask:
  140              	.LVL5:
- 141              	.LFB139:
+ 141              	.LFB172:
   13:Modules/src/system_task.c ****     SystemInitiate();
  142              		.loc 1 13 30 is_stmt 1 view -0
  143              		.cfi_startproc
@@ -211,148 +214,159 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s 			page 1
  153              		.loc 1 14 5 is_stmt 1 view .LVU17
  154 0002 FFF7FEFF 		bl	SystemInitiate
  155              	.LVL6:
- 156              	.L12:
-  16:Modules/src/system_task.c ****         vTaskDelay(portMAX_DELAY);
- 157              		.loc 1 16 5 discriminator 1 view .LVU18
-  17:Modules/src/system_task.c ****     }
- 158              		.loc 1 17 9 discriminator 1 view .LVU19
- 159 0006 4FF0FF30 		mov	r0, #-1
- 160 000a FFF7FEFF 		bl	vTaskDelay
- 161              	.LVL7:
-  16:Modules/src/system_task.c ****         vTaskDelay(portMAX_DELAY);
- 162              		.loc 1 16 10 discriminator 1 view .LVU20
- 163 000e FAE7     		b	.L12
- 164              		.cfi_endproc
- 165              	.LFE139:
- 167              		.section	.text.SystemWaitStart,"ax",%progbits
- 168              		.align	1
- 169              		.global	SystemWaitStart
- 170              		.syntax unified
- 171              		.thumb
- 172              		.thumb_func
- 173              		.fpu fpv4-sp-d16
- 175              	SystemWaitStart:
- 176              	.LFB141:
-  36:Modules/src/system_task.c **** 
-  37:Modules/src/system_task.c **** 
-  38:Modules/src/system_task.c **** void SystemWaitStart(void) {
- 177              		.loc 1 38 28 view -0
- 178              		.cfi_startproc
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s 			page 5
+  16:Modules/src/system_task.c ****     StateEstimatorLaunch();
+ 156              		.loc 1 16 5 view .LVU18
+ 157 0006 FFF7FEFF 		bl	SensorsLaunch
+ 158              	.LVL7:
+  17:Modules/src/system_task.c **** 
+ 159              		.loc 1 17 5 view .LVU19
+ 160 000a FFF7FEFF 		bl	StateEstimatorLaunch
+ 161              	.LVL8:
+ 162              	.L12:
+  19:Modules/src/system_task.c ****         vTaskDelay(portMAX_DELAY);
+ 163              		.loc 1 19 5 discriminator 1 view .LVU20
+  20:Modules/src/system_task.c ****     }
+ 164              		.loc 1 20 9 discriminator 1 view .LVU21
+ 165 000e 4FF0FF30 		mov	r0, #-1
+ 166 0012 FFF7FEFF 		bl	vTaskDelay
+ 167              	.LVL9:
+  19:Modules/src/system_task.c ****         vTaskDelay(portMAX_DELAY);
+ 168              		.loc 1 19 10 discriminator 1 view .LVU22
+ 169 0016 FAE7     		b	.L12
+ 170              		.cfi_endproc
+ 171              	.LFE172:
+ 173              		.section	.text.SystemWaitStart,"ax",%progbits
+ 174              		.align	1
+ 175              		.global	SystemWaitStart
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccglgKHd.s 			page 5
 
 
- 179              		@ args = 0, pretend = 0, frame = 0
- 180              		@ frame_needed = 0, uses_anonymous_args = 0
- 181 0000 08B5     		push	{r3, lr}
- 182              	.LCFI5:
- 183              		.cfi_def_cfa_offset 8
- 184              		.cfi_offset 3, -8
- 185              		.cfi_offset 14, -4
-  39:Modules/src/system_task.c ****     if(!is_init) {
- 186              		.loc 1 39 5 view .LVU22
- 187              		.loc 1 39 8 is_stmt 0 view .LVU23
- 188 0002 044B     		ldr	r3, .L18
- 189 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 190              		.loc 1 39 7 view .LVU24
- 191 0006 03B1     		cbz	r3, .L17
- 192              	.L14:
-  40:Modules/src/system_task.c ****         // printf("wait\r\n");
-  41:Modules/src/system_task.c ****         vTaskDelay(2);
-  42:Modules/src/system_task.c ****     }
-  43:Modules/src/system_task.c **** }...
- 193              		.loc 1 43 1 view .LVU25
- 194 0008 08BD     		pop	{r3, pc}
- 195              	.L17:
-  41:Modules/src/system_task.c ****         vTaskDelay(2);
- 196              		.loc 1 41 9 is_stmt 1 view .LVU26
- 197 000a 0220     		movs	r0, #2
- 198 000c FFF7FEFF 		bl	vTaskDelay
- 199              	.LVL8:
- 200              		.loc 1 43 1 is_stmt 0 view .LVU27
- 201 0010 FAE7     		b	.L14
- 202              	.L19:
- 203 0012 00BF     		.align	2
- 204              	.L18:
- 205 0014 00000000 		.word	.LANCHOR2
- 206              		.cfi_endproc
- 207              	.LFE141:
- 209              		.section	.bss.is_init,"aw",%nobits
- 210              		.set	.LANCHOR2,. + 0
- 213              	is_init:
- 214 0000 00       		.space	1
- 215              		.section	.bss.osSys_system_taskStackBuffer,"aw",%nobits
- 216              		.align	2
- 217              		.set	.LANCHOR1,. + 0
- 220              	osSys_system_taskStackBuffer:
- 221 0000 00000000 		.space	1024
- 221      00000000 
- 221      00000000 
- 221      00000000 
- 221      00000000 
- 222              		.section	.bss.osSys_system_taskTaskBuffer,"aw",%nobits
- 223              		.align	2
- 224              		.set	.LANCHOR0,. + 0
- 227              	osSys_system_taskTaskBuffer:
- 228 0000 00000000 		.space	84
- 228      00000000 
- 228      00000000 
- 228      00000000 
- 228      00000000 
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s 			page 6
+ 176              		.syntax unified
+ 177              		.thumb
+ 178              		.thumb_func
+ 179              		.fpu fpv4-sp-d16
+ 181              	SystemWaitStart:
+ 182              	.LFB174:
+  39:Modules/src/system_task.c **** 
+  40:Modules/src/system_task.c **** 
+  41:Modules/src/system_task.c **** void SystemWaitStart(void) {
+ 183              		.loc 1 41 28 view -0
+ 184              		.cfi_startproc
+ 185              		@ args = 0, pretend = 0, frame = 0
+ 186              		@ frame_needed = 0, uses_anonymous_args = 0
+ 187 0000 08B5     		push	{r3, lr}
+ 188              	.LCFI5:
+ 189              		.cfi_def_cfa_offset 8
+ 190              		.cfi_offset 3, -8
+ 191              		.cfi_offset 14, -4
+  42:Modules/src/system_task.c ****     if(!is_init) {
+ 192              		.loc 1 42 5 view .LVU24
+ 193              		.loc 1 42 8 is_stmt 0 view .LVU25
+ 194 0002 044B     		ldr	r3, .L18
+ 195 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 196              		.loc 1 42 7 view .LVU26
+ 197 0006 03B1     		cbz	r3, .L17
+ 198              	.L14:
+  43:Modules/src/system_task.c ****         // printf("wait\r\n");
+  44:Modules/src/system_task.c ****         vTaskDelay(2);
+  45:Modules/src/system_task.c ****     }
+  46:Modules/src/system_task.c **** }...
+ 199              		.loc 1 46 1 view .LVU27
+ 200 0008 08BD     		pop	{r3, pc}
+ 201              	.L17:
+  44:Modules/src/system_task.c ****         vTaskDelay(2);
+ 202              		.loc 1 44 9 is_stmt 1 view .LVU28
+ 203 000a 0220     		movs	r0, #2
+ 204 000c FFF7FEFF 		bl	vTaskDelay
+ 205              	.LVL10:
+ 206              		.loc 1 46 1 is_stmt 0 view .LVU29
+ 207 0010 FAE7     		b	.L14
+ 208              	.L19:
+ 209 0012 00BF     		.align	2
+ 210              	.L18:
+ 211 0014 00000000 		.word	.LANCHOR2
+ 212              		.cfi_endproc
+ 213              	.LFE174:
+ 215              		.section	.bss.is_init,"aw",%nobits
+ 216              		.set	.LANCHOR2,. + 0
+ 219              	is_init:
+ 220 0000 00       		.space	1
+ 221              		.section	.bss.osSys_system_taskStackBuffer,"aw",%nobits
+ 222              		.align	2
+ 223              		.set	.LANCHOR1,. + 0
+ 226              	osSys_system_taskStackBuffer:
+ 227 0000 00000000 		.space	1024
+ 227      00000000 
+ 227      00000000 
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccglgKHd.s 			page 6
 
 
- 229              		.text
- 230              	.Letext0:
- 231              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
- 232              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
- 233              		.file 4 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
- 234              		.file 5 "Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"
- 235              		.file 6 "Inc/FreeRTOSConfig.h"
- 236              		.file 7 "Drivers/CMSIS/Include/core_cm4.h"
- 237              		.file 8 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 238              		.file 9 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
- 239              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 240              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 241              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
- 242              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 243              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 244              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
- 245              		.file 16 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
- 246              		.file 17 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
- 247              		.file 18 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
- 248              		.file 19 "Modules/include/utils.h"
- 249              		.file 20 "Inc/i2c.h"
- 250              		.file 21 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\math.h"
- 251              		.file 22 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
- 252              		.file 23 "Modules/include/sensors.h"
- 253              		.file 24 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\stdio.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s 			page 7
+ 227      00000000 
+ 227      00000000 
+ 228              		.section	.bss.osSys_system_taskTaskBuffer,"aw",%nobits
+ 229              		.align	2
+ 230              		.set	.LANCHOR0,. + 0
+ 233              	osSys_system_taskTaskBuffer:
+ 234 0000 00000000 		.space	84
+ 234      00000000 
+ 234      00000000 
+ 234      00000000 
+ 234      00000000 
+ 235              		.text
+ 236              	.Letext0:
+ 237              		.file 2 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 238              		.file 3 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 239              		.file 4 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
+ 240              		.file 5 "Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"
+ 241              		.file 6 "Inc/FreeRTOSConfig.h"
+ 242              		.file 7 "Drivers/CMSIS/Include/core_cm4.h"
+ 243              		.file 8 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 244              		.file 9 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 245              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 246              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 247              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 248              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 249              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 250              		.file 15 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\lock.h"
+ 251              		.file 16 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\_types.h"
+ 252              		.file 17 "c:\\gnu_tools_arm_embedded\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h"
+ 253              		.file 18 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\reent.h"
+ 254              		.file 19 "Modules/include/utils.h"
+ 255              		.file 20 "Inc/i2c.h"
+ 256              		.file 21 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\math.h"
+ 257              		.file 22 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 258              		.file 23 "Modules/include/sensors_task.h"
+ 259              		.file 24 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\stdio.h"
+ 260              		.file 25 "Modules/include/state_estimator_task.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccglgKHd.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 system_task.c
-C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:18     .rodata.SystemLaunch.str1.4:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:22     .text.SystemLaunch:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:30     .text.SystemLaunch:00000000 SystemLaunch
-C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:66     .text.SystemLaunch:00000024 $d
-C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:139    .text.SystemTask:00000000 SystemTask
-C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:74     .rodata.SystemInitiate.str1.4:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:78     .text.SystemInitiate:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:85     .text.SystemInitiate:00000000 SystemInitiate
-C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:127    .text.SystemInitiate:0000001c $d
-C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:133    .text.SystemTask:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:168    .text.SystemWaitStart:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:175    .text.SystemWaitStart:00000000 SystemWaitStart
-C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:205    .text.SystemWaitStart:00000014 $d
-C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:213    .bss.is_init:00000000 is_init
-C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:214    .bss.is_init:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:216    .bss.osSys_system_taskStackBuffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:220    .bss.osSys_system_taskStackBuffer:00000000 osSys_system_taskStackBuffer
-C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:223    .bss.osSys_system_taskTaskBuffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccuqf1rP.s:227    .bss.osSys_system_taskTaskBuffer:00000000 osSys_system_taskTaskBuffer
+C:\Users\luoha\AppData\Local\Temp\ccglgKHd.s:18     .rodata.SystemLaunch.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccglgKHd.s:22     .text.SystemLaunch:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccglgKHd.s:30     .text.SystemLaunch:00000000 SystemLaunch
+C:\Users\luoha\AppData\Local\Temp\ccglgKHd.s:66     .text.SystemLaunch:00000024 $d
+C:\Users\luoha\AppData\Local\Temp\ccglgKHd.s:139    .text.SystemTask:00000000 SystemTask
+C:\Users\luoha\AppData\Local\Temp\ccglgKHd.s:74     .rodata.SystemInitiate.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccglgKHd.s:78     .text.SystemInitiate:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccglgKHd.s:85     .text.SystemInitiate:00000000 SystemInitiate
+C:\Users\luoha\AppData\Local\Temp\ccglgKHd.s:127    .text.SystemInitiate:0000001c $d
+C:\Users\luoha\AppData\Local\Temp\ccglgKHd.s:133    .text.SystemTask:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccglgKHd.s:174    .text.SystemWaitStart:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccglgKHd.s:181    .text.SystemWaitStart:00000000 SystemWaitStart
+C:\Users\luoha\AppData\Local\Temp\ccglgKHd.s:211    .text.SystemWaitStart:00000014 $d
+C:\Users\luoha\AppData\Local\Temp\ccglgKHd.s:219    .bss.is_init:00000000 is_init
+C:\Users\luoha\AppData\Local\Temp\ccglgKHd.s:220    .bss.is_init:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccglgKHd.s:222    .bss.osSys_system_taskStackBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccglgKHd.s:226    .bss.osSys_system_taskStackBuffer:00000000 osSys_system_taskStackBuffer
+C:\Users\luoha\AppData\Local\Temp\ccglgKHd.s:229    .bss.osSys_system_taskTaskBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccglgKHd.s:233    .bss.osSys_system_taskTaskBuffer:00000000 osSys_system_taskTaskBuffer
 
 UNDEFINED SYMBOLS
 xTaskCreateStatic
 SensorsInit
 printf
+SensorsLaunch
+StateEstimatorLaunch
 vTaskDelay

@@ -1,0 +1,355 @@
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9gTY4b.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"state_estimator_task.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.global	__aeabi_f2d
+  18              		.section	.rodata.StateEstimatorTask.str1.4,"aMS",%progbits,1
+  19              		.align	2
+  20              	.LC0:
+  21 0000 256C752C 		.ascii	"%lu,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f\012\000"
+  21      25662C25 
+  21      662C2566 
+  21      2C25662C 
+  21      25662C25 
+  22              		.section	.text.StateEstimatorTask,"ax",%progbits
+  23              		.align	1
+  24              		.global	StateEstimatorTask
+  25              		.arch armv7e-m
+  26              		.syntax unified
+  27              		.thumb
+  28              		.thumb_func
+  29              		.fpu fpv4-sp-d16
+  31              	StateEstimatorTask:
+  32              	.LVL0:
+  33              	.LFB172:
+  34              		.file 1 "Modules/src/state_estimator_task.c"
+   1:Modules/src/state_estimator_task.c **** #include "state_estimator_task.h"
+   2:Modules/src/state_estimator_task.c **** 
+   3:Modules/src/state_estimator_task.c **** extern xQueueHandle acc_queue;
+   4:Modules/src/state_estimator_task.c **** extern xQueueHandle gyro_queue;
+   5:Modules/src/state_estimator_task.c **** extern xQueueHandle mag_queue;
+   6:Modules/src/state_estimator_task.c **** extern xQueueHandle alt_queue;
+   7:Modules/src/state_estimator_task.c **** 
+   8:Modules/src/state_estimator_task.c **** static TaskHandle_t state_estimator_task_handle;
+   9:Modules/src/state_estimator_task.c **** STATIC_MEM_TASK_ALLOC(state_estimator_task, STATE_ESTIMATOR_TASK_STACKSIZE);
+  10:Modules/src/state_estimator_task.c **** 
+  11:Modules/src/state_estimator_task.c **** void StateEstimatorLaunch(void) {
+  12:Modules/src/state_estimator_task.c ****     // EskfInit();
+  13:Modules/src/state_estimator_task.c **** 
+  14:Modules/src/state_estimator_task.c ****     state_estimator_task_handle = STATIC_MEM_TASK_CREATE(state_estimator_task, StateEstimatorTask, 
+  15:Modules/src/state_estimator_task.c **** }
+  16:Modules/src/state_estimator_task.c **** 
+  17:Modules/src/state_estimator_task.c **** void StateEstimatorTask(void *param) {
+  35              		.loc 1 17 38 view -0
+  36              		.cfi_startproc
+  37              		@ args = 0, pretend = 0, frame = 48
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9gTY4b.s 			page 2
+
+
+  38              		@ frame_needed = 0, uses_anonymous_args = 0
+  39              		.loc 1 17 38 is_stmt 0 view .LVU1
+  40 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+  41              	.LCFI0:
+  42              		.cfi_def_cfa_offset 20
+  43              		.cfi_offset 4, -20
+  44              		.cfi_offset 5, -16
+  45              		.cfi_offset 6, -12
+  46              		.cfi_offset 7, -8
+  47              		.cfi_offset 14, -4
+  48 0002 9FB0     		sub	sp, sp, #124
+  49              	.LCFI1:
+  50              		.cfi_def_cfa_offset 144
+  18:Modules/src/state_estimator_task.c ****     // int16_t acc_raw[3], gyro_raw[3], mag_raw[3];
+  19:Modules/src/state_estimator_task.c ****     float acc[3], gyro[3], mag[3], alt;
+  51              		.loc 1 19 5 is_stmt 1 view .LVU2
+  20:Modules/src/state_estimator_task.c **** 
+  21:Modules/src/state_estimator_task.c ****     const TickType_t wait_time = pdMS_TO_TICKS(1000);
+  52              		.loc 1 21 5 view .LVU3
+  53              	.LVL1:
+  22:Modules/src/state_estimator_task.c ****     portTickType last_wait_time = xTaskGetTickCount();
+  54              		.loc 1 22 5 view .LVU4
+  55              		.loc 1 22 35 is_stmt 0 view .LVU5
+  56 0004 FFF7FEFF 		bl	xTaskGetTickCount
+  57              	.LVL2:
+  58              		.loc 1 22 18 view .LVU6
+  59 0008 1390     		str	r0, [sp, #76]
+  60              	.L2:
+  23:Modules/src/state_estimator_task.c ****     for (;;) {
+  61              		.loc 1 23 5 is_stmt 1 discriminator 1 view .LVU7
+  24:Modules/src/state_estimator_task.c ****         xQueuePeek(acc_queue, acc, portMAX_DELAY);
+  62              		.loc 1 24 9 discriminator 1 view .LVU8
+  63 000a 4FF0FF32 		mov	r2, #-1
+  64 000e 1BA9     		add	r1, sp, #108
+  65 0010 2F4B     		ldr	r3, .L4
+  66 0012 1868     		ldr	r0, [r3]
+  67 0014 FFF7FEFF 		bl	xQueuePeek
+  68              	.LVL3:
+  25:Modules/src/state_estimator_task.c ****         xQueuePeek(gyro_queue, gyro, portMAX_DELAY);
+  69              		.loc 1 25 9 discriminator 1 view .LVU9
+  70 0018 4FF0FF32 		mov	r2, #-1
+  71 001c 18A9     		add	r1, sp, #96
+  72 001e 2D4B     		ldr	r3, .L4+4
+  73 0020 1868     		ldr	r0, [r3]
+  74 0022 FFF7FEFF 		bl	xQueuePeek
+  75              	.LVL4:
+  26:Modules/src/state_estimator_task.c ****         xQueuePeek(mag_queue, mag, portMAX_DELAY);
+  76              		.loc 1 26 9 discriminator 1 view .LVU10
+  77 0026 4FF0FF32 		mov	r2, #-1
+  78 002a 15A9     		add	r1, sp, #84
+  79 002c 2A4B     		ldr	r3, .L4+8
+  80 002e 1868     		ldr	r0, [r3]
+  81 0030 FFF7FEFF 		bl	xQueuePeek
+  82              	.LVL5:
+  27:Modules/src/state_estimator_task.c ****         xQueuePeek(alt_queue, &alt, portMAX_DELAY);
+  83              		.loc 1 27 9 discriminator 1 view .LVU11
+  84 0034 4FF0FF32 		mov	r2, #-1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9gTY4b.s 			page 3
+
+
+  85 0038 14A9     		add	r1, sp, #80
+  86 003a 284B     		ldr	r3, .L4+12
+  87 003c 1868     		ldr	r0, [r3]
+  88 003e FFF7FEFF 		bl	xQueuePeek
+  89              	.LVL6:
+  28:Modules/src/state_estimator_task.c **** 
+  29:Modules/src/state_estimator_task.c ****         printf("%lu,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f\n", (unsigned long)pdTICKS_TO_MS(xTaskGetTickCoun
+  90              		.loc 1 29 9 discriminator 1 view .LVU12
+  91              		.loc 1 29 70 is_stmt 0 discriminator 1 view .LVU13
+  92 0042 FFF7FEFF 		bl	xTaskGetTickCount
+  93              	.LVL7:
+  94 0046 4FF47A75 		mov	r5, #1000
+  95 004a 05FB00F4 		mul	r4, r5, r0
+  96              		.loc 1 29 9 discriminator 1 view .LVU14
+  97 004e 1B98     		ldr	r0, [sp, #108]	@ float
+  98 0050 FFF7FEFF 		bl	__aeabi_f2d
+  99              	.LVL8:
+ 100 0054 0646     		mov	r6, r0
+ 101 0056 0F46     		mov	r7, r1
+ 102 0058 2148     		ldr	r0, .L4+16
+ 103 005a A0FB0434 		umull	r3, r4, r0, r4
+ 104 005e A409     		lsrs	r4, r4, #6
+ 105 0060 1498     		ldr	r0, [sp, #80]	@ float
+ 106 0062 FFF7FEFF 		bl	__aeabi_f2d
+ 107              	.LVL9:
+ 108 0066 CDE91001 		strd	r0, [sp, #64]
+ 109 006a 1798     		ldr	r0, [sp, #92]	@ float
+ 110 006c FFF7FEFF 		bl	__aeabi_f2d
+ 111              	.LVL10:
+ 112 0070 CDE90E01 		strd	r0, [sp, #56]
+ 113 0074 1698     		ldr	r0, [sp, #88]	@ float
+ 114 0076 FFF7FEFF 		bl	__aeabi_f2d
+ 115              	.LVL11:
+ 116 007a CDE90C01 		strd	r0, [sp, #48]
+ 117 007e 1598     		ldr	r0, [sp, #84]	@ float
+ 118 0080 FFF7FEFF 		bl	__aeabi_f2d
+ 119              	.LVL12:
+ 120 0084 CDE90A01 		strd	r0, [sp, #40]
+ 121 0088 1A98     		ldr	r0, [sp, #104]	@ float
+ 122 008a FFF7FEFF 		bl	__aeabi_f2d
+ 123              	.LVL13:
+ 124 008e CDE90801 		strd	r0, [sp, #32]
+ 125 0092 1998     		ldr	r0, [sp, #100]	@ float
+ 126 0094 FFF7FEFF 		bl	__aeabi_f2d
+ 127              	.LVL14:
+ 128 0098 CDE90601 		strd	r0, [sp, #24]
+ 129 009c 1898     		ldr	r0, [sp, #96]	@ float
+ 130 009e FFF7FEFF 		bl	__aeabi_f2d
+ 131              	.LVL15:
+ 132 00a2 CDE90401 		strd	r0, [sp, #16]
+ 133 00a6 1D98     		ldr	r0, [sp, #116]	@ float
+ 134 00a8 FFF7FEFF 		bl	__aeabi_f2d
+ 135              	.LVL16:
+ 136 00ac CDE90201 		strd	r0, [sp, #8]
+ 137 00b0 1C98     		ldr	r0, [sp, #112]	@ float
+ 138 00b2 FFF7FEFF 		bl	__aeabi_f2d
+ 139              	.LVL17:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9gTY4b.s 			page 4
+
+
+ 140 00b6 CDE90001 		strd	r0, [sp]
+ 141 00ba 3246     		mov	r2, r6
+ 142 00bc 3B46     		mov	r3, r7
+ 143 00be 2146     		mov	r1, r4
+ 144 00c0 0848     		ldr	r0, .L4+20
+ 145 00c2 FFF7FEFF 		bl	printf
+ 146              	.LVL18:
+  30:Modules/src/state_estimator_task.c ****         
+  31:Modules/src/state_estimator_task.c ****     //     // printf("Accel: %d, %d, %d\r\n", acc_raw[0], acc_raw[1], acc_raw[2]);
+  32:Modules/src/state_estimator_task.c ****     //     // printf("Gyro: %d, %d, %d\r\n", gyro_raw[0], gyro_raw[1], gyro_raw[2]);
+  33:Modules/src/state_estimator_task.c ****     //     // printf("Mag: %d, %d, %d\r\n\r\n", mag_raw[0], mag_raw[1], mag_raw[2]);
+  34:Modules/src/state_estimator_task.c **** 
+  35:Modules/src/state_estimator_task.c **** 
+  36:Modules/src/state_estimator_task.c ****         vTaskDelayUntil(&last_wait_time, wait_time);
+ 147              		.loc 1 36 9 is_stmt 1 discriminator 1 view .LVU15
+ 148 00c6 2946     		mov	r1, r5
+ 149 00c8 13A8     		add	r0, sp, #76
+ 150 00ca FFF7FEFF 		bl	vTaskDelayUntil
+ 151              	.LVL19:
+  23:Modules/src/state_estimator_task.c ****         xQueuePeek(acc_queue, acc, portMAX_DELAY);
+ 152              		.loc 1 23 11 discriminator 1 view .LVU16
+ 153 00ce 9CE7     		b	.L2
+ 154              	.L5:
+ 155              		.align	2
+ 156              	.L4:
+ 157 00d0 00000000 		.word	acc_queue
+ 158 00d4 00000000 		.word	gyro_queue
+ 159 00d8 00000000 		.word	mag_queue
+ 160 00dc 00000000 		.word	alt_queue
+ 161 00e0 D34D6210 		.word	274877907
+ 162 00e4 00000000 		.word	.LC0
+ 163              		.cfi_endproc
+ 164              	.LFE172:
+ 166              		.section	.rodata.StateEstimatorLaunch.str1.4,"aMS",%progbits,1
+ 167              		.align	2
+ 168              	.LC1:
+ 169 0000 53746174 		.ascii	"StateEstimatorTask\000"
+ 169      65457374 
+ 169      696D6174 
+ 169      6F725461 
+ 169      736B00
+ 170              		.section	.text.StateEstimatorLaunch,"ax",%progbits
+ 171              		.align	1
+ 172              		.global	StateEstimatorLaunch
+ 173              		.syntax unified
+ 174              		.thumb
+ 175              		.thumb_func
+ 176              		.fpu fpv4-sp-d16
+ 178              	StateEstimatorLaunch:
+ 179              	.LFB171:
+  11:Modules/src/state_estimator_task.c ****     // EskfInit();
+ 180              		.loc 1 11 33 view -0
+ 181              		.cfi_startproc
+ 182              		@ args = 0, pretend = 0, frame = 0
+ 183              		@ frame_needed = 0, uses_anonymous_args = 0
+ 184 0000 00B5     		push	{lr}
+ 185              	.LCFI2:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9gTY4b.s 			page 5
+
+
+ 186              		.cfi_def_cfa_offset 4
+ 187              		.cfi_offset 14, -4
+ 188 0002 85B0     		sub	sp, sp, #20
+ 189              	.LCFI3:
+ 190              		.cfi_def_cfa_offset 24
+  14:Modules/src/state_estimator_task.c **** }
+ 191              		.loc 1 14 5 view .LVU18
+  14:Modules/src/state_estimator_task.c **** }
+ 192              		.loc 1 14 35 is_stmt 0 view .LVU19
+ 193 0004 074B     		ldr	r3, .L8
+ 194 0006 0293     		str	r3, [sp, #8]
+ 195 0008 074B     		ldr	r3, .L8+4
+ 196 000a 0193     		str	r3, [sp, #4]
+ 197 000c 0423     		movs	r3, #4
+ 198 000e 0093     		str	r3, [sp]
+ 199 0010 0023     		movs	r3, #0
+ 200 0012 4FF48072 		mov	r2, #256
+ 201 0016 0549     		ldr	r1, .L8+8
+ 202 0018 0548     		ldr	r0, .L8+12
+ 203 001a FFF7FEFF 		bl	xTaskCreateStatic
+ 204              	.LVL20:
+  15:Modules/src/state_estimator_task.c **** 
+ 205              		.loc 1 15 1 view .LVU20
+ 206 001e 05B0     		add	sp, sp, #20
+ 207              	.LCFI4:
+ 208              		.cfi_def_cfa_offset 4
+ 209              		@ sp needed
+ 210 0020 5DF804FB 		ldr	pc, [sp], #4
+ 211              	.L9:
+ 212              		.align	2
+ 213              	.L8:
+ 214 0024 00000000 		.word	.LANCHOR0
+ 215 0028 00000000 		.word	.LANCHOR1
+ 216 002c 00000000 		.word	.LC1
+ 217 0030 00000000 		.word	StateEstimatorTask
+ 218              		.cfi_endproc
+ 219              	.LFE171:
+ 221              		.section	.bss.osSys_state_estimator_taskStackBuffer,"aw",%nobits
+ 222              		.align	2
+ 223              		.set	.LANCHOR1,. + 0
+ 226              	osSys_state_estimator_taskStackBuffer:
+ 227 0000 00000000 		.space	1024
+ 227      00000000 
+ 227      00000000 
+ 227      00000000 
+ 227      00000000 
+ 228              		.section	.bss.osSys_state_estimator_taskTaskBuffer,"aw",%nobits
+ 229              		.align	2
+ 230              		.set	.LANCHOR0,. + 0
+ 233              	osSys_state_estimator_taskTaskBuffer:
+ 234 0000 00000000 		.space	84
+ 234      00000000 
+ 234      00000000 
+ 234      00000000 
+ 234      00000000 
+ 235              		.text
+ 236              	.Letext0:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9gTY4b.s 			page 6
+
+
+ 237              		.file 2 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 238              		.file 3 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 239              		.file 4 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
+ 240              		.file 5 "Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"
+ 241              		.file 6 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 242              		.file 7 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
+ 243              		.file 8 "Inc/FreeRTOSConfig.h"
+ 244              		.file 9 "Drivers/CMSIS/Include/core_cm4.h"
+ 245              		.file 10 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 246              		.file 11 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 247              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 248              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 249              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 250              		.file 15 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 251              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 252              		.file 17 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\lock.h"
+ 253              		.file 18 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\_types.h"
+ 254              		.file 19 "c:\\gnu_tools_arm_embedded\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h"
+ 255              		.file 20 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\reent.h"
+ 256              		.file 21 "Modules/include/utils.h"
+ 257              		.file 22 "Inc/i2c.h"
+ 258              		.file 23 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\math.h"
+ 259              		.file 24 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\stdio.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc9gTY4b.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 state_estimator_task.c
+C:\Users\luoha\AppData\Local\Temp\cc9gTY4b.s:19     .rodata.StateEstimatorTask.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cc9gTY4b.s:23     .text.StateEstimatorTask:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cc9gTY4b.s:31     .text.StateEstimatorTask:00000000 StateEstimatorTask
+C:\Users\luoha\AppData\Local\Temp\cc9gTY4b.s:157    .text.StateEstimatorTask:000000d0 $d
+C:\Users\luoha\AppData\Local\Temp\cc9gTY4b.s:167    .rodata.StateEstimatorLaunch.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cc9gTY4b.s:171    .text.StateEstimatorLaunch:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cc9gTY4b.s:178    .text.StateEstimatorLaunch:00000000 StateEstimatorLaunch
+C:\Users\luoha\AppData\Local\Temp\cc9gTY4b.s:214    .text.StateEstimatorLaunch:00000024 $d
+C:\Users\luoha\AppData\Local\Temp\cc9gTY4b.s:222    .bss.osSys_state_estimator_taskStackBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cc9gTY4b.s:226    .bss.osSys_state_estimator_taskStackBuffer:00000000 osSys_state_estimator_taskStackBuffer
+C:\Users\luoha\AppData\Local\Temp\cc9gTY4b.s:229    .bss.osSys_state_estimator_taskTaskBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cc9gTY4b.s:233    .bss.osSys_state_estimator_taskTaskBuffer:00000000 osSys_state_estimator_taskTaskBuffer
+
+UNDEFINED SYMBOLS
+__aeabi_f2d
+xTaskGetTickCount
+xQueuePeek
+printf
+vTaskDelayUntil
+acc_queue
+gyro_queue
+mag_queue
+alt_queue
+xTaskCreateStatic

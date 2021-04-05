@@ -4,6 +4,9 @@
 #include "i2c1.h"
 #include "utils.h"
 
+#define SensorsReadAccelRaw MPU6050ReadAccelRaw
+#define SensorsReadGyroRaw MPU6050ReadGyroRaw
+
 #define MPU6050_DEV_ADDR 0xD0  // 6050 器件地址
 //-----------------------------------------
 // 定义MPU6050内部地址
@@ -43,11 +46,10 @@ bool MPU6050Init(void);
 bool MPU6050ReadAccelRaw(int16_t *values);
 bool MPU6050ReadGyroRaw(int16_t *values);
 
-// bool MPU6050ReadAccelRaw(int16_t *ax, int16_t *ay, int16_t *az);
-// bool MPU6050ReadGyroRaw(int16_t *gx, int16_t *gy, int16_t *gz);
-
 bool MPU6050ReadAccel(float *ax, float *ay, float *az);
 bool MPU6050ReadGyro(float *gx, float *gy, float *gz);
 bool MPU6050ReadTemp(float *celsius);
+
+void CalibrateIMU(const int16_t *acc_raw, const int16_t *gyro_raw, float *acc, float *gyro);
 
 #endif /* __MPU6050_H */

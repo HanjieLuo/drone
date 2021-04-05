@@ -9,7 +9,7 @@ build/dmp.o: Modules/src/dmp.c Modules/include/dmp.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
- Modules/include/sensors.h Modules/include/hmc5883l.h \
+ Modules/include/sensors_task.h Modules/include/hmc5883l.h \
  Modules/include/i2c1.h Inc/i2c.h Inc/main.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  Inc/stm32f4xx_hal_conf.h \
@@ -68,7 +68,7 @@ Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 
 Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
 
-Modules/include/sensors.h:
+Modules/include/sensors_task.h:
 
 Modules/include/hmc5883l.h:
 
