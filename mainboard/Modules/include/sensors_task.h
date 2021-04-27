@@ -11,11 +11,10 @@
 #include "queue.h"
 #include "utils.h"
 #include "filter.h"
+#include "sensors.h"
 #include "system_task.h"
 
-bool SensorsInit(void);
 void SensorsLaunch(void);
 void SensorsTask(void *param);
-
 
 #endif /* __SENSORS_TASK_H */

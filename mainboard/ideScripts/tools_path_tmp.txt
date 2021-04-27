@@ -1,3 +1,3 @@
-win10
+1:
 stm32f0x.cfg: C:\OpenOCD-20200408-0.10.0\share\openocd\scripts\target\stm32f4x.cfg
 stm32SvdPath: C:\Users\luoha\Documents\workspace\drone\mainboard\STM32F40x.svd

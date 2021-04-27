@@ -4,8 +4,6 @@
 #include "i2c1.h"
 #include "utils.h"
 
-#define SensorsReadAlt MS5611ReadAlt
-
 //定义器件在IIC总线中的从地址,根据CSB引脚不同修改
 // MS5611挂在MPU5060的从I2C接口上。MS5611的I2C地址为0b111011Cx，其中C比特位由CSB引脚决定，为CSB引脚的补码值（取反）。
 // GY-86上 MS5611的CSB引脚接地，所以CSB引脚值为0，8位I2C地址为0b1110111x（0xEE），7位I2C地址为 0b1110111（0x77）。

@@ -40,9 +40,7 @@ build/sensors.o: Modules/src/sensors.c Modules/include/sensors.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
  Modules/include/mpu6050.h Modules/include/ms5611.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
- Modules/include/filter.h Modules/include/system_task.h \
- Modules/include/sensors.h
+ Middlewares/Third_Party/FreeRTOS/Source/include/task.h
 
 Modules/include/sensors.h:
 
@@ -147,9 +145,3 @@ Modules/include/ms5611.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 
 Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
-
-Modules/include/filter.h:
-
-Modules/include/system_task.h:
-
-Modules/include/sensors.h:

@@ -53,3 +53,13 @@ char *itoa(int value, char *result, int base) {
     }
     return result;
 }
+
+
+// TIM7 is a time base source of HAL
+// Prescaler = (uwTimclock/1000000 - 1) to have a 1MHz counter clock.
+// Period = [(TIM7CLK/1000) - 1]. to have a (1/1000) s time base.
+// TIM7->CNT = [0, 999]
+uint64_t GetSysTimeUs(void) {
+    uint64_t ms = HAL_GetTick();
+    return ms * 1000ull + TIM7->CNT;
+}

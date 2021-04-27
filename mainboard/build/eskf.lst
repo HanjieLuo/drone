@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc02VLBx.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccMapKgT.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -17,176 +17,666 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc02VLBx.s 			page 1
   14              		.text
   15              	.Ltext0:
   16              		.cfi_sections	.debug_frame
-  17              		.section	.text.EskfInit,"ax",%progbits
-  18              		.align	1
-  19              		.global	EskfInit
-  20              		.arch armv7e-m
-  21              		.syntax unified
-  22              		.thumb
-  23              		.thumb_func
-  24              		.fpu fpv4-sp-d16
-  26              	EskfInit:
-  27              	.LVL0:
-  28              	.LFB171:
-  29              		.file 1 "Modules/src/eskf.c"
+  17              		.section	.rodata.EskfInit.str1.4,"aMS",%progbits,1
+  18              		.align	2
+  19              	.LC0:
+  20 0000 53756363 		.ascii	"Success to Init Eskf!\015\012\015\000"
+  20      65737320 
+  20      746F2049 
+  20      6E697420 
+  20      45736B66 
+  21              		.section	.text.EskfInit,"ax",%progbits
+  22              		.align	1
+  23              		.global	EskfInit
+  24              		.arch armv7e-m
+  25              		.syntax unified
+  26              		.thumb
+  27              		.thumb_func
+  28              		.fpu fpv4-sp-d16
+  30              	EskfInit:
+  31              	.LVL0:
+  32              	.LFB171:
+  33              		.file 1 "Modules/src/eskf.c"
    1:Modules/src/eskf.c **** #include "eskf.h"
    2:Modules/src/eskf.c **** 
    3:Modules/src/eskf.c **** MAT_ALLOC(gravity, 3, 1);
-   4:Modules/src/eskf.c **** float32_t std_acc_noise[3], std_gyro_noise[3], std_acc_bias_noise[3], std_gyro_bias_noise[3];
-   5:Modules/src/eskf.c **** 
-   6:Modules/src/eskf.c **** bool EskfInit(const float32_t *_gravity,
-   7:Modules/src/eskf.c ****               const float32_t *_std_acc_noise,
-   8:Modules/src/eskf.c ****               const float32_t *_std_gyro_noise,
-   9:Modules/src/eskf.c ****               const float32_t *_std_acc_bias_noise,
-  10:Modules/src/eskf.c ****               const float32_t *_std_gyro_bias_noise) {
-  30              		.loc 1 10 54 view -0
-  31              		.cfi_startproc
-  32              		@ args = 4, pretend = 0, frame = 0
-  33              		@ frame_needed = 0, uses_anonymous_args = 0
-  34              		.loc 1 10 54 is_stmt 0 view .LVU1
-  35 0000 2DE9F843 		push	{r3, r4, r5, r6, r7, r8, r9, lr}
-  36              	.LCFI0:
-  37              		.cfi_def_cfa_offset 32
-  38              		.cfi_offset 3, -32
-  39              		.cfi_offset 4, -28
-  40              		.cfi_offset 5, -24
-  41              		.cfi_offset 6, -20
-  42              		.cfi_offset 7, -16
-  43              		.cfi_offset 8, -12
-  44              		.cfi_offset 9, -8
+   4:Modules/src/eskf.c **** // MAT_ALLOC(acc_var, 3, 1);
+   5:Modules/src/eskf.c **** // MAT_ALLOC(gyro_var, 3, 1);
+   6:Modules/src/eskf.c **** // MAT_ALLOC(acc_bias_var, 3, 1);
+   7:Modules/src/eskf.c **** // MAT_ALLOC(gyro_bias_var, 3, 1);
+   8:Modules/src/eskf.c **** 
+   9:Modules/src/eskf.c **** // MAT_ALLOC(p, 3, 1);
+  10:Modules/src/eskf.c **** // MAT_ALLOC(v, 3, 1);
+  11:Modules/src/eskf.c **** // MAT_ALLOC(R, 3, 1);
+  12:Modules/src/eskf.c **** 
+  13:Modules/src/eskf.c **** eskf_state state;
+  14:Modules/src/eskf.c **** 
+  15:Modules/src/eskf.c **** bool EskfInit(const float32_t _gravity,
+  16:Modules/src/eskf.c ****               const float32_t _acc_var,
+  17:Modules/src/eskf.c ****               const float32_t _gyro_var,
+  18:Modules/src/eskf.c ****               const float32_t _acc_bias_var,
+  19:Modules/src/eskf.c ****               const float32_t _gyro_bias_var) {
+  34              		.loc 1 19 47 view -0
+  35              		.cfi_startproc
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccMapKgT.s 			page 2
+
+
+  36              		@ args = 0, pretend = 0, frame = 0
+  37              		@ frame_needed = 0, uses_anonymous_args = 0
+  38              		.loc 1 19 47 is_stmt 0 view .LVU1
+  39 0000 70B5     		push	{r4, r5, r6, lr}
+  40              	.LCFI0:
+  41              		.cfi_def_cfa_offset 16
+  42              		.cfi_offset 4, -16
+  43              		.cfi_offset 5, -12
+  44              		.cfi_offset 6, -8
   45              		.cfi_offset 14, -4
-  46 0004 8046     		mov	r8, r0
-  47 0006 0E46     		mov	r6, r1
-  48 0008 1446     		mov	r4, r2
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc02VLBx.s 			page 2
+  46 0002 2DED028B 		vpush.64	{d8}
+  47              	.LCFI1:
+  48              		.cfi_def_cfa_offset 24
+  49              		.cfi_offset 80, -24
+  50              		.cfi_offset 81, -20
+  51 0006 F0EE408A 		vmov.f32	s17, s0
+  20:Modules/src/eskf.c **** 
+  21:Modules/src/eskf.c ****     MAT_INIT(gravity, 3, 1);
+  52              		.loc 1 21 5 is_stmt 1 view .LVU2
+  53 000a 5B4C     		ldr	r4, .L3
+  54 000c 5B4B     		ldr	r3, .L3+4
+  55 000e 0122     		movs	r2, #1
+  56 0010 0321     		movs	r1, #3
+  57 0012 2046     		mov	r0, r4
+  58 0014 FFF7FEFF 		bl	arm_mat_init_f32
+  59              	.LVL1:
+  22:Modules/src/eskf.c ****     // MAT_INIT(acc_var, 3, 1);
+  23:Modules/src/eskf.c ****     // MAT_INIT(gyro_var, 3, 1);
+  24:Modules/src/eskf.c ****     // MAT_INIT(acc_bias_var, 3, 1);
+  25:Modules/src/eskf.c ****     // MAT_INIT(gyro_bias_var, 3, 1);
+  26:Modules/src/eskf.c **** 
+  27:Modules/src/eskf.c ****     MAT_DATA(gravity)[0] = 0.f;
+  60              		.loc 1 27 5 view .LVU3
+  61 0018 6368     		ldr	r3, [r4, #4]
+  62              		.loc 1 27 26 is_stmt 0 view .LVU4
+  63 001a 9FED598A 		vldr.32	s16, .L3+8
+  64 001e 83ED008A 		vstr.32	s16, [r3]
+  28:Modules/src/eskf.c ****     MAT_DATA(gravity)[1] = 0.f;
+  65              		.loc 1 28 5 is_stmt 1 view .LVU5
+  66 0022 6368     		ldr	r3, [r4, #4]
+  67              		.loc 1 28 26 is_stmt 0 view .LVU6
+  68 0024 83ED018A 		vstr.32	s16, [r3, #4]
+  29:Modules/src/eskf.c ****     MAT_DATA(gravity)[2] = -_gravity;
+  69              		.loc 1 29 5 is_stmt 1 view .LVU7
+  70 0028 6368     		ldr	r3, [r4, #4]
+  71              		.loc 1 29 28 is_stmt 0 view .LVU8
+  72 002a F1EE688A 		vneg.f32	s17, s17
+  73              	.LVL2:
+  74              		.loc 1 29 26 view .LVU9
+  75 002e C3ED028A 		vstr.32	s17, [r3, #8]
+  30:Modules/src/eskf.c **** 
+  31:Modules/src/eskf.c ****     // MAT_DATA(acc_var)[0] = _acc_var;
+  32:Modules/src/eskf.c ****     // MAT_DATA(acc_var)[1] = _acc_var;
+  33:Modules/src/eskf.c ****     // MAT_DATA(acc_var)[2] = _acc_var;
+  34:Modules/src/eskf.c **** 
+  35:Modules/src/eskf.c ****     // MAT_DATA(gyro_var)[0] = _gyro_var;
+  36:Modules/src/eskf.c ****     // MAT_DATA(gyro_var)[1] = _gyro_var;
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccMapKgT.s 			page 3
 
 
-  49 000a 1D46     		mov	r5, r3
-  50 000c 089F     		ldr	r7, [sp, #32]
-  11:Modules/src/eskf.c **** 
-  12:Modules/src/eskf.c ****     MAT_INIT(gravity, 3, 1);
-  51              		.loc 1 12 5 is_stmt 1 view .LVU2
-  52 000e DFF86890 		ldr	r9, .L3+20
-  53 0012 144B     		ldr	r3, .L3
-  54              	.LVL1:
-  55              		.loc 1 12 5 is_stmt 0 view .LVU3
-  56 0014 0122     		movs	r2, #1
-  57              	.LVL2:
-  58              		.loc 1 12 5 view .LVU4
-  59 0016 0321     		movs	r1, #3
-  60              	.LVL3:
-  61              		.loc 1 12 5 view .LVU5
-  62 0018 4846     		mov	r0, r9
-  63              	.LVL4:
-  64              		.loc 1 12 5 view .LVU6
-  65 001a FFF7FEFF 		bl	arm_mat_init_f32
-  66              	.LVL5:
-  13:Modules/src/eskf.c **** 
-  14:Modules/src/eskf.c ****     memcpy(MAT_DATA(gravity), _gravity, 3 * sizeof(float32_t));
-  67              		.loc 1 14 5 is_stmt 1 view .LVU7
-  68              		.loc 1 14 12 is_stmt 0 view .LVU8
-  69 001e D9F80430 		ldr	r3, [r9, #4]
-  70              		.loc 1 14 5 view .LVU9
-  71 0022 D8F80000 		ldr	r0, [r8]	@ unaligned
-  72 0026 D8F80410 		ldr	r1, [r8, #4]	@ unaligned
-  73 002a D8F80820 		ldr	r2, [r8, #8]	@ unaligned
-  74 002e 1860     		str	r0, [r3]	@ unaligned
-  75 0030 5960     		str	r1, [r3, #4]	@ unaligned
-  76 0032 9A60     		str	r2, [r3, #8]	@ unaligned
-  15:Modules/src/eskf.c ****     memcpy(std_acc_noise, _std_acc_noise, 3 * sizeof(float32_t));
-  77              		.loc 1 15 5 is_stmt 1 view .LVU10
-  78 0034 0C4B     		ldr	r3, .L3+4
-  79 0036 3068     		ldr	r0, [r6]	@ unaligned
-  80 0038 7168     		ldr	r1, [r6, #4]	@ unaligned
-  81 003a B268     		ldr	r2, [r6, #8]	@ unaligned
-  82 003c 07C3     		stmia	r3!, {r0, r1, r2}
-  16:Modules/src/eskf.c ****     memcpy(std_gyro_noise, _std_gyro_noise, 3 * sizeof(float32_t));
-  83              		.loc 1 16 5 view .LVU11
-  84 003e 0B4B     		ldr	r3, .L3+8
-  85 0040 2068     		ldr	r0, [r4]	@ unaligned
-  86 0042 6168     		ldr	r1, [r4, #4]	@ unaligned
-  87 0044 A268     		ldr	r2, [r4, #8]	@ unaligned
-  88 0046 07C3     		stmia	r3!, {r0, r1, r2}
-  17:Modules/src/eskf.c ****     memcpy(std_acc_bias_noise, _std_acc_bias_noise, 3 * sizeof(float32_t));
-  89              		.loc 1 17 5 view .LVU12
-  90 0048 094C     		ldr	r4, .L3+12
-  91              	.LVL6:
-  92              		.loc 1 17 5 is_stmt 0 view .LVU13
-  93 004a 2868     		ldr	r0, [r5]	@ unaligned
-  94 004c 6968     		ldr	r1, [r5, #4]	@ unaligned
-  95 004e AA68     		ldr	r2, [r5, #8]	@ unaligned
-  96 0050 07C4     		stmia	r4!, {r0, r1, r2}
-  18:Modules/src/eskf.c ****     memcpy(std_gyro_bias_noise, _std_gyro_bias_noise, 3 * sizeof(float32_t));
-  97              		.loc 1 18 5 is_stmt 1 view .LVU14
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc02VLBx.s 			page 3
+  37:Modules/src/eskf.c ****     // MAT_DATA(gyro_var)[2] = _gyro_var;
+  38:Modules/src/eskf.c **** 
+  39:Modules/src/eskf.c ****     // MAT_DATA(acc_bias_var)[0] = _acc_bias_var;
+  40:Modules/src/eskf.c ****     // MAT_DATA(acc_bias_var)[1] = _acc_bias_var;
+  41:Modules/src/eskf.c ****     // MAT_DATA(acc_bias_var)[2] = _acc_bias_var;
+  42:Modules/src/eskf.c **** 
+  43:Modules/src/eskf.c ****     // MAT_DATA(gyro_bias_var)[0] = _gyro_bias_var;
+  44:Modules/src/eskf.c ****     // MAT_DATA(gyro_bias_var)[1] = _gyro_bias_var;
+  45:Modules/src/eskf.c ****     // MAT_DATA(gyro_bias_var)[2] = _gyro_bias_var;
+  46:Modules/src/eskf.c **** 
+  47:Modules/src/eskf.c **** 
+  48:Modules/src/eskf.c ****     /* initialize the nominal state */
+  49:Modules/src/eskf.c ****     MAT_INIT(state.p, 3, 1);
+  76              		.loc 1 49 5 is_stmt 1 view .LVU10
+  77 0032 544E     		ldr	r6, .L3+12
+  78 0034 A6F10804 		sub	r4, r6, #8
+  79 0038 3346     		mov	r3, r6
+  80 003a 0122     		movs	r2, #1
+  81 003c 0321     		movs	r1, #3
+  82 003e 2046     		mov	r0, r4
+  83 0040 FFF7FEFF 		bl	arm_mat_init_f32
+  84              	.LVL3:
+  50:Modules/src/eskf.c ****     arm_fill_f32(0.f, MAT_DATA(state.p), 3);
+  85              		.loc 1 50 5 view .LVU11
+  86 0044 0321     		movs	r1, #3
+  87 0046 6068     		ldr	r0, [r4, #4]
+  88 0048 B0EE480A 		vmov.f32	s0, s16
+  89 004c FFF7FEFF 		bl	arm_fill_f32
+  90              	.LVL4:
+  51:Modules/src/eskf.c **** 
+  52:Modules/src/eskf.c ****     MAT_INIT(state.v, 3, 1);
+  91              		.loc 1 52 5 view .LVU12
+  92 0050 04F11C03 		add	r3, r4, #28
+  93 0054 0122     		movs	r2, #1
+  94 0056 0321     		movs	r1, #3
+  95 0058 04F11400 		add	r0, r4, #20
+  96 005c FFF7FEFF 		bl	arm_mat_init_f32
+  97              	.LVL5:
+  53:Modules/src/eskf.c ****     arm_fill_f32(0.f, MAT_DATA(state.v), 3);
+  98              		.loc 1 53 5 view .LVU13
+  99 0060 0321     		movs	r1, #3
+ 100 0062 A069     		ldr	r0, [r4, #24]
+ 101 0064 B0EE480A 		vmov.f32	s0, s16
+ 102 0068 FFF7FEFF 		bl	arm_fill_f32
+ 103              	.LVL6:
+  54:Modules/src/eskf.c **** 
+  55:Modules/src/eskf.c ****     MAT_INIT(state.acc_bias, 3, 1);
+ 104              		.loc 1 55 5 view .LVU14
+ 105 006c 04F17403 		add	r3, r4, #116
+ 106 0070 0122     		movs	r2, #1
+ 107 0072 0321     		movs	r1, #3
+ 108 0074 04F16C00 		add	r0, r4, #108
+ 109 0078 FFF7FEFF 		bl	arm_mat_init_f32
+ 110              	.LVL7:
+  56:Modules/src/eskf.c ****     arm_fill_f32(0.f, MAT_DATA(state.acc_bias), 3);
+ 111              		.loc 1 56 5 view .LVU15
+ 112 007c 0321     		movs	r1, #3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccMapKgT.s 			page 4
 
 
-  98 0052 084B     		ldr	r3, .L3+16
-  99 0054 3868     		ldr	r0, [r7]	@ unaligned
- 100 0056 7968     		ldr	r1, [r7, #4]	@ unaligned
- 101 0058 BA68     		ldr	r2, [r7, #8]	@ unaligned
- 102 005a 07C3     		stmia	r3!, {r0, r1, r2}
-  19:Modules/src/eskf.c **** 
-  20:Modules/src/eskf.c ****     
-  21:Modules/src/eskf.c **** 
-  22:Modules/src/eskf.c ****     return true;
- 103              		.loc 1 22 5 view .LVU15
-  23:Modules/src/eskf.c **** }
- 104              		.loc 1 23 1 is_stmt 0 view .LVU16
- 105 005c 0120     		movs	r0, #1
- 106 005e BDE8F883 		pop	{r3, r4, r5, r6, r7, r8, r9, pc}
- 107              	.LVL7:
- 108              	.L4:
- 109              		.loc 1 23 1 view .LVU17
- 110 0062 00BF     		.align	2
- 111              	.L3:
- 112 0064 00000000 		.word	gravity_arr
- 113 0068 00000000 		.word	std_acc_noise
- 114 006c 00000000 		.word	std_gyro_noise
- 115 0070 00000000 		.word	std_acc_bias_noise
- 116 0074 00000000 		.word	std_gyro_bias_noise
- 117 0078 00000000 		.word	gravity
- 118              		.cfi_endproc
- 119              	.LFE171:
- 121              		.comm	std_gyro_bias_noise,12,4
- 122              		.comm	std_acc_bias_noise,12,4
- 123              		.comm	std_gyro_noise,12,4
- 124              		.comm	std_acc_noise,12,4
- 125              		.comm	gravity_arr,12,4
- 126              		.comm	gravity,8,4
- 127              		.text
- 128              	.Letext0:
- 129              		.file 2 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\machine\\_default_types.h"
- 130              		.file 3 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\_stdint.h"
- 131              		.file 4 "Inc/FreeRTOSConfig.h"
- 132              		.file 5 "Drivers/CMSIS/Include/core_cm4.h"
- 133              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 134              		.file 7 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
- 135              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 136              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 137              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 138              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 139              		.file 12 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\lock.h"
- 140              		.file 13 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\_types.h"
- 141              		.file 14 "c:\\gnu_tools_arm_embedded\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h"
- 142              		.file 15 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\reent.h"
- 143              		.file 16 "Modules/include/utils.h"
- 144              		.file 17 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\math.h"
- 145              		.file 18 "Drivers/CMSIS/DSP/Include/arm_math.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\cc02VLBx.s 			page 4
+ 113 007e 206F     		ldr	r0, [r4, #112]
+ 114 0080 B0EE480A 		vmov.f32	s0, s16
+ 115 0084 FFF7FEFF 		bl	arm_fill_f32
+ 116              	.LVL8:
+  57:Modules/src/eskf.c **** 
+  58:Modules/src/eskf.c ****     MAT_INIT(state.gyro_bias, 3, 1);
+ 117              		.loc 1 58 5 view .LVU16
+ 118 0088 04F18803 		add	r3, r4, #136
+ 119 008c 0122     		movs	r2, #1
+ 120 008e 0321     		movs	r1, #3
+ 121 0090 04F18000 		add	r0, r4, #128
+ 122 0094 FFF7FEFF 		bl	arm_mat_init_f32
+ 123              	.LVL9:
+  59:Modules/src/eskf.c ****     arm_fill_f32(0.f, MAT_DATA(state.gyro_bias), 3);
+ 124              		.loc 1 59 5 view .LVU17
+ 125 0098 0321     		movs	r1, #3
+ 126 009a D4F88400 		ldr	r0, [r4, #132]
+ 127 009e B0EE480A 		vmov.f32	s0, s16
+ 128 00a2 FFF7FEFF 		bl	arm_fill_f32
+ 129              	.LVL10:
+  60:Modules/src/eskf.c **** 
+  61:Modules/src/eskf.c ****     MAT_INIT(state.q, 4, 1);
+ 130              		.loc 1 61 5 view .LVU18
+ 131 00a6 04F13003 		add	r3, r4, #48
+ 132 00aa 0122     		movs	r2, #1
+ 133 00ac 0421     		movs	r1, #4
+ 134 00ae 04F12800 		add	r0, r4, #40
+ 135 00b2 FFF7FEFF 		bl	arm_mat_init_f32
+ 136              	.LVL11:
+  62:Modules/src/eskf.c ****     MAT_DATA(state.q)[0] = 1.0f;
+ 137              		.loc 1 62 5 view .LVU19
+ 138 00b6 E36A     		ldr	r3, [r4, #44]
+ 139              		.loc 1 62 26 is_stmt 0 view .LVU20
+ 140 00b8 4FF07E55 		mov	r5, #1065353216
+ 141 00bc 1D60     		str	r5, [r3]	@ float
+  63:Modules/src/eskf.c ****     MAT_DATA(state.q)[1] = 0.0f;
+ 142              		.loc 1 63 5 is_stmt 1 view .LVU21
+ 143 00be E36A     		ldr	r3, [r4, #44]
+ 144              		.loc 1 63 26 is_stmt 0 view .LVU22
+ 145 00c0 83ED018A 		vstr.32	s16, [r3, #4]
+  64:Modules/src/eskf.c ****     MAT_DATA(state.q)[2] = 0.0f;
+ 146              		.loc 1 64 5 is_stmt 1 view .LVU23
+ 147 00c4 E36A     		ldr	r3, [r4, #44]
+ 148              		.loc 1 64 26 is_stmt 0 view .LVU24
+ 149 00c6 83ED028A 		vstr.32	s16, [r3, #8]
+  65:Modules/src/eskf.c ****     MAT_DATA(state.q)[3] = 0.0f;
+ 150              		.loc 1 65 5 is_stmt 1 view .LVU25
+ 151 00ca E36A     		ldr	r3, [r4, #44]
+ 152              		.loc 1 65 26 is_stmt 0 view .LVU26
+ 153 00cc 83ED038A 		vstr.32	s16, [r3, #12]
+  66:Modules/src/eskf.c **** 
+  67:Modules/src/eskf.c ****     MAT_INIT(state.R, 3, 3);
+ 154              		.loc 1 67 5 is_stmt 1 view .LVU27
+ 155 00d0 04F14803 		add	r3, r4, #72
+ 156 00d4 0322     		movs	r2, #3
+ 157 00d6 1146     		mov	r1, r2
+ 158 00d8 04F14000 		add	r0, r4, #64
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccMapKgT.s 			page 5
+
+
+ 159 00dc FFF7FEFF 		bl	arm_mat_init_f32
+ 160              	.LVL12:
+  68:Modules/src/eskf.c ****     MAT_DATA(state.R)[0] = 1.0f; MAT_DATA(state.R)[1] = 0.0f; MAT_DATA(state.R)[2] = 0.0f;
+ 161              		.loc 1 68 5 view .LVU28
+ 162 00e0 636C     		ldr	r3, [r4, #68]
+ 163              		.loc 1 68 26 is_stmt 0 view .LVU29
+ 164 00e2 1D60     		str	r5, [r3]	@ float
+ 165              		.loc 1 68 34 is_stmt 1 view .LVU30
+ 166 00e4 636C     		ldr	r3, [r4, #68]
+ 167              		.loc 1 68 55 is_stmt 0 view .LVU31
+ 168 00e6 83ED018A 		vstr.32	s16, [r3, #4]
+ 169              		.loc 1 68 63 is_stmt 1 view .LVU32
+ 170 00ea 636C     		ldr	r3, [r4, #68]
+ 171              		.loc 1 68 84 is_stmt 0 view .LVU33
+ 172 00ec 83ED028A 		vstr.32	s16, [r3, #8]
+  69:Modules/src/eskf.c ****     MAT_DATA(state.R)[3] = 0.0f; MAT_DATA(state.R)[4] = 1.0f; MAT_DATA(state.R)[5] = 0.0f;
+ 173              		.loc 1 69 5 is_stmt 1 view .LVU34
+ 174 00f0 636C     		ldr	r3, [r4, #68]
+ 175              		.loc 1 69 26 is_stmt 0 view .LVU35
+ 176 00f2 83ED038A 		vstr.32	s16, [r3, #12]
+ 177              		.loc 1 69 34 is_stmt 1 view .LVU36
+ 178 00f6 636C     		ldr	r3, [r4, #68]
+ 179              		.loc 1 69 55 is_stmt 0 view .LVU37
+ 180 00f8 1D61     		str	r5, [r3, #16]	@ float
+ 181              		.loc 1 69 63 is_stmt 1 view .LVU38
+ 182 00fa 636C     		ldr	r3, [r4, #68]
+ 183              		.loc 1 69 84 is_stmt 0 view .LVU39
+ 184 00fc 83ED058A 		vstr.32	s16, [r3, #20]
+  70:Modules/src/eskf.c ****     MAT_DATA(state.R)[6] = 0.0f; MAT_DATA(state.R)[7] = 0.0f; MAT_DATA(state.R)[8] = 1.0f;
+ 185              		.loc 1 70 5 is_stmt 1 view .LVU40
+ 186 0100 636C     		ldr	r3, [r4, #68]
+ 187              		.loc 1 70 26 is_stmt 0 view .LVU41
+ 188 0102 83ED068A 		vstr.32	s16, [r3, #24]
+ 189              		.loc 1 70 34 is_stmt 1 view .LVU42
+ 190 0106 636C     		ldr	r3, [r4, #68]
+ 191              		.loc 1 70 55 is_stmt 0 view .LVU43
+ 192 0108 83ED078A 		vstr.32	s16, [r3, #28]
+ 193              		.loc 1 70 63 is_stmt 1 view .LVU44
+ 194 010c 636C     		ldr	r3, [r4, #68]
+ 195              		.loc 1 70 84 is_stmt 0 view .LVU45
+ 196 010e 1D62     		str	r5, [r3, #32]	@ float
+  71:Modules/src/eskf.c **** 
+  72:Modules/src/eskf.c ****     MAT_INIT(state.COV, 16, 16);
+ 197              		.loc 1 72 5 is_stmt 1 view .LVU46
+ 198 0110 04F19C03 		add	r3, r4, #156
+ 199 0114 1022     		movs	r2, #16
+ 200 0116 1146     		mov	r1, r2
+ 201 0118 04F19400 		add	r0, r4, #148
+ 202 011c FFF7FEFF 		bl	arm_mat_init_f32
+ 203              	.LVL13:
+  73:Modules/src/eskf.c ****     arm_fill_f32(0.f, MAT_DATA(state.COV), 256);
+ 204              		.loc 1 73 5 view .LVU47
+ 205 0120 4FF48071 		mov	r1, #256
+ 206 0124 D4F89800 		ldr	r0, [r4, #152]
+ 207 0128 B0EE480A 		vmov.f32	s0, s16
+ 208 012c FFF7FEFF 		bl	arm_fill_f32
+ 209              	.LVL14:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccMapKgT.s 			page 6
+
+
+  74:Modules/src/eskf.c ****     state.COV_arr[STATE_PX][STATE_PX] = 1.f * 1.f; // position x
+ 210              		.loc 1 74 5 view .LVU48
+ 211              		.loc 1 74 39 is_stmt 0 view .LVU49
+ 212 0130 C4F89C50 		str	r5, [r4, #156]	@ float
+  75:Modules/src/eskf.c ****     state.COV_arr[STATE_PY][STATE_PY] = 1.f * 1.f; // position y
+ 213              		.loc 1 75 5 is_stmt 1 view .LVU50
+ 214              		.loc 1 75 39 is_stmt 0 view .LVU51
+ 215 0134 C4F8E050 		str	r5, [r4, #224]	@ float
+  76:Modules/src/eskf.c ****     state.COV_arr[STATE_PZ][STATE_PZ] = 1.f * 1.f; // position z
+ 216              		.loc 1 76 5 is_stmt 1 view .LVU52
+ 217              		.loc 1 76 39 is_stmt 0 view .LVU53
+ 218 0138 C4F82451 		str	r5, [r4, #292]	@ float
+  77:Modules/src/eskf.c ****     state.COV_arr[STATE_PX][STATE_PX] = 1.f * 1.f; // velocity x
+ 219              		.loc 1 77 5 is_stmt 1 view .LVU54
+  78:Modules/src/eskf.c ****     state.COV_arr[STATE_PY][STATE_PY] = 1.f * 1.f; // velocity y
+ 220              		.loc 1 78 5 view .LVU55
+  79:Modules/src/eskf.c ****     state.COV_arr[STATE_PZ][STATE_PZ] = 1.f * 1.f; // velocity z
+ 221              		.loc 1 79 5 view .LVU56
+  80:Modules/src/eskf.c ****     state.COV_arr[STATE_ROLL][STATE_ROLL] = (10.f * DEGREE2RADIAN) * (10.f * DEGREE2RADIAN); // rol
+ 222              		.loc 1 80 5 view .LVU57
+ 223              		.loc 1 80 43 is_stmt 0 view .LVU58
+ 224 013c 124B     		ldr	r3, .L3+16
+ 225 013e C4F83432 		str	r3, [r4, #564]	@ float
+  81:Modules/src/eskf.c ****     state.COV_arr[STATE_PITCH][STATE_PITCH] = (10.f * DEGREE2RADIAN) * (10.f * DEGREE2RADIAN); // p
+ 226              		.loc 1 81 5 is_stmt 1 view .LVU59
+ 227              		.loc 1 81 45 is_stmt 0 view .LVU60
+ 228 0142 C4F87832 		str	r3, [r4, #632]	@ float
+  82:Modules/src/eskf.c ****     state.COV_arr[STATE_YAW][STATE_YAW] = (10.f * DEGREE2RADIAN) * (10.f * DEGREE2RADIAN); // yaw
+ 229              		.loc 1 82 5 is_stmt 1 view .LVU61
+ 230              		.loc 1 82 41 is_stmt 0 view .LVU62
+ 231 0146 C4F8BC32 		str	r3, [r4, #700]	@ float
+  83:Modules/src/eskf.c ****     state.COV_arr[STATE_ACC_BIAS_X][STATE_ACC_BIAS_X] = 0.1f * 0.1f; // ass bias x
+ 232              		.loc 1 83 5 is_stmt 1 view .LVU63
+ 233              		.loc 1 83 55 is_stmt 0 view .LVU64
+ 234 014a 104B     		ldr	r3, .L3+20
+ 235 014c C4F80033 		str	r3, [r4, #768]	@ float
+  84:Modules/src/eskf.c ****     state.COV_arr[STATE_ACC_BIAS_Y][STATE_ACC_BIAS_Y] = 0.1f * 0.1f; // ass bias y
+ 236              		.loc 1 84 5 is_stmt 1 view .LVU65
+ 237              		.loc 1 84 55 is_stmt 0 view .LVU66
+ 238 0150 C4F84433 		str	r3, [r4, #836]	@ float
+  85:Modules/src/eskf.c ****     state.COV_arr[STATE_ACC_BIAS_Y][STATE_ACC_BIAS_Z] = 0.1f * 0.1f; // ass bias z
+ 239              		.loc 1 85 5 is_stmt 1 view .LVU67
+ 240              		.loc 1 85 55 is_stmt 0 view .LVU68
+ 241 0154 C4F84833 		str	r3, [r4, #840]	@ float
+  86:Modules/src/eskf.c ****     state.COV_arr[STATE_GYRO_BIAS_X][STATE_GYRO_BIAS_X] = 0.01f * 0.01f; // ass gyro x
+ 242              		.loc 1 86 5 is_stmt 1 view .LVU69
+ 243              		.loc 1 86 57 is_stmt 0 view .LVU70
+ 244 0158 0D4B     		ldr	r3, .L3+24
+ 245 015a C4F8CC33 		str	r3, [r4, #972]	@ float
+  87:Modules/src/eskf.c ****     state.COV_arr[STATE_GYRO_BIAS_Y][STATE_GYRO_BIAS_Y] = 0.01f * 0.01f; // ass gyro y
+ 246              		.loc 1 87 5 is_stmt 1 view .LVU71
+ 247              		.loc 1 87 57 is_stmt 0 view .LVU72
+ 248 015e 06F58162 		add	r2, r6, #1032
+ 249 0162 1360     		str	r3, [r2]	@ float
+  88:Modules/src/eskf.c ****     state.COV_arr[STATE_GYRO_BIAS_Z][STATE_GYRO_BIAS_Z] = 0.01f * 0.01f; // ass gyro z
+ 250              		.loc 1 88 5 is_stmt 1 view .LVU73
+ 251              		.loc 1 88 57 is_stmt 0 view .LVU74
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccMapKgT.s 			page 7
+
+
+ 252 0164 06F24C46 		addw	r6, r6, #1100
+ 253 0168 3360     		str	r3, [r6]	@ float
+  89:Modules/src/eskf.c **** 
+  90:Modules/src/eskf.c ****     printf("Success to Init Eskf!\r\n\r\n");
+ 254              		.loc 1 90 5 is_stmt 1 view .LVU75
+ 255 016a 0A48     		ldr	r0, .L3+28
+ 256 016c FFF7FEFF 		bl	puts
+ 257              	.LVL15:
+  91:Modules/src/eskf.c ****     
+  92:Modules/src/eskf.c ****     return true;
+ 258              		.loc 1 92 5 view .LVU76
+  93:Modules/src/eskf.c **** }
+ 259              		.loc 1 93 1 is_stmt 0 view .LVU77
+ 260 0170 0120     		movs	r0, #1
+ 261 0172 BDEC028B 		vldm	sp!, {d8}
+ 262              	.LCFI2:
+ 263              		.cfi_restore 80
+ 264              		.cfi_restore 81
+ 265              		.cfi_def_cfa_offset 16
+ 266 0176 70BD     		pop	{r4, r5, r6, pc}
+ 267              	.L4:
+ 268              		.align	2
+ 269              	.L3:
+ 270 0178 00000000 		.word	gravity
+ 271 017c 00000000 		.word	gravity_arr
+ 272 0180 00000000 		.word	0
+ 273 0184 08000000 		.word	state+8
+ 274 0188 E78AF93C 		.word	1022986983
+ 275 018c 0BD7233C 		.word	1008981771
+ 276 0190 17B7D138 		.word	953267991
+ 277 0194 00000000 		.word	.LC0
+ 278              		.cfi_endproc
+ 279              	.LFE171:
+ 281              		.section	.rodata.EskfPredict.str1.4,"aMS",%progbits,1
+ 282              		.align	2
+ 283              	.LC1:
+ 284 0000 256C6C75 		.ascii	"%llu, %f, %f, %f, %f, %f, %f\015\012\000"
+ 284      2C202566 
+ 284      2C202566 
+ 284      2C202566 
+ 284      2C202566 
+ 285              		.global	__aeabi_f2d
+ 286              		.section	.text.EskfPredict,"ax",%progbits
+ 287              		.align	1
+ 288              		.global	EskfPredict
+ 289              		.syntax unified
+ 290              		.thumb
+ 291              		.thumb_func
+ 292              		.fpu fpv4-sp-d16
+ 294              	EskfPredict:
+ 295              	.LVL16:
+ 296              	.LFB172:
+  94:Modules/src/eskf.c **** 
+  95:Modules/src/eskf.c **** void EskfPredict(const uint64_t *timestamp, const float *_acc, const float *_gyro) {
+ 297              		.loc 1 95 84 is_stmt 1 view -0
+ 298              		.cfi_startproc
+ 299              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccMapKgT.s 			page 8
+
+
+ 300              		@ frame_needed = 0, uses_anonymous_args = 0
+ 301              		.loc 1 95 84 is_stmt 0 view .LVU79
+ 302 0000 2DE9F047 		push	{r4, r5, r6, r7, r8, r9, r10, lr}
+ 303              	.LCFI3:
+ 304              		.cfi_def_cfa_offset 32
+ 305              		.cfi_offset 4, -32
+ 306              		.cfi_offset 5, -28
+ 307              		.cfi_offset 6, -24
+ 308              		.cfi_offset 7, -20
+ 309              		.cfi_offset 8, -16
+ 310              		.cfi_offset 9, -12
+ 311              		.cfi_offset 10, -8
+ 312              		.cfi_offset 14, -4
+ 313 0004 2DED028B 		vpush.64	{d8}
+ 314              	.LCFI4:
+ 315              		.cfi_def_cfa_offset 40
+ 316              		.cfi_offset 80, -40
+ 317              		.cfi_offset 81, -36
+ 318 0008 8CB0     		sub	sp, sp, #48
+ 319              	.LCFI5:
+ 320              		.cfi_def_cfa_offset 88
+ 321 000a 0746     		mov	r7, r0
+ 322 000c 0D46     		mov	r5, r1
+ 323 000e 1446     		mov	r4, r2
+  96:Modules/src/eskf.c ****     float dt = (float)(*timestamp - state.timestamp);
+ 324              		.loc 1 96 5 is_stmt 1 view .LVU80
+ 325              	.LVL17:
+  97:Modules/src/eskf.c ****     float dt2 = dt * dt;
+ 326              		.loc 1 97 5 view .LVU81
+  98:Modules/src/eskf.c **** 
+  99:Modules/src/eskf.c ****     MAT_STATIC_ALLOC_INIT(acc_unbias, 3, 1);
+ 327              		.loc 1 99 5 view .LVU82
+ 328              		.loc 1 99 5 view .LVU83
+ 329              		.loc 1 99 5 view .LVU84
+ 330 0010 384E     		ldr	r6, .L7
+ 331 0012 394B     		ldr	r3, .L7+4
+ 332 0014 0122     		movs	r2, #1
+ 333              	.LVL18:
+ 334              		.loc 1 99 5 is_stmt 0 view .LVU85
+ 335 0016 0321     		movs	r1, #3
+ 336              	.LVL19:
+ 337              		.loc 1 99 5 view .LVU86
+ 338 0018 3046     		mov	r0, r6
+ 339              	.LVL20:
+ 340              		.loc 1 99 5 view .LVU87
+ 341 001a FFF7FEFF 		bl	arm_mat_init_f32
+ 342              	.LVL21:
+ 100:Modules/src/eskf.c ****     
+ 101:Modules/src/eskf.c ****     // Midward Integration
+ 102:Modules/src/eskf.c ****     MAT_DATA(acc_unbias)[0] = 0.5f * (MAT_DATA(state.acc)[0] + _acc[0]) - MAT_DATA(state.acc_bias)[
+ 343              		.loc 1 102 5 is_stmt 1 view .LVU88
+ 344              		.loc 1 102 39 is_stmt 0 view .LVU89
+ 345 001e 374B     		ldr	r3, .L7+8
+ 346 0020 D3F8A024 		ldr	r2, [r3, #1184]
+ 347              		.loc 1 102 58 view .LVU90
+ 348 0024 D2ED007A 		vldr.32	s15, [r2]
+ 349              		.loc 1 102 68 view .LVU91
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccMapKgT.s 			page 9
+
+
+ 350 0028 95ED007A 		vldr.32	s14, [r5]
+ 351              		.loc 1 102 62 view .LVU92
+ 352 002c 77EE877A 		vadd.f32	s15, s15, s14
+ 353              		.loc 1 102 36 view .LVU93
+ 354 0030 B6EE007A 		vmov.f32	s14, #5.0e-1
+ 355 0034 67EE877A 		vmul.f32	s15, s15, s14
+ 356              		.loc 1 102 75 view .LVU94
+ 357 0038 1A6F     		ldr	r2, [r3, #112]
+ 358              		.loc 1 102 99 view .LVU95
+ 359 003a D2ED006A 		vldr.32	s13, [r2]
+ 360              		.loc 1 102 5 view .LVU96
+ 361 003e 7268     		ldr	r2, [r6, #4]
+ 362              		.loc 1 102 73 view .LVU97
+ 363 0040 77EEE67A 		vsub.f32	s15, s15, s13
+ 364              		.loc 1 102 29 view .LVU98
+ 365 0044 C2ED007A 		vstr.32	s15, [r2]
+ 103:Modules/src/eskf.c ****     MAT_DATA(acc_unbias)[1] = 0.5f * (MAT_DATA(state.acc)[1] + _acc[1]) - MAT_DATA(state.acc_bias)[
+ 366              		.loc 1 103 5 is_stmt 1 view .LVU99
+ 367              		.loc 1 103 39 is_stmt 0 view .LVU100
+ 368 0048 D3F8A024 		ldr	r2, [r3, #1184]
+ 369              		.loc 1 103 58 view .LVU101
+ 370 004c D2ED017A 		vldr.32	s15, [r2, #4]
+ 371              		.loc 1 103 68 view .LVU102
+ 372 0050 D5ED016A 		vldr.32	s13, [r5, #4]
+ 373              		.loc 1 103 62 view .LVU103
+ 374 0054 77EEA67A 		vadd.f32	s15, s15, s13
+ 375              		.loc 1 103 36 view .LVU104
+ 376 0058 67EE877A 		vmul.f32	s15, s15, s14
+ 377              		.loc 1 103 75 view .LVU105
+ 378 005c 1A6F     		ldr	r2, [r3, #112]
+ 379              		.loc 1 103 99 view .LVU106
+ 380 005e D2ED016A 		vldr.32	s13, [r2, #4]
+ 381              		.loc 1 103 5 view .LVU107
+ 382 0062 7268     		ldr	r2, [r6, #4]
+ 383              		.loc 1 103 73 view .LVU108
+ 384 0064 77EEE67A 		vsub.f32	s15, s15, s13
+ 385              		.loc 1 103 29 view .LVU109
+ 386 0068 C2ED017A 		vstr.32	s15, [r2, #4]
+ 104:Modules/src/eskf.c ****     MAT_DATA(acc_unbias)[2] = 0.5f * (MAT_DATA(state.acc)[2] + _acc[2]) - MAT_DATA(state.acc_bias)[
+ 387              		.loc 1 104 5 is_stmt 1 view .LVU110
+ 388              		.loc 1 104 39 is_stmt 0 view .LVU111
+ 389 006c D3F8A024 		ldr	r2, [r3, #1184]
+ 390              		.loc 1 104 58 view .LVU112
+ 391 0070 92ED028A 		vldr.32	s16, [r2, #8]
+ 392              		.loc 1 104 68 view .LVU113
+ 393 0074 D5ED027A 		vldr.32	s15, [r5, #8]
+ 394              		.loc 1 104 62 view .LVU114
+ 395 0078 38EE278A 		vadd.f32	s16, s16, s15
+ 396              		.loc 1 104 36 view .LVU115
+ 397 007c 28EE078A 		vmul.f32	s16, s16, s14
+ 398              		.loc 1 104 75 view .LVU116
+ 399 0080 1B6F     		ldr	r3, [r3, #112]
+ 400              		.loc 1 104 99 view .LVU117
+ 401 0082 D3ED027A 		vldr.32	s15, [r3, #8]
+ 402              		.loc 1 104 5 view .LVU118
+ 403 0086 7368     		ldr	r3, [r6, #4]
+ 404              		.loc 1 104 73 view .LVU119
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccMapKgT.s 			page 10
+
+
+ 405 0088 38EE678A 		vsub.f32	s16, s16, s15
+ 406              		.loc 1 104 29 view .LVU120
+ 407 008c 83ED028A 		vstr.32	s16, [r3, #8]
+ 105:Modules/src/eskf.c **** 
+ 106:Modules/src/eskf.c **** 
+ 107:Modules/src/eskf.c ****     printf("%llu, %f, %f, %f, %f, %f, %f\r\n", *timestamp, MAT_DATA(acc_unbias)[0], MAT_DATA(acc_un
+ 408              		.loc 1 107 5 is_stmt 1 view .LVU121
+ 409              		.loc 1 107 80 is_stmt 0 view .LVU122
+ 410 0090 1D68     		ldr	r5, [r3]	@ float
+ 411              	.LVL22:
+ 412              		.loc 1 107 105 view .LVU123
+ 413 0092 D3F80480 		ldr	r8, [r3, #4]	@ float
+ 414              		.loc 1 107 140 view .LVU124
+ 415 0096 D4F80090 		ldr	r9, [r4]	@ float
+ 416              		.loc 1 107 150 view .LVU125
+ 417 009a D4F804A0 		ldr	r10, [r4, #4]	@ float
+ 418              		.loc 1 107 5 view .LVU126
+ 419 009e D7E90067 		ldrd	r6, [r7]
+ 420 00a2 A068     		ldr	r0, [r4, #8]	@ float
+ 421 00a4 FFF7FEFF 		bl	__aeabi_f2d
+ 422              	.LVL23:
+ 423 00a8 CDE90A01 		strd	r0, [sp, #40]
+ 424 00ac 5046     		mov	r0, r10	@ float
+ 425 00ae FFF7FEFF 		bl	__aeabi_f2d
+ 426              	.LVL24:
+ 427 00b2 CDE90801 		strd	r0, [sp, #32]
+ 428 00b6 4846     		mov	r0, r9	@ float
+ 429 00b8 FFF7FEFF 		bl	__aeabi_f2d
+ 430              	.LVL25:
+ 431 00bc CDE90601 		strd	r0, [sp, #24]
+ 432 00c0 18EE100A 		vmov	r0, s16
+ 433 00c4 FFF7FEFF 		bl	__aeabi_f2d
+ 434              	.LVL26:
+ 435 00c8 CDE90401 		strd	r0, [sp, #16]
+ 436 00cc 4046     		mov	r0, r8	@ float
+ 437 00ce FFF7FEFF 		bl	__aeabi_f2d
+ 438              	.LVL27:
+ 439 00d2 CDE90201 		strd	r0, [sp, #8]
+ 440 00d6 2846     		mov	r0, r5	@ float
+ 441 00d8 FFF7FEFF 		bl	__aeabi_f2d
+ 442              	.LVL28:
+ 443 00dc CDE90001 		strd	r0, [sp]
+ 444 00e0 3246     		mov	r2, r6
+ 445 00e2 3B46     		mov	r3, r7
+ 446 00e4 0648     		ldr	r0, .L7+12
+ 447 00e6 FFF7FEFF 		bl	printf
+ 448              	.LVL29:
+ 108:Modules/src/eskf.c ****     
+ 109:Modules/src/eskf.c **** }
+ 449              		.loc 1 109 1 view .LVU127
+ 450 00ea 0CB0     		add	sp, sp, #48
+ 451              	.LCFI6:
+ 452              		.cfi_def_cfa_offset 40
+ 453              		@ sp needed
+ 454 00ec BDEC028B 		vldm	sp!, {d8}
+ 455              	.LCFI7:
+ 456              		.cfi_restore 80
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccMapKgT.s 			page 11
+
+
+ 457              		.cfi_restore 81
+ 458              		.cfi_def_cfa_offset 32
+ 459 00f0 BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 460              	.LVL30:
+ 461              	.L8:
+ 462              		.loc 1 109 1 view .LVU128
+ 463              		.align	2
+ 464              	.L7:
+ 465 00f4 00000000 		.word	.LANCHOR1
+ 466 00f8 00000000 		.word	.LANCHOR0
+ 467 00fc 00000000 		.word	state
+ 468 0100 00000000 		.word	.LC1
+ 469              		.cfi_endproc
+ 470              	.LFE172:
+ 472              		.comm	state,1232,8
+ 473              		.comm	gravity_arr,12,4
+ 474              		.comm	gravity,8,4
+ 475              		.section	.bss.acc_unbias.12849,"aw",%nobits
+ 476              		.align	2
+ 477              		.set	.LANCHOR1,. + 0
+ 480              	acc_unbias.12849:
+ 481 0000 00000000 		.space	8
+ 481      00000000 
+ 482              		.section	.bss.acc_unbias_arr.12850,"aw",%nobits
+ 483              		.align	2
+ 484              		.set	.LANCHOR0,. + 0
+ 487              	acc_unbias_arr.12850:
+ 488 0000 00000000 		.space	12
+ 488      00000000 
+ 488      00000000 
+ 489              		.text
+ 490              	.Letext0:
+ 491              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
+ 492              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 493              		.file 4 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
+ 494              		.file 5 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
+ 495              		.file 6 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\std
+ 496              		.file 7 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
+ 497              		.file 8 "Inc/FreeRTOSConfig.h"
+ 498              		.file 9 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\math.h"
+ 499              		.file 10 "Drivers/CMSIS/DSP/Include/arm_math.h"
+ 500              		.file 11 "Drivers/CMSIS/Include/core_cm4.h"
+ 501              		.file 12 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 502              		.file 13 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 503              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 504              		.file 15 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 505              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 506              		.file 17 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 507              		.file 18 "Modules/include/utils.h"
+ 508              		.file 19 "Modules/include/eskf.h"
+ 509              		.file 20 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\stdio.h"
+ 510              		.file 21 "<built-in>"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccMapKgT.s 			page 12
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 eskf.c
-C:\Users\luoha\AppData\Local\Temp\cc02VLBx.s:18     .text.EskfInit:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\cc02VLBx.s:26     .text.EskfInit:00000000 EskfInit
-C:\Users\luoha\AppData\Local\Temp\cc02VLBx.s:112    .text.EskfInit:00000064 $d
-                            *COM*:0000000c gravity_arr
-                            *COM*:0000000c std_acc_noise
-                            *COM*:0000000c std_gyro_noise
-                            *COM*:0000000c std_acc_bias_noise
-                            *COM*:0000000c std_gyro_bias_noise
+C:\Users\luoha\AppData\Local\Temp\ccMapKgT.s:18     .rodata.EskfInit.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccMapKgT.s:22     .text.EskfInit:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccMapKgT.s:30     .text.EskfInit:00000000 EskfInit
+C:\Users\luoha\AppData\Local\Temp\ccMapKgT.s:270    .text.EskfInit:00000178 $d
                             *COM*:00000008 gravity
+                            *COM*:0000000c gravity_arr
+                            *COM*:000004d0 state
+C:\Users\luoha\AppData\Local\Temp\ccMapKgT.s:282    .rodata.EskfPredict.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccMapKgT.s:287    .text.EskfPredict:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccMapKgT.s:294    .text.EskfPredict:00000000 EskfPredict
+C:\Users\luoha\AppData\Local\Temp\ccMapKgT.s:465    .text.EskfPredict:000000f4 $d
+C:\Users\luoha\AppData\Local\Temp\ccMapKgT.s:476    .bss.acc_unbias.12849:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccMapKgT.s:480    .bss.acc_unbias.12849:00000000 acc_unbias.12849
+C:\Users\luoha\AppData\Local\Temp\ccMapKgT.s:483    .bss.acc_unbias_arr.12850:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccMapKgT.s:487    .bss.acc_unbias_arr.12850:00000000 acc_unbias_arr.12850
 
 UNDEFINED SYMBOLS
 arm_mat_init_f32
+arm_fill_f32
+puts
+__aeabi_f2d
+printf

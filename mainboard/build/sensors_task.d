@@ -42,10 +42,10 @@ build/sensors_task.o: Modules/src/sensors_task.c \
  Modules/include/mpu6050.h Modules/include/ms5611.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
- Modules/include/filter.h Modules/include/system_task.h \
- Modules/include/sensors_task.h Modules/include/state_estimator_task.h \
- Modules/include/eskf.h Modules/include/matrix.h \
- Drivers/CMSIS/DSP/Include/arm_math.h
+ Modules/include/filter.h Modules/include/sensors.h \
+ Modules/include/system_task.h Modules/include/sensors_task.h \
+ Modules/include/state_estimator_task.h Modules/include/eskf.h \
+ Modules/include/matrix.h Drivers/CMSIS/DSP/Include/arm_math.h
 
 Modules/include/sensors_task.h:
 
@@ -152,6 +152,8 @@ Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 
 Modules/include/filter.h:
+
+Modules/include/sensors.h:
 
 Modules/include/system_task.h:
 

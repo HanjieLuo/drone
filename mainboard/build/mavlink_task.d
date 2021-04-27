@@ -252,9 +252,10 @@ build/mavlink_task.o: Modules/src/mavlink_task.c \
  Modules/include/hmc5883l.h Modules/include/i2c1.h Inc/i2c.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  Modules/include/mpu6050.h Modules/include/ms5611.h \
- Modules/include/filter.h Modules/include/system_task.h \
- Modules/include/state_estimator_task.h Modules/include/eskf.h \
- Modules/include/matrix.h Drivers/CMSIS/DSP/Include/arm_math.h
+ Modules/include/filter.h Modules/include/sensors.h \
+ Modules/include/system_task.h Modules/include/state_estimator_task.h \
+ Modules/include/eskf.h Modules/include/matrix.h \
+ Drivers/CMSIS/DSP/Include/arm_math.h
 
 Modules/include/mavlink_task.h:
 
@@ -787,6 +788,8 @@ Modules/include/mpu6050.h:
 Modules/include/ms5611.h:
 
 Modules/include/filter.h:
+
+Modules/include/sensors.h:
 
 Modules/include/system_task.h:
 

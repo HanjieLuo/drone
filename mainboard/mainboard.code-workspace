@@ -48,9 +48,13 @@
             "mavlink_task.h": "c",
             "cmath": "c",
             "bit": "c",
-            "state_estimator_task.h": "c"
+            "state_estimator_task.h": "c",
+            "stm32f4xx_hal_tim.h": "c",
+            "stm32f4xx_it.h": "c",
+            "main.h": "c",
+            "stm32f4xx_hal.h": "c"
         },
-        "cortex-debug.armToolchainPath": "C:/GNU_Tools_Arm_Embedded/bin",
-        "cortex-debug.openocdPath": "C:\\OpenOCD-20200408-0.10.0\\bin\\openocd.EXE"
+        "cortex-debug.armToolchainPath": "e:/GNU Tools Arm Embedded/9 2019-q4-major/bin",
+        "cortex-debug.openocdPath": "E:\\OpenOCD-20200310-0.10.0\\bin\\openocd.EXE"
     }
 }

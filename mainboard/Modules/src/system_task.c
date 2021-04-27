@@ -32,6 +32,8 @@ void SystemInitiate(void) {
     if(is_init) return;
     
     bool is_ok = SensorsInit();
+    
+    is_ok &= StateEstimatorInit(9.803, 1e-3, 1e-5, 1e-4, 1e-5);
 
     is_init = is_ok;
     printf("SystemInitiate: %u\r\n\r\n", is_init);

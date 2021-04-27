@@ -4,7 +4,7 @@
 #include "FreeRTOS.h"
 #include "queue.h"
 #include "utils.h"
-#include "sensors_task.h"
+#include "sensors.h"
 #include "eskf.h"
 
 void StateEstimatorLaunch(void);

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccja6Jsh.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cctpISNq.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccja6Jsh.s 			page 1
   43              		.loc 1 13 5 is_stmt 1 view .LVU2
   44 0006 4FF6FF73 		movw	r3, #65535
   45 000a 0122     		movs	r2, #1
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccja6Jsh.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cctpISNq.s 			page 2
 
 
   46 000c 01A9     		add	r1, sp, #4
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccja6Jsh.s 			page 1
   94              	.LVL4:
   95              		.loc 1 21 18 is_stmt 0 view .LVU10
   96 0006 0025     		movs	r5, #0
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccja6Jsh.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cctpISNq.s 			page 3
 
 
   97              	.LVL5:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccja6Jsh.s 			page 1
  135              		.thumb
  136              		.thumb_func
  137              		.fpu fpv4-sp-d16
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccja6Jsh.s 			page 4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cctpISNq.s 			page 4
 
 
  139              	itoa:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccja6Jsh.s 			page 1
  177              		.loc 1 43 95 is_stmt 0 discriminator 1 view .LVU34
  178 0014 02FB1564 		mls	r4, r2, r5, r6
  179 0018 2334     		adds	r4, r4, #35
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccja6Jsh.s 			page 5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cctpISNq.s 			page 5
 
 
  180 001a 1946     		mov	r1, r3
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccja6Jsh.s 			page 1
  221              		.loc 1 47 31 is_stmt 0 discriminator 1 view .LVU52
  222 003c 2D22     		movs	r2, #45
  223              	.LVL19:
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccja6Jsh.s 			page 6
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cctpISNq.s 			page 6
 
 
   47:Modules/src/utils.c ****     *ptr-- = '\0';
@@ -357,40 +357,110 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccja6Jsh.s 			page 1
  267 0058 00000000 		.word	.LC0
  268              		.cfi_endproc
  269              	.LFE135:
- 271              		.text
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccja6Jsh.s 			page 7
+ 271              		.section	.text.GetSysTimeUs,"ax",%progbits
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cctpISNq.s 			page 7
 
 
- 272              	.Letext0:
- 273              		.file 2 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\machine\\_default_types.h"
- 274              		.file 3 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\_stdint.h"
- 275              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
- 276              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 277              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
- 278              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 279              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 280              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 281              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 282              		.file 11 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\lock.h"
- 283              		.file 12 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\_types.h"
- 284              		.file 13 "c:\\gnu_tools_arm_embedded\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h"
- 285              		.file 14 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\reent.h"
- 286              		.file 15 "Modules/include/utils.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccja6Jsh.s 			page 8
+ 272              		.align	1
+ 273              		.global	GetSysTimeUs
+ 274              		.syntax unified
+ 275              		.thumb
+ 276              		.thumb_func
+ 277              		.fpu fpv4-sp-d16
+ 279              	GetSysTimeUs:
+ 280              	.LFB136:
+  56:Modules/src/utils.c **** 
+  57:Modules/src/utils.c **** 
+  58:Modules/src/utils.c **** // TIM7 is a time base source of HAL
+  59:Modules/src/utils.c **** // Prescaler = (uwTimclock/1000000 - 1) to have a 1MHz counter clock.
+  60:Modules/src/utils.c **** // Period = [(TIM7CLK/1000) - 1]. to have a (1/1000) s time base.
+  61:Modules/src/utils.c **** // TIM7->CNT = [0, 999]
+  62:Modules/src/utils.c **** uint64_t GetSysTimeUs(void) {
+ 281              		.loc 1 62 29 is_stmt 1 view -0
+ 282              		.cfi_startproc
+ 283              		@ args = 0, pretend = 0, frame = 0
+ 284              		@ frame_needed = 0, uses_anonymous_args = 0
+ 285 0000 10B5     		push	{r4, lr}
+ 286              	.LCFI6:
+ 287              		.cfi_def_cfa_offset 8
+ 288              		.cfi_offset 4, -8
+ 289              		.cfi_offset 14, -4
+  63:Modules/src/utils.c ****     uint64_t ms = HAL_GetTick();
+ 290              		.loc 1 63 5 view .LVU67
+ 291              		.loc 1 63 19 is_stmt 0 view .LVU68
+ 292 0002 FFF7FEFF 		bl	HAL_GetTick
+ 293              	.LVL27:
+  64:Modules/src/utils.c ****     return ms * 1000ull + TIM7->CNT;
+ 294              		.loc 1 64 5 is_stmt 1 view .LVU69
+ 295              		.loc 1 64 15 is_stmt 0 view .LVU70
+ 296 0006 4201     		lsls	r2, r0, #5
+ 297 0008 C30E     		lsrs	r3, r0, #27
+ 298 000a 121A     		subs	r2, r2, r0
+ 299 000c 63F10003 		sbc	r3, r3, #0
+ 300 0010 9900     		lsls	r1, r3, #2
+ 301 0012 41EA9271 		orr	r1, r1, r2, lsr #30
+ 302 0016 9400     		lsls	r4, r2, #2
+ 303 0018 2218     		adds	r2, r4, r0
+ 304 001a 41F10003 		adc	r3, r1, #0
+ 305 001e D900     		lsls	r1, r3, #3
+ 306 0020 41EA5271 		orr	r1, r1, r2, lsr #29
+ 307 0024 D000     		lsls	r0, r2, #3
+ 308              	.LVL28:
+ 309              		.loc 1 64 15 view .LVU71
+ 310 0026 0246     		mov	r2, r0
+ 311 0028 0B46     		mov	r3, r1
+ 312              		.loc 1 64 31 view .LVU72
+ 313 002a 0349     		ldr	r1, .L24
+ 314 002c 486A     		ldr	r0, [r1, #36]
+  65:Modules/src/utils.c **** }
+ 315              		.loc 1 65 1 view .LVU73
+ 316 002e 1018     		adds	r0, r2, r0
+ 317 0030 43F10001 		adc	r1, r3, #0
+ 318 0034 10BD     		pop	{r4, pc}
+ 319              	.L25:
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cctpISNq.s 			page 8
+
+
+ 320 0036 00BF     		.align	2
+ 321              	.L24:
+ 322 0038 00140040 		.word	1073746944
+ 323              		.cfi_endproc
+ 324              	.LFE136:
+ 326              		.text
+ 327              	.Letext0:
+ 328              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
+ 329              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 330              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 331              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 332              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 333              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 334              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 335              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 336              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 337              		.file 11 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
+ 338              		.file 12 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
+ 339              		.file 13 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
+ 340              		.file 14 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
+ 341              		.file 15 "Modules/include/utils.h"
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\cctpISNq.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 utils.c
-C:\Users\luoha\AppData\Local\Temp\ccja6Jsh.s:18     .text.__io_putchar:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccja6Jsh.s:26     .text.__io_putchar:00000000 __io_putchar
-C:\Users\luoha\AppData\Local\Temp\ccja6Jsh.s:63     .text.__io_putchar:0000001c $d
-C:\Users\luoha\AppData\Local\Temp\ccja6Jsh.s:68     .text._write:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccja6Jsh.s:75     .text._write:00000000 _write
-C:\Users\luoha\AppData\Local\Temp\ccja6Jsh.s:127    .rodata.itoa.str1.4:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccja6Jsh.s:132    .text.itoa:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccja6Jsh.s:139    .text.itoa:00000000 itoa
-C:\Users\luoha\AppData\Local\Temp\ccja6Jsh.s:267    .text.itoa:00000058 $d
+C:\Users\luoha\AppData\Local\Temp\cctpISNq.s:18     .text.__io_putchar:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cctpISNq.s:26     .text.__io_putchar:00000000 __io_putchar
+C:\Users\luoha\AppData\Local\Temp\cctpISNq.s:63     .text.__io_putchar:0000001c $d
+C:\Users\luoha\AppData\Local\Temp\cctpISNq.s:68     .text._write:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cctpISNq.s:75     .text._write:00000000 _write
+C:\Users\luoha\AppData\Local\Temp\cctpISNq.s:127    .rodata.itoa.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\cctpISNq.s:132    .text.itoa:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cctpISNq.s:139    .text.itoa:00000000 itoa
+C:\Users\luoha\AppData\Local\Temp\cctpISNq.s:267    .text.itoa:00000058 $d
+C:\Users\luoha\AppData\Local\Temp\cctpISNq.s:272    .text.GetSysTimeUs:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\cctpISNq.s:279    .text.GetSysTimeUs:00000000 GetSysTimeUs
+C:\Users\luoha\AppData\Local\Temp\cctpISNq.s:322    .text.GetSysTimeUs:00000038 $d
 
 UNDEFINED SYMBOLS
 HAL_UART_Transmit
 huart1
+HAL_GetTick

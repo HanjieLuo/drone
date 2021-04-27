@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s 			page 1
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccZN7uch.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s 			page 1
   22:Src/freertos.c **** #include "FreeRTOS.h"
   23:Src/freertos.c **** #include "task.h"
   24:Src/freertos.c **** #include "main.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s 			page 2
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccZN7uch.s 			page 2
 
 
   25:Src/freertos.c **** #include "cmsis_os.h"
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s 			page 1
   79:Src/freertos.c ****   * @brief  FreeRTOS initialization
   80:Src/freertos.c ****   * @param  None
   81:Src/freertos.c ****   * @retval None
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s 			page 3
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccZN7uch.s 			page 3
 
 
   82:Src/freertos.c ****   */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s 			page 1
   45              	.LVL1:
   46              	.L2:
  124:Src/freertos.c ****   /* USER CODE BEGIN StartDefaultTask */
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s 			page 4
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccZN7uch.s 			page 4
 
 
  125:Src/freertos.c ****   /* Infinite loop */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s 			page 1
   90 0010 00000000 		.word	.LANCHOR0
   91 0014 00000000 		.word	.LANCHOR1
   92              		.cfi_endproc
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s 			page 5
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccZN7uch.s 			page 5
 
 
   93              	.LFE138:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s 			page 1
  143 0024 00000000 		.word	.LANCHOR2
  144 0028 00000000 		.word	defaultTaskHandle
  145              		.cfi_endproc
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s 			page 6
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccZN7uch.s 			page 6
 
 
  146              	.LFE139:
@@ -335,8 +335,8 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s 			page 1
  174      00000000 
  175              		.text
  176              	.Letext0:
- 177              		.file 2 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\machine\\_default_types.h"
- 178              		.file 3 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 177              		.file 2 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\machine\\_default_ty
+ 178              		.file 3 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_stdint.h"
  179              		.file 4 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
  180              		.file 5 "Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"
  181              		.file 6 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
@@ -348,32 +348,32 @@ ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s 			page 1
  187              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
  188              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
  189              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 190              		.file 15 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\lock.h"
- 191              		.file 16 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\_types.h"
- 192              		.file 17 "c:\\gnu_tools_arm_embedded\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h"
- 193              		.file 18 "c:\\gnu_tools_arm_embedded\\arm-none-eabi\\include\\sys\\reent.h"
+ 190              		.file 15 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\lock.h"
+ 191              		.file 16 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\_types.h"
+ 192              		.file 17 "e:\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\st
+ 193              		.file 18 "e:\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\\sys\\reent.h"
  194              		.file 19 "Modules/include/utils.h"
  195              		.file 20 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h"
-ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s 			page 7
+ARM GAS  C:\Users\luoha\AppData\Local\Temp\ccZN7uch.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 freertos.c
-C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s:15     .rodata.str1.4:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s:22     .text.StartDefaultTask:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s:30     .text.StartDefaultTask:00000000 StartDefaultTask
-C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s:58     .text.vApplicationGetIdleTaskMemory:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s:65     .text.vApplicationGetIdleTaskMemory:00000000 vApplicationGetIdleTaskMemory
-C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s:90     .text.vApplicationGetIdleTaskMemory:00000010 $d
-C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s:96     .text.MX_FREERTOS_Init:00000000 $t
-C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s:103    .text.MX_FREERTOS_Init:00000000 MX_FREERTOS_Init
-C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s:143    .text.MX_FREERTOS_Init:00000024 $d
+C:\Users\luoha\AppData\Local\Temp\ccZN7uch.s:15     .rodata.str1.4:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccZN7uch.s:22     .text.StartDefaultTask:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccZN7uch.s:30     .text.StartDefaultTask:00000000 StartDefaultTask
+C:\Users\luoha\AppData\Local\Temp\ccZN7uch.s:58     .text.vApplicationGetIdleTaskMemory:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccZN7uch.s:65     .text.vApplicationGetIdleTaskMemory:00000000 vApplicationGetIdleTaskMemory
+C:\Users\luoha\AppData\Local\Temp\ccZN7uch.s:90     .text.vApplicationGetIdleTaskMemory:00000010 $d
+C:\Users\luoha\AppData\Local\Temp\ccZN7uch.s:96     .text.MX_FREERTOS_Init:00000000 $t
+C:\Users\luoha\AppData\Local\Temp\ccZN7uch.s:103    .text.MX_FREERTOS_Init:00000000 MX_FREERTOS_Init
+C:\Users\luoha\AppData\Local\Temp\ccZN7uch.s:143    .text.MX_FREERTOS_Init:00000024 $d
                             *COM*:00000004 defaultTaskHandle
-C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s:150    .rodata:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s:162    .bss.xIdleStack:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s:166    .bss.xIdleStack:00000000 xIdleStack
-C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s:169    .bss.xIdleTaskTCBBuffer:00000000 $d
-C:\Users\luoha\AppData\Local\Temp\ccUe3cs7.s:173    .bss.xIdleTaskTCBBuffer:00000000 xIdleTaskTCBBuffer
+C:\Users\luoha\AppData\Local\Temp\ccZN7uch.s:150    .rodata:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccZN7uch.s:162    .bss.xIdleStack:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccZN7uch.s:166    .bss.xIdleStack:00000000 xIdleStack
+C:\Users\luoha\AppData\Local\Temp\ccZN7uch.s:169    .bss.xIdleTaskTCBBuffer:00000000 $d
+C:\Users\luoha\AppData\Local\Temp\ccZN7uch.s:173    .bss.xIdleTaskTCBBuffer:00000000 xIdleTaskTCBBuffer
 
 UNDEFINED SYMBOLS
 osDelay

@@ -4,9 +4,6 @@
 #include "i2c1.h"
 #include "utils.h"
 
-#define SensorsReadAccelRaw MPU6050ReadAccelRaw
-#define SensorsReadGyroRaw MPU6050ReadGyroRaw
-
 #define MPU6050_DEV_ADDR 0xD0  // 6050 器件地址
 //-----------------------------------------
 // 定义MPU6050内部地址

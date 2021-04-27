@@ -4,8 +4,6 @@
 #include "i2c1.h"
 #include "utils.h"
 
-#define SensorsReadMagRaw HMC5883LReadMagRaw
-
 #define HMC5883L_ADDRESS            0x1E // this device only has one address
 #define HMC5883L_DEFAULT_ADDRESS    0x3C // HMC5883L_ADDRESS << 1
 

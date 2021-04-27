@@ -1,16 +1,11 @@
 #include "sensors_task.h"
 
-static Lowpass2Data acc_lpf[3];
-static Lowpass2Data gyro_lpf[3];
 
-xQueueHandle acc_queue;
-STATIC_MEM_QUEUE_ALLOC(acc_queue, 1, sizeof(float) * 3);
-xQueueHandle gyro_queue;
-STATIC_MEM_QUEUE_ALLOC(gyro_queue, 1, sizeof(float) * 3);
-xQueueHandle mag_queue;
-STATIC_MEM_QUEUE_ALLOC(mag_queue, 1, sizeof(float) * 3);
-xQueueHandle alt_queue;
-STATIC_MEM_QUEUE_ALLOC(alt_queue, 1, sizeof(float));
+
+extern xQueueHandle acc_queue;
+extern xQueueHandle gyro_queue;
+extern xQueueHandle mag_queue;
+extern xQueueHandle alt_queue;
 
 static TaskHandle_t sensors_task_handle;
 STATIC_MEM_TASK_ALLOC(sensors_task, SENSORS_TASK_STACKSIZE);
@@ -19,49 +14,21 @@ const TickType_t sensors_task_wait = pdMS_TO_TICKS(1000.0 / IMU_SAMPLE_FREQ);
 const static uint8_t mag_meas_delay = IMU_SAMPLE_FREQ / MAG_SAMPLE_FREQ;
 const static uint8_t alt_meas_delay = IMU_SAMPLE_FREQ / ALT_SAMPLE_FREQ;
 
+static Lowpass2Data acc_lpf[3];
+static Lowpass2Data gyro_lpf[3];
 
-bool SensorsInit(void) {
-    printf("Init Sensors...\r\n");
-
-    bool IS_MPU6050_OK = MPU6050Init();
-    printf("MPU6050Init:  %u\r\n", IS_MPU6050_OK);
-
-    bool IS_HMC5883_OK = HMC5883LInit();
-    printf("HMC5883LInit: %u\r\n", IS_HMC5883_OK);
-
-    bool IS_MS5611_OK = MS5611Init();
-    printf("MS5611Init:   %u\r\n", IS_MS5611_OK);
-
+void SensorsLaunch(void) {
     for(unsigned int i = 0; i < 3; i++) {
         Lowpass2Init(&acc_lpf[i], IMU_SAMPLE_FREQ, ACC_LPF_CUTOFF_FREQ);
         Lowpass2Init(&gyro_lpf[i], IMU_SAMPLE_FREQ, GYRO_LPF_CUTOFF_FREQ);
     }
-
-    // printf("acc_lpf: b0:%f, b1:%f, b2:%f, a1:%f, a2:%f\r\n", acc_lpf[0].b0, acc_lpf[0].b1, acc_lpf[0].b2, acc_lpf[0].a1, acc_lpf[0].a2);
-    // printf("gyro_lpf: b0:%f, b1:%f, b2:%f, a1:%f, a2:%f\r\n\r\n", gyro_lpf[0].b0, gyro_lpf[0].b1, gyro_lpf[0].b2, gyro_lpf[0].a1, gyro_lpf[0].a2);
-
-    bool IS_SENSORS_OK = IS_MPU6050_OK & IS_HMC5883_OK & IS_MS5611_OK;
-    if (IS_SENSORS_OK) {
-        printf("Success to Init Sensors!\r\n\r\n");
-    } else {
-        printf("Fail to Init Sensors!\r\n\r\n"); 
-    }
-
-    return IS_SENSORS_OK;
-}
-
-void SensorsLaunch(void) {
-    acc_queue = STATIC_MEM_QUEUE_CREATE(acc_queue);
-    gyro_queue = STATIC_MEM_QUEUE_CREATE(gyro_queue);
-    mag_queue = STATIC_MEM_QUEUE_CREATE(mag_queue);
-    alt_queue = STATIC_MEM_QUEUE_CREATE(alt_queue);
 
     sensors_task_handle = STATIC_MEM_TASK_CREATE(sensors_task, SensorsTask, "SensorsTask", NULL, SENSORS_TASK_PRI);
 }
 
 
 void SensorsTask(void *param) {
-    SystemWaitStart();
+    // SystemWaitStart();
 
     int16_t acc_raw[3] = {0}, gyro_raw[3] = {0}, mag_raw[3] = {0};
     float alt = 0.f, acc[3] = {0}, gyro[3] = {0}, mag[3] = {0};

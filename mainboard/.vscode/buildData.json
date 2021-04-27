@@ -3,7 +3,7 @@
     "ABOUT2": "User should not edit this fields, instead it should edit 'c_cpp_properties.json'",
     "ABOUT3": "This file is regenerated on 'Update workspace' task.",
     "VERSION": "1.7",
-    "LAST_RUN": "2021-04-04 17:30:46.968253",
+    "LAST_RUN": "2021-04-09 23:04:39.002997",
     "cSources": [
         "Modules/src/usart_com.c",
         "Modules/src/motor.c",
@@ -12,6 +12,7 @@
         "Modules/src/mpu6050.c",
         "Modules/src/ms5611.c",
         "Modules/src/hmc5883l.c",
+        "Modules/src/sensors.c",
         "Modules/src/sensors_task.c",
         "Modules/src/i2c1.c",
         "Modules/src/system_task.c",
@@ -137,7 +138,6 @@
         "-mthumb",
         "-mfpu=fpv4-sp-d16",
         "-mfloat-abi=hard",
-        "-specs=nano.specs",
         "-TSTM32F407VETx_FLASH.ld",
         "-LDrivers/CMSIS/Lib/GCC",
         "-lc",
@@ -157,10 +157,10 @@
     ],
     "stm32SvdPath": ".vscode/STM32F40x.svd",
     "ABOUT4": "---- Paths below are fetched from user-specific 'toolsPaths.json'. ----",
-    "gccExePath": "C:\\GNU_Tools_Arm_Embedded\\bin\\arm-none-eabi-gcc.EXE",
-    "gccInludePath": "C:/GNU_Tools_Arm_Embedded/lib/gcc/arm-none-eabi/9.2.1/include",
-    "buildToolsPath": "C:\\MinGW\\bin\\make.EXE",
+    "gccExePath": "e:\\GNU Tools Arm Embedded\\9 2019-q4-major\\bin\\arm-none-eabi-gcc.EXE",
+    "gccInludePath": "e:/GNU Tools Arm Embedded/9 2019-q4-major/lib/gcc/arm-none-eabi/9.2.1/include",
+    "buildToolsPath": "E:\\mingw64\\bin\\make.EXE",
     "pythonExec": "python",
-    "openOcdPath": "C:\\OpenOCD-20200408-0.10.0\\bin\\openocd.EXE",
-    "openOcdInterfacePath": "C:/OpenOCD-20200408-0.10.0/share/openocd/scripts/interface/cmsis-dap.cfg"
+    "openOcdPath": "E:\\OpenOCD-20200310-0.10.0\\bin\\openocd.EXE",
+    "openOcdInterfacePath": "E:/OpenOCD-20200310-0.10.0/share/openocd/scripts/interface/cmsis-dap.cfg"
 }
