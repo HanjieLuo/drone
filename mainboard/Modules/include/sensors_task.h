@@ -9,7 +9,7 @@
 #include "mpu6050.h"
 #include "ms5611.h"
 #include "queue.h"
-#include "utils.h"
+#include "utils/utils.h"
 #include "filter.h"
 #include "sensors.h"
 #include "system_task.h"

@@ -7,7 +7,7 @@
 #include "mpu6050.h"
 #include "ms5611.h"
 #include "queue.h"
-#include "utils.h"
+#include "utils/utils.h"
 
 #define SensorsReadAccelRaw MPU6050ReadAccelRaw
 #define SensorsReadGyroRaw MPU6050ReadGyroRaw

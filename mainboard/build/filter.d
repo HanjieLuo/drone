@@ -9,7 +9,8 @@ build/filter.o: Modules/src/filter.c Modules/include/filter.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
- Modules/include/utils.h Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+ Modules/include/utils/utils.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  Inc/stm32f4xx_hal_conf.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
@@ -37,7 +38,7 @@ build/filter.o: Modules/src/filter.c Modules/include/filter.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- Modules/include/config.h
+ Modules/include/utils/math.h Drivers/CMSIS/DSP/Include/arm_math.h
 
 Modules/include/filter.h:
 
@@ -63,7 +64,7 @@ Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 
 Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
 
-Modules/include/utils.h:
+Modules/include/utils/utils.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 
@@ -125,4 +126,6 @@ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 
-Modules/include/config.h:
+Modules/include/utils/math.h:
+
+Drivers/CMSIS/DSP/Include/arm_math.h:

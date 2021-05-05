@@ -2,9 +2,10 @@
 #define __ESKF_H
 
 #include "FreeRTOS.h"
-#include "matrix.h"
 #include "queue.h"
-#include "utils.h"
+#include "utils/matrix.h"
+#include "utils/math.h"
+#include "utils/utils.h"
 
 #define StateEstimatorInit EskfInit
 
@@ -42,29 +43,27 @@ typedef struct {
    * For more information, refer to the paper [Quaternion kinematics for the error-state Kalman ﬁlter]
    */
 
-    MAT_ALLOC(p, 3, 1);
-    MAT_ALLOC(v, 3, 1);
+    float p[3];
+    float v[3];
 
     // The quad's attitude as a quaternion (qw, qx, qy, qz)
     // We store as a quaternion to allow easy normalization (in comparison to a rotation matrix),
     // while also being robust against singularities (in comparison to euler angles)
-    MAT_ALLOC(q, 4, 1);
+    float q[4];
 
-    // The quad's attitude as a rotation matrix (used by the prediction, updated by the finalization)
-    MAT_ALLOC(R, 3, 3);
+    float R[3][3];
 
     // bias
-    MAT_ALLOC(acc_bias, 3, 1);
-    MAT_ALLOC(gyro_bias, 3, 1);
+    float acc_bias[3];
+    float gyro_bias[3];
 
     // The covariance matrix
     arm_matrix_instance_f32 COV;
     __attribute__((aligned(4))) float COV_arr[16][16];
-    // MAT_ALLOC(COV, 16, 16);
 
-    MAT_ALLOC(acc, 3, 1);
-    MAT_ALLOC(gyro, 3, 1);
     uint64_t timestamp;
+    float acc[3];
+    float gyro[3];
 
 } eskf_state;
 

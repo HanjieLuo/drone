@@ -4,7 +4,7 @@
 #include "FreeRTOS.h"
 
 #include "config.h"
-#include "utils.h"
+#include "utils/utils.h"
 #include "usart_com.h"
 
 void SystemViewLaunch(void);

@@ -5,7 +5,8 @@
 
 #include "FreeRTOS.h"
 #include "queue.h"
-#include "utils.h"
+#include "utils/utils.h"
+#include "utils/math.h"
 
 /** Second Order IIR Lowpass Butterworth Filter
  *

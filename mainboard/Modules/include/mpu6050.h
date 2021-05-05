@@ -2,7 +2,7 @@
 #define __MPU6050_H
 
 #include "i2c1.h"
-#include "utils.h"
+#include "utils/utils.h"
 
 #define MPU6050_DEV_ADDR 0xD0  // 6050 器件地址
 //-----------------------------------------

@@ -2,7 +2,7 @@
 #define __MS5611_H
 
 #include "i2c1.h"
-#include "utils.h"
+#include "utils/utils.h"
 
 //定义器件在IIC总线中的从地址,根据CSB引脚不同修改
 // MS5611挂在MPU5060的从I2C接口上。MS5611的I2C地址为0b111011Cx，其中C比特位由CSB引脚决定，为CSB引脚的补码值（取反）。

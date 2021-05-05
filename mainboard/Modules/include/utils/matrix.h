@@ -30,22 +30,22 @@
 	arm_mat_init_f32(&mat, row, col, (float32_t *)mat ## _arr)
 
 #define MAT_ADD(mat_a, mat_b, mat_result) \
-	mat_op_status = arm_mat_add_f32(mat_a, mat_b, mat_result); \
+	ASSERT(ARM_MATH_SUCCESS == arm_mat_add_f32(mat_a, mat_b, mat_result)); \
 
 #define MAT_SUB(mat_a, mat_b, mat_result) \
-	mat_op_status = arm_mat_sub_f32(mat_a, mat_b, mat_result); \
+	ASSERT(ARM_MATH_SUCCESS == arm_mat_sub_f32(mat_a, mat_b, mat_result)); \
 
 #define MAT_MULT(mat_a, mat_b, mat_result) \
-	mat_op_status = arm_mat_mult_f32(mat_a, mat_b, mat_result); \
+	ASSERT(ARM_MATH_SUCCESS == arm_mat_mult_f32(mat_a, mat_b, mat_result)); \
 
 #define MAT_SCALE(mat_in, scale, mat_out) \
-	mat_op_status = arm_mat_scale_f32(mat_in, scale, mat_out); \
+	ASSERT(ARM_MATH_SUCCESS == arm_mat_scale_f32(mat_in, scale, mat_out)); \
 
 #define MAT_TRANS(mat, mat_trans) \
-	mat_op_status = arm_mat_trans_f32(mat, mat_trans); \
+	ASSERT(ARM_MATH_SUCCESS == arm_mat_trans_f32(mat, mat_trans)); \
 
 #define MAT_INV(mat, mat_inv) \
-	mat_op_status = arm_mat_inverse_f32(mat, mat_inv); \
+	ASSERT(ARM_MATH_SUCCESS == arm_mat_inverse_f32(mat, mat_inv)); \
 
 #define MAT_DATA(mat) mat.pData
 

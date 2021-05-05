@@ -6,13 +6,14 @@ build/eskf.o: Modules/src/eskf.c Modules/include/eskf.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
  Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
- Modules/include/matrix.h Drivers/CMSIS/DSP/Include/arm_math.h \
- Drivers/CMSIS/Include/core_cm4.h Drivers/CMSIS/Include/cmsis_version.h \
- Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
- Modules/include/utils.h Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+ Modules/include/utils/matrix.h Drivers/CMSIS/DSP/Include/arm_math.h \
+ Drivers/CMSIS/Include/core_cm4.h Drivers/CMSIS/Include/cmsis_version.h \
+ Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h \
+ Modules/include/utils/math.h Modules/include/utils/utils.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  Inc/stm32f4xx_hal_conf.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
@@ -37,8 +38,7 @@ build/eskf.o: Modules/src/eskf.c Modules/include/eskf.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- Modules/include/config.h
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 
 Modules/include/eskf.h:
 
@@ -58,7 +58,13 @@ Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h:
 
 Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
 
-Modules/include/matrix.h:
+Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
+
+Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
+
+Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
+
+Modules/include/utils/matrix.h:
 
 Drivers/CMSIS/DSP/Include/arm_math.h:
 
@@ -70,13 +76,9 @@ Drivers/CMSIS/Include/cmsis_compiler.h:
 
 Drivers/CMSIS/Include/cmsis_gcc.h:
 
-Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
+Modules/include/utils/math.h:
 
-Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
-
-Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
-
-Modules/include/utils.h:
+Modules/include/utils/utils.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 
@@ -129,5 +131,3 @@ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
-
-Modules/include/config.h:

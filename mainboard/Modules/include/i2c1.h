@@ -2,7 +2,7 @@
 #define __I2C1_H
 
 #include "i2c.h"
-#include "utils.h"
+#include "utils/utils.h"
 #include "FreeRTOS.h"
 #include "task.h"
 

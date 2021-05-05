@@ -3,7 +3,7 @@
 
 #include "FreeRTOS.h"
 #include "queue.h"
-#include "utils.h"
+#include "utils/utils.h"
 #include "sensors.h"
 #include "eskf.h"
 

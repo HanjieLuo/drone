@@ -218,7 +218,7 @@ build/mavlink_task.o: Modules/src/mavlink_task.c \
  Modules/include/MAVLink/common/./mavlink_msg_open_drone_id_operator_id.h \
  Modules/include/MAVLink/common/./mavlink_msg_open_drone_id_message_pack.h \
  Modules/include/MAVLink/common/../mavlink_get_info.h \
- Modules/include/usart_com.h Inc/usart.h Inc/main.h \
+ Modules/include/utils/utils.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  Inc/stm32f4xx_hal_conf.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -247,15 +247,17 @@ build/mavlink_task.o: Modules/src/mavlink_task.c \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- Modules/include/utils.h Modules/include/config.h Modules/include/utils.h \
- Modules/include/motor.h Inc/tim.h Modules/include/sensors_task.h \
- Modules/include/hmc5883l.h Modules/include/i2c1.h Inc/i2c.h \
+ Modules/include/usart_com.h Inc/usart.h Inc/main.h \
+ Modules/include/utils/utils.h Modules/include/motor.h Inc/tim.h \
+ Modules/include/sensors_task.h Modules/include/hmc5883l.h \
+ Modules/include/i2c1.h Inc/i2c.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  Modules/include/mpu6050.h Modules/include/ms5611.h \
- Modules/include/filter.h Modules/include/sensors.h \
- Modules/include/system_task.h Modules/include/state_estimator_task.h \
- Modules/include/eskf.h Modules/include/matrix.h \
- Drivers/CMSIS/DSP/Include/arm_math.h
+ Modules/include/filter.h Modules/include/utils/math.h \
+ Drivers/CMSIS/DSP/Include/arm_math.h Modules/include/sensors.h \
+ Modules/include/system_task.h Modules/include/config.h \
+ Modules/include/state_estimator_task.h Modules/include/eskf.h \
+ Modules/include/utils/matrix.h
 
 Modules/include/mavlink_task.h:
 
@@ -697,11 +699,7 @@ Modules/include/MAVLink/common/./mavlink_msg_open_drone_id_message_pack.h:
 
 Modules/include/MAVLink/common/../mavlink_get_info.h:
 
-Modules/include/usart_com.h:
-
-Inc/usart.h:
-
-Inc/main.h:
+Modules/include/utils/utils.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 
@@ -763,11 +761,13 @@ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 
-Modules/include/utils.h:
+Modules/include/usart_com.h:
 
-Modules/include/config.h:
+Inc/usart.h:
 
-Modules/include/utils.h:
+Inc/main.h:
+
+Modules/include/utils/utils.h:
 
 Modules/include/motor.h:
 
@@ -789,14 +789,18 @@ Modules/include/ms5611.h:
 
 Modules/include/filter.h:
 
+Modules/include/utils/math.h:
+
+Drivers/CMSIS/DSP/Include/arm_math.h:
+
 Modules/include/sensors.h:
 
 Modules/include/system_task.h:
+
+Modules/include/config.h:
 
 Modules/include/state_estimator_task.h:
 
 Modules/include/eskf.h:
 
-Modules/include/matrix.h:
-
-Drivers/CMSIS/DSP/Include/arm_math.h:
+Modules/include/utils/matrix.h:

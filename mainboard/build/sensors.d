@@ -35,7 +35,7 @@ build/sensors.o: Modules/src/sensors.c Modules/include/sensors.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- Modules/include/utils.h Modules/include/config.h Modules/include/utils.h \
+ Modules/include/utils/utils.h Modules/include/utils/utils.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
  Modules/include/mpu6050.h Modules/include/ms5611.h \
@@ -128,11 +128,9 @@ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 
-Modules/include/utils.h:
+Modules/include/utils/utils.h:
 
-Modules/include/config.h:
-
-Modules/include/utils.h:
+Modules/include/utils/utils.h:
 
 Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 

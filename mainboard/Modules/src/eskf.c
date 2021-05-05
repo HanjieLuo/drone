@@ -1,6 +1,7 @@
 #include "eskf.h"
 
-MAT_ALLOC(gravity, 3, 1);
+float gravity[3];
+// MAT_ALLOC(gravity, 3, 1);
 // MAT_ALLOC(acc_var, 3, 1);
 // MAT_ALLOC(gyro_var, 3, 1);
 // MAT_ALLOC(acc_bias_var, 3, 1);
@@ -18,59 +19,24 @@ bool EskfInit(const float32_t _gravity,
               const float32_t _acc_bias_var,
               const float32_t _gyro_bias_var) {
 
-    MAT_INIT(gravity, 3, 1);
-    // MAT_INIT(acc_var, 3, 1);
-    // MAT_INIT(gyro_var, 3, 1);
-    // MAT_INIT(acc_bias_var, 3, 1);
-    // MAT_INIT(gyro_bias_var, 3, 1);
-
-    MAT_DATA(gravity)[0] = 0.f;
-    MAT_DATA(gravity)[1] = 0.f;
-    MAT_DATA(gravity)[2] = -_gravity;
-
-    // MAT_DATA(acc_var)[0] = _acc_var;
-    // MAT_DATA(acc_var)[1] = _acc_var;
-    // MAT_DATA(acc_var)[2] = _acc_var;
-
-    // MAT_DATA(gyro_var)[0] = _gyro_var;
-    // MAT_DATA(gyro_var)[1] = _gyro_var;
-    // MAT_DATA(gyro_var)[2] = _gyro_var;
-
-    // MAT_DATA(acc_bias_var)[0] = _acc_bias_var;
-    // MAT_DATA(acc_bias_var)[1] = _acc_bias_var;
-    // MAT_DATA(acc_bias_var)[2] = _acc_bias_var;
-
-    // MAT_DATA(gyro_bias_var)[0] = _gyro_bias_var;
-    // MAT_DATA(gyro_bias_var)[1] = _gyro_bias_var;
-    // MAT_DATA(gyro_bias_var)[2] = _gyro_bias_var;
-
+    gravity[0] = 0.f;
+    gravity[1] = 0.f;
+    gravity[2] = -_gravity;
 
     /* initialize the nominal state */
-    MAT_INIT(state.p, 3, 1);
-    arm_fill_f32(0.f, MAT_DATA(state.p), 3);
+    memset(state.p, 0, 3*sizeof(float));
+    memset(state.v, 0, 3*sizeof(float));
+    memset(state.acc_bias, 0, 3*sizeof(float));
+    memset(state.gyro_bias, 0, 3*sizeof(float));
 
-    MAT_INIT(state.v, 3, 1);
-    arm_fill_f32(0.f, MAT_DATA(state.v), 3);
+    state.q[0] = 1.0f; state.q[1] = 0.0f; state.q[2] = 0.0f; state.q[3] = 0.0f;
 
-    MAT_INIT(state.acc_bias, 3, 1);
-    arm_fill_f32(0.f, MAT_DATA(state.acc_bias), 3);
-
-    MAT_INIT(state.gyro_bias, 3, 1);
-    arm_fill_f32(0.f, MAT_DATA(state.gyro_bias), 3);
-
-    MAT_INIT(state.q, 4, 1);
-    MAT_DATA(state.q)[0] = 1.0f;
-    MAT_DATA(state.q)[1] = 0.0f;
-    MAT_DATA(state.q)[2] = 0.0f;
-    MAT_DATA(state.q)[3] = 0.0f;
-
-    MAT_INIT(state.R, 3, 3);
-    MAT_DATA(state.R)[0] = 1.0f; MAT_DATA(state.R)[1] = 0.0f; MAT_DATA(state.R)[2] = 0.0f;
-    MAT_DATA(state.R)[3] = 0.0f; MAT_DATA(state.R)[4] = 1.0f; MAT_DATA(state.R)[5] = 0.0f;
-    MAT_DATA(state.R)[6] = 0.0f; MAT_DATA(state.R)[7] = 0.0f; MAT_DATA(state.R)[8] = 1.0f;
+    state.R[0][0] = 1.0f; state.R[0][1] = 0.0f; state.R[0][2] = 0.0f;
+    state.R[1][0] = 0.0f; state.R[1][1] = 1.0f; state.R[1][2] = 0.0f;
+    state.R[2][0] = 0.0f; state.R[2][1] = 0.0f; state.R[2][2] = 1.0f;
 
     MAT_INIT(state.COV, 16, 16);
-    arm_fill_f32(0.f, MAT_DATA(state.COV), 256);
+    memset(state.COV_arr, 0, 256*sizeof(float));
     state.COV_arr[STATE_PX][STATE_PX] = 1.f * 1.f; // position x
     state.COV_arr[STATE_PY][STATE_PY] = 1.f * 1.f; // position y
     state.COV_arr[STATE_PZ][STATE_PZ] = 1.f * 1.f; // position z
@@ -93,20 +59,66 @@ bool EskfInit(const float32_t _gravity,
 }
 
 void EskfPredict(const uint64_t *timestamp, const float *_acc, const float *_gyro) {
+    static float acc_unbias[3];
+    static float gyro_unbias[3];
+    static float acc_world[3];
+
     float dt = (float)(*timestamp - state.timestamp);
     float dt2 = dt * dt;
 
-    MAT_STATIC_ALLOC_INIT(acc_unbias, 3, 1);
-    MAT_STATIC_ALLOC_INIT(acc_world, 3, 1);
-    
-    // Midward Integration
-    MAT_DATA(acc_unbias)[0] = _acc[0] - MAT_DATA(state.acc_bias)[0];
-    MAT_DATA(acc_unbias)[1] = _acc[1] - MAT_DATA(state.acc_bias)[1];
-    MAT_DATA(acc_unbias)[2] = _acc[2] - MAT_DATA(state.acc_bias)[2];
+    acc_unbias[0] = _acc[0] - state.acc_bias[0];
+    acc_unbias[1] = _acc[1] - state.acc_bias[1];
+    acc_unbias[2] = _acc[2] - state.acc_bias[2];
+
+    gyro_unbias[0] = _gyro[0] - state.gyro_bias[0];
+    gyro_unbias[1] = _gyro[1] - state.gyro_bias[1];
+    gyro_unbias[2] = _gyro[2] - state.gyro_bias[2];
+
+    acc_world[0] = state.R[0][0] * acc_unbias[0] + state.R[0][1] * acc_unbias[1] + state.R[0][2] * acc_unbias[2] + gravity[0];
+    acc_world[1] = state.R[1][0] * acc_unbias[0] + state.R[1][1] * acc_unbias[1] + state.R[1][2] * acc_unbias[2] + gravity[1];
+    acc_world[2] = state.R[2][0] * acc_unbias[0] + state.R[2][1] * acc_unbias[1] + state.R[2][2] * acc_unbias[2] + gravity[2];
+
+    state.p[0] = state.p[0] + state.v[0] * dt + 0.5 * acc_world[0] * dt2;
+    state.p[1] = state.p[1] + state.v[1] * dt + 0.5 * acc_world[1] * dt2;
+    state.p[2] = state.p[2] + state.v[2] * dt + 0.5 * acc_world[2] * dt2;
+
+    state.v[0] = state.v[0] + acc_world[0] * dt;
+    state.v[1] = state.v[1] + acc_world[1] * dt;
+    state.v[2] = state.v[2] + acc_world[2] * dt;
 
     
 
 
-    printf("%llu, %f, %f, %f\r\n", *timestamp, MAT_DATA(acc_unbias)[0], MAT_DATA(acc_unbias)[1], MAT_DATA(acc_unbias)[2]); 
+
+    // MAT_STATIC_ALLOC_INIT(acc_unbias, 3, 1);
+    // MAT_STATIC_ALLOC_INIT(acc_world, 3, 1);
+    // MAT_STATIC_ALLOC_INIT(gyro_unbias, 3, 1);
+    
+    // MAT_DATA(acc_unbias)[0] = _acc[0] - MAT_DATA(state.acc_bias)[0];
+    // MAT_DATA(acc_unbias)[1] = _acc[1] - MAT_DATA(state.acc_bias)[1];
+    // MAT_DATA(acc_unbias)[2] = _acc[2] - MAT_DATA(state.acc_bias)[2];
+
+    // MAT_DATA(gyro_unbias)[0] = _gyro[0] - MAT_DATA(state.gyro_bias)[0];
+    // MAT_DATA(gyro_unbias)[1] = _gyro[1] - MAT_DATA(state.gyro_bias)[1];
+    // MAT_DATA(gyro_unbias)[2] = _gyro[2] - MAT_DATA(state.gyro_bias)[2];
+
+    // MAT_MULT(&state.R, &acc_unbias, &acc_world);
+
+    // MAT_DATA(acc_world)[0] = MAT_DATA(acc_world)[0] - MAT_DATA(gravity)[0];
+    // MAT_DATA(acc_world)[1] = MAT_DATA(acc_world)[1] - MAT_DATA(gravity)[1];
+    // MAT_DATA(acc_world)[2] = MAT_DATA(acc_world)[2] - MAT_DATA(gravity)[2];
+
+    // MAT_DATA(state.p)[0] = MAT_DATA(state.p)[0] + MAT_DATA(state.v)[0] * dt + 0.5 * MAT_DATA(acc_world)[0] * dt2;
+    // MAT_DATA(state.p)[1] = MAT_DATA(state.p)[1] + MAT_DATA(state.v)[1] * dt + 0.5 * MAT_DATA(acc_world)[1] * dt2;
+    // MAT_DATA(state.p)[2] = MAT_DATA(state.p)[2] + MAT_DATA(state.v)[2] * dt + 0.5 * MAT_DATA(acc_world)[2] * dt2;
+
+    // MAT_DATA(state.v)[0] = MAT_DATA(state.v)[0] + MAT_DATA(acc_world)[0] * dt;
+    // MAT_DATA(state.v)[1] = MAT_DATA(state.v)[1] + MAT_DATA(acc_world)[1] * dt;
+    // MAT_DATA(state.v)[2] = MAT_DATA(state.v)[2] + MAT_DATA(acc_world)[2] * dt;
+
+    // arm_mat_mult_f32(&state.R, &acc_unbias, &acc_world);
+
+    // printf("%llu, %f, %f, %f\r\n", *timestamp, _acc[0], _acc[1], _acc[2]); 
+    // printf("%llu, %f, %f, %f\r\n", *timestamp, MAT_DATA(acc_world)[0], MAT_DATA(acc_world)[1], MAT_DATA(acc_world)[2]); 
     
 }

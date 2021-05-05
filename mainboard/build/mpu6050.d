@@ -28,9 +28,10 @@ build/mpu6050.o: Modules/src/mpu6050.c Modules/include/mpu6050.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- Modules/include/utils.h Modules/include/config.h Modules/include/utils.h \
+ Modules/include/utils/utils.h Modules/include/config.h \
+ Modules/include/utils/utils.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
- Inc/FreeRTOSConfig.h Modules/include/config.h \
+ Inc/FreeRTOSConfig.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
@@ -107,17 +108,15 @@ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 
-Modules/include/utils.h:
+Modules/include/utils/utils.h:
 
 Modules/include/config.h:
 
-Modules/include/utils.h:
+Modules/include/utils/utils.h:
 
 Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 
 Inc/FreeRTOSConfig.h:
-
-Modules/include/config.h:
 
 Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
 

@@ -2,7 +2,7 @@
 #define __HMC5883L_H
 
 #include "i2c1.h"
-#include "utils.h"
+#include "utils/utils.h"
 
 #define HMC5883L_ADDRESS            0x1E // this device only has one address
 #define HMC5883L_DEFAULT_ADDRESS    0x3C // HMC5883L_ADDRESS << 1

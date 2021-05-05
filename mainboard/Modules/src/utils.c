@@ -1,4 +1,4 @@
-#include "utils.h"
+#include "utils/utils.h"
 
 #ifdef __GNUC__
 #define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
@@ -62,4 +62,10 @@ char *itoa(int value, char *result, int base) {
 uint64_t GetSysTimeUs(void) {
     uint64_t ms = HAL_GetTick();
     return ms * 1000ull + TIM7->CNT;
+}
+
+
+void AssertFail(char *exp, char *file, int line) {
+    printf("Assert failed %s:%d\n", file, line);
+    NVIC_SystemReset();
 }
